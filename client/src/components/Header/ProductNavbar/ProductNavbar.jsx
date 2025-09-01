@@ -2,6 +2,8 @@
 import React, { useState, forwardRef } from "react";
 import styles from "./ProductNavbar.module.css";
 
+import ComponentsImage from "../../../assets/Products1.png";
+
 const ProductNavbar = forwardRef(({ isOpen, onClose }, ref) => {
   const [activeCategory, setActiveCategory] = useState("Components");
 
@@ -14,7 +16,7 @@ const ProductNavbar = forwardRef(({ isOpen, onClose }, ref) => {
 
   // Different series and explore items for each category
   const getSeriesItems = (category) => {
-    switch(category) {
+    switch (category) {
       case "Components":
         return [
           "Gaming Series",
@@ -57,7 +59,7 @@ const ProductNavbar = forwardRef(({ isOpen, onClose }, ref) => {
   };
 
   const getExploreItems = (category) => {
-    switch(category) {
+    switch (category) {
       case "Components":
         return [
           "Build Guides",
@@ -96,7 +98,7 @@ const ProductNavbar = forwardRef(({ isOpen, onClose }, ref) => {
   };
 
   const getSubCategories = (category) => {
-    switch(category) {
+    switch (category) {
       case "Components":
         return [
           "Chassis Fan",
@@ -150,38 +152,38 @@ const ProductNavbar = forwardRef(({ isOpen, onClose }, ref) => {
   };
 
   const getPromoContent = (category) => {
-    switch(category) {
+    switch (category) {
       case "Components":
         return {
-          image: "https://storage-asset.msi.com/global/picture/image/feature/components/2023-gaming-components-banner.jpg",
+          image: ComponentsImage, // Use imported image
           title: "High-Performance Components",
           description: "Build the ultimate gaming rig with our premium components",
           buttonText: "View Components"
         };
       case "Peripherals":
         return {
-          image: "https://storage-asset.msi.com/global/picture/image/feature/peripherals/gaming-peripherals-banner.jpg",
+          image: ComponentsImage, // Use imported image
           title: "Gaming Peripherals",
           description: "Enhance your gaming experience with precision equipment",
           buttonText: "Explore Peripherals"
         };
       case "Accessories":
         return {
-          image: "https://storage-asset.msi.com/global/picture/image/feature/accessories/pc-accessories-banner.jpg",
+          image: ComponentsImage, // Use imported image
           title: "Essential Accessories",
           description: "Complete your setup with must-have accessories",
           buttonText: "Shop Accessories"
         };
       case "OS & Softwares":
         return {
-          image: "https://storage-asset.msi.com/global/picture/image/feature/software/digital-software-banner.jpg",
+          image: ComponentsImage, // Use imported image
           title: "Software Solutions",
           description: "Optimize your system with professional software",
           buttonText: "Discover Software"
         };
       default:
         return {
-          image: "https://storage-asset.msi.com/global/picture/image/feature/nb/GS76/GS76-banner.png",
+          image: ComponentsImage, // Use imported default image
           title: "Gaming Products",
           description: "Discover our complete product lineup",
           buttonText: "Explore All"
@@ -197,7 +199,7 @@ const ProductNavbar = forwardRef(({ isOpen, onClose }, ref) => {
   const promoContent = getPromoContent(activeCategory);
 
   return (
-    <div 
+    <div
       className={`${styles.productNavbar} ${isOpen ? styles.open : ""}`}
       onClick={handleNavbarClick}
       ref={ref}
@@ -208,7 +210,7 @@ const ProductNavbar = forwardRef(({ isOpen, onClose }, ref) => {
           <h3>PRODUCT CATEGORIES</h3>
           <ul>
             {categories.map(category => (
-              <li 
+              <li
                 key={category}
                 className={activeCategory === category ? styles.active : ""}
                 onClick={() => setActiveCategory(category)}
@@ -240,7 +242,7 @@ const ProductNavbar = forwardRef(({ isOpen, onClose }, ref) => {
               ))}
             </ul>
           </div>
-          
+
           <div className={styles.exploreSection}>
             <h4>EXPLORE</h4>
             <ul>

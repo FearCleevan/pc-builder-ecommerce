@@ -2,6 +2,8 @@
 import React, { useState, forwardRef } from "react";
 import styles from "./DesktopNavbar.module.css";
 
+import DesktopImage from "../../../assets/Desktop1.jpg";
+
 const DesktopNavbar = forwardRef(({ isOpen, onClose }, ref) => {
   const [activeCategory, setActiveCategory] = useState("Gaming Desktops");
 
@@ -174,35 +176,35 @@ const DesktopNavbar = forwardRef(({ isOpen, onClose }, ref) => {
     switch(category) {
       case "Gaming Desktops":
         return {
-          image: "https://storage-asset.msi.com/global/picture/image/feature/desktop/MPG-Trident-AS/MPG-Trident-AS-banner.png",
+          image: DesktopImage,
           title: "Ultimate Gaming Desktops",
           description: "Experience unparalleled gaming performance with cutting-edge technology and stunning RGB lighting",
           buttonText: "View Gaming Desktops"
         };
       case "Workstation Desktops":
         return {
-          image: "https://storage-asset.msi.com/global/picture/image/feature/desktop/workstation/pro-workstation-banner.jpg",
+          image: DesktopImage,
           title: "Professional Workstations",
           description: "Power through demanding professional applications with certified hardware and reliable performance",
           buttonText: "Explore Workstations"
         };
       case "All-in-One PCs":
         return {
-          image: "https://storage-asset.msi.com/global/picture/image/feature/desktop/aio/modern-aio-banner.jpg",
+          image: DesktopImage,
           title: "All-in-One Solutions",
           description: "Sleek, space-saving computers with integrated displays and powerful performance",
           buttonText: "Discover AIO PCs"
         };
       case "Mini PCs":
         return {
-          image: "https://storage-asset.msi.com/global/picture/image/feature/desktop/mini-pc/cubi-series-banner.jpg",
+          image: DesktopImage,
           title: "Compact Mini PCs",
           description: "Powerful computing in a small form factor perfect for office, home, or industrial use",
           buttonText: "See Mini PCs"
         };
       case "Barebones":
         return {
-          image: "https://storage-asset.msi.com/global/picture/image/feature/desktop/barebone/custom-build-banner.jpg",
+          image: DesktopImage,
           title: "Barebone Systems",
           description: "Build your dream system with our customizable barebone kits and components",
           buttonText: "Start Building"
