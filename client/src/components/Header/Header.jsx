@@ -6,6 +6,8 @@ import ProductNavbar from "./ProductNavbar/ProductNavbar";
 import DesktopNavbar from "./DesktopNavbar/DesktopNavbar";
 import LaptopNavbar from "./LaptopNavbar/LaptopNavbar";
 
+import Logo from "../../assets/Logo.png";
+
 const Header = () => {
   const [activeMenu, setActiveMenu] = useState(null);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -148,10 +150,10 @@ const Header = () => {
               <a className={styles.homeLink} href="/">
                 <picture className={styles.logo}>
                   <img
-                    src="https://storage-asset.msi.com/frontend/imgs/logo.png"
+                    src={Logo}
                     alt="MSI Logo"
-                    width="181"
-                    height="65"
+                    width="300"
+                    height="auto"
                   />
                 </picture>
               </a>
