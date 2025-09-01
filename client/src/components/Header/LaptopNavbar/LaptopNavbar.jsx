@@ -2,6 +2,8 @@
 import React, { useState, forwardRef } from "react";
 import styles from "./LaptopNavbar.module.css";
 
+import LaptopImage from "../../../assets/Laptop1.png";
+
 const LaptopNavbar = forwardRef(({ isOpen, onClose }, ref) => {
   const [activeCategory, setActiveCategory] = useState("Gaming Laptops");
 
@@ -176,42 +178,42 @@ const LaptopNavbar = forwardRef(({ isOpen, onClose }, ref) => {
     switch(category) {
       case "Gaming Laptops":
         return {
-          image: "https://storage-asset.msi.com/global/picture/image/feature/nb/GS76/GS76-banner.png",
+          image: LaptopImage,
           title: "Ultimate Gaming Laptops",
           description: "Dominate the competition with high-refresh displays and powerful RTX graphics",
           buttonText: "Explore Gaming Laptops"
         };
       case "Content Creation Laptops":
         return {
-          image: "https://storage-asset.msi.com/global/picture/image/feature/nb/creator/creator-pro-banner.jpg",
+          image: LaptopImage,
           title: "Content Creation Power",
           description: "Bring your creative visions to life with color-accurate displays and professional performance",
           buttonText: "View Creator Laptops"
         };
       case "Business Laptops":
         return {
-          image: "https://storage-asset.msi.com/global/picture/image/feature/nb/business/modern-business-banner.jpg",
+          image: LaptopImage,
           title: "Business Excellence",
           description: "Professional laptops with enterprise-grade security and reliability for business success",
           buttonText: "See Business Laptops"
         };
       case "Thin & Light Laptops":
         return {
-          image: "https://storage-asset.msi.com/global/picture/image/feature/nb/prestige/prestige-slim-banner.jpg",
+          image: LaptopImage,
           title: "Slim & Powerful",
           description: "Ultra-portable laptops that don't compromise on performance or style",
           buttonText: "Discover Thin Laptops"
         };
       case "2-in-1 Convertibles":
         return {
-          image: "https://storage-asset.msi.com/global/picture/image/feature/nb/summit/summit-flip-banner.jpg",
+          image: LaptopImage,
           title: "Versatile Convertibles",
           description: "Transform your workflow with flexible 2-in-1 laptops for work and play",
           buttonText: "Explore Convertibles"
         };
       default:
         return {
-          image: "https://storage-asset.msi.com/global/picture/image/feature/nb/GS76/GS76-banner.png",
+          image: LaptopImage,
           title: "MSI Laptops",
           description: "Discover our complete laptop lineup for every need",
           buttonText: "View All Laptops"
