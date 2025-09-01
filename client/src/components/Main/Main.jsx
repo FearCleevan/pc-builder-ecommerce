@@ -1,5 +1,5 @@
 // client/src/components/Main/Main.jsx
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
 import styles from './Main.module.css';
@@ -10,30 +10,18 @@ import Banner2 from '../../assets/banner2.jpeg';
 import Banner3 from '../../assets/banner3.jpeg';
 import Banner4 from '../../assets/banner4.jpeg';
 
+// Import sample product images (replace later with real ones)
+import SampleImg from '../../assets/banner4.jpeg';
+
 const Main = () => {
   const [currentBanner, setCurrentBanner] = useState(0);
+  const scrollRef = useRef(null);
 
   const banners = [
-    {
-      image: Banner1,
-      title: "Build Your Dream PC",
-      description: "Custom computers built for gaming, creativity, and productivity",
-    },
-    {
-      image: Banner2,
-      title: "Ultimate Gaming Experience",
-      description: "High-performance components for the serious gamer",
-    },
-    {
-      image: Banner3,
-      title: "Professional Workstations",
-      description: "Powerful systems for content creation and professional work",
-    },
-    {
-      image: Banner4,
-      title: "Cutting-Edge Technology",
-      description: "Stay ahead with the latest innovations in PC hardware",
-    },
+    { image: Banner1, title: "Build Your Dream PC", description: "Custom computers built for gaming, creativity, and productivity" },
+    { image: Banner2, title: "Ultimate Gaming Experience", description: "High-performance components for the serious gamer" },
+    { image: Banner3, title: "Professional Workstations", description: "Powerful systems for content creation and professional work" },
+    { image: Banner4, title: "Cutting-Edge Technology", description: "Stay ahead with the latest innovations in PC hardware" },
   ];
 
   // Auto-rotate banners
@@ -44,12 +32,31 @@ const Main = () => {
     return () => clearInterval(interval);
   }, [banners.length]);
 
-  const nextBanner = () => {
-    setCurrentBanner((prev) => (prev + 1) % banners.length);
-  };
+  const nextBanner = () => setCurrentBanner((prev) => (prev + 1) % banners.length);
+  const prevBanner = () => setCurrentBanner((prev) => (prev - 1 + banners.length) % banners.length);
 
-  const prevBanner = () => {
-    setCurrentBanner((prev) => (prev - 1 + banners.length) % banners.length);
+  // Subcategories (trimmed list, not all)
+  const exploreProducts = [
+    { name: "Graphics Card", img: SampleImg },
+    { name: "Processor Intel", img: SampleImg },
+    { name: "Processor AMD", img: SampleImg },
+    { name: "RAM", img: SampleImg },
+    { name: "SSD", img: SampleImg },
+    { name: "Motherboard", img: SampleImg },
+    { name: "Keyboard", img: SampleImg },
+    { name: "Mouse", img: SampleImg },
+    { name: "Monitor", img: SampleImg },
+    { name: "Headset", img: SampleImg },
+  ];
+
+  // Carousel Scroll
+  const scroll = (direction) => {
+    if (scrollRef.current) {
+      scrollRef.current.scrollBy({
+        left: direction === "left" ? -800 : 800,
+        behavior: "smooth",
+      });
+    }
   };
 
   return (
@@ -62,9 +69,7 @@ const Main = () => {
             {banners.map((banner, index) => (
               <div
                 key={index}
-                className={`${styles.bannerSlide} ${
-                  index === currentBanner ? styles.active : ''
-                }`}
+                className={`${styles.bannerSlide} ${index === currentBanner ? styles.active : ''}`}
                 style={{ backgroundImage: `url(${banner.image})` }}
               >
                 <div className={styles.bannerOverlay}></div>
@@ -84,16 +89,14 @@ const Main = () => {
               {banners.map((_, index) => (
                 <button
                   key={index}
-                  className={`${styles.indicator} ${
-                    index === currentBanner ? styles.active : ''
-                  }`}
+                  className={`${styles.indicator} ${index === currentBanner ? styles.active : ''}`}
                   onClick={() => setCurrentBanner(index)}
                 />
               ))}
             </div>
           </div>
 
-          {/* Banner Text Component (separate, bottom of banner) */}
+          {/* Banner Text Component */}
           <div className={styles.bannerText}>
             <h1>{banners[currentBanner].title}</h1>
             <p>{banners[currentBanner].description}</p>
@@ -101,6 +104,27 @@ const Main = () => {
               <button className={styles.primaryButton}>Start Building</button>
               <button className={styles.secondaryButton}>Explore Pre-builts</button>
             </div>
+          </div>
+        </section>
+
+        {/* 🔥 Explore Products Section */}
+        <section className={styles.exploreProducts}>
+          <h2>Explore Products</h2>
+          <div className={styles.carouselWrapper}>
+            <button className={`${styles.carouselArrow} ${styles.left}`} onClick={() => scroll("left")}>
+              &#8249;
+            </button>
+            <div className={styles.carousel} ref={scrollRef}>
+              {exploreProducts.map((product, index) => (
+                <div key={index} className={styles.exploreCard}>
+                  <img src={product.img} alt={product.name} />
+                  <h3>{product.name}</h3>
+                </div>
+              ))}
+            </div>
+            <button className={`${styles.carouselArrow} ${styles.right}`} onClick={() => scroll("right")}>
+              &#8250;
+            </button>
           </div>
         </section>
 
