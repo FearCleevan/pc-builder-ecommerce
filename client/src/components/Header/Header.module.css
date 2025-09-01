@@ -1,0 +1,333 @@
+/* client/src/components/Header/Header.module.css */
+.nav {
+  background-color: #fff;
+  color: #000;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.mainArea {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 80px;
+}
+
+.hamburger {
+  display: none;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 10;
+  color: #000;
+}
+
+.menu {
+  display: flex;
+  align-items: center;
+  flex-grow: 1;
+}
+
+.menuActions {
+  display: flex;
+  margin-left: 40px;
+  gap: 10px;
+}
+
+.menuItem {
+  position: relative;
+}
+
+.navButton,
+.navLink {
+  color: #000;
+  text-decoration: none;
+  background: none;
+  border: none;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  cursor: pointer;
+  padding: 10px 15px;
+  position: relative;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.navButton::after,
+.navLink::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 50%;
+  background-color: #ff2c2c;
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+}
+
+.navButton:hover,
+.navLink:hover,
+.navButton.active,
+.navLink.active {
+  color: #ff2c2c;
+}
+
+.navButton:hover::after,
+.navLink:hover::after,
+.navButton.active::after,
+.navLink.active::after {
+  width: 80%;
+}
+
+.dropdownArrow {
+  display: flex;
+  align-items: center;
+}
+
+.highlight {
+  background-color: #ff2c2c;
+  color: white !important;
+  padding: 10px 20px;
+  transition: background-color 0.3s ease;
+}
+
+.highlight::after {
+  display: none;
+}
+
+.highlight:hover {
+  background-color: #ff5252;
+  color: #fff !important;
+}
+
+.dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #fff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  min-width: 200px;
+  z-index: 1001;
+  border-top: 2px solid #ff2c2c;
+}
+
+.dropdownContent {
+  padding: 20px;
+  color: #333;
+}
+
+.operations {
+  display: flex;
+  align-items: center;
+}
+
+.operationItem {
+  position: relative;
+  margin-left: 20px;
+}
+
+.operationButton,
+.operationLink {
+  color: #000;
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 50%;
+  transition: color 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.operationButton:hover,
+.operationLink:hover {
+  color: #00000081;
+}
+
+/* Notification Badge */
+.notificationBadge {
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  background: #ff2c2c;
+  color: white;
+  font-size: 12px;
+  font-weight: 600;
+  border-radius: 50%;
+  padding: 2px 6px;
+  min-width: 18px;
+  height: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+  pointer-events: none;
+}
+
+/* Floating animation on hover */
+.operationItem:hover .notificationBadge {
+  animation: floatBadge 1s ease-in-out infinite alternate;
+}
+
+@keyframes floatBadge {
+  0% {
+    transform: translateY(0) scale(1);
+  }
+
+  100% {
+    transform: translateY(-5px) scale(1.1);
+  }
+}
+
+/* Search Popup */
+.searchPopup {
+  position: fixed;
+  top: 80px;
+  left: 0;
+  width: 100%;
+  background: #fff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-20px);
+  transition: all 0.3s ease;
+  z-index: 900;
+}
+
+.searchPopup.open {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.searchBox {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.searchInputContainer {
+  flex: 1;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.searchIcon {
+  position: absolute;
+  left: 12px;
+  color: #000;
+  z-index: 1;
+  font-weight: 300;
+}
+
+.searchInput {
+  flex: 1;
+  padding: 12px 16px 12px 40px; /* Added left padding for the icon */
+  border: 1px solid #ccc;
+  font-size: 16px;
+  width: 100%;
+  outline: none;
+}
+
+.closeBtn {
+  color: #000;
+  border: none;
+  padding: 7px 10px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+  background: none;
+}
+
+.closeBtn:hover {
+  color: #00000081;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 991px) {
+  .hamburger {
+    display: flex;
+  }
+
+  .menu {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 80%;
+    max-width: 300px;
+    height: 100vh;
+    background-color: #000;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 80px 20px 20px;
+    transition: left 0.3s ease;
+    z-index: 5;
+  }
+
+  .menuOpen {
+    left: 0;
+  }
+
+  .menuActions {
+    flex-direction: column;
+    margin-left: 0;
+    width: 100%;
+    gap: 0;
+  }
+
+  .menuItem {
+    margin: 10px 0;
+    width: 100%;
+  }
+
+  .navButton,
+  .navLink {
+    display: block;
+    width: 100%;
+    text-align: left;
+    padding: 15px 0;
+    color: #fff;
+    justify-content: space-between;
+  }
+
+  .dropdown {
+    position: static;
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  .searchBox {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .searchInput {
+    width: 100%;
+  }
+
+  .closeBtn {
+    width: 100%;
+  }
+}

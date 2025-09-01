@@ -1,0 +1,60 @@
+/* client/src/index.css */
+@import url('https://fonts.googleapis.com/css2?family=Bai+Jamjuree:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+
+* {
+  font-family: "Bai Jamjuree", sans-serif !important;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  line-height: 1.6;
+  color: #333;
+  background-color: #f8f9fa;
+}
+
+/* Custom scrollbar styles */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #ff2c2c;
+  border-radius: 10px;
+  border: 2px solid #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #d40000;
+}
+
+/* For Firefox */
+/* Chrome, Edge, Safari */
+*::-webkit-scrollbar {
+  width: 8px;
+  background: #f1f1f1;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: #ff2c2c;
+  border-radius: 4px;
+}
+/* Jomhuria font class for headings */
+.jomhuria-font {
+  font-family: 'Jomhuria', cursive;
+  font-weight: normal;
+  letter-spacing: 1px;
+}
+
+/* App container */
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
