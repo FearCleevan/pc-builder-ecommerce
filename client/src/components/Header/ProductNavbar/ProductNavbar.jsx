@@ -1,4 +1,3 @@
-// client/src/components/Header/ProductNavbar/ProductNavbar.jsx
 import React, { useState, forwardRef } from "react";
 import styles from "./ProductNavbar.module.css";
 
@@ -11,8 +10,13 @@ import {
   getPromoContent
 } from "../../MockData/ProductMockData";
 
-const ProductNavbar = forwardRef(({ isOpen, onClose }, ref) => {
+const ProductNavbar = forwardRef(({ isOpen, onClose, mobileView, isMobileMenuOpen }, ref) => {
   const [activeCategory, setActiveCategory] = useState("Components");
+
+  // Don't show this navbar on mobile devices
+  if (window.innerWidth <= 991) {
+    return null;
+  }
 
   // Prevent clicks inside the navbar from closing it
   const handleNavbarClick = (e) => {
@@ -48,7 +52,7 @@ const ProductNavbar = forwardRef(({ isOpen, onClose }, ref) => {
                 className={activeCategory === category ? styles.active : ""}
                 onClick={() => setActiveCategory(category)}
               >
-                {category}
+                <span className={styles.categoryLink}>{category}</span>
                 {activeCategory === category && <span className={styles.arrow}>▶</span>}
               </li>
             ))}

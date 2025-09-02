@@ -1,6 +1,5 @@
-// client/src/components/Header/Header.jsx
-import React, { useState, useRef, useEffect } from "react";
-import { FaUser, FaShoppingCart, FaSearch, FaTruck, FaTimes, FaBars, FaChevronDown, FaChevronUp } from "react-icons/fa";
+import React, { useState, useRef, useEffect, useCallback } from "react";
+import { FaUser, FaShoppingCart, FaSearch, FaTruck, FaTimes, FaBars, FaChevronDown, FaChevronUp, FaArrowLeft } from "react-icons/fa";
 import styles from "./Header.module.css";
 import ProductNavbar from "./ProductNavbar/ProductNavbar";
 import DesktopNavbar from "./DesktopNavbar/DesktopNavbar";
@@ -8,13 +7,20 @@ import LaptopNavbar from "./LaptopNavbar/LaptopNavbar";
 
 import Logo from "../../assets/Logo.png";
 
+// Import mock data directly for mobile view
+import {
+  categories,
+  getSeriesItems,
+  getExploreItems,
+  getSubCategories,
+} from "../MockData/ProductMockData";
+
 const Header = () => {
-  const [activeMenu, setActiveMenu] = useState(null);
+  const [activeNav, setActiveNav] = useState(null);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
-  const [isProductNavOpen, setIsProductNavOpen] = useState(false);
-  const [isDesktopNavOpen, setIsDesktopNavOpen] = useState(false);
-  const [isLaptopNavOpen, setIsLaptopNavOpen] = useState(false);
+  const [mobileView, setMobileView] = useState("main"); // 'main', 'products'
+  const [activeCategory, setActiveCategory] = useState("Components");
 
   const menuRef = useRef(null);
   const productNavRef = useRef(null);
@@ -29,6 +35,19 @@ const Header = () => {
     { id: "whats-new", label: "WHAT'S NEW", hasDropdown: true },
   ];
 
+  // Check screen size and adjust behavior
+  const checkScreenSize = useCallback(() => {
+    if (window.innerWidth <= 991) {
+      // Mobile/tablet behavior
+      if (activeNav === "products") {
+        setMobileView("products");
+      }
+    } else {
+      // Desktop behavior
+      setMobileView("main");
+    }
+  }, [activeNav]);
+
   // Close menu when clicking outside or scrolling
   useEffect(() => {
     const handleClickOutside = (event) => {
@@ -42,30 +61,34 @@ const Header = () => {
           return;
         }
 
-        setIsProductNavOpen(false);
-        setIsDesktopNavOpen(false);
-        setIsLaptopNavOpen(false);
-        setActiveMenu(null);
+        setActiveNav(null);
+        setIsMobileMenuOpen(false);
+        setMobileView("main");
       }
     };
 
     const handleScroll = () => {
-      if (isProductNavOpen || isDesktopNavOpen || isLaptopNavOpen) {
-        setIsProductNavOpen(false);
-        setIsDesktopNavOpen(false);
-        setIsLaptopNavOpen(false);
-        setActiveMenu(null);
+      if (activeNav) {
+        setActiveNav(null);
+        setIsMobileMenuOpen(false);
+        setMobileView("main");
       }
     };
 
+    // Initial screen size check
+    checkScreenSize();
+    
+    // Add event listeners
     document.addEventListener("mousedown", handleClickOutside);
     window.addEventListener("scroll", handleScroll, { passive: true });
+    window.addEventListener("resize", checkScreenSize);
 
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
       window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("resize", checkScreenSize);
     };
-  }, [isProductNavOpen, isDesktopNavOpen, isLaptopNavOpen]);
+  }, [activeNav, checkScreenSize]);
 
   const handleMenuClick = (itemId) => {
     // Close search if open
@@ -73,59 +96,54 @@ const Header = () => {
       setIsSearchOpen(false);
     }
 
-    // Close all other navbars
-    setIsProductNavOpen(false);
-    setIsDesktopNavOpen(false);
-    setIsLaptopNavOpen(false);
+    // For mobile, handle products menu differently
+    if (window.innerWidth <= 991 && itemId === "products") {
+      setMobileView("products");
+      setActiveNav("products");
+      return;
+    }
 
     // Toggle the clicked navbar
-    if (itemId === "products") {
-      setIsProductNavOpen(!isProductNavOpen);
-      setActiveMenu(isProductNavOpen ? null : itemId);
-    } else if (itemId === "desktop") {
-      setIsDesktopNavOpen(!isDesktopNavOpen);
-      setActiveMenu(isDesktopNavOpen ? null : itemId);
-    } else if (itemId === "laptop") {
-      setIsLaptopNavOpen(!isLaptopNavOpen);
-      setActiveMenu(isLaptopNavOpen ? null : itemId);
+    if (activeNav === itemId) {
+      setActiveNav(null);
+      setMobileView("main");
     } else {
-      // For other dropdowns, just toggle their active state
-      setActiveMenu(activeMenu === itemId ? null : itemId);
+      setActiveNav(itemId);
     }
   };
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
+    // Reset to main view when toggling mobile menu
+    setMobileView("main");
     // Close all navbars when mobile menu is toggled
-    setIsProductNavOpen(false);
-    setIsDesktopNavOpen(false);
-    setIsLaptopNavOpen(false);
-    setActiveMenu(null);
+    setActiveNav(null);
   };
 
   const toggleSearch = () => {
     // Close all navbars when search is toggled
-    setIsProductNavOpen(false);
-    setIsDesktopNavOpen(false);
-    setIsLaptopNavOpen(false);
-    setActiveMenu(null);
+    setActiveNav(null);
+    setMobileView("main");
+    setIsMobileMenuOpen(false);
 
     setIsSearchOpen(!isSearchOpen);
   };
 
-  const closeProductNavbar = () => {
-    setIsProductNavOpen(false);
-    setActiveMenu(null);
+  const closeAllMenus = () => {
+    setActiveNav(null);
+    setIsMobileMenuOpen(false);
+    setMobileView("main");
   };
 
-  const closeDesktopNavbar = () => {
-    setIsDesktopNavOpen(false);
-    setActiveMenu(null);
+  const handleBackToMainMenu = () => {
+    setMobileView("main");
   };
 
-  const closeLaptopNavbar = () => {
-    setIsLaptopNavOpen(false);
-    setActiveMenu(null);
+  // Handle navigation (placeholder for now)
+  const handleNavigation = (path, e) => {
+    e.preventDefault();
+    console.log("Would navigate to:", path);
+    closeAllMenus();
   };
 
   return (
@@ -147,7 +165,7 @@ const Header = () => {
               className={`${styles.menu} ${isMobileMenuOpen ? styles.menuOpen : ""
                 }`}
             >
-              <a className={styles.homeLink} href="/">
+              <a className={styles.homeLink} href="/" onClick={closeAllMenus}>
                 <picture className={styles.logo}>
                   <img
                     src={Logo}
@@ -158,8 +176,29 @@ const Header = () => {
                 </picture>
               </a>
 
+              {/* Mobile breadcrumb for products */}
+              {isMobileMenuOpen && mobileView === "products" && (
+                <div className={styles.mobileBreadcrumb}>
+                  <button 
+                    className={styles.backButton}
+                    onClick={handleBackToMainMenu}
+                  >
+                    <FaArrowLeft size={16} />
+                    <span>Menu</span>
+                  </button>
+                  <h3>PRODUCTS</h3>
+                  <button 
+                    className={styles.closeButton}
+                    onClick={closeAllMenus}
+                  >
+                    <FaTimes size={20} />
+                  </button>
+                </div>
+              )}
+
               <div className={styles.menuActions}>
-                {navItems.map((item) => (
+                {/* Main menu items - hidden on mobile when in products view */}
+                {(mobileView === "main" || window.innerWidth > 991) && navItems.map((item) => (
                   <div
                     key={item.id}
                     className={styles.menuItem}
@@ -167,14 +206,14 @@ const Header = () => {
                     {item.hasDropdown ? (
                       <button
                         className={`${styles.navButton} ${item.highlight ? styles.highlight : ""
-                          } ${activeMenu === item.id ? styles.active : ""}`}
+                          } ${activeNav === item.id ? styles.active : ""}`}
                         onClick={() => handleMenuClick(item.id)}
-                        aria-expanded={activeMenu === item.id}
+                        aria-expanded={activeNav === item.id}
                       >
                         {item.label}
                         {item.hasDropdown && (
                           <span className={styles.dropdownArrow}>
-                            {activeMenu === item.id}
+                            {activeNav === item.id}
                           </span>
                         )}
                       </button>
@@ -182,14 +221,15 @@ const Header = () => {
                       <a
                         href="#"
                         className={`${styles.navLink} ${item.highlight ? styles.highlight : ""
-                          } ${activeMenu === item.id ? styles.active : ""}`}
+                          } ${activeNav === item.id ? styles.active : ""}`}
+                        onClick={() => handleMenuClick(item.id)}
                       >
                         {item.label}
                       </a>
                     )}
 
                     {/* Dropdown for other menu items */}
-                    {item.hasDropdown && activeMenu === item.id &&
+                    {item.hasDropdown && activeNav === item.id &&
                       item.id !== "products" && item.id !== "desktop" && item.id !== "laptop" && (
                         <div className={styles.dropdown}>
                           <div className={styles.dropdownContent}>
@@ -199,6 +239,81 @@ const Header = () => {
                       )}
                   </div>
                 ))}
+
+                {/* Mobile Products Menu Content */}
+                {isMobileMenuOpen && mobileView === "products" && (
+                  <div className={styles.mobileProductsMenu}>
+                    {/* Categories */}
+                    <div className={styles.mobileCategorySection}>
+                      <h4>CATEGORIES</h4>
+                      <ul>
+                        {categories.map(category => (
+                          <li
+                            key={category}
+                            className={activeCategory === category ? styles.active : ""}
+                            onClick={() => setActiveCategory(category)}
+                          >
+                            {category}
+                            {activeCategory === category && <span className={styles.arrow}>▼</span>}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+
+                    {/* Subcategories */}
+                    {activeCategory && (
+                      <div className={styles.mobileSubcategorySection}>
+                        <h4>{activeCategory.toUpperCase()}</h4>
+                        <ul>
+                          {getSubCategories(activeCategory).map(item => (
+                            <li key={item.name}>
+                              <a
+                                href={item.path}
+                                onClick={(e) => handleNavigation(item.path, e)}
+                              >
+                                {item.name}
+                              </a>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    )}
+
+                    {/* Series */}
+                    <div className={styles.mobileSeriesSection}>
+                      <h4>SERIES</h4>
+                      <ul>
+                        {getSeriesItems(activeCategory).map(item => (
+                          <li key={item.name}>
+                            <a
+                              href={item.path}
+                              onClick={(e) => handleNavigation(item.path, e)}
+                            >
+                              {item.name}
+                            </a>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+
+                    {/* Explore */}
+                    <div className={styles.mobileExploreSection}>
+                      <h4>EXPLORE</h4>
+                      <ul>
+                        {getExploreItems(activeCategory).map(item => (
+                          <li key={item.name}>
+                            <a
+                              href={item.path}
+                              onClick={(e) => handleNavigation(item.path, e)}
+                            >
+                              {item.name}
+                            </a>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </div>
+                )}
               </div>
             </div>
 
@@ -209,6 +324,7 @@ const Header = () => {
                 <button
                   className={styles.operationButton}
                   aria-label="User account"
+                  onClick={closeAllMenus}
                 >
                   <FaUser size={20} />
                 </button>
@@ -220,6 +336,7 @@ const Header = () => {
                   href="https://ph.msi.com/service/wheretobuy#46,3"
                   className={styles.operationLink}
                   aria-label="Where to buy"
+                  onClick={closeAllMenus}
                 >
                   <FaShoppingCart size={20} />
                   <span className={styles.notificationBadge}>3</span>
@@ -242,6 +359,7 @@ const Header = () => {
                 <button
                   className={styles.operationButton}
                   aria-label="Track your order"
+                  onClick={closeAllMenus}
                 >
                   <FaTruck size={20} />
                   <span className={styles.notificationBadge}>1</span>
@@ -254,22 +372,24 @@ const Header = () => {
 
       {/* Product Navbar */}
       <ProductNavbar
-        isOpen={isProductNavOpen}
-        onClose={closeProductNavbar}
+        isOpen={activeNav === "products" && window.innerWidth > 991}
+        onClose={closeAllMenus}
         ref={productNavRef}
+        mobileView={mobileView}
+        isMobileMenuOpen={isMobileMenuOpen}
       />
 
       {/* Desktop Navbar */}
       <DesktopNavbar
-        isOpen={isDesktopNavOpen}
-        onClose={closeDesktopNavbar}
+        isOpen={activeNav === "desktop"}
+        onClose={closeAllMenus}
         ref={desktopNavRef}
       />
 
       {/* Laptop Navbar */}
       <LaptopNavbar
-        isOpen={isLaptopNavOpen}
-        onClose={closeLaptopNavbar}
+        isOpen={activeNav === "laptop"}
+        onClose={closeAllMenus}
         ref={laptopNavRef}
       />
 
@@ -291,6 +411,11 @@ const Header = () => {
           </button>
         </div>
       </div>
+
+      {/* Mobile overlay */}
+      {isMobileMenuOpen && (
+        <div className={styles.overlay} onClick={closeAllMenus}></div>
+      )}
     </>
   );
 };
