@@ -436,14 +436,18 @@
   gap: 20px;
   overflow-x: auto;
   scroll-behavior: smooth;
-  scrollbar-width: none;
   padding: 10px;
   scroll-snap-type: x mandatory;
+
+  /* Hide scrollbar on IE and old Edge */
+  -ms-overflow-style: none;
 }
 
+/* Hide scrollbar on Chrome, Safari, Edge (WebKit browsers) */
 .carousel::-webkit-scrollbar {
   display: none;
 }
+
 
 .exploreCard {
   min-width: 220px;
@@ -540,11 +544,14 @@
   gap: 20px;
   overflow-x: auto;
   scroll-behavior: smooth;
-  scrollbar-width: none;
   padding: 10px;
   scroll-snap-type: x mandatory;
+
+  /* Hide scrollbar on IE, Edge */
+  -ms-overflow-style: none;
 }
 
+/* Hide scrollbar on Chrome, Safari, Edge (WebKit browsers) */
 .productCarousel::-webkit-scrollbar {
   display: none;
 }

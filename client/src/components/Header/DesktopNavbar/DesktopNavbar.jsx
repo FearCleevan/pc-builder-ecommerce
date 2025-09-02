@@ -2,8 +2,6 @@
 import React, { useState, forwardRef } from "react";
 import styles from "./DesktopNavbar.module.css";
 
-import DesktopImage from "../../../assets/Desktop1.jpg";
-
 import {
   categories,
   getSeriesItems,
@@ -14,6 +12,16 @@ import {
 
 const DesktopNavbar = forwardRef(({ isOpen, onClose }, ref) => {
   const [activeCategory, setActiveCategory] = useState("Gaming Desktops");
+
+  // Handle navigation (placeholder for now)
+  const handleNavigation = (path, e) => {
+    e.preventDefault();
+    console.log("Would navigate to:", path);
+    // In a real implementation, you would use:
+    // navigate(path); // from react-router-dom
+    // or
+    // window.location.href = path;
+  };
 
   const handleNavbarClick = (e) => {
     e.stopPropagation();
@@ -50,7 +58,15 @@ const DesktopNavbar = forwardRef(({ isOpen, onClose }, ref) => {
           <h4>POPULAR SERIES</h4>
           <ul>
             {getSeriesItems(activeCategory).map(item => (
-              <li key={item}>{item}</li>
+              <li key={item.name}>
+                <a 
+                  href={item.path} 
+                  onClick={(e) => handleNavigation(item.path, e)}
+                  className={styles.seriesLink}
+                >
+                  {item.name}
+                </a>
+              </li>
             ))}
           </ul>
         </div>
@@ -60,7 +76,15 @@ const DesktopNavbar = forwardRef(({ isOpen, onClose }, ref) => {
           <h4>KEY FEATURES</h4>
           <ul>
             {getFeatures(activeCategory).map(item => (
-              <li key={item}>✓ {item}</li>
+              <li key={item.name}>
+                <a 
+                  href={item.path} 
+                  onClick={(e) => handleNavigation(item.path, e)}
+                  className={styles.featureLink}
+                >
+                  ✓ {item.name}
+                </a>
+              </li>
             ))}
           </ul>
         </div>
@@ -70,7 +94,15 @@ const DesktopNavbar = forwardRef(({ isOpen, onClose }, ref) => {
           <h4>EXPLORE</h4>
           <ul>
             {getExploreItems(activeCategory).map(item => (
-              <li key={item}>{item}</li>
+              <li key={item.name}>
+                <a 
+                  href={item.path} 
+                  onClick={(e) => handleNavigation(item.path, e)}
+                  className={styles.exploreLink}
+                >
+                  {item.name}
+                </a>
+              </li>
             ))}
           </ul>
         </div>
@@ -84,7 +116,13 @@ const DesktopNavbar = forwardRef(({ isOpen, onClose }, ref) => {
           />
           <h3>{promoContent.title}</h3>
           <p>{promoContent.description}</p>
-          <button className={styles.ctaButton}>{promoContent.buttonText}</button>
+          <a 
+            href={promoContent.buttonPath} 
+            onClick={(e) => handleNavigation(promoContent.buttonPath, e)}
+            className={styles.ctaButton}
+          >
+            {promoContent.buttonText}
+          </a>
         </div>
       </div>
 
