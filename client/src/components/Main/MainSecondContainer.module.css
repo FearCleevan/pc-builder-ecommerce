@@ -101,7 +101,7 @@
 /* Responsive Design */
 @media (max-width: 1199px) {
   .exploreCard {
-    min-width: 200px;
+    min-width: 210px;
   }
 }
 
@@ -131,7 +131,7 @@
   }
   
   .exploreCard {
-    min-width: 150px;
+    min-width: 183px;
   }
   
   .exploreCard h3 {

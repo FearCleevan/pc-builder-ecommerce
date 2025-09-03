@@ -395,11 +395,11 @@
 
 @media (max-width: 480px) {
   .productCard {
-    min-width: 200px;
+    min-width: 280px;
   }
   
   .productImage {
-    height: 140px;
+    height: 180px;
   }
   
   .wishlistBtn, .compareBtn {
