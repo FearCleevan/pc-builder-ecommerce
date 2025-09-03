@@ -15,13 +15,27 @@ import DesktopNavbar from "./DesktopNavbar/DesktopNavbar";
 import LaptopNavbar from "./LaptopNavbar/LaptopNavbar";
 import Logo from "../../assets/Logo.png";
 
-// Import mock data directly for mobile view
+// Import mock data for all sections
 import {
-  categories,
-  getSeriesItems,
-  getExploreItems,
-  getSubCategories,
+  categories as productCategories,
+  getSeriesItems as getProductSeriesItems,
+  getExploreItems as getProductExploreItems,
+  getSubCategories as getProductSubCategories,
 } from "../MockData/ProductMockData";
+
+import {
+  categories as desktopCategories,
+  getSeriesItems as getDesktopSeriesItems,
+  getExploreItems as getDesktopExploreItems,
+  getFeatures as getDesktopFeatures,
+} from "../MockData/DesktopMockData";
+
+import {
+  categories as laptopCategories,
+  getSeriesItems as getLaptopSeriesItems,
+  getExploreItems as getLaptopExploreItems,
+  getFeatures as getLaptopFeatures,
+} from "../MockData/LaptopMockData";
 
 // Debounce hook
 const useDebounce = (value, delay) => {
@@ -47,10 +61,10 @@ const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [mobileView, setMobileView] = useState("main");
-  const [activeCategory, setActiveCategory] = useState("Components", "Gaming Desktops", "Gaming Laptops");
-  const [isProduct, serIsProduct] = useState("Components");
-  const [isDesktop, setIsDesktop] = useState("Laptops");
-  const [isLaptop, setIsLaptop] = useState(false);
+  const [activeCategory, setActiveCategory] = useState("Components");
+  const [isProduct, setIsProduct] = useState(true);
+  const [isDesktop, setIsDesktop] = useState(true);
+  const [isLaptop, setIsLaptop] = useState(true);
 
   const [windowSize, setWindowSize] = useState({
     width: typeof window !== "undefined" ? window.innerWidth : 0,
@@ -86,11 +100,11 @@ const Header = () => {
     const isDesktopView = width >= 900;
     const isLaptopView = width >= 900;
 
-    serIsProduct(isProductView);
+    setIsProduct(isProductView);
     setIsDesktop(isDesktopView);
     setIsLaptop(isLaptopView);
 
-    if (!isProductView & !isDesktopView && !isLaptopView) {
+    if (!isProductView && !isDesktopView && !isLaptopView) {
       // Mobile/tablet behavior
       if (["products", "laptop", "desktop"].includes(activeNav)) {
         setMobileView(activeNav);
@@ -163,18 +177,21 @@ const Header = () => {
     if (!isProduct && itemId === "products") {
       setMobileView("products");
       setActiveNav("products");
+      setActiveCategory("Components");
       return;
     }
 
     if (!isDesktop && itemId === "desktop") {
-      setMobileView("desktop ");
+      setMobileView("desktop");
       setActiveNav("desktop");
+      setActiveCategory("Gaming Desktops");
       return;
     }
 
     if (!isLaptop && itemId === "laptop") {
       setMobileView("laptop");
       setActiveNav("laptop");
+            setActiveCategory("Gaming Laptops");
       return;
     }
 
@@ -207,6 +224,41 @@ const Header = () => {
 
   const handleBackToMainMenu = () => setMobileView("main");
 
+  // Helper function to get the correct data based on active section
+  const getCategories = () => {
+    if (mobileView === "products") return productCategories;
+    if (mobileView === "desktop") return desktopCategories;
+    if (mobileView === "laptop") return laptopCategories;
+    return [];
+  };
+
+  const getSeriesItems = () => {
+    if (mobileView === "products") return getProductSeriesItems(activeCategory);
+    if (mobileView === "desktop") return getDesktopSeriesItems(activeCategory);
+    if (mobileView === "laptop") return getLaptopSeriesItems(activeCategory);
+    return [];
+  };
+
+  const getExploreItems = () => {
+    if (mobileView === "products") return getProductExploreItems(activeCategory);
+    if (mobileView === "desktop") return getDesktopExploreItems(activeCategory);
+    if (mobileView === "laptop") return getLaptopExploreItems(activeCategory);
+    return [];
+  };
+
+  const getSubCategories = () => {
+    if (mobileView === "products") return getProductSubCategories(activeCategory);
+    if (mobileView === "desktop") return []; // Desktop doesn't have subcategories in the same way
+    if (mobileView === "laptop") return []; // Laptop doesn't have subcategories in the same way
+    return [];
+  };
+
+  const getFeatures = () => {
+    if (mobileView === "desktop") return getDesktopFeatures(activeCategory);
+    if (mobileView === "laptop") return getLaptopFeatures(activeCategory);
+    return [];
+  };
+
   return (
     <>
       <nav className={styles.nav} ref={menuRef}>
@@ -232,8 +284,8 @@ const Header = () => {
                 </picture>
               </a>
 
-              {/* Mobile breadcrumb for products */}
-              {isMobileMenuOpen && mobileView === "products" && (
+              {/* Mobile breadcrumb for navigation sections */}
+              {isMobileMenuOpen && mobileView !== "main" && (
                 <div className={styles.mobileBreadcrumb}>
                   <button
                     className={styles.backButton}
@@ -242,45 +294,7 @@ const Header = () => {
                     <FaArrowLeft size={16} />
                     <span>Menu</span>
                   </button>
-                  <h3>PRODUCTS</h3>
-                  <button
-                    className={styles.closeButton}
-                    onClick={closeAllMenus}
-                  >
-                    <FaTimes size={20} />
-                  </button>
-                </div>
-              )}
-
-              {isMobileMenuOpen && mobileView === "desktop" && (
-                <div className={styles.mobileBreadcrumb}>
-                  <button
-                    className={styles.backButton}
-                    onClick={handleBackToMainMenu}
-                  >
-                    <FaArrowLeft size={16} />
-                    <span>Menu</span>
-                  </button>
-                  <h3>DESKTOP</h3>
-                  <button
-                    className={styles.closeButton}
-                    onClick={closeAllMenus}
-                  >
-                    <FaTimes size={20} />
-                  </button>
-                </div>
-              )}
-
-              {isMobileMenuOpen && mobileView === "laptop" && (
-                <div className={styles.mobileBreadcrumb}>
-                  <button
-                    className={styles.backButton}
-                    onClick={handleBackToMainMenu}
-                  >
-                    <FaArrowLeft size={16} />
-                    <span>Menu</span>
-                  </button>
-                  <h3>LAPTOP</h3>
+                  <h3>{mobileView.toUpperCase()}</h3>
                   <button
                     className={styles.closeButton}
                     onClick={closeAllMenus}
@@ -328,20 +342,20 @@ const Header = () => {
                     </div>
                   ))}
 
-                {/* Mobile Products Menu Content */}
+                {/* Mobile Navigation Menu Content */}
                 {isMobileMenuOpen && (
                   <>
                     {/* Products */}
                     {mobileView === "products" && (
                       <div
-                        className={`${styles.mobileProductsMenu} ${mobileView === "products" ? styles.slideIn : styles.slideOut
+                        className={`${styles.mobileNavMenu} ${mobileView === "products" ? styles.slideIn : styles.slideOut
                           }`}
                       >
                         {/* Categories */}
                         <div className={styles.mobileCategorySection}>
                           <h4>CATEGORIES</h4>
                           <ul>
-                            {categories.map((category) => (
+                            {getCategories().map((category) => (
                               <li
                                 key={category}
                                 className={
@@ -359,11 +373,11 @@ const Header = () => {
                         </div>
 
                         {/* Subcategories */}
-                        {activeCategory && (
+                        {activeCategory && getSubCategories().length > 0 && (
                           <div className={styles.mobileSubcategorySection}>
                             <h4>{activeCategory.toUpperCase()}</h4>
                             <ul>
-                              {getSubCategories(activeCategory).map((item) => (
+                              {getSubCategories().map((item) => (
                                 <li key={item.name}>
                                   <a
                                     href={item.path}
@@ -381,7 +395,7 @@ const Header = () => {
                         <div className={styles.mobileSeriesSection}>
                           <h4>SERIES</h4>
                           <ul>
-                            {getSeriesItems(activeCategory).map((item) => (
+                            {getSeriesItems().map((item) => (
                               <li key={item.name}>
                                 <a
                                   href={item.path}
@@ -398,7 +412,89 @@ const Header = () => {
                         <div className={styles.mobileExploreSection}>
                           <h4>EXPLORE</h4>
                           <ul>
-                            {getExploreItems(activeCategory).map((item) => (
+                            {getExploreItems().map((item) => (
+                              <li key={item.name}>
+                                <a
+                                  href={item.path}
+                                  onClick={(e) => handleNavigation(item.path, e)}
+                                >
+                                  {item.name}
+                                </a>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      </div>
+                    )}
+
+                    {/* Desktop */}
+                    {mobileView === "desktop" && (
+                      <div
+                        className={`${styles.mobileNavMenu} ${mobileView === "desktop" ? styles.slideIn : styles.slideOut
+                          }`}
+                      >
+                        {/* Categories */}
+                        <div className={styles.mobileCategorySection}>
+                          <h4>CATEGORIES</h4>
+                          <ul>
+                            {getCategories().map((category) => (
+                              <li
+                                key={category}
+                                className={
+                                  activeCategory === category ? styles.active : ""
+                                }
+                                onClick={() => setActiveCategory(category)}
+                              >
+                                {category}
+                                {activeCategory === category && (
+                                  <span className={styles.arrow}>▼</span>
+                                )}
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+
+                        {/* Features (Desktop specific) */}
+                        {activeCategory && getFeatures().length > 0 && (
+                          <div className={styles.mobileFeaturesSection}>
+                            <h4>KEY FEATURES</h4>
+                            <ul>
+                              {getFeatures().map((item) => (
+                                <li key={item.name}>
+                                  <a
+                                    href={item.path}
+                                    onClick={(e) => handleNavigation(item.path, e)}
+                                  >
+                                    ✓ {item.name}
+                                  </a>
+                                </li>
+                              ))}
+                            </ul>
+                          </div>
+                        )}
+
+                        {/* Series */}
+                        <div className={styles.mobileSeriesSection}>
+                          <h4>POPULAR SERIES</h4>
+                          <ul>
+                            {getSeriesItems().map((item) => (
+                              <li key={item.name}>
+                                <a
+                                  href={item.path}
+                                  onClick={(e) => handleNavigation(item.path, e)}
+                                >
+                                  {item.name}
+                                </a>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+
+                        {/* Explore */}
+                        <div className={styles.mobileExploreSection}>
+                          <h4>EXPLORE</h4>
+                          <ul>
+                            {getExploreItems().map((item) => (
                               <li key={item.name}>
                                 <a
                                   href={item.path}
@@ -416,14 +512,14 @@ const Header = () => {
                     {/* Laptop */}
                     {mobileView === "laptop" && (
                       <div
-                        className={`${styles.mobileLaptopMenu} ${mobileView === "laptop" ? styles.slideIn : styles.slideOut
+                        className={`${styles.mobileNavMenu} ${mobileView === "laptop" ? styles.slideIn : styles.slideOut
                           }`}
                       >
                         {/* Categories */}
                         <div className={styles.mobileCategorySection}>
                           <h4>CATEGORIES</h4>
                           <ul>
-                            {categories.map((category) => (
+                            {getCategories().map((category) => (
                               <li
                                 key={category}
                                 className={
@@ -440,18 +536,18 @@ const Header = () => {
                           </ul>
                         </div>
 
-                        {/* Subcategories */}
-                        {activeCategory && (
-                          <div className={styles.mobileSubcategorySection}>
-                            <h4>{activeCategory.toUpperCase()}</h4>
+                        {/* Features (Laptop specific) */}
+                        {activeCategory && getFeatures().length > 0 && (
+                          <div className={styles.mobileFeaturesSection}>
+                            <h4>KEY FEATURES</h4>
                             <ul>
-                              {getSubCategories(activeCategory).map((item) => (
+                              {getFeatures().map((item) => (
                                 <li key={item.name}>
                                   <a
                                     href={item.path}
                                     onClick={(e) => handleNavigation(item.path, e)}
                                   >
-                                    {item.name}
+                                    ✓ {item.name}
                                   </a>
                                 </li>
                               ))}
@@ -461,9 +557,9 @@ const Header = () => {
 
                         {/* Series */}
                         <div className={styles.mobileSeriesSection}>
-                          <h4>SERIES</h4>
+                          <h4>POPULAR SERIES</h4>
                           <ul>
-                            {getSeriesItems(activeCategory).map((item) => (
+                            {getSeriesItems().map((item) => (
                               <li key={item.name}>
                                 <a
                                   href={item.path}
@@ -475,95 +571,13 @@ const Header = () => {
                             ))}
                           </ul>
                         </div>
+
 
                         {/* Explore */}
                         <div className={styles.mobileExploreSection}>
                           <h4>EXPLORE</h4>
                           <ul>
-                            {getExploreItems(activeCategory).map((item) => (
-                              <li key={item.name}>
-                                <a
-                                  href={item.path}
-                                  onClick={(e) => handleNavigation(item.path, e)}
-                                >
-                                  {item.name}
-                                </a>
-                              </li>
-                            ))}
-                          </ul>
-                        </div>
-
-                      </div>
-                    )}
-
-                    {/* Desktop */}
-                    {mobileView === "desktop" && (
-                      <div
-                        className={`${styles.mobileDesktopMenu} ${mobileView === "desktop" ? styles.slideIn : styles.slideOut
-                          }`}
-                      >
-                        {/* Categories */}
-                        <div className={styles.mobileCategorySection}>
-                          <h4>CATEGORIES</h4>
-                          <ul>
-                            {categories.map((category) => (
-                              <li
-                                key={category}
-                                className={
-                                  activeCategory === category ? styles.active : ""
-                                }
-                                onClick={() => setActiveCategory(category)}
-                              >
-                                {category}
-                                {activeCategory === category && (
-                                  <span className={styles.arrow}>▼</span>
-                                )}
-                              </li>
-                            ))}
-                          </ul>
-                        </div>
-
-                        {/* Subcategories */}
-                        {activeCategory && (
-                          <div className={styles.mobileSubcategorySection}>
-                            <h4>{activeCategory.toUpperCase()}</h4>
-                            <ul>
-                              {getSubCategories(activeCategory).map((item) => (
-                                <li key={item.name}>
-                                  <a
-                                    href={item.path}
-                                    onClick={(e) => handleNavigation(item.path, e)}
-                                  >
-                                    {item.name}
-                                  </a>
-                                </li>
-                              ))}
-                            </ul>
-                          </div>
-                        )}
-
-                                                {/* Series */}
-                        <div className={styles.mobileSeriesSection}>
-                          <h4>SERIES</h4>
-                          <ul>
-                            {getSeriesItems(activeCategory).map((item) => (
-                              <li key={item.name}>
-                                <a
-                                  href={item.path}
-                                  onClick={(e) => handleNavigation(item.path, e)}
-                                >
-                                  {item.name}
-                                </a>
-                              </li>
-                            ))}
-                          </ul>
-                        </div>
-
-                                                {/* Explore */}
-                        <div className={styles.mobileExploreSection}>
-                          <h4>EXPLORE</h4>
-                          <ul>
-                            {getExploreItems(activeCategory).map((item) => (
+                            {getExploreItems().map((item) => (
                               <li key={item.name}>
                                 <a
                                   href={item.path}

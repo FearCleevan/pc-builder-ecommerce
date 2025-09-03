@@ -1,3 +1,4 @@
+/* client/src/components/Header/Header.module.css */
 .nav {
   background-color: #fff;
   color: #000;
@@ -304,23 +305,23 @@
   padding: 5px;
 }
 
-/* Mobile Products Menu */
-.mobileProductsMenu {
+/* Mobile Navigation Menu */
+.mobileNavMenu {
   width: 100%;
   transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
-.mobileProductsMenu.slideIn {
+.mobileNavMenu.slideIn {
   transform: translateX(0);
   opacity: 1;
 }
 
-.mobileProductsMenu.slideOut {
+.mobileNavMenu.slideOut {
   transform: translateX(-100%);
   opacity: 0;
 }
 
-.mobileProductsMenu h4 {
+.mobileNavMenu h4 {
   font-size: 16px;
   font-weight: 600;
   margin: 20px 0 10px 0;
@@ -328,13 +329,13 @@
   text-transform: uppercase;
 }
 
-.mobileProductsMenu ul {
+.mobileNavMenu ul {
   list-style: none;
   padding: 0;
   margin: 0;
 }
 
-.mobileProductsMenu li {
+.mobileNavMenu li {
   padding: 12px 0;
   border-bottom: 1px solid #eee;
   display: flex;
@@ -345,12 +346,12 @@
   /* Apple's recommended minimum touch target */
 }
 
-.mobileProductsMenu li.active {
+.mobileNavMenu li.active {
   color: #ff2c2c;
   font-weight: 600;
 }
 
-.mobileProductsMenu li a {
+.mobileNavMenu li a {
   color: inherit;
   text-decoration: none;
   display: block;
@@ -398,7 +399,6 @@
     z-index: 5;
     overflow-y: auto;
   }
-
 
   .menuOpen {
     left: 0;
