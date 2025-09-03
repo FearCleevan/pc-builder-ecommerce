@@ -1,0 +1,169 @@
+/* client/src/components/Main/MainSixthContainer.module.css */
+.featured {
+  padding: 80px 5%;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+}
+
+.sectionHeader {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.sectionHeader h2 {
+  font-size: 2.5rem;
+  color: #333;
+}
+
+.viewAll {
+  color: #ff2c2c;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  padding: 8px 16px;
+  border-radius: 20px;
+  border: 1px solid transparent;
+}
+
+.viewAll:hover {
+  text-decoration: none;
+  background-color: #fff5f5;
+  border-color: #ff2c2c;
+}
+
+.featuredGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.featuredCard {
+  background: white;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.featuredCard:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+.featuredImage {
+  position: relative;
+  height: 200px;
+  overflow: hidden;
+}
+
+.featuredImage img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.featuredCard:hover .featuredImage img {
+  transform: scale(1.05);
+}
+
+.featuredOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.7) 100%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.featuredCard:hover .featuredOverlay {
+  opacity: 1;
+}
+
+.featuredContent {
+  padding: 25px;
+  text-align: center;
+}
+
+.featuredContent h3 {
+  font-size: 1.4rem;
+  color: #333;
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+
+.featuredContent p {
+  color: #666;
+  margin-bottom: 20px;
+  line-height: 1.5;
+}
+
+.featuredButton {
+  display: inline-block;
+  padding: 12px 25px;
+  background: #ff2c2c;
+  color: white;
+  text-decoration: none;
+  border-radius: 25px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.featuredButton:hover {
+  background: #e60000;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(255, 44, 44, 0.3);
+}
+
+/* Responsive Design */
+@media (max-width: 1199px) {
+  .featuredGrid {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+  }
+}
+
+@media (max-width: 768px) {
+  .featuredGrid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .featuredCard {
+    max-width: 400px;
+    margin: 0 auto;
+  }
+  
+  .sectionHeader h2 {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .featured {
+    padding: 60px 5%;
+  }
+  
+  .sectionHeader h2 {
+    font-size: 1.8rem;
+  }
+  
+  .featuredContent h3 {
+    font-size: 1.2rem;
+  }
+  
+  .featuredContent p {
+    font-size: 0.9rem;
+  }
+  
+  .featuredButton {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+  }
+}
