@@ -136,7 +136,7 @@ const Header = () => {
     };
 
     const handleScroll = () => {
-      if (activeNav) {
+      if (activeNav && window.innerWidth >= 900) {
         setActiveNav(null);
         setIsMobileMenuOpen(false);
         setMobileView("main");
