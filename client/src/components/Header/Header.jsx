@@ -47,9 +47,9 @@ const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [mobileView, setMobileView] = useState("main");
-  const [activeCategory, setActiveCategory] = useState("Components");
+  const [activeCategory, setActiveCategory] = useState("Components", "Gaming Desktops", "Gaming Laptops");
   const [isProduct, serIsProduct] = useState("Components");
-  const [isDesktop, setIsDesktop] = useState(false);
+  const [isDesktop, setIsDesktop] = useState("Laptops");
   const [isLaptop, setIsLaptop] = useState(false);
 
   const [windowSize, setWindowSize] = useState({
@@ -243,6 +243,44 @@ const Header = () => {
                     <span>Menu</span>
                   </button>
                   <h3>PRODUCTS</h3>
+                  <button
+                    className={styles.closeButton}
+                    onClick={closeAllMenus}
+                  >
+                    <FaTimes size={20} />
+                  </button>
+                </div>
+              )}
+
+              {isMobileMenuOpen && mobileView === "desktop" && (
+                <div className={styles.mobileBreadcrumb}>
+                  <button
+                    className={styles.backButton}
+                    onClick={handleBackToMainMenu}
+                  >
+                    <FaArrowLeft size={16} />
+                    <span>Menu</span>
+                  </button>
+                  <h3>DESKTOP</h3>
+                  <button
+                    className={styles.closeButton}
+                    onClick={closeAllMenus}
+                  >
+                    <FaTimes size={20} />
+                  </button>
+                </div>
+              )}
+
+              {isMobileMenuOpen && mobileView === "laptop" && (
+                <div className={styles.mobileBreadcrumb}>
+                  <button
+                    className={styles.backButton}
+                    onClick={handleBackToMainMenu}
+                  >
+                    <FaArrowLeft size={16} />
+                    <span>Menu</span>
+                  </button>
+                  <h3>LAPTOP</h3>
                   <button
                     className={styles.closeButton}
                     onClick={closeAllMenus}

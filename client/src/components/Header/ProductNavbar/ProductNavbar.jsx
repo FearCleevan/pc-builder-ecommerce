@@ -1,3 +1,4 @@
+//client/src/components/Header/ProductNavbar/ProductNavbar.jsx
 import React, { useState, useEffect, forwardRef } from "react";
 import styles from "./ProductNavbar.module.css";
 

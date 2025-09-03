@@ -1,7 +1,8 @@
 // client/src/components/Header/DesktopNavbar/DesktopNavbar.jsx
-import React, { useState, forwardRef } from "react";
+import React, { useState, useEffect, forwardRef } from "react";
 import styles from "./DesktopNavbar.module.css";
 
+// Import mock data
 import {
   categories,
   getSeriesItems,
@@ -10,12 +11,10 @@ import {
   getPromoContent
 } from "../../MockData/DesktopMockData";
 
-const DesktopNavbar = forwardRef(({ isOpen, onClose }, ref) => {
-  const [activeCategory, setActiveCategory] = useState("Gaming Desktops");
-
-  // Handle navigation (placeholder for now)
+// Custom hook for navigation
+const useNavigation = () => {
   const handleNavigation = (path, e) => {
-    e.preventDefault();
+    if (e) e.preventDefault();
     console.log("Would navigate to:", path);
     // In a real implementation, you would use:
     // navigate(path); // from react-router-dom
@@ -23,6 +22,35 @@ const DesktopNavbar = forwardRef(({ isOpen, onClose }, ref) => {
     // window.location.href = path;
   };
 
+  return { handleNavigation };
+};
+
+const DesktopNavbar = forwardRef(({ isOpen, onClose, mobileView, isMobileMenuOpen }, ref) => {
+  const [activeCategory, setActiveCategory] = useState("Gaming Desktops");
+  const [isLaptop, setIsLaptop] = useState(true);
+  const { handleNavigation } = useNavigation();
+
+  useEffect(() => {
+    const checkScreenSize = () => {
+      setIsLaptop(window.innerWidth > 991);
+    };
+
+    // Initial check
+    checkScreenSize();
+
+    // Add event listener
+    window.addEventListener('resize', checkScreenSize);
+
+    // Clean up
+    return () => window.removeEventListener('resize', checkScreenSize);
+  }, []);
+
+  // Don't show this navbar on mobile devices
+  if (!isLaptop) {
+    return null;
+  }
+
+  // Prevent clicks inside the navbar from closing it
   const handleNavbarClick = (e) => {
     e.stopPropagation();
   };
@@ -30,7 +58,7 @@ const DesktopNavbar = forwardRef(({ isOpen, onClose }, ref) => {
   const promoContent = getPromoContent(activeCategory);
 
   return (
-    <div 
+    <div
       className={`${styles.desktopNavbar} ${isOpen ? styles.open : ""}`}
       onClick={handleNavbarClick}
       ref={ref}
@@ -41,7 +69,7 @@ const DesktopNavbar = forwardRef(({ isOpen, onClose }, ref) => {
           <h3>DESKTOP CATEGORIES</h3>
           <ul>
             {categories.map(category => (
-              <li 
+              <li
                 key={category}
                 className={activeCategory === category ? styles.active : ""}
                 onClick={() => setActiveCategory(category)}
@@ -59,8 +87,8 @@ const DesktopNavbar = forwardRef(({ isOpen, onClose }, ref) => {
           <ul>
             {getSeriesItems(activeCategory).map(item => (
               <li key={item.name}>
-                <a 
-                  href={item.path} 
+                <a
+                  href={item.path}
                   onClick={(e) => handleNavigation(item.path, e)}
                   className={styles.seriesLink}
                 >
@@ -77,8 +105,8 @@ const DesktopNavbar = forwardRef(({ isOpen, onClose }, ref) => {
           <ul>
             {getFeatures(activeCategory).map(item => (
               <li key={item.name}>
-                <a 
-                  href={item.path} 
+                <a
+                  href={item.path}
                   onClick={(e) => handleNavigation(item.path, e)}
                   className={styles.featureLink}
                 >
@@ -95,8 +123,8 @@ const DesktopNavbar = forwardRef(({ isOpen, onClose }, ref) => {
           <ul>
             {getExploreItems(activeCategory).map(item => (
               <li key={item.name}>
-                <a 
-                  href={item.path} 
+                <a
+                  href={item.path}
                   onClick={(e) => handleNavigation(item.path, e)}
                   className={styles.exploreLink}
                 >
@@ -116,8 +144,8 @@ const DesktopNavbar = forwardRef(({ isOpen, onClose }, ref) => {
           />
           <h3>{promoContent.title}</h3>
           <p>{promoContent.description}</p>
-          <a 
-            href={promoContent.buttonPath} 
+          <a
+            href={promoContent.buttonPath}
             onClick={(e) => handleNavigation(promoContent.buttonPath, e)}
             className={styles.ctaButton}
           >
