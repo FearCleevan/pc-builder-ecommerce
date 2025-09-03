@@ -73,7 +73,7 @@
   width: 0;
   height: 2px;
   bottom: 0;
-  left: 50%;
+  left: 40%;
   background-color: #ff2c2c;
   transition: all 0.3s ease;
   transform: translateX(-50%);
@@ -277,7 +277,6 @@
   align-items: center;
   justify-content: space-between;
   border-bottom: 1px solid #333;
-  margin-bottom: 15px;
 }
 
 .backButton {
@@ -324,7 +323,7 @@
 .mobileNavMenu h4 {
   font-size: 16px;
   font-weight: 600;
-  margin: 20px 0 10px 0;
+  margin: 10px 0 10px 0;
   color: #333;
   text-transform: uppercase;
 }
@@ -336,13 +335,14 @@
 }
 
 .mobileNavMenu li {
-  padding: 12px 0;
+  padding: 5px 0;
   border-bottom: 1px solid #eee;
   display: flex;
   justify-content: space-between;
   align-items: center;
   cursor: pointer;
   min-height: 44px;
+  font-size: 14px;
   /* Apple's recommended minimum touch target */
 }
 
@@ -356,6 +356,10 @@
   text-decoration: none;
   display: block;
   width: 100%;
+}
+
+.featureList {
+  color: #28a745;
 }
 
 .arrow {
@@ -421,7 +425,7 @@
     display: block;
     width: 100%;
     text-align: left;
-    padding: 15px 0;
+    /* padding: 15px 0; */
     color: #000;
     justify-content: space-between;
     font-size: 16px;

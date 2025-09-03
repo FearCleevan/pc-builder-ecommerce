@@ -458,7 +458,7 @@ const Header = () => {
                         {activeCategory && getFeatures().length > 0 && (
                           <div className={styles.mobileFeaturesSection}>
                             <h4>KEY FEATURES</h4>
-                            <ul>
+                            <ul className={styles.featureList}>
                               {getFeatures().map((item) => (
                                 <li key={item.name}>
                                   <a
@@ -540,7 +540,7 @@ const Header = () => {
                         {activeCategory && getFeatures().length > 0 && (
                           <div className={styles.mobileFeaturesSection}>
                             <h4>KEY FEATURES</h4>
-                            <ul>
+                            <ul className={styles.featureList}>
                               {getFeatures().map((item) => (
                                 <li key={item.name}>
                                   <a
