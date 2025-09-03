@@ -10,6 +10,15 @@ import Banner2 from '../../assets/banner2.jpeg';
 import Banner3 from '../../assets/banner3.jpeg';
 import Banner4 from '../../assets/banner4.jpeg';
 
+// Import product images
+import GamingDesktop from '../../assets/Products1.png';
+import GamingLaptop from '../../assets/Products1.png';
+import GraphicsCard from '../../assets/Products1.png';
+import Keyboard from '../../assets/Products1.png';
+import Mouse from '../../assets/Products1.png';
+import Headset from '../../assets/Products1.png';
+import Monitor from '../../assets/Products1.png';
+
 // Import mock data
 import {
   banners as mockBanners,
@@ -21,10 +30,12 @@ import {
 } from '../MockData/MockData';
 
 // Import icons
-import { FaShoppingCart, FaHeart, FaStar, FaRegStar, FaBalanceScale } from 'react-icons/fa';
+import { FaShoppingCart, FaHeart, FaStar, FaRegStar, FaBalanceScale, FaCog, FaMagic, FaRobot } from 'react-icons/fa';
 
 const Main = () => {
   const [currentBanner, setCurrentBanner] = useState(0);
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
+  const [isTablet, setIsTablet] = useState(window.innerWidth >= 768 && window.innerWidth < 1024);
   const exploreRef = useRef(null);
   const desktopRef = useRef(null);
   const laptopRef = useRef(null);
@@ -38,6 +49,18 @@ const Main = () => {
       image: bannerImages[index] || Banner1
     };
   });
+
+  // Check screen size
+  useEffect(() => {
+    const handleResize = () => {
+      const width = window.innerWidth;
+      setIsMobile(width < 768);
+      setIsTablet(width >= 768 && width < 1024);
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   // Auto-rotate banners
   useEffect(() => {
@@ -53,7 +76,7 @@ const Main = () => {
   // Carousel Scroll Functions
   const scroll = (ref, direction) => {
     if (ref.current) {
-      const cardWidth = ref.current.querySelector('.card').offsetWidth + 20; // width + gap
+      const cardWidth = ref.current.querySelector('.card').offsetWidth + (isMobile ? 10 : 20); // width + gap
       ref.current.scrollBy({
         left: direction === "left" ? -cardWidth : cardWidth,
         behavior: "smooth",
@@ -126,6 +149,31 @@ const Main = () => {
     return stars;
   };
 
+  // Featured products data
+  const featuredProducts = [
+    {
+      id: 1,
+      name: "Gaming Laptops",
+      description: "Powerful laptops for gaming on the go",
+      image: GamingLaptop,
+      link: "/gaming-laptops"
+    },
+    {
+      id: 2,
+      name: "Graphics Cards",
+      description: "Latest GPUs for ultimate performance",
+      image: GraphicsCard,
+      link: "/graphics-cards"
+    },
+    {
+      id: 3,
+      name: "Gaming Peripherals",
+      description: "Keyboards, mice, and headsets",
+      image: Keyboard,
+      link: "/gaming-peripherals"
+    }
+  ];
+
   return (
     <>
       <Header />
@@ -178,9 +226,11 @@ const Main = () => {
         <section className={styles.exploreProducts}>
           <h2>Explore Products</h2>
           <div className={styles.carouselWrapper}>
-            <button className={`${styles.carouselArrow} ${styles.left}`} onClick={() => scroll(exploreRef, "left")}>
-              &#8249;
-            </button>
+            {!isMobile && (
+              <button className={`${styles.carouselArrow} ${styles.left}`} onClick={() => scroll(exploreRef, "left")}>
+                &#8249;
+              </button>
+            )}
             <div className={styles.carousel} ref={exploreRef}>
               {exploreProducts.map((product, index) => (
                 <div key={index} className={`${styles.exploreCard} card`}>
@@ -189,9 +239,11 @@ const Main = () => {
                 </div>
               ))}
             </div>
-            <button className={`${styles.carouselArrow} ${styles.right}`} onClick={() => scroll(exploreRef, "right")}>
-              &#8250;
-            </button>
+            {!isMobile && (
+              <button className={`${styles.carouselArrow} ${styles.right}`} onClick={() => scroll(exploreRef, "right")}>
+                &#8250;
+              </button>
+            )}
           </div>
         </section>
 
@@ -202,9 +254,11 @@ const Main = () => {
             <a href="#" className={styles.viewAll}>View All</a>
           </div>
           <div className={styles.carouselWrapper}>
-            <button className={`${styles.carouselArrow} ${styles.left}`} onClick={() => scroll(desktopRef, "left")}>
-              &#8249;
-            </button>
+            {!isMobile && (
+              <button className={`${styles.carouselArrow} ${styles.left}`} onClick={() => scroll(desktopRef, "left")}>
+                &#8249;
+              </button>
+            )}
             <div className={styles.productCarousel} ref={desktopRef}>
               {desktopProducts.map((product) => (
                 <div key={product.id} className={`${styles.productCard} card`}>
@@ -216,8 +270,14 @@ const Main = () => {
                       </span>
                     )}
                     <div className={styles.productActions}>
-                      <button className={styles.wishlistBtn}><FaHeart /></button>
-                      <button className={styles.compareBtn}><FaBalanceScale /></button>
+                      <button className={styles.wishlistBtn} aria-label="Add to Wishlist">
+                        <FaHeart />
+                        <span className={styles.tooltip}>Add to Wishlist</span>
+                      </button>
+                      <button className={styles.compareBtn} aria-label="Compare Product">
+                        <FaBalanceScale />
+                        <span className={styles.tooltip}>Compare</span>
+                      </button>
                     </div>
                   </div>
                   <div className={styles.productInfo}>
@@ -243,17 +303,15 @@ const Main = () => {
                         <span>Add to Cart</span>
                       </button>
                     </div>
-                    <div className={styles.hoverActions}>
-                      <button className={styles.hoverBtn}><FaBalanceScale /> Compare</button>
-                      <button className={styles.hoverBtn}><FaHeart /> Wishlist</button>
-                    </div>
                   </div>
                 </div>
               ))}
             </div>
-            <button className={`${styles.carouselArrow} ${styles.right}`} onClick={() => scroll(desktopRef, "right")}>
-              &#8250;
-            </button>
+            {!isMobile && (
+              <button className={`${styles.carouselArrow} ${styles.right}`} onClick={() => scroll(desktopRef, "right")}>
+                &#8250;
+              </button>
+            )}
           </div>
         </section>
 
@@ -264,9 +322,11 @@ const Main = () => {
             <a href="#" className={styles.viewAll}>View All</a>
           </div>
           <div className={styles.carouselWrapper}>
-            <button className={`${styles.carouselArrow} ${styles.left}`} onClick={() => scroll(laptopRef, "left")}>
-              &#8249;
-            </button>
+            {!isMobile && (
+              <button className={`${styles.carouselArrow} ${styles.left}`} onClick={() => scroll(laptopRef, "left")}>
+                &#8249;
+              </button>
+            )}
             <div className={styles.productCarousel} ref={laptopRef}>
               {laptopProducts.map((product) => (
                 <div key={product.id} className={`${styles.productCard} card`}>
@@ -278,8 +338,14 @@ const Main = () => {
                       </span>
                     )}
                     <div className={styles.productActions}>
-                      <button className={styles.wishlistBtn}><FaHeart /></button>
-                      <button className={styles.compareBtn}><FaBalanceScale /></button>
+                      <button className={styles.wishlistBtn} aria-label="Add to Wishlist">
+                        <FaHeart />
+                        <span className={styles.tooltip}>Add to Wishlist</span>
+                      </button>
+                      <button className={styles.compareBtn} aria-label="Compare Product">
+                        <FaBalanceScale />
+                        <span className={styles.tooltip}>Compare</span>
+                      </button>
                     </div>
                   </div>
                   <div className={styles.productInfo}>
@@ -305,17 +371,15 @@ const Main = () => {
                         <span>Add to Cart</span>
                       </button>
                     </div>
-                    <div className={styles.hoverActions}>
-                      <button className={styles.hoverBtn}><FaBalanceScale /> Compare</button>
-                      <button className={styles.hoverBtn}><FaHeart /> Wishlist</button>
-                    </div>
                   </div>
                 </div>
               ))}
             </div>
-            <button className={`${styles.carouselArrow} ${styles.right}`} onClick={() => scroll(laptopRef, "right")}>
-              &#8250;
-            </button>
+            {!isMobile && (
+              <button className={`${styles.carouselArrow} ${styles.right}`} onClick={() => scroll(laptopRef, "right")}>
+                &#8250;
+              </button>
+            )}
           </div>
         </section>
 
@@ -326,9 +390,11 @@ const Main = () => {
             <a href="#" className={styles.viewAll}>View All</a>
           </div>
           <div className={styles.carouselWrapper}>
-            <button className={`${styles.carouselArrow} ${styles.left}`} onClick={() => scroll(productsRef, "left")}>
-              &#8249;
-            </button>
+            {!isMobile && (
+              <button className={`${styles.carouselArrow} ${styles.left}`} onClick={() => scroll(productsRef, "left")}>
+                &#8249;
+              </button>
+            )}
             <div className={styles.productCarousel} ref={productsRef}>
               {otherProducts.map((product) => (
                 <div key={product.id} className={`${styles.productCard} card`}>
@@ -340,8 +406,14 @@ const Main = () => {
                       </span>
                     )}
                     <div className={styles.productActions}>
-                      <button className={styles.wishlistBtn}><FaHeart /></button>
-                      <button className={styles.compareBtn}><FaBalanceScale /></button>
+                      <button className={styles.wishlistBtn} aria-label="Add to Wishlist">
+                        <FaHeart />
+                        <span className={styles.tooltip}>Add to Wishlist</span>
+                      </button>
+                      <button className={styles.compareBtn} aria-label="Compare Product">
+                        <FaBalanceScale />
+                        <span className={styles.tooltip}>Compare</span>
+                      </button>
                     </div>
                   </div>
                   <div className={styles.productInfo}>
@@ -367,60 +439,79 @@ const Main = () => {
                         <span>Add to Cart</span>
                       </button>
                     </div>
-                    <div className={styles.hoverActions}>
-                      <button className={styles.hoverBtn}><FaBalanceScale /> Compare</button>
-                      <button className={styles.hoverBtn}><FaHeart /> Wishlist</button>
-                    </div>
                   </div>
                 </div>
               ))}
             </div>
-            <button className={`${styles.carouselArrow} ${styles.right}`} onClick={() => scroll(productsRef, "right")}>
-              &#8250;
-            </button>
+            {!isMobile && (
+              <button className={`${styles.carouselArrow} ${styles.right}`} onClick={() => scroll(productsRef, "right")}>
+                &#8250;
+              </button>
+            )}
           </div>
         </section>
 
         {/* Featured Products */}
         <section className={styles.featured}>
-          <h2>Featured Products</h2>
-          <div className={styles.productGrid}>
-            <div className={styles.productCard}>
-              <div className={styles.productImage}></div>
-              <h3>Gaming Laptops</h3>
-              <p>Powerful laptops for gaming on the go</p>
-              <button>Shop Now</button>
-            </div>
-            <div className={styles.productCard}>
-              <div className={styles.productImage}></div>
-              <h3>Graphics Cards</h3>
-              <p>Latest GPUs for ultimate performance</p>
-              <button>Shop Now</button>
-            </div>
-            <div className={styles.productCard}>
-              <div className={styles.productImage}></div>
-              <h3>Gaming Peripherals</h3>
-              <p>Keyboards, mice, and headsets</p>
-              <button>Shop Now</button>
-            </div>
+          <div className={styles.sectionHeader}>
+            <h2>Featured Products</h2>
+            <a href="#" className={styles.viewAll}>View All</a>
+          </div>
+          <div className={styles.featuredGrid}>
+            {featuredProducts.map((product) => (
+              <div key={product.id} className={styles.featuredCard}>
+                <div className={styles.featuredImage}>
+                  <img src={product.image} alt={product.name} />
+                  <div className={styles.featuredOverlay}></div>
+                </div>
+                <div className={styles.featuredContent}>
+                  <h3>{product.name}</h3>
+                  <p>{product.description}</p>
+                  <a href={product.link} className={styles.featuredButton}>
+                    Shop Now
+                  </a>
+                </div>
+              </div>
+            ))}
           </div>
         </section>
 
-        {/* PC Builder CTA */}
+        {/* AI-Powered PC Builder */}
         <section className={styles.builderCta}>
           <div className={styles.builderContent}>
-            <h2>AI-Powered PC Builder</h2>
+            <div className={styles.builderHeader}>
+              <FaRobot className={styles.builderIcon} />
+              <h2>AI-Powered PC Builder</h2>
+            </div>
             <p>Our intelligent system will help you build the perfect PC based on your budget and needs</p>
-            <ul>
-              <li>Budget-based recommendations</li>
-              <li>Compatibility checking</li>
-              <li>Performance optimization</li>
+            <ul className={styles.builderFeatures}>
+              <li>
+                <FaCog className={styles.featureIcon} />
+                <span>Budget-based recommendations</span>
+              </li>
+              <li>
+                <FaBalanceScale className={styles.featureIcon} />
+                <span>Compatibility checking</span>
+              </li>
+              <li>
+                <FaMagic className={styles.featureIcon} />
+                <span>Performance optimization</span>
+              </li>
             </ul>
-            <button className={styles.ctaButton}>Try PC Builder AI</button>
+            <button className={styles.ctaButton}>
+              <FaRobot />
+              <span>Try PC Builder AI</span>
+            </button>
           </div>
           <div className={styles.builderVisual}>
-            <div className={styles.placeholderBuilder}>
-              <span>PC Builder Interface Preview</span>
+            <div className={styles.builderAnimation}>
+              <div className={styles.cpuChip}></div>
+              <div className={styles.gpuCard}></div>
+              <div className={styles.ramStick}></div>
+              <div className={styles.aiOrb}>
+                <div className={styles.pulse}></div>
+                <FaRobot className={styles.aiIcon} />
+              </div>
             </div>
           </div>
         </section>
