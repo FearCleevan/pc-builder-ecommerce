@@ -1,4 +1,4 @@
-import React, { useState, forwardRef } from "react";
+import React, { useState, useEffect, forwardRef } from "react";
 import styles from "./ProductNavbar.module.css";
 
 // Import mock data
@@ -10,27 +10,48 @@ import {
   getPromoContent
 } from "../../MockData/ProductMockData";
 
+// Custom hook for navigation
+const useNavigation = () => {
+  const handleNavigation = (path, e) => {
+    if (e) e.preventDefault();
+    console.log("Would navigate to:", path);
+    // In a real implementation, you would use:
+    // navigate(path); // from react-router-dom
+    // or
+    // window.location.href = path;
+  };
+  
+  return { handleNavigation };
+};
+
 const ProductNavbar = forwardRef(({ isOpen, onClose, mobileView, isMobileMenuOpen }, ref) => {
   const [activeCategory, setActiveCategory] = useState("Components");
+  const [isDesktop, setIsDesktop] = useState(true);
+  const { handleNavigation } = useNavigation();
+
+  useEffect(() => {
+    const checkScreenSize = () => {
+      setIsDesktop(window.innerWidth > 991);
+    };
+    
+    // Initial check
+    checkScreenSize();
+    
+    // Add event listener
+    window.addEventListener('resize', checkScreenSize);
+    
+    // Clean up
+    return () => window.removeEventListener('resize', checkScreenSize);
+  }, []);
 
   // Don't show this navbar on mobile devices
-  if (window.innerWidth <= 991) {
+  if (!isDesktop) {
     return null;
   }
 
   // Prevent clicks inside the navbar from closing it
   const handleNavbarClick = (e) => {
     e.stopPropagation();
-  };
-
-  // Handle navigation (placeholder for now)
-  const handleNavigation = (path, e) => {
-    e.preventDefault();
-    console.log("Would navigate to:", path);
-    // In a real implementation, you would use:
-    // navigate(path); // from react-router-dom
-    // or
-    // window.location.href = path;
   };
 
   const promoContent = getPromoContent(activeCategory);

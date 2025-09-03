@@ -1,10 +1,18 @@
+// client/src/components/Header/Header.jsx
 import React, { useState, useRef, useEffect, useCallback } from "react";
-import { FaUser, FaShoppingCart, FaSearch, FaTruck, FaTimes, FaBars, FaChevronDown, FaChevronUp, FaArrowLeft } from "react-icons/fa";
+import {
+  FaUser,
+  FaShoppingCart,
+  FaSearch,
+  FaTruck,
+  FaTimes,
+  FaBars,
+  FaArrowLeft,
+} from "react-icons/fa";
 import styles from "./Header.module.css";
 import ProductNavbar from "./ProductNavbar/ProductNavbar";
 import DesktopNavbar from "./DesktopNavbar/DesktopNavbar";
 import LaptopNavbar from "./LaptopNavbar/LaptopNavbar";
-
 import Logo from "../../assets/Logo.png";
 
 // Import mock data directly for mobile view
@@ -15,12 +23,39 @@ import {
   getSubCategories,
 } from "../MockData/ProductMockData";
 
+// Debounce hook
+const useDebounce = (value, delay) => {
+  const [debouncedValue, setDebouncedValue] = useState(value);
+  useEffect(() => {
+    const handler = setTimeout(() => setDebouncedValue(value), delay);
+    return () => clearTimeout(handler);
+  }, [value, delay]);
+  return debouncedValue;
+};
+
+// Navigation hook
+const useNavigation = () => {
+  const handleNavigation = useCallback((path, e) => {
+    if (e) e.preventDefault();
+    console.log("Would navigate to:", path);
+  }, []);
+  return { handleNavigation };
+};
+
 const Header = () => {
   const [activeNav, setActiveNav] = useState(null);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
-  const [mobileView, setMobileView] = useState("main"); // 'main', 'products'
+  const [mobileView, setMobileView] = useState("main");
   const [activeCategory, setActiveCategory] = useState("Components");
+  const [isProduct, serIsProduct] = useState("Components");
+  const [isDesktop, setIsDesktop] = useState(false);
+  const [isLaptop, setIsLaptop] = useState(false);
+
+  const [windowSize, setWindowSize] = useState({
+    width: typeof window !== "undefined" ? window.innerWidth : 0,
+    height: typeof window !== "undefined" ? window.innerHeight : 0,
+  });
 
   const menuRef = useRef(null);
   const productNavRef = useRef(null);
@@ -31,19 +66,37 @@ const Header = () => {
     { id: "products", label: "PRODUCTS", hasDropdown: true },
     { id: "desktop", label: "DESKTOP", hasDropdown: true },
     { id: "laptop", label: "LAPTOP", hasDropdown: true },
-    { id: "build-pc", label: "BUILD A PC", hasDropdown: false, highlight: true },
+    {
+      id: "build-pc",
+      label: "BUILD A PC",
+      hasDropdown: false,
+      highlight: true,
+    },
     { id: "whats-new", label: "WHAT'S NEW", hasDropdown: true },
   ];
 
-  // Check screen size and adjust behavior
+  const debouncedWindowSize = useDebounce(windowSize, 250);
+  const { handleNavigation } = useNavigation();
+
+  // ✅ Fixed screen size check
   const checkScreenSize = useCallback(() => {
-    if (window.innerWidth <= 991) {
+    const width = window.innerWidth;
+
+    const isProductView = width >= 900;
+    const isDesktopView = width >= 900;
+    const isLaptopView = width >= 900;
+
+    serIsProduct(isProductView);
+    setIsDesktop(isDesktopView);
+    setIsLaptop(isLaptopView);
+
+    if (!isProductView & !isDesktopView && !isLaptopView) {
       // Mobile/tablet behavior
-      if (activeNav === "products") {
-        setMobileView("products");
+      if (["products", "laptop", "desktop"].includes(activeNav)) {
+        setMobileView(activeNav);
       }
     } else {
-      // Desktop behavior
+      // Desktop/laptop behavior
       setMobileView("main");
     }
   }, [activeNav]);
@@ -52,15 +105,16 @@ const Header = () => {
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (menuRef.current && !menuRef.current.contains(event.target)) {
-        // Don't close if clicking inside any of the navbars
         if (
-          (productNavRef.current && productNavRef.current.contains(event.target)) ||
-          (desktopNavRef.current && desktopNavRef.current.contains(event.target)) ||
-          (laptopNavRef.current && laptopNavRef.current.contains(event.target))
+          (productNavRef.current &&
+            productNavRef.current.contains(event.target)) ||
+          (desktopNavRef.current &&
+            desktopNavRef.current.contains(event.target)) ||
+          (laptopNavRef.current &&
+            laptopNavRef.current.contains(event.target))
         ) {
           return;
         }
-
         setActiveNav(null);
         setIsMobileMenuOpen(false);
         setMobileView("main");
@@ -75,10 +129,7 @@ const Header = () => {
       }
     };
 
-    // Initial screen size check
     checkScreenSize();
-    
-    // Add event listeners
     document.addEventListener("mousedown", handleClickOutside);
     window.addEventListener("scroll", handleScroll, { passive: true });
     window.addEventListener("resize", checkScreenSize);
@@ -90,20 +141,43 @@ const Header = () => {
     };
   }, [activeNav, checkScreenSize]);
 
-  const handleMenuClick = (itemId) => {
-    // Close search if open
-    if (isSearchOpen) {
-      setIsSearchOpen(false);
-    }
+  // Handle resize with debounce
+  useEffect(() => {
+    const handleResize = () => {
+      setWindowSize({
+        width: window.innerWidth,
+        height: window.innerHeight,
+      });
+    };
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
-    // For mobile, handle products menu differently
-    if (window.innerWidth <= 991 && itemId === "products") {
+  useEffect(() => {
+    checkScreenSize();
+  }, [debouncedWindowSize, checkScreenSize]);
+
+  const handleMenuClick = (itemId) => {
+    if (isSearchOpen) setIsSearchOpen(false);
+
+    if (!isProduct && itemId === "products") {
       setMobileView("products");
       setActiveNav("products");
       return;
     }
 
-    // Toggle the clicked navbar
+    if (!isDesktop && itemId === "desktop") {
+      setMobileView("desktop ");
+      setActiveNav("desktop");
+      return;
+    }
+
+    if (!isLaptop && itemId === "laptop") {
+      setMobileView("laptop");
+      setActiveNav("laptop");
+      return;
+    }
+
     if (activeNav === itemId) {
       setActiveNav(null);
       setMobileView("main");
@@ -114,18 +188,14 @@ const Header = () => {
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
-    // Reset to main view when toggling mobile menu
     setMobileView("main");
-    // Close all navbars when mobile menu is toggled
     setActiveNav(null);
   };
 
   const toggleSearch = () => {
-    // Close all navbars when search is toggled
     setActiveNav(null);
     setMobileView("main");
     setIsMobileMenuOpen(false);
-
     setIsSearchOpen(!isSearchOpen);
   };
 
@@ -135,16 +205,7 @@ const Header = () => {
     setMobileView("main");
   };
 
-  const handleBackToMainMenu = () => {
-    setMobileView("main");
-  };
-
-  // Handle navigation (placeholder for now)
-  const handleNavigation = (path, e) => {
-    e.preventDefault();
-    console.log("Would navigate to:", path);
-    closeAllMenus();
-  };
+  const handleBackToMainMenu = () => setMobileView("main");
 
   return (
     <>
@@ -160,26 +221,21 @@ const Header = () => {
               {isMobileMenuOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
             </button>
 
-            {/* Logo and navigation menu */}
+            {/* Logo & nav menu */}
             <div
               className={`${styles.menu} ${isMobileMenuOpen ? styles.menuOpen : ""
                 }`}
             >
               <a className={styles.homeLink} href="/" onClick={closeAllMenus}>
                 <picture className={styles.logo}>
-                  <img
-                    src={Logo}
-                    alt="MSI Logo"
-                    width="300"
-                    height="auto"
-                  />
+                  <img src={Logo} alt="MSI Logo" width="300" height="auto" />
                 </picture>
               </a>
 
               {/* Mobile breadcrumb for products */}
               {isMobileMenuOpen && mobileView === "products" && (
                 <div className={styles.mobileBreadcrumb}>
-                  <button 
+                  <button
                     className={styles.backButton}
                     onClick={handleBackToMainMenu}
                   >
@@ -187,7 +243,7 @@ const Header = () => {
                     <span>Menu</span>
                   </button>
                   <h3>PRODUCTS</h3>
-                  <button 
+                  <button
                     className={styles.closeButton}
                     onClick={closeAllMenus}
                   >
@@ -197,129 +253,301 @@ const Header = () => {
               )}
 
               <div className={styles.menuActions}>
-                {/* Main menu items - hidden on mobile when in products view */}
-                {(mobileView === "main" || window.innerWidth > 991) && navItems.map((item) => (
-                  <div
-                    key={item.id}
-                    className={styles.menuItem}
-                  >
-                    {item.hasDropdown ? (
-                      <button
-                        className={`${styles.navButton} ${item.highlight ? styles.highlight : ""
-                          } ${activeNav === item.id ? styles.active : ""}`}
-                        onClick={() => handleMenuClick(item.id)}
-                        aria-expanded={activeNav === item.id}
-                      >
-                        {item.label}
-                        {item.hasDropdown && (
-                          <span className={styles.dropdownArrow}>
-                            {activeNav === item.id}
-                          </span>
-                        )}
-                      </button>
-                    ) : (
-                      <a
-                        href="#"
-                        className={`${styles.navLink} ${item.highlight ? styles.highlight : ""
-                          } ${activeNav === item.id ? styles.active : ""}`}
-                        onClick={() => handleMenuClick(item.id)}
-                      >
-                        {item.label}
-                      </a>
-                    )}
-
-                    {/* Dropdown for other menu items */}
-                    {item.hasDropdown && activeNav === item.id &&
-                      item.id !== "products" && item.id !== "desktop" && item.id !== "laptop" && (
-                        <div className={styles.dropdown}>
-                          <div className={styles.dropdownContent}>
-                            <p>{item.label} dropdown content would appear here</p>
-                          </div>
-                        </div>
+                {/* ✅ Fixed condition */}
+                {(mobileView === "main" || isProduct || isDesktop || isLaptop) &&
+                  navItems.map((item) => (
+                    <div key={item.id} className={styles.menuItem}>
+                      {item.hasDropdown ? (
+                        <button
+                          className={`${styles.navButton} ${item.highlight ? styles.highlight : ""
+                            } ${activeNav === item.id ? styles.active : ""}`}
+                          onClick={() => handleMenuClick(item.id)}
+                          aria-expanded={activeNav === item.id}
+                        >
+                          {item.label}
+                        </button>
+                      ) : (
+                        <a
+                          href="#"
+                          className={`${styles.navLink} ${item.highlight ? styles.highlight : ""
+                            } ${activeNav === item.id ? styles.active : ""}`}
+                          onClick={() => handleMenuClick(item.id)}
+                        >
+                          {item.label}
+                        </a>
                       )}
-                  </div>
-                ))}
+
+                      {/* Dropdown */}
+                      {item.hasDropdown &&
+                        activeNav === item.id &&
+                        !["products", "desktop", "laptop"].includes(item.id) && (
+                          <div className={styles.dropdown}>
+                            <div className={styles.dropdownContent}>
+                              <p>{item.label} dropdown content here</p>
+                            </div>
+                          </div>
+                        )}
+                    </div>
+                  ))}
 
                 {/* Mobile Products Menu Content */}
-                {isMobileMenuOpen && mobileView === "products" && (
-                  <div className={styles.mobileProductsMenu}>
-                    {/* Categories */}
-                    <div className={styles.mobileCategorySection}>
-                      <h4>CATEGORIES</h4>
-                      <ul>
-                        {categories.map(category => (
-                          <li
-                            key={category}
-                            className={activeCategory === category ? styles.active : ""}
-                            onClick={() => setActiveCategory(category)}
-                          >
-                            {category}
-                            {activeCategory === category && <span className={styles.arrow}>▼</span>}
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-
-                    {/* Subcategories */}
-                    {activeCategory && (
-                      <div className={styles.mobileSubcategorySection}>
-                        <h4>{activeCategory.toUpperCase()}</h4>
-                        <ul>
-                          {getSubCategories(activeCategory).map(item => (
-                            <li key={item.name}>
-                              <a
-                                href={item.path}
-                                onClick={(e) => handleNavigation(item.path, e)}
+                {isMobileMenuOpen && (
+                  <>
+                    {/* Products */}
+                    {mobileView === "products" && (
+                      <div
+                        className={`${styles.mobileProductsMenu} ${mobileView === "products" ? styles.slideIn : styles.slideOut
+                          }`}
+                      >
+                        {/* Categories */}
+                        <div className={styles.mobileCategorySection}>
+                          <h4>CATEGORIES</h4>
+                          <ul>
+                            {categories.map((category) => (
+                              <li
+                                key={category}
+                                className={
+                                  activeCategory === category ? styles.active : ""
+                                }
+                                onClick={() => setActiveCategory(category)}
                               >
-                                {item.name}
-                              </a>
-                            </li>
-                          ))}
-                        </ul>
+                                {category}
+                                {activeCategory === category && (
+                                  <span className={styles.arrow}>▼</span>
+                                )}
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+
+                        {/* Subcategories */}
+                        {activeCategory && (
+                          <div className={styles.mobileSubcategorySection}>
+                            <h4>{activeCategory.toUpperCase()}</h4>
+                            <ul>
+                              {getSubCategories(activeCategory).map((item) => (
+                                <li key={item.name}>
+                                  <a
+                                    href={item.path}
+                                    onClick={(e) => handleNavigation(item.path, e)}
+                                  >
+                                    {item.name}
+                                  </a>
+                                </li>
+                              ))}
+                            </ul>
+                          </div>
+                        )}
+
+                        {/* Series */}
+                        <div className={styles.mobileSeriesSection}>
+                          <h4>SERIES</h4>
+                          <ul>
+                            {getSeriesItems(activeCategory).map((item) => (
+                              <li key={item.name}>
+                                <a
+                                  href={item.path}
+                                  onClick={(e) => handleNavigation(item.path, e)}
+                                >
+                                  {item.name}
+                                </a>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+
+                        {/* Explore */}
+                        <div className={styles.mobileExploreSection}>
+                          <h4>EXPLORE</h4>
+                          <ul>
+                            {getExploreItems(activeCategory).map((item) => (
+                              <li key={item.name}>
+                                <a
+                                  href={item.path}
+                                  onClick={(e) => handleNavigation(item.path, e)}
+                                >
+                                  {item.name}
+                                </a>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
                       </div>
                     )}
 
-                    {/* Series */}
-                    <div className={styles.mobileSeriesSection}>
-                      <h4>SERIES</h4>
-                      <ul>
-                        {getSeriesItems(activeCategory).map(item => (
-                          <li key={item.name}>
-                            <a
-                              href={item.path}
-                              onClick={(e) => handleNavigation(item.path, e)}
-                            >
-                              {item.name}
-                            </a>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
+                    {/* Laptop */}
+                    {mobileView === "laptop" && (
+                      <div
+                        className={`${styles.mobileLaptopMenu} ${mobileView === "laptop" ? styles.slideIn : styles.slideOut
+                          }`}
+                      >
+                        {/* Categories */}
+                        <div className={styles.mobileCategorySection}>
+                          <h4>CATEGORIES</h4>
+                          <ul>
+                            {categories.map((category) => (
+                              <li
+                                key={category}
+                                className={
+                                  activeCategory === category ? styles.active : ""
+                                }
+                                onClick={() => setActiveCategory(category)}
+                              >
+                                {category}
+                                {activeCategory === category && (
+                                  <span className={styles.arrow}>▼</span>
+                                )}
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
 
-                    {/* Explore */}
-                    <div className={styles.mobileExploreSection}>
-                      <h4>EXPLORE</h4>
-                      <ul>
-                        {getExploreItems(activeCategory).map(item => (
-                          <li key={item.name}>
-                            <a
-                              href={item.path}
-                              onClick={(e) => handleNavigation(item.path, e)}
-                            >
-                              {item.name}
-                            </a>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  </div>
+                        {/* Subcategories */}
+                        {activeCategory && (
+                          <div className={styles.mobileSubcategorySection}>
+                            <h4>{activeCategory.toUpperCase()}</h4>
+                            <ul>
+                              {getSubCategories(activeCategory).map((item) => (
+                                <li key={item.name}>
+                                  <a
+                                    href={item.path}
+                                    onClick={(e) => handleNavigation(item.path, e)}
+                                  >
+                                    {item.name}
+                                  </a>
+                                </li>
+                              ))}
+                            </ul>
+                          </div>
+                        )}
+
+                        {/* Series */}
+                        <div className={styles.mobileSeriesSection}>
+                          <h4>SERIES</h4>
+                          <ul>
+                            {getSeriesItems(activeCategory).map((item) => (
+                              <li key={item.name}>
+                                <a
+                                  href={item.path}
+                                  onClick={(e) => handleNavigation(item.path, e)}
+                                >
+                                  {item.name}
+                                </a>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+
+                        {/* Explore */}
+                        <div className={styles.mobileExploreSection}>
+                          <h4>EXPLORE</h4>
+                          <ul>
+                            {getExploreItems(activeCategory).map((item) => (
+                              <li key={item.name}>
+                                <a
+                                  href={item.path}
+                                  onClick={(e) => handleNavigation(item.path, e)}
+                                >
+                                  {item.name}
+                                </a>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+
+                      </div>
+                    )}
+
+                    {/* Desktop */}
+                    {mobileView === "desktop" && (
+                      <div
+                        className={`${styles.mobileDesktopMenu} ${mobileView === "desktop" ? styles.slideIn : styles.slideOut
+                          }`}
+                      >
+                        {/* Categories */}
+                        <div className={styles.mobileCategorySection}>
+                          <h4>CATEGORIES</h4>
+                          <ul>
+                            {categories.map((category) => (
+                              <li
+                                key={category}
+                                className={
+                                  activeCategory === category ? styles.active : ""
+                                }
+                                onClick={() => setActiveCategory(category)}
+                              >
+                                {category}
+                                {activeCategory === category && (
+                                  <span className={styles.arrow}>▼</span>
+                                )}
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+
+                        {/* Subcategories */}
+                        {activeCategory && (
+                          <div className={styles.mobileSubcategorySection}>
+                            <h4>{activeCategory.toUpperCase()}</h4>
+                            <ul>
+                              {getSubCategories(activeCategory).map((item) => (
+                                <li key={item.name}>
+                                  <a
+                                    href={item.path}
+                                    onClick={(e) => handleNavigation(item.path, e)}
+                                  >
+                                    {item.name}
+                                  </a>
+                                </li>
+                              ))}
+                            </ul>
+                          </div>
+                        )}
+
+                                                {/* Series */}
+                        <div className={styles.mobileSeriesSection}>
+                          <h4>SERIES</h4>
+                          <ul>
+                            {getSeriesItems(activeCategory).map((item) => (
+                              <li key={item.name}>
+                                <a
+                                  href={item.path}
+                                  onClick={(e) => handleNavigation(item.path, e)}
+                                >
+                                  {item.name}
+                                </a>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+
+                                                {/* Explore */}
+                        <div className={styles.mobileExploreSection}>
+                          <h4>EXPLORE</h4>
+                          <ul>
+                            {getExploreItems(activeCategory).map((item) => (
+                              <li key={item.name}>
+                                <a
+                                  href={item.path}
+                                  onClick={(e) => handleNavigation(item.path, e)}
+                                >
+                                  {item.name}
+                                </a>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+
+                      </div>
+                    )}
+                  </>
                 )}
+
               </div>
             </div>
 
             {/* Right side operations */}
             <div className={styles.operations}>
-              {/* User */}
               <div className={styles.operationItem}>
                 <button
                   className={styles.operationButton}
@@ -330,7 +558,6 @@ const Header = () => {
                 </button>
               </div>
 
-              {/* Cart */}
               <div className={styles.operationItem}>
                 <a
                   href="https://ph.msi.com/service/wheretobuy#46,3"
@@ -343,7 +570,6 @@ const Header = () => {
                 </a>
               </div>
 
-              {/* Search */}
               <div className={styles.operationItem}>
                 <button
                   className={styles.operationButton}
@@ -354,7 +580,6 @@ const Header = () => {
                 </button>
               </div>
 
-              {/* Track Order */}
               <div className={styles.operationItem}>
                 <button
                   className={styles.operationButton}
@@ -372,7 +597,7 @@ const Header = () => {
 
       {/* Product Navbar */}
       <ProductNavbar
-        isOpen={activeNav === "products" && window.innerWidth > 991}
+        isOpen={activeNav === "products" && isProduct}
         onClose={closeAllMenus}
         ref={productNavRef}
         mobileView={mobileView}
@@ -381,16 +606,20 @@ const Header = () => {
 
       {/* Desktop Navbar */}
       <DesktopNavbar
-        isOpen={activeNav === "desktop"}
+        isOpen={activeNav === "desktop" && isDesktop}
         onClose={closeAllMenus}
         ref={desktopNavRef}
+        mobileView={mobileView}
+        isMobileMenuOpen={isMobileMenuOpen}
       />
 
       {/* Laptop Navbar */}
       <LaptopNavbar
-        isOpen={activeNav === "laptop"}
+        isOpen={activeNav === "laptop" && isLaptop}
         onClose={closeAllMenus}
         ref={laptopNavRef}
+        mobileView={mobileView}
+        isMobileMenuOpen={isMobileMenuOpen}
       />
 
       {/* Search Popup */}
