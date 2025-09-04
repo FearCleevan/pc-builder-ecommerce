@@ -109,7 +109,7 @@ const Main = () => {
         <MainThirdContainer isMobile={isMobile} />
         <MainFourthContainer isMobile={isMobile} />
         <MainFifthContainer isMobile={isMobile} />
-        <MainSixthContainer />
+        <MainSixthContainer isMobile={isMobile} />
         <MainSeventhContainer />
       </main>
       <Footer />

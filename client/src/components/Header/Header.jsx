@@ -49,10 +49,20 @@ const useDebounce = (value, delay) => {
 
 // Navigation hook
 const useNavigation = () => {
-  const handleNavigation = useCallback((path, e) => {
+  const handleNavigation = useCallback((path, e, category, series, subcategory) => {
     if (e) e.preventDefault();
-    console.log("Would navigate to:", path);
+
+    // Build query parameters based on what was clicked
+    const searchParams = new URLSearchParams();
+
+    if (category) searchParams.set('category', category);
+    if (series) searchParams.set('series', series);
+    if (subcategory) searchParams.set('subcategory', subcategory);
+
+    // Navigate to the products page with filters
+    window.location.href = `/products?${searchParams.toString()}`;
   }, []);
+
   return { handleNavigation };
 };
 
@@ -191,7 +201,7 @@ const Header = () => {
     if (!isLaptop && itemId === "laptop") {
       setMobileView("laptop");
       setActiveNav("laptop");
-            setActiveCategory("Gaming Laptops");
+      setActiveCategory("Gaming Laptops");
       return;
     }
 
@@ -381,7 +391,7 @@ const Header = () => {
                                 <li key={item.name}>
                                   <a
                                     href={item.path}
-                                    onClick={(e) => handleNavigation(item.path, e)}
+                                    onClick={(e) => handleNavigation(item.path, e, activeCategory, null, item.id)}
                                   >
                                     {item.name}
                                   </a>
@@ -399,7 +409,7 @@ const Header = () => {
                               <li key={item.name}>
                                 <a
                                   href={item.path}
-                                  onClick={(e) => handleNavigation(item.path, e)}
+                                  onClick={(e) => handleNavigation(item.path, e, activeCategory, item.id, null)}
                                 >
                                   {item.name}
                                 </a>
@@ -416,7 +426,7 @@ const Header = () => {
                               <li key={item.name}>
                                 <a
                                   href={item.path}
-                                  onClick={(e) => handleNavigation(item.path, e)}
+                                  onClick={(e) => handleNavigation(item.path, e, activeCategory, null, null)}
                                 >
                                   {item.name}
                                 </a>

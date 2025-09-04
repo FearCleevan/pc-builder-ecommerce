@@ -13,15 +13,20 @@ import {
 
 // Custom hook for navigation
 const useNavigation = () => {
-  const handleNavigation = (path, e) => {
+  const handleNavigation = (path, e, category, series, subcategory) => {
     if (e) e.preventDefault();
-    console.log("Would navigate to:", path);
-    // In a real implementation, you would use:
-    // navigate(path); // from react-router-dom
-    // or
-    // window.location.href = path;
+
+    // Build query parameters based on what was clicked
+    const searchParams = new URLSearchParams();
+
+    if (category) searchParams.set('category', category);
+    if (series) searchParams.set('series', series);
+    if (subcategory) searchParams.set('subcategory', subcategory);
+
+    // Navigate to the products page with filters
+    window.location.href = `/products?${searchParams.toString()}`;
   };
-  
+
   return { handleNavigation };
 };
 
@@ -34,13 +39,13 @@ const ProductNavbar = forwardRef(({ isOpen, onClose, mobileView, isMobileMenuOpe
     const checkScreenSize = () => {
       setIsDesktop(window.innerWidth > 991);
     };
-    
+
     // Initial check
     checkScreenSize();
-    
+
     // Add event listener
     window.addEventListener('resize', checkScreenSize);
-    
+
     // Clean up
     return () => window.removeEventListener('resize', checkScreenSize);
   }, []);
@@ -74,7 +79,12 @@ const ProductNavbar = forwardRef(({ isOpen, onClose, mobileView, isMobileMenuOpe
                 className={activeCategory === category ? styles.active : ""}
                 onClick={() => setActiveCategory(category)}
               >
-                <span className={styles.categoryLink}>{category}</span>
+                <span
+                  className={styles.categoryLink}
+                  onClick={(e) => handleNavigation(`/${category}`, e, category, null, null)}
+                >
+                  {category}
+                </span>
                 {activeCategory === category && <span className={styles.arrow}>▶</span>}
               </li>
             ))}
@@ -89,7 +99,7 @@ const ProductNavbar = forwardRef(({ isOpen, onClose, mobileView, isMobileMenuOpe
               <li key={item.name}>
                 <a
                   href={item.path}
-                  onClick={(e) => handleNavigation(item.path, e)}
+                  onClick={(e) => handleNavigation(item.path, e, activeCategory, null, item.id)}
                   className={styles.subCategoryLink}
                 >
                   {item.name}
@@ -108,7 +118,7 @@ const ProductNavbar = forwardRef(({ isOpen, onClose, mobileView, isMobileMenuOpe
                 <li key={item.name}>
                   <a
                     href={item.path}
-                    onClick={(e) => handleNavigation(item.path, e)}
+                    onClick={(e) => handleNavigation(item.path, e, activeCategory, item.id, null)}
                     className={styles.seriesLink}
                   >
                     {item.name}
@@ -125,7 +135,7 @@ const ProductNavbar = forwardRef(({ isOpen, onClose, mobileView, isMobileMenuOpe
                 <li key={item.name}>
                   <a
                     href={item.path}
-                    onClick={(e) => handleNavigation(item.path, e)}
+                    onClick={(e) => handleNavigation(item.path, e, activeCategory, null, null)}
                     className={styles.exploreLink}
                   >
                     {item.name}
@@ -147,7 +157,7 @@ const ProductNavbar = forwardRef(({ isOpen, onClose, mobileView, isMobileMenuOpe
           <p>{promoContent.description}</p>
           <a
             href={promoContent.buttonPath}
-            onClick={(e) => handleNavigation(promoContent.buttonPath, e)}
+            onClick={(e) => handleNavigation(promoContent.buttonPath, e, activeCategory, null, null)}
             className={styles.ctaButton}
           >
             {promoContent.buttonText}

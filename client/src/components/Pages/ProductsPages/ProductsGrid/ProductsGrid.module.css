@@ -1,0 +1,25 @@
+/* client/src/components/Pages/ProductsPages/ProductsGrid/ProductsGrid.module.css */
+.productsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 25px;
+  padding: 10px;
+}
+
+.noProducts {
+  text-align: center;
+  padding: 40px;
+  color: #6c757d;
+}
+
+.noProducts h3 {
+  margin-bottom: 10px;
+  color: #495057;
+}
+
+@media (max-width: 768px) {
+  .productsGrid {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 15px;
+  }
+}

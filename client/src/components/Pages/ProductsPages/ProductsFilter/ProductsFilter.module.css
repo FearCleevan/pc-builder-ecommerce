@@ -1,0 +1,133 @@
+/* client/src/components/Pages/ProductsPages/ProductsFilter/ProductsFilter.module.css */
+.filterForm {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.filterFieldset {
+  border: none;
+  padding: 0;
+  margin: 0 0 20px 0;
+  border-bottom: 1px solid #e9ecef;
+  padding-bottom: 15px;
+}
+
+.filterFieldset:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.filterLegend {
+  width: 100%;
+  padding: 0;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+.filterLegendDown {
+  margin-bottom: 0;
+}
+
+.filterTitle {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+  color: #333;
+  font-size: 1rem;
+}
+
+.filterIcon {
+  font-size: 1.2rem;
+}
+
+.filterList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+}
+
+.filterListDown {
+  max-height: 500px;
+}
+
+.filterDropList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.filterItem {
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+}
+
+.filterCheckbox {
+  margin-right: 8px;
+  width: 16px;
+  height: 16px;
+}
+
+.filterLabel {
+  font-size: 0.9rem;
+  color: #495057;
+  cursor: pointer;
+}
+
+.filterDropdown {
+  margin-top: 10px;
+}
+
+.filterDropdownTitle {
+  font-weight: 600;
+  color: #495057;
+  margin: 15px 0 8px 0;
+  font-size: 0.9rem;
+}
+
+.filterDropdownTitle:first-child {
+  margin-top: 0;
+}
+
+.filterShowAll {
+  background: none;
+  border: none;
+  color: #007bff;
+  cursor: pointer;
+  font-size: 0.9rem;
+  padding: 5px 0;
+  margin-top: 5px;
+}
+
+.filterShowAll:hover {
+  text-decoration: underline;
+}
+
+.filterReset {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  background: #6c757d;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  margin-top: 15px;
+}
+
+.filterReset:hover {
+  background: #5a6268;
+}
+
+.resetIcon {
+  font-size: 1rem;
+}
