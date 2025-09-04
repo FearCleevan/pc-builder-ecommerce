@@ -12,31 +12,10 @@ import {
   getPromoContent
 } from "../../MockData/ProductMockData";
 
-// Custom hook for navigation
-const useNavigation = () => {
-  const navigate = useNavigate();
-
-  const handleNavigation = (path, e, category, series, subcategory) => {
-    if (e) e.preventDefault();
-
-    // Build query parameters based on what was clicked
-    const searchParams = new URLSearchParams();
-
-    if (category) searchParams.set('category', category);
-    if (series) searchParams.set('series', series);
-    if (subcategory) searchParams.set('subcategory', subcategory);
-
-    // Navigate to the products page with filters using React Router
-    navigate(`/products?${searchParams.toString()}`);
-  };
-
-  return { handleNavigation };
-};
-
 const ProductNavbar = forwardRef(({ isOpen, onClose, mobileView, isMobileMenuOpen }, ref) => {
   const [activeCategory, setActiveCategory] = useState("Components");
   const [isDesktop, setIsDesktop] = useState(true);
-  const { handleNavigation } = useNavigation();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const checkScreenSize = () => {
@@ -52,6 +31,24 @@ const ProductNavbar = forwardRef(({ isOpen, onClose, mobileView, isMobileMenuOpe
     // Clean up
     return () => window.removeEventListener('resize', checkScreenSize);
   }, []);
+
+  // Handle navigation to products page
+  const handleNavigation = (path, e, category, series, subcategory) => {
+    if (e) e.preventDefault();
+
+    // Build query parameters based on what was clicked
+    const searchParams = new URLSearchParams();
+
+    if (category) searchParams.set('category', category);
+    if (series) searchParams.set('series', series);
+    if (subcategory) searchParams.set('subcategory', subcategory);
+
+    // Navigate to the products page with filters using React Router
+    navigate(`/products?${searchParams.toString()}`);
+    
+    // Close the navbar after navigation
+    onClose();
+  };
 
   // Don't show this navbar on mobile devices
   if (!isDesktop) {
