@@ -4,13 +4,13 @@ import { useSearchParams } from 'react-router-dom'; // Add this import
 import ProductsFilter from './ProductsFilter/ProductsFilter';
 import ProductsGrid from './ProductsGrid/ProductsGrid';
 import ProductsBreadcrumb from './ProductsBreadcrumb/ProductsBreadcrumb';
-import { otherProducts } from '../../MockData/MockData';
+import { accessoriesProducts, otherProducts } from '../../MockData/MockData';
 import styles from './ProductsPages.module.css';
 import Header from '../../Header/Header';
 import Footer from '../../Footer/Footer';
 
 const ProductsPages = () => {
-  const [filteredProducts, setFilteredProducts] = useState(otherProducts);
+  const [filteredProducts, setFilteredProducts] = useState(otherProducts, accessoriesProducts);
   const [activeFilters, setActiveFilters] = useState({
     category: '',
     series: [],
@@ -37,7 +37,7 @@ const ProductsPages = () => {
   }, [searchParams]);
 
   const applyFilters = (category, series, subcategory) => {
-    let filtered = [...otherProducts];
+    let filtered = [...otherProducts, ...accessoriesProducts];
     
     if (category) {
       filtered = filtered.filter(product => 

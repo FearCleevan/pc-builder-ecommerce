@@ -18,10 +18,10 @@ export const exploreProducts = [
   { name: "RAM", img: SampleImg, category: "Components", series: "explore-series", subcategory: "memory" },
   { name: "SSD", img: SampleImg, category: "Components", series: "explore-series", subcategory: "storage" },
   { name: "Motherboard", img: SampleImg, category: "Components", series: "explore-series", subcategory: "motherboard" },
-  { name: "Keyboard", img: SampleImg, category: "Accessories", series: "explore-series", subcategory: "keyboard" },
-  { name: "Mouse", img: SampleImg, category: "Accessories", series: "explore-series", subcategory: "mouse" },
-  { name: "Monitor", img: SampleImg, category: "Accessories", series: "explore-series", subcategory: "monitor" },
-  { name: "Headset", img: SampleImg, category: "Accessories", series: "explore-series", subcategory: "headset" },
+  { name: "Keyboard", img: SampleImg, category: "Peripherals", series: "explore-series", subcategory: "keyboard" },
+  { name: "Mouse", img: SampleImg, category: "Peripherals", series: "explore-series", subcategory: "mouse" },
+  { name: "Monitor", img: SampleImg, category: "Peripherals", series: "explore-series", subcategory: "monitor" },
+  { name: "Headset", img: SampleImg, category: "Peripherals", series: "explore-series", subcategory: "headset" },
   { name: "Power Supply", img: SampleImg, category: "Components", series: "explore-series", subcategory: "psu" },
   { name: "CPU Cooler", img: SampleImg, category: "Components", series: "explore-series", subcategory: "cooler" },
 ];
@@ -146,9 +146,9 @@ export const laptopProducts = [
   },
 ];
 
-// Other products data
+// Components products data
 export const otherProducts = [
-    {
+  {
     id: 9,
     name: "MSI MAG Series Fan",
     brand: "MSI",
@@ -159,7 +159,7 @@ export const otherProducts = [
     reviews: 128,
     img: SampleImg,
     category: "Components",
-    series: "gaming-series",
+    series: "cooling-series",
     subcategory: "chassis-fan"
   },
   {
@@ -173,68 +173,251 @@ export const otherProducts = [
     reviews: 87,
     img: SampleImg,
     category: "Components",
-    series: "silent-series",
+    series: "cooling-series",
     subcategory: "chassis-fan"
   },
   { 
-    id: 1, name: "Mechanical Keyboard", brand: "Corsair",
+    id: 11, 
+    name: "Mechanical Keyboard", 
+    brand: "Corsair",
     description: "RGB mechanical keyboard with Cherry MX switches",
-    img: SampleImg, price: 6999, oldPrice: 7999,
-    rating: 4.8, reviews: 342,
-    category: "Accessories", series: "peripherals-series", subcategory: "keyboard"
+    img: SampleImg, 
+    price: 6999, 
+    oldPrice: 7999,
+    rating: 4.8, 
+    reviews: 342,
+    category: "Peripherals", 
+    series: "peripherals-series", 
+    subcategory: "keyboard"
   },
   { 
-    id: 2, name: "Gaming Mouse", brand: "Logitech",
+    id: 12, name: "Gaming Mouse", brand: "Logitech",
     description: "Wireless gaming mouse with Hero sensor",
     img: SampleImg, price: 5499, oldPrice: 5999,
     rating: 4.7, reviews: 287,
-    category: "Accessories", series: "peripherals-series", subcategory: "mouse"
+    category: "Peripherals", 
+    series: "peripherals-series", 
+    subcategory: "mouse"
   },
   { 
-    id: 3, name: "4K Monitor", brand: "Samsung",
+    id: 13, name: "4K Monitor", brand: "Samsung",
     description: "32-inch 4K display with HDR support",
     img: SampleImg, price: 23999, oldPrice: 25999,
     rating: 4.6, reviews: 154,
-    category: "Accessories", series: "display-series", subcategory: "monitor"
+    category: "Peripherals", 
+    series: "display-series", 
+    subcategory: "monitor"
   },
   { 
-    id: 4, name: "Gaming Headset", brand: "SteelSeries",
+    id: 14, name: "Gaming Headset", brand: "SteelSeries",
     description: "7.1 surround sound with noise cancellation",
     img: SampleImg, price: 6999, oldPrice: 7999,
     rating: 4.5, reviews: 213,
-    category: "Accessories", series: "peripherals-series", subcategory: "headset"
+    category: "Peripherals", 
+    series: "peripherals-series", 
+    subcategory: "headset"
   },
   { 
-    id: 5, name: "Webcam", brand: "Logitech",
+    id: 15, name: "Webcam", brand: "Logitech",
     description: "4K webcam with background replacement",
     img: SampleImg, price: 8999, oldPrice: 9999,
     rating: 4.4, reviews: 178,
-    category: "Accessories", series: "peripherals-series", subcategory: "webcam"
+    category: "Peripherals", 
+    series: "peripherals-series", 
+    subcategory: "web-digital-camera"
   },
   { 
-    id: 6, name: "SSD 1TB", brand: "Samsung",
+    id: 16, name: "SSD 1TB", brand: "Samsung",
     description: "NVMe SSD with read speeds up to 7000MB/s",
     img: SampleImg, price: 7999, oldPrice: 8999,
     rating: 4.9, reviews: 432,
-    category: "Components", series: "storage-series", subcategory: "ssd"
+    category: "Components", 
+    series: "storage-series", 
+    subcategory: "storage"
   },
   { 
-    id: 7, name: "Router", brand: "TP-Link",
+    id: 17, name: "Router", brand: "TP-Link",
     description: "Wi-Fi 6 gaming router with prioritization",
     img: SampleImg, price: 5999, oldPrice: 6999,
     rating: 4.3, reviews: 167,
-    category: "Accessories", series: "network-series", subcategory: "router"
+    category: "Peripherals", 
+    series: "network-series", 
+    subcategory: "router"
   },
   { 
-    id: 8, name: "Mouse Pad", brand: "Razer",
+    id: 18, name: "Mouse Pad", brand: "Razer",
     description: "Extended RGB gaming mouse pad",
     img: SampleImg, price: 2999, oldPrice: 3499,
     rating: 4.6, reviews: 198,
-    category: "Accessories", series: "peripherals-series", subcategory: "mousepad"
+    category: "Peripherals", 
+    series: "peripherals-series", 
+    subcategory: "mouse-pad"
   },
+  { 
+    id: 19, name: "Motherboard Z790", brand: "ASUS",
+    description: "High-performance motherboard for gaming",
+    img: SampleImg, price: 18999, oldPrice: 20999,
+    rating: 4.7, reviews: 156,
+    category: "Components", 
+    series: "motherboard-series", 
+    subcategory: "motherboard"
+  },
+  { 
+    id: 20, name: "Graphics Card RTX 4080", brand: "NVIDIA",
+    description: "High-end graphics card for gaming",
+    img: SampleImg, price: 65999, oldPrice: 72999,
+    rating: 4.9, reviews: 287,
+    category: "Components", 
+    series: "gpu-series", 
+    subcategory: "gpu"
+  },
+  { 
+    id: 21, name: "Processor i9-13900K", brand: "Intel",
+    description: "High-performance processor for gaming",
+    img: SampleImg, price: 32999, oldPrice: 35999,
+    rating: 4.8, reviews: 198,
+    category: "Components", 
+    series: "cpu-series", 
+    subcategory: "cpu-intel"
+  },
+  { 
+    id: 22, name: "RAM 32GB DDR5", brand: "Corsair",
+    description: "High-speed DDR5 memory",
+    img: SampleImg, price: 8999, oldPrice: 9999,
+    rating: 4.6, reviews: 134,
+    category: "Components", 
+    series: "memory-series", 
+    subcategory: "memory"
+  },
+  { 
+    id: 23, name: "Power Supply 1000W", brand: "Seasonic",
+    description: "80+ Gold certified power supply",
+    img: SampleImg, price: 12999, oldPrice: 14999,
+    rating: 4.7, reviews: 112,
+    category: "Components", 
+    series: "psu-series", 
+    subcategory: "psu"
+  },
+  { 
+    id: 24, name: "CPU Cooler AIO", brand: "NZXT",
+    description: "All-in-one liquid CPU cooler",
+    img: SampleImg, price: 7999, oldPrice: 8999,
+    rating: 4.5, reviews: 167,
+    category: "Components", 
+    series: "cooling-series", 
+    subcategory: "cooler"
+  },
+];
+
+// Accessories products data
+export const accessoriesProducts = [
+  { 
+    id: 25, name: "USB-C Cable", brand: "Anker",
+    description: "High-speed USB-C charging cable",
+    img: SampleImg, price: 1999, oldPrice: 2499,
+    rating: 4.4, reviews: 89,
+    category: "Accessories", 
+    series: "essential-series", 
+    subcategory: "cables"
+  },
+  { 
+    id: 26, name: "Wireless Earphones", brand: "Sony",
+    description: "Noise cancelling wireless earphones",
+    img: SampleImg, price: 8999, oldPrice: 9999,
+    rating: 4.7, reviews: 156,
+    category: "Accessories", 
+    series: "premium-series", 
+    subcategory: "earphones"
+  },
+  { 
+    id: 27, name: "Power Bank 20000mAh", brand: "Xiaomi",
+    description: "High capacity portable power bank",
+    img: SampleImg, price: 2999, oldPrice: 3499,
+    rating: 4.5, reviews: 203,
+    category: "Accessories", 
+    series: "travel-series", 
+    subcategory: "power-bank"
+  },
+  { 
+    id: 28, name: "HDMI to DisplayPort Adapter", brand: "Cable Matters",
+    description: "High-quality video adapter",
+    img: SampleImg, price: 1499, oldPrice: 1999,
+    rating: 4.3, reviews: 78,
+    category: "Accessories", 
+    series: "essential-series", 
+    subcategory: "adapters"
+  },
+  { 
+    id: 29, name: "Laptop Stand", brand: "Rain Design",
+    description: "Aluminum laptop stand for better ergonomics",
+    img: SampleImg, price: 3999, oldPrice: 4499,
+    rating: 4.6, reviews: 112,
+    category: "Accessories", 
+    series: "office-series", 
+    subcategory: "mounts-stands"
+  },
+  { 
+    id: 30, name: "Electronics Cleaning Kit", brand: "iKlear",
+    description: "Professional cleaning kit for electronics",
+    img: SampleImg, price: 2499, oldPrice: 2999,
+    rating: 4.4, reviews: 67,
+    category: "Accessories", 
+    series: "protection-series", 
+    subcategory: "cleaning-kits"
+  },
+];
+
+// Combine all products
+export const allProducts = [
+  ...desktopProducts,
+  ...laptopProducts,
+  ...otherProducts,
+  ...accessoriesProducts
 ];
 
 // Helper functions
 export const formatPrice = (price) => {
   return `₱${price.toLocaleString('en-PH')}`;
+};
+
+// Filter helper functions
+export const filterProducts = (products, filters) => {
+  return products.filter(product => {
+    // Category filter
+    if (filters.category && product.category !== filters.category) {
+      return false;
+    }
+    
+    // Series filter
+    if (filters.series && filters.series.length > 0 && 
+        !filters.series.includes(product.series)) {
+      return false;
+    }
+    
+    // Subcategory filter
+    if (filters.subcategory && filters.subcategory.length > 0 && 
+        !filters.subcategory.includes(product.subcategory)) {
+      return false;
+    }
+    
+    // GPU filter
+    if (filters.gpu && filters.gpu.length > 0) {
+      // This would need to match product specifications
+      return true; // Placeholder
+    }
+    
+    // Processor filter
+    if (filters.processor && filters.processor.length > 0) {
+      // This would need to match product specifications
+      return true; // Placeholder
+    }
+    
+    // Panel size filter
+    if (filters.panelSize && filters.panelSize.length > 0) {
+      // This would need to match product specifications
+      return true; // Placeholder
+    }
+    
+    return true;
+  });
 };

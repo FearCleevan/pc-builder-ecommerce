@@ -6,6 +6,10 @@
   overflow: hidden;
   transition: all 0.3s ease;
   position: relative;
+  height: 100%;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
 }
 
 .productCard:hover {
@@ -17,6 +21,7 @@
   position: relative;
   height: 200px;
   overflow: hidden;
+  flex-shrink: 0;
 }
 
 .productImage img {
@@ -107,6 +112,9 @@
 
 .productInfo {
   padding: 20px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
 }
 
 .productBrand {
@@ -135,6 +143,7 @@
   -webkit-line-clamp: 2;
   line-clamp: 2;
   overflow: hidden;
+  flex-grow: 1;
 }
 
 .productRating {
@@ -193,7 +202,7 @@
 .productButtons {
   display: flex;
   gap: 10px;
-  margin-bottom: 10px;
+  margin-top: auto;
 }
 
 .buyNowBtn {
@@ -244,16 +253,36 @@
   opacity: 0;
 }
 
-@media (max-width: 480px) {
+/* Tablet view */
+@media (max-width: 1024px) {
   .productImage {
-    height: 160px;
+    height: 180px;
   }
   
   .productInfo {
     padding: 15px;
   }
+}
+
+/* Mobile view */
+@media (max-width: 640px) {
+  .productImage {
+    height: 160px;
+  }
+  
+  .productInfo {
+    padding: 12px;
+  }
   
   .productButtons {
     flex-direction: column;
+  }
+  
+  .productName {
+    font-size: 1rem;
+  }
+  
+  .currentPrice {
+    font-size: 1.2rem;
   }
 }

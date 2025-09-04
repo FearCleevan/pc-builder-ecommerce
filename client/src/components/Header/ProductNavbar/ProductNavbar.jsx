@@ -95,7 +95,7 @@ const ProductNavbar = forwardRef(({ isOpen, onClose, mobileView, isMobileMenuOpe
           <h4>{activeCategory.toUpperCase()}</h4>
           <ul className={styles.subCategories}>
             {getSubCategories(activeCategory).map(item => (
-              <li key={item.name}>
+              <li key={item.id}>
                 <a
                   href={item.path}
                   onClick={(e) => handleNavigation(item.path, e, activeCategory, null, item.id)}
@@ -114,7 +114,7 @@ const ProductNavbar = forwardRef(({ isOpen, onClose, mobileView, isMobileMenuOpe
             <h4>SERIES</h4>
             <ul>
               {getSeriesItems(activeCategory).map(item => (
-                <li key={item.name}>
+                <li key={item.id}>
                   <a
                     href={item.path}
                     onClick={(e) => handleNavigation(item.path, e, activeCategory, item.id, null)}
@@ -131,7 +131,7 @@ const ProductNavbar = forwardRef(({ isOpen, onClose, mobileView, isMobileMenuOpe
             <h4>EXPLORE</h4>
             <ul>
               {getExploreItems(activeCategory).map(item => (
-                <li key={item.name}>
+                <li key={item.id}>
                   <a
                     href={item.path}
                     onClick={(e) => handleNavigation(item.path, e, activeCategory, null, null)}
