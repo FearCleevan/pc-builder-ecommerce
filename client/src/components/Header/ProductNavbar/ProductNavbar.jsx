@@ -1,5 +1,6 @@
 //client/src/components/Header/ProductNavbar/ProductNavbar.jsx
 import React, { useState, useEffect, forwardRef } from "react";
+import { useNavigate } from "react-router-dom"; // Add this import
 import styles from "./ProductNavbar.module.css";
 
 // Import mock data
@@ -13,6 +14,8 @@ import {
 
 // Custom hook for navigation
 const useNavigation = () => {
+  const navigate = useNavigate();
+
   const handleNavigation = (path, e, category, series, subcategory) => {
     if (e) e.preventDefault();
 
@@ -23,8 +26,8 @@ const useNavigation = () => {
     if (series) searchParams.set('series', series);
     if (subcategory) searchParams.set('subcategory', subcategory);
 
-    // Navigate to the products page with filters
-    window.location.href = `/products?${searchParams.toString()}`;
+    // Navigate to the products page with filters using React Router
+    navigate(`/products?${searchParams.toString()}`);
   };
 
   return { handleNavigation };

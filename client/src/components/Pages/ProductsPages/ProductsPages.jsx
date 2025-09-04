@@ -1,5 +1,6 @@
 // client/src/components/Pages/ProductsPages/ProductsPages.jsx
 import React, { useState, useEffect } from 'react';
+import { useSearchParams } from 'react-router-dom'; // Add this import
 import ProductsFilter from './ProductsFilter/ProductsFilter';
 import ProductsGrid from './ProductsGrid/ProductsGrid';
 import ProductsBreadcrumb from './ProductsBreadcrumb/ProductsBreadcrumb';
@@ -15,13 +16,15 @@ const ProductsPages = () => {
     series: [],
     subcategory: []
   });
+  
+  // Use React Router's useSearchParams to get URL parameters
+  const [searchParams, setSearchParams] = useSearchParams();
 
-  // Parse URL parameters on component mount
+  // Parse URL parameters on component mount and when they change
   useEffect(() => {
-    const queryParams = new URLSearchParams(window.location.search);
-    const category = queryParams.get('category') || '';
-    const series = queryParams.get('series') ? [queryParams.get('series')] : [];
-    const subcategory = queryParams.get('subcategory') ? [queryParams.get('subcategory')] : [];
+    const category = searchParams.get('category') || '';
+    const series = searchParams.get('series') ? [searchParams.get('series')] : [];
+    const subcategory = searchParams.get('subcategory') ? [searchParams.get('subcategory')] : [];
     
     setActiveFilters({
       category,
@@ -31,7 +34,7 @@ const ProductsPages = () => {
     
     // Apply initial filters
     applyFilters(category, series, subcategory);
-  }, []);
+  }, [searchParams]);
 
   const applyFilters = (category, series, subcategory) => {
     let filtered = [...otherProducts];
@@ -61,13 +64,13 @@ const ProductsPages = () => {
     setActiveFilters(newFilters);
     applyFilters(newFilters.category, newFilters.series, newFilters.subcategory);
     
-    // Update URL with new filters
-    const searchParams = new URLSearchParams();
-    if (newFilters.category) searchParams.set('category', newFilters.category);
-    if (newFilters.series.length > 0) searchParams.set('series', newFilters.series[0]);
-    if (newFilters.subcategory.length > 0) searchParams.set('subcategory', newFilters.subcategory[0]);
+    // Update URL with new filters using React Router
+    const params = new URLSearchParams();
+    if (newFilters.category) params.set('category', newFilters.category);
+    if (newFilters.series.length > 0) params.set('series', newFilters.series[0]);
+    if (newFilters.subcategory.length > 0) params.set('subcategory', newFilters.subcategory[0]);
     
-    window.history.replaceState({}, '', `${window.location.pathname}?${searchParams.toString()}`);
+    setSearchParams(params);
   };
 
   return (

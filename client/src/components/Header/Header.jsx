@@ -14,6 +14,7 @@ import ProductNavbar from "./ProductNavbar/ProductNavbar";
 import DesktopNavbar from "./DesktopNavbar/DesktopNavbar";
 import LaptopNavbar from "./LaptopNavbar/LaptopNavbar";
 import Logo from "../../assets/Logo.png";
+import { useNavigate } from "react-router-dom"
 
 // Import mock data for all sections
 import {
@@ -49,23 +50,24 @@ const useDebounce = (value, delay) => {
 
 // Navigation hook
 const useNavigation = () => {
+  const navigate = useNavigate(); // Use React Router's navigate
+  
   const handleNavigation = useCallback((path, e, category, series, subcategory) => {
     if (e) e.preventDefault();
-
+    
     // Build query parameters based on what was clicked
     const searchParams = new URLSearchParams();
-
+    
     if (category) searchParams.set('category', category);
     if (series) searchParams.set('series', series);
     if (subcategory) searchParams.set('subcategory', subcategory);
-
-    // Navigate to the products page with filters
-    window.location.href = `/products?${searchParams.toString()}`;
-  }, []);
-
+    
+    // Navigate to the products page with filters using React Router
+    navigate(`/products?${searchParams.toString()}`);
+  }, [navigate]);
+  
   return { handleNavigation };
 };
-
 const Header = () => {
   const [activeNav, setActiveNav] = useState(null);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);

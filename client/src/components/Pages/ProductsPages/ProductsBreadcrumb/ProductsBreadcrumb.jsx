@@ -1,21 +1,67 @@
 // client/src/components/Pages/ProductsPages/ProductsBreadcrumb/ProductsBreadcrumb.jsx
 import React from 'react';
+import { Link } from 'react-router-dom'; // Add this import
 import styles from './ProductsBreadcrumb.module.css';
+import { getSeriesItems, getSubCategories } from '../../../MockData/ProductMockData';
 
-const ProductsBreadcrumb = ({ category, productCount }) => {
+const ProductsBreadcrumb = ({ category, subcategory, series, productCount }) => {
+  // Get display names for IDs
+  const getSubcategoryName = (id) => {
+    const subcategories = getSubCategories(category);
+    const found = subcategories.find(item => item.id === id);
+    return found ? found.name : id;
+  };
+
+  const getSeriesName = (id) => {
+    const seriesItems = getSeriesItems(category);
+    const found = seriesItems.find(item => item.id === id);
+    return found ? found.name : id;
+  };
+
   return (
     <section className={styles.topbox}>
       <div className={styles.topboxContainer}>
         <div className={styles.topboxLeft}>
-          <h2 className={styles.topboxTitle}>{category} ({productCount})</h2>
+          <h2 className={styles.topboxTitle}>
+            {series ? getSeriesName(series) : 
+             subcategory ? getSubcategoryName(subcategory) : 
+             category || 'All Products'} ({productCount})
+          </h2>
           <nav className={styles.breadcrumb}>
             <ol className={styles.breadcrumbList}>
               <li className={styles.breadcrumbItem}>
-                <a className={styles.breadcrumbLink} href="/">Home</a>
+                <Link className={styles.breadcrumbLink} to="/">Home</Link>
               </li>
-              <li className={styles.breadcrumbItem}>
-                <a className={styles.breadcrumbLink} href={`/${category}`}>{category}</a>
-              </li>
+              {category && (
+                <li className={styles.breadcrumbItem}>
+                  <Link 
+                    className={styles.breadcrumbLink} 
+                    to={`/products?category=${category}`}
+                  >
+                    {category}
+                  </Link>
+                </li>
+              )}
+              {subcategory && (
+                <li className={styles.breadcrumbItem}>
+                  <Link 
+                    className={styles.breadcrumbLink} 
+                    to={`/products?category=${category}&subcategory=${subcategory}`}
+                  >
+                    {getSubcategoryName(subcategory)}
+                  </Link>
+                </li>
+              )}
+              {series && (
+                <li className={styles.breadcrumbItem}>
+                  <Link 
+                    className={styles.breadcrumbLink} 
+                    to={`/products?category=${category}&series=${series}`}
+                  >
+                    {getSeriesName(series)}
+                  </Link>
+                </li>
+              )}
               <li className={styles.breadcrumbItem}>Products</li>
             </ol>
           </nav>
