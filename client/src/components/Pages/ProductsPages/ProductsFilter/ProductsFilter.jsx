@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import styles from './ProductsFilter.module.css';
 import { categories, getSeriesItems, getSubCategories } from '../../../MockData/ProductMockData';
 
-const ProductsFilter = ({ activeFilters, onFilterChange }) => {
+const ProductsFilter = ({ activeFilters, onFilterChange, isMobile }) => {
     const [expandedSections, setExpandedSections] = useState({});
     const [selectedFilters, setSelectedFilters] = useState({
         category: activeFilters.category || '',
@@ -97,7 +97,7 @@ const ProductsFilter = ({ activeFilters, onFilterChange }) => {
     ];
 
     return (
-        <form id="pd-filter" className={styles.filterForm}>
+        <form id="pd-filter" className={`${styles.filterForm} ${isMobile ? styles.mobile : ''}`}>
             {/* Category Filter */}
             <fieldset className={styles.filterFieldset}>
                 <legend className={styles.filterLegend}>
