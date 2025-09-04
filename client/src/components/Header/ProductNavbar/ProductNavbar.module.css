@@ -326,3 +326,42 @@
     display: none;
   }
 }
+/* client/src/components/Header/ProductNavbar/ProductNavbar.module.css */
+/* Add these styles to your existing CSS */
+
+.leftMenu ul li.active {
+  border-left: 3px solid #ff2c2c;
+}
+
+.leftMenu ul li.active .categoryLink {
+  color: #ff2c2c;
+  font-weight: 600;
+}
+
+.categoryLink {
+  cursor: pointer;
+  padding: 8px 12px;
+  display: block;
+  transition: all 0.2s ease;
+  border-radius: 4px;
+}
+
+.categoryLink:hover {
+  background-color: #f8f8f8;
+  color: #ff2c2c;
+}
+
+.leftMenu ul li {
+  margin-bottom: 5px;
+  transition: all 0.2s ease;
+}
+
+.leftMenu ul li:hover {
+  background-color: #f8f8f8;
+}
+
+.arrow {
+  float: right;
+  margin-right: 10px;
+  color: #ff2c2c;
+}

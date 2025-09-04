@@ -492,3 +492,28 @@
     margin-left: 15px;
   }
 }
+/* client/src/components/Header/Header.module.css */
+/* Add these styles to your existing CSS */
+
+.mobileCategorySection ul li.active {
+  background-color: #f0f0f0;
+  border-left: 3px solid #ff2c2c;
+  font-weight: 600;
+  color: #ff2c2c;
+}
+
+.mobileCategorySection ul li {
+  padding: 12px 15px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border-bottom: 1px solid #eee;
+}
+
+.mobileCategorySection ul li:hover {
+  background-color: #f8f8f8;
+}
+
+.arrow {
+  float: right;
+  margin-right: 10px;
+}

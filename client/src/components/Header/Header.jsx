@@ -51,21 +51,21 @@ const useDebounce = (value, delay) => {
 // Navigation hook
 const useNavigation = () => {
   const navigate = useNavigate(); // Use React Router's navigate
-  
+
   const handleNavigation = useCallback((path, e, category, series, subcategory) => {
     if (e) e.preventDefault();
-    
+
     // Build query parameters based on what was clicked
     const searchParams = new URLSearchParams();
-    
+
     if (category) searchParams.set('category', category);
     if (series) searchParams.set('series', series);
     if (subcategory) searchParams.set('subcategory', subcategory);
-    
+
     // Navigate to the products page with filters using React Router
     navigate(`/products?${searchParams.toString()}`);
   }, [navigate]);
-  
+
   return { handleNavigation };
 };
 const Header = () => {
@@ -357,6 +357,7 @@ const Header = () => {
                 {/* Mobile Navigation Menu Content */}
                 {isMobileMenuOpen && (
                   <>
+
                     {/* Products */}
                     {mobileView === "products" && (
                       <div

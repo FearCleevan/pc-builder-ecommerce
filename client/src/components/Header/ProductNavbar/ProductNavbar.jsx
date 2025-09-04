@@ -1,6 +1,6 @@
-//client/src/components/Header/ProductNavbar/ProductNavbar.jsx
+// client/src/components/Header/ProductNavbar/ProductNavbar.jsx
 import React, { useState, useEffect, forwardRef } from "react";
-import { useNavigate } from "react-router-dom"; // Add this import
+import { useNavigate } from "react-router-dom";
 import styles from "./ProductNavbar.module.css";
 
 // Import mock data
@@ -80,11 +80,10 @@ const ProductNavbar = forwardRef(({ isOpen, onClose, mobileView, isMobileMenuOpe
               <li
                 key={category}
                 className={activeCategory === category ? styles.active : ""}
-                onClick={() => setActiveCategory(category)}
               >
                 <span
                   className={styles.categoryLink}
-                  onClick={(e) => handleNavigation(`/${category}`, e, category, null, null)}
+                  onClick={() => setActiveCategory(category)}
                 >
                   {category}
                 </span>
