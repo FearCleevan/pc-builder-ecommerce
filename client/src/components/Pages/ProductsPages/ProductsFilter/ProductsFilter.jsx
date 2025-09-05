@@ -132,7 +132,7 @@ const ProductsFilter = ({ activeFilters, onFilterChange, isMobile }) => {
                         onClick={() => toggleSection('subcategory')}
                     >
                         <div className={styles.filterTitle}>
-                            <span className={styles.filterIcon}>📦</span>
+                            <span className={styles.filterIcon}></span>
                             <span>Subcategories</span>
                         </div>
                     </legend>
@@ -174,7 +174,7 @@ const ProductsFilter = ({ activeFilters, onFilterChange, isMobile }) => {
                         onClick={() => toggleSection('series')}
                     >
                         <div className={styles.filterTitle}>
-                            <span className={styles.filterIcon}>🎮</span>
+                            <span className={styles.filterIcon}></span>
                             <span>Series</span>
                         </div>
                     </legend>
@@ -301,7 +301,7 @@ const ProductsFilter = ({ activeFilters, onFilterChange, isMobile }) => {
                     onClick={() => toggleSection('panelSize')}
                 >
                     <div className={styles.filterTitle}>
-                        <span className={styles.filterIcon}>📱</span>
+                        <span className={styles.filterIcon}></span>
                         <span>Panel Size</span>
                     </div>
                 </legend>
@@ -335,7 +335,7 @@ const ProductsFilter = ({ activeFilters, onFilterChange, isMobile }) => {
             </fieldset>
 
             <button type="reset" className={styles.filterReset} onClick={resetFilters}>
-                <span className={styles.resetIcon}>🔄</span>
+                <span className={styles.resetIcon}></span>
                 Reset Filters
             </button>
         </form>

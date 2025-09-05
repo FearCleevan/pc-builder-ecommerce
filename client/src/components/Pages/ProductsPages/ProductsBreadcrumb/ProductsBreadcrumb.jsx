@@ -62,7 +62,7 @@ const ProductsBreadcrumb = ({ category, subcategory, series, productCount }) => 
                   </Link>
                 </li>
               )}
-              <li className={styles.breadcrumbItem}>Products</li>
+              <li className={styles.breadcrumbItem}></li>
             </ol>
           </nav>
         </div>

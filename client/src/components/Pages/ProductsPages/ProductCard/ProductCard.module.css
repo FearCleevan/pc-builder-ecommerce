@@ -1,13 +1,12 @@
 /* client/src/components/Pages/ProductsPages/ProductCard/ProductCard.module.css */
 .productCard {
   background: white;
-  border-radius: 16px;
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
   overflow: hidden;
   transition: all 0.3s ease;
   position: relative;
   height: 100%;
-  max-width: 300px;
+  max-width: 400px;
   display: flex;
   flex-direction: column;
 }
@@ -211,7 +210,6 @@
   background: linear-gradient(135deg, #ff2c2c 0%, #ff5252 100%);
   color: white;
   border: none;
-  border-radius: 8px;
   font-weight: 600;
   cursor: pointer;
   transition: all 0.3s ease;
@@ -228,7 +226,6 @@
   background: #333;
   color: white;
   border: none;
-  border-radius: 8px;
   display: flex;
   align-items: center;
   justify-content: center;
