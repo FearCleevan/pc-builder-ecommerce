@@ -53,8 +53,9 @@ const ProductsFilter = ({ activeFilters, onFilterChange, isMobile }) => {
     };
 
     const resetFilters = () => {
+        // Preserve the current category but reset all other filters
         const newFilters = {
-            category: '',
+            category: selectedFilters.category, // Keep the current category
             series: [],
             subcategory: [],
             gpu: [],

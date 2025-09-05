@@ -1,6 +1,6 @@
 // client/src/components/MockData/MockData.js
 // Import sample product images
-import SampleImg from '../../assets/banner4.jpeg';
+import SampleImg from '../../assets/Laptop1.png';
 
 // Banner data
 export const banners = [
