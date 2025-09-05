@@ -11,6 +11,7 @@
   text-align: center;
   padding: 60px 20px;
   color: #6c757d;
+  grid-column: 1 / -1; /* Make no products message span all columns */
 }
 
 .noProducts h3 {
@@ -26,18 +27,22 @@
 /* Tablet view */
 @media (max-width: 1024px) {
   .productsGrid {
-    grid-template-columns: repeat(2, minmax(280px, 2fr));
+    grid-template-columns: repeat(2, minmax(280px, 1fr)); /* Changed to 1fr for better centering */
     gap: 20px;
     padding: 15px;
+    justify-items: center; /* Center grid items */
   }
 }
 
 /* Mobile view */
 @media (max-width: 640px) {
   .productsGrid {
-    grid-template-columns: repeat(1, 1fr);
+    grid-template-columns: 1fr; /* Single column on mobile */
     gap: 15px;
     padding: 10px;
+    justify-items: center; /* Center the single column */
+    max-width: 400px; /* Limit max width for better centering */
+    margin: 0 auto; /* Center the grid container itself */
   }
   
   .noProducts {
