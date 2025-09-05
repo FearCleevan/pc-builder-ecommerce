@@ -1,32 +1,37 @@
 // client/src/components/Pages/ProductsPages/ProductsPages.jsx
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import ProductsFilter from './ProductsFilter/ProductsFilter';
 import ProductsGrid from './ProductsGrid/ProductsGrid';
 import ProductsBreadcrumb from './ProductsBreadcrumb/ProductsBreadcrumb';
+import Pagination from './Pagination/Pagination';
 import { accessoriesProducts, otherProducts } from '../../MockData/MockData';
 import styles from './ProductsPages.module.css';
 import Header from '../../Header/Header';
 import Footer from '../../Footer/Footer';
 
 const ProductsPages = () => {
-  const [filteredProducts, setFilteredProducts] = useState([...otherProducts, ...accessoriesProducts]);
+  const [allProducts] = useState([...otherProducts, ...accessoriesProducts]);
+  const [filteredProducts, setFilteredProducts] = useState(allProducts);
   const [activeFilters, setActiveFilters] = useState({
     category: '',
     series: [],
     subcategory: []
   });
   const [isMobileFilterOpen, setIsMobileFilterOpen] = useState(false);
+  const [currentPage, setCurrentPage] = useState(1);
   
   // Use React Router's useSearchParams to get URL parameters
   const [searchParams, setSearchParams] = useSearchParams();
 
   // Check if mobile view
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 992);
+  const [isTablet, setIsTablet] = useState(window.innerWidth <= 1024 && window.innerWidth > 640);
 
   useEffect(() => {
     const handleResize = () => {
       setIsMobile(window.innerWidth <= 992);
+      setIsTablet(window.innerWidth <= 1024 && window.innerWidth > 640);
       // Auto-close filter on resize to desktop
       if (window.innerWidth > 992) {
         setIsMobileFilterOpen(false);
@@ -42,6 +47,7 @@ const ProductsPages = () => {
     const category = searchParams.get('category') || '';
     const series = searchParams.get('series') ? [searchParams.get('series')] : [];
     const subcategory = searchParams.get('subcategory') ? [searchParams.get('subcategory')] : [];
+    const page = parseInt(searchParams.get('page')) || 1;
     
     setActiveFilters({
       category,
@@ -49,12 +55,39 @@ const ProductsPages = () => {
       subcategory
     });
     
+    setCurrentPage(page);
+    
     // Apply initial filters
     applyFilters(category, series, subcategory);
   }, [searchParams]);
 
+  // Calculate items per page based on screen size
+  const itemsPerPage = useMemo(() => {
+    if (isMobile) return 10; // 10 rows × 1 column = 10 items
+    if (isTablet) return 16; // 8 rows × 2 columns = 16 items
+    return 15; // 5 rows × 3 columns = 15 items
+  }, [isMobile, isTablet]);
+
+  // Calculate pagination data
+  const paginationData = useMemo(() => {
+    const totalItems = filteredProducts.length;
+    const totalPages = Math.ceil(totalItems / itemsPerPage);
+    const startIndex = (currentPage - 1) * itemsPerPage;
+    const endIndex = Math.min(startIndex + itemsPerPage, totalItems);
+    const currentItems = filteredProducts.slice(startIndex, endIndex);
+
+    return {
+      currentItems,
+      totalPages,
+      currentPage,
+      totalItems,
+      hasNextPage: currentPage < totalPages,
+      hasPrevPage: currentPage > 1
+    };
+  }, [filteredProducts, currentPage, itemsPerPage]);
+
   const applyFilters = (category, series, subcategory) => {
-    let filtered = [...otherProducts, ...accessoriesProducts];
+    let filtered = allProducts;
     
     if (category) {
       filtered = filtered.filter(product => 
@@ -75,6 +108,8 @@ const ProductsPages = () => {
     }
     
     setFilteredProducts(filtered);
+    // Reset to first page when filters change
+    setCurrentPage(1);
   };
 
   const handleFilterChange = (newFilters) => {
@@ -86,8 +121,21 @@ const ProductsPages = () => {
     if (newFilters.category) params.set('category', newFilters.category);
     if (newFilters.series.length > 0) params.set('series', newFilters.series[0]);
     if (newFilters.subcategory.length > 0) params.set('subcategory', newFilters.subcategory[0]);
+    params.set('page', '1'); // Reset to page 1 when filters change
     
     setSearchParams(params);
+  };
+
+  const handlePageChange = (page) => {
+    setCurrentPage(page);
+    
+    // Update URL with new page
+    const params = new URLSearchParams(searchParams);
+    params.set('page', page.toString());
+    setSearchParams(params);
+    
+    // Scroll to top when page changes
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   const toggleMobileFilter = () => {
@@ -156,7 +204,18 @@ const ProductsPages = () => {
             )}
             
             <div className={`${styles.productsContainer} ${isMobileFilterOpen ? styles.productsShifted : ''}`}>
-              <ProductsGrid products={filteredProducts} />
+              <ProductsGrid products={paginationData.currentItems} />
+              
+              {/* Pagination */}
+              {filteredProducts.length > 0 && (
+                <Pagination
+                  currentPage={paginationData.currentPage}
+                  totalPages={paginationData.totalPages}
+                  onPageChange={handlePageChange}
+                  totalItems={paginationData.totalItems}
+                  itemsPerPage={itemsPerPage}
+                />
+              )}
             </div>
           </main>
         </div>
