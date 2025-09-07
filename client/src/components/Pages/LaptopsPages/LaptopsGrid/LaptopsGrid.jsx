@@ -14,7 +14,7 @@ const LaptopsGrid = ({ products }) => {
   }
 
   return (
-    <div className={styles.laptopsGrid}>
+    <div className={styles.productsGrid}>
       {products.map(product => (
         <LaptopCard key={product.id} product={product} />
       ))}
