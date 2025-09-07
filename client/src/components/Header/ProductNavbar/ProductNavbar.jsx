@@ -24,11 +24,7 @@ const ProductNavbar = forwardRef(({ isOpen, onClose, mobileView, isMobileMenuOpe
 
     // Initial check
     checkScreenSize();
-
-    // Add event listener
     window.addEventListener('resize', checkScreenSize);
-
-    // Clean up
     return () => window.removeEventListener('resize', checkScreenSize);
   }, []);
 
