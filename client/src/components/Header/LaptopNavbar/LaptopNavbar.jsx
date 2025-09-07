@@ -6,8 +6,8 @@ import styles from "./LaptopNavbar.module.css";
 import {
   categories,
   getSeriesItems,
-  getFeatures,
   getExploreItems,
+  getFeatures,
   getPromoContent
 } from "../../MockData/LaptopMockData";
 
