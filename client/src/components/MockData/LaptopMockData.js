@@ -49,27 +49,6 @@ export const getSeriesItems = (category) => {
           image: LaptopImage,
           description: "Great value for gaming",
         },
-        {
-          id: "sword-series",
-          name: "Sword Series - Entry Level Gaming",
-          path: "/laptops/gaming/sword",
-          image: LaptopImage,
-          description: "Entry-level gaming option",
-        },
-        {
-          id: "cyborg-series",
-          name: "Cyborg Series - Futuristic Design",
-          path: "/laptops/gaming/cyborg",
-          image: LaptopImage,
-          description: "Futuristic gaming design",
-        },
-        {
-          id: "pulse-series",
-          name: "Pulse Series - Balanced Performance",
-          path: "/laptops/gaming/pulse",
-          image: LaptopImage,
-          description: "Balanced gaming performance",
-        },
       ];
     case "Content Creation Laptops":
       return [
@@ -94,27 +73,6 @@ export const getSeriesItems = (category) => {
           image: LaptopImage,
           description: "For creative professionals",
         },
-        {
-          id: "modern-series",
-          name: "Modern Series - Modern Creators",
-          path: "/laptops/creator/modern",
-          image: LaptopImage,
-          description: "Modern creator's choice",
-        },
-        {
-          id: "summit-series",
-          name: "Summit Series - Executive Creative",
-          path: "/laptops/creator/summit",
-          image: LaptopImage,
-          description: "Executive creative solution",
-        },
-        {
-          id: "content-master-series",
-          name: "Content Master Series - All-in-One Creative",
-          path: "/laptops/creator/master",
-          image: LaptopImage,
-          description: "All-in-one creative solution",
-        },
       ];
     case "Business Laptops":
       return [
@@ -133,32 +91,11 @@ export const getSeriesItems = (category) => {
           description: "Prestige business line",
         },
         {
-          id: "summit-business-series",
-          name: "Summit Business Series",
-          path: "/laptops/business/summit",
-          image: LaptopImage,
-          description: "Summit business series",
-        },
-        {
           id: "pro-series",
           name: "Pro Series - Enterprise Grade",
           path: "/laptops/business/pro",
           image: LaptopImage,
           description: "Enterprise-grade performance",
-        },
-        {
-          id: "travelmate-series",
-          name: "TravelMate Series - Mobile Professionals",
-          path: "/laptops/business/travelmate",
-          image: LaptopImage,
-          description: "For mobile professionals",
-        },
-        {
-          id: "executive-series",
-          name: "Executive Series - Premium Business",
-          path: "/laptops/business/executive",
-          image: LaptopImage,
-          description: "Premium business solution",
         },
       ];
     case "Thin & Light Laptops":
@@ -178,32 +115,11 @@ export const getSeriesItems = (category) => {
           description: "Modern thin design",
         },
         {
-          id: "summit-ultra-slim",
-          name: "Summit Ultra Slim",
-          path: "/laptops/thin-light/summit",
-          image: LaptopImage,
-          description: "Ultra-slim summit series",
-        },
-        {
-          id: "stealth-thin-series",
-          name: "Stealth Thin Series",
-          path: "/laptops/thin-light/stealth",
-          image: LaptopImage,
-          description: "Stealth thin design",
-        },
-        {
           id: "zen-series",
           name: "Zen Series - Ultra Portable",
           path: "/laptops/thin-light/zen",
           image: LaptopImage,
           description: "Ultra-portable zen series",
-        },
-        {
-          id: "air-series",
-          name: "Air Series - Featherlight",
-          path: "/laptops/thin-light/air",
-          image: LaptopImage,
-          description: "Featherlight air series",
         },
       ];
     case "2-in-1 Convertibles":
@@ -228,27 +144,6 @@ export const getSeriesItems = (category) => {
           path: "/laptops/convertible/modern",
           image: LaptopImage,
           description: "Modern convertible series",
-        },
-        {
-          id: "creator-flip",
-          name: "Creator Flip - Creative Convertible",
-          path: "/laptops/convertible/creator",
-          image: LaptopImage,
-          description: "Creative convertible solution",
-        },
-        {
-          id: "business-flip",
-          name: "Business Flip - Professional Convertible",
-          path: "/laptops/convertible/business",
-          image: LaptopImage,
-          description: "Professional convertible",
-        },
-        {
-          id: "style-series",
-          name: "Style Series - Fashion Convertible",
-          path: "/laptops/convertible/style",
-          image: LaptopImage,
-          description: "Fashion convertible",
         },
       ];
     default:
@@ -281,27 +176,6 @@ export const getFeatures = (category) => {
           image: LaptopImage,
           description: "Efficient thermal management",
         },
-        {
-          id: "rgb-keyboard",
-          name: "Per Key RGB Keyboard",
-          path: "/features/keyboard/rgb",
-          image: LaptopImage,
-          description: "Customizable RGB lighting",
-        },
-        {
-          id: "vr-ready",
-          name: "VR Ready Performance",
-          path: "/features/vr",
-          image: LaptopImage,
-          description: "Virtual reality capable",
-        },
-        {
-          id: "4k-gaming",
-          name: "4K Gaming Capability",
-          path: "/features/4k-gaming",
-          image: LaptopImage,
-          description: "4K gaming experience",
-        },
       ];
     case "Content Creation Laptops":
       return [
@@ -326,37 +200,9 @@ export const getFeatures = (category) => {
           image: LaptopImage,
           description: "Multi-core processing power",
         },
-        {
-          id: "professional-gpus",
-          name: "Professional GPU Options",
-          path: "/features/gpu/professional",
-          image: LaptopImage,
-          description: "Professional-grade graphics",
-        },
-        {
-          id: "color-calibration",
-          name: "Calibrated Color Accuracy",
-          path: "/features/color-calibration",
-          image: LaptopImage,
-          description: "Factory color calibration",
-        },
-        {
-          id: "creator-software",
-          name: "Creator-Centric Software",
-          path: "/features/software/creator",
-          image: LaptopImage,
-          description: "Software for creators",
-        },
       ];
     case "Business Laptops":
       return [
-        {
-          id: "military-durability",
-          name: "Military Grade Durability",
-          path: "/features/durability",
-          image: LaptopImage,
-          description: "Rugged construction",
-        },
         {
           id: "security-features",
           name: "Enhanced Security Features",
@@ -372,25 +218,11 @@ export const getFeatures = (category) => {
           description: "Extended battery performance",
         },
         {
-          id: "business-support",
-          name: "Business-Class Support",
-          path: "/features/support/business",
-          image: LaptopImage,
-          description: "Dedicated business support",
-        },
-        {
           id: "vpro-technology",
           name: "VPro Technology",
           path: "/features/vpro",
           image: LaptopImage,
           description: "Intel vPro technology",
-        },
-        {
-          id: "privacy-protection",
-          name: "Privacy Protection",
-          path: "/features/privacy",
-          image: LaptopImage,
-          description: "Privacy features",
         },
       ];
     case "Thin & Light Laptops":
@@ -416,27 +248,6 @@ export const getFeatures = (category) => {
           image: LaptopImage,
           description: "All-day battery performance",
         },
-        {
-          id: "fast-charging",
-          name: "Fast Charging Technology",
-          path: "/features/charging/fast",
-          image: LaptopImage,
-          description: "Rapid charging capability",
-        },
-        {
-          id: "premium-materials",
-          name: "Premium Materials",
-          path: "/features/materials/premium",
-          image: LaptopImage,
-          description: "High-quality materials",
-        },
-        {
-          id: "silent-operation",
-          name: "Silent Operation",
-          path: "/features/performance/silent",
-          image: LaptopImage,
-          description: "Quiet performance",
-        },
       ];
     case "2-in-1 Convertibles":
       return [
@@ -460,27 +271,6 @@ export const getFeatures = (category) => {
           path: "/features/pen",
           image: LaptopImage,
           description: "Stylus pen support",
-        },
-        {
-          id: "usage-modes",
-          name: "Multiple Usage Modes",
-          path: "/features/usage-modes",
-          image: LaptopImage,
-          description: "Versatile usage modes",
-        },
-        {
-          id: "convertible-design",
-          name: "Convertible Design",
-          path: "/features/design/convertible",
-          image: LaptopImage,
-          description: "Convertible form factor",
-        },
-        {
-          id: "tablet-mode",
-          name: "Tablet Mode Capability",
-          path: "/features/tablet-mode",
-          image: LaptopImage,
-          description: "Tablet functionality",
         },
       ];
     default:
@@ -506,34 +296,6 @@ export const getExploreItems = (category) => {
           image: LaptopImage,
           description: "Advanced cooling technology",
         },
-        {
-          id: "msi-center",
-          name: "MSI Center Gaming Mode",
-          path: "/explore/software/msi-center",
-          image: LaptopImage,
-          description: "Gaming optimization software",
-        },
-        {
-          id: "nahimic-audio",
-          name: "Nahimic Audio Enhancement",
-          path: "/explore/audio/nahimic",
-          image: LaptopImage,
-          description: "Audio enhancement technology",
-        },
-        {
-          id: "mystic-light",
-          name: "Mystic Light RGB Control",
-          path: "/explore/rgb/mystic-light",
-          image: LaptopImage,
-          description: "RGB lighting control",
-        },
-        {
-          id: "optimization-guides",
-          name: "Game Optimization Guides",
-          path: "/explore/guides/gaming",
-          image: LaptopImage,
-          description: "Performance optimization tips",
-        },
       ];
     case "Content Creation Laptops":
       return [
@@ -550,34 +312,6 @@ export const getExploreItems = (category) => {
           path: "/explore/software/creator-bundle",
           image: LaptopImage,
           description: "Software package for creators",
-        },
-        {
-          id: "4k-editing",
-          name: "4K Video Editing Support",
-          path: "/explore/video-editing/4k",
-          image: LaptopImage,
-          description: "4K video editing capability",
-        },
-        {
-          id: "3d-rendering",
-          name: "3D Rendering Performance",
-          path: "/explore/performance/3d-rendering",
-          image: LaptopImage,
-          description: "3D rendering performance",
-        },
-        {
-          id: "workflow-tips",
-          name: "Creative Workflow Tips",
-          path: "/explore/guides/creative-workflow",
-          image: LaptopImage,
-          description: "Workflow optimization tips",
-        },
-        {
-          id: "professional-cert",
-          name: "Professional Certification",
-          path: "/explore/certification",
-          image: LaptopImage,
-          description: "Professional certifications",
         },
       ];
     case "Business Laptops":
@@ -596,34 +330,6 @@ export const getExploreItems = (category) => {
           image: LaptopImage,
           description: "Remote management capabilities",
         },
-        {
-          id: "docking-compatibility",
-          name: "Docking Station Compatibility",
-          path: "/explore/accessories/docking",
-          image: LaptopImage,
-          description: "Docking station support",
-        },
-        {
-          id: "enterprise-software",
-          name: "Enterprise Software Support",
-          path: "/explore/software/enterprise",
-          image: LaptopImage,
-          description: "Enterprise software compatibility",
-        },
-        {
-          id: "it-management",
-          name: "IT Management Features",
-          path: "/explore/features/it-management",
-          image: LaptopImage,
-          description: "IT management capabilities",
-        },
-        {
-          id: "warranty-support",
-          name: "Warranty & Support Options",
-          path: "/explore/support/warranty",
-          image: LaptopImage,
-          description: "Warranty and support options",
-        },
       ];
     case "Thin & Light Laptops":
       return [
@@ -640,34 +346,6 @@ export const getExploreItems = (category) => {
           path: "/explore/guides/battery-optimization",
           image: LaptopImage,
           description: "Battery optimization tips",
-        },
-        {
-          id: "travel-accessories",
-          name: "Travel Accessories",
-          path: "/explore/accessories/travel",
-          image: LaptopImage,
-          description: "Travel accessories",
-        },
-        {
-          id: "wireless-connectivity",
-          name: "Wireless Connectivity",
-          path: "/explore/connectivity/wireless",
-          image: LaptopImage,
-          description: "Wireless connectivity options",
-        },
-        {
-          id: "mobile-productivity",
-          name: "Mobile Productivity Tips",
-          path: "/explore/guides/mobile-productivity",
-          image: LaptopImage,
-          description: "Productivity tips for mobile use",
-        },
-        {
-          id: "ultrabook-cert",
-          name: "Ultrabook Certification",
-          path: "/explore/certification/ultrabook",
-          image: LaptopImage,
-          description: "Ultrabook certification",
         },
       ];
     case "2-in-1 Convertibles":
@@ -686,34 +364,6 @@ export const getExploreItems = (category) => {
           image: LaptopImage,
           description: "Tablet mode applications",
         },
-        {
-          id: "convertible-tips",
-          name: "Convertible Usage Tips",
-          path: "/explore/guides/convertible-usage",
-          image: LaptopImage,
-          description: "Usage tips for convertibles",
-        },
-        {
-          id: "note-taking",
-          name: "Digital Note Taking",
-          path: "/explore/features/note-taking",
-          image: LaptopImage,
-          description: "Digital note taking capabilities",
-        },
-        {
-          id: "presentation-features",
-          name: "Presentation Features",
-          path: "/explore/features/presentation",
-          image: LaptopImage,
-          description: "Presentation capabilities",
-        },
-        {
-          id: "drawing-tools",
-          name: "Creative Drawing Tools",
-          path: "/explore/tools/drawing",
-          image: LaptopImage,
-          description: "Drawing and creative tools",
-        },
       ];
     default:
       return [];
@@ -726,46 +376,41 @@ export const getPromoContent = (category) => {
       return {
         image: LaptopImage,
         title: "Ultimate Gaming Laptops",
-        description:
-          "Dominate the competition with high-refresh displays and powerful RTX graphics",
+        description: "Dominate the competition with high-refresh displays and powerful RTX graphics",
         buttonText: "Explore Gaming Laptops",
-        buttonPath: "/laptops/gaming",
+        buttonPath: "/laptops?category=Gaming+Laptops",
       };
     case "Content Creation Laptops":
       return {
         image: LaptopImage,
         title: "Content Creation Power",
-        description:
-          "Bring your creative visions to life with color-accurate displays and professional performance",
+        description: "Bring your creative visions to life with color-accurate displays and professional performance",
         buttonText: "View Creator Laptops",
-        buttonPath: "/laptops/creator",
+        buttonPath: "/laptops?category=Content+Creation+Laptops",
       };
     case "Business Laptops":
       return {
         image: LaptopImage,
         title: "Business Excellence",
-        description:
-          "Professional laptops with enterprise-grade security and reliability for business success",
+        description: "Professional laptops with enterprise-grade security and reliability for business success",
         buttonText: "See Business Laptops",
-        buttonPath: "/laptops/business",
+        buttonPath: "/laptops?category=Business+Laptops",
       };
     case "Thin & Light Laptops":
       return {
         image: LaptopImage,
         title: "Slim & Powerful",
-        description:
-          "Ultra-portable laptops that don't compromise on performance or style",
+        description: "Ultra-portable laptops that don't compromise on performance or style",
         buttonText: "Discover Thin Laptops",
-        buttonPath: "/laptops/thin-light",
+        buttonPath: "/laptops?category=Thin+%26+Light+Laptops",
       };
     case "2-in-1 Convertibles":
       return {
         image: LaptopImage,
         title: "Versatile Convertibles",
-        description:
-          "Transform your workflow with flexible 2-in-1 laptops for work and play",
+        description: "Transform your workflow with flexible 2-in-1 laptops for work and play",
         buttonText: "Explore Convertibles",
-        buttonPath: "/laptops/convertible",
+        buttonPath: "/laptops?category=2-in-1+Convertibles",
       };
     default:
       return {
