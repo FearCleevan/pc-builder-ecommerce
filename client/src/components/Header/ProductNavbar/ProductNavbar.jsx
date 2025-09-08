@@ -12,7 +12,7 @@ import {
   getPromoContent
 } from "../../MockData/ProductMockData";
 
-const ProductNavbar = forwardRef(({ isOpen, onClose, mobileView, isMobileMenuOpen }, ref) => {
+const ProductNavbar = forwardRef(({ isOpen, onClose}, ref) => {
   const [activeCategory, setActiveCategory] = useState("Components");
   const [isDesktop, setIsDesktop] = useState(true);
   const navigate = useNavigate();

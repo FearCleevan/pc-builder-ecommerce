@@ -12,7 +12,7 @@ import {
   getPromoContent
 } from "../../MockData/DesktopMockData";
 
-const DesktopNavbar = forwardRef(({ isOpen, onClose, mobileView, isMobileMenuOpen }, ref) => {
+const DesktopNavbar = forwardRef(({ isOpen, onClose}, ref) => {
   const [activeCategory, setActiveCategory] = useState("Gaming Desktops");
   const [isLaptop, setIsLaptop] = useState(true);
   const navigate = useNavigate();

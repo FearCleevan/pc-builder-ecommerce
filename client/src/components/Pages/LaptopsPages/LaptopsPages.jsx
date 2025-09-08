@@ -45,10 +45,10 @@ const LaptopsPages = () => {
     }, []);
 
     useEffect(() => {
-        const category = searchParams.get('category') || '';
-        const series = searchParams.get('series') ? [searchParams.get('series')] : [];
-        const subcategory = searchParams.get('subcategory') ? [searchParams.get('subcategory')] : [];
-        const page = parseInt(searchParams.get('page')) || 1;
+        const category = searchParams.get("category") || "";
+        const series = searchParams.get("series") ? [searchParams.get("series")] : [];
+        const subcategory = searchParams.get("subcategory") ? [searchParams.get("subcategory")] : [];
+        const page = parseInt(searchParams.get("page")) || 1;
 
         setActiveFilters({
             category,
@@ -58,7 +58,7 @@ const LaptopsPages = () => {
             processor: [],
             screenSize: [],
             ram: [],
-            storage: []
+            storage: [],
         });
 
         setCurrentPage(page);
@@ -67,19 +67,20 @@ const LaptopsPages = () => {
         let filtered = allProducts;
 
         if (category) {
-            filtered = filtered.filter(product => product.category === category);
+            filtered = filtered.filter((product) => product.category === category);
         }
 
         if (series.length > 0) {
-            filtered = filtered.filter(product => series.includes(product.series));
+            filtered = filtered.filter((product) => series.includes(product.series));
         }
 
         if (subcategory.length > 0) {
-            filtered = filtered.filter(product => subcategory.includes(product.subcategory));
+            filtered = filtered.filter((product) => subcategory.includes(product.subcategory));
         }
 
         setFilteredProducts(filtered);
-    }, [searchParams]);
+    }, [searchParams, allProducts]); // ✅ include allProducts
+
 
     const itemsPerPage = useMemo(() => {
         if (isMobile) return 10;

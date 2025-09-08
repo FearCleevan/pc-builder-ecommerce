@@ -11,6 +11,10 @@ const DesktopCard = ({ product }) => {
 
     // Intersection Observer for lazy loading
     useEffect(() => {
+        const node = cardRef.current; // capture the ref value once
+
+        if (!node) return;
+
         const observer = new IntersectionObserver(
             ([entry]) => {
                 if (entry.isIntersecting) {
@@ -20,21 +24,18 @@ const DesktopCard = ({ product }) => {
             },
             {
                 root: null,
-                rootMargin: '200px', // Load images 200px before they come into view
-                threshold: 0.01
+                rootMargin: "200px", // Load images 200px before they come into view
+                threshold: 0.01,
             }
         );
 
-        if (cardRef.current) {
-            observer.observe(cardRef.current);
-        }
+        observer.observe(node);
 
         return () => {
-            if (cardRef.current) {
-                observer.unobserve(cardRef.current);
-            }
+            observer.unobserve(node); // use the captured node instead of cardRef.current
         };
     }, []);
+
 
     // Load image when component is in view
     useEffect(() => {
@@ -79,27 +80,27 @@ const DesktopCard = ({ product }) => {
         <div className={styles.productCard} ref={cardRef}>
             <div className={styles.productImage}>
                 {/* Lazy loaded image with placeholder */}
-                <img 
+                <img
                     ref={imageRef}
-                    src={isImageLoaded ? product.img : '/placeholder-image.jpg'} 
+                    src={isImageLoaded ? product.img : '/placeholder-image.jpg'}
                     alt={product.name}
                     className={`${isImageLoaded ? styles.imageLoaded : styles.imageLoading}`}
                     loading="lazy" // Native lazy loading as fallback
                 />
-                
+
                 {product.oldPrice > 0 && (
                     <span className={styles.discountBadge}>
                         {Math.round((1 - product.price / product.oldPrice) * 100)}% OFF
                     </span>
                 )}
-                
+
                 {/* Loading skeleton */}
                 {!isImageLoaded && (
                     <div className={styles.imagePlaceholder}>
                         <div className={styles.loadingSpinner}></div>
                     </div>
                 )}
-                
+
                 <div className={styles.productActions}>
                     <button className={styles.wishlistBtn} aria-label="Add to Wishlist">
                         <FaHeart />
@@ -110,7 +111,7 @@ const DesktopCard = ({ product }) => {
                         <span className={styles.tooltip}>Compare</span>
                     </button>
                 </div>
-                
+
                 {/* View Product Hover Button */}
                 <a
                     href={`/desktops/${product.id}`}

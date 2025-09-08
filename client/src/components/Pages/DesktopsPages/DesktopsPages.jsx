@@ -44,10 +44,10 @@ const DesktopsPages = () => {
     }, []);
 
     useEffect(() => {
-        const category = searchParams.get('category') || '';
-        const series = searchParams.get('series') ? [searchParams.get('series')] : [];
-        const subcategory = searchParams.get('subcategory') ? [searchParams.get('subcategory')] : [];
-        const page = parseInt(searchParams.get('page')) || 1;
+        const category = searchParams.get("category") || "";
+        const series = searchParams.get("series") ? [searchParams.get("series")] : [];
+        const subcategory = searchParams.get("subcategory") ? [searchParams.get("subcategory")] : [];
+        const page = parseInt(searchParams.get("page")) || 1;
 
         setActiveFilters({
             category,
@@ -57,7 +57,7 @@ const DesktopsPages = () => {
             processor: [],
             screenSize: [],
             ram: [],
-            storage: []
+            storage: [],
         });
 
         setCurrentPage(page);
@@ -66,19 +66,20 @@ const DesktopsPages = () => {
         let filtered = allProducts;
 
         if (category) {
-            filtered = filtered.filter(product => product.category === category);
+            filtered = filtered.filter((product) => product.category === category);
         }
 
         if (series.length > 0) {
-            filtered = filtered.filter(product => series.includes(product.series));
+            filtered = filtered.filter((product) => series.includes(product.series));
         }
 
         if (subcategory.length > 0) {
-            filtered = filtered.filter(product => subcategory.includes(product.subcategory));
+            filtered = filtered.filter((product) => subcategory.includes(product.subcategory));
         }
 
         setFilteredProducts(filtered);
-    }, [searchParams]);
+    }, [searchParams, allProducts]); // ✅ include allProducts
+
 
     const itemsPerPage = useMemo(() => {
         if (isMobile) return 10;
@@ -103,7 +104,7 @@ const DesktopsPages = () => {
         };
     }, [filteredProducts, currentPage, itemsPerPage]);
 
-        const applyFilters = (category, series, subcategory, gpu, processor, screenSize, ram, storage) => {
+    const applyFilters = (category, series, subcategory, gpu, processor, screenSize, ram, storage) => {
         let filtered = allProducts;
 
         // Basic filters
@@ -144,7 +145,7 @@ const DesktopsPages = () => {
         setCurrentPage(1);
     };
 
-        const handleFilterChange = (newFilters) => {
+    const handleFilterChange = (newFilters) => {
         setActiveFilters(newFilters);
         applyFilters(
             newFilters.category,
@@ -166,7 +167,7 @@ const DesktopsPages = () => {
         setSearchParams(params);
     };
 
-        const handlePageChange = (page) => {
+    const handlePageChange = (page) => {
         setCurrentPage(page);
         const params = new URLSearchParams(searchParams);
         params.set('page', page.toString());
