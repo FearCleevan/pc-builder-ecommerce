@@ -1,25 +1,25 @@
 import React, { useState, useEffect } from 'react';
 import styles from './DesktopsFilter.module.css';
-import { 
-  categories, 
-  getSeriesItems, 
-  getFeatures, 
-  gpuOptions, 
-  processorOptions, 
-  screenSizeOptions, 
-  ramOptions, 
-  storageOptions 
+import {
+    categories,
+    getSeriesItems,
+    getFeatures,
+    gpuOptions,
+    processorOptions,
+    screenSizeOptions,
+    ramOptions,
+    storageOptions
 } from '../../../MockData/DesktopMockData';
 
 // Default visible counts per filter section
 const FILTER_DEFAULTS = {
-  series: 5,
-  features: 5,
-  gpuSeries: 4, // number of GPU series to show by default
-  processor: 6,
-  screenSize: 5,
-  ram: 5,
-  storage: 5
+    series: 5,
+    features: 5,
+    gpuSeries: 4, // number of GPU series to show by default
+    processor: 6,
+    screenSize: 5,
+    ram: 5,
+    storage: 5
 };
 
 const DesktopsFilter = ({ activeFilters, onFilterChange, isMobile }) => {
@@ -71,6 +71,7 @@ const DesktopsFilter = ({ activeFilters, onFilterChange, isMobile }) => {
         }));
     };
 
+    // In DesktopsFilter.jsx, update the handleFilterToggle function:
     const handleFilterToggle = (filterType, value) => {
         const newFilters = { ...selectedFilters };
 
@@ -110,8 +111,8 @@ const DesktopsFilter = ({ activeFilters, onFilterChange, isMobile }) => {
     const features = getFeatures(selectedFilters.category);
 
     // GPU series shown by default or all when expanded
-    const displayedGpuSeries = expandedSections.gpuShowAll 
-        ? gpuOptions 
+    const displayedGpuSeries = expandedSections.gpuShowAll
+        ? gpuOptions
         : gpuOptions.slice(0, FILTER_DEFAULTS.gpuSeries);
 
     // Helper: render a filter section with show all/less and the right default count
@@ -223,7 +224,7 @@ const DesktopsFilter = ({ activeFilters, onFilterChange, isMobile }) => {
                 <div className={styles.filterDropdown}>
                     {displayedGpuSeries.map(series => (
                         <div key={series.id} className={styles.gpuSeries}>
-                            <div 
+                            <div
                                 className={styles.gpuSeriesHeader}
                                 onClick={() => toggleGpuSeries(series.id)}
                             >
