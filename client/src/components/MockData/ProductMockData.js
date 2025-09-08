@@ -8,6 +8,33 @@ export const categories = [
   "OS & Softwares",
 ];
 
+export const gpuOptions = [
+  { id: 'rtx5090', label: 'GeForce RTX™ 5090' },
+  { id: 'rtx5080', label: 'GeForce RTX™ 5080' },
+  { id: 'rtx5070ti', label: 'GeForce RTX™ 5070 Ti' },
+  { id: 'rtx5070', label: 'GeForce RTX™ 5070' },
+  { id: 'rtx5060', label: 'GeForce RTX™ 5060' },
+  { id: 'rtx5050', label: 'GeForce RTX™ 5050' }
+];
+
+export const processorOptions = [
+  { id: 'intel-series2', label: 'Intel Series 2' },
+  { id: 'intel-series1', label: 'Intel Series 1' },
+  { id: 'intel-14gen', label: 'Intel 14th Gen' },
+  { id: 'intel-13gen', label: 'Intel 13th Gen' },
+  { id: 'amd-ai300', label: 'AMD Ryzen™ AI 300 Series' },
+  { id: 'amd-9000', label: 'AMD Ryzen™ 9000 Series' }
+];
+
+export const panelSizeOptions = [
+  { id: '15', label: '15"' },
+  { id: '16', label: '16"' },
+  { id: '17', label: '17"' },
+  { id: '18', label: '18"' },
+  { id: 'oled', label: 'OLED' },
+  { id: 'miniled', label: 'MiniLED' }
+];
+
 // Enhanced data structure with IDs and additional metadata
 export const getSeriesItems = (category) => {
   switch (category) {
