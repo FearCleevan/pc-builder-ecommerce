@@ -1,4 +1,3 @@
-// client/src/components/Pages/LaptopsPages/LaptopsFilter/LaptopsFilter.jsx
 import React, { useState, useEffect } from 'react';
 import styles from './LaptopsFilter.module.css';
 import { 
@@ -12,11 +11,32 @@ import {
   storageOptions 
 } from '../../../MockData/LaptopMockData';
 
+// Default visible counts per filter section
+const FILTER_DEFAULTS = {
+  series: 5,
+  features: 5,
+  gpuSeries: 4, // number of GPU series to show by default
+  processor: 6,
+  screenSize: 5,
+  ram: 5,
+  storage: 5
+};
+
 const LaptopsFilter = ({ activeFilters, onFilterChange, isMobile }) => {
     const [expandedSections, setExpandedSections] = useState({
-        gpu: {}, // Track expanded state for each GPU series
-        gpuShowAll: false // Track if all GPU options should be shown
+        series: false,
+        features: false,
+        gpuShowAll: false,
+        processor: false,
+        processorShowAll: false,
+        screenSize: false,
+        screenSizeShowAll: false,
+        ram: false,
+        ramShowAll: false,
+        storage: false,
+        storageShowAll: false,
     });
+    const [expandedGpuSeries, setExpandedGpuSeries] = useState({});
     const [selectedFilters, setSelectedFilters] = useState({
         category: activeFilters.category || '',
         series: activeFilters.series || [],
@@ -28,23 +48,6 @@ const LaptopsFilter = ({ activeFilters, onFilterChange, isMobile }) => {
         storage: []
     });
 
-    const toggleSection = (section) => {
-        setExpandedSections(prev => ({
-            ...prev,
-            [section]: !prev[section]
-        }));
-    };
-
-    const toggleGpuSeries = (seriesId) => {
-        setExpandedSections(prev => ({
-            ...prev,
-            gpu: {
-                ...prev.gpu,
-                [seriesId]: !prev.gpu[seriesId]
-            }
-        }));
-    };
-
     useEffect(() => {
         setSelectedFilters(prev => ({
             ...prev,
@@ -53,6 +56,20 @@ const LaptopsFilter = ({ activeFilters, onFilterChange, isMobile }) => {
             subcategory: activeFilters.subcategory || []
         }));
     }, [activeFilters]);
+
+    const handleShowAllToggle = (section) => {
+        setExpandedSections(prev => ({
+            ...prev,
+            [`${section}ShowAll`]: !prev[`${section}ShowAll`]
+        }));
+    };
+
+    const toggleGpuSeries = (seriesId) => {
+        setExpandedGpuSeries(prev => ({
+            ...prev,
+            [seriesId]: !prev[seriesId]
+        }));
+    };
 
     const handleFilterToggle = (filterType, value) => {
         const newFilters = { ...selectedFilters };
@@ -92,21 +109,71 @@ const LaptopsFilter = ({ activeFilters, onFilterChange, isMobile }) => {
     const seriesItems = getSeriesItems(selectedFilters.category);
     const features = getFeatures(selectedFilters.category);
 
-    // Show only 4 GPU series by default, show all when expanded
+    // GPU series shown by default or all when expanded
     const displayedGpuSeries = expandedSections.gpuShowAll 
         ? gpuOptions 
-        : gpuOptions.slice(0, 4);
+        : gpuOptions.slice(0, FILTER_DEFAULTS.gpuSeries);
+
+    // Helper: render a filter section with show all/less and the right default count
+    const renderFilterSection = ({
+        section,
+        options,
+        selected,
+        filterType,
+        defaultCount,
+        label,
+    }) => {
+        const showAll = !!expandedSections[`${section}ShowAll`];
+        const countToShow = showAll ? options.length : defaultCount;
+
+        return (
+            <fieldset className={styles.filterFieldset}>
+                <legend
+                    className={styles.filterLegend}
+                >
+                    <div className={styles.filterTitle}>
+                        <span>{label}</span>
+                    </div>
+                </legend>
+                <ul className={`${styles.filterList} ${styles.filterListDown}`}>
+                    {options.slice(0, countToShow).map(option => (
+                        <li key={option.id} className={styles.filterItem}>
+                            <input
+                                className={styles.filterCheckbox}
+                                id={`${section}-${option.id}`}
+                                type="checkbox"
+                                checked={selected.includes(option.id)}
+                                onChange={() => handleFilterToggle(filterType, option.id)}
+                            />
+                            <label htmlFor={`${section}-${option.id}`} className={styles.filterLabel}>
+                                {option.name || option.label}
+                            </label>
+                        </li>
+                    ))}
+                </ul>
+                {options.length > defaultCount && (
+                    <button
+                        type="button"
+                        className={styles.filterShowAll}
+                        onClick={() => handleShowAllToggle(section)}
+                    >
+                        {showAll ? '↑ Show less' : '↓ Show all...'}
+                    </button>
+                )}
+            </fieldset>
+        );
+    };
 
     return (
         <form id="laptop-filter" className={`${styles.filterForm} ${isMobile ? styles.mobile : ''}`}>
+            {/* Category */}
             <fieldset className={styles.filterFieldset}>
                 <legend className={styles.filterLegend}>
                     <div className={styles.filterTitle}>
                         <span>Category</span>
                     </div>
                 </legend>
-
-                <ul className={styles.filterList}>
+                <ul className={`${styles.filterList} ${styles.filterListDown}`}>
                     {categories.map(category => (
                         <li key={category} className={styles.filterItem}>
                             <input
@@ -124,310 +191,123 @@ const LaptopsFilter = ({ activeFilters, onFilterChange, isMobile }) => {
                 </ul>
             </fieldset>
 
-            {selectedFilters.category && (
-                <fieldset className={styles.filterFieldset}>
-                    <legend
-                        className={`${styles.filterLegend} ${styles.filterLegendDown}`}
-                        onClick={() => toggleSection('series')}
-                    >
-                        <div className={styles.filterTitle}>
-                            <span className={styles.filterIcon}></span>
-                            <span>Series</span>
-                        </div>
-                    </legend>
+            {/* Series */}
+            {selectedFilters.category && renderFilterSection({
+                section: 'series',
+                options: seriesItems,
+                selected: selectedFilters.series,
+                filterType: 'series',
+                defaultCount: FILTER_DEFAULTS.series,
+                label: 'Series',
+            })}
 
-                    <ul className={`${styles.filterList} ${expandedSections.series ? styles.filterListDown : ''}`}>
-                        {seriesItems.slice(0, expandedSections.series ? seriesItems.length : 5).map(item => (
-                            <li key={item.id} className={styles.filterItem}>
-                                <input
-                                    className={styles.filterCheckbox}
-                                    id={item.id}
-                                    type="checkbox"
-                                    checked={selectedFilters.series.includes(item.id)}
-                                    onChange={() => handleFilterToggle('series', item.id)}
-                                />
-                                <label htmlFor={item.id} className={styles.filterLabel}>
-                                    {item.name}
-                                </label>
-                            </li>
-                        ))}
-                    </ul>
+            {/* Key Features */}
+            {selectedFilters.category && renderFilterSection({
+                section: 'features',
+                options: features,
+                selected: selectedFilters.subcategory,
+                filterType: 'subcategory',
+                defaultCount: FILTER_DEFAULTS.features,
+                label: 'Key Features',
+            })}
 
-                    {seriesItems.length > 5 && (
-                        <button
-                            type="button"
-                            className={styles.filterShowAll}
-                            onClick={() => toggleSection('series')}
-                        >
-                            {expandedSections.series ? '↑ Show less' : '↓ Show all...'}
-                        </button>
-                    )}
-                </fieldset>
-            )}
-
-            {selectedFilters.category && (
-                <fieldset className={styles.filterFieldset}>
-                    <legend
-                        className={`${styles.filterLegend} ${styles.filterLegendDown}`}
-                        onClick={() => toggleSection('features')}
-                    >
-                        <div className={styles.filterTitle}>
-                            <span className={styles.filterIcon}></span>
-                            <span>Key Features</span>
-                        </div>
-                    </legend>
-
-                    <ul className={`${styles.filterList} ${expandedSections.features ? styles.filterListDown : ''}`}>
-                        {features.slice(0, expandedSections.features ? features.length : 5).map(item => (
-                            <li key={item.id} className={styles.filterItem}>
-                                <input
-                                    className={styles.filterCheckbox}
-                                    id={item.id}
-                                    type="checkbox"
-                                    checked={selectedFilters.subcategory.includes(item.id)}
-                                    onChange={() => handleFilterToggle('subcategory', item.id)}
-                                />
-                                <label htmlFor={item.id} className={styles.filterLabel}>
-                                    {item.name}
-                                </label>
-                            </li>
-                        ))}
-                    </ul>
-
-                    {features.length > 5 && (
-                        <button
-                            type="button"
-                            className={styles.filterShowAll}
-                            onClick={() => toggleSection('features')}
-                        >
-                            {expandedSections.features ? '↑ Show less' : '↓ Show all...'}
-                        </button>
-                    )}
-                </fieldset>
-            )}
-
+            {/* GPU */}
             <fieldset className={styles.filterFieldset}>
                 <legend
                     className={styles.filterLegend}
-                    onClick={() => toggleSection('gpu')}
                 >
                     <div className={styles.filterTitle}>
                         <span>GPU</span>
                     </div>
                 </legend>
-
-                {expandedSections.gpu && (
-                    <div className={styles.filterDropdown}>
-                        {displayedGpuSeries.map(series => (
-                            <div key={series.id} className={styles.gpuSeries}>
-                                <div 
-                                    className={styles.gpuSeriesHeader}
-                                    onClick={() => toggleGpuSeries(series.id)}
-                                >
-                                    <span className={styles.gpuSeriesTitle}>{series.series}</span>
-                                    <span className={styles.gpuSeriesToggle}>
-                                        {expandedSections.gpu[series.id] ? '−' : '+'}
-                                    </span>
-                                </div>
-                                
-                                {expandedSections.gpu[series.id] && (
-                                    <ul className={styles.filterDropList}>
-                                        {series.options.map(option => (
-                                            <li key={option.id} className={styles.filterItem}>
-                                                <input
-                                                    className={styles.filterCheckbox}
-                                                    id={option.id}
-                                                    type="checkbox"
-                                                    checked={selectedFilters.gpu.includes(option.id)}
-                                                    onChange={() => handleFilterToggle('gpu', option.id)}
-                                                />
-                                                <label htmlFor={option.id} className={styles.filterLabel}>
-                                                    {option.label}
-                                                </label>
-                                            </li>
-                                        ))}
-                                    </ul>
-                                )}
+                <div className={styles.filterDropdown}>
+                    {displayedGpuSeries.map(series => (
+                        <div key={series.id} className={styles.gpuSeries}>
+                            <div 
+                                className={styles.gpuSeriesHeader}
+                                onClick={() => toggleGpuSeries(series.id)}
+                            >
+                                <span className={styles.gpuSeriesTitle}>{series.series}</span>
+                                <span className={styles.gpuSeriesToggle}>
+                                    {expandedGpuSeries[series.id] ? '−' : '+'}
+                                </span>
                             </div>
-                        ))}
-                        
-                        {gpuOptions.length > 4 && (
-                            <button
-                                type="button"
-                                className={styles.filterShowAll}
-                                onClick={() => setExpandedSections(prev => ({
+                            {expandedGpuSeries[series.id] && (
+                                <ul className={styles.filterDropList}>
+                                    {series.options.map(option => (
+                                        <li key={option.id} className={styles.filterItem}>
+                                            <input
+                                                className={styles.filterCheckbox}
+                                                id={option.id}
+                                                type="checkbox"
+                                                checked={selectedFilters.gpu.includes(option.id)}
+                                                onChange={() => handleFilterToggle('gpu', option.id)}
+                                            />
+                                            <label htmlFor={option.id} className={styles.filterLabel}>
+                                                {option.label}
+                                            </label>
+                                        </li>
+                                    ))}
+                                </ul>
+                            )}
+                        </div>
+                    ))}
+                    {gpuOptions.length > FILTER_DEFAULTS.gpuSeries && (
+                        <button
+                            type="button"
+                            className={styles.filterShowAll}
+                            onClick={() =>
+                                setExpandedSections(prev => ({
                                     ...prev,
                                     gpuShowAll: !prev.gpuShowAll
-                                }))}
-                            >
-                                {expandedSections.gpuShowAll ? '↑ Show less GPU series' : '↓ Show all GPU series...'}
-                            </button>
-                        )}
-                    </div>
-                )}
+                                }))
+                            }
+                        >
+                            {expandedSections.gpuShowAll ? '↑ Show less GPU series' : '↓ Show all GPU series...'}
+                        </button>
+                    )}
+                </div>
             </fieldset>
 
-            <fieldset className={styles.filterFieldset}>
-                <legend
-                    className={styles.filterLegend}
-                    onClick={() => toggleSection('processor')}
-                >
-                    <div className={styles.filterTitle}>
-                        <span>Processor</span>
-                    </div>
-                </legend>
+            {/* Processor */}
+            {renderFilterSection({
+                section: 'processor',
+                options: processorOptions,
+                selected: selectedFilters.processor,
+                filterType: 'processor',
+                defaultCount: FILTER_DEFAULTS.processor,
+                label: 'Processor',
+            })}
 
-                {expandedSections.processor && (
-                    <div className={styles.filterDropdown}>
-                        <ul className={styles.filterDropList}>
-                            {processorOptions.slice(0, expandedSections.processorShowAll ? processorOptions.length : 6).map(option => (
-                                <li key={option.id} className={styles.filterItem}>
-                                    <input
-                                        className={styles.filterCheckbox}
-                                        id={option.id}
-                                        type="checkbox"
-                                        checked={selectedFilters.processor.includes(option.id)}
-                                        onChange={() => handleFilterToggle('processor', option.id)}
-                                    />
-                                    <label htmlFor={option.id} className={styles.filterLabel}>
-                                        {option.label}
-                                    </label>
-                                </li>
-                            ))}
-                        </ul>
-                        
-                        {processorOptions.length > 6 && (
-                            <button
-                                type="button"
-                                className={styles.filterShowAll}
-                                onClick={() => setExpandedSections(prev => ({
-                                    ...prev,
-                                    processorShowAll: !prev.processorShowAll
-                                }))}
-                            >
-                                {expandedSections.processorShowAll ? '↑ Show less' : '↓ Show all...'}
-                            </button>
-                        )}
-                    </div>
-                )}
-            </fieldset>
+            {/* Screen Size */}
+            {renderFilterSection({
+                section: 'screenSize',
+                options: screenSizeOptions,
+                selected: selectedFilters.screenSize,
+                filterType: 'screenSize',
+                defaultCount: FILTER_DEFAULTS.screenSize,
+                label: 'Screen Size',
+            })}
 
-            <fieldset className={styles.filterFieldset}>
-                <legend
-                    className={`${styles.filterLegend} ${styles.filterLegendDown}`}
-                    onClick={() => toggleSection('screenSize')}
-                >
-                    <div className={styles.filterTitle}>
-                        <span className={styles.filterIcon}></span>
-                        <span>Screen Size</span>
-                    </div>
-                </legend>
+            {/* RAM */}
+            {renderFilterSection({
+                section: 'ram',
+                options: ramOptions,
+                selected: selectedFilters.ram,
+                filterType: 'ram',
+                defaultCount: FILTER_DEFAULTS.ram,
+                label: 'RAM',
+            })}
 
-                <ul className={`${styles.filterList} ${expandedSections.screenSize ? styles.filterListDown : ''}`}>
-                    {screenSizeOptions.slice(0, expandedSections.screenSize ? screenSizeOptions.length : 5).map(option => (
-                        <li key={option.id} className={styles.filterItem}>
-                            <input
-                                className={styles.filterCheckbox}
-                                id={option.id}
-                                type="checkbox"
-                                checked={selectedFilters.screenSize.includes(option.id)}
-                                onChange={() => handleFilterToggle('screenSize', option.id)}
-                            />
-                            <label htmlFor={option.id} className={styles.filterLabel}>
-                                {option.label}
-                            </label>
-                        </li>
-                    ))}
-                </ul>
-                
-                {screenSizeOptions.length > 5 && (
-                    <button
-                        type="button"
-                        className={styles.filterShowAll}
-                        onClick={() => toggleSection('screenSize')}
-                    >
-                        {expandedSections.screenSize ? '↑ Show less' : '↓ Show all...'}
-                    </button>
-                )}
-            </fieldset>
-
-            <fieldset className={styles.filterFieldset}>
-                <legend
-                    className={`${styles.filterLegend} ${styles.filterLegendDown}`}
-                    onClick={() => toggleSection('ram')}
-                >
-                    <div className={styles.filterTitle}>
-                        <span className={styles.filterIcon}></span>
-                        <span>RAM</span>
-                    </div>
-                </legend>
-
-                <ul className={`${styles.filterList} ${expandedSections.ram ? styles.filterListDown : ''}`}>
-                    {ramOptions.slice(0, expandedSections.ram ? ramOptions.length : 5).map(option => (
-                        <li key={option.id} className={styles.filterItem}>
-                            <input
-                                className={styles.filterCheckbox}
-                                id={option.id}
-                                type="checkbox"
-                                checked={selectedFilters.ram.includes(option.id)}
-                                onChange={() => handleFilterToggle('ram', option.id)}
-                            />
-                            <label htmlFor={option.id} className={styles.filterLabel}>
-                                {option.label}
-                            </label>
-                        </li>
-                    ))}
-                </ul>
-                
-                {ramOptions.length > 5 && (
-                    <button
-                        type="button"
-                        className={styles.filterShowAll}
-                        onClick={() => toggleSection('ram')}
-                    >
-                        {expandedSections.ram ? '↑ Show less' : '↓ Show all...'}
-                    </button>
-                )}
-            </fieldset>
-
-            <fieldset className={styles.filterFieldset}>
-                <legend
-                    className={`${styles.filterLegend} ${styles.filterLegendDown}`}
-                    onClick={() => toggleSection('storage')}
-                >
-                    <div className={styles.filterTitle}>
-                        <span className={styles.filterIcon}></span>
-                        <span>Storage</span>
-                    </div>
-                </legend>
-
-                <ul className={`${styles.filterList} ${expandedSections.storage ? styles.filterListDown : ''}`}>
-                    {storageOptions.slice(0, expandedSections.storage ? storageOptions.length : 5).map(option => (
-                        <li key={option.id} className={styles.filterItem}>
-                            <input
-                                className={styles.filterCheckbox}
-                                id={option.id}
-                                type="checkbox"
-                                checked={selectedFilters.storage.includes(option.id)}
-                                onChange={() => handleFilterToggle('storage', option.id)}
-                            />
-                            <label htmlFor={option.id} className={styles.filterLabel}>
-                                {option.label}
-                            </label>
-                        </li>
-                    ))}
-                </ul>
-                
-                {storageOptions.length > 5 && (
-                    <button
-                        type="button"
-                        className={styles.filterShowAll}
-                        onClick={() => toggleSection('storage')}
-                    >
-                        {expandedSections.storage ? '↑ Show less' : '↓ Show all...'}
-                    </button>
-                )}
-            </fieldset>
+            {/* Storage */}
+            {renderFilterSection({
+                section: 'storage',
+                options: storageOptions,
+                selected: selectedFilters.storage,
+                filterType: 'storage',
+                defaultCount: FILTER_DEFAULTS.storage,
+                label: 'Storage',
+            })}
 
             <button type="reset" className={styles.filterReset} onClick={resetFilters}>
                 <span className={styles.resetIcon}></span>
