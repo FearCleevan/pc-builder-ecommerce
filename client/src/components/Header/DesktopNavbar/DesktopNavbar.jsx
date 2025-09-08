@@ -1,5 +1,6 @@
 // client/src/components/Header/DesktopNavbar/DesktopNavbar.jsx
 import React, { useState, useEffect, forwardRef } from "react";
+import { useNavigate } from "react-router-dom";
 import styles from "./DesktopNavbar.module.css";
 
 // Import mock data
@@ -11,39 +12,34 @@ import {
   getPromoContent
 } from "../../MockData/DesktopMockData";
 
-// Custom hook for navigation
-const useNavigation = () => {
-  const handleNavigation = (path, e) => {
-    if (e) e.preventDefault();
-    console.log("Would navigate to:", path);
-    // In a real implementation, you would use:
-    // navigate(path); // from react-router-dom
-    // or
-    // window.location.href = path;
-  };
-
-  return { handleNavigation };
-};
-
 const DesktopNavbar = forwardRef(({ isOpen, onClose, mobileView, isMobileMenuOpen }, ref) => {
   const [activeCategory, setActiveCategory] = useState("Gaming Desktops");
   const [isLaptop, setIsLaptop] = useState(true);
-  const { handleNavigation } = useNavigation();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const checkScreenSize = () => {
       setIsLaptop(window.innerWidth > 991);
     };
 
-    // Initial check
     checkScreenSize();
-
-    // Add event listener
     window.addEventListener('resize', checkScreenSize);
-
-    // Clean up
     return () => window.removeEventListener('resize', checkScreenSize);
   }, []);
+
+  // Handle navigation to desktops page
+  const handleNavigation = (path, e, category, series, feature) => {
+    if (e) e.preventDefault();
+
+    const searchParams = new URLSearchParams();
+
+    if (category) searchParams.set('category', category);
+    if (series) searchParams.set('series', series);
+    if (feature) searchParams.set('subcategory', feature);
+
+    navigate(`/desktops?${searchParams.toString()}`);
+    onClose();
+  };
 
   // Don't show this navbar on mobile devices
   if (!isLaptop) {
@@ -86,10 +82,10 @@ const DesktopNavbar = forwardRef(({ isOpen, onClose, mobileView, isMobileMenuOpe
           <h4>POPULAR SERIES</h4>
           <ul>
             {getSeriesItems(activeCategory).map(item => (
-              <li key={item.name}>
+              <li key={item.id}>
                 <a
                   href={item.path}
-                  onClick={(e) => handleNavigation(item.path, e)}
+                  onClick={(e) => handleNavigation(item.path, e, activeCategory, item.id, null)}
                   className={styles.seriesLink}
                 >
                   {item.name}
@@ -104,10 +100,10 @@ const DesktopNavbar = forwardRef(({ isOpen, onClose, mobileView, isMobileMenuOpe
           <h4>KEY FEATURES</h4>
           <ul>
             {getFeatures(activeCategory).map(item => (
-              <li key={item.name}>
+              <li key={item.id}>
                 <a
                   href={item.path}
-                  onClick={(e) => handleNavigation(item.path, e)}
+                  onClick={(e) => handleNavigation(item.path, e, activeCategory, null, item.id)}
                   className={styles.featureLink}
                 >
                   ✓ {item.name}
@@ -122,10 +118,10 @@ const DesktopNavbar = forwardRef(({ isOpen, onClose, mobileView, isMobileMenuOpe
           <h4>EXPLORE</h4>
           <ul>
             {getExploreItems(activeCategory).map(item => (
-              <li key={item.name}>
+              <li key={item.id}>
                 <a
                   href={item.path}
-                  onClick={(e) => handleNavigation(item.path, e)}
+                  onClick={(e) => handleNavigation(item.path, e, activeCategory, null, null)}
                   className={styles.exploreLink}
                 >
                   {item.name}
@@ -146,7 +142,7 @@ const DesktopNavbar = forwardRef(({ isOpen, onClose, mobileView, isMobileMenuOpe
           <p>{promoContent.description}</p>
           <a
             href={promoContent.buttonPath}
-            onClick={(e) => handleNavigation(promoContent.buttonPath, e)}
+            onClick={(e) => handleNavigation(promoContent.buttonPath, e, activeCategory, null, null)}
             className={styles.ctaButton}
           >
             {promoContent.buttonText}

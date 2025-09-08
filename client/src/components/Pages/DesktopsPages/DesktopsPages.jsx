@@ -1,12 +1,12 @@
 //client/src/components/Pages/DesktopsPages/DesktopsPages.jsx
 import React, { useEffect, useState, useMemo } from 'react';
 import { useSearchParams } from 'react-router-dom';
-import DesktopsFilter from './LaptopsFilter/LaptopsFilter';
-import DesktopsGrid from './LaptopsGrid/LaptopsGrid';
-import DesktopsBreadcrumb from './LaptopsBreadcrumb/LaptopsBreadcrumb';
+import DesktopsFilter from './DesktopsFilter/DesktopsFilter';
+import DesktopsGrid from './DesktopsGrid/DesktopsGrid';
+import DesktopsBreadcrumb from './DesktopsBreadcrumb/DesktopsBreadcrumb';
 import Pagination from './Pagination/Pagination';
 import { desktopProducts } from '../../MockData/MockData';
-import styles from './LaptopsPages.module.css';
+import styles from './DesktopsPages.module.css';
 import Header from '../../Header/Header';
 import Footer from '../../Footer/Footer';
 
@@ -17,7 +17,7 @@ const DesktopsPages = () => {
     const [activeFilters, setActiveFilters] = useState({
         categories: '',
         series: [],
-        subcategories: [],
+        subcategory: [],
         gpu: [],
         processor: [],
         screenSize: [],

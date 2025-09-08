@@ -5,6 +5,7 @@ import Main from './components/Main/Main';
 import ProductsPages from './components/Pages/ProductsPages/ProductsPages';
 import './index.css';
 import LaptopsPages from './components/Pages/LaptopsPages/LaptopsPages';
+import DesktopsPages from './components/Pages/DesktopsPages/DesktopsPages';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
           <Route path="/" element={<Main />} />
           <Route path="/products" element={<ProductsPages />} />
           <Route path="/laptops" element={<LaptopsPages />} />
+          <Route path="/desktops" element={<DesktopsPages />} />
           {/* Add other routes as needed */}
         </Routes>
       </div>

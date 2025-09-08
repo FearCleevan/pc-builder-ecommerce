@@ -128,7 +128,7 @@ export const desktopProducts = [
     rating: 4.8,
     reviews: 124,
     category: "Desktop",
-    series: "gaming-series",
+    series: "meg-series",
     subcategory: "high-end",
     specs: {
       gpu: "rtx4070",
@@ -149,7 +149,7 @@ export const desktopProducts = [
     rating: 4.6,
     reviews: 87,
     category: "Desktop",
-    series: "workstation-series",
+    series: "meg-series",
     subcategory: "creator",
     specs: {
       gpu: "rtx4050",
