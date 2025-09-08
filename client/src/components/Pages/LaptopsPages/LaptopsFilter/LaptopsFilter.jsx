@@ -1,7 +1,16 @@
 // client/src/components/Pages/LaptopsPages/LaptopsFilter/LaptopsFilter.jsx
 import React, { useState, useEffect } from 'react';
 import styles from './LaptopsFilter.module.css';
-import { categories, getSeriesItems, getFeatures } from '../../../MockData/LaptopMockData';
+import { 
+  categories, 
+  getSeriesItems, 
+  getFeatures, 
+  gpuOptions, 
+  processorOptions, 
+  screenSizeOptions, 
+  ramOptions, 
+  storageOptions 
+} from '../../../MockData/LaptopMockData';
 
 const LaptopsFilter = ({ activeFilters, onFilterChange, isMobile }) => {
     const [expandedSections, setExpandedSections] = useState({
@@ -83,105 +92,10 @@ const LaptopsFilter = ({ activeFilters, onFilterChange, isMobile }) => {
     const seriesItems = getSeriesItems(selectedFilters.category);
     const features = getFeatures(selectedFilters.category);
 
-    const gpuOptions = [
-        {
-            id: "geforce-rtx-50",
-            series: "GeForce RTX™ 50 Series",
-            options: [
-                { id: "rtx5090", label: "GeForce RTX™ 5090" },
-                { id: "rtx5080", label: "GeForce RTX™ 5080" },
-                { id: "rtx5070ti", label: "GeForce RTX™ 5070 Ti" },
-                { id: "rtx5070", label: "GeForce RTX™ 5070" },
-                { id: "rtx5060", label: "GeForce RTX™ 5060" },
-                { id: "rtx5050", label: "GeForce RTX™ 5050" },
-            ],
-        },
-        {
-            id: "geforce-rtx-40",
-            series: "GeForce RTX™ 40 Series",
-            options: [
-                { id: "rtx4090", label: "GeForce RTX™ 4090" },
-                { id: "rtx4080", label: "GeForce RTX™ 4080" },
-                { id: "rtx4070", label: "GeForce RTX™ 4070" },
-                { id: "rtx4060", label: "GeForce RTX™ 4060" },
-                { id: "rtx4050", label: "GeForce RTX™ 4050" },
-            ],
-        },
-        {
-            id: "geforce-rtx-30",
-            series: "GeForce RTX™ 30 Series",
-            options: [
-                { id: "rtx3090", label: "GeForce RTX™ 3090" },
-                { id: "rtx3080", label: "GeForce RTX™ 3080" },
-                { id: "rtx3070", label: "GeForce RTX™ 3070" },
-                { id: "rtx3060", label: "GeForce RTX™ 3060" },
-                { id: "rtx3050", label: "GeForce RTX™ 3050" },
-            ],
-        },
-        {
-            id: "geforce-rtx-20",
-            series: "GeForce RTX™ 20 Series",
-            options: [
-                { id: "rtx2080", label: "GeForce RTX™ 2080" },
-                { id: "rtx2070", label: "GeForce RTX™ 2070" },
-                { id: "rtx2060", label: "GeForce RTX™ 2060" },
-                { id: "rtx2050", label: "GeForce RTX™ 2050" },
-            ],
-        },
-        {
-            id: "professional-gpus",
-            series: "Professional & Other GPUs",
-            options: [
-                { id: "rtx5000", label: "NVIDIA RTX™ 5000" },
-                { id: "integrated", label: "Integrated Graphics" },
-                { id: "apple-silicon", label: "Apple Silicon" },
-            ],
-        },
-    ];
-
     // Show only 4 GPU series by default, show all when expanded
     const displayedGpuSeries = expandedSections.gpuShowAll 
         ? gpuOptions 
         : gpuOptions.slice(0, 4);
-
-    const processorOptions = [
-        { id: 'intel-i9', label: 'Intel® Core™ i9' },
-        { id: 'intel-i7', label: 'Intel® Core™ i7' },
-        { id: 'intel-i5', label: 'Intel® Core™ i5' },
-        { id: 'intel-i3', label: 'Intel® Core™ i3' },
-        { id: 'intel-xeon', label: 'Intel® Xeon®' },
-        { id: 'amd-ryzen9', label: 'AMD Ryzen™ 9' },
-        { id: 'amd-ryzen7', label: 'AMD Ryzen™ 7' },
-        { id: 'amd-ryzen5', label: 'AMD Ryzen™ 5' },
-        { id: 'amd-ryzen3', label: 'AMD Ryzen™ 3' },
-        { id: 'apple-m2', label: 'Apple M2' },
-        { id: 'apple-m1', label: 'Apple M1' }
-    ];
-
-    const screenSizeOptions = [
-        { id: '13', label: '13"' },
-        { id: '14', label: '14"' },
-        { id: '15', label: '15"' },
-        { id: '16', label: '16"' },
-        { id: '17', label: '17"' },
-        { id: '18', label: '18"' }
-    ];
-
-    const ramOptions = [
-        { id: '8gb', label: '8GB' },
-        { id: '16gb', label: '16GB' },
-        { id: '32gb', label: '32GB' },
-        { id: '64gb', label: '64GB' },
-        { id: '128gb', label: '128GB' }
-    ];
-
-    const storageOptions = [
-        { id: '256gb', label: '256GB SSD' },
-        { id: '512gb', label: '512GB SSD' },
-        { id: '1tb', label: '1TB SSD' },
-        { id: '2tb', label: '2TB SSD' },
-        { id: '4tb', label: '4TB SSD' }
-    ];
 
     return (
         <form id="laptop-filter" className={`${styles.filterForm} ${isMobile ? styles.mobile : ''}`}>
