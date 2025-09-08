@@ -1,4 +1,3 @@
-// client/src/components/Pages/ProductsPages/ProductCard/ProductCard.jsx
 import React from 'react';
 import { FaShoppingCart, FaHeart, FaStar, FaRegStar, FaBalanceScale } from 'react-icons/fa';
 import { formatPrice } from '../../../MockData/MockData';
@@ -42,6 +41,14 @@ const ProductCard = ({ product }) => {
                         <span className={styles.tooltip}>Compare</span>
                     </button>
                 </div>
+                {/* View Product Hover Button */}
+                <a
+                    href={`/products/${product.id}`}
+                    className={styles.viewProductBtn}
+                    tabIndex={-1}
+                >
+                    View Product
+                </a>
             </div>
 
             <div className={styles.productInfo}>

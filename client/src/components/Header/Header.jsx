@@ -14,7 +14,10 @@ import ProductNavbar from "./ProductNavbar/ProductNavbar";
 import DesktopNavbar from "./DesktopNavbar/DesktopNavbar";
 import LaptopNavbar from "./LaptopNavbar/LaptopNavbar";
 import Logo from "../../assets/Logo.png";
-import { useNavigate } from "react-router-dom"
+import { useNavigate } from "react-router-dom";
+
+// Import AI Assistant
+import AIAssistant from "../AIAssistant/AIAssistant";
 
 // Import mock data for all sections
 import {
@@ -68,6 +71,7 @@ const useNavigation = () => {
 
   return { handleNavigation };
 };
+
 const Header = () => {
   const [activeNav, setActiveNav] = useState(null);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -710,6 +714,9 @@ const Header = () => {
       {isMobileMenuOpen && (
         <div className={styles.overlay} onClick={closeAllMenus}></div>
       )}
+
+      {/* AI Assistant Chat Box - Fixed at bottom right */}
+      <AIAssistant />
     </>
   );
 };

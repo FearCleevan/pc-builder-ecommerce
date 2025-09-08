@@ -1,0 +1,234 @@
+/* client/src/components/AIAssistant/AIAssistant.module.css */
+.aiAssistant {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+}
+
+.chatToggle {
+  background: linear-gradient(135deg, #ff2c2c, #ff5252);
+  color: white;
+  border: none;
+  border-radius: 25px;
+  padding: 12px 20px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+  box-shadow: 0 4px 12px rgba(0, 123, 255, 0.3);
+  transition: all 0.3s ease;
+}
+
+.chatToggle:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 123, 255, 0.4);
+}
+
+.chatContainer {
+  position: absolute;
+  bottom: 60px;
+  right: 0;
+  width: 350px;
+  height: 500px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.chatHeader {
+  background: linear-gradient(135deg, #ff2c2c, #ff5252);
+  color: white;
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.chatHeader h3 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.chatHeader button {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+  padding: 0;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.messagesContainer {
+  flex: 1;
+  padding: 15px;
+  overflow-y: auto;
+  background: #f8f9fa;
+}
+
+.message {
+  margin-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+.userMessage {
+  align-items: flex-end;
+}
+
+.botMessage {
+  align-items: flex-start;
+}
+
+.messageContent {
+  max-width: 80%;
+  padding: 10px 15px;
+  border-radius: 18px;
+  word-wrap: break-word;
+}
+
+.userMessage .messageContent {
+  background: #ff2c2c;
+  color: white;
+  border-bottom-right-radius: 4px;
+}
+
+.botMessage .messageContent {
+  background: white;
+  color: #333;
+  border: 1px solid #e9ecef;
+  border-bottom-left-radius: 4px;
+}
+
+.timestamp {
+  font-size: 11px;
+  color: #6c757d;
+  margin-top: 4px;
+}
+
+.typingIndicator {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #6c757d;
+  font-size: 12px;
+  margin-top: 10px;
+}
+
+.typingDots {
+  display: flex;
+  gap: 3px;
+}
+
+.typingDots span {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #6c757d;
+  animation: typing 1.4s infinite ease-in-out;
+}
+
+.typingDots span:nth-child(1) { animation-delay: 0s; }
+.typingDots span:nth-child(2) { animation-delay: 0.2s; }
+.typingDots span:nth-child(3) { animation-delay: 0.4s; }
+
+@keyframes typing {
+  0%, 60%, 100% { transform: translateY(0); }
+  30% { transform: translateY(-5px); }
+}
+
+.inputContainer {
+  display: flex;
+  padding: 15px;
+  gap: 10px;
+  border-top: 1px solid #e9ecef;
+  background: white;
+}
+
+.inputContainer input {
+  flex: 1;
+  padding: 10px 15px;
+  border: 1px solid #dee2e6;
+  border-radius: 20px;
+  outline: none;
+  font-size: 14px;
+}
+
+.inputContainer input:focus {
+  border-color: #ff2c2c;
+}
+
+.inputContainer button {
+  background: #ff2c2c;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.inputContainer button:disabled {
+  background: #6c757d;
+  cursor: not-allowed;
+}
+
+.quickSuggestions {
+  padding: 10px 15px;
+  background: #f8f9fa;
+  border-top: 1px solid #e9ecef;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+}
+
+.quickSuggestions span {
+  font-size: 12px;
+  color: #6c757d;
+  margin-right: 5px;
+}
+
+.quickSuggestions button {
+  background: white;
+  border: 1px solid #dee2e6;
+  border-radius: 15px;
+  padding: 5px 10px;
+  font-size: 11px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.quickSuggestions button:hover {
+  border-color: #ff2c2c;
+  color: #ff2c2c;
+}
+
+/* Responsive design */
+@media (max-width: 480px) {
+  .aiAssistant {
+    bottom: 10px;
+    right: 10px;
+  }
+
+  .chatContainer {
+    width: 300px;
+    height: 400px;
+    right: -10px;
+  }
+
+  .chatToggle {
+    padding: 10px 16px;
+    font-size: 14px;
+  }
+}

@@ -1,4 +1,3 @@
-/* client/src/components/Pages/ProductsPages/ProductCard/ProductCard.module.css */
 .productCard {
   background: white;
   border: 1px solid #e0e0e0;
@@ -7,9 +6,7 @@
   position: relative;
   height: 100%;
   width: 100%;
-  /* Changed from max-width to width for better grid behavior */
   max-width: 400px;
-  /* Keep max-width for larger screens */
   display: flex;
   flex-direction: column;
 }
@@ -90,7 +87,7 @@
 
 .tooltip {
   position: absolute;
-  top: -40px;
+  top: -10px;
   left: 50%;
   transform: translateX(-50%);
   background: #333;
@@ -103,6 +100,7 @@
   visibility: hidden;
   transition: all 0.3s ease;
   pointer-events: none;
+  z-index: 99999;
 }
 
 .wishlistBtn:hover .tooltip,
@@ -110,6 +108,38 @@
   opacity: 1;
   visibility: visible;
   top: -35px;
+}
+
+/* View Product Button: hidden by default, fade-in from bottom on hover */
+.viewProductBtn {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translate(-50%, 30px);
+  background: linear-gradient(135deg, #ff2c2c 0%, #ff5252 100%);
+  color: #fff;
+  padding: 10px 25px;
+  border-radius: 24px 24px 0 0;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  box-shadow: 0 8px 24px rgba(255,44,44,0.12);
+  opacity: 0;
+  pointer-events: none;
+  z-index: 5;
+  transition: all 0.35s cubic-bezier(.4,1.7,.6,.9);
+  text-align: center;
+  text-decoration: none;
+}
+
+.productCard:hover .viewProductBtn {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translate(-50%, 0);
+}
+
+.viewProductBtn:active {
+  background: linear-gradient(135deg, #e60000 0%, #ff2c2c 100%);
 }
 
 .productInfo {
@@ -209,11 +239,12 @@
 
 .buyNowBtn {
   flex: 2;
-  padding: 12px;
+  padding: 10px;
   background: linear-gradient(135deg, #ff2c2c 0%, #ff5252 100%);
   color: white;
   border: none;
   font-weight: 600;
+  font-size: 14px;
   cursor: pointer;
   transition: all 0.3s ease;
 }
@@ -268,9 +299,7 @@
 @media (max-width: 640px) {
   .productCard {
     width: 100%;
-    /* Ensure full width on mobile */
     max-width: 100%;
-    /* Remove max-width restriction on mobile */
   }
 
   .productImage {
@@ -291,5 +320,10 @@
 
   .currentPrice {
     font-size: 1.2rem;
+  }
+
+  .viewProductBtn {
+    padding: 10px 22px;
+    font-size: 12px;
   }
 }
