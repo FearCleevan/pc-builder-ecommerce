@@ -4,7 +4,10 @@ import styles from './LaptopsFilter.module.css';
 import { categories, getSeriesItems, getFeatures } from '../../../MockData/LaptopMockData';
 
 const LaptopsFilter = ({ activeFilters, onFilterChange, isMobile }) => {
-    const [expandedSections, setExpandedSections] = useState({});
+    const [expandedSections, setExpandedSections] = useState({
+        gpu: {}, // Track expanded state for each GPU series
+        gpuShowAll: false // Track if all GPU options should be shown
+    });
     const [selectedFilters, setSelectedFilters] = useState({
         category: activeFilters.category || '',
         series: activeFilters.series || [],
@@ -20,6 +23,16 @@ const LaptopsFilter = ({ activeFilters, onFilterChange, isMobile }) => {
         setExpandedSections(prev => ({
             ...prev,
             [section]: !prev[section]
+        }));
+    };
+
+    const toggleGpuSeries = (seriesId) => {
+        setExpandedSections(prev => ({
+            ...prev,
+            gpu: {
+                ...prev.gpu,
+                [seriesId]: !prev.gpu[seriesId]
+            }
         }));
     };
 
@@ -71,19 +84,65 @@ const LaptopsFilter = ({ activeFilters, onFilterChange, isMobile }) => {
     const features = getFeatures(selectedFilters.category);
 
     const gpuOptions = [
-        { id: 'rtx5090', label: 'GeForce RTX™ 5090' },
-        { id: 'rtx5080', label: 'GeForce RTX™ 5080' },
-        { id: 'rtx5070ti', label: 'GeForce RTX™ 5070 Ti' },
-        { id: 'rtx5070', label: 'GeForce RTX™ 5070' },
-        { id: 'rtx5060', label: 'GeForce RTX™ 5060' },
-        { id: 'rtx4050', label: 'GeForce RTX™ 4050' },
-        { id: 'rtx4080', label: 'GeForce RTX™ 4080' },
-        { id: 'rtx4070', label: 'GeForce RTX™ 4070' },
-        { id: 'rtx4060', label: 'GeForce RTX™ 4060' },
-        { id: 'integrated', label: 'Integrated Graphics' },
-        { id: 'apple-silicon', label: 'Apple Silicon' },
-        { id: 'rtx5000', label: 'NVIDIA RTX™ 5000' }
+        {
+            id: "geforce-rtx-50",
+            series: "GeForce RTX™ 50 Series",
+            options: [
+                { id: "rtx5090", label: "GeForce RTX™ 5090" },
+                { id: "rtx5080", label: "GeForce RTX™ 5080" },
+                { id: "rtx5070ti", label: "GeForce RTX™ 5070 Ti" },
+                { id: "rtx5070", label: "GeForce RTX™ 5070" },
+                { id: "rtx5060", label: "GeForce RTX™ 5060" },
+                { id: "rtx5050", label: "GeForce RTX™ 5050" },
+            ],
+        },
+        {
+            id: "geforce-rtx-40",
+            series: "GeForce RTX™ 40 Series",
+            options: [
+                { id: "rtx4090", label: "GeForce RTX™ 4090" },
+                { id: "rtx4080", label: "GeForce RTX™ 4080" },
+                { id: "rtx4070", label: "GeForce RTX™ 4070" },
+                { id: "rtx4060", label: "GeForce RTX™ 4060" },
+                { id: "rtx4050", label: "GeForce RTX™ 4050" },
+            ],
+        },
+        {
+            id: "geforce-rtx-30",
+            series: "GeForce RTX™ 30 Series",
+            options: [
+                { id: "rtx3090", label: "GeForce RTX™ 3090" },
+                { id: "rtx3080", label: "GeForce RTX™ 3080" },
+                { id: "rtx3070", label: "GeForce RTX™ 3070" },
+                { id: "rtx3060", label: "GeForce RTX™ 3060" },
+                { id: "rtx3050", label: "GeForce RTX™ 3050" },
+            ],
+        },
+        {
+            id: "geforce-rtx-20",
+            series: "GeForce RTX™ 20 Series",
+            options: [
+                { id: "rtx2080", label: "GeForce RTX™ 2080" },
+                { id: "rtx2070", label: "GeForce RTX™ 2070" },
+                { id: "rtx2060", label: "GeForce RTX™ 2060" },
+                { id: "rtx2050", label: "GeForce RTX™ 2050" },
+            ],
+        },
+        {
+            id: "professional-gpus",
+            series: "Professional & Other GPUs",
+            options: [
+                { id: "rtx5000", label: "NVIDIA RTX™ 5000" },
+                { id: "integrated", label: "Integrated Graphics" },
+                { id: "apple-silicon", label: "Apple Silicon" },
+            ],
+        },
     ];
+
+    // Show only 4 GPU series by default, show all when expanded
+    const displayedGpuSeries = expandedSections.gpuShowAll 
+        ? gpuOptions 
+        : gpuOptions.slice(0, 4);
 
     const processorOptions = [
         { id: 'intel-i9', label: 'Intel® Core™ i9' },
@@ -245,22 +304,51 @@ const LaptopsFilter = ({ activeFilters, onFilterChange, isMobile }) => {
 
                 {expandedSections.gpu && (
                     <div className={styles.filterDropdown}>
-                        <ul className={styles.filterDropList}>
-                            {gpuOptions.map(option => (
-                                <li key={option.id} className={styles.filterItem}>
-                                    <input
-                                        className={styles.filterCheckbox}
-                                        id={option.id}
-                                        type="checkbox"
-                                        checked={selectedFilters.gpu.includes(option.id)}
-                                        onChange={() => handleFilterToggle('gpu', option.id)}
-                                    />
-                                    <label htmlFor={option.id} className={styles.filterLabel}>
-                                        {option.label}
-                                    </label>
-                                </li>
-                            ))}
-                        </ul>
+                        {displayedGpuSeries.map(series => (
+                            <div key={series.id} className={styles.gpuSeries}>
+                                <div 
+                                    className={styles.gpuSeriesHeader}
+                                    onClick={() => toggleGpuSeries(series.id)}
+                                >
+                                    <span className={styles.gpuSeriesTitle}>{series.series}</span>
+                                    <span className={styles.gpuSeriesToggle}>
+                                        {expandedSections.gpu[series.id] ? '−' : '+'}
+                                    </span>
+                                </div>
+                                
+                                {expandedSections.gpu[series.id] && (
+                                    <ul className={styles.filterDropList}>
+                                        {series.options.map(option => (
+                                            <li key={option.id} className={styles.filterItem}>
+                                                <input
+                                                    className={styles.filterCheckbox}
+                                                    id={option.id}
+                                                    type="checkbox"
+                                                    checked={selectedFilters.gpu.includes(option.id)}
+                                                    onChange={() => handleFilterToggle('gpu', option.id)}
+                                                />
+                                                <label htmlFor={option.id} className={styles.filterLabel}>
+                                                    {option.label}
+                                                </label>
+                                            </li>
+                                        ))}
+                                    </ul>
+                                )}
+                            </div>
+                        ))}
+                        
+                        {gpuOptions.length > 4 && (
+                            <button
+                                type="button"
+                                className={styles.filterShowAll}
+                                onClick={() => setExpandedSections(prev => ({
+                                    ...prev,
+                                    gpuShowAll: !prev.gpuShowAll
+                                }))}
+                            >
+                                {expandedSections.gpuShowAll ? '↑ Show less GPU series' : '↓ Show all GPU series...'}
+                            </button>
+                        )}
                     </div>
                 )}
             </fieldset>
@@ -278,7 +366,7 @@ const LaptopsFilter = ({ activeFilters, onFilterChange, isMobile }) => {
                 {expandedSections.processor && (
                     <div className={styles.filterDropdown}>
                         <ul className={styles.filterDropList}>
-                            {processorOptions.map(option => (
+                            {processorOptions.slice(0, expandedSections.processorShowAll ? processorOptions.length : 6).map(option => (
                                 <li key={option.id} className={styles.filterItem}>
                                     <input
                                         className={styles.filterCheckbox}
@@ -293,6 +381,19 @@ const LaptopsFilter = ({ activeFilters, onFilterChange, isMobile }) => {
                                 </li>
                             ))}
                         </ul>
+                        
+                        {processorOptions.length > 6 && (
+                            <button
+                                type="button"
+                                className={styles.filterShowAll}
+                                onClick={() => setExpandedSections(prev => ({
+                                    ...prev,
+                                    processorShowAll: !prev.processorShowAll
+                                }))}
+                            >
+                                {expandedSections.processorShowAll ? '↑ Show less' : '↓ Show all...'}
+                            </button>
+                        )}
                     </div>
                 )}
             </fieldset>
@@ -324,6 +425,16 @@ const LaptopsFilter = ({ activeFilters, onFilterChange, isMobile }) => {
                         </li>
                     ))}
                 </ul>
+                
+                {screenSizeOptions.length > 5 && (
+                    <button
+                        type="button"
+                        className={styles.filterShowAll}
+                        onClick={() => toggleSection('screenSize')}
+                    >
+                        {expandedSections.screenSize ? '↑ Show less' : '↓ Show all...'}
+                    </button>
+                )}
             </fieldset>
 
             <fieldset className={styles.filterFieldset}>
@@ -353,6 +464,16 @@ const LaptopsFilter = ({ activeFilters, onFilterChange, isMobile }) => {
                         </li>
                     ))}
                 </ul>
+                
+                {ramOptions.length > 5 && (
+                    <button
+                        type="button"
+                        className={styles.filterShowAll}
+                        onClick={() => toggleSection('ram')}
+                    >
+                        {expandedSections.ram ? '↑ Show less' : '↓ Show all...'}
+                    </button>
+                )}
             </fieldset>
 
             <fieldset className={styles.filterFieldset}>
@@ -382,6 +503,16 @@ const LaptopsFilter = ({ activeFilters, onFilterChange, isMobile }) => {
                         </li>
                     ))}
                 </ul>
+                
+                {storageOptions.length > 5 && (
+                    <button
+                        type="button"
+                        className={styles.filterShowAll}
+                        onClick={() => toggleSection('storage')}
+                    >
+                        {expandedSections.storage ? '↑ Show less' : '↓ Show all...'}
+                    </button>
+                )}
             </fieldset>
 
             <button type="reset" className={styles.filterReset} onClick={resetFilters}>

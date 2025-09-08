@@ -47,6 +47,7 @@
 
 .filterIcon {
   font-size: 1.2rem;
+  margin-right: 8px;
 }
 
 .filterList {
@@ -65,7 +66,7 @@
 .filterDropList {
   list-style: none;
   padding: 0;
-  margin: 0;
+  margin: 10px 0 0 15px;
 }
 
 .filterItem {
@@ -90,15 +91,33 @@
   margin-top: 10px;
 }
 
-.filterDropdownTitle {
-  font-weight: 600;
-  color: #495057;
-  margin: 15px 0 8px 0;
-  font-size: 0.9rem;
+.gpuSeries {
+  margin-bottom: 15px;
+  border: 1px solid #e9ecef;
+  border-radius: 4px;
+  padding: 10px;
 }
 
-.filterDropdownTitle:first-child {
-  margin-top: 0;
+.gpuSeries:last-child {
+  margin-bottom: 0;
+}
+
+.gpuSeriesHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  font-weight: 600;
+  color: #495057;
+}
+
+.gpuSeriesTitle {
+  font-size: 0.95rem;
+}
+
+.gpuSeriesToggle {
+  font-size: 1.2rem;
+  font-weight: bold;
 }
 
 .filterShowAll {
@@ -109,6 +128,9 @@
   font-size: 0.9rem;
   padding: 5px 0;
   margin-top: 5px;
+  display: block;
+  width: 100%;
+  text-align: left;
 }
 
 .filterShowAll:hover {
@@ -150,5 +172,13 @@
   
   .filterListDown {
     max-height: 300px;
+  }
+  
+  .gpuSeries {
+    padding: 8px;
+  }
+  
+  .gpuSeriesTitle {
+    font-size: 0.9rem;
   }
 }
