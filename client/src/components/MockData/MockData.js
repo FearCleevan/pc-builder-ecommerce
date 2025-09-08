@@ -130,6 +130,13 @@ export const desktopProducts = [
     category: "Desktop",
     series: "gaming-series",
     subcategory: "high-end",
+    specs: {
+      gpu: "rtx4070",
+      processor: "intel-i9",
+      screenSize: "17",
+      ram: "32gb",
+      storage: "1tb",
+    },
   },
   {
     id: 2,
@@ -144,6 +151,13 @@ export const desktopProducts = [
     category: "Desktop",
     series: "workstation-series",
     subcategory: "creator",
+    specs: {
+      gpu: "rtx4050",
+      processor: "intel-i5",
+      screenSize: "15",
+      ram: "16gb",
+      storage: "512gb",
+    },
   },
   {
     id: 3,
@@ -158,6 +172,13 @@ export const desktopProducts = [
     category: "Desktop",
     series: "streaming-series",
     subcategory: "streaming",
+    specs: {
+      gpu: "rtx4080",
+      processor: "intel-i9",
+      screenSize: "17",
+      ram: "32gb",
+      storage: "2tb",
+    },
   },
   {
     id: 4,
@@ -172,6 +193,13 @@ export const desktopProducts = [
     category: "Desktop",
     series: "gaming-series",
     subcategory: "budget",
+    specs: {
+      gpu: "rtx4060",
+      processor: "amd-ryzen9",
+      screenSize: "16",
+      ram: "32gb",
+      storage: "1tb",
+    },
   },
   {
     id: 5,
@@ -186,6 +214,13 @@ export const desktopProducts = [
     category: "Desktop",
     series: "compact-series",
     subcategory: "mini-itx",
+    specs: {
+      gpu: "rtx5000",
+      processor: "intel-xeon",
+      screenSize: "17",
+      ram: "64gb",
+      storage: "2tb",
+    },
   },
   {
     id: 6,
@@ -200,6 +235,13 @@ export const desktopProducts = [
     category: "Desktop",
     series: "gaming-series",
     subcategory: "rgb",
+    specs: {
+      gpu: "apple-silicon",
+      processor: "apple-m2",
+      screenSize: "16",
+      ram: "32gb",
+      storage: "1tb",
+    },
   },
   {
     id: 7,
@@ -214,6 +256,13 @@ export const desktopProducts = [
     category: "Desktop",
     series: "workstation-series",
     subcategory: "silent",
+    specs: {
+      gpu: "integrated",
+      processor: "intel-i5",
+      screenSize: "15",
+      ram: "16gb",
+      storage: "512gb",
+    },
   },
   {
     id: 8,
@@ -228,11 +277,17 @@ export const desktopProducts = [
     category: "Desktop",
     series: "gaming-series",
     subcategory: "vr-ready",
+    specs: {
+      gpu: "integrated",
+      processor: "intel-i7",
+      screenSize: "14",
+      ram: "16gb",
+      storage: "512gb",
+    },
   },
 ];
 
-// client/src/components/MockData/MockData.js (update laptopProducts section)
-// Laptop products data - UPDATED FOR ALL CATEGORIES
+// Laptop products mock data
 export const laptopProducts = [
   // Gaming Laptops
   {
@@ -557,7 +612,7 @@ export const laptopProducts = [
       ram: "8gb",
       storage: "512gb",
     },
-  }
+  },
 ];
 
 // Components products data
