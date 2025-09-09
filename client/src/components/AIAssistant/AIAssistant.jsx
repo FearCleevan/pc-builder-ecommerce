@@ -8,6 +8,10 @@ import { accessoriesProducts } from '../MockData/accessoriesProducts';
 import { categories, getSeriesItems, getFeatures, gpuOptions, processorOptions, screenSizeOptions, ramOptions, storageOptions } from '../MockData/LaptopMockData';
 import styles from './AIAssistant.module.css';
 
+// Gemini AI API integration
+const GEMINI_API_KEY = import.meta.env.VITE_GEMINI_API_KEY;
+const GEMINI_API_URL = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent';
+
 const AIAssistant = () => {
   const [messages, setMessages] = useState([
     {
@@ -21,6 +25,7 @@ const AIAssistant = () => {
   const [inputText, setInputText] = useState('');
   const [isOpen, setIsOpen] = useState(false);
   const [isTyping, setIsTyping] = useState(false);
+  const [useGeminiAI, setUseGeminiAI] = useState(true); // Toggle for AI vs rule-based
   const messagesEndRef = useRef(null);
 
   const scrollToBottom = () => {
@@ -31,16 +36,53 @@ const AIAssistant = () => {
     scrollToBottom();
   }, [messages]);
 
+  // Call Gemini AI API
+  const callGeminiAI = async (userMessage, context = '') => {
+    try {
+      const response = await fetch(`${GEMINI_API_URL}?key=${GEMINI_API_KEY}`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          contents: [{
+            parts: [{
+              text: `You are an MSI product shopping assistant. Help users find products, compare options, and make purchasing decisions.
+              
+              Context: ${context}
+              
+              Available products categories: ${categories.join(', ')}
+              
+              User message: ${userMessage}
+              
+              Respond in a helpful, friendly manner. If recommending products, be specific about features and benefits.`
+            }]
+          }]
+        })
+      });
+
+      if (!response.ok) {
+        throw new Error(`API error: ${response.status}`);
+      }
+
+      const data = await response.json();
+      return data.candidates[0].content.parts[0].text;
+    } catch (error) {
+      console.error('Gemini AI API error:', error);
+      return null; // Fallback to rule-based system
+    }
+  };
+
   // Helper functions
   const extractProductNames = (message) => {
     const productKeywords = allProducts.map(p => p.name.toLowerCase());
-    return productKeywords.filter(keyword => 
+    return productKeywords.filter(keyword =>
       message.toLowerCase().includes(keyword)
     );
   };
 
   const extractProductName = (message) => {
-    const products = allProducts.filter(p => 
+    const products = allProducts.filter(p =>
       message.toLowerCase().includes(p.name.toLowerCase())
     );
     return products.length > 0 ? products[0].name.toLowerCase() : '';
@@ -53,16 +95,16 @@ const AIAssistant = () => {
 
   const generateComparison = (products) => {
     if (products.length < 2) return "I need at least two products to compare.";
-    
+
     let comparison = "Here's a comparison of the products:\n\n";
-    
+
     products.forEach((product, index) => {
       comparison += `${index + 1}. ${product.name}\n`;
       comparison += `   Price: ₱${product.price.toLocaleString()}\n`;
       comparison += `   Rating: ${product.rating}/5\n`;
       comparison += `   Category: ${product.category}\n\n`;
     });
-    
+
     return comparison;
   };
 
@@ -72,7 +114,7 @@ const AIAssistant = () => {
     specs += `• Price: ₱${product.price.toLocaleString()}\n`;
     specs += `• Rating: ${product.rating}/5 (${product.reviews} reviews)\n`;
     specs += `• Category: ${product.category}\n`;
-    
+
     if (product.specs) {
       if (product.specs.gpu) specs += `• GPU: ${product.specs.gpu.replace('rtx', 'RTX ')}\n`;
       if (product.specs.processor) specs += `• Processor: ${product.specs.processor}\n`;
@@ -80,7 +122,7 @@ const AIAssistant = () => {
       if (product.specs.ram) specs += `• RAM: ${product.specs.ram}\n`;
       if (product.specs.storage) specs += `• Storage: ${product.specs.storage}\n`;
     }
-    
+
     specs += `\n${product.description}`;
     return specs;
   };
@@ -88,12 +130,12 @@ const AIAssistant = () => {
   // Product search and filtering logic
   const searchProducts = (query, filters = {}) => {
     let results = [...allProducts];
-    
+
     // Simple text search
     if (query) {
       const searchTerms = query.toLowerCase().split(' ');
-      results = results.filter(product => 
-        searchTerms.some(term => 
+      results = results.filter(product =>
+        searchTerms.some(term =>
           product.name.toLowerCase().includes(term) ||
           product.description.toLowerCase().includes(term) ||
           product.brand.toLowerCase().includes(term) ||
@@ -106,7 +148,7 @@ const AIAssistant = () => {
     if (filters.category) {
       results = results.filter(product => product.category === filters.category);
     }
-    
+
     if (filters.priceRange) {
       const [min, max] = filters.priceRange.split('-').map(Number);
       results = results.filter(product => product.price >= min && product.price <= max);
@@ -122,21 +164,21 @@ const AIAssistant = () => {
   // Generate product recommendations based on user needs
   const generateRecommendations = (userNeeds) => {
     let recommendations = [];
-    
+
     if (userNeeds.includes('gaming') || userNeeds.includes('game')) {
       recommendations = [
         ...allProducts.filter(p => p.category === 'Gaming Laptops' || p.subcategory === 'gaming'),
         ...desktopProducts.filter(p => p.series === 'gaming-series')
       ];
     }
-    
+
     if (userNeeds.includes('business') || userNeeds.includes('work')) {
       recommendations = [
         ...allProducts.filter(p => p.category === 'Business Laptops'),
         ...desktopProducts.filter(p => p.series === 'workstation-series')
       ];
     }
-    
+
     if (userNeeds.includes('creative') || userNeeds.includes('design')) {
       recommendations = [
         ...allProducts.filter(p => p.category === 'Content Creation Laptops'),
@@ -172,10 +214,10 @@ const AIAssistant = () => {
     };
   };
 
-  // Enhanced AI processing with more capabilities
+  // Enhanced AI processing with Gemini AI integration
   const enhancedProcessMessage = async (userMessage) => {
     setIsTyping(true);
-    
+
     // Simulate AI thinking time
     await new Promise(resolve => setTimeout(resolve, 1000 + Math.random() * 1000));
 
@@ -184,6 +226,35 @@ const AIAssistant = () => {
     let products = [];
     let productCards = [];
 
+    // Try Gemini AI first if enabled
+    if (useGeminiAI) {
+      try {
+        // Build context from available products
+        const productContext = allProducts.slice(0, 10).map(p =>
+          `${p.name}: ${p.description} (₱${p.price.toLocaleString()})`
+        ).join('\n');
+
+        const aiResponse = await callGeminiAI(userMessage, productContext);
+
+        if (aiResponse) {
+          response.content = aiResponse;
+
+          // Try to extract product mentions for cards
+          allProducts.forEach(product => {
+            if (aiResponse.toLowerCase().includes(product.name.toLowerCase())) {
+              productCards.push(generateProductCard(product));
+            }
+          });
+
+          setIsTyping(false);
+          return { response, productCards };
+        }
+      } catch (error) {
+        console.log('Falling back to rule-based system:', error);
+      }
+    }
+
+    // Fallback to rule-based system
     // Greeting responses
     if (message.includes('hi') || message.includes('hello') || message.includes('hey')) {
       response.content = "Hello! How can I assist you with your MSI product search today?";
@@ -221,11 +292,11 @@ const AIAssistant = () => {
     }
     // Price questions
     else if (message.includes('price') || message.includes('how much') || message.includes('cost')) {
-      const productMatch = allProducts.find(p => 
+      const productMatch = allProducts.find(p =>
         p.name.toLowerCase().includes(message.split('price')[0].trim()) ||
         message.includes(p.name.toLowerCase())
       );
-      
+
       if (productMatch) {
         response.content = `The ${productMatch.name} is priced at ₱${productMatch.price.toLocaleString()}`;
         if (productMatch.oldPrice) {
@@ -245,10 +316,10 @@ const AIAssistant = () => {
     else if (message.includes('compare') || message.includes('vs') || message.includes('difference')) {
       const productNames = extractProductNames(message);
       if (productNames.length >= 2) {
-        const productsToCompare = productNames.map(name => 
+        const productsToCompare = productNames.map(name =>
           allProducts.find(p => p.name.toLowerCase().includes(name))
         ).filter(Boolean);
-        
+
         if (productsToCompare.length >= 2) {
           response.content = generateComparison(productsToCompare);
           productsToCompare.forEach(product => {
@@ -263,7 +334,7 @@ const AIAssistant = () => {
     else if (message.includes('spec') || message.includes('specs') || message.includes('technical')) {
       const productName = extractProductName(message);
       if (productName) {
-        const product = allProducts.find(p => 
+        const product = allProducts.find(p =>
           p.name.toLowerCase().includes(productName)
         );
         if (product) {
@@ -281,7 +352,7 @@ const AIAssistant = () => {
         products = allProducts.filter(p => p.price <= budget)
           .sort((a, b) => b.rating - a.rating)
           .slice(0, 3);
-        
+
         if (products.length > 0) {
           response.content = `Here are the best products under ₱${budget.toLocaleString()}:\n`;
           products.forEach((product, index) => {
@@ -319,7 +390,7 @@ const AIAssistant = () => {
 
     // Get AI response
     const { response, productCards } = await enhancedProcessMessage(inputText);
-    
+
     // Add AI response
     const botMessage = {
       id: Date.now() + 1,
@@ -330,7 +401,7 @@ const AIAssistant = () => {
     };
 
     setMessages(prev => [...prev, botMessage]);
-    
+
     // Add product cards if any
     if (productCards && productCards.length > 0) {
       productCards.forEach((card, index) => {
@@ -351,24 +422,27 @@ const AIAssistant = () => {
 
   const handleProductAction = (action, product) => {
     let actionMessage = '';
-    
-    switch(action) {
+
+    switch (action) {
       case 'view':
         actionMessage = `Viewing details for ${product.name}`;
         // In a real app, you would navigate to the product page
+        window.open(`/products/${product.id}`, '_blank');
         break;
       case 'buy':
         actionMessage = `Proceeding to buy ${product.name}`;
         // In a real app, you would redirect to checkout
+        console.log('Buy now:', product);
         break;
       case 'cart':
         actionMessage = `Added ${product.name} to cart`;
         // In a real app, you would add to cart
+        console.log('Add to cart:', product);
         break;
       default:
         actionMessage = `Action performed on ${product.name}`;
     }
-    
+
     // Add user action message
     const actionMessageObj = {
       id: Date.now(),
@@ -377,9 +451,9 @@ const AIAssistant = () => {
       timestamp: new Date(),
       type: 'text'
     };
-    
+
     setMessages(prev => [...prev, actionMessageObj]);
-    
+
     // Add bot confirmation
     const botConfirmation = {
       id: Date.now() + 1,
@@ -388,34 +462,70 @@ const AIAssistant = () => {
       timestamp: new Date(),
       type: 'text'
     };
-    
+
     setMessages(prev => [...prev, botConfirmation]);
+  };
+
+  const toggleAIMode = () => {
+    setUseGeminiAI(!useGeminiAI);
+    const modeMessage = {
+      id: Date.now(),
+      text: `Switched to ${!useGeminiAI ? 'AI-powered' : 'rule-based'} mode`,
+      sender: 'system',
+      timestamp: new Date(),
+      type: 'text'
+    };
+    setMessages(prev => [...prev, modeMessage]);
   };
 
   return (
     <div className={styles.aiAssistant}>
-      <button 
+      <button
         className={styles.chatToggle}
         onClick={() => setIsOpen(!isOpen)}
       >
         <span>AI Assistant</span>
         <span>💬</span>
+        <span className={styles.aiStatusIndicator} data-active={useGeminiAI}>
+          {useGeminiAI ? 'AI' : 'RB'}
+        </span>
       </button>
 
       {isOpen && (
         <div className={styles.chatContainer}>
           <div className={styles.chatHeader}>
             <h3>MSI Shopping Assistant</h3>
-            <button onClick={() => setIsOpen(false)}>×</button>
+            <div className={styles.headerControls}>
+              <button
+                className={`${styles.aiToggle} ${useGeminiAI ? styles.aiMode : styles.ruleMode}`}
+                onClick={toggleAIMode}
+                aria-label="Toggle AI Mode"
+                type="button"
+              >
+                <div className={`${styles.toggleKnob} ${useGeminiAI ? styles.knobAI : styles.knobRule}`}>
+                  {useGeminiAI ? (
+                    <svg className={styles.toggleIcon} viewBox="0 0 24 24" fill="#0dcaf0">
+                      <path d="M12 2a5 5 0 00-5 5v3H5a3 3 0 00-3 3v7h6v2a2 2 0 004 0v-2h6v-7a3 3 0 00-3-3h-2V7a5 5 0 00-5-5z" />
+                    </svg> // 🤖 Robot
+                  ) : (
+                    <svg className={styles.toggleIcon} viewBox="0 0 24 24" fill="#f8f9fa">
+                      <path d="M19.14 12.936a7.07 7.07 0 000-1.872l2.03-1.578a.5.5 0 00.12-.65l-1.924-3.328a.5.5 0 00-.607-.22l-2.39.96a7.11 7.11 0 00-1.62-.936l-.36-2.54a.5.5 0 00-.497-.422h-3.848a.5.5 0 00-.497.422l-.36 2.54a7.11 7.11 0 00-1.62.936l-2.39-.96a.5.5 0 00-.607.22L2.71 8.836a.5.5 0 00.12.65l2.03 1.578a7.07 7.07 0 000 1.872l-2.03 1.578a.5.5 0 00-.12.65l1.924 3.328a.5.5 0 00.607.22l2.39-.96c.495.392 1.04.715 1.62.936l.36 2.54a.5.5 0 00.497.422h3.848a.5.5 0 00.497-.422l.36-2.54c.58-.221 1.125-.544 1.62-.936l2.39.96a.5.5 0 00.607-.22l1.924-3.328a.5.5 0 00-.12-.65l-2.03-1.578zM12 15a3 3 0 110-6 3 3 0 010 6z" />
+                    </svg> // ⚙️ Gear
+                  )}
+                </div>
+              </button>
+
+              <button onClick={() => setIsOpen(false)}>×</button>
+            </div>
           </div>
 
           <div className={styles.messagesContainer}>
             {messages.map((message) => (
               <div
                 key={message.id}
-                className={`${styles.message} ${
-                  message.sender === 'user' ? styles.userMessage : styles.botMessage
-                }`}
+                className={`${styles.message} ${message.sender === 'user' ? styles.userMessage :
+                    message.sender === 'system' ? styles.systemMessage : styles.botMessage
+                  }`}
               >
                 {message.type === 'text' ? (
                   <>
@@ -425,9 +535,9 @@ const AIAssistant = () => {
                       ))}
                     </div>
                     <span className={styles.timestamp}>
-                      {message.timestamp.toLocaleTimeString([], { 
-                        hour: '2-digit', 
-                        minute: '2-digit' 
+                      {message.timestamp.toLocaleTimeString([], {
+                        hour: '2-digit',
+                        minute: '2-digit'
                       })}
                     </span>
                   </>
@@ -455,19 +565,19 @@ const AIAssistant = () => {
                       </div>
                     </div>
                     <div className={styles.productActions}>
-                      <button 
+                      <button
                         className={styles.viewButton}
                         onClick={() => handleProductAction('view', message.product)}
                       >
                         View Product
                       </button>
-                      <button 
+                      <button
                         className={styles.cartButton}
                         onClick={() => handleProductAction('cart', message.product)}
                       >
                         Add to Cart
                       </button>
-                      <button 
+                      <button
                         className={styles.buyButton}
                         onClick={() => handleProductAction('buy', message.product)}
                       >
@@ -478,7 +588,7 @@ const AIAssistant = () => {
                 ) : null}
               </div>
             ))}
-            
+
             {isTyping && (
               <div className={styles.typingIndicator}>
                 <span>AI Assistant is typing</span>
@@ -489,7 +599,7 @@ const AIAssistant = () => {
                 </div>
               </div>
             )}
-            
+
             <div ref={messagesEndRef} />
           </div>
 
@@ -502,7 +612,7 @@ const AIAssistant = () => {
               placeholder="Ask about products, get recommendations..."
               disabled={isTyping}
             />
-            <button 
+            <button
               onClick={handleSendMessage}
               disabled={isTyping || !inputText.trim()}
             >
