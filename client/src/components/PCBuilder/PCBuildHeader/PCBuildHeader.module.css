@@ -1,0 +1,237 @@
+/* client/src/components/PCBuilder/PCBuildHeader/PCBuildHeader.module.css */
+.container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.headerTop {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+@media (min-width: 768px) {
+  .headerTop {
+    flex-direction: row;
+    align-items: center;
+    gap: 1.25rem;
+  }
+}
+
+.titleSection {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+@media (min-width: 768px) {
+  .titleSection {
+    flex-direction: row;
+    align-items: center;
+    gap: 1.25rem;
+  }
+}
+
+.buildTitle {
+  font-size: 1rem;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0;
+  word-break: break-all;
+}
+
+.editIcon {
+  color: #6b7280;
+  cursor: pointer;
+}
+
+.editIcon:hover {
+  color: #374151;
+}
+
+.metaInfo {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: center;
+  font-size: 0.875rem;
+  flex-shrink: 0;
+}
+
+.metaItem {
+  display: flex;
+  align-items: center;
+  color: #6b7280;
+}
+
+.metaIcon {
+  margin-right: 0.25rem;
+  color: #6b7280;
+}
+
+.metaText {
+  font-size: 0.875rem;
+  margin: 0;
+}
+
+.avatar {
+  position: relative;
+  display: flex;
+  height: 1.25rem;
+  width: 1.25rem;
+  flex-shrink: 0;
+  overflow: hidden;
+  border-radius: 0.25rem;
+}
+
+.avatarInner {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  background-color: #f3f4f6;
+  border-radius: 0.375rem;
+}
+
+/* .statsContainer {
+
+} */
+
+.actionsContainer {
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 2rem 0.75rem;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 0.25rem;
+  flex-wrap: wrap;
+}
+
+@media (min-width: 640px) {
+  .actionsContainer {
+    flex-direction: row;
+  }
+}
+
+.shareSection {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  border-radius: 0.375rem;
+  width: 100%;
+  background-color: #f9fafb;
+  padding: 0.125rem 0.5rem;
+  border: 1px solid #e5e7eb;
+  justify-content: space-between;
+}
+
+@media (min-width: 640px) {
+  .shareSection {
+    width: fit-content;
+  }
+}
+
+.shareLabel {
+  font-size: 0.875rem;
+  font-weight: 300;
+  margin-right: 0.25rem;
+  margin: 0;
+}
+
+.shareButtons {
+  display: flex;
+  flex-direction: row;
+  gap: 0.125rem;
+  align-items: center;
+}
+
+.buttonWrapper {
+  position: relative;
+  width: fit-content;
+}
+
+.loadingSpinner {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: -10;
+  opacity: 0;
+  transform: scale(0.5);
+}
+
+.shareButton {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  justify-content: center;
+  white-space: nowrap;
+  border-radius: 0.375rem;
+  padding: 0.25rem 0.5rem;
+  font-size: 0.75rem;
+  transition: all 0.15s ease;
+  color: #6b7280;
+  background: transparent;
+  border: none;
+}
+
+.shareButton:hover {
+  background-color: #f3f4f6;
+  color: #1f2937;
+}
+
+.actionButtons {
+  display: flex;
+  gap: 0.5rem;
+  width: 100%;
+  justify-content: flex-end;
+}
+
+@media (min-width: 640px) {
+  .actionButtons {
+    width: fit-content;
+  }
+}
+
+.actionButton {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  justify-content: center;
+  white-space: nowrap;
+  border-radius: 0.375rem;
+  padding: 0.25rem 0.5rem;
+  font-size: 0.75rem;
+  transition: all 0.15s ease;
+  border: 1px solid #d1d5db;
+  color: #6b7280;
+  background: transparent;
+  width: 100%;
+}
+
+.actionButton:hover {
+  background-color: #f3f4f6;
+  color: #1f2937;
+  border-color: #9ca3af;
+}
+
+.actionButton:disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.buttonIcon {
+  color: #6b7280;
+  transition: color 0.15s ease;
+}
+
+.actionButton:hover .buttonIcon {
+  color: #1f2937;
+}

@@ -1,0 +1,128 @@
+/* client/src/components/PCBuilder/PCBuildBody/PCBuildBody.module.css */
+.table {
+  width: 100%;
+}
+
+.hiddenHeader {
+  display: none;
+}
+
+.headerRow {
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.headerCell {
+  text-align: left;
+  font-size: 0.75rem;
+  color: #6b7280;
+  font-weight: 400;
+  padding: 0.5rem 0.5rem;
+}
+
+@media (min-width: 1280px) {
+  .headerCell {
+    padding: 0.5rem 0.75rem;
+  }
+}
+
+.componentRow {
+  padding: 0;
+}
+
+.componentCell {
+  padding: 0;
+}
+
+.componentItem {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.75rem;
+  border-bottom: 1px solid #e5e7eb;
+  cursor: pointer;
+}
+
+.componentItem:hover {
+  background-color: #f9fafb;
+}
+
+.componentName {
+  font-size: 0.875rem;
+  color: #6b7280;
+  display: flex;
+  gap: 0.25rem;
+  align-items: center;
+  margin: 0;
+}
+
+.componentName:hover {
+  color: #3b82f6;
+  transition: color 0.15s ease;
+}
+
+@media (min-width: 1280px) {
+  .componentName {
+    white-space: nowrap;
+  }
+}
+
+.buttonWrapper {
+  position: relative;
+  width: fit-content;
+}
+
+.loadingSpinner {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: -10;
+  opacity: 0;
+  transform: scale(0.5);
+}
+
+.defaultButton, .accentButton {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  justify-content: center;
+  white-space: nowrap;
+  border-radius: 0.375rem;
+  padding: 0.25rem 0.5rem;
+  font-size: 0.75rem;
+  transition: all 0.15s ease;
+  border: 1px solid #d1d5db;
+  background-color: white;
+  color: #374151;
+}
+
+.defaultButton:hover {
+  background-color: #f3f4f6;
+  color: #1f2937;
+}
+
+.accentButton {
+  background-color: #3b82f6;
+  color: white;
+  border: none;
+}
+
+.accentButton:hover {
+  background-color: #2563eb;
+}
+
+.buttonIcon {
+  transition: color 0.15s ease;
+}
+
+.defaultButton .buttonIcon {
+  color: #6b7280;
+}
+
+.defaultButton:hover .buttonIcon {
+  color: #1f2937;
+}
+
+.accentButton .buttonIcon {
+  color: white;
+}
