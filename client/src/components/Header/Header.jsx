@@ -301,11 +301,11 @@ const Header = () => {
                 }`}
             >
               <a className={styles.homeLink} href="/" onClick={closeAllMenus}>
-                <picture className={styles.logo}>
-                  <img src={Logo} alt="MSI Logo" width="300" height="auto" />
-                </picture>
+                <span className={styles.logo}>
+                  <span className={styles.tb}>TB</span>TechnoBuild
+                </span>
               </a>
-
+              
               {/* Mobile breadcrumb for navigation sections */}
               {isMobileMenuOpen && mobileView !== "main" && (
                 <div className={styles.mobileBreadcrumb}>
