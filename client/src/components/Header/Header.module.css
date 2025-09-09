@@ -73,7 +73,7 @@
   width: 0;
   height: 2px;
   bottom: 0;
-  left: 40%;
+  left: 50%;
   background-color: #ff2c2c;
   transition: all 0.3s ease;
   transform: translateX(-50%);
