@@ -1,6 +1,10 @@
 // client/src/components/AIAssistant/AIAssistant.jsx
 import React, { useState, useRef, useEffect } from 'react';
-import { allProducts, laptopProducts, desktopProducts, otherProducts, accessoriesProducts } from '../MockData/MockData';
+import { allProducts } from '../MockData/allProducts';
+import { laptopProducts } from '../MockData/laptopProducts';
+import { desktopProducts } from '../MockData/desktopProducts';
+import { otherProducts } from '../MockData/otherProducts';
+import { accessoriesProducts } from '../MockData/accessoriesProducts';
 import { categories, getSeriesItems, getFeatures, gpuOptions, processorOptions, screenSizeOptions, ramOptions, storageOptions } from '../MockData/LaptopMockData';
 import styles from './AIAssistant.module.css';
 

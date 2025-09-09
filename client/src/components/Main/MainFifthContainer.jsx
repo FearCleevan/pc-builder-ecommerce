@@ -2,7 +2,8 @@
 import React, { useRef } from 'react';
 import { FaShoppingCart, FaHeart, FaStar, FaRegStar, FaBalanceScale } from 'react-icons/fa';
 import styles from './MainFifthContainer.module.css';
-import { otherProducts, formatPrice } from '../MockData/MockData';
+import { formatPrice } from '../MockData/formatPrice';
+import { otherProducts } from '../MockData/otherProducts';
 
 const MainFifthContainer = ({ isMobile }) => {
   const productsRef = useRef(null);

@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { FaShoppingCart, FaHeart, FaStar, FaRegStar, FaBalanceScale } from 'react-icons/fa';
-import { formatPrice } from '../../../MockData/MockData';
+import { formatPrice } from '../../../MockData/formatPrice';
 import styles from './ProductCard.module.css';
 
 const ProductCard = ({ product }) => {

@@ -1,7 +1,7 @@
 // client/src/components/Main/MainSecondContainer.jsx
 import React, { useRef } from 'react';
 import styles from './MainSecondContainer.module.css';
-import { exploreProducts } from '../MockData/MockData';
+import { exploreProducts } from '../MockData/exploreProducts';
 
 const MainSecondContainer = ({ isMobile }) => {
   const exploreRef = useRef(null);

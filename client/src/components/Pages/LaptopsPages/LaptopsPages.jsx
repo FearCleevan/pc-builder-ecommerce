@@ -5,7 +5,7 @@ import LaptopsFilter from './LaptopsFilter/LaptopsFilter';
 import LaptopsGrid from './LaptopsGrid/LaptopsGrid';
 import LaptopsBreadcrumb from './LaptopsBreadcrumb/LaptopsBreadcrumb';
 import Pagination from './Pagination/Pagination';
-import { laptopProducts } from '../../MockData/MockData';
+import { laptopProducts } from '../../MockData/laptopProducts';
 import styles from './LaptopsPages.module.css';
 import Header from '../../Header/Header';
 import Footer from '../../Footer/Footer';

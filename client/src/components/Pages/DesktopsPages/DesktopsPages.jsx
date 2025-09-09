@@ -5,7 +5,7 @@ import DesktopsFilter from './DesktopsFilter/DesktopsFilter';
 import DesktopsGrid from './DesktopsGrid/DesktopsGrid';
 import DesktopsBreadcrumb from './DesktopsBreadcrumb/DesktopsBreadcrumb';
 import Pagination from './Pagination/Pagination';
-import { desktopProducts } from '../../MockData/MockData';
+import { desktopProducts } from '../../MockData/desktopProducts';
 import styles from './DesktopsPages.module.css';
 import Header from '../../Header/Header';
 import Footer from '../../Footer/Footer';

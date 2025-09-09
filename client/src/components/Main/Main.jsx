@@ -17,7 +17,7 @@ import Banner3 from '../../assets/banner3.jpeg';
 import Banner4 from '../../assets/banner4.jpeg';
 
 // Import mock data
-import { banners as mockBanners } from '../MockData/MockData';
+import { banners as mockBanners } from '../MockData/banners';
 
 const Main = () => {
   const [currentBanner, setCurrentBanner] = useState(0);
