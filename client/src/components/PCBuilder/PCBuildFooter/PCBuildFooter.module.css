@@ -1,0 +1,62 @@
+/* client/src/components/PCBuilder/PCBuildFooter/PCBuildFooter.module.css */
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  padding: 0.75rem;
+}
+
+.title {
+  width: 100%;
+  font-size: 0.875rem;
+  color: #6b7280;
+  font-weight: 500;
+  margin: 0;
+}
+
+.productsGrid {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .productsGrid {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+}
+
+.productButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0.75rem;
+  border-radius: 9999px;
+  border: 1px solid #e5e7eb;
+  background: transparent;
+  color: #6b7280;
+  transition: all 0.15s ease;
+  width: 100%;
+  justify-content: center;
+}
+
+.productButton:hover {
+  background-color: #f9fafb;
+  color: #374151;
+}
+
+@media (min-width: 768px) {
+  .productButton {
+    width: fit-content;
+    justify-content: flex-start;
+    padding: 0.25rem 0.75rem;
+    gap: 0.25rem;
+  }
+}
+
+.productText {
+  font-size: 0.75rem;
+}

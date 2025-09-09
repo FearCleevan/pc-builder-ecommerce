@@ -1,0 +1,14 @@
+/* client/src/components/PCBuilder/PCBuilder.module.css */
+.pcBuilder {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  flex: 1;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  width: 100%;
+}
