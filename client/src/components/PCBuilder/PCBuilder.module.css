@@ -11,4 +11,8 @@
   margin: 0 auto;
   padding: 0 1rem;
   width: 100%;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }

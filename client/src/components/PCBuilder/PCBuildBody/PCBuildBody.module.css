@@ -1,11 +1,13 @@
 /* client/src/components/PCBuilder/PCBuildBody/PCBuildBody.module.css */
 .table {
     width: 100%;
+    border: 1px solid #e5e7eb;
+    border-bottom: 1px solid #e5e7eb;
+    border-radius: 8px;
 }
 
-tbody {
-    border: 1px solid #e5e7eb;
-    border-radius: 8px;
+.tbody {
+    padding: 0;
 }
 
 .hiddenHeader {
@@ -51,8 +53,9 @@ tbody {
 }
 
 .componentName {
-    font-size: 0.875rem;
-    color: #6b7280;
+    font-size: 13px;
+    font-weight: 500;
+    color: #000;
     display: flex;
     gap: 0.25rem;
     align-items: center;
