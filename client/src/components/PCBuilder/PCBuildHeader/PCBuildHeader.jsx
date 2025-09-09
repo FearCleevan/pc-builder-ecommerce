@@ -87,7 +87,7 @@ const PCBuildHeader = () => {
                     <path d="M6 12h.01M18 12h.01"></path>
                   </svg>
                 </span>
-                <div className={styles.statNumber}>$1,234</div>
+                <div className={styles.statNumber}>₱0.00</div>
               </div>
             </div>
             <div className={styles.statDropdown}>
@@ -126,7 +126,7 @@ const PCBuildHeader = () => {
                     <path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z"></path>
                   </svg>
                 </span>
-                <div className={styles.statNumber}>650W</div>
+                <div className={styles.statNumber}>0W</div>
               </div>
             </div>
             <div className={styles.statDropdown}>
@@ -137,20 +137,6 @@ const PCBuildHeader = () => {
             </div>
           </div>
           
-          <div className={styles.statItem}>
-            <div className={styles.statContent}>
-              <div className={styles.statValue}>
-                <img alt="TimeSpy" loading="lazy" width="80" height="24" decoding="async" src="/_next/image?url=%2F_next%2Fstatic%2Fmedia%2F3dmark.6e9e4b94.png&amp;w=256&amp;q=75" className={styles.benchmarkLogo} />
-                <span>--</span>
-              </div>
-            </div>
-            <div className={styles.statDropdown}>
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={styles.dropdownIcon}>
-                <path d="m7 15 5 5 5-5"></path>
-                <path d="m7 9 5-5 5 5"></path>
-              </svg>
-            </div>
-          </div>
         </div>
       </div>
 
@@ -210,17 +196,6 @@ const PCBuildHeader = () => {
 
         <div className={styles.actionButtons}>
           <div className={styles.buttonWrapper}>
-            <button className={styles.actionButton} disabled>
-              <span className={styles.buttonIcon}>
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M10.733 5.076a10.744 10.744 0 0 1 11.205 6.575 1 1 0 0 1 0 .696 10.747 10.747 0 0 1-1.444 2.49"></path>
-                  <path d="M14.084 14.158a3 3 0 0 1-4.242-4.242"></path>
-                  <path d="M17.479 17.499a10.75 10.75 0 0 1-15.417-5.151 1 1 0 0 1 0-.696 10.75 10.75 0 0 1 4.446-5.143"></path>
-                  <path d="m2 2 20 20"></path>
-                </svg>
-              </span>
-              <span>3D Unavailable</span>
-            </button>
           </div>
           
           <div className={styles.buttonWrapper}>
