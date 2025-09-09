@@ -53,7 +53,7 @@ const useDebounce = (value, delay) => {
 
 // Navigation hook
 const useNavigation = () => {
-  const navigate = useNavigate(); // Use React Router's navigate
+  const navigate = useNavigate();
 
   const handleNavigation = useCallback((path, e, category, series, subcategory) => {
     if (e) e.preventDefault();
@@ -69,7 +69,13 @@ const useNavigation = () => {
     navigate(`/products?${searchParams.toString()}`);
   }, [navigate]);
 
-  return { handleNavigation };
+  // NEW: Function to navigate to PC Builder
+  const navigateToPCBuilder = useCallback((e) => {
+    if (e) e.preventDefault();
+    navigate('/pc-builder');
+  }, [navigate]);
+
+  return { handleNavigation, navigateToPCBuilder };
 };
 
 const Header = () => {
@@ -106,7 +112,7 @@ const Header = () => {
   ];
 
   const debouncedWindowSize = useDebounce(windowSize, 250);
-  const { handleNavigation } = useNavigation();
+  const { handleNavigation, navigateToPCBuilder } = useNavigation();
 
   // ✅ Fixed screen size check
   const checkScreenSize = useCallback(() => {
@@ -336,10 +342,14 @@ const Header = () => {
                         </button>
                       ) : (
                         <a
-                          href="#"
+                          href="/pc-builder"
                           className={`${styles.navLink} ${item.highlight ? styles.highlight : ""
                             } ${activeNav === item.id ? styles.active : ""}`}
-                          onClick={() => handleMenuClick(item.id)}
+                          onClick={(e) => {
+                            e.preventDefault();
+                            navigateToPCBuilder();
+                            closeAllMenus();
+                          }}
                         >
                           {item.label}
                         </a>

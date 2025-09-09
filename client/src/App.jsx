@@ -3,6 +3,7 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Main from './components/Main/Main';
 import ProductsPages from './components/Pages/ProductsPages/ProductsPages';
+import PCBuilder from './components/PCBuilder/PCBuilder'; // Import the PCBuilder component
 import './index.css';
 import LaptopsPages from './components/Pages/LaptopsPages/LaptopsPages';
 import DesktopsPages from './components/Pages/DesktopsPages/DesktopsPages';
@@ -16,6 +17,7 @@ function App() {
           <Route path="/products" element={<ProductsPages />} />
           <Route path="/laptops" element={<LaptopsPages />} />
           <Route path="/desktops" element={<DesktopsPages />} />
+          <Route path="/pc-builder" element={<PCBuilder />} /> {/* Add PC Builder route */}
           {/* Add other routes as needed */}
         </Routes>
       </div>
