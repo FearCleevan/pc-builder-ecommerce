@@ -63,7 +63,7 @@
 }
 
 .componentName:hover {
-    color: #3b82f6;
+    color: #ff2c2c;
     transition: color 0.15s ease;
 }
 
@@ -110,13 +110,14 @@
 }
 
 .accentButton {
-    background-color: #3b82f6;
+    background-color: #ff2c2c;
     color: white;
     border: none;
+    cursor: pointer;
 }
 
 .accentButton:hover {
-    background-color: #2563eb;
+    background-color: #ff2c2cda;
 }
 
 .buttonIcon {
@@ -128,7 +129,12 @@
 }
 
 .defaultButton:hover .buttonIcon {
-    color: #1f2937;
+    color: #ff2c2c;
+}
+
+.defaultButton:hover {
+    color: #ff2c2c;
+    cursor: pointer;
 }
 
 .accentButton .buttonIcon {
