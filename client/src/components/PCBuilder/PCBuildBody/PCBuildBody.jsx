@@ -149,6 +149,14 @@ const PCBuildBody = () => {
         setSelectedComponent(null);
     };
 
+    const handleRemoveComponent = (componentId) => {
+        setSelectedComponents(prev => {
+            const newComponents = { ...prev };
+            delete newComponents[componentId];
+            return newComponents;
+        });
+    };
+
     // Determine which component should have the accent button
     const getNextComponentToSelect = () => {
         const componentIds = components.map(c => c.id);
@@ -180,6 +188,7 @@ const PCBuildBody = () => {
                     {components.map((component, index) => {
                         const isSelected = selectedComponents[component.id];
                         const shouldShowAccent = component.id === nextComponentId;
+                        const selectedData = selectedComponents[component.id];
 
                         return (
                             <tr key={index} className={styles.componentRow}>
@@ -194,26 +203,47 @@ const PCBuildBody = () => {
                                         </td>
                                         <td className={styles.imageCell}>
                                             <div className={styles.componentImage}>
-                                                <img src={selectedComponents[component.id].image || "/placeholder-image.jpg"} alt={selectedComponents[component.id].name} />
+                                                <img src={selectedData.image || "/src/assets/Laptop1.png"} alt={selectedData.name} />
+                                                {selectedData.has3D && (
+                                                    <div className={styles.badge3D}>
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                                            <path d="M16.466 7.5C15.643 4.237 13.952 2 12 2 9.239 2 7 6.477 7 12s2.239 10 5 10c.342 0 .677-.069 1-.2"></path>
+                                                            <path d="m15.194 13.707 3.814 1.86-1.86 3.814"></path>
+                                                            <path d="M19 15.57c-1.804.885-4.274 1.43-7 1.43-5.523 0-10-2.239-10-5s4.477-5 10-5c4.838 0 8.873 1.718 9.8 4"></path>
+                                                        </svg>
+                                                    </div>
+                                                )}
                                             </div>
                                         </td>
                                         <td className={styles.nameCell}>
                                             <div className={styles.selectedComponentInfo}>
-                                                <p className={styles.componentNameText}>{selectedComponents[component.id].name}</p>
-                                                <p className={styles.componentSpecs}>{selectedComponents[component.id].specs}</p>
+                                                <p className={styles.componentNameText}>{selectedData.name}</p>
+                                                <div className={styles.componentSpecs}>
+                                                    {selectedData.specs && Object.entries(selectedData.specs).slice(0, 2).map(([key, value], index) => (
+                                                        <span key={index} className={styles.specItem}>
+                                                            {key}: {value}
+                                                        </span>
+                                                    ))}
+                                                </div>
                                             </div>
                                         </td>
                                         <td className={styles.stockCell}>
-                                            <span className={styles.inStock}>In Stock</span>
+                                            <span className={styles.inStock}>{selectedData.stock || "In Stock"}</span>
                                         </td>
                                         <td className={styles.priceCell}>
-                                            <span className={styles.price}>${selectedComponents[component.id].price}</span>
+                                            <span className={styles.price}>${selectedData.price}</span>
                                         </td>
                                         <td className={styles.whereCell}>
-                                            <span className={styles.store}>{selectedComponents[component.id].store}</span>
+                                            <span className={styles.store}>{selectedData.store}</span>
                                         </td>
                                         <td className={styles.actionCell}>
-                                            <button className={styles.removeButton}>
+                                            <button
+                                                className={styles.removeButton}
+                                                onClick={(e) => {
+                                                    e.stopPropagation();
+                                                    handleRemoveComponent(component.id);
+                                                }}
+                                            >
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                                                     <path d="M18 6 6 18"></path>
                                                     <path d="m6 6 12 12"></path>
@@ -232,9 +262,6 @@ const PCBuildBody = () => {
                                                 {component.name}
                                             </p>
                                             <div className={styles.buttonWrapper}>
-                                                <div className={styles.loadingSpinner}>
-                                                    {/* Loading spinner SVG */}
-                                                </div>
                                                 <button className={shouldShowAccent ? styles.accentButton : styles.defaultButton}>
                                                     <span className={styles.buttonIcon}>
                                                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">

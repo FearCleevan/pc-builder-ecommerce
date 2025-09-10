@@ -1,243 +1,338 @@
 /* Updated PCBuildBody.module.css */
 .table {
-  width: 100%;
-  border: 1px solid #e5e7eb;
-  border-bottom: 1px solid #e5e7eb;
-  border-radius: 8px;
-  border-collapse: collapse;
+    width: 100%;
+    border: 1px solid #e5e7eb;
+    border-bottom: 1px solid #e5e7eb;
+    border-radius: 8px;
+    border-collapse: collapse;
 }
 
 .tbody {
-  padding: 0;
+    padding: 0;
 }
 
 .hiddenHeader {
-  display: none;
+    display: none;
 }
 
 .headerRow {
-  border-bottom: 1px solid #e5e7eb;
+    border-bottom: 1px solid #e5e7eb;
 }
 
 .headerCell {
-  text-align: left;
-  font-size: 0.75rem;
-  color: #6b7280;
-  font-weight: 400;
-  padding: 0.5rem 0.5rem;
+    text-align: left;
+    font-size: 0.75rem;
+    color: #6b7280;
+    font-weight: 400;
+    padding: 0.5rem 0.5rem;
 }
 
 @media (min-width: 1280px) {
-  .headerCell {
-    padding: 0.5rem 0.75rem;
-  }
+    .headerCell {
+        padding: 0.5rem 0.75rem;
+    }
 }
 
 .componentRow {
-  padding: 0;
-  border-bottom: 1px solid #e5e7eb;
+    padding: 0;
+    border-bottom: 1px solid #e5e7eb;
 }
 
 .componentRow:last-child {
-  border-bottom: none;
+    border-bottom: none;
 }
 
 .componentCell {
-  padding: 0;
+    padding: 0;
 }
 
-.checkCell, .imageCell, .nameCell, .stockCell, .priceCell, .whereCell, .actionCell {
-  padding: 0.75rem;
-  vertical-align: middle;
+.checkCell,
+.imageCell,
+.nameCell,
+.stockCell,
+.priceCell,
+.whereCell,
+.actionCell {
+    padding: 0.75rem;
+    vertical-align: middle;
 }
 
 .checkCell {
-  width: 40px;
+    width: 40px;
 }
 
 .imageCell {
-  width: 80px;
+    width: 80px;
 }
 
 .nameCell {
-  min-width: 200px;
+    min-width: 200px;
 }
 
-.stockCell, .priceCell, .whereCell {
-  width: 100px;
+.stockCell,
+.priceCell,
+.whereCell {
+    width: 100px;
 }
 
 .actionCell {
-  width: 60px;
+    width: 60px;
 }
 
 .checkIcon {
-  color: #059669;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+    color: #059669;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .componentImage {
-  width: 60px;
-  height: 60px;
-  background-color: #f3f4f6;
-  border-radius: 4px;
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+    width: 60px;
+    height: 60px;
+    background-color: #f3f4f6;
+    border-radius: 4px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .componentImage img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .selectedComponentInfo {
-  display: flex;
-  flex-direction: column;
+    display: flex;
+    flex-direction: column;
 }
 
 .componentNameText {
-  font-weight: 500;
-  margin: 0 0 0.25rem 0;
-  color: #1f2937;
+    font-weight: 500;
+    margin: 0 0 0.25rem 0;
+    color: #1f2937;
 }
 
 .componentSpecs {
-  font-size: 0.75rem;
-  color: #6b7280;
-  margin: 0;
+    font-size: 0.75rem;
+    color: #6b7280;
+    margin: 0;
 }
 
 .inStock {
-  color: #059669;
-  font-size: 0.875rem;
-  font-weight: 500;
+    color: #059669;
+    font-size: 0.875rem;
+    font-weight: 500;
 }
 
 .price {
-  font-weight: 600;
-  color: #1f2937;
+    font-weight: 600;
+    color: #1f2937;
 }
 
 .store {
-  font-size: 0.875rem;
-  color: #6b7280;
+    font-size: 0.875rem;
+    color: #6b7280;
 }
 
 .removeButton {
-  background: none;
-  border: none;
-  cursor: pointer;
-  padding: 0.25rem;
-  border-radius: 4px;
-  color: #6b7280;
-  transition: all 0.15s ease;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.25rem;
+    border-radius: 4px;
+    color: #6b7280;
+    transition: all 0.15s ease;
 }
 
 .removeButton:hover {
-  background-color: #fef2f2;
-  color: #dc2626;
+    background-color: #fef2f2;
+    color: #dc2626;
 }
 
 .componentItem {
-  display: flex;
-  justify-content: space-between;
-  padding: 0.75rem;
-  cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    padding: 0.75rem;
+    cursor: pointer;
 }
 
 .componentItem:hover {
-  background-color: #f9fafb;
+    background-color: #f9fafb;
 }
 
 .componentName {
-  font-size: 13px;
-  font-weight: 500;
-  color: #424242;
-  display: flex;
-  gap: 0.25rem;
-  align-items: center;
-  margin: 0;
+    font-size: 13px;
+    font-weight: 500;
+    color: #424242;
+    display: flex;
+    gap: 0.25rem;
+    align-items: center;
+    margin: 0;
 }
 
 .componentName:hover {
-  color: #ff2c2c;
-  transition: color 0.15s ease;
+    color: #ff2c2c;
+    transition: color 0.15s ease;
 }
 
 @media (min-width: 1280px) {
-  .componentName {
-    white-space: nowrap;
-  }
+    .componentName {
+        white-space: nowrap;
+    }
 }
 
 .buttonWrapper {
-  position: relative;
-  width: fit-content;
+    position: relative;
+    width: fit-content;
 }
 
 .loadingSpinner {
-  position: absolute;
-  inset: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: -10;
-  opacity: 0;
-  transform: scale(0.5);
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: -10;
+    opacity: 0;
+    transform: scale(0.5);
 }
 
-.defaultButton, .accentButton {
-  display: flex;
-  align-items: center;
-  gap: 0.25rem;
-  justify-content: center;
-  white-space: nowrap;
-  border-radius: 0.375rem;
-  padding: 0.25rem 0.5rem;
-  font-size: 0.75rem;
-  transition: all 0.15s ease;
-  border: 1px solid #d1d5db;
-  background-color: white;
-  color: #424242;
-  cursor: pointer;
+.defaultButton,
+.accentButton {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    justify-content: center;
+    white-space: nowrap;
+    border-radius: 0.375rem;
+    padding: 0.25rem 0.5rem;
+    font-size: 0.75rem;
+    transition: all 0.15s ease;
+    border: 1px solid #d1d5db;
+    background-color: white;
+    color: #424242;
+    cursor: pointer;
 }
 
 .defaultButton:hover {
-  background-color: #f3f4f6;
-  color: #1f2937;
+    background-color: #f3f4f6;
+    color: #1f2937;
 }
 
 .accentButton {
-  background-color: #ff2c2c;
-  color: white;
-  border: none;
+    background-color: #ff2c2c;
+    color: white;
+    border: none;
 }
 
 .accentButton:hover {
-  background-color: #ff2c2cda;
+    background-color: #ff2c2cda;
 }
 
 .buttonIcon {
-  transition: color 0.15s ease;
+    transition: color 0.15s ease;
 }
 
 .defaultButton .buttonIcon {
-  color: #6b7280;
+    color: #6b7280;
 }
 
 .defaultButton:hover .buttonIcon {
-  color: #ff2c2c;
+    color: #ff2c2c;
 }
 
 .defaultButton:hover {
-  color: #ff2c2c;
+    color: #ff2c2c;
 }
 
 .accentButton .buttonIcon {
-  color: white;
+    color: white;
+}
+
+/* Add these styles to your existing PCBuildBody.module.css */
+
+.badge3D {
+    position: absolute;
+    bottom: 2px;
+    right: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f0f9ff;
+    color: #0369a1;
+    border-radius: 50%;
+    width: 22px;
+    height: 22px;
+}
+
+.badge3D svg {
+    width: 12px;
+    height: 12px;
+}
+
+.componentSpecs {
+    display: flex;
+    flex-direction: column;
+    gap: 0.125rem;
+}
+
+.specItem {
+    font-size: 0.75rem;
+    color: #6b7280;
+}
+
+.componentImage {
+    position: relative;
+    width: 60px;
+    height: 60px;
+    background-color: #f3f4f6;
+    border-radius: 4px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.componentImage img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Enhance the selected component row styling */
+.componentRow:hover {
+    background-color: #f9fafb;
+}
+
+/* Improve button styles */
+.accentButton {
+    background-color: #ff2c2c;
+    color: white;
+    border: none;
+    padding: 0.5rem 0.75rem;
+    border-radius: 0.375rem;
+    font-weight: 500;
+    transition: all 0.15s ease;
+}
+
+.accentButton:hover {
+    background-color: #dc2626;
+}
+
+.defaultButton {
+    background-color: white;
+    color: #424242;
+    border: 1px solid #d1d5db;
+    padding: 0.5rem 0.75rem;
+    border-radius: 0.375rem;
+    font-weight: 500;
+    transition: all 0.15s ease;
+}
+
+.defaultButton:hover {
+    background-color: #f3f4f6;
+    color: #ff2c2c;
+    border-color: #ff2c2c;
 }

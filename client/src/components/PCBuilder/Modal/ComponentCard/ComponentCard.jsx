@@ -11,7 +11,7 @@ const ComponentCard = ({ component, onSelect }) => {
     <div className={styles.card} onClick={handleAddToBuild}>
       <div className={styles.imageContainer}>
         <img
-          src={component.image || "/placeholder-image.jpg"}
+          src={component.image || "/src/assets/Laptop1.png"}
           alt={component.name}
           className={styles.image}
         />
@@ -36,6 +36,10 @@ const ComponentCard = ({ component, onSelect }) => {
               <p className={styles.specValue}>{value}</p>
             </div>
           ))}
+        </div>
+        <div className={styles.storeInfo}>
+          <span className={styles.store}>{component.store}</span>
+          <span className={styles.stock}>{component.stock}</span>
         </div>
         <button className={styles.addButton} onClick={handleAddToBuild}>
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
