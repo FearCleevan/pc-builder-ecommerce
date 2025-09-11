@@ -1,10 +1,27 @@
-// client/src/components/PCBuilder/Modal/AddComponentModal/AddComponentModal.jsx
 import React, { useEffect, useState } from 'react';
 import ModalHeader from '../ModalHeader/ModalHeader';
 import ProductFilter from '../ProductFilter/ProductFilter';
 import ComponentCard from '../ComponentCard/ComponentCard';
 import Pagination from '../Pagination/Pagination';
 import styles from './AddComponentModal.module.css';
+
+// Import mock data
+import { caseData } from '../MockData/Case/Case';
+import { cpuData } from '../MockData/CPU/CPU';
+import { motherboardData } from '../MockData/Motherboard/Motherboard';
+import { gpuData } from '../MockData/GPU/GPU';
+import { ramData } from '../MockData/RAM/Ram';
+import { cpuCoolerData } from '../MockData/CPU Cooler/CPUCooler';
+import { storageData } from '../MockData/Storage/Storage';
+import { powerSupplyData } from '../MockData/Power Supply/PowerSupply';
+import { caseFanData } from '../MockData/Case Fan/CaseFan';
+import { monitorData } from '../MockData/Monitor/Monitor';
+import { mouseData } from '../MockData/Mouse/Mouse';
+import { keyboardData } from '../MockData/Keyboard/Keyboard';
+import { speakerData } from '../MockData/Speaker/Speaker';
+import { headphonesData } from '../MockData/Headphones/Headphones';
+import { microphoneData } from '../MockData/Microphone/Microphone';
+import { webcamData } from '../MockData/Webcam/Webcam';
 
 const AddComponentModal = ({ isOpen, onClose, onSelect, componentType }) => {
   const [currentPage, setCurrentPage] = useState(1);
@@ -16,7 +33,7 @@ const AddComponentModal = ({ isOpen, onClose, onSelect, componentType }) => {
   useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = 'hidden';
-      // Generate mock data based on component type
+      // Get mock data based on component type
       const mockComponents = generateMockComponents(componentType);
       setComponents(mockComponents);
     } else {
@@ -32,209 +49,26 @@ const AddComponentModal = ({ isOpen, onClose, onSelect, componentType }) => {
   const generateMockComponents = (type) => {
     if (!type) return [];
     
-    const baseData = {
-      case: [
-        {
-          id: 'case-1',
-          name: 'HYTE Y60 ATX Mid Tower White Tempered Glass Side Panel',
-          image: "/src/assets/Laptop1.png",
-          price: 179.97,
-          specs: {
-            "Form Factor": "ATX Mid Tower",
-            "Side Panel": "Tempered Glass",
-            "Max GPU Length": "440 mm"
-          },
-          has3D: true,
-          store: "Newegg",
-          stock: "In stock"
-        },
-        {
-          id: 'case-2',
-          name: 'NZXT H510 Elite ATX Mid Tower Black',
-          image: "/src/assets/Laptop1.png",
-          price: 149.99,
-          specs: {
-            "Form Factor": "ATX Mid Tower",
-            "Side Panel": "Tempered Glass",
-            "Max GPU Length": "381 mm"
-          },
-          has3D: true,
-          store: "Amazon",
-          stock: "In stock"
-        },
-        {
-          id: 'case-3',
-          name: 'Corsair 4000D Airflow ATX Mid Tower',
-          image: "/src/assets/Laptop1.png",
-          price: 94.99,
-          specs: {
-            "Form Factor": "ATX Mid Tower",
-            "Side Panel": "Tempered Glass",
-            "Max GPU Length": "360 mm"
-          },
-          has3D: false,
-          store: "Best Buy",
-          stock: "In stock"
-        },
-        {
-          id: 'case-4',
-          name: 'Corsair 4000D Airflow',
-          image: "/src/assets/Laptop1.png",
-          price: 79.99,
-          specs: {
-            "Form Factor": "ATX Mid Tower",
-            "Side Panel": "Tempered Glass",
-            "Max GPU Length": "360 mm"
-          },
-          has3D: false,
-          store: "Best Buy",
-          stock: "In stock"
-        }
-        ,
-        {
-          id: 'case-5',
-          name: 'Corsair 4000D Airflow',
-          image: "/src/assets/Laptop1.png",
-          price: 79.99,
-          specs: {
-            "Form Factor": "ATX Mid Tower",
-            "Side Panel": "Tempered Glass",
-            "Max GPU Length": "360 mm"
-          },
-          has3D: false,
-          store: "Best Buy",
-          stock: "In stock"
-        }
-      ],
-      cpu: [
-        {
-          id: 'cpu-1',
-          name: 'AMD Ryzen 9 7950X 16-Core Processor',
-          image: "/src/assets/Laptop1.png",
-          price: 599.99,
-          specs: {
-            "Cores": "16",
-            "Threads": "32",
-            "Base Clock": "4.5 GHz"
-          },
-          has3D: true,
-          store: "Newegg",
-          stock: "In stock"
-        },
-        {
-          id: 'cpu-2',
-          name: 'Intel Core i9-13900K 24-Core Processor',
-          image: "/src/assets/Laptop1.png",
-          price: 589.99,
-          specs: {
-            "Cores": "24",
-            "Threads": "32",
-            "Base Clock": "3.0 GHz"
-          },
-          has3D: true,
-          store: "Amazon",
-          stock: "In stock"
-        }
-      ],
-      motherboard: [
-        {
-          id: 'mb-1',
-          name: 'ASUS ROG Strix X670E-E Gaming WiFi',
-          image: "/src/assets/Laptop1.png",
-          price: 449.99,
-          specs: {
-            "Socket": "AM5",
-            "Chipset": "AMD X670",
-            "Form Factor": "ATX"
-          },
-          has3D: true,
-          store: "Newegg",
-          stock: "In stock"
-        }
-      ],
-      gpu: [
-        {
-          id: 'gpu-1',
-          name: 'NVIDIA GeForce RTX 4090 24GB',
-          image: "/src/assets/Laptop1.png",
-          price: 1599.99,
-          specs: {
-            "Memory": "24GB GDDR6X",
-            "Boost Clock": "2520 MHz",
-            "Interface": "PCIe 4.0"
-          },
-          has3D: true,
-          store: "Newegg",
-          stock: "In stock"
-        }
-      ],
-      ram: [
-        {
-          id: 'ram-1',
-          name: 'Corsair Vengeance RGB 32GB DDR5 6000MHz',
-          image: "/src/assets/Laptop1.png",
-          price: 129.99,
-          specs: {
-            "Capacity": "32GB (2x16GB)",
-            "Speed": "DDR5 6000MHz",
-            "Timing": "CL36"
-          },
-          has3D: false,
-          store: "Amazon",
-          stock: "In stock"
-        }
-      ],
-      cpuCooler: [
-        {
-          id: 'cooler-1',
-          name: 'NZXT Kraken X73 RGB 360mm AIO Liquid Cooler',
-          image: "/src/assets/Laptop1.png",
-          price: 179.99,
-          specs: {
-            "Type": "Liquid Cooler",
-            "Radiator Size": "360mm",
-            "Compatibility": "All Sockets"
-          },
-          has3D: true,
-          store: "Newegg",
-          stock: "In stock"
-        }
-      ],
-      storage: [
-        {
-          id: 'storage-1',
-          name: 'Samsung 980 Pro 2TB PCIe 4.0 NVMe SSD',
-          image: "/src/assets/Laptop1.png",
-          price: 159.99,
-          specs: {
-            "Capacity": "2TB",
-            "Interface": "PCIe 4.0 NVMe",
-            "Sequential Read": "7000 MB/s"
-          },
-          has3D: false,
-          store: "Amazon",
-          stock: "In stock"
-        }
-      ],
-      powerSupply: [
-        {
-          id: 'psu-1',
-          name: 'Corsair RM1000x 1000W 80+ Gold Modular',
-          image: "/src/assets/Laptop1.png",
-          price: 189.99,
-          specs: {
-            "Wattage": "1000W",
-            "Efficiency": "80+ Gold",
-            "Modular": "Full Modular"
-          },
-          has3D: false,
-          store: "Newegg",
-          stock: "In stock"
-        }
-      ]
+    const componentDataMap = {
+      case: caseData,
+      cpu: cpuData,
+      motherboard: motherboardData,
+      gpu: gpuData,
+      ram: ramData,
+      cpuCooler: cpuCoolerData,
+      storage: storageData,
+      powerSupply: powerSupplyData,
+      caseFan: caseFanData,
+      monitor: monitorData,
+      mouse: mouseData,
+      keyboard: keyboardData,
+      speaker: speakerData,
+      headphones: headphonesData,
+      microphone: microphoneData,
+      webcam: webcamData
     };
 
-    return baseData[type.id] || [
+    return componentDataMap[type.id] || [
       {
         id: 'default-1',
         name: `Sample ${type?.name}`,
@@ -294,7 +128,7 @@ const AddComponentModal = ({ isOpen, onClose, onSelect, componentType }) => {
         
         <div className={styles.modalContent}>
           <div className={styles.filterSection}>
-            <ProductFilter />
+            <ProductFilter componentType={componentType} />
           </div>
           
           <div className={styles.mainContent}>
