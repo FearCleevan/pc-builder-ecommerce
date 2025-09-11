@@ -4,6 +4,8 @@ import styles from './ProductFilter.module.css';
 // Import filter data
 import { caseFilter } from '../MockData/Case/CaseFilter';
 import { cpuFilter } from '../MockData/CPU/CPUFilter';
+import { motherboardFilter } from '../MockData/Motherboard/MotherboardFilter';
+import { gpuFilter } from '../MockData/GPU/GPUFilter';
 
 const ProductFilter = ({ componentType }) => {
   // Default filter sections if no component type is provided
@@ -27,8 +29,8 @@ const ProductFilter = ({ componentType }) => {
     case: caseFilter,
     cpu: cpuFilter,
     // Add other component filters here as they are created
-    motherboard: defaultFilterSections,
-    gpu: defaultFilterSections,
+    motherboard: motherboardFilter,
+    gpu: gpuFilter,
     ram: defaultFilterSections,
     cpuCooler: defaultFilterSections,
     storage: defaultFilterSections,
