@@ -1,9 +1,13 @@
-// client/src/components/PCBuilder/Modal/ProductFilter/ProductFilter.jsx
 import React from 'react';
 import styles from './ProductFilter.module.css';
 
-const ProductFilter = () => {
-  const filterSections = [
+// Import filter data
+import { caseFilter } from '../MockData/Case/CaseFilter';
+import { cpuFilter } from '../MockData/CPU/CPUFilter';
+
+const ProductFilter = ({ componentType }) => {
+  // Default filter sections if no component type is provided
+  const defaultFilterSections = [
     {
       title: "Price",
       type: "range",
@@ -12,56 +16,37 @@ const ProductFilter = () => {
       unit: "$"
     },
     {
-      title: "Form Factor",
+      title: "Category",
       type: "checkbox",
-      options: [
-        "ATX Desktop", "ATX Full Tower", "ATX Mid Tower", "ATX Mini Tower",
-        "ATX Test Bench", "EATX", "EATX Full Tower", "EATX Mid Tower"
-      ]
-    },
-    {
-      title: "Side Panel",
-      type: "checkbox",
-      options: [
-        "Acrylic", "Aluminum", "Mesh", "None", "Solid", "Steel",
-        "Tempered Glass", "Tinted Acrylic"
-      ]
-    },
-    {
-      title: "Manufacturer",
-      type: "checkbox",
-      options: [
-        "1STPLAYER", "ABKONCORE", "ABYSS-TR", "Acer", "ADATA", "Aerocool",
-        "AeroCool", "aigo"
-      ]
-    },
-    {
-      title: "Color",
-      type: "checkbox",
-      options: [
-        "BLACK", "BLUE", "BROWN", "GOLD", "GRAY", "GREEN", "GREY", "ORANGE"
-      ]
-    },
-    {
-      title: "Transparent Side Panel",
-      type: "checkbox",
-      options: ["No", "Yes"]
-    },
-    {
-      title: "Max GPU Length",
-      type: "range",
-      min: 0,
-      max: 635,
-      unit: "mm"
-    },
-    {
-      title: "Max CPU Cooler Height",
-      type: "range",
-      min: 0,
-      max: 260,
-      unit: "mm"
+      options: ["Option 1", "Option 2", "Option 3"]
     }
   ];
+
+  // Map component types to their respective filters
+  const filterMap = {
+    case: caseFilter,
+    cpu: cpuFilter,
+    // Add other component filters here as they are created
+    motherboard: defaultFilterSections,
+    gpu: defaultFilterSections,
+    ram: defaultFilterSections,
+    cpuCooler: defaultFilterSections,
+    storage: defaultFilterSections,
+    powerSupply: defaultFilterSections,
+    caseFan: defaultFilterSections,
+    monitor: defaultFilterSections,
+    mouse: defaultFilterSections,
+    keyboard: defaultFilterSections,
+    speaker: defaultFilterSections,
+    headphones: defaultFilterSections,
+    microphone: defaultFilterSections,
+    webcam: defaultFilterSections
+  };
+
+  // Get the appropriate filter sections based on component type
+  const filterSections = componentType && filterMap[componentType.id] 
+    ? filterMap[componentType.id] 
+    : defaultFilterSections;
 
   return (
     <div className={styles.filterContainer}>

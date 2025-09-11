@@ -13,7 +13,6 @@ import { gpuData } from '../MockData/GPU/GPU';
 import { ramData } from '../MockData/RAM/Ram';
 import { cpuCoolerData } from '../MockData/CPU Cooler/CPUCooler';
 import { storageData } from '../MockData/Storage/Storage';
-import { powerSupplyData } from '../MockData/Power Supply/PowerSupply';
 import { caseFanData } from '../MockData/Case Fan/CaseFan';
 import { monitorData } from '../MockData/Monitor/Monitor';
 import { mouseData } from '../MockData/Mouse/Mouse';
@@ -22,6 +21,7 @@ import { speakerData } from '../MockData/Speaker/Speaker';
 import { headphonesData } from '../MockData/Headphones/Headphones';
 import { microphoneData } from '../MockData/Microphone/Microphone';
 import { webcamData } from '../MockData/Webcam/Webcam';
+import { powerSupplyData } from '../MockData/Power Suppy/PowerSupply';
 
 const AddComponentModal = ({ isOpen, onClose, onSelect, componentType }) => {
   const [currentPage, setCurrentPage] = useState(1);
