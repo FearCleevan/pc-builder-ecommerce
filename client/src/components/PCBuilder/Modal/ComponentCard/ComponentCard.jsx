@@ -1,7 +1,7 @@
 // client/src/components/PCBuilder/Modal/ComponentCard/ComponentCard.jsx
 import React from 'react';
+import Desktop1Image from '../../../../assets/Desktop1.jpg';
 import styles from './ComponentCard.module.css';
-import SampleImg from "../../../../assets/Laptop1.png";
 
 const ComponentCard = ({ component, onSelect }) => {
   const handleAddToBuild = () => {
@@ -12,7 +12,7 @@ const ComponentCard = ({ component, onSelect }) => {
     <div className={styles.card} data-testid="part-card">
       <div className={styles.imageContainer}>
         <img
-          src={component.SampleImg}
+          src={component.SampleImg || Desktop1Image}
           alt={component.name}
           className={styles.image}
           loading="lazy"

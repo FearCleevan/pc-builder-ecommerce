@@ -2,7 +2,7 @@
 import React from 'react';
 import styles from './ModalHeader.module.css';
 
-const ModalHeader = ({ title, onClose, showFilters = true }) => {
+const ModalHeader = ({ title, onClose = true }) => {
   return (
     <div className={styles.modalHeader}>
       <h2 className={styles.modalTitle}>{title}</h2>

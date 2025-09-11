@@ -75,6 +75,35 @@ const AddComponentModal = ({ isOpen, onClose, onSelect, componentType }) => {
           has3D: false,
           store: "Best Buy",
           stock: "In stock"
+        },
+        {
+          id: 'case-4',
+          name: 'Corsair 4000D Airflow',
+          image: "/src/assets/Laptop1.png",
+          price: 79.99,
+          specs: {
+            "Form Factor": "ATX Mid Tower",
+            "Side Panel": "Tempered Glass",
+            "Max GPU Length": "360 mm"
+          },
+          has3D: false,
+          store: "Best Buy",
+          stock: "In stock"
+        }
+        ,
+        {
+          id: 'case-5',
+          name: 'Corsair 4000D Airflow',
+          image: "/src/assets/Laptop1.png",
+          price: 79.99,
+          specs: {
+            "Form Factor": "ATX Mid Tower",
+            "Side Panel": "Tempered Glass",
+            "Max GPU Length": "360 mm"
+          },
+          has3D: false,
+          store: "Best Buy",
+          stock: "In stock"
         }
       ],
       cpu: [
