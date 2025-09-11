@@ -6,7 +6,7 @@ const ModalHeader = ({ title, onClose, showFilters = true }) => {
   return (
     <div className={styles.modalHeader}>
       <h2 className={styles.modalTitle}>{title}</h2>
-      <div className={styles.headerContent}>
+      {/* <div className={styles.headerContent}>
         {showFilters && (
           <div className={styles.filterSection}>
             <div className={styles.filterCheckbox}>
@@ -34,7 +34,7 @@ const ModalHeader = ({ title, onClose, showFilters = true }) => {
             Compare
           </button>
         </div>
-      </div>
+      </div> */}
       <button className={styles.closeButton} onClick={onClose}>
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
           <path d="M18 6 6 18"></path>

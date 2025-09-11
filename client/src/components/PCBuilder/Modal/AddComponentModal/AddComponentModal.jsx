@@ -10,6 +10,8 @@ const AddComponentModal = ({ isOpen, onClose, onSelect, componentType }) => {
   const [currentPage, setCurrentPage] = useState(1);
   const [components, setComponents] = useState([]);
   const [searchTerm, setSearchTerm] = useState('');
+  const [compatibilityFilter, setCompatibilityFilter] = useState(true);
+  const [sortOption, setSortOption] = useState('default');
 
   useEffect(() => {
     if (isOpen) {
@@ -239,6 +241,14 @@ const AddComponentModal = ({ isOpen, onClose, onSelect, componentType }) => {
     setSearchTerm(e.target.value);
   };
 
+  const handleSortChange = (e) => {
+    setSortOption(e.target.value);
+  };
+
+  const toggleCompatibilityFilter = () => {
+    setCompatibilityFilter(!compatibilityFilter);
+  };
+
   const filteredComponents = components.filter(component =>
     component.name.toLowerCase().includes(searchTerm.toLowerCase())
   );
@@ -259,34 +269,81 @@ const AddComponentModal = ({ isOpen, onClose, onSelect, componentType }) => {
           </div>
           
           <div className={styles.mainContent}>
-            <div className={styles.searchAndInfo}>
-              <div className={styles.searchSection}>
-                <div className={styles.searchInputContainer}>
-                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={styles.searchIcon}>
-                    <circle cx="11" cy="11" r="8"></circle>
-                    <path d="m21 21-4.3-4.3"></path>
-                  </svg>
+            <div className={styles.filterBar}>
+              <div className={styles.compatibilityFilter}>
+                <div className={styles.checkboxContainer}>
                   <input 
-                    type="text" 
-                    placeholder={`Search for ${componentType?.name}...`}
-                    className={styles.searchInput}
-                    value={searchTerm}
-                    onChange={handleSearchChange}
+                    type="checkbox" 
+                    id="compatibility" 
+                    checked={compatibilityFilter}
+                    onChange={toggleCompatibilityFilter}
+                    className={styles.hiddenCheckbox}
                   />
+                  <label htmlFor="compatibility" className={styles.customCheckbox}>
+                    {compatibilityFilter && (
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                        <path d="M20 6 9 17l-5-5"></path>
+                      </svg>
+                    )}
+                  </label>
+                  <label htmlFor="compatibility" className={styles.checkboxLabel}>
+                    Compatibility Filter
+                  </label>
                 </div>
               </div>
               
+              <div className={styles.compareButtonContainer}>
+                <button className={styles.compareButton} disabled>
+                  Compare
+                </button>
+              </div>
+            </div>
+            
+            <div className={styles.searchAndSortSection}>
               <div className={styles.resultsInfo}>
-                <span className={styles.resultsCount}>{filteredComponents.length} Compatible Products</span>
-                <div className={styles.sortSection}>
-                  <span className={styles.sortLabel}>Sort by</span>
-                  <select className={styles.sortSelect} defaultValue="default">
+                <span className={styles.resultsCount}>
+                  {filteredComponents.length} Compatible Products
+                </span>
+              </div>
+              
+              <div className={styles.sortAndSearch}>
+                <div className={styles.sortContainer}>
+                  <div className={styles.sortLabel}>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="m3 16 4 4 4-4"></path>
+                      <path d="M7 20V4"></path>
+                      <path d="m21 8-4-4-4 4"></path>
+                      <path d="M17 4v16"></path>
+                    </svg>
+                    <span>Sort by</span>
+                  </div>
+                  <select 
+                    className={styles.sortSelect} 
+                    value={sortOption}
+                    onChange={handleSortChange}
+                  >
                     <option value="default">Default</option>
                     <option value="price-asc">Price: Low to High</option>
                     <option value="price-desc">Price: High to Low</option>
                     <option value="name-asc">Name: A to Z</option>
                     <option value="name-desc">Name: Z to A</option>
                   </select>
+                </div>
+                
+                <div className={styles.searchContainer}>
+                  <div className={styles.searchIcon}>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <circle cx="11" cy="11" r="8"></circle>
+                      <path d="m21 21-4.3-4.3"></path>
+                    </svg>
+                  </div>
+                  <input 
+                    type="text" 
+                    placeholder="Search" 
+                    className={styles.searchInput}
+                    value={searchTerm}
+                    onChange={handleSearchChange}
+                  />
                 </div>
               </div>
             </div>
