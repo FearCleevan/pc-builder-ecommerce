@@ -1,6 +1,7 @@
 // client/src/components/PCBuilder/Modal/ComponentCard/ComponentCard.jsx
 import React from 'react';
 import styles from './ComponentCard.module.css';
+import SampleImg from "../../../../assets/Laptop1.png";
 
 const ComponentCard = ({ component, onSelect }) => {
   const handleAddToBuild = () => {
@@ -8,15 +9,17 @@ const ComponentCard = ({ component, onSelect }) => {
   };
 
   return (
-    <div className={styles.card} onClick={handleAddToBuild}>
+    <div className={styles.card} data-testid="part-card">
       <div className={styles.imageContainer}>
         <img
-          src={component.image || "/src/assets/Laptop1.png"}
+          src={component.SampleImg}
           alt={component.name}
           className={styles.image}
+          loading="lazy"
+          decoding="async"
         />
         {component.has3D && (
-          <div className={styles.badge3D}>
+          <div className={styles.badge3D} data-testid="part-3d-badge">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
               <path d="M16.466 7.5C15.643 4.237 13.952 2 12 2 9.239 2 7 6.477 7 12s2.239 10 5 10c.342 0 .677-.069 1-.2"></path>
               <path d="m15.194 13.707 3.814 1.86-1.86 3.814"></path>
@@ -26,28 +29,37 @@ const ComponentCard = ({ component, onSelect }) => {
           </div>
         )}
       </div>
+      
       <div className={styles.content}>
-        <h3 className={styles.name}>{component.name}</h3>
-        <p className={styles.price}>${component.price}</p>
-        <div className={styles.specs}>
-          {component.specs && Object.entries(component.specs).slice(0, 3).map(([key, value], index) => (
-            <div key={index} className={styles.specItem}>
-              <p className={styles.specLabel}>{key}</p>
-              <p className={styles.specValue}>{value}</p>
-            </div>
-          ))}
+        <div className={styles.infoSection}>
+          <h3 className={styles.name}>{component.name}</h3>
+          <p className={styles.price} data-testid="part-price">${component.price}</p>
+          
+          <div className={styles.specs} data-testid="part-specs">
+            {component.specs && Object.entries(component.specs).slice(0, 3).map(([key, value], index) => (
+              <div key={index} className={styles.specItem}>
+                <p className={styles.specLabel}>{key}</p>
+                <p className={styles.specValue}>{value}</p>
+              </div>
+            ))}
+          </div>
         </div>
-        <div className={styles.storeInfo}>
-          <span className={styles.store}>{component.store}</span>
-          <span className={styles.stock}>{component.stock}</span>
+        
+        <div className={styles.actionSection}>
+          <button 
+            className={styles.addButton} 
+            onClick={handleAddToBuild}
+            data-testid="add-to-build-button"
+          >
+            <span className={styles.buttonIcon}>
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M5 12h14"></path>
+                <path d="M12 5v14"></path>
+              </svg>
+            </span>
+            <span className={styles.buttonText}>Add to build</span>
+          </button>
         </div>
-        <button className={styles.addButton} onClick={handleAddToBuild}>
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-            <path d="M5 12h14"></path>
-            <path d="M12 5v14"></path>
-          </svg>
-          Add to build
-        </button>
       </div>
     </div>
   );
