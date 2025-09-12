@@ -1,4 +1,3 @@
-// client/src/components/PCBuilder/PCBuildBody/PCBuildBody.jsx
 import React, { useState } from 'react';
 import AddComponentModal from '../Modal/AddComponentModal/AddComponentModal';
 import styles from './PCBuildBody.module.css';
@@ -130,6 +129,7 @@ const PCBuildBody = () => {
         },
     ];
 
+
     const handleComponentClick = (component) => {
         setSelectedComponent(component);
         setIsModalOpen(true);
@@ -173,15 +173,15 @@ const PCBuildBody = () => {
     return (
         <>
             <table className={styles.table}>
-                <thead className={styles.hiddenHeader}>
+                <thead className={styles.tableHeader}>
                     <tr className={styles.headerRow}>
-                        <th className={styles.headerCell}></th>
+                        <th className={styles.headerCell}>Component</th>
                         <th className={styles.headerCell}>Image</th>
                         <th className={styles.headerCell}>Name</th>
                         <th className={styles.headerCell}>Stock</th>
                         <th className={styles.headerCell}>Price</th>
                         <th className={styles.headerCell}>Where</th>
-                        <th className={styles.headerCell}></th>
+                        <th className={styles.headerCell}>Actions</th>
                     </tr>
                 </thead>
                 <tbody className={styles.tbody}>
@@ -191,14 +191,12 @@ const PCBuildBody = () => {
                         const selectedData = selectedComponents[component.id];
 
                         return (
-                            <tr key={index} className={styles.componentRow}>
+                            <tr key={index} className={`${styles.componentRow} ${isSelected ? styles.selectedRow : ''}`}>
                                 {isSelected ? (
                                     <>
-                                        <td className={styles.checkCell}>
-                                            <div className={styles.checkIcon}>
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                                                    <path d="M20 6 9 17l-5-5"></path>
-                                                </svg>
+                                        <td className={styles.componentNameCell}>
+                                            <div className={styles.componentNameWrapper}>
+                                                <p className={styles.componentCategory}>{component.name}</p>
                                             </div>
                                         </td>
                                         <td className={styles.imageCell}>
@@ -217,63 +215,72 @@ const PCBuildBody = () => {
                                         </td>
                                         <td className={styles.nameCell}>
                                             <div className={styles.selectedComponentInfo}>
-                                                <p className={styles.componentNameText}>{selectedData.name}</p>
-                                                <div className={styles.componentSpecs}>
-                                                    {selectedData.specs && Object.entries(selectedData.specs).slice(0, 2).map(([key, value], index) => (
-                                                        <span key={index} className={styles.specItem}>
-                                                            {key}: {value}
-                                                        </span>
-                                                    ))}
-                                                </div>
+                                                <h3 className={styles.componentNameText}>{selectedData.name}</h3>
                                             </div>
                                         </td>
                                         <td className={styles.stockCell}>
-                                            <span className={styles.inStock}>{selectedData.stock || "In Stock"}</span>
+                                            <span className={styles.inStock}>{selectedData.stock || "In stock"}</span>
                                         </td>
                                         <td className={styles.priceCell}>
-                                            <span className={styles.price}>${selectedData.price}</span>
+                                            <div className={styles.priceWrapper}>
+                                                <p className={styles.price}>${selectedData.price}</p>
+                                            </div>
                                         </td>
                                         <td className={styles.whereCell}>
-                                            <span className={styles.store}>{selectedData.store}</span>
+                                            <div className={styles.storeWrapper}>
+                                                <span className={styles.store}>{selectedData.store}</span>
+                                            </div>
                                         </td>
                                         <td className={styles.actionCell}>
-                                            <button
-                                                className={styles.removeButton}
-                                                onClick={(e) => {
-                                                    e.stopPropagation();
-                                                    handleRemoveComponent(component.id);
-                                                }}
-                                            >
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                                                    <path d="M18 6 6 18"></path>
-                                                    <path d="m6 6 12 12"></path>
-                                                </svg>
-                                            </button>
+                                            <div className={styles.actionButtons}>
+                                                <button className={styles.compareButton}>
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                                        <path d="M8 3 4 7l4 4"></path>
+                                                        <path d="M4 7h16"></path>
+                                                        <path d="m16 21 4-4-4-4"></path>
+                                                        <path d="M20 17H4"></path>
+                                                    </svg>
+                                                </button>
+                                                <button
+                                                    className={styles.removeButton}
+                                                    onClick={(e) => {
+                                                        e.stopPropagation();
+                                                        handleRemoveComponent(component.id);
+                                                    }}
+                                                >
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                                        <path d="M18 6 6 18"></path>
+                                                        <path d="m6 6 12 12"></path>
+                                                    </svg>
+                                                </button>
+                                            </div>
                                         </td>
                                     </>
                                 ) : (
-                                    <td colSpan="7" className={styles.componentCell}>
-                                        <div
-                                            className={styles.componentItem}
-                                            onClick={() => handleComponentClick(component)}
-                                        >
-                                            <p className={styles.componentName}>
-                                                {component.icon}
-                                                {component.name}
-                                            </p>
-                                            <div className={styles.buttonWrapper}>
-                                                <button className={shouldShowAccent ? styles.accentButton : styles.defaultButton}>
-                                                    <span className={styles.buttonIcon}>
-                                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                                                            <path d="M5 12h14"></path>
-                                                            <path d="M12 5v14"></path>
-                                                        </svg>
-                                                    </span>
-                                                    <span>Add {component.name}</span>
-                                                </button>
+                                    <>
+                                        <td colSpan="7" className={styles.componentCell}>
+                                            <div
+                                                className={styles.componentItem}
+                                                onClick={() => handleComponentClick(component)}
+                                            >
+                                                <p className={styles.componentName}>
+                                                    {component.icon}
+                                                    {component.name}
+                                                </p>
+                                                <div className={styles.buttonWrapper}>
+                                                    <button className={shouldShowAccent ? styles.accentButton : styles.defaultButton}>
+                                                        <span className={styles.buttonIcon}>
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                                                <path d="M5 12h14"></path>
+                                                                <path d="M12 5v14"></path>
+                                                            </svg>
+                                                        </span>
+                                                        <span>Add {component.name}</span>
+                                                    </button>
+                                                </div>
                                             </div>
-                                        </div>
-                                    </td>
+                                        </td>
+                                    </>
                                 )}
                             </tr>
                         );
