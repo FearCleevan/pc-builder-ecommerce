@@ -14,6 +14,10 @@ import { monitorFilter } from '../MockData/Monitor/MonitorFilter';
 import { caseFanFilter } from '../MockData/Case Fan/CaseFanFilter';
 import { mouseFilter } from '../MockData/Mouse/MouseFilter';
 import { KeyboardFilter } from '../MockData/Keyboard/KeyboardFilter';
+import { speakerFilter } from '../MockData/Speaker/SpeakerFilter';
+import { headphonesFilter } from '../MockData/Headphones/HeadphonesFilter';
+import { microphoneFilter } from '../MockData/Microphone/MicrophoneFilter';
+import { webcamFilter } from '../MockData/Webcam/WebcamFilter';
 
 const ProductFilter = ({ componentType }) => {
   // Default filter sections if no component type is provided
@@ -47,10 +51,10 @@ const ProductFilter = ({ componentType }) => {
     monitor: monitorFilter,
     mouse: mouseFilter,
     keyboard: KeyboardFilter,
-    speaker: defaultFilterSections,
-    headphones: defaultFilterSections,
-    microphone: defaultFilterSections,
-    webcam: defaultFilterSections
+    speaker: speakerFilter,
+    headphones: headphonesFilter,
+    microphone: microphoneFilter,
+    webcam: webcamFilter
   };
 
   // Get the appropriate filter sections based on component type
