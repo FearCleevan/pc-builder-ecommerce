@@ -8,6 +8,10 @@ import { motherboardFilter } from '../MockData/Motherboard/MotherboardFilter';
 import { gpuFilter } from '../MockData/GPU/GPUFilter';
 import { ramFilter } from '../MockData/RAM/RamFilter';
 import { cpuCoolerFilter } from '../MockData/CPU Cooler/CPUCoolerFilter';
+import { powerSupplyFilter } from '../MockData/Power Suppy/PowerSupplyFilter';
+import { storageFilter } from '../MockData/Storage/StorageFilter';
+import { monitorFilter } from '../MockData/Monitor/MonitorFilter';
+import { caseFanFilter } from '../MockData/Case Fan/CaseFanFilter';
 
 const ProductFilter = ({ componentType }) => {
   // Default filter sections if no component type is provided
@@ -35,10 +39,10 @@ const ProductFilter = ({ componentType }) => {
     gpu: gpuFilter,
     ram: ramFilter,
     cpuCooler: cpuCoolerFilter,
-    storage: defaultFilterSections,
-    powerSupply: defaultFilterSections,
-    caseFan: defaultFilterSections,
-    monitor: defaultFilterSections,
+    storage: storageFilter,
+    powerSupply: powerSupplyFilter,
+    caseFan: caseFanFilter,
+    monitor: monitorFilter,
     mouse: defaultFilterSections,
     keyboard: defaultFilterSections,
     speaker: defaultFilterSections,
