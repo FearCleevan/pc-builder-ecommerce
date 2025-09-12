@@ -12,6 +12,8 @@ import { powerSupplyFilter } from '../MockData/Power Suppy/PowerSupplyFilter';
 import { storageFilter } from '../MockData/Storage/StorageFilter';
 import { monitorFilter } from '../MockData/Monitor/MonitorFilter';
 import { caseFanFilter } from '../MockData/Case Fan/CaseFanFilter';
+import { mouseFilter } from '../MockData/Mouse/MouseFilter';
+import { KeyboardFilter } from '../MockData/Keyboard/KeyboardFilter';
 
 const ProductFilter = ({ componentType }) => {
   // Default filter sections if no component type is provided
@@ -43,8 +45,8 @@ const ProductFilter = ({ componentType }) => {
     powerSupply: powerSupplyFilter,
     caseFan: caseFanFilter,
     monitor: monitorFilter,
-    mouse: defaultFilterSections,
-    keyboard: defaultFilterSections,
+    mouse: mouseFilter,
+    keyboard: KeyboardFilter,
     speaker: defaultFilterSections,
     headphones: defaultFilterSections,
     microphone: defaultFilterSections,
