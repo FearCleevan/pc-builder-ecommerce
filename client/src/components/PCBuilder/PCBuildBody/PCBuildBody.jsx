@@ -157,6 +157,12 @@ const PCBuildBody = () => {
         });
     };
 
+    const handleRepickComponent = (component, e) => {
+        e.stopPropagation();
+        setSelectedComponent(component);
+        setIsModalOpen(true);
+    };
+
     // Determine which component should have the accent button
     const getNextComponentToSelect = () => {
         const componentIds = components.map(c => c.id);
@@ -169,21 +175,24 @@ const PCBuildBody = () => {
     };
 
     const nextComponentId = getNextComponentToSelect();
+    const hasSelectedComponents = Object.keys(selectedComponents).length > 0;
 
     return (
         <>
             <table className={styles.table}>
-                <thead className={styles.tableHeader}>
-                    <tr className={styles.headerRow}>
-                        <th className={styles.headerCell}>Component</th>
-                        <th className={styles.headerCell}>Image</th>
-                        <th className={styles.headerCell}>Name</th>
-                        <th className={styles.headerCell}>Stock</th>
-                        <th className={styles.headerCell}>Price</th>
-                        <th className={styles.headerCell}>Where</th>
-                        <th className={styles.headerCell}>Actions</th>
-                    </tr>
-                </thead>
+                {hasSelectedComponents && (
+                    <thead className={styles.tableHeader}>
+                        <tr className={styles.headerRow}>
+                            <th className={styles.headerCell}>Component</th>
+                            <th className={styles.headerCell}>Image</th>
+                            <th className={styles.headerCell}>Name</th>
+                            <th className={styles.headerCell}>Stock</th>
+                            <th className={styles.headerCell}>Price</th>
+                            <th className={styles.headerCell}>Buy</th>
+                            <th className={styles.headerCell}>Actions</th>
+                        </tr>
+                    </thead>
+                )}
                 <tbody className={styles.tbody}>
                     {components.map((component, index) => {
                         const isSelected = selectedComponents[component.id];
@@ -226,14 +235,18 @@ const PCBuildBody = () => {
                                                 <p className={styles.price}>${selectedData.price}</p>
                                             </div>
                                         </td>
-                                        <td className={styles.whereCell}>
-                                            <div className={styles.storeWrapper}>
-                                                <span className={styles.store}>{selectedData.store}</span>
-                                            </div>
+                                        <td className={styles.buyCell}>
+                                            <button className={styles.buyButton}>
+                                                Buy
+                                            </button>
                                         </td>
                                         <td className={styles.actionCell}>
                                             <div className={styles.actionButtons}>
-                                                <button className={styles.compareButton}>
+                                                <button
+                                                    className={styles.compareButton}
+                                                    onClick={(e) => handleRepickComponent(component, e)}
+                                                    title="Choose different component"
+                                                >
                                                     <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                                                         <path d="M8 3 4 7l4 4"></path>
                                                         <path d="M4 7h16"></path>
@@ -247,6 +260,7 @@ const PCBuildBody = () => {
                                                         e.stopPropagation();
                                                         handleRemoveComponent(component.id);
                                                     }}
+                                                    title="Remove component"
                                                 >
                                                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                                                         <path d="M18 6 6 18"></path>

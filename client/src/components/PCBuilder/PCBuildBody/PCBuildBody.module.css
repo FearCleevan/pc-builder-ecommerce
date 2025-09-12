@@ -56,7 +56,7 @@
 .nameCell,
 .stockCell,
 .priceCell,
-.whereCell,
+.buyCell,
 .actionCell {
     padding: 0.75rem;
     vertical-align: middle;
@@ -76,7 +76,7 @@
 
 .stockCell,
 .priceCell,
-.whereCell {
+.buyCell {
     width: 100px;
 }
 
@@ -165,15 +165,21 @@
     font-size: 0.875rem;
 }
 
-.storeWrapper {
-    display: flex;
-    align-items: center;
+.buyButton {
+    background-color: #3b82f6;
+    color: white;
+    border: none;
+    border-radius: 0.375rem;
+    padding: 0.4rem 0.75rem;
+    font-size: 0.75rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.15s ease;
+    white-space: nowrap;
 }
 
-.store {
-    font-size: 0.875rem;
-    color: #6b7280;
-    font-weight: 500;
+.buyButton:hover {
+    background-color: #2563eb;
 }
 
 .actionButtons {
@@ -294,17 +300,17 @@
     .table {
         font-size: 0.875rem;
     }
-    
+
     .headerCell {
         padding: 0.5rem;
     }
-    
+
     .componentNameCell,
     .imageCell,
     .nameCell,
     .stockCell,
     .priceCell,
-    .whereCell,
+    .buyCell,
     .actionCell {
         padding: 0.5rem;
     }
@@ -314,31 +320,31 @@
     .tableHeader {
         display: none;
     }
-    
+
     .componentRow {
         display: flex;
         flex-direction: column;
         padding: 1rem;
         border-bottom: 1px solid #e5e7eb;
     }
-    
+
     .selectedRow {
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 0.5rem;
     }
-    
+
     .componentNameCell,
     .imageCell,
     .nameCell,
     .stockCell,
     .priceCell,
-    .whereCell,
+    .buyCell,
     .actionCell {
         padding: 0.25rem;
         width: auto;
     }
-    
+
     .actionButtons {
         justify-content: flex-start;
     }
