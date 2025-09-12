@@ -38,7 +38,6 @@ const RangeSlider = ({ min, max, unit }) => {
         <Slider
           value={value}
           onChange={handleChange}
-          valueLabelDisplay="auto"
           valueLabelFormat={(val) => `${unit}${formatValue(val)}`}
           min={min}
           max={max}
