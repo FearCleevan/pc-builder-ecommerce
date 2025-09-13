@@ -1,7 +1,8 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useMemo } from 'react';
 import ModalHeader from '../ModalHeader/ModalHeader';
 import ProductFilter from '../ProductFilter/ProductFilter';
 import ComponentCard from '../ComponentCard/ComponentCard';
+import ComponentCardSkeleton from '../ComponentCardSkeleton/ComponentCardSkeleton';
 import Pagination from '../Pagination/Pagination';
 import styles from './AddComponentModal.module.css';
 
@@ -22,13 +23,32 @@ import { headphonesData } from '../MockData/Headphones/Headphones';
 import { microphoneData } from '../MockData/Microphone/Microphone';
 import { webcamData } from '../MockData/Webcam/Webcam';
 import { powerSupplyData } from '../MockData/Power Suppy/PowerSupply';
+import { caseFilter } from '../MockData/Case/CaseFilter';
+import { cpuFilter } from '../MockData/CPU/CPUFilter';
+import { motherboardFilter } from '../MockData/Motherboard/MotherboardFilter';
+import { gpuFilter } from '../MockData/GPU/GPUFilter';
+import { ramFilter } from '../MockData/RAM/RamFilter';
+import { cpuCoolerFilter } from '../MockData/CPU Cooler/CPUCoolerFilter';
+import { powerSupplyFilter } from '../MockData/Power Suppy/PowerSupplyFilter';
+import { caseFanFilter } from '../MockData/Case Fan/CaseFanFilter';
+import { monitorFilter } from '../MockData/Monitor/MonitorFilter';
+import { mouseFilter } from '../MockData/Mouse/MouseFilter';
+import { KeyboardFilter } from '../MockData/Keyboard/KeyboardFilter';
+import { speakerFilter } from '../MockData/Speaker/SpeakerFilter';
+import { headphonesFilter } from '../MockData/Headphones/HeadphonesFilter';
+import { microphoneFilter } from '../MockData/Microphone/MicrophoneFilter';
+import { webcamFilter } from '../MockData/Webcam/WebcamFilter';
+import { storageFilter } from '../MockData/Storage/StorageFilter';
 
 const AddComponentModal = ({ isOpen, onClose, onSelect, componentType }) => {
   const [currentPage, setCurrentPage] = useState(1);
   const [components, setComponents] = useState([]);
+  const [filteredComponents, setFilteredComponents] = useState([]);
   const [searchTerm, setSearchTerm] = useState('');
   const [compatibilityFilter, setCompatibilityFilter] = useState(true);
   const [sortOption, setSortOption] = useState('default');
+  const [isLoading, setIsLoading] = useState(true);
+  const [activeFilters, setActiveFilters] = useState({});
 
   useEffect(() => {
     if (isOpen) {
@@ -36,9 +56,12 @@ const AddComponentModal = ({ isOpen, onClose, onSelect, componentType }) => {
       // Get mock data based on component type
       const mockComponents = generateMockComponents(componentType);
       setComponents(mockComponents);
+      setFilteredComponents(mockComponents);
+      setIsLoading(false);
     } else {
       document.body.style.overflow = 'unset';
       setSearchTerm('');
+      setActiveFilters({});
     }
 
     return () => {
@@ -86,6 +109,150 @@ const AddComponentModal = ({ isOpen, onClose, onSelect, componentType }) => {
     ];
   };
 
+  const handleFilterChange = (filters) => {
+    setActiveFilters(filters);
+  };
+
+  // Apply filters whenever activeFilters, searchTerm, or components change
+  useEffect(() => {
+    if (components.length === 0) return;
+    
+    setIsLoading(true);
+    
+    // Simulate API call delay for better UX
+    const timeoutId = setTimeout(() => {
+      let filtered = [...components];
+      
+      // Apply search filter
+      if (searchTerm) {
+        filtered = filtered.filter(component =>
+          component.name.toLowerCase().includes(searchTerm.toLowerCase())
+        );
+      }
+      
+      // Apply compatibility filter
+      if (compatibilityFilter) {
+        // This is a placeholder for actual compatibility logic
+        // You would need to implement based on your specific requirements
+        filtered = filtered.filter(component => 
+          component.specs?.Compatibility !== "Incompatible"
+        );
+      }
+      
+      // Apply other filters
+      Object.entries(activeFilters).forEach(([filterName, filterValue]) => {
+        if (Array.isArray(filterValue)) {
+          // Range filter - only apply if values are different from default
+          const defaultMin = filterSections.find(s => s.title === filterName)?.min || 0;
+          const defaultMax = filterSections.find(s => s.title === filterName)?.max || 0;
+          
+          if (filterValue[0] !== defaultMin || filterValue[1] !== defaultMax) {
+            filtered = filtered.filter(component => {
+              const componentValue = getComponentValue(component, filterName);
+              return componentValue >= filterValue[0] && componentValue <= filterValue[1];
+            });
+          }
+        } else if (typeof filterValue === 'object') {
+          // Checkbox filter - only apply if at least one option is selected
+          const selectedOptions = Object.entries(filterValue)
+            .filter(([_, isSelected]) => isSelected)
+            .map(([option]) => option);
+          
+          if (selectedOptions.length > 0) {
+            filtered = filtered.filter(component => {
+              const componentValue = getComponentValue(component, filterName);
+              return selectedOptions.includes(componentValue);
+            });
+          }
+        }
+      });
+      
+      // Apply sorting
+      switch (sortOption) {
+        case 'price-asc':
+          filtered.sort((a, b) => a.price - b.price);
+          break;
+        case 'price-desc':
+          filtered.sort((a, b) => b.price - a.price);
+          break;
+        case 'name-asc':
+          filtered.sort((a, b) => a.name.localeCompare(b.name));
+          break;
+        case 'name-desc':
+          filtered.sort((a, b) => b.name.localeCompare(a.name));
+          break;
+        default:
+          // Default sorting (no change)
+          break;
+      }
+      
+      setFilteredComponents(filtered);
+      setIsLoading(false);
+    }, 300); // Small delay to show loading state
+    
+    return () => clearTimeout(timeoutId);
+  }, [activeFilters, searchTerm, compatibilityFilter, sortOption, components]);
+
+  // Helper function to extract value from component based on filter name
+  const getComponentValue = (component, filterName) => {
+    // Special case for price
+    if (filterName === "Price") {
+      return component.price;
+    }
+    
+    // Check if the filter name matches a spec key
+    if (component.specs && component.specs[filterName] !== undefined) {
+      return component.specs[filterName];
+    }
+    
+    // Check if the filter name matches a direct property
+    if (component[filterName] !== undefined) {
+      return component[filterName];
+    }
+    
+    // Default return if no match found
+    return "";
+  };
+
+  // Get filter sections for the current component type
+  const filterSections = useMemo(() => {
+    const filterMap = {
+      case: caseFilter,
+      cpu: cpuFilter,
+      motherboard: motherboardFilter,
+      gpu: gpuFilter,
+      ram: ramFilter,
+      cpuCooler: cpuCoolerFilter,
+      storage: storageFilter,
+      powerSupply: powerSupplyFilter,
+      caseFan: caseFanFilter,
+      monitor: monitorFilter,
+      mouse: mouseFilter,
+      keyboard: KeyboardFilter,
+      speaker: speakerFilter,
+      headphones: headphonesFilter,
+      microphone: microphoneFilter,
+      webcam: webcamFilter,
+    };
+
+    return componentType && filterMap[componentType.id]
+      ? filterMap[componentType.id]
+      : [
+          {
+            title: "Price",
+            type: "range",
+            min: 38.99,
+            max: 1399.99,
+            unit: "$",
+          },
+          {
+            title: "Category",
+            type: "checkbox",
+            options: ["Option 1", "Option 2", "Option 3"],
+          },
+        ];
+  }, [componentType]);
+
   const handleOverlayClick = (e) => {
     if (e.target === e.currentTarget) {
       onClose();
@@ -112,9 +279,12 @@ const AddComponentModal = ({ isOpen, onClose, onSelect, componentType }) => {
     setCompatibilityFilter(!compatibilityFilter);
   };
 
-  const filteredComponents = components.filter(component =>
-    component.name.toLowerCase().includes(searchTerm.toLowerCase())
-  );
+  // Calculate paginated components
+  const itemsPerPage = 12;
+  const paginatedComponents = useMemo(() => {
+    const startIndex = (currentPage - 1) * itemsPerPage;
+    return filteredComponents.slice(startIndex, startIndex + itemsPerPage);
+  }, [filteredComponents, currentPage, itemsPerPage]);
 
   if (!isOpen) return null;
 
@@ -128,7 +298,10 @@ const AddComponentModal = ({ isOpen, onClose, onSelect, componentType }) => {
         
         <div className={styles.modalContent}>
           <div className={styles.filterSection}>
-            <ProductFilter componentType={componentType} />
+            <ProductFilter 
+              componentType={componentType} 
+              onFilterChange={handleFilterChange}
+            />
           </div>
           
           <div className={styles.mainContent}>
@@ -212,18 +385,26 @@ const AddComponentModal = ({ isOpen, onClose, onSelect, componentType }) => {
             </div>
             
             <div className={styles.componentsGrid}>
-              {filteredComponents.map((component) => (
-                <ComponentCard
-                  key={component.id}
-                  component={component}
-                  onSelect={handleComponentSelect}
-                />
-              ))}
+              {isLoading ? (
+                // Show skeleton loading while filtering
+                Array.from({ length: itemsPerPage }).map((_, index) => (
+                  <ComponentCardSkeleton key={index} />
+                ))
+              ) : (
+                // Show actual components
+                paginatedComponents.map((component) => (
+                  <ComponentCard
+                    key={component.id}
+                    component={component}
+                    onSelect={handleComponentSelect}
+                  />
+                ))
+              )}
             </div>
             
             <Pagination
               currentPage={currentPage}
-              totalPages={Math.ceil(filteredComponents.length / 12)}
+              totalPages={Math.ceil(filteredComponents.length / itemsPerPage)}
               onPageChange={handlePageChange}
             />
           </div>

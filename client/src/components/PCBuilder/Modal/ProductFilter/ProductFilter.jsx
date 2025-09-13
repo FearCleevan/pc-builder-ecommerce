@@ -21,13 +21,7 @@ import { powerSupplyFilter } from "../MockData/Power Suppy/PowerSupplyFilter";
 import { KeyboardFilter } from "../MockData/Keyboard/KeyboardFilter";
 
 // Material-UI Range Slider component
-const RangeSlider = ({ min, max, unit }) => {
-  const [value, setValue] = useState([min, max]);
-
-  const handleChange = (event, newValue) => {
-    setValue(newValue);
-  };
-
+const RangeSlider = ({ min, max, unit, value, onChange }) => {
   const formatValue = (val) => {
     return Number.isInteger(val) ? val : val.toFixed(2);
   };
@@ -37,7 +31,7 @@ const RangeSlider = ({ min, max, unit }) => {
       <Box sx={{ width: '100%', padding: '0 8px' }}>
         <Slider
           value={value}
-          onChange={handleChange}
+          onChange={onChange}
           valueLabelFormat={(val) => `${unit}${formatValue(val)}`}
           min={min}
           max={max}
@@ -85,8 +79,9 @@ const RangeSlider = ({ min, max, unit }) => {
   );
 };
 
-const ProductFilter = ({ componentType }) => {
+const ProductFilter = ({ componentType, onFilterChange }) => {
   const [expandedSection, setExpandedSection] = useState(null);
+  const [filterValues, setFilterValues] = useState({});
 
   // Default filter if no type
   const defaultFilterSections = [
@@ -129,6 +124,43 @@ const ProductFilter = ({ componentType }) => {
       ? filterMap[componentType.id]
       : defaultFilterSections;
 
+  // Initialize filter values
+  React.useEffect(() => {
+    const initialValues = {};
+    filterSections.forEach(section => {
+      if (section.type === "range") {
+        initialValues[section.title] = [section.min, section.max];
+      } else if (section.type === "checkbox") {
+        initialValues[section.title] = {};
+        section.options.forEach(option => {
+          initialValues[section.title][option] = false;
+        });
+      }
+    });
+    setFilterValues(initialValues);
+  }, [filterSections]);
+
+  const handleRangeChange = (sectionTitle, newValue) => {
+    const updatedValues = {
+      ...filterValues,
+      [sectionTitle]: newValue
+    };
+    setFilterValues(updatedValues);
+    onFilterChange(updatedValues);
+  };
+
+  const handleCheckboxChange = (sectionTitle, option) => {
+    const updatedValues = {
+      ...filterValues,
+      [sectionTitle]: {
+        ...filterValues[sectionTitle],
+        [option]: !filterValues[sectionTitle][option]
+      }
+    };
+    setFilterValues(updatedValues);
+    onFilterChange(updatedValues);
+  };
+
   return (
     <div className={styles.filterContainer}>
       <div className={styles.filterContent}>
@@ -141,6 +173,8 @@ const ProductFilter = ({ componentType }) => {
                   min={section.min}
                   max={section.max}
                   unit={section.unit}
+                  value={filterValues[section.title] || [section.min, section.max]}
+                  onChange={(e, newValue) => handleRangeChange(section.title, newValue)}
                 />
               ) : (
                 <div className={styles.checkboxGroup}>
@@ -152,6 +186,8 @@ const ProductFilter = ({ componentType }) => {
                       <input
                         type="checkbox"
                         id={`filter-${section.title}-${option}`}
+                        checked={filterValues[section.title]?.[option] || false}
+                        onChange={() => handleCheckboxChange(section.title, option)}
                       />
                       <label htmlFor={`filter-${section.title}-${option}`}>
                         {option}
