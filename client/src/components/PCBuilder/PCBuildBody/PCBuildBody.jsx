@@ -231,7 +231,7 @@ const PCBuildBody = () => {
                                         </td>
                                         <td className={styles.priceCell}>
                                             <div className={styles.priceWrapper}>
-                                                <p className={styles.price}>${selectedData.price}</p>
+                                                <p className={styles.price}>₱{selectedData.price}</p>
                                             </div>
                                         </td>
                                         <td className={styles.buyCell}>

@@ -66,7 +66,7 @@ const ComponentCard = ({ component, onSelect }) => {
           <div className={styles.content}>
             <div className={styles.infoSection}>
               <h3 className={styles.name}>{component.name}</h3>
-              <p className={styles.price} data-testid="part-price">${component.price}</p>
+              <p className={styles.price} data-testid="part-price">₱{component.price}</p>
               
               <div className={styles.specs} data-testid="part-specs">
                 {component.specs && Object.entries(component.specs).slice(0, 3).map(([key, value], index) => (
