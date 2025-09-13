@@ -3,9 +3,9 @@ export const caseFanFilter = [
   {
     title: "Price",
     type: "range",
-    min: 4.99,
-    max: 399.99,
-    unit: "$"
+    min: 250,
+    max: 20000,
+    unit: "₱"
   },
   {
     title: "Brand",

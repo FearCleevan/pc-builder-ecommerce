@@ -1,11 +1,11 @@
 //client/src/components/PCBuilder/Modal/MockData/Mouse/MouseFilter.js
 export const mouseFilter = [
     {
-    title: "Mouse Price",
-    type: "range",
-    min: 5.79,
-    max: 499.99,
-    unit: "$"
+        title: "Mouse Price",
+        type: "range",
+        min: 290,
+        max: 25000,
+        unit: "₱"
     },
     {
     title: "Mouse Brand",

@@ -3,9 +3,9 @@ export const gpuFilter = [
   {
     title: "Price",
     type: "range",
-    min: 38.99,
-    max: 1399.99,
-    unit: "$"
+    min: 3000,
+    max: 250000,
+    unit: "₱"
   },
   {
     title: "Chipset",

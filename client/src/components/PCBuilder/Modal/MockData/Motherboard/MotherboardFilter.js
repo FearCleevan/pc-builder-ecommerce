@@ -3,9 +3,9 @@ export const motherboardFilter = [
   {
     title: "Price",
     type: "range",
-    min: 38.99,
-    max: 1399.99,
-    unit: "$"
+    min: 2000,
+    max: 70000,
+    unit: "₱"
   },
   {
     title: "Socket",

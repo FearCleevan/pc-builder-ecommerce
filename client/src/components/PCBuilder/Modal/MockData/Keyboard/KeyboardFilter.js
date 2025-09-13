@@ -1,12 +1,12 @@
 //client/src/components/PCBuilder/Modal/MockData/Keyboard/KeyboardFilter.js
 export const KeyboardFilter = [
-    {
+   {
     title: "Keyboard Price",
     type: "range",
-    min: 8.99,
-    max: 799.99,
-    unit: "$"
-    },
+    min: 450,
+    max: 40000,
+    unit: "₱"
+  },
     {
     title: "Keyboard Brand",
     type: "checkbox",

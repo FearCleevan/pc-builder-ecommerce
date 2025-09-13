@@ -3,9 +3,9 @@ export const headphonesFilter = [
   {
     title: "Price",
     type: "range",
-    min: 6.99,
-    max: 5999,
-    unit: "$"
+    min: 350,
+    max: 300000,
+    unit: "₱"
   },
   {
     title: "Brand",

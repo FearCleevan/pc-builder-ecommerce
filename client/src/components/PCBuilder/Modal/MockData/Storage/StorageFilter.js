@@ -3,9 +3,9 @@ export const storageFilter = [
   {
     title: "Price",
     type: "range",
-    min: 6.95,
-    max: 4500,
-    unit: "$"
+    min: 350,
+    max: 225000,
+    unit: "₱"
   },
   {
     title: "Type",

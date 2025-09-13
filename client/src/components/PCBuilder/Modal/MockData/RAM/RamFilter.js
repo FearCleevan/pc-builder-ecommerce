@@ -3,9 +3,9 @@ export const ramFilter = [
   {
     title: "Price",
     type: "range",
-    min: 5,
-    max: 3794.99,
-    unit: "$"
+    min: 250,
+    max: 190000,
+    unit: "₱"
   },
   {
     title: "RAM Type",

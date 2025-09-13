@@ -3,9 +3,9 @@ export const cpuCoolerFilter = [
   {
     title: "Price",
     type: "range",
-    min: 9.85,
-    max: 929,
-    unit: "$"
+    min: 3000,
+    max: 150000,
+    unit: "₱"
   },
   {
     title: "Manufacturer",

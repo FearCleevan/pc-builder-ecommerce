@@ -3,9 +3,9 @@ export const powerSupplyFilter = [
   {
     title: "Price",
     type: "range",
-    min: 27.99,
-    max: 3986,
-    unit: "$"
+    min: 1400,
+    max: 200000,
+    unit: "₱"
   },
   {
     title: "Form Factor",

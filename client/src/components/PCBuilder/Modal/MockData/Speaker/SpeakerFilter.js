@@ -3,9 +3,9 @@ export const speakerFilter = [
   {
     title: "Price",
     type: "range",
-    min: 8.99,
-    max: 1499.99,
-    unit: "$"
+    min: 450,
+    max: 75000,
+    unit: "₱"
   },
   {
     title: "Brand",

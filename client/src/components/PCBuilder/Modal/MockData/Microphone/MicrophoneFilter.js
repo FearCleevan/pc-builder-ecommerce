@@ -3,9 +3,9 @@ export const microphoneFilter = [
   {
     title: "Price",
     type: "range",
-    min: 29.99,
-    max: 229.99,
-    unit: "$"
+    min: 1500,
+    max: 11500,
+    unit: "₱"
   },
   {
     title: "Brand",

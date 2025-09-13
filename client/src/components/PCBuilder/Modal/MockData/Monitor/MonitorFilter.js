@@ -3,9 +3,9 @@ export const monitorFilter = [
   {
     title: "Price",
     type: "range",
-    min: 22.08,
-    max: 5399,
-    unit: "$"
+    min: 1100,
+    max: 270000,
+    unit: "₱"
   },
   {
     title: "Brand",

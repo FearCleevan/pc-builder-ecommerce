@@ -3,9 +3,9 @@ export const webcamFilter = [
   {
     title: "Price",
     type: "range",
-    min: 13.97,
-    max: 319.99,
-    unit: "$"
+    min: 700,
+    max: 16000,
+    unit: "₱"
   },
   {
     title: "Brand",
