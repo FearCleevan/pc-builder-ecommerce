@@ -4,7 +4,7 @@ export const storageData = [
     id: 'storage-1',
     name: 'Samsung 980 Pro 2TB PCIe 4.0 NVMe SSD',
     image: "/src/assets/Laptop1.png",
-    price: 159.99,
+    price: 9143.43,
     specs: {
       "Type": "SSD",
       "Form Factor": "M.2 2280",
@@ -28,7 +28,7 @@ export const storageData = [
     id: 'storage-2',
     name: 'Western Digital WD Blue 4TB 3.5" HDD',
     image: "/src/assets/Laptop1.png",
-    price: 79.99,
+    price: 4573.43,
     specs: {
       "Type": "HDD",
       "Form Factor": "3.5-inch",
@@ -51,7 +51,7 @@ export const storageData = [
     id: 'storage-3',
     name: 'Crucial P5 Plus 1TB PCIe 4.0 NVMe SSD',
     image: "/src/assets/Laptop1.png",
-    price: 89.99,
+    price: 5141.47,
     specs: {
       "Type": "SSD",
       "Form Factor": "M.2 2280",
@@ -75,7 +75,7 @@ export const storageData = [
     id: 'storage-4',
     name: 'Seagate IronWolf Pro 12TB 3.5" NAS HDD',
     image: "/src/assets/Laptop1.png",
-    price: 299.99,
+    price: 17152.13,
     specs: {
       "Type": "HDD",
       "Form Factor": "3.5-inch",
@@ -99,7 +99,7 @@ export const storageData = [
     id: 'storage-5',
     name: 'SK Hynix Platinum P41 2TB PCIe 4.0 NVMe SSD',
     image: "/src/assets/Laptop1.png",
-    price: 169.99,
+    price: 9712.87,
     specs: {
       "Type": "SSD",
       "Form Factor": "M.2 2280",
@@ -123,7 +123,7 @@ export const storageData = [
     id: 'storage-6',
     name: 'Samsung 870 EVO 1TB 2.5" SATA SSD',
     image: "/src/assets/Laptop1.png",
-    price: 99.99,
+    price: 5717.17,
     specs: {
       "Type": "SSD",
       "Form Factor": "2.5-inch",
@@ -147,7 +147,7 @@ export const storageData = [
     id: 'storage-7',
     name: 'Sabrent Rocket 4 Plus 4TB PCIe 4.0 NVMe SSD',
     image: "/src/assets/Laptop1.png",
-    price: 349.99,
+    price: 19998.77,
     specs: {
       "Type": "SSD",
       "Form Factor": "M.2 2280",
@@ -171,7 +171,7 @@ export const storageData = [
     id: 'storage-8',
     name: 'Toshiba X300 8TB 3.5" Performance HDD',
     image: "/src/assets/Laptop1.png",
-    price: 179.99,
+    price: 10287.03,
     specs: {
       "Type": "HDD",
       "Form Factor": "3.5-inch",
@@ -194,7 +194,7 @@ export const storageData = [
     id: 'storage-9',
     name: 'WD Black SN850X 1TB PCIe 4.0 NVMe SSD',
     image: "/src/assets/Laptop1.png",
-    price: 109.99,
+    price: 6285.20,
     specs: {
       "Type": "SSD",
       "Form Factor": "M.2 2280",
@@ -218,7 +218,7 @@ export const storageData = [
     id: 'storage-10',
     name: 'Kingston NV2 2TB PCIe 4.0 NVMe SSD',
     image: "/src/assets/Laptop1.png",
-    price: 119.99,
+    price: 6853.23,
     specs: {
       "Type": "SSD",
       "Form Factor": "M.2 2280",
@@ -242,7 +242,7 @@ export const storageData = [
     id: 'storage-11',
     name: 'Seagate FireCuda 530 2TB PCIe 4.0 NVMe SSD',
     image: "/src/assets/Laptop1.png",
-    price: 189.99,
+    price: 10855.43,
     specs: {
       "Type": "SSD",
       "Form Factor": "M.2 2280",
@@ -264,9 +264,9 @@ export const storageData = [
   },
   {
     id: 'storage-12',
-    name: 'Crucial MX500 2TB 2.5" SATA SSD',
+    name: 'Crucial MX500 2TB 2.5\" SATA SSD',
     image: "/src/assets/Laptop1.png",
-    price: 129.99,
+    price: 7432.97,
     specs: {
       "Type": "SSD",
       "Form Factor": "2.5-inch",
@@ -288,9 +288,9 @@ export const storageData = [
   },
   {
     id: 'storage-13',
-    name: 'Western Digital Red Pro 10TB 3.5" NAS HDD',
+    name: 'Western Digital Red Pro 10TB 3.5\" NAS HDD',
     image: "/src/assets/Laptop1.png",
-    price: 249.99,
+    price: 14292.97,
     specs: {
       "Type": "HDD",
       "Form Factor": "3.5-inch",
@@ -314,7 +314,7 @@ export const storageData = [
     id: 'storage-14',
     name: 'G.Skill Trident Z44Q 4TB PCIe 4.0 NVMe SSD',
     image: "/src/assets/Laptop1.png",
-    price: 329.99,
+    price: 18864.97,
     specs: {
       "Type": "SSD",
       "Form Factor": "M.2 2280",
@@ -336,9 +336,9 @@ export const storageData = [
   },
   {
     id: 'storage-15',
-    name: 'Seagate BarraCuda 2TB 3.5" HDD',
+    name: 'Seagate BarraCuda 2TB 3.5\" HDD',
     image: "/src/assets/Laptop1.png",
-    price: 59.99,
+    price: 3429.97,
     specs: {
       "Type": "HDD",
       "Form Factor": "3.5-inch",
@@ -361,7 +361,7 @@ export const storageData = [
     id: 'storage-16',
     name: 'ADATA XPG GAMMIX S70 Blade 2TB PCIe 4.0 NVMe SSD',
     image: "/src/assets/Laptop1.png",
-    price: 139.99,
+    price: 7993.97,
     specs: {
       "Type": "SSD",
       "Form Factor": "M.2 2280",
@@ -385,7 +385,7 @@ export const storageData = [
     id: 'storage-17',
     name: 'Intel 670p 2TB PCIe 3.0 NVMe SSD',
     image: "/src/assets/Laptop1.png",
-    price: 99.99,
+    price: 5717.17,
     specs: {
       "Type": "SSD",
       "Form Factor": "M.2 2280",
@@ -409,7 +409,7 @@ export const storageData = [
     id: 'storage-18',
     name: 'SanDisk Extreme Pro 1TB Portable SSD',
     image: "/src/assets/Laptop1.png",
-    price: 129.99,
+    price: 7432.97,
     specs: {
       "Type": "SSD",
       "Form Factor": "2.5-inch",
@@ -431,7 +431,7 @@ export const storageData = [
     id: 'storage-19',
     name: 'Samsung 990 Pro 4TB PCIe 4.0 NVMe SSD',
     image: "/src/assets/Laptop1.png",
-    price: 349.99,
+    price: 19999.97,
     specs: {
       "Type": "SSD",
       "Form Factor": "M.2 2280",
@@ -453,9 +453,9 @@ export const storageData = [
   },
   {
     id: 'storage-20',
-    name: 'Seagate Exos X20 20TB 3.5" Enterprise HDD',
+    name: 'Seagate Exos X20 20TB 3.5\" Enterprise HDD',
     image: "/src/assets/Laptop1.png",
-    price: 399.99,
+    price: 22868.97,
     specs: {
       "Type": "HDD",
       "Form Factor": "3.5-inch",
