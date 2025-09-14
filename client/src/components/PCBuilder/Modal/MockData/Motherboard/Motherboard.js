@@ -449,7 +449,7 @@ export const motherboardData = [
       "ECC Support": "No",
       "RAID Support": "No",
       "BIOS Flashback": "No",
-      "Clear CMOS Button": "极",
+      "Clear CMOS Button": "Yes",
       "Maximum Memory": "32 GB",
       "Memory Slots": 2,
       "SATA 6 Gb/s Ports": 4,
@@ -499,7 +499,7 @@ export const motherboardData = [
   {
     id: 'mb-17',
     name: 'ASUS TUF Gaming B550-PLUS WiFi II',
-    image: "/极/assets/Laptop1.png",
+    image: "/src/assets/Laptop1.png",
     price: 10260.00, // Converted from 179.99 USD to PHP
     specs: {
       "Socket": "AM4",
@@ -551,7 +551,7 @@ export const motherboardData = [
       "USB 2.0 Headers": 2,
       "USB 3.2 Gen 1 Headers": 2,
       "USB 3.2 Gen 2 Headers": 2,
-      "USB 3.2 Gen 极x2 Headers": 1,
+      "USB 3.2 Gen 2x2 Headers": 1,
       "USB 4 Headers": 0
     },
     has3D: true,
@@ -562,7 +562,7 @@ export const motherboardData = [
     id: 'mb-19',
     name: 'ASRock X670E Steel Legend',
     image: "/src/assets/Laptop1.png",
-    price: 18810.00, // Converted from 329.极9 USD to PHP
+    price: 18810.00, // Converted from 329.09 USD to PHP
     specs: {
       "Socket": "AM5",
       "Chipset": "AMD X670E",

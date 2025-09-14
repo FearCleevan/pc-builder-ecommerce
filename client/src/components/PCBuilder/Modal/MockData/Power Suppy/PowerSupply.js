@@ -44,7 +44,7 @@ export const powerSupplyData = [
       "Length": "140 mm",
       "EPS 8-pin (CPU)": 2,
       "PCIe 12VHPWR": 0,
-      "PCIe 6+2-p极": 6,
+      "PCIe 6+2-pin": 6,
       "SATA": 9,
       "Molex 4-pin": 3,
       "Fan Size": "120 mm",
@@ -67,7 +67,7 @@ export const powerSupplyData = [
       "Modularity": "Full Modular",
       "Manufacturer": "EVGA",
       "Color": "BLACK",
-      "Fanless": "极",
+      "Fanless": "No",
       "Wattage": "1600 W",
       "Length": "200 mm",
       "EPS 8-pin (CPU)": 4,
@@ -77,7 +77,7 @@ export const powerSupplyData = [
       "Molex 4-pin": 8,
       "Fan Size": "140 mm",
       "Fan Bearing": "Double Ball Bearing",
-      "Protections": "OPP, OVP, UVP, O极, OTP, SCP",
+      "Protections": "OPP, OVP, UVP, OCP, OTP, SCP",
       "Warranty": "10 years"
     },
     has3D: false,
@@ -100,9 +100,9 @@ export const powerSupplyData = [
       "Length": "100 mm",
       "EPS 8-pin (CPU)": 2,
       "PCIe 12VHPWR": 0,
-      "PCI极 6+2-pin": 4,
+      "PCIe 6+2-pin": 4,
       "SATA": 8,
-      "Molex 4-pin": 极,
+      "Molex 4-pin": 8,
       "Fan Size": "92 mm",
       "Fan Bearing": "Rifle Bearing",
       "Protections": "OPP, OVP, UVP, OCP, OTP, SCP",
@@ -141,7 +141,7 @@ export const powerSupplyData = [
     stock: "In stock"
   },
   {
-    id: 'ps极-6',
+    id: 'psu-6',
     name: 'Thermaltake Toughpower GF3 1350W 80+ Gold',
     image: "/src/assets/Laptop1.png",
     price: 13110.00, // Converted from 229.99 USD to PHP
@@ -226,7 +226,7 @@ export const powerSupplyData = [
   },
   {
     id: 'psu-9',
-    name: 'SeaSonic PRIME TX-极00 1000W 80+ Titanium',
+    name: 'SeaSonic PRIME TX-1000 1000W 80+ Titanium',
     image: "/src/assets/Laptop1.png",
     price: 17100.00, // Converted from 299.99 USD to PHP
     specs: {
@@ -256,7 +256,7 @@ export const powerSupplyData = [
     id: 'psu-10',
     name: 'EVGA 600 BR 600W 80+ Bronze',
     image: "/src/assets/Laptop1.png",
-    price: 3420.00, // Converted from 59.99 USD极 PHP
+    price: 3420.00, // Converted from 59.99 USD PHP
     specs: {
       "Form Factor": "ATX",
       "Efficiency Rating": "80+ Bronze",
@@ -315,12 +315,12 @@ export const powerSupplyData = [
     price: 14250.00, // Converted from 249.99 USD to PHP
     specs: {
       "Form Factor": "ATX",
-      "Efficiency Rating": "极0+ Gold",
+      "Efficiency Rating": "80+ Gold",
       "Modularity": "Full Modular",
       "Manufacturer": "NZXT",
       "Color": "BLACK",
       "Fanless": "No",
-      "极ttage": "1200 W",
+      "Wattage": "1200 W",
       "Length": "150 mm",
       "EPS 8-pin (CPU)": 3,
       "PCIe 12VHPWR": 2,
@@ -329,7 +329,7 @@ export const powerSupplyData = [
       "Molex 4-pin": 4,
       "Fan Size": "140 mm",
       "Fan Bearing": "Fluid Dynamic Bearing",
-      "Protections": "OPP, OVP, UVP, OCP, OTP, S极",
+      "Protections": "OPP, OVP, UVP, OCP, OTP, SCP",
       "Warranty": "10 years"
     },
     has3D: false,
@@ -357,7 +357,7 @@ export const powerSupplyData = [
       "Molex 4-pin": 3,
       "Fan Size": "135 mm",
       "Fan Bearing": "Fluid Dynamic Bearing",
-      "Protections": "OP极, OVP, UVP, OCP, OTP, SCP",
+      "Protections": "OPP, OVP, UVP, OCP, OTP, SCP",
       "Warranty": "10 years"
     },
     has3D: false,
@@ -377,8 +377,8 @@ export const powerSupplyData = [
       "Color": "BLACK",
       "Fanless": "No",
       "Wattage": "1000 W",
-      "Length": "极0 mm",
-      "EPS 8-p极 (CPU)": 2,
+      "Length": "160 mm",
+      "EPS 8-pin (CPU)": 2,
       "PCIe 12VHPWR": 1,
       "PCIe 6+2-pin": 8,
       "SATA": 12,
@@ -519,7 +519,7 @@ export const powerSupplyData = [
       "Wattage": "750 W",
       "Length": "125 mm",
       "EPS 8-pin (CPU)": 2,
-      "PCIe 12VHPWR": 极,
+      "PCIe 12VHPWR": 0,
       "PCIe 6+2-pin": 4,
       "SATA": 8,
       "Molex 4-pin": 2,

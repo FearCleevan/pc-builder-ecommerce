@@ -71,7 +71,7 @@ export const mouseData = [
       "Buttons": "6",
       "Switch Type": "Mechanical",
       "Battery Life": "200 hours",
-      "极harging": "USB-C",
+      "Charging": "USB-C",
       "RGB Lighting": "Yes",
       "Hand Orientation": "Right-handed",
       "Grip Style": "Ambidextrous",
@@ -103,14 +103,14 @@ export const mouseData = [
       "RGB Lighting": "Yes",
       "Hand Orientation": "Right-handed",
       "Grip Style": "Ambidextrous",
-      "Dimensions": "极8 x 66 x 37.5 mm",
+      "Dimensions": "128 x 66 x 37.5 mm",
       "Material": "Honeycomb Shell",
       "Skates": "G-Skates",
       "Software": "Glorious Core"
     },
     has3D: false,
     store: "Amazon",
-    stock: "极 stock"
+    stock: "In stock"
   },
   {
     id: 'mouse-5',
@@ -142,7 +142,7 @@ export const mouseData = [
   },
   {
     id: 'mouse-6',
-    name: 'Razer Viper V2极 Wireless Gaming Mouse',
+    name: 'Razer Viper V2 Pro Wireless Gaming Mouse',
     image: "/src/assets/Laptop1.png",
     price: 8550.00, // Converted from 149.99 USD to PHP
     specs: {
@@ -153,7 +153,7 @@ export const mouseData = [
       "DPI": "30000",
       "Polling Rate": "4000Hz",
       "Buttons": "5",
-      "Switch Type": "Opt极l",
+      "Switch Type": "Optical",
       "Battery Life": "80 hours",
       "Charging": "USB-C",
       "RGB Lighting": "No",
@@ -288,7 +288,7 @@ export const mouseData = [
     specs: {
       "Mouse Brand": "Zowie",
       "Sensor": "3360",
-      "Weight": "73极",
+      "Weight": "73g",
       "Connectivity": "Wired",
       "DPI": "3200",
       "Polling Rate": "1000Hz",
@@ -314,7 +314,7 @@ export const mouseData = [
     image: "/src/assets/Laptop1.png",
     price: 3990.00, // Converted from 69.99 USD to PHP
     specs: {
-      "Mouse Brand": "极zer",
+      "Mouse Brand": "Razer",
       "Sensor": "Focus+ 26K",
       "Weight": "101g",
       "Connectivity": "Wired",
@@ -360,7 +360,7 @@ export const mouseData = [
       "Skates": "PTFE",
       "Software": "Logi Options+"
     },
-    has3极: false,
+    has3D: false,
     store: "Amazon",
     stock: "In stock"
   },
@@ -551,7 +551,7 @@ export const mouseData = [
       "RGB Lighting": "Yes",
       "Hand Orientation": "Right-handed",
       "Grip Style": "Palm",
-      "Dimensions": "极6 x 68 x 41 mm",
+      "Dimensions": "116 x 68 x 41 mm",
       "Material": "Plastic",
       "Skates": "PTFE",
       "Software": "None"
