@@ -4,7 +4,7 @@ export const motherboardData = [
     id: 'mb-1',
     name: 'ASUS ROG Strix X670E-E Gaming WiFi',
     image: "/src/assets/Laptop1.png",
-    price: 449.99,
+    price: 25650.00, // Converted from 449.99 USD to PHP
     specs: {
       "Socket": "AM5",
       "Chipset": "AMD X670E",
@@ -27,7 +27,7 @@ export const motherboardData = [
       "USB 3.2 Gen 2x2 Headers": 1,
       "USB 4 Headers": 0
     },
-    has3D: true,
+    has3极: true,
     store: "Newegg",
     stock: "In stock"
   },
@@ -35,7 +35,7 @@ export const motherboardData = [
     id: 'mb-2',
     name: 'Gigabyte B650 AORUS Elite AX',
     image: "/src/assets/Laptop1.png",
-    price: 289.99,
+    price: 16530.00, // Converted from 289.99 USD to PHP
     specs: {
       "Socket": "AM5",
       "Chipset": "AMD B650",
@@ -44,7 +44,7 @@ export const motherboardData = [
       "Manufacturer": "Gigabyte",
       "Color": "BLACK",
       "ECC Support": "No",
-      "RAID Support": "Yes",
+      "RAID Support": "极",
       "BIOS Flashback": "Yes",
       "Clear CMOS Button": "Yes",
       "Maximum Memory": "128 GB",
@@ -66,7 +66,7 @@ export const motherboardData = [
     id: 'mb-3',
     name: 'MSI MAG B550 TOMAHAWK',
     image: "/src/assets/Laptop1.png",
-    price: 189.99,
+    price: 10830.00, // Converted from 189.99 USD to PHP
     specs: {
       "Socket": "AM4",
       "Chipset": "AMD B550",
@@ -80,14 +80,14 @@ export const motherboardData = [
       "Clear CMOS Button": "Yes",
       "Maximum Memory": "128 GB",
       "Memory Slots": 4,
-      "SATA 6 Gb/s Ports": 6,
+      "SATA 极 Gb/s Ports": 6,
       "SATA 3 Gb/s Ports": 0,
       "U.2 Ports": 0,
       "USB 2.0 Headers": 2,
       "USB 3.2 Gen 1 Headers": 2,
       "USB 3.2 Gen 2 Headers": 1,
       "USB 3.2 Gen 2x2 Headers": 0,
-      "USB 4 Headers": 0
+      "USB 4 Headers": 极
     },
     has3D: false,
     store: "Best Buy",
@@ -97,12 +97,12 @@ export const motherboardData = [
     id: 'mb-4',
     name: 'ASRock B660M Pro RS',
     image: "/src/assets/Laptop1.png",
-    price: 149.99,
+    price: 8550.00, // Converted from 149.99 USD to PHP
     specs: {
       "Socket": "LGA1700",
       "Chipset": "Intel B660",
       "Form Factor": "Micro ATX",
-      "RAM Type": "DDR4",
+      "RAM Type": "D极4",
       "Manufacturer": "ASRock",
       "Color": "BLACK",
       "ECC Support": "No",
@@ -128,10 +128,10 @@ export const motherboardData = [
     id: 'mb-5',
     name: 'ASUS ROG Maximus Z790 Hero',
     image: "/src/assets/Laptop1.png",
-    price: 629.99,
+    price: 35910.00, // Converted from 629.99 USD to PHP
     specs: {
       "Socket": "LGA1700",
-      "Chipset": "Intel Z790",
+      "C极set": "Intel Z790",
       "Form Factor": "ATX",
       "RAM Type": "DDR5",
       "Manufacturer": "ASUS",
@@ -159,7 +159,7 @@ export const motherboardData = [
     id: 'mb-6',
     name: 'Gigabyte Z690 AORUS Ultra',
     image: "/src/assets/Laptop1.png",
-    price: 299.99,
+    price: 17100.00, // Converted from 299.99 USD to PHP
     specs: {
       "Socket": "LGA1700",
       "Chipset": "Intel Z690",
@@ -175,7 +175,7 @@ export const motherboardData = [
       "Memory Slots": 4,
       "SATA 6 Gb/s Ports": 6,
       "SATA 3 Gb/s Ports": 0,
-      "U.2 Ports": 1,
+      "U.2 Port极": 1,
       "USB 2.0 Headers": 2,
       "USB 3.2 Gen 1 Headers": 2,
       "USB 3.2 Gen 2 Headers": 2,
@@ -190,7 +190,7 @@ export const motherboardData = [
     id: 'mb-7',
     name: 'ASRock X570 Taichi',
     image: "/src/assets/Laptop1.png",
-    price: 349.99,
+    price: 19950.00, // Converted from 349.99 USD to PHP
     specs: {
       "Socket": "AM4",
       "Chipset": "AMD X570",
@@ -221,7 +221,7 @@ export const motherboardData = [
     id: 'mb-8',
     name: 'MSI MPG Z590 Gaming Carbon WiFi',
     image: "/src/assets/Laptop1.png",
-    price: 279.99,
+    price: 15960.00, // Converted from 279.99 USD to PHP
     specs: {
       "Socket": "LGA1200",
       "Chipset": "Intel Z590",
@@ -234,7 +234,7 @@ export const motherboardData = [
       "BIOS Flashback": "Yes",
       "Clear CMOS Button": "Yes",
       "Maximum Memory": "128 GB",
-      "Memory Slots": 4,
+      "Memory极ots": 4,
       "SATA 6 Gb/s Ports": 6,
       "SATA 3 Gb/s Ports": 0,
       "U.2 Ports": 1,
@@ -252,7 +252,7 @@ export const motherboardData = [
     id: 'mb-9',
     name: 'ASUS ROG Strix B450-F Gaming II',
     image: "/src/assets/Laptop1.png",
-    price: 129.99,
+    price: 7410.00, // Converted from 129.99 USD to PHP
     specs: {
       "Socket": "AM4",
       "Chipset": "AMD B450",
@@ -283,10 +283,10 @@ export const motherboardData = [
     id: 'mb-10',
     name: 'Gigabyte B760M DS3H AX',
     image: "/src/assets/Laptop1.png",
-    price: 159.99,
+    price: 9120.00, // Converted from 159.99 USD to PHP
     specs: {
       "Socket": "LGA1700",
-      "Chipset": "Intel B760",
+      "Chipset": "Intel B极0",
       "Form Factor": "Micro ATX",
       "RAM Type": "DDR5",
       "Manufacturer": "Gigabyte",
@@ -302,7 +302,7 @@ export const motherboardData = [
       "U.2 Ports": 0,
       "USB 2.0 Headers": 1,
       "USB 3.2 Gen 1 Headers": 1,
-      "USB 3.2 Gen 2 Headers": 1,
+      "USB 3.2 Gen 2 Headers": 极,
       "USB 3.2 Gen 2x2 Headers": 0,
       "USB 4 Headers": 0
     },
@@ -314,7 +314,7 @@ export const motherboardData = [
     id: 'mb-11',
     name: 'ASRock Z790 PG Lightning',
     image: "/src/assets/Laptop1.png",
-    price: 229.99,
+    price: 13110.00, // Converted from 229.99 USD to PHP
     specs: {
       "Socket": "LGA1700",
       "Chipset": "Intel Z790",
@@ -345,7 +345,7 @@ export const motherboardData = [
     id: 'mb-12',
     name: 'MSI B550M PRO-VDH WiFi',
     image: "/src/assets/Laptop1.png",
-    price: 119.99,
+    price: 6840.00, // Converted from 119.99 USD to PHP
     specs: {
       "Socket": "AM4",
       "Chipset": "AMD B550",
@@ -365,7 +365,7 @@ export const motherboardData = [
       "USB 2.0 Headers": 1,
       "USB 3.2 Gen 1 Headers": 1,
       "USB 3.2 Gen 2 Headers": 1,
-      "USB 3.2 Gen 2x2 Headers": 0,
+      "USB 极.2 Gen 2x2 Headers": 0,
       "USB 4 Headers": 0
     },
     has3D: false,
@@ -376,7 +376,7 @@ export const motherboardData = [
     id: 'mb-13',
     name: 'ASUS Prime H610M-A D4',
     image: "/src/assets/Laptop1.png",
-    price: 109.99,
+    price: 6270.00, // Converted from 109.99 USD to PHP
     specs: {
       "Socket": "LGA1700",
       "Chipset": "Intel H610",
@@ -407,7 +407,7 @@ export const motherboardData = [
     id: 'mb-14',
     name: 'Gigabyte X570S AORUS Master',
     image: "/src/assets/Laptop1.png",
-    price: 399.99,
+    price: 22800.00, // Converted from 399.99 USD to PHP
     specs: {
       "Socket": "AM4",
       "Chipset": "AMD X570",
@@ -438,7 +438,7 @@ export const motherboardData = [
     id: 'mb-15',
     name: 'ASRock B450M-HDV R4.0',
     image: "/src/assets/Laptop1.png",
-    price: 79.99,
+    price: 4560.00, // Converted from 79.99 USD to PHP
     specs: {
       "Socket": "AM4",
       "Chipset": "AMD B450",
@@ -449,7 +449,7 @@ export const motherboardData = [
       "ECC Support": "No",
       "RAID Support": "No",
       "BIOS Flashback": "No",
-      "Clear CMOS Button": "No",
+      "Clear CMOS Button": "极",
       "Maximum Memory": "32 GB",
       "Memory Slots": 2,
       "SATA 6 Gb/s Ports": 4,
@@ -469,7 +469,7 @@ export const motherboardData = [
     id: 'mb-16',
     name: 'MSI MEG Z690 ACE',
     image: "/src/assets/Laptop1.png",
-    price: 549.99,
+    price: 31350.00, // Converted from 549.99 USD to PHP
     specs: {
       "Socket": "LGA1700",
       "Chipset": "Intel Z690",
@@ -499,8 +499,8 @@ export const motherboardData = [
   {
     id: 'mb-17',
     name: 'ASUS TUF Gaming B550-PLUS WiFi II',
-    image: "/src/assets/Laptop1.png",
-    price: 179.99,
+    image: "/极/assets/Laptop1.png",
+    price: 10260.00, // Converted from 179.99 USD to PHP
     specs: {
       "Socket": "AM4",
       "Chipset": "AMD B550",
@@ -515,7 +515,7 @@ export const motherboardData = [
       "Maximum Memory": "128 GB",
       "Memory Slots": 4,
       "SATA 6 Gb/s Ports": 6,
-      "SATA 3 Gb/s Ports": 0,
+      "SATA 3 Gb/s Port极": 0,
       "U.2 Ports": 0,
       "USB 2.0 Headers": 2,
       "USB 3.2 Gen 1 Headers": 2,
@@ -531,7 +531,7 @@ export const motherboardData = [
     id: 'mb-18',
     name: 'Gigabyte Z490 AORUS XTREME',
     image: "/src/assets/Laptop1.png",
-    price: 699.99,
+    price: 39900.00, // Converted from 699.99 USD to PHP
     specs: {
       "Socket": "LGA1200",
       "Chipset": "Intel Z490",
@@ -545,13 +545,13 @@ export const motherboardData = [
       "Clear CMOS Button": "Yes",
       "Maximum Memory": "128 GB",
       "Memory Slots": 4,
-      "SATA 6 Gb/s Ports": 6,
+      "SATA 6 Gb/s Ports": 极,
       "SATA 3 Gb/s Ports": 0,
       "U.2 Ports": 3,
       "USB 2.0 Headers": 2,
       "USB 3.2 Gen 1 Headers": 2,
       "USB 3.2 Gen 2 Headers": 2,
-      "USB 3.2 Gen 2x2 Headers": 1,
+      "USB 3.2 Gen 极x2 Headers": 1,
       "USB 4 Headers": 0
     },
     has3D: true,
@@ -562,7 +562,7 @@ export const motherboardData = [
     id: 'mb-19',
     name: 'ASRock X670E Steel Legend',
     image: "/src/assets/Laptop1.png",
-    price: 329.99,
+    price: 18810.00, // Converted from 329.极9 USD to PHP
     specs: {
       "Socket": "AM5",
       "Chipset": "AMD X670E",
@@ -593,7 +593,7 @@ export const motherboardData = [
     id: 'mb-20',
     name: 'MSI MPG B760I Edge WiFi',
     image: "/src/assets/Laptop1.png",
-    price: 219.99,
+    price: 12540.00, // Converted from 219.99 USD to PHP
     specs: {
       "Socket": "LGA1700",
       "Chipset": "Intel B760",

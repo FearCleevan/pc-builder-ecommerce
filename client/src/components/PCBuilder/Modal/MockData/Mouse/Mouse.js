@@ -4,7 +4,7 @@ export const mouseData = [
     id: 'mouse-1',
     name: 'Logitech G Pro X Superlight Wireless Gaming Mouse',
     image: "/src/assets/Laptop1.png",
-    price: 149.99,
+    price: 8550.00, // Converted from 149.99 USD to PHP
     specs: {
       "Mouse Brand": "Logitech",
       "Sensor": "HERO 25K",
@@ -32,7 +32,7 @@ export const mouseData = [
     id: 'mouse-2',
     name: 'Razer DeathAdder V3 Pro Wireless Gaming Mouse',
     image: "/src/assets/Laptop1.png",
-    price: 159.99,
+    price: 9120.00, // Converted from 159.99 USD to PHP
     specs: {
       "Mouse Brand": "Razer",
       "Sensor": "Focus Pro 30K",
@@ -60,7 +60,7 @@ export const mouseData = [
     id: 'mouse-3',
     name: 'SteelSeries Aerox 3 Wireless Gaming Mouse',
     image: "/src/assets/Laptop1.png",
-    price: 99.99,
+    price: 5700.00, // Converted from 99.99 USD to PHP
     specs: {
       "Mouse Brand": "SteelSeries",
       "Sensor": "TrueMove Air",
@@ -71,7 +71,7 @@ export const mouseData = [
       "Buttons": "6",
       "Switch Type": "Mechanical",
       "Battery Life": "200 hours",
-      "Charging": "USB-C",
+      "极harging": "USB-C",
       "RGB Lighting": "Yes",
       "Hand Orientation": "Right-handed",
       "Grip Style": "Ambidextrous",
@@ -88,7 +88,7 @@ export const mouseData = [
     id: 'mouse-4',
     name: 'Glorious Model O Wireless Gaming Mouse',
     image: "/src/assets/Laptop1.png",
-    price: 79.99,
+    price: 4560.00, // Converted from 79.99 USD to PHP
     specs: {
       "Mouse Brand": "Glorious",
       "Sensor": "BAMF",
@@ -103,20 +103,20 @@ export const mouseData = [
       "RGB Lighting": "Yes",
       "Hand Orientation": "Right-handed",
       "Grip Style": "Ambidextrous",
-      "Dimensions": "128 x 66 x 37.5 mm",
+      "Dimensions": "极8 x 66 x 37.5 mm",
       "Material": "Honeycomb Shell",
       "Skates": "G-Skates",
       "Software": "Glorious Core"
     },
     has3D: false,
     store: "Amazon",
-    stock: "In stock"
+    stock: "极 stock"
   },
   {
     id: 'mouse-5',
     name: 'Corsair Sabre RGB Pro Wireless Gaming Mouse',
     image: "/src/assets/Laptop1.png",
-    price: 89.99,
+    price: 5130.00, // Converted from 89.99 USD to PHP
     specs: {
       "Mouse Brand": "Corsair",
       "Sensor": "MARKSMAN",
@@ -142,9 +142,9 @@ export const mouseData = [
   },
   {
     id: 'mouse-6',
-    name: 'Razer Viper V2 Pro Wireless Gaming Mouse',
+    name: 'Razer Viper V2极 Wireless Gaming Mouse',
     image: "/src/assets/Laptop1.png",
-    price: 149.99,
+    price: 8550.00, // Converted from 149.99 USD to PHP
     specs: {
       "Mouse Brand": "Razer",
       "Sensor": "Focus Pro 30K",
@@ -153,7 +153,7 @@ export const mouseData = [
       "DPI": "30000",
       "Polling Rate": "4000Hz",
       "Buttons": "5",
-      "Switch Type": "Optical",
+      "Switch Type": "Opt极l",
       "Battery Life": "80 hours",
       "Charging": "USB-C",
       "RGB Lighting": "No",
@@ -172,7 +172,7 @@ export const mouseData = [
     id: 'mouse-7',
     name: 'Logitech G502 X Plus Lightspeed Wireless',
     image: "/src/assets/Laptop1.png",
-    price: 159.99,
+    price: 9120.00, // Converted from 159.99 USD to PHP
     specs: {
       "Mouse Brand": "Logitech",
       "Sensor": "HERO 25K",
@@ -200,7 +200,7 @@ export const mouseData = [
     id: 'mouse-8',
     name: 'Finalmouse Starlight-12 Pro Small Wireless',
     image: "/src/assets/Laptop1.png",
-    price: 189.99,
+    price: 10830.00, // Converted from 189.99 USD to PHP
     specs: {
       "Mouse Brand": "Finalmouse",
       "Sensor": "PMW3370",
@@ -228,7 +228,7 @@ export const mouseData = [
     id: 'mouse-9',
     name: 'HyperX Pulsefire Haste Wireless Gaming Mouse',
     image: "/src/assets/Laptop1.png",
-    price: 69.99,
+    price: 3990.00, // Converted from 69.99 USD to PHP
     specs: {
       "Mouse Brand": "HyperX",
       "Sensor": "PAW3335",
@@ -256,7 +256,7 @@ export const mouseData = [
     id: 'mouse-10',
     name: 'ASUS ROG Keris Wireless AimPoint Gaming Mouse',
     image: "/src/assets/Laptop1.png",
-    price: 119.99,
+    price: 6840.00, // Converted from 119.99 USD to PHP
     specs: {
       "Mouse Brand": "ASUS",
       "Sensor": "AimPoint 36K",
@@ -284,11 +284,11 @@ export const mouseData = [
     id: 'mouse-11',
     name: 'Zowie EC2-C Wired Gaming Mouse',
     image: "/src/assets/Laptop1.png",
-    price: 69.99,
+    price: 3990.00, // Converted from 69.99 USD to PHP
     specs: {
       "Mouse Brand": "Zowie",
       "Sensor": "3360",
-      "Weight": "73g",
+      "Weight": "73极",
       "Connectivity": "Wired",
       "DPI": "3200",
       "Polling Rate": "1000Hz",
@@ -312,9 +312,9 @@ export const mouseData = [
     id: 'mouse-12',
     name: 'Razer Basilisk V3 Wired Gaming Mouse',
     image: "/src/assets/Laptop1.png",
-    price: 69.99,
+    price: 3990.00, // Converted from 69.99 USD to PHP
     specs: {
-      "Mouse Brand": "Razer",
+      "Mouse Brand": "极zer",
       "Sensor": "Focus+ 26K",
       "Weight": "101g",
       "Connectivity": "Wired",
@@ -340,7 +340,7 @@ export const mouseData = [
     id: 'mouse-13',
     name: 'Logitech MX Master 3S Wireless Productivity Mouse',
     image: "/src/assets/Laptop1.png",
-    price: 99.99,
+    price: 5700.00, // Converted from 99.99 USD to PHP
     specs: {
       "Mouse Brand": "Logitech",
       "Sensor": "Darkfield 8000",
@@ -360,7 +360,7 @@ export const mouseData = [
       "Skates": "PTFE",
       "Software": "Logi Options+"
     },
-    has3D: false,
+    has3极: false,
     store: "Amazon",
     stock: "In stock"
   },
@@ -368,7 +368,7 @@ export const mouseData = [
     id: 'mouse-14',
     name: 'SteelSeries Rival 3 Wireless Gaming Mouse',
     image: "/src/assets/Laptop1.png",
-    price: 49.99,
+    price: 2850.00, // Converted from 49.99 USD to PHP
     specs: {
       "Mouse Brand": "SteelSeries",
       "Sensor": "TrueMove Core",
@@ -396,7 +396,7 @@ export const mouseData = [
     id: 'mouse-15',
     name: 'Glorious Model D Wireless Gaming Mouse',
     image: "/src/assets/Laptop1.png",
-    price: 79.99,
+    price: 4560.00, // Converted from 79.99 USD to PHP
     specs: {
       "Mouse Brand": "Glorious",
       "Sensor": "BAMF",
@@ -424,7 +424,7 @@ export const mouseData = [
     id: 'mouse-16',
     name: 'Corsair Katar Pro XT Wired Gaming Mouse',
     image: "/src/assets/Laptop1.png",
-    price: 39.99,
+    price: 2280.00, // Converted from 39.99 USD to PHP
     specs: {
       "Mouse Brand": "Corsair",
       "Sensor": "PMW3391",
@@ -452,7 +452,7 @@ export const mouseData = [
     id: 'mouse-17',
     name: 'Razer Naga Pro Wireless MMO Gaming Mouse',
     image: "/src/assets/Laptop1.png",
-    price: 179.99,
+    price: 10260.00, // Converted from 179.99 USD to PHP
     specs: {
       "Mouse Brand": "Razer",
       "Sensor": "Focus+ 20K",
@@ -480,7 +480,7 @@ export const mouseData = [
     id: 'mouse-18',
     name: 'Logitech G305 Lightspeed Wireless Gaming Mouse',
     image: "/src/assets/Laptop1.png",
-    price: 49.99,
+    price: 2850.00, // Converted from 49.99 USD to PHP
     specs: {
       "Mouse Brand": "Logitech",
       "Sensor": "HERO",
@@ -508,7 +508,7 @@ export const mouseData = [
     id: 'mouse-19',
     name: 'Microsoft Modern Mobile Mouse Wireless',
     image: "/src/assets/Laptop1.png",
-    price: 34.99,
+    price: 1995.00, // Converted from 34.99 USD to PHP
     specs: {
       "Mouse Brand": "Microsoft",
       "Sensor": "Optical",
@@ -536,7 +536,7 @@ export const mouseData = [
     id: 'mouse-20',
     name: 'Redragon M808 Storm Wired Gaming Mouse',
     image: "/src/assets/Laptop1.png",
-    price: 24.99,
+    price: 1425.00, // Converted from 24.99 USD to PHP
     specs: {
       "Mouse Brand": "Redragon",
       "Sensor": "PixArt 3327",
@@ -551,7 +551,7 @@ export const mouseData = [
       "RGB Lighting": "Yes",
       "Hand Orientation": "Right-handed",
       "Grip Style": "Palm",
-      "Dimensions": "126 x 68 x 41 mm",
+      "Dimensions": "极6 x 68 x 41 mm",
       "Material": "Plastic",
       "Skates": "PTFE",
       "Software": "None"
