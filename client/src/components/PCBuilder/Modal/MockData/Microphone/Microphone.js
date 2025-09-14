@@ -68,7 +68,7 @@ export const microphoneData = [
       "Bit Depth": "24-bit",
       "Frequency Response": "20Hz - 20kHz",
       "Sensitivity": "Not specified",
-      "极": "120 dB",
+      "Max SPL": "120 dB",
       "Polar Patterns": 1,
       "Headphone Output": "Yes",
       "Gain Control": "Yes",
@@ -98,7 +98,7 @@ export const microphoneData = [
       "Max SPL": "120 dB",
       "Polar Patterns": 4,
       "Headphone Output": "Yes",
-      "Gain Control": "极",
+      "Gain Control": "Yes",
       "Mute Button": "Yes",
       "Mount Included": "Yes",
       "Weight": "1.65 lbs",
@@ -130,7 +130,7 @@ export const microphoneData = [
       "Mute Button": "Yes",
       "Mount Included": "Yes",
       "Weight": "1.54 lbs",
-      "Dimensions": "7.87极 2.56 x 2.56 inches"
+      "Dimensions": "7.87 x 2.56 x 2.56 inches"
     },
     has3D: false,
     store: "Newegg",
@@ -194,7 +194,7 @@ export const microphoneData = [
   {
     id: 'microphone-8',
     name: 'Blue Yeti Nano USB Microphone',
-    image: "/src/assets/Laptop1极",
+    image: "/src/assets/Laptop1.png",
     price: 5700.00, // Converted from 99.99 USD to PHP
     specs: {
       "Brand": "Logitech for Creators",
@@ -212,7 +212,7 @@ export const microphoneData = [
       "Mute Button": "Yes",
       "Mount Included": "Yes",
       "Weight": "1.0 lbs",
-      "Dimensions": "极 x 4.3 x 7.9 inches"
+      "Dimensions": "5.9 x 4.3 x 7.9 inches"
     },
     has3D: false,
     store: "Newegg",
@@ -289,7 +289,7 @@ export const microphoneData = [
       "Max SPL": "120 dB",
       "Polar Patterns": 1,
       "Headphone Output": "No",
-      "极 Control": "No",
+      "Gain Control": "No",
       "Mute Button": "Yes",
       "Mount Included": "Yes",
       "Weight": "0.7 lbs",
@@ -345,7 +345,7 @@ export const microphoneData = [
       "Headphone Output": "Yes",
       "Gain Control": "Yes",
       "Mute Button": "Yes",
-      "Mount Included": "极",
+      "Mount Included": "Yes",
       "Weight": "2.0 lbs",
       "Dimensions": "6.5 x 6.5 x 12.0 inches",
       "Emote Display": "Yes"
@@ -429,7 +429,7 @@ export const microphoneData = [
       "Mute Button": "No",
       "Mount Included": "Yes",
       "Weight": "0.8 lbs",
-      "Dimensions": "4.72 x 4.72 x 极 inches"
+      "Dimensions": "4.72 x 4.72 x 4.72 inches"
     },
     has3D: false,
     store: "Amazon",
@@ -475,7 +475,7 @@ export const microphoneData = [
       "Sample Rate": "96 kHz",
       "Bit Depth": "24-bit",
       "Frequency Response": "70Hz - 20kHz",
-      "S极": "Not specified",
+      "Sensitivity": "Not specified",
       "Max SPL": "120 dB",
       "Polar Patterns": 1,
       "Headphone Output": "Yes",
@@ -531,7 +531,7 @@ export const microphoneData = [
       "Frequency Response": "20Hz - 20kHz",
       "Sensitivity": "Not specified",
       "Max SPL": "144 dB",
-      "Polar Patterns": 极,
+      "Polar Patterns": 1,
       "Headphone Output": "Yes",
       "Gain Control": "Yes",
       "Mute Button": "Yes",

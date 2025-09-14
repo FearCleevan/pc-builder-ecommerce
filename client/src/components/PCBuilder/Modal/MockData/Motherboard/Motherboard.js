@@ -87,7 +87,7 @@ export const motherboardData = [
       "USB 3.2 Gen 1 Headers": 2,
       "USB 3.2 Gen 2 Headers": 1,
       "USB 3.2 Gen 2x2 Headers": 0,
-      "USB 4 Headers": 极
+      "USB 4 Headers": 0
     },
     has3D: false,
     store: "Best Buy",
@@ -302,7 +302,7 @@ export const motherboardData = [
       "U.2 Ports": 0,
       "USB 2.0 Headers": 1,
       "USB 3.2 Gen 1 Headers": 1,
-      "USB 3.2 Gen 2 Headers": 极,
+      "USB 3.2 Gen 2 Headers": 2,
       "USB 3.2 Gen 2x2 Headers": 0,
       "USB 4 Headers": 0
     },
@@ -515,7 +515,7 @@ export const motherboardData = [
       "Maximum Memory": "128 GB",
       "Memory Slots": 4,
       "SATA 6 Gb/s Ports": 6,
-      "SATA 3 Gb/s Port极": 0,
+      "SATA 3 Gb/s Ports": 0,
       "U.2 Ports": 0,
       "USB 2.0 Headers": 2,
       "USB 3.2 Gen 1 Headers": 2,
@@ -545,7 +545,7 @@ export const motherboardData = [
       "Clear CMOS Button": "Yes",
       "Maximum Memory": "128 GB",
       "Memory Slots": 4,
-      "SATA 6 Gb/s Ports": 极,
+      "SATA 6 Gb/s Ports": 6,
       "SATA 3 Gb/s Ports": 0,
       "U.2 Ports": 3,
       "USB 2.0 Headers": 2,

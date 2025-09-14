@@ -61,7 +61,7 @@ export const ramData = [
     price: 4560.00, // Converted from 79.99 USD to PHP
     specs: {
       "RAM Type": "DDR5",
-      "Form Factor": "288-pin DIMM (DDR极)",
+      "Form Factor": "288-pin DIMM (DDR5)",
       "ECC": "Non-ECC",
       "Registered": "Unbuffered",
       "Manufacturer": "Kingston",
@@ -94,7 +94,7 @@ export const ramData = [
       "Manufacturer": "Crucial",
       "Color": "BLACK",
       "Heat Spreader": "Yes",
-      "极GB": "No",
+      "RGB": "No",
       "Speed": "3200 MHz",
       "Total Capacity": "32 GB",
       "Number of Modules": 2,
