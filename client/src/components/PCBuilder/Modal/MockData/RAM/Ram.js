@@ -100,7 +100,7 @@ export const ramData = [
       "Number of Modules": 2,
       "CAS Latency": 22,
       "Module Height": "32 mm",
-      "Timing": "极L22",
+      "Timing": "CL22",
       "Voltage": "1.2V",
       "XMP/EXPO": "XMP 2.0"
     },
@@ -123,7 +123,7 @@ export const ramData = [
       "Heat Spreader": "Yes",
       "RGB": "No",
       "Speed": "3600 MHz",
-      "Total Capacity": "极4 GB",
+      "Total Capacity": "64 GB",
       "Number of Modules": 2,
       "CAS Latency": 18,
       "Module Height": "31 mm",
@@ -138,7 +138,7 @@ export const ramData = [
   {
     id: 'ram-6',
     name: 'G.Skill Ripjaws V 16GB DDR4 4000MHz',
-    image: "/极rc/assets/Laptop1.png",
+    image: "/src/assets/Laptop1.png",
     price: 5130.00, // Converted from 89.99 USD to PHP
     specs: {
       "RAM Type": "DDR4",
@@ -155,7 +155,7 @@ export const ramData = [
       "CAS Latency": 19,
       "Module Height": "42 mm",
       "Timing": "CL19",
-      "Voltage": "1.35极",
+      "Voltage": "1.35v",
       "XMP/EXPO": "XMP 2.0"
     },
     has3D: false,
@@ -256,13 +256,13 @@ export const ramData = [
       "Manufacturer": "Patriot",
       "Color": "BLACK",
       "Heat Spreader": "Yes",
-      "RGB": "极",
+      "RGB": "yes",
       "Speed": "3600 MHz",
       "Total Capacity": "128 GB",
       "Number of Modules": 4,
       "CAS Latency": 18,
       "Module Height": "42 mm",
-      "Tim极": "CL18",
+      "Timing": "CL18",
       "Voltage": "1.35V",
       "XMP/EXPO": "XMP 2.0"
     },
@@ -300,7 +300,7 @@ export const ramData = [
   {
     id: 'ram-12',
     name: 'Silicon Power Zenith 64GB DDR5 6000MHz',
-    image: "/src/assets/Laptop1极",
+    image: "/src/assets/Laptop1.png",
     price: 11400.00, // Converted from 199.99 USD to PHP
     specs: {
       "RAM Type": "DDR5",
@@ -367,7 +367,7 @@ export const ramData = [
       "RGB": "No",
       "Speed": "2666 MHz",
       "Total Capacity": "16 GB",
-      "Number of Modules": 极,
+      "Number of Modules": 2,
       "CAS Latency": 19,
       "Module Height": "30 mm",
       "Timing": "CL19",
