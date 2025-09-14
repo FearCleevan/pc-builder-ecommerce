@@ -463,7 +463,7 @@ export const ramData = [
     id: 'ram-18',
     name: 'Teamgroup Vulcan Z 16GB DDR4 3200MHz',
     image: "/src/assets/Laptop1.png",
-    price: 44.99,
+    price: 3500.99,
     specs: {
       "RAM Type": "DDR4",
       "Form Factor": "288-pin DIMM (DDR4)",
@@ -490,7 +490,7 @@ export const ramData = [
     id: 'ram-19',
     name: 'Samsung 128GB DDR4 3200MHz ECC Registered',
     image: "/src/assets/Laptop1.png",
-    price: 599.99,
+    price: 36999.99,
     specs: {
       "RAM Type": "DDR4",
       "Form Factor": "288-pin DIMM (DDR4)",
@@ -517,7 +517,7 @@ export const ramData = [
     id: 'ram-20',
     name: 'GeIL Orion RGB 32GB DDR5 5600MHz',
     image: "/src/assets/Laptop1.png",
-    price: 109.99,
+    price: 5999.99,
     specs: {
       "RAM Type": "DDR5",
       "Form Factor": "288-pin DIMM (DDR5)",

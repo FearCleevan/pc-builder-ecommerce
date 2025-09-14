@@ -4,7 +4,7 @@ export const speakerData = [
     id: 'speaker-1',
     name: 'Logitech G560 LIGHTSYNC PC Gaming Speakers',
     image: "/src/assets/Laptop1.png",
-    price: 199.99,
+    price: 11499.95, // 199.99 USD * 57.5 PHP
     specs: {
       "Brand": "Logitech",
       "Configuration": "2.1",
@@ -31,7 +31,7 @@ export const speakerData = [
     id: 'speaker-2',
     name: 'Audioengine A2+ Wireless Speakers',
     image: "/src/assets/Laptop1.png",
-    price: 269.00,
+    price: 15467.50, // 269.00 USD * 57.5 PHP
     specs: {
       "Brand": "Audioengine",
       "Configuration": "2.0",
@@ -57,7 +57,7 @@ export const speakerData = [
     id: 'speaker-3',
     name: 'Klipsch ProMedia 2.1 THX Certified Computer Speakers',
     image: "/src/assets/Laptop1.png",
-    price: 149.99,
+    price: 8624.93, // 149.99 USD * 57.5 PHP
     specs: {
       "Brand": "Klipsch",
       "Configuration": "2.1",
@@ -84,7 +84,7 @@ export const speakerData = [
     id: 'speaker-4',
     name: 'Razer Nommo Pro THX 2.1 Gaming Speakers',
     image: "/src/assets/Laptop1.png",
-    price: 499.99,
+    price: 28749.43, // 499.99 USD * 57.5 PHP
     specs: {
       "Brand": "Razer",
       "Configuration": "2.1",
@@ -111,7 +111,7 @@ export const speakerData = [
     id: 'speaker-5',
     name: 'Edifier R1280T Powered Bookshelf Speakers',
     image: "/src/assets/Laptop1.png",
-    price: 99.99,
+    price: 5749.43, // 99.99 USD * 57.5 PHP
     specs: {
       "Brand": "Edifier",
       "Configuration": "2.0",
@@ -137,7 +137,7 @@ export const speakerData = [
     id: 'speaker-6',
     name: 'Bose Companion 2 Series III Multimedia Speakers',
     image: "/src/assets/Laptop1.png",
-    price: 99.00,
+    price: 5692.50, // 99.00 USD * 57.5 PHP
     specs: {
       "Brand": "Bose",
       "Configuration": "2.0",
@@ -163,7 +163,7 @@ export const speakerData = [
     id: 'speaker-7',
     name: 'Creative Pebble Pro 2.0 USB-C Desktop Speakers',
     image: "/src/assets/Laptop1.png",
-    price: 49.99,
+    price: 2874.43, // 49.99 USD * 57.5 PHP
     specs: {
       "Brand": "Creative",
       "Configuration": "2.0",
@@ -189,7 +189,7 @@ export const speakerData = [
     id: 'speaker-8',
     name: 'Presonus Eris E3.5 BT Studio Monitors',
     image: "/src/assets/Laptop1.png",
-    price: 149.99,
+    price: 8624.43, // 149.99 USD * 57.5 PHP
     specs: {
       "Brand": "Presonus",
       "Configuration": "2.0",
@@ -215,7 +215,7 @@ export const speakerData = [
     id: 'speaker-9',
     name: 'JBL Professional 305P MkII Studio Monitors',
     image: "/src/assets/Laptop1.png",
-    price: 299.99,
+    price: 17249.43, // 299.99 USD * 57.5 PHP
     specs: {
       "Brand": "JBL",
       "Configuration": "2.0",
@@ -241,7 +241,7 @@ export const speakerData = [
     id: 'speaker-10',
     name: 'Corsair SP2500 2.1 High-Powered PC Speakers',
     image: "/src/assets/Laptop1.png",
-    price: 249.99,
+    price: 14374.43, // 249.99 USD * 57.5 PHP
     specs: {
       "Brand": "Corsair",
       "Configuration": "2.1",
@@ -268,7 +268,7 @@ export const speakerData = [
     id: 'speaker-11',
     name: 'Yamaha HS5 Powered Studio Monitor',
     image: "/src/assets/Laptop1.png",
-    price: 199.99,
+    price: 11499.43, // 199.99 USD * 57.5 PHP
     specs: {
       "Brand": "Yamaha",
       "Configuration": "2.0",
@@ -294,7 +294,7 @@ export const speakerData = [
     id: 'speaker-12',
     name: 'Kanto YU2 Powered Desktop Speakers',
     image: "/src/assets/Laptop1.png",
-    price: 179.99,
+    price: 10349.43, // 179.99 USD * 57.5 PHP
     specs: {
       "Brand": "Kanto",
       "Configuration": "2.0",
@@ -320,7 +320,7 @@ export const speakerData = [
     id: 'speaker-13',
     name: 'Harman Kardon SoundSticks 4 Wireless Speaker System',
     image: "/src/assets/Laptop1.png",
-    price: 199.95,
+    price: 11497.13, // 199.95 USD * 57.5 PHP
     specs: {
       "Brand": "Harman Kardon",
       "Configuration": "2.1",
@@ -347,7 +347,7 @@ export const speakerData = [
     id: 'speaker-14',
     name: 'Sony SRS-RA5000 Wireless Speaker',
     image: "/src/assets/Laptop1.png",
-    price: 699.99,
+    price: 40249.43, // 699.99 USD * 57.5 PHP
     specs: {
       "Brand": "Sony",
       "Configuration": "Single unit",
@@ -373,7 +373,7 @@ export const speakerData = [
     id: 'speaker-15',
     name: 'KRK Rokit 5 G4 Studio Monitor',
     image: "/src/assets/Laptop1.png",
-    price: 179.99,
+    price: 10349.43, // 179.99 USD * 57.5 PHP
     specs: {
       "Brand": "KRK",
       "Configuration": "2.0",
@@ -399,7 +399,7 @@ export const speakerData = [
     id: 'speaker-16',
     name: 'Cyber Acoustics CA-3090 2.1 Speaker System',
     image: "/src/assets/Laptop1.png",
-    price: 29.99,
+    price: 1724.43, // 29.99 USD * 57.5 PHP
     specs: {
       "Brand": "Cyber Acoustics",
       "Configuration": "2.1",
@@ -426,7 +426,7 @@ export const speakerData = [
     id: 'speaker-17',
     name: 'Mackie CR-X Series CR3-X 3" Creative Reference Multimedia Monitors',
     image: "/src/assets/Laptop1.png",
-    price: 99.99,
+    price: 5749.43, // 99.99 USD * 57.5 PHP
     specs: {
       "Brand": "Mackie",
       "Configuration": "2.0",
@@ -452,7 +452,7 @@ export const speakerData = [
     id: 'speaker-18',
     name: 'Vanatoo Transparent Zero Powered Speakers',
     image: "/src/assets/Laptop1.png",
-    price: 359.00,
+    price: 20642.50, // 359.00 USD * 57.5 PHP
     specs: {
       "Brand": "Vanatoo",
       "Configuration": "2.0",
@@ -478,7 +478,7 @@ export const speakerData = [
     id: 'speaker-19',
     name: 'Genius SW-G2.1 1250 2.1 Gaming Speakers',
     image: "/src/assets/Laptop1.png",
-    price: 39.99,
+    price: 2299.43, // 39.99 USD * 57.5 PHP
     specs: {
       "Brand": "Genius",
       "Configuration": "2.1",
@@ -505,7 +505,7 @@ export const speakerData = [
     id: 'speaker-20',
     name: 'Fluance Ai41 Powered Bookshelf Speakers',
     image: "/src/assets/Laptop1.png",
-    price: 249.99,
+    price: 14374.43, // 249.99 USD * 57.5 PHP
     specs: {
       "Brand": "Fluance",
       "Configuration": "2.0",
