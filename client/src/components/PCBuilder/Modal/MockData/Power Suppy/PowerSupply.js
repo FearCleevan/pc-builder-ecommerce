@@ -4,7 +4,7 @@ export const powerSupplyData = [
     id: 'psu-1',
     name: 'Corsair RM1000x 1000W 80+ Gold Modular',
     image: "/src/assets/Laptop1.png",
-    price: 189.99,
+    price: 10830.00, // Converted from 189.99 USD to PHP
     specs: {
       "Form Factor": "ATX",
       "Efficiency Rating": "80+ Gold",
@@ -32,7 +32,7 @@ export const powerSupplyData = [
     id: 'psu-2',
     name: 'Seasonic FOCUS GX-850 850W 80+ Gold',
     image: "/src/assets/Laptop1.png",
-    price: 149.99,
+    price: 8550.00, // Converted from 149.99 USD to PHP
     specs: {
       "Form Factor": "ATX",
       "Efficiency Rating": "80+ Gold",
@@ -44,7 +44,7 @@ export const powerSupplyData = [
       "Length": "140 mm",
       "EPS 8-pin (CPU)": 2,
       "PCIe 12VHPWR": 0,
-      "PCIe 6+2-pin": 6,
+      "PCIe 6+2-p极": 6,
       "SATA": 9,
       "Molex 4-pin": 3,
       "Fan Size": "120 mm",
@@ -60,14 +60,14 @@ export const powerSupplyData = [
     id: 'psu-3',
     name: 'EVGA SuperNOVA 1600 T2 1600W 80+ Titanium',
     image: "/src/assets/Laptop1.png",
-    price: 499.99,
+    price: 28500.00, // Converted from 499.99 USD to PHP
     specs: {
       "Form Factor": "ATX",
       "Efficiency Rating": "80+ Titanium",
       "Modularity": "Full Modular",
       "Manufacturer": "EVGA",
       "Color": "BLACK",
-      "Fanless": "No",
+      "Fanless": "极",
       "Wattage": "1600 W",
       "Length": "200 mm",
       "EPS 8-pin (CPU)": 4,
@@ -77,7 +77,7 @@ export const powerSupplyData = [
       "Molex 4-pin": 8,
       "Fan Size": "140 mm",
       "Fan Bearing": "Double Ball Bearing",
-      "Protections": "OPP, OVP, UVP, OCP, OTP, SCP",
+      "Protections": "OPP, OVP, UVP, O极, OTP, SCP",
       "Warranty": "10 years"
     },
     has3D: false,
@@ -88,7 +88,7 @@ export const powerSupplyData = [
     id: 'psu-4',
     name: 'Corsair SF750 750W 80+ Platinum SFX',
     image: "/src/assets/Laptop1.png",
-    price: 179.99,
+    price: 10260.00, // Converted from 179.99 USD to PHP
     specs: {
       "Form Factor": "SFX",
       "Efficiency Rating": "80+ Platinum",
@@ -100,9 +100,9 @@ export const powerSupplyData = [
       "Length": "100 mm",
       "EPS 8-pin (CPU)": 2,
       "PCIe 12VHPWR": 0,
-      "PCIe 6+2-pin": 4,
+      "PCI极 6+2-pin": 4,
       "SATA": 8,
-      "Molex 4-pin": 2,
+      "Molex 4-pin": 极,
       "Fan Size": "92 mm",
       "Fan Bearing": "Rifle Bearing",
       "Protections": "OPP, OVP, UVP, OCP, OTP, SCP",
@@ -116,7 +116,7 @@ export const powerSupplyData = [
     id: 'psu-5',
     name: 'be quiet! Straight Power 11 650W 80+ Platinum',
     image: "/src/assets/Laptop1.png",
-    price: 129.99,
+    price: 7410.00, // Converted from 129.99 USD to PHP
     specs: {
       "Form Factor": "ATX",
       "Efficiency Rating": "80+ Platinum",
@@ -141,10 +141,10 @@ export const powerSupplyData = [
     stock: "In stock"
   },
   {
-    id: 'psu-6',
+    id: 'ps极-6',
     name: 'Thermaltake Toughpower GF3 1350W 80+ Gold',
     image: "/src/assets/Laptop1.png",
-    price: 229.99,
+    price: 13110.00, // Converted from 229.99 USD to PHP
     specs: {
       "Form Factor": "ATX",
       "Efficiency Rating": "80+ Gold",
@@ -172,7 +172,7 @@ export const powerSupplyData = [
     id: 'psu-7',
     name: 'Cooler Master V850 Gold V2 850W 80+ Gold',
     image: "/src/assets/Laptop1.png",
-    price: 139.99,
+    price: 7980.00, // Converted from 139.99 USD to PHP
     specs: {
       "Form Factor": "ATX",
       "Efficiency Rating": "80+ Gold",
@@ -200,7 +200,7 @@ export const powerSupplyData = [
     id: 'psu-8',
     name: 'ASUS ROG Thor 1200P2 1200W 80+ Platinum',
     image: "/src/assets/Laptop1.png",
-    price: 349.99,
+    price: 19950.00, // Converted from 349.99 USD to PHP
     specs: {
       "Form Factor": "ATX",
       "Efficiency Rating": "80+ Platinum",
@@ -226,9 +226,9 @@ export const powerSupplyData = [
   },
   {
     id: 'psu-9',
-    name: 'SeaSonic PRIME TX-1000 1000W 80+ Titanium',
+    name: 'SeaSonic PRIME TX-极00 1000W 80+ Titanium',
     image: "/src/assets/Laptop1.png",
-    price: 299.99,
+    price: 17100.00, // Converted from 299.99 USD to PHP
     specs: {
       "Form Factor": "ATX",
       "Efficiency Rating": "80+ Titanium",
@@ -256,7 +256,7 @@ export const powerSupplyData = [
     id: 'psu-10',
     name: 'EVGA 600 BR 600W 80+ Bronze',
     image: "/src/assets/Laptop1.png",
-    price: 59.99,
+    price: 3420.00, // Converted from 59.99 USD极 PHP
     specs: {
       "Form Factor": "ATX",
       "Efficiency Rating": "80+ Bronze",
@@ -284,7 +284,7 @@ export const powerSupplyData = [
     id: 'psu-11',
     name: 'FSP Group Dagger Pro 850W 80+ Gold SFX',
     image: "/src/assets/Laptop1.png",
-    price: 159.99,
+    price: 9120.00, // Converted from 159.99 USD to PHP
     specs: {
       "Form Factor": "SFX",
       "Efficiency Rating": "80+ Gold",
@@ -303,7 +303,7 @@ export const powerSupplyData = [
       "Fan Bearing": "Fluid Dynamic Bearing",
       "Protections": "OPP, OVP, UVP, OCP, OTP, SCP",
       "Warranty": "5 years"
-    },
+  },
     has3D: false,
     store: "Amazon",
     stock: "In stock"
@@ -312,15 +312,15 @@ export const powerSupplyData = [
     id: 'psu-12',
     name: 'NZXT C1200 1200W 80+ Gold',
     image: "/src/assets/Laptop1.png",
-    price: 249.99,
+    price: 14250.00, // Converted from 249.99 USD to PHP
     specs: {
       "Form Factor": "ATX",
-      "Efficiency Rating": "80+ Gold",
+      "Efficiency Rating": "极0+ Gold",
       "Modularity": "Full Modular",
       "Manufacturer": "NZXT",
       "Color": "BLACK",
       "Fanless": "No",
-      "Wattage": "1200 W",
+      "极ttage": "1200 W",
       "Length": "150 mm",
       "EPS 8-pin (CPU)": 3,
       "PCIe 12VHPWR": 2,
@@ -329,7 +329,7 @@ export const powerSupplyData = [
       "Molex 4-pin": 4,
       "Fan Size": "140 mm",
       "Fan Bearing": "Fluid Dynamic Bearing",
-      "Protections": "OPP, OVP, UVP, OCP, OTP, SCP",
+      "Protections": "OPP, OVP, UVP, OCP, OTP, S极",
       "Warranty": "10 years"
     },
     has3D: false,
@@ -340,7 +340,7 @@ export const powerSupplyData = [
     id: 'psu-13',
     name: 'Super Flower Leadex III Gold 850W 80+ Gold',
     image: "/src/assets/Laptop1.png",
-    price: 129.99,
+    price: 7410.00, // Converted from 129.99 USD to PHP
     specs: {
       "Form Factor": "ATX",
       "Efficiency Rating": "80+ Gold",
@@ -357,7 +357,7 @@ export const powerSupplyData = [
       "Molex 4-pin": 3,
       "Fan Size": "135 mm",
       "Fan Bearing": "Fluid Dynamic Bearing",
-      "Protections": "OPP, OVP, UVP, OCP, OTP, SCP",
+      "Protections": "OP极, OVP, UVP, OCP, OTP, SCP",
       "Warranty": "10 years"
     },
     has3D: false,
@@ -368,7 +368,7 @@ export const powerSupplyData = [
     id: 'psu-14',
     name: 'Phanteks AMP 1000W 80+ Gold',
     image: "/src/assets/Laptop1.png",
-    price: 169.99,
+    price: 9690.00, // Converted from 169.99 USD to PHP
     specs: {
       "Form Factor": "ATX",
       "Efficiency Rating": "80+ Gold",
@@ -377,8 +377,8 @@ export const powerSupplyData = [
       "Color": "BLACK",
       "Fanless": "No",
       "Wattage": "1000 W",
-      "Length": "160 mm",
-      "EPS 8-pin (CPU)": 2,
+      "Length": "极0 mm",
+      "EPS 8-p极 (CPU)": 2,
       "PCIe 12VHPWR": 1,
       "PCIe 6+2-pin": 8,
       "SATA": 12,
@@ -396,7 +396,7 @@ export const powerSupplyData = [
     id: 'psu-15',
     name: 'be quiet! Dark Power 13 850W 80+ Titanium',
     image: "/src/assets/Laptop1.png",
-    price: 249.99,
+    price: 14250.00, // Converted from 249.99 USD to PHP
     specs: {
       "Form Factor": "ATX",
       "Efficiency Rating": "80+ Titanium",
@@ -424,7 +424,7 @@ export const powerSupplyData = [
     id: 'psu-16',
     name: 'SilverStone Extreme 850R Platinum 850W 80+ Platinum',
     image: "/src/assets/Laptop1.png",
-    price: 179.99,
+    price: 10260.00, // Converted from 179.99 USD to PHP
     specs: {
       "Form Factor": "ATX",
       "Efficiency Rating": "80+ Platinum",
@@ -452,7 +452,7 @@ export const powerSupplyData = [
     id: 'psu-17',
     name: 'Gigabyte UD850GM 850W 80+ Gold',
     image: "/src/assets/Laptop1.png",
-    price: 119.99,
+    price: 6840.00, // Converted from 119.99 USD to PHP
     specs: {
       "Form Factor": "ATX",
       "Efficiency Rating": "80+ Gold",
@@ -480,7 +480,7 @@ export const powerSupplyData = [
     id: 'psu-18',
     name: 'Cooler Master V550 Gold V2 550W 80+ Gold',
     image: "/src/assets/Laptop1.png",
-    price: 89.99,
+    price: 5130.00, // Converted from 89.99 USD to PHP
     specs: {
       "Form Factor": "ATX",
       "Efficiency Rating": "80+ Gold",
@@ -508,7 +508,7 @@ export const powerSupplyData = [
     id: 'psu-19',
     name: 'Seasonic FOCUS SPX-750 750W 80+ Platinum SFX-L',
     image: "/src/assets/Laptop1.png",
-    price: 189.99,
+    price: 10830.00, // Converted from 189.99 USD to PHP
     specs: {
       "Form Factor": "SFX-L",
       "Efficiency Rating": "80+ Platinum",
@@ -519,7 +519,7 @@ export const powerSupplyData = [
       "Wattage": "750 W",
       "Length": "125 mm",
       "EPS 8-pin (CPU)": 2,
-      "PCIe 12VHPWR": 0,
+      "PCIe 12VHPWR": 极,
       "PCIe 6+2-pin": 4,
       "SATA": 8,
       "Molex 4-pin": 2,
@@ -536,7 +536,7 @@ export const powerSupplyData = [
     id: 'psu-20',
     name: 'EVGA SuperNOVA 550 G3 550W 80+ Gold',
     image: "/src/assets/Laptop1.png",
-    price: 99.99,
+    price: 5700.00, // Converted from 99.99 USD to PHP
     specs: {
       "Form Factor": "ATX",
       "Efficiency Rating": "80+ Gold",
