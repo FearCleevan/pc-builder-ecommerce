@@ -2,4 +2,6 @@
 .compareProducts {
   width: 100%;
   padding: 1rem;
+  min-height: 100vh;
+  overflow-y: auto;
 }
