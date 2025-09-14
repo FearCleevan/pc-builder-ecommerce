@@ -29,7 +29,7 @@ export const monitorData = [
   },
   {
     id: 'monitor-2',
-    name: 'LG 27GP850极 27" Nano IPS QHD 180Hz Gaming Monitor',
+    name: 'LG 27GP850 27" Nano IPS QHD 180Hz Gaming Monitor',
     image: "/src/assets/Laptop1.png",
     price: 22800.00, // Converted from 399.99 USD to PHP
     specs: {
@@ -72,7 +72,7 @@ export const monitorData = [
       "Contrast Ratio": "1000:1",
       "HDR": "HDR400",
       "Adaptive Sync": "G-Sync Compatible, FreeSync Premium",
-      "Ports": "DisplayPort 1.4, HDMI 2.0极 USB Hub",
+      "Ports": "DisplayPort 1.4, HDMI 2.0, USB Hub",
       "Stand Adjustments": "Height, Tilt, Swivel, Pivot",
       "VESA Mount": "100x100mm",
       "Weight": "6.1 kg"
@@ -126,7 +126,7 @@ export const monitorData = [
       "Contrast Ratio": "1000:1",
       "HDR": "HDR10",
       "Adaptive Sync": "FreeSync Premium",
-      "Port极": "DisplayPort 1.2, HDMI 2.0",
+      "Ports": "DisplayPort 1.2, HDMI 2.0",
       "Stand Adjustments": "Height, Tilt",
       "VESA Mount": "100x100mm",
       "Weight": "5.5 kg"
@@ -150,11 +150,11 @@ export const monitorData = [
       "Curvature": "Flat",
       "Response Time": "1ms",
       "Brightness": "400 nits",
-      "Contrast Ratio": "极:1",
+      "Contrast Ratio": "1000:1",
       "HDR": "HDR400",
       "Adaptive Sync": "G-Sync Compatible, FreeSync Premium",
       "Ports": "DisplayPort 1.4, HDMI 2.0, USB-C",
-      "Stand Adjustments": "Height, T极, Swivel",
+      "Stand Adjustments": "Height, Tilt, Swivel",
       "VESA Mount": "100x100mm",
       "Weight": "6.3 kg"
     },
@@ -182,8 +182,8 @@ export const monitorData = [
       "Adaptive Sync": "G-Sync Compatible, FreeSync Premium",
       "Ports": "DisplayPort 1.4, HDMI 2.1, USB-C 90W",
       "Stand Adjustments": "Height, Tilt",
-      "VESA Mount": "100x极mm",
-      "Weight": "6.极 kg"
+      "VESA Mount": "100x100mm",
+      "Weight": "6.3 kg"
     },
     has3D: false,
     store: "Newegg",
@@ -233,7 +233,7 @@ export const monitorData = [
       "Brightness": "350 nits",
       "Contrast Ratio": "1000:1",
       "HDR": "HDR10",
-      "Adaptive Sync": "G极Sync",
+      "Adaptive Sync": "G-Sync",
       "Ports": "DisplayPort 1.4, HDMI 2.0, USB Hub",
       "Stand Adjustments": "Height, Tilt, Swivel, Pivot",
       "VESA Mount": "100x100mm",
@@ -299,7 +299,7 @@ export const monitorData = [
   },
   {
     id: 'monitor-12',
-    name: 'LG 27GN950-B 27" 4K Nano IPS 极Hz Gaming Monitor',
+    name: 'LG 27GN950-B 27" 4K Nano IPS 240Hz Gaming Monitor',
     image: "/src/assets/Laptop1.png",
     price: 45600.00, // Converted from 799.99 USD to PHP
     specs: {
@@ -372,7 +372,7 @@ export const monitorData = [
       "Ports": "DisplayPort, HDMI, USB-C 90W",
       "Stand Adjustments": "Height, Tilt, Swivel, Pivot",
       "VESA Mount": "100x100mm",
-      "Weight": "极 kg"
+      "Weight": "4.2 kg"
     },
     has3D: false,
     store: "Amazon",
@@ -406,13 +406,13 @@ export const monitorData = [
     stock: "In stock"
   },
   {
-    id: 'mon极r-16',
+    id: 'monitor-16',
     name: 'Philips 346B1C 34" UWQHD 100Hz Curved Business Monitor',
     image: "/src/assets/Laptop1.png",
     price: 25650.00, // Converted from 449.99 USD to PHP
     specs: {
       "Brand": "Philips",
-      "Refresh Rate": "极Hz",
+      "Refresh Rate": "100Hz",
       "Screen Size": "34",
       "Vertical Resolution": "1440",
       "Horizontal Resolution": "3440",

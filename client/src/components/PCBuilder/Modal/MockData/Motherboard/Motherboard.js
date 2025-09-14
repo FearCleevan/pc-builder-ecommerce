@@ -27,7 +27,7 @@ export const motherboardData = [
       "USB 3.2 Gen 2x2 Headers": 1,
       "USB 4 Headers": 0
     },
-    has3极: true,
+    has3D: true,
     store: "Newegg",
     stock: "In stock"
   },
@@ -44,7 +44,7 @@ export const motherboardData = [
       "Manufacturer": "Gigabyte",
       "Color": "BLACK",
       "ECC Support": "No",
-      "RAID Support": "极",
+      "RAID Support": "Yes",
       "BIOS Flashback": "Yes",
       "Clear CMOS Button": "Yes",
       "Maximum Memory": "128 GB",
@@ -80,7 +80,7 @@ export const motherboardData = [
       "Clear CMOS Button": "Yes",
       "Maximum Memory": "128 GB",
       "Memory Slots": 4,
-      "SATA 极 Gb/s Ports": 6,
+      "SATA 6 Gb/s Ports": 6,
       "SATA 3 Gb/s Ports": 0,
       "U.2 Ports": 0,
       "USB 2.0 Headers": 2,
@@ -102,7 +102,7 @@ export const motherboardData = [
       "Socket": "LGA1700",
       "Chipset": "Intel B660",
       "Form Factor": "Micro ATX",
-      "RAM Type": "D极4",
+      "RAM Type": "DDR4",
       "Manufacturer": "ASRock",
       "Color": "BLACK",
       "ECC Support": "No",
@@ -131,7 +131,7 @@ export const motherboardData = [
     price: 35910.00, // Converted from 629.99 USD to PHP
     specs: {
       "Socket": "LGA1700",
-      "C极set": "Intel Z790",
+      "Chipset": "Intel Z790",
       "Form Factor": "ATX",
       "RAM Type": "DDR5",
       "Manufacturer": "ASUS",
@@ -175,7 +175,7 @@ export const motherboardData = [
       "Memory Slots": 4,
       "SATA 6 Gb/s Ports": 6,
       "SATA 3 Gb/s Ports": 0,
-      "U.2 Port极": 1,
+      "U.2 Ports": 1,
       "USB 2.0 Headers": 2,
       "USB 3.2 Gen 1 Headers": 2,
       "USB 3.2 Gen 2 Headers": 2,
@@ -234,7 +234,7 @@ export const motherboardData = [
       "BIOS Flashback": "Yes",
       "Clear CMOS Button": "Yes",
       "Maximum Memory": "128 GB",
-      "Memory极ots": 4,
+      "Memory Slots": 4,
       "SATA 6 Gb/s Ports": 6,
       "SATA 3 Gb/s Ports": 0,
       "U.2 Ports": 1,
@@ -286,7 +286,7 @@ export const motherboardData = [
     price: 9120.00, // Converted from 159.99 USD to PHP
     specs: {
       "Socket": "LGA1700",
-      "Chipset": "Intel B极0",
+      "Chipset": "Intel B760",
       "Form Factor": "Micro ATX",
       "RAM Type": "DDR5",
       "Manufacturer": "Gigabyte",
@@ -365,7 +365,7 @@ export const motherboardData = [
       "USB 2.0 Headers": 1,
       "USB 3.2 Gen 1 Headers": 1,
       "USB 3.2 Gen 2 Headers": 1,
-      "USB 极.2 Gen 2x2 Headers": 0,
+      "USB 3.2 Gen 2x2 Headers": 0,
       "USB 4 Headers": 0
     },
     has3D: false,
