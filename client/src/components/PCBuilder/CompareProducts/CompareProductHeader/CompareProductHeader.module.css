@@ -1,0 +1,129 @@
+/* client/src/components/PCBuilder/CompareProducts/CompareProductHeader/CompareProductHeader.module.css */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 0.5rem 1rem;
+  border-bottom: 1px solid #e5e7eb;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.breadcrumb {
+  width: 100%;
+}
+
+.breadcrumbButton {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: none;
+  border: none;
+  color: #6b7280;
+  font-size: 0.875rem;
+  cursor: pointer;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.375rem;
+  transition: all 0.2s;
+}
+
+.breadcrumbButton:hover {
+  color: #374151;
+  background-color: #f3f4f6;
+}
+
+.headerContent {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.title {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #374151;
+}
+
+.dropdownContainer {
+  position: relative;
+  overflow: hidden;
+}
+
+.dropdownButton {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.25rem;
+  height: 1.75rem;
+  text-overflow: ellipsis;
+  border: 1px solid #d1d5db;
+  background-color: #f9fafb;
+  padding: 0 0.5rem;
+  border-radius: 0.375rem;
+  font-size: 0.75rem;
+  cursor: pointer;
+  width: fit-content;
+}
+
+.dropdownButtonContent {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.chevron {
+  width: 1rem;
+  height: 1rem;
+  opacity: 0.5;
+}
+
+.dropdownMenu {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  z-index: 50;
+  margin-top: 0.25rem;
+  width: 12rem;
+  border-radius: 0.375rem;
+  border: 1px solid #e5e7eb;
+  background-color: white;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  max-height: 16rem;
+  overflow-y: auto;
+}
+
+.dropdownItem {
+  display: block;
+  width: 100%;
+  padding: 0.5rem 1rem;
+  text-align: left;
+  background: none;
+  border: none;
+  font-size: 0.875rem;
+  color: #374151;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.dropdownItem:hover {
+  background-color: #f3f4f6;
+}
+
+@media (min-width: 768px) {
+  .header {
+    flex-direction: row;
+    gap: 0;
+  }
+  
+  .breadcrumb {
+    width: auto;
+  }
+  
+  .headerContent {
+    width: auto;
+    justify-content: flex-start;
+  }
+}

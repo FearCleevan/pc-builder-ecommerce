@@ -1,8 +1,9 @@
+// client/src/components/PCBuilder/ComponentCard/ComponentCard.jsx
 import React, { useState, useEffect, useRef } from 'react';
 import Desktop1Image from '../../../../assets/Desktop1.jpg';
 import styles from './ComponentCard.module.css';
 
-const ComponentCard = ({ component, onSelect }) => {
+const ComponentCard = ({ component, onSelect, onCompareToggle, isComparing }) => {
   const [isVisible, setIsVisible] = useState(false);
   const [imageLoaded, setImageLoaded] = useState(false);
   const [isChecked, setIsChecked] = useState(false);
@@ -30,6 +31,10 @@ const ComponentCard = ({ component, onSelect }) => {
     };
   }, []);
 
+  useEffect(() => {
+    setIsChecked(isComparing || false);
+  }, [isComparing]);
+
   const handleAddToBuild = () => {
     onSelect(component);
   };
@@ -40,7 +45,9 @@ const ComponentCard = ({ component, onSelect }) => {
 
   const toggleCheck = (e) => {
     e.stopPropagation(); // prevent card click propagation
-    setIsChecked(!isChecked);
+    const newCheckedState = !isChecked;
+    setIsChecked(newCheckedState);
+    onCompareToggle(component, newCheckedState);
   };
 
   return (

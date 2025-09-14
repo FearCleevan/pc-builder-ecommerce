@@ -2,7 +2,7 @@ import React, { useState, useMemo } from 'react';
 import AddComponentModal from '../Modal/AddComponentModal/AddComponentModal';
 import styles from './PCBuildBody.module.css';
 
-const PCBuildBody = () => {
+const PCBuildBody = ({ onCompareNavigate }) => {
     const [selectedComponent, setSelectedComponent] = useState(null);
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [selectedComponents, setSelectedComponents] = useState({});
@@ -306,6 +306,7 @@ const PCBuildBody = () => {
                 onClose={handleCloseModal}
                 onSelect={handleComponentSelect}
                 componentType={selectedComponent}
+                onCompareNavigate={onCompareNavigate} // Add this prop
             />
         </>
     );

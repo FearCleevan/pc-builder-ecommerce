@@ -40,7 +40,7 @@ import { microphoneFilter } from '../MockData/Microphone/MicrophoneFilter';
 import { webcamFilter } from '../MockData/Webcam/WebcamFilter';
 import { storageFilter } from '../MockData/Storage/StorageFilter';
 
-const AddComponentModal = ({ isOpen, onClose, onSelect, componentType }) => {
+const AddComponentModal = ({ isOpen, onClose, onSelect, componentType, onCompareNavigate }) => {
     const [currentPage, setCurrentPage] = useState(1);
     const [components, setComponents] = useState([]);
     const [filteredComponents, setFilteredComponents] = useState([]);
@@ -49,6 +49,7 @@ const AddComponentModal = ({ isOpen, onClose, onSelect, componentType }) => {
     const [sortOption, setSortOption] = useState('default');
     const [isLoading, setIsLoading] = useState(true);
     const [activeFilters, setActiveFilters] = useState({});
+    const [compareProducts, setCompareProducts] = useState([]);
 
     useEffect(() => {
         if (isOpen) {
@@ -58,6 +59,7 @@ const AddComponentModal = ({ isOpen, onClose, onSelect, componentType }) => {
             setComponents(mockComponents);
             setFilteredComponents(mockComponents);
             setIsLoading(false);
+            setCompareProducts([]); // Reset compare products when modal opens
         } else {
             document.body.style.overflow = 'unset';
             setSearchTerm('');
@@ -208,6 +210,24 @@ const AddComponentModal = ({ isOpen, onClose, onSelect, componentType }) => {
 
         // Default return if no match found
         return "";
+    };
+
+    const handleCompareToggle = (component, isChecked) => {
+        if (isChecked) {
+            setCompareProducts(prev => [...prev, component]);
+        } else {
+            setCompareProducts(prev => prev.filter(item => item.id !== component.id));
+        }
+    };
+
+    const handleClearCompare = () => {
+        setCompareProducts([]);
+    };
+
+    const handleCompareNavigate = () => {
+        if (onCompareNavigate && compareProducts.length > 0) {
+            onCompareNavigate(compareProducts, componentType);
+        }
     };
 
     // Apply filters whenever activeFilters, searchTerm, or components change
@@ -410,9 +430,30 @@ const AddComponentModal = ({ isOpen, onClose, onSelect, componentType }) => {
                             </div>
 
                             <div className={styles.compareButtonContainer}>
-                                <button className={styles.compareButton} disabled>
-                                    Compare
-                                </button>
+                                {compareProducts.length > 0 ? (
+                                    <>
+                                        <button
+                                            className={styles.clearCompareButton}
+                                            onClick={handleClearCompare}
+                                        >
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                                <path d="M18 6 6 18"></path>
+                                                <path d="m6 6 12 12"></path>
+                                            </svg>
+                                            Clear Compare
+                                        </button>
+                                        <button
+                                            className={styles.compareButtonActive}
+                                            onClick={handleCompareNavigate}
+                                        >
+                                            Compare ({compareProducts.length})
+                                        </button>
+                                    </>
+                                ) : (
+                                    <button className={styles.compareButton} disabled>
+                                        Compare
+                                    </button>
+                                )}
                             </div>
                         </div>
 
@@ -489,6 +530,8 @@ const AddComponentModal = ({ isOpen, onClose, onSelect, componentType }) => {
                                         key={component.id}
                                         component={component}
                                         onSelect={handleComponentSelect}
+                                        onCompareToggle={handleCompareToggle}
+                                        isComparing={compareProducts.some(item => item.id === component.id)}
                                     />
                                 ))
                             )}
