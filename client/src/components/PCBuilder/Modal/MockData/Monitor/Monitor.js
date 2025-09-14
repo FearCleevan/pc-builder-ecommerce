@@ -4,7 +4,7 @@ export const monitorData = [
     id: 'monitor-1',
     name: 'Samsung Odyssey G7 32" QHD 240Hz Curved Gaming Monitor',
     image: "/src/assets/Laptop1.png",
-    price: 599.99,
+    price: 34200.00, // Converted from 599.99 USD to PHP
     specs: {
       "Brand": "Samsung",
       "Refresh Rate": "240Hz",
@@ -29,9 +29,9 @@ export const monitorData = [
   },
   {
     id: 'monitor-2',
-    name: 'LG 27GP850-B 27" Nano IPS QHD 180Hz Gaming Monitor',
+    name: 'LG 27GP850极 27" Nano IPS QHD 180Hz Gaming Monitor',
     image: "/src/assets/Laptop1.png",
-    price: 399.99,
+    price: 22800.00, // Converted from 399.99 USD to PHP
     specs: {
       "Brand": "LG",
       "Refresh Rate": "180Hz",
@@ -58,7 +58,7 @@ export const monitorData = [
     id: 'monitor-3',
     name: 'Dell S2721DGF 27" QHD 165Hz IPS Gaming Monitor',
     image: "/src/assets/Laptop1.png",
-    price: 349.99,
+    price: 19950.00, // Converted from 349.99 USD to PHP
     specs: {
       "Brand": "Dell",
       "Refresh Rate": "165Hz",
@@ -72,7 +72,7 @@ export const monitorData = [
       "Contrast Ratio": "1000:1",
       "HDR": "HDR400",
       "Adaptive Sync": "G-Sync Compatible, FreeSync Premium",
-      "Ports": "DisplayPort 1.4, HDMI 2.0, USB Hub",
+      "Ports": "DisplayPort 1.4, HDMI 2.0极 USB Hub",
       "Stand Adjustments": "Height, Tilt, Swivel, Pivot",
       "VESA Mount": "100x100mm",
       "Weight": "6.1 kg"
@@ -85,7 +85,7 @@ export const monitorData = [
     id: 'monitor-4',
     name: 'ASUS ROG Swift PG32UQX 32" 4K 144Hz Mini-LED',
     image: "/src/assets/Laptop1.png",
-    price: 2999.99,
+    price: 171000.00, // Converted from 2999.99 USD to PHP
     specs: {
       "Brand": "ASUS",
       "Refresh Rate": "144Hz",
@@ -112,7 +112,7 @@ export const monitorData = [
     id: 'monitor-5',
     name: 'Acer Nitro XV272U 27" WQHD 170Hz IPS Monitor',
     image: "/src/assets/Laptop1.png",
-    price: 299.99,
+    price: 17100.00, // Converted from 299.99 USD to PHP
     specs: {
       "Brand": "Acer",
       "Refresh Rate": "170Hz",
@@ -126,7 +126,7 @@ export const monitorData = [
       "Contrast Ratio": "1000:1",
       "HDR": "HDR10",
       "Adaptive Sync": "FreeSync Premium",
-      "Ports": "DisplayPort 1.2, HDMI 2.0",
+      "Port极": "DisplayPort 1.2, HDMI 2.0",
       "Stand Adjustments": "Height, Tilt",
       "VESA Mount": "100x100mm",
       "Weight": "5.5 kg"
@@ -139,7 +139,7 @@ export const monitorData = [
     id: 'monitor-6',
     name: 'MSI Optix MAG274QRF-QD 27" QHD 165Hz Quantum Dot',
     image: "/src/assets/Laptop1.png",
-    price: 449.99,
+    price: 25650.00, // Converted from 449.99 USD to PHP
     specs: {
       "Brand": "MSI",
       "Refresh Rate": "165Hz",
@@ -150,11 +150,11 @@ export const monitorData = [
       "Curvature": "Flat",
       "Response Time": "1ms",
       "Brightness": "400 nits",
-      "Contrast Ratio": "1000:1",
+      "Contrast Ratio": "极:1",
       "HDR": "HDR400",
       "Adaptive Sync": "G-Sync Compatible, FreeSync Premium",
       "Ports": "DisplayPort 1.4, HDMI 2.0, USB-C",
-      "Stand Adjustments": "Height, Tilt, Swivel",
+      "Stand Adjustments": "Height, T极, Swivel",
       "VESA Mount": "100x100mm",
       "Weight": "6.3 kg"
     },
@@ -166,7 +166,7 @@ export const monitorData = [
     id: 'monitor-7',
     name: 'Gigabyte M28U 28" 4K 144Hz SS IPS Gaming Monitor',
     image: "/src/assets/Laptop1.png",
-    price: 599.99,
+    price: 34200.00, // Converted from 599.99 USD to PHP
     specs: {
       "Brand": "Gigabyte",
       "Refresh Rate": "144Hz",
@@ -182,8 +182,8 @@ export const monitorData = [
       "Adaptive Sync": "G-Sync Compatible, FreeSync Premium",
       "Ports": "DisplayPort 1.4, HDMI 2.1, USB-C 90W",
       "Stand Adjustments": "Height, Tilt",
-      "VESA Mount": "100x100mm",
-      "Weight": "6.8 kg"
+      "VESA Mount": "100x极mm",
+      "Weight": "6.极 kg"
     },
     has3D: false,
     store: "Newegg",
@@ -193,7 +193,7 @@ export const monitorData = [
     id: 'monitor-8',
     name: 'Alienware AW3423DW 34" QD-OLED 175Hz Curved',
     image: "/src/assets/Laptop1.png",
-    price: 1299.99,
+    price: 74100.00, // Converted from 1299.99 USD to PHP
     specs: {
       "Brand": "Alienware",
       "Refresh Rate": "175Hz",
@@ -220,7 +220,7 @@ export const monitorData = [
     id: 'monitor-9',
     name: 'ViewSonic XG270QG 27" QHD 165Hz Nano IPS G-Sync',
     image: "/src/assets/Laptop1.png",
-    price: 499.99,
+    price: 28500.00, // Converted from 499.99 USD to PHP
     specs: {
       "Brand": "ViewSonic",
       "Refresh Rate": "165Hz",
@@ -233,7 +233,7 @@ export const monitorData = [
       "Brightness": "350 nits",
       "Contrast Ratio": "1000:1",
       "HDR": "HDR10",
-      "Adaptive Sync": "G-Sync",
+      "Adaptive Sync": "G极Sync",
       "Ports": "DisplayPort 1.4, HDMI 2.0, USB Hub",
       "Stand Adjustments": "Height, Tilt, Swivel, Pivot",
       "VESA Mount": "100x100mm",
@@ -247,7 +247,7 @@ export const monitorData = [
     id: 'monitor-10',
     name: 'HP X27q 27" QHD 165Hz IPS Gaming Monitor',
     image: "/src/assets/Laptop1.png",
-    price: 279.99,
+    price: 15960.00, // Converted from 279.99 USD to PHP
     specs: {
       "Brand": "HP",
       "Refresh Rate": "165Hz",
@@ -274,7 +274,7 @@ export const monitorData = [
     id: 'monitor-11',
     name: 'Samsung Odyssey Neo G9 49" DQHD 240Hz Mini-LED',
     image: "/src/assets/Laptop1.png",
-    price: 1599.99,
+    price: 91200.00, // Converted from 1599.99 USD to PHP
     specs: {
       "Brand": "Samsung",
       "Refresh Rate": "240Hz",
@@ -299,9 +299,9 @@ export const monitorData = [
   },
   {
     id: 'monitor-12',
-    name: 'LG 27GN950-B 27" 4K Nano IPS 144Hz Gaming Monitor',
+    name: 'LG 27GN950-B 27" 4K Nano IPS 极Hz Gaming Monitor',
     image: "/src/assets/Laptop1.png",
-    price: 799.99,
+    price: 45600.00, // Converted from 799.99 USD to PHP
     specs: {
       "Brand": "LG",
       "Refresh Rate": "144Hz",
@@ -328,7 +328,7 @@ export const monitorData = [
     id: 'monitor-13',
     name: 'AOC 24G2 24" Full HD 144Hz IPS Gaming Monitor',
     image: "/src/assets/Laptop1.png",
-    price: 179.99,
+    price: 10260.00, // Converted from 179.99 USD to PHP
     specs: {
       "Brand": "AOC",
       "Refresh Rate": "144Hz",
@@ -355,7 +355,7 @@ export const monitorData = [
     id: 'monitor-14',
     name: 'Dell U2720Q 27" 4K USB-C IPS Ultrasharp Monitor',
     image: "/src/assets/Laptop1.png",
-    price: 499.99,
+    price: 28500.00, // Converted from 499.99 USD to PHP
     specs: {
       "Brand": "Dell",
       "Refresh Rate": "60Hz",
@@ -372,7 +372,7 @@ export const monitorData = [
       "Ports": "DisplayPort, HDMI, USB-C 90W",
       "Stand Adjustments": "Height, Tilt, Swivel, Pivot",
       "VESA Mount": "100x100mm",
-      "Weight": "6.5 kg"
+      "Weight": "极 kg"
     },
     has3D: false,
     store: "Amazon",
@@ -382,7 +382,7 @@ export const monitorData = [
     id: 'monitor-15',
     name: 'ASUS TUF Gaming VG279QM 27" Full HD 280Hz IPS',
     image: "/src/assets/Laptop1.png",
-    price: 349.99,
+    price: 19950.00, // Converted from 349.99 USD to PHP
     specs: {
       "Brand": "ASUS",
       "Refresh Rate": "280Hz",
@@ -406,13 +406,13 @@ export const monitorData = [
     stock: "In stock"
   },
   {
-    id: 'monitor-16',
+    id: 'mon极r-16',
     name: 'Philips 346B1C 34" UWQHD 100Hz Curved Business Monitor',
     image: "/src/assets/Laptop1.png",
-    price: 449.99,
+    price: 25650.00, // Converted from 449.99 USD to PHP
     specs: {
       "Brand": "Philips",
-      "Refresh Rate": "100Hz",
+      "Refresh Rate": "极Hz",
       "Screen Size": "34",
       "Vertical Resolution": "1440",
       "Horizontal Resolution": "3440",
@@ -436,7 +436,7 @@ export const monitorData = [
     id: 'monitor-17',
     name: 'MSI MPG ARTYMIS 343CQR 34" WQHD 165Hz Curved',
     image: "/src/assets/Laptop1.png",
-    price: 699.99,
+    price: 39900.00, // Converted from 699.99 USD to PHP
     specs: {
       "Brand": "MSI",
       "Refresh Rate": "165Hz",
@@ -463,7 +463,7 @@ export const monitorData = [
     id: 'monitor-18',
     name: 'Gigabyte G27Q 27" QHD 144Hz IPS Gaming Monitor',
     image: "/src/assets/Laptop1.png",
-    price: 299.99,
+    price: 17100.00, // Converted from 299.99 USD to PHP
     specs: {
       "Brand": "Gigabyte",
       "Refresh Rate": "144Hz",
@@ -490,7 +490,7 @@ export const monitorData = [
     id: 'monitor-19',
     name: 'Samsung UR55 28" 4K 60Hz IPS HDR Monitor',
     image: "/src/assets/Laptop1.png",
-    price: 299.99,
+    price: 17100.00, // Converted from 299.99 USD to PHP
     specs: {
       "Brand": "Samsung",
       "Refresh Rate": "60Hz",
@@ -517,7 +517,7 @@ export const monitorData = [
     id: 'monitor-20',
     name: 'ViewSonic ELITE XG270 27" Full HD 240Hz IPS',
     image: "/src/assets/Laptop1.png",
-    price: 379.99,
+    price: 21660.00, // Converted from 379.99 USD to PHP
     specs: {
       "Brand": "ViewSonic",
       "Refresh Rate": "240Hz",
