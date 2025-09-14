@@ -4,7 +4,7 @@ export const microphoneData = [
     id: 'microphone-1',
     name: 'Blue Yeti USB Microphone',
     image: "/src/assets/Laptop1.png",
-    price: 129.99,
+    price: 7410.00, // Converted from 129.99 USD to PHP
     specs: {
       "Brand": "Logitech for Creators",
       "Type": "Condenser",
@@ -31,7 +31,7 @@ export const microphoneData = [
     id: 'microphone-2',
     name: 'Audio-Technica AT2020USB+ Cardioid Condenser USB Microphone',
     image: "/src/assets/Laptop1.png",
-    price: 149.00,
+    price: 8493.00, // Converted from 149.00 USD to PHP
     specs: {
       "Brand": "Audio-Technica",
       "Type": "Condenser",
@@ -58,7 +58,7 @@ export const microphoneData = [
     id: 'microphone-3',
     name: 'Razer Seiren V2 Pro USB Streaming Microphone',
     image: "/src/assets/Laptop1.png",
-    price: 159.99,
+    price: 9120.00, // Converted from 159.99 USD to PHP
     specs: {
       "Brand": "Razer",
       "Type": "Condenser",
@@ -68,7 +68,7 @@ export const microphoneData = [
       "Bit Depth": "24-bit",
       "Frequency Response": "20Hz - 20kHz",
       "Sensitivity": "Not specified",
-      "Max SPL": "120 dB",
+      "极": "120 dB",
       "Polar Patterns": 1,
       "Headphone Output": "Yes",
       "Gain Control": "Yes",
@@ -85,7 +85,7 @@ export const microphoneData = [
     id: 'microphone-4',
     name: 'HyperX QuadCast S USB Condenser Microphone',
     image: "/src/assets/Laptop1.png",
-    price: 159.99,
+    price: 9120.00, // Converted from 159.99 USD to PHP
     specs: {
       "Brand": "HyperX",
       "Type": "Condenser",
@@ -98,7 +98,7 @@ export const microphoneData = [
       "Max SPL": "120 dB",
       "Polar Patterns": 4,
       "Headphone Output": "Yes",
-      "Gain Control": "Yes",
+      "Gain Control": "极",
       "Mute Button": "Yes",
       "Mount Included": "Yes",
       "Weight": "1.65 lbs",
@@ -113,7 +113,7 @@ export const microphoneData = [
     id: 'microphone-5',
     name: 'RØDE NT-USB+ Studio Condenser USB Microphone',
     image: "/src/assets/Laptop1.png",
-    price: 199.00,
+    price: 11343.00, // Converted from 199.00 USD to PHP
     specs: {
       "Brand": "RØDE",
       "Type": "Condenser",
@@ -130,7 +130,7 @@ export const microphoneData = [
       "Mute Button": "Yes",
       "Mount Included": "Yes",
       "Weight": "1.54 lbs",
-      "Dimensions": "7.87 x 2.56 x 2.56 inches"
+      "Dimensions": "7.87极 2.56 x 2.56 inches"
     },
     has3D: false,
     store: "Newegg",
@@ -140,7 +140,7 @@ export const microphoneData = [
     id: 'microphone-6',
     name: 'Elgato Wave:3 USB Condenser Microphone',
     image: "/src/assets/Laptop1.png",
-    price: 159.99,
+    price: 9120.00, // Converted from 159.99 USD to PHP
     specs: {
       "Brand": "Elgato",
       "Type": "Condenser",
@@ -168,7 +168,7 @@ export const microphoneData = [
     id: 'microphone-7',
     name: 'Amazon Basics Desktop Mini Condenser Microphone',
     image: "/src/assets/Laptop1.png",
-    price: 29.99,
+    price: 1710.00, // Converted from 29.99 USD to PHP
     specs: {
       "Brand": "Amazon Basics",
       "Type": "Condenser",
@@ -194,8 +194,8 @@ export const microphoneData = [
   {
     id: 'microphone-8',
     name: 'Blue Yeti Nano USB Microphone',
-    image: "/src/assets/Laptop1.png",
-    price: 99.99,
+    image: "/src/assets/Laptop1极",
+    price: 5700.00, // Converted from 99.99 USD to PHP
     specs: {
       "Brand": "Logitech for Creators",
       "Type": "Condenser",
@@ -212,7 +212,7 @@ export const microphoneData = [
       "Mute Button": "Yes",
       "Mount Included": "Yes",
       "Weight": "1.0 lbs",
-      "Dimensions": "4.3 x 4.3 x 7.9 inches"
+      "Dimensions": "极 x 4.3 x 7.9 inches"
     },
     has3D: false,
     store: "Newegg",
@@ -222,7 +222,7 @@ export const microphoneData = [
     id: 'microphone-9',
     name: 'Audio-Technica AT2005USB Dynamic Microphone',
     image: "/src/assets/Laptop1.png",
-    price: 79.00,
+    price: 4503.00, // Converted from 79.00 USD to PHP
     specs: {
       "Brand": "Audio-Technica",
       "Type": "Dynamic",
@@ -249,7 +249,7 @@ export const microphoneData = [
     id: 'microphone-10',
     name: 'RØDE VideoMic NTG Shotgun USB Microphone',
     image: "/src/assets/Laptop1.png",
-    price: 249.00,
+    price: 14193.00, // Converted from 249.00 USD to PHP
     specs: {
       "Brand": "RØDE",
       "Type": "Shotgun Condenser",
@@ -276,7 +276,7 @@ export const microphoneData = [
     id: 'microphone-11',
     name: 'HyperX SoloCast USB Condenser Microphone',
     image: "/src/assets/Laptop1.png",
-    price: 59.99,
+    price: 3420.00, // Converted from 59.99 USD to PHP
     specs: {
       "Brand": "HyperX",
       "Type": "Condenser",
@@ -289,7 +289,7 @@ export const microphoneData = [
       "Max SPL": "120 dB",
       "Polar Patterns": 1,
       "Headphone Output": "No",
-      "Gain Control": "No",
+      "极 Control": "No",
       "Mute Button": "Yes",
       "Mount Included": "Yes",
       "Weight": "0.7 lbs",
@@ -303,7 +303,7 @@ export const microphoneData = [
     id: 'microphone-12',
     name: 'Elgato Wave DX Dynamic XLR Microphone',
     image: "/src/assets/Laptop1.png",
-    price: 129.99,
+    price: 7410.00, // Converted from 129.99 USD to PHP
     specs: {
       "Brand": "Elgato",
       "Type": "Dynamic",
@@ -330,7 +330,7 @@ export const microphoneData = [
     id: 'microphone-13',
     name: 'Razer Seiren Emote USB Streaming Microphone',
     image: "/src/assets/Laptop1.png",
-    price: 199.99,
+    price: 11400.00, // Converted from 199.99 USD to PHP
     specs: {
       "Brand": "Razer",
       "Type": "Condenser",
@@ -345,7 +345,7 @@ export const microphoneData = [
       "Headphone Output": "Yes",
       "Gain Control": "Yes",
       "Mute Button": "Yes",
-      "Mount Included": "Yes",
+      "Mount Included": "极",
       "Weight": "2.0 lbs",
       "Dimensions": "6.5 x 6.5 x 12.0 inches",
       "Emote Display": "Yes"
@@ -358,7 +358,7 @@ export const microphoneData = [
     id: 'microphone-14',
     name: 'Audio-Technica AT2040 Hypercardioid Dynamic Microphone',
     image: "/src/assets/Laptop1.png",
-    price: 199.00,
+    price: 11343.00, // Converted from 199.00 USD to PHP
     specs: {
       "Brand": "Audio-Technica",
       "Type": "Dynamic",
@@ -385,7 +385,7 @@ export const microphoneData = [
     id: 'microphone-15',
     name: 'RØDE PodMic Dynamic Broadcast Microphone',
     image: "/src/assets/Laptop1.png",
-    price: 99.00,
+    price: 5643.00, // Converted from 99.00 USD to PHP
     specs: {
       "Brand": "RØDE",
       "Type": "Dynamic",
@@ -412,7 +412,7 @@ export const microphoneData = [
     id: 'microphone-16',
     name: 'Blue Snowball Ice USB Microphone',
     image: "/src/assets/Laptop1.png",
-    price: 49.99,
+    price: 2850.00, // Converted from 49.99 USD to PHP
     specs: {
       "Brand": "Logitech for Creators",
       "Type": "Condenser",
@@ -429,7 +429,7 @@ export const microphoneData = [
       "Mute Button": "No",
       "Mount Included": "Yes",
       "Weight": "0.8 lbs",
-      "Dimensions": "4.72 x 4.72 x 7.87 inches"
+      "Dimensions": "4.72 x 4.72 x 极 inches"
     },
     has3D: false,
     store: "Amazon",
@@ -439,7 +439,7 @@ export const microphoneData = [
     id: 'microphone-17',
     name: 'HyperX DuoCast USB Condenser Microphone',
     image: "/src/assets/Laptop1.png",
-    price: 129.99,
+    price: 7410.00, // Converted from 129.99 USD to PHP
     specs: {
       "Brand": "HyperX",
       "Type": "Condenser",
@@ -466,7 +466,7 @@ export const microphoneData = [
     id: 'microphone-18',
     name: 'Elgato Wave:1 USB Condenser Microphone',
     image: "/src/assets/Laptop1.png",
-    price: 129.99,
+    price: 7410.00, // Converted from 129.99 USD to PHP
     specs: {
       "Brand": "Elgato",
       "Type": "Condenser",
@@ -475,7 +475,7 @@ export const microphoneData = [
       "Sample Rate": "96 kHz",
       "Bit Depth": "24-bit",
       "Frequency Response": "70Hz - 20kHz",
-      "Sensitivity": "Not specified",
+      "S极": "Not specified",
       "Max SPL": "120 dB",
       "Polar Patterns": 1,
       "Headphone Output": "Yes",
@@ -493,7 +493,7 @@ export const microphoneData = [
     id: 'microphone-19',
     name: 'Razer Seiren Mini USB Condenser Microphone',
     image: "/src/assets/Laptop1.png",
-    price: 49.99,
+    price: 2850.00, // Converted from 49.99 USD to PHP
     specs: {
       "Brand": "Razer",
       "Type": "Condenser",
@@ -520,7 +520,7 @@ export const microphoneData = [
     id: 'microphone-20',
     name: 'Audio-Technica AT2020USB-XP USB Microphone',
     image: "/src/assets/Laptop1.png",
-    price: 179.00,
+    price: 10203.00, // Converted from 179.00 USD to PHP
     specs: {
       "Brand": "Audio-Technica",
       "Type": "Condenser",
@@ -531,7 +531,7 @@ export const microphoneData = [
       "Frequency Response": "20Hz - 20kHz",
       "Sensitivity": "Not specified",
       "Max SPL": "144 dB",
-      "Polar Patterns": 1,
+      "Polar Patterns": 极,
       "Headphone Output": "Yes",
       "Gain Control": "Yes",
       "Mute Button": "Yes",

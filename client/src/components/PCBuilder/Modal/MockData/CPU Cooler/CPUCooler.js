@@ -4,7 +4,7 @@ export const cpuCoolerData = [
     id: 'cooler-1',
     name: 'NZXT Kraken X73 RGB 360mm AIO Liquid Cooler',
     image: "/src/assets/Laptop1.png",
-    price: 179.99,
+    price: 10260.00, // Converted from 179.99 USD to PHP
     specs: {
       "Manufacturer": "NZXT",
       "Color": "BLACK",
@@ -30,7 +30,7 @@ export const cpuCoolerData = [
     id: 'cooler-2',
     name: 'Noctua NH-D15 Chromax Black Dual-Tower Cooler',
     image: "/src/assets/Laptop1.png",
-    price: 109.95,
+    price: 6267.15, // Converted from 109.95 USD to PHP
     specs: {
       "Manufacturer": "Noctua",
       "Color": "BLACK",
@@ -56,7 +56,7 @@ export const cpuCoolerData = [
     id: 'cooler-3',
     name: 'Corsair iCUE H150i ELITE CAPELLIX XT 360mm',
     image: "/src/assets/Laptop1.png",
-    price: 199.99,
+    price: 11400.00, // Converted from 199.99 USD to PHP
     specs: {
       "Manufacturer": "Corsair",
       "Color": "WHITE",
@@ -82,7 +82,7 @@ export const cpuCoolerData = [
     id: 'cooler-4',
     name: 'be quiet! Dark Rock Pro 4 Air Cooler',
     image: "/src/assets/Laptop1.png",
-    price: 89.90,
+    price: 5124.30, // Converted from 89.90 USD to PHP
     specs: {
       "Manufacturer": "be quiet!",
       "Color": "BLACK",
@@ -108,7 +108,7 @@ export const cpuCoolerData = [
     id: 'cooler-5',
     name: 'ARCTIC Liquid Freezer II 280mm AIO',
     image: "/src/assets/Laptop1.png",
-    price: 109.99,
+    price: 6269.43, // Converted from 109.99 USD to PHP
     specs: {
       "Manufacturer": "ARCTIC",
       "Color": "BLACK",
@@ -134,7 +134,7 @@ export const cpuCoolerData = [
     id: 'cooler-6',
     name: 'Cooler Master Hyper 212 RGB Black Edition',
     image: "/src/assets/Laptop1.png",
-    price: 44.99,
+    price: 2564.43, // Converted from 44.99 USD to PHP
     specs: {
       "Manufacturer": "Cooler Master",
       "Color": "BLACK",
@@ -160,7 +160,7 @@ export const cpuCoolerData = [
     id: 'cooler-7',
     name: 'Deepcool AK620 Digital Air Cooler',
     image: "/src/assets/Laptop1.png",
-    price: 79.99,
+    price: 4559.43, // Converted from 79.99 USD to PHP
     specs: {
       "Manufacturer": "Deepcool",
       "Color": "BLACK",
@@ -186,7 +186,7 @@ export const cpuCoolerData = [
     id: 'cooler-8',
     name: 'Lian Li Galahad II Trinity Performance 360mm',
     image: "/src/assets/Laptop1.png",
-    price: 189.99,
+    price: 10829.43, // Converted from 189.99 USD to PHP
     specs: {
       "Manufacturer": "Lian Li",
       "Color": "BLACK",
@@ -212,7 +212,7 @@ export const cpuCoolerData = [
     id: 'cooler-9',
     name: 'Thermalright Phantom Spirit 120 SE ARGB',
     image: "/src/assets/Laptop1.png",
-    price: 38.90,
+    price: 2217.30, // Converted from 38.90 USD to PHP
     specs: {
       "Manufacturer": "Thermalright",
       "Color": "BLACK",
@@ -238,7 +238,7 @@ export const cpuCoolerData = [
     id: 'cooler-10',
     name: 'EK-Nucleus AIO CR360 Lux D-RGB',
     image: "/src/assets/Laptop1.png",
-    price: 169.99,
+    price: 9689.43, // Converted from 169.99 USD to PHP
     specs: {
       "Manufacturer": "EK",
       "Color": "BLACK",
@@ -264,7 +264,7 @@ export const cpuCoolerData = [
     id: 'cooler-11',
     name: 'Scythe Fuma 3 Dual-Tower Air Cooler',
     image: "/src/assets/Laptop1.png",
-    price: 49.99,
+    price: 2849.43, // Converted from 49.99 USD to PHP
     specs: {
       "Manufacturer": "Scythe",
       "Color": "BLACK",
@@ -290,7 +290,7 @@ export const cpuCoolerData = [
     id: 'cooler-12',
     name: 'Phanteks Glacier One 280mm AIO',
     image: "/src/assets/Laptop1.png",
-    price: 139.99,
+    price: 7979.43, // Converted from 139.99 USD to PHP
     specs: {
       "Manufacturer": "Phanteks",
       "Color": "WHITE",
@@ -316,7 +316,7 @@ export const cpuCoolerData = [
     id: 'cooler-13',
     name: 'Vetroo V5 Air Cooler with RGB',
     image: "/src/assets/Laptop1.png",
-    price: 34.99,
+    price: 1994.43, // Converted from 34.99 USD to PHP
     specs: {
       "Manufacturer": "Vetroo",
       "Color": "BLACK",
@@ -342,7 +342,7 @@ export const cpuCoolerData = [
     id: 'cooler-14',
     name: 'Fractal Design Lumen S28 RGB 280mm AIO',
     image: "/src/assets/Laptop1.png",
-    price: 149.99,
+    price: 8549.43, // Converted from 149.99 USD to PHP
     specs: {
       "Manufacturer": "Fractal Design",
       "Color": "BLACK",
@@ -368,7 +368,7 @@ export const cpuCoolerData = [
     id: 'cooler-15',
     name: 'ID-COOLING SE-214-XT ARGB Air Cooler',
     image: "/src/assets/Laptop1.png",
-    price: 19.99,
+    price: 1139.43, // Converted from 19.99 USD to PHP
     specs: {
       "Manufacturer": "ID-COOLING",
       "Color": "BLACK",
@@ -394,7 +394,7 @@ export const cpuCoolerData = [
     id: 'cooler-16',
     name: 'MSI MAG CORELIQUID E360 AIO',
     image: "/src/assets/Laptop1.png",
-    price: 169.99,
+    price: 9689.43, // Converted from 169.99 USD to PHP
     specs: {
       "Manufacturer": "MSI",
       "Color": "BLACK",
@@ -420,7 +420,7 @@ export const cpuCoolerData = [
     id: 'cooler-17',
     name: 'Zalman CNPS20X Air Cooler',
     image: "/src/assets/Laptop1.png",
-    price: 59.99,
+    price: 3419.43, // Converted from 59.99 USD to PHP
     specs: {
       "Manufacturer": "Zalman",
       "Color": "BLACK",
@@ -446,7 +446,7 @@ export const cpuCoolerData = [
     id: 'cooler-18',
     name: 'Enermax LIQMAXFLO 360mm AIO',
     image: "/src/assets/Laptop1.png",
-    price: 129.99,
+    price: 7409.43, // Converted from 129.99 USD to PHP
     specs: {
       "Manufacturer": "Enermax",
       "Color": "BLACK",
@@ -472,7 +472,7 @@ export const cpuCoolerData = [
     id: 'cooler-19',
     name: 'Thermaltake TH280 ARGB Sync AIO',
     image: "/src/assets/Laptop1.png",
-    price: 119.99,
+    price: 6839.43, // Converted from 119.99 USD to PHP
     specs: {
       "Manufacturer": "Thermaltake",
       "Color": "BLACK",
@@ -498,7 +498,7 @@ export const cpuCoolerData = [
     id: 'cooler-20',
     name: 'NoFan CS-80 Fanless Cooler',
     image: "/src/assets/Laptop1.png",
-    price: 149.99,
+    price: 8549.43, // Converted from 149.99 USD to PHP
     specs: {
       "Manufacturer": "NoFan",
       "Color": "BLACK",

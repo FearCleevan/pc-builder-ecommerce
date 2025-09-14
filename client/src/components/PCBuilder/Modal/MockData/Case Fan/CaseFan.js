@@ -4,7 +4,7 @@ export const caseFanData = [
     id: 'fan-1',
     name: 'Noctua NF-A12x25 PWM Premium Quiet Fan',
     image: "/src/assets/Laptop1.png",
-    price: 29.99,
+    price: 1710.43, // Converted from 29.99 USD to PHP
     specs: {
       "Brand": "Noctua",
       "Size": "120mm",
@@ -27,7 +27,7 @@ export const caseFanData = [
     id: 'fan-2',
     name: 'Corsair LL120 RGB 120mm Dual Light Loop RGB LED PWM Fan',
     image: "/src/assets/Laptop1.png",
-    price: 39.99,
+    price: 2281.43, // Converted from 39.99 USD to PHP
     specs: {
       "Brand": "Corsair",
       "Size": "120mm",
@@ -50,7 +50,7 @@ export const caseFanData = [
     id: 'fan-3',
     name: 'ARCTIC P12 PWM PST 120mm Pressure Optimized Fan',
     image: "/src/assets/Laptop1.png",
-    price: 9.99,
+    price: 570.43, // Converted from 9.99 USD to PHP
     specs: {
       "Brand": "ARCTIC",
       "Size": "120mm",
@@ -73,7 +73,7 @@ export const caseFanData = [
     id: 'fan-4',
     name: 'be quiet! Silent Wings 3 140mm PWM High-Speed Fan',
     image: "/src/assets/Laptop1.png",
-    price: 24.90,
+    price: 1420.30, // Converted from 24.90 USD to PHP
     specs: {
       "Brand": "be quiet!",
       "Size": "140mm",
@@ -96,7 +96,7 @@ export const caseFanData = [
     id: 'fan-5',
     name: 'Lian Li UNI FAN SL120 120mm RGB PWM Fan',
     image: "/src/assets/Laptop1.png",
-    price: 29.99,
+    price: 1710.43, // Converted from 29.99 USD to PHP
     specs: {
       "Brand": "Lian Li",
       "Size": "120mm",
@@ -119,7 +119,7 @@ export const caseFanData = [
     id: 'fan-6',
     name: 'Noctua NF-A14 PWM 140mm Premium Quiet Fan',
     image: "/src/assets/Laptop1.png",
-    price: 23.90,
+    price: 1363.30, // Converted from 23.90 USD to PHP
     specs: {
       "Brand": "Noctua",
       "Size": "140mm",
@@ -142,7 +142,7 @@ export const caseFanData = [
     id: 'fan-7',
     name: 'Cooler Master SickleFlow 120 120mm ARGB Fan',
     image: "/src/assets/Laptop1.png",
-    price: 12.99,
+    price: 741.43, // Converted from 12.99 USD to PHP
     specs: {
       "Brand": "Cooler Master",
       "Size": "120mm",
@@ -165,7 +165,7 @@ export const caseFanData = [
     id: 'fan-8',
     name: 'Phanteks PH-F120T30 120mm Ultra High Performance Fan',
     image: "/src/assets/Laptop1.png",
-    price: 34.99,
+    price: 1995.43, // Converted from 34.99 USD to PHP
     specs: {
       "Brand": "Phanteks",
       "Size": "120mm",
@@ -188,7 +188,7 @@ export const caseFanData = [
     id: 'fan-9',
     name: 'ARCTIC F12 PWM PST 120mm Value Pack (5 Fans)',
     image: "/src/assets/Laptop1.png",
-    price: 29.99,
+    price: 1710.43, // Converted from 29.99 USD to PHP
     specs: {
       "Brand": "ARCTIC",
       "Size": "120mm",
@@ -211,7 +211,7 @@ export const caseFanData = [
     id: 'fan-10',
     name: 'be quiet! Light Wings 120mm PWM High-Speed RGB Fan',
     image: "/src/assets/Laptop1.png",
-    price: 26.90,
+    price: 1534.30, // Converted from 26.90 USD to PHP
     specs: {
       "Brand": "be quiet!",
       "Size": "120mm",
@@ -234,7 +234,7 @@ export const caseFanData = [
     id: 'fan-11',
     name: 'Noctua NF-F12 iPPC-3000 PWM 120mm Industrial Fan',
     image: "/src/assets/Laptop1.png",
-    price: 29.90,
+    price: 1705.30, // Converted from 29.90 USD to PHP
     specs: {
       "Brand": "Noctua",
       "Size": "120mm",
@@ -257,7 +257,7 @@ export const caseFanData = [
     id: 'fan-12',
     name: 'Corsair QL120 RGB 120mm PWM Fan',
     image: "/src/assets/Laptop1.png",
-    price: 44.99,
+    price: 2565.43, // Converted from 44.99 USD to PHP
     specs: {
       "Brand": "Corsair",
       "Size": "120mm",
@@ -280,7 +280,7 @@ export const caseFanData = [
     id: 'fan-13',
     name: 'Thermalright TL-C12 120mm PWM Fan',
     image: "/src/assets/Laptop1.png",
-    price: 8.99,
+    price: 513.43, // Converted from 8.99 USD to PHP
     specs: {
       "Brand": "Thermalright",
       "Size": "120mm",
@@ -303,7 +303,7 @@ export const caseFanData = [
     id: 'fan-14',
     name: 'Fractal Design Dynamic X2 GP-12 120mm PWM Fan',
     image: "/src/assets/Laptop1.png",
-    price: 14.99,
+    price: 855.43, // Converted from 14.99 USD to PHP
     specs: {
       "Brand": "Fractal Design",
       "Size": "120mm",
@@ -326,7 +326,7 @@ export const caseFanData = [
     id: 'fan-15',
     name: 'EK-Vardar EVO 120ER 120mm PWM D-RGB Fan',
     image: "/src/assets/Laptop1.png",
-    price: 22.99,
+    price: 1311.43, // Converted from 22.99 USD to PHP
     specs: {
       "Brand": "EK",
       "Size": "120mm",
@@ -349,7 +349,7 @@ export const caseFanData = [
     id: 'fan-16',
     name: 'Scythe Kaze Flex 120mm PWM Fan',
     image: "/src/assets/Laptop1.png",
-    price: 13.99,
+    price: 798.43, // Converted from 13.99 USD to PHP
     specs: {
       "Brand": "Scythe",
       "Size": "120mm",
@@ -372,7 +372,7 @@ export const caseFanData = [
     id: 'fan-17',
     name: 'upHere 120mm RGB PWM Case Fan 3-Pack',
     image: "/src/assets/Laptop1.png",
-    price: 29.99,
+    price: 1710.43, // Converted from 29.99 USD to PHP
     specs: {
       "Brand": "upHere",
       "Size": "120mm",
@@ -395,7 +395,7 @@ export const caseFanData = [
     id: 'fan-18',
     name: 'NoiseBlocker NB-eLoop B12-PS 120mm PWM Fan',
     image: "/src/assets/Laptop1.png",
-    price: 27.90,
+    price: 1591.30, // Converted from 27.90 USD to PHP
     specs: {
       "Brand": "NoiseBlocker",
       "Size": "120mm",
@@ -418,7 +418,7 @@ export const caseFanData = [
     id: 'fan-19',
     name: 'SilverStone Air Slimmer 120 120mm Slim PWM Fan',
     image: "/src/assets/Laptop1.png",
-    price: 19.99,
+    price: 1140.43, // Converted from 19.99 USD to PHP
     specs: {
       "Brand": "SilverStone",
       "Size": "120mm",
@@ -441,7 +441,7 @@ export const caseFanData = [
     id: 'fan-20',
     name: 'Gelid Solutions Silent 9 92mm PWM Fan',
     image: "/src/assets/Laptop1.png",
-    price: 9.99,
+    price: 570.43, // Converted from 9.99 USD to PHP
     specs: {
       "Brand": "Gelid Solutions",
       "Size": "92mm",

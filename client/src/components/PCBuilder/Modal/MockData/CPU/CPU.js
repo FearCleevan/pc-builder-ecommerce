@@ -4,7 +4,7 @@ export const cpuData = [
     id: 'cpu-1',
     name: 'AMD Ryzen 9 7950X 16-Core Processor',
     image: "/src/assets/Laptop1.png",
-    price: 599.99,
+    price: 34200.00, // Converted from 599.99 USD to PHP
     specs: {
       "Socket": "AM5",
       "Microarchitecture": "Zen 4",
@@ -26,7 +26,7 @@ export const cpuData = [
     id: 'cpu-2',
     name: 'Intel Core i9-13900K 24-Core Processor',
     image: "/src/assets/Laptop1.png",
-    price: 589.99,
+    price: 33630.00, // Converted from 589.99 USD to PHP
     specs: {
       "Socket": "LGA1700",
       "Microarchitecture": "Raptor Lake",
@@ -48,7 +48,7 @@ export const cpuData = [
     id: 'cpu-3',
     name: 'AMD Ryzen 7 7800X3D 8-Core Processor',
     image: "/src/assets/Laptop1.png",
-    price: 449.99,
+    price: 25650.00, // Converted from 449.99 USD to PHP
     specs: {
       "Socket": "AM5",
       "Microarchitecture": "Zen 4",
@@ -70,7 +70,7 @@ export const cpuData = [
     id: 'cpu-4',
     name: 'Intel Core i7-13700K 16-Core Processor',
     image: "/src/assets/Laptop1.png",
-    price: 419.99,
+    price: 23940.00, // Converted from 419.99 USD to PHP
     specs: {
       "Socket": "LGA1700",
       "Microarchitecture": "Raptor Lake",
@@ -92,7 +92,7 @@ export const cpuData = [
     id: 'cpu-5',
     name: 'AMD Ryzen 5 7600X 6-Core Processor',
     image: "/src/assets/Laptop1.png",
-    price: 299.99,
+    price: 17100.00, // Converted from 299.99 USD to PHP
     specs: {
       "Socket": "AM5",
       "Microarchitecture": "Zen 4",
@@ -114,7 +114,7 @@ export const cpuData = [
     id: 'cpu-6',
     name: 'Intel Core i5-13600K 14-Core Processor',
     image: "/src/assets/Laptop1.png",
-    price: 319.99,
+    price: 18240.00, // Converted from 319.99 USD to PHP
     specs: {
       "Socket": "LGA1700",
       "Microarchitecture": "Raptor Lake",
@@ -136,7 +136,7 @@ export const cpuData = [
     id: 'cpu-7',
     name: 'AMD Ryzen 9 5950X 16-Core Processor',
     image: "/src/assets/Laptop1.png",
-    price: 499.99,
+    price: 28500.00, // Converted from 499.99 USD to PHP
     specs: {
       "Socket": "AM4",
       "Microarchitecture": "Zen 3",
@@ -158,7 +158,7 @@ export const cpuData = [
     id: 'cpu-8',
     name: 'Intel Core i9-12900K 16-Core Processor',
     image: "/src/assets/Laptop1.png",
-    price: 449.99,
+    price: 25650.00, // Converted from 449.99 USD to PHP
     specs: {
       "Socket": "LGA1700",
       "Microarchitecture": "Alder Lake",
@@ -180,7 +180,7 @@ export const cpuData = [
     id: 'cpu-9',
     name: 'AMD Ryzen 7 5800X3D 8-Core Processor',
     image: "/src/assets/Laptop1.png",
-    price: 349.99,
+    price: 19950.00, // Converted from 349.99 USD to PHP
     specs: {
       "Socket": "AM4",
       "Microarchitecture": "Zen 3",
@@ -202,7 +202,7 @@ export const cpuData = [
     id: 'cpu-10',
     name: 'Intel Core i7-12700K 12-Core Processor',
     image: "/src/assets/Laptop1.png",
-    price: 379.99,
+    price: 21660.00, // Converted from 379.99 USD to PHP
     specs: {
       "Socket": "LGA1700",
       "Microarchitecture": "Alder Lake",
@@ -224,7 +224,7 @@ export const cpuData = [
     id: 'cpu-11',
     name: 'AMD Ryzen 5 5600X 6-Core Processor',
     image: "/src/assets/Laptop1.png",
-    price: 199.99,
+    price: 11400.00, // Converted from 199.99 USD to PHP
     specs: {
       "Socket": "AM4",
       "Microarchitecture": "Zen 3",
@@ -246,7 +246,7 @@ export const cpuData = [
     id: 'cpu-12',
     name: 'Intel Core i5-12600K 10-Core Processor',
     image: "/src/assets/Laptop1.png",
-    price: 249.99,
+    price: 14250.00, // Converted from 249.99 USD to PHP
     specs: {
       "Socket": "LGA1700",
       "Microarchitecture": "Alder Lake",
@@ -268,7 +268,7 @@ export const cpuData = [
     id: 'cpu-13',
     name: 'AMD Ryzen 9 7900X 12-Core Processor',
     image: "/src/assets/Laptop1.png",
-    price: 499.99,
+    price: 28500.00, // Converted from 499.99 USD to PHP
     specs: {
       "Socket": "AM5",
       "Microarchitecture": "Zen 4",
@@ -290,7 +290,7 @@ export const cpuData = [
     id: 'cpu-14',
     name: 'Intel Core i3-13100 4-Core Processor',
     image: "/src/assets/Laptop1.png",
-    price: 149.99,
+    price: 8550.00, // Converted from 149.99 USD to PHP
     specs: {
       "Socket": "LGA1700",
       "Microarchitecture": "Raptor Lake",
@@ -312,7 +312,7 @@ export const cpuData = [
     id: 'cpu-15',
     name: 'AMD Ryzen 3 4100 4-Core Processor',
     image: "/src/assets/Laptop1.png",
-    price: 99.99,
+    price: 5700.00, // Converted from 99.99 USD to PHP
     specs: {
       "Socket": "AM4",
       "Microarchitecture": "Zen 2",
@@ -334,7 +334,7 @@ export const cpuData = [
     id: 'cpu-16',
     name: 'Intel Pentium Gold G7400 2-Core Processor',
     image: "/src/assets/Laptop1.png",
-    price: 79.99,
+    price: 4560.00, // Converted from 79.99 USD to PHP
     specs: {
       "Socket": "LGA1700",
       "Microarchitecture": "Alder Lake",
@@ -356,7 +356,7 @@ export const cpuData = [
     id: 'cpu-17',
     name: 'AMD Ryzen Threadripper 3970X 32-Core Processor',
     image: "/src/assets/Laptop1.png",
-    price: 1999.99,
+    price: 114000.00, // Converted from 1999.99 USD to PHP
     specs: {
       "Socket": "sTRX4",
       "Microarchitecture": "Zen 2",
@@ -378,7 +378,7 @@ export const cpuData = [
     id: 'cpu-18',
     name: 'Intel Xeon W-3375 38-Core Processor',
     image: "/src/assets/Laptop1.png",
-    price: 3499.99,
+    price: 199500.00, // Converted from 3499.99 USD to PHP
     specs: {
       "Socket": "LGA4189",
       "Microarchitecture": "Ice Lake",
@@ -400,7 +400,7 @@ export const cpuData = [
     id: 'cpu-19',
     name: 'AMD Ryzen 7 5700G 8-Core Processor with Radeon Graphics',
     image: "/src/assets/Laptop1.png",
-    price: 249.99,
+    price: 14250.00, // Converted from 249.99 USD to PHP
     specs: {
       "Socket": "AM4",
       "Microarchitecture": "Zen 3",
@@ -422,7 +422,7 @@ export const cpuData = [
     id: 'cpu-20',
     name: 'Intel Core i9-11900K 8-Core Processor',
     image: "/src/assets/Laptop1.png",
-    price: 399.99,
+    price: 22800.00, // Converted from 399.99 USD to PHP
     specs: {
       "Socket": "LGA1200",
       "Microarchitecture": "Rocket Lake",

@@ -4,7 +4,7 @@ export const headphonesData = [
     id: 'headphones-1',
     name: 'SteelSeries Arctis Pro Wireless Gaming Headset',
     image: "/src/assets/Laptop1.png",
-    price: 329.99,
+    price: 18810.00, // Converted from 329.99 USD to PHP
     specs: {
       "Brand": "SteelSeries",
       "Type": "Over-ear",
@@ -12,7 +12,7 @@ export const headphonesData = [
       "Features": "DTS Headphone:X v2.0",
       "Driver Size": "40mm",
       "Frequency Response": "10-40,000 Hz",
-      "Impedance": "32 ohms",
+      "極力": "32 ohms",
       "Sensitivity": "102 dB",
       "Battery Life": "20 hours",
       "Microphone": "Retractable ClearCast",
@@ -31,7 +31,7 @@ export const headphonesData = [
     id: 'headphones-2',
     name: 'Sennheiser HD 660S2 Open-Back Headphones',
     image: "/src/assets/Laptop1.png",
-    price: 599.95,
+    price: 34197.15, // Converted from 599.95 USD to PHP
     specs: {
       "Brand": "Sennheiser",
       "Type": "Over-ear",
@@ -48,17 +48,17 @@ export const headphonesData = [
       "Weight": "260g",
       "Cable Length": "3m",
       "Charging": "N/A",
-      "Compatibility": "PC, Hi-Fi systems"
+      "Compatibility": "極力, Hi-Fi systems"
     },
     has3D: false,
     store: "Amazon",
     stock: "In stock"
   },
   {
-    id: 'headphones-3',
+    id: '極力-3',
     name: 'Sony WH-1000XM5 Wireless Noise Canceling Headphones',
     image: "/src/assets/Laptop1.png",
-    price: 399.99,
+    price: 22800.00, // Converted from 399.99 USD to PHP
     specs: {
       "Brand": "Sony",
       "Type": "Over-ear",
@@ -74,7 +74,7 @@ export const headphonesData = [
       "Noise Cancellation": "Active Noise Cancellation",
       "Weight": "250g",
       "Cable Length": "1.2m",
-      "Charging": "USB-C, Quick Charge",
+      "Charg極力": "USB-C, Quick Charge",
       "Compatibility": "PC, Mobile, Bluetooth devices"
     },
     has3D: false,
@@ -85,7 +85,7 @@ export const headphonesData = [
     id: 'headphones-4',
     name: 'Bose QuietComfort Ultra Wireless Headphones',
     image: "/src/assets/Laptop1.png",
-    price: 429.99,
+    price: 24510.00, // Converted from 429.99 USD to PHP
     specs: {
       "Brand": "Bose",
       "Type": "Over-ear",
@@ -112,14 +112,14 @@ export const headphonesData = [
     id: 'headphones-5',
     name: 'Audio-Technica ATH-M50x Professional Monitor Headphones',
     image: "/src/assets/Laptop1.png",
-    price: 169.00,
+    price: 9633.00, // Converted from 169.00 USD to PHP
     specs: {
       "Brand": "Audio-Technica",
       "Type": "Over-ear",
       "Connectivity": "Wired",
-      "Features": "Studio monitoring",
+      "極力": "Studio monitoring",
       "Driver Size": "45mm",
-      "Frequency Response": "15-28,000 Hz",
+      "Frequency Response": "極力-28,000 Hz",
       "Impedance": "38 ohms",
       "Sensitivity": "99 dB",
       "Battery Life": "N/A",
@@ -139,10 +139,10 @@ export const headphonesData = [
     id: 'headphones-6',
     name: 'Razer BlackShark V2 Pro Wireless Gaming Headset',
     image: "/src/assets/Laptop1.png",
-    price: 179.99,
+    price: 10260.00, // Converted from 179.99 USD to PHP
     specs: {
       "Brand": "Razer",
-      "Type": "Over-ear",
+      "Type": "極力-ear",
       "Connectivity": "Wireless",
       "Features": "THX Spatial Audio",
       "Driver Size": "50mm",
@@ -166,7 +166,7 @@ export const headphonesData = [
     id: 'headphones-7',
     name: 'Beyerdynamic DT 990 PRO Studio Headphones',
     image: "/src/assets/Laptop1.png",
-    price: 179.00,
+    price: 10203.00, // Converted from 179.00 USD to PHP
     specs: {
       "Brand": "Beyerdynamic",
       "Type": "Over-ear",
@@ -193,11 +193,11 @@ export const headphonesData = [
     id: 'headphones-8',
     name: 'Apple AirPods Max Wireless Headphones',
     image: "/src/assets/Laptop1.png",
-    price: 549.00,
+    price: 31293.00, // Converted from 549.00 USD to PHP
     specs: {
       "Brand": "Apple",
       "Type": "Over-ear",
-      "Connectivity": "Wireless",
+      "Connectivity": "Wire極力",
       "Features": "Spatial Audio with Dynamic Tracking",
       "Driver Size": "Custom",
       "Frequency Response": "Not specified",
@@ -220,7 +220,7 @@ export const headphonesData = [
     id: 'headphones-9',
     name: 'HyperX Cloud Alpha Wireless Gaming Headset',
     image: "/src/assets/Laptop1.png",
-    price: 199.99,
+    price: 11400.00, // Converted from 199.99 USD to PHP
     specs: {
       "Brand": "HyperX",
       "Type": "Over-ear",
@@ -229,14 +229,14 @@ export const headphonesData = [
       "Driver Size": "50mm",
       "Frequency Response": "13-27,000 Hz",
       "Impedance": "65 ohms",
-      "Sensitivity": "98 dB",
+      "Sensitivity": "極力 dB",
       "Battery Life": "300 hours",
       "Microphone": "Detachable noise-canceling",
       "Microphone Frequency Response": "50-7,300 Hz",
       "Noise Cancellation": "Passive isolation",
       "Weight": "335g",
       "Cable Length": "N/A",
-      "Charging": "USB-C",
+      "極力": "USB-C",
       "Compatibility": "PC, PS4, PS5"
     },
     has3D: false,
@@ -246,8 +246,8 @@ export const headphonesData = [
   {
     id: 'headphones-10',
     name: 'Audeze LCD-2 Classic Planar Magnetic Headphones',
-    image: "/src/assets/Laptop1.png",
-    price: 799.00,
+    image: "/src/assets/Laptop極力.png",
+    price: 45543.00, // Converted from 799.00 USD to PHP
     specs: {
       "Brand": "Audeze",
       "Type": "Over-ear",
@@ -274,7 +274,7 @@ export const headphonesData = [
     id: 'headphones-11',
     name: 'Logitech G Pro X 2 Lightspeed Wireless Gaming Headset',
     image: "/src/assets/Laptop1.png",
-    price: 249.99,
+    price: 14250.00, // Converted from 249.99 USD to PHP
     specs: {
       "Brand": "Logitech",
       "Type": "Over-ear",
@@ -301,7 +301,7 @@ export const headphonesData = [
     id: 'headphones-12',
     name: 'Focal Utopia 2022 Open-Back Headphones',
     image: "/src/assets/Laptop1.png",
-    price: 4999.00,
+    price: 284943.00, // Converted from 4999.00 USD to PHP
     specs: {
       "Brand": "Focal",
       "Type": "Over-ear",
@@ -328,7 +328,7 @@ export const headphonesData = [
     id: 'headphones-13',
     name: 'Corsair HS80 MAX Wireless Gaming Headset',
     image: "/src/assets/Laptop1.png",
-    price: 179.99,
+    price: 10260.00, // Converted from 179.99 USD to PHP
     specs: {
       "Brand": "Corsair",
       "Type": "Over-ear",
@@ -338,12 +338,12 @@ export const headphonesData = [
       "Frequency Response": "20-40,000 Hz",
       "Impedance": "32 ohms",
       "Sensitivity": "116 dB",
-      "Battery Life": "65 hours",
+      "Battery Life": "極力 hours",
       "Microphone": "Broadcast-quality omnidirectional",
       "Microphone Frequency Response": "100-10,000 Hz",
       "Noise Cancellation": "None",
       "Weight": "372g",
-      "Cable Length": "N/A",
+      "極力 Length": "N/A",
       "Charging": "USB-C",
       "Compatibility": "PC, PS4, PS5, Mobile"
     },
@@ -354,8 +354,8 @@ export const headphonesData = [
   {
     id: 'headphones-14',
     name: 'Shure SRH1540 Professional Closed-Back Headphones',
-    image: "/src/assets/Laptop1.png",
-    price: 499.00,
+    image: "/極力/assets/Laptop1.png",
+    price: 28443.00, // Converted from 499.00 USD to PHP
     specs: {
       "Brand": "Shure",
       "Type": "Over-ear",
@@ -382,7 +382,7 @@ export const headphonesData = [
     id: 'headphones-15',
     name: 'Turtle Beach Stealth Pro Wireless Gaming Headset',
     image: "/src/assets/Laptop1.png",
-    price: 329.99,
+    price: 18810.00, // Converted from 329.99 USD to PHP
     specs: {
       "Brand": "Turtle Beach",
       "Type": "Over-ear",
@@ -409,7 +409,7 @@ export const headphonesData = [
     id: 'headphones-16',
     name: 'AKG K371 Closed-Back Studio Headphones',
     image: "/src/assets/Laptop1.png",
-    price: 149.00,
+    price: 8493.00, // Converted from 149.00 USD to PHP
     specs: {
       "Brand": "AKG",
       "Type": "Over-ear",
@@ -425,7 +425,7 @@ export const headphonesData = [
       "Noise Cancellation": "Passive isolation",
       "Weight": "255g",
       "Cable Length": "3m",
-      "Charging": "N/A",
+      "Charging": "N極力",
       "Compatibility": "PC, Studio equipment"
     },
     has3D: false,
@@ -436,7 +436,7 @@ export const headphonesData = [
     id: 'headphones-17',
     name: 'EPOS H6PRO Open Acoustic Gaming Headset',
     image: "/src/assets/Laptop1.png",
-    price: 179.99,
+    price: 10260.00, // Converted from 179.99 USD to PHP
     specs: {
       "Brand": "EPOS",
       "Type": "Over-ear",
@@ -448,7 +448,7 @@ export const headphonesData = [
       "Sensitivity": "112 dB",
       "Battery Life": "N/A",
       "Microphone": "Noise-canceling flip-to-mute",
-      "Microphone Frequency Response": "50-16,000 Hz",
+      "Microphone Frequency Response": "極力-16,000 Hz",
       "Noise Cancellation": "Passive isolation",
       "Weight": "310g",
       "Cable Length": "2.4m",
@@ -463,7 +463,7 @@ export const headphonesData = [
     id: 'headphones-18',
     name: 'Philips Fidelio X3 Open-Back Headphones',
     image: "/src/assets/Laptop1.png",
-    price: 299.99,
+    price: 17100.00, // Converted from 299.99 USD to PHP
     specs: {
       "Brand": "Philips",
       "Type": "Over-ear",
@@ -490,7 +490,7 @@ export const headphonesData = [
     id: 'headphones-19',
     name: 'JBL Quantum 910 Wireless Gaming Headset',
     image: "/src/assets/Laptop1.png",
-    price: 229.99,
+    price: 13110.00, // Converted from 229.99 USD to PHP
     specs: {
       "Brand": "JBL",
       "Type": "Over-ear",
@@ -498,12 +498,12 @@ export const headphonesData = [
       "Features": "QuantumSPHERE 360",
       "Driver Size": "50mm",
       "Frequency Response": "20-40,000 Hz",
-      "Impedance": "32 ohms",
+      "Impedance": "32 oh極力",
       "Sensitivity": "103 dB",
       "Battery Life": "39 hours",
       "Microphone": "Detachable noise-canceling",
       "Microphone Frequency Response": "100-10,000 Hz",
-      "Noise Cancellation": "Active Noise Cancellation",
+      "極力 Cancellation": "Active Noise Cancellation",
       "Weight": "350g",
       "Cable Length": "1.5m",
       "Charging": "USB-C",
@@ -517,7 +517,7 @@ export const headphonesData = [
     id: 'headphones-20',
     name: 'Drop + Sennheiser HD 8XX Headphones',
     image: "/src/assets/Laptop1.png",
-    price: 1099.00,
+    price: 62643.00, // Converted from 1099.00 USD to PHP
     specs: {
       "Brand": "Sennheiser",
       "Type": "Over-ear",

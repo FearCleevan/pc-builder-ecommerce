@@ -4,7 +4,7 @@ export const caseData = [
     id: 'case-1',
     name: 'HYTE Y60 ATX Mid Tower White Tempered Glass Side Panel',
     image: "/src/assets/Laptop1.png",
-    price: 179.97,
+    price: 10258.29, // Converted from 179.97 USD to PHP
     specs: {
       "Form Factor": "ATX Mid Tower",
       "Side Panel": "Tempered Glass",
@@ -27,7 +27,7 @@ export const caseData = [
     id: 'case-2',
     name: 'NZXT H510 Elite ATX Mid Tower Black',
     image: "/src/assets/Laptop1.png",
-    price: 149.99,
+    price: 8559.43, // Converted from 149.99 USD to PHP
     specs: {
       "Form Factor": "ATX Mid Tower",
       "Side Panel": "Tempered Glass",
@@ -50,7 +50,7 @@ export const caseData = [
     id: 'case-3',
     name: 'Corsair 4000D Airflow ATX Mid Tower',
     image: "/src/assets/Laptop1.png",
-    price: 94.99,
+    price: 5419.43, // Converted from 94.99 USD to PHP
     specs: {
       "Form Factor": "ATX Mid Tower",
       "Side Panel": "Tempered Glass",
@@ -73,7 +73,7 @@ export const caseData = [
     id: 'case-4',
     name: 'Fractal Design Meshify C Mini MicroATX Mini Tower',
     image: "/src/assets/Laptop1.png",
-    price: 99.99,
+    price: 5705.93, // Converted from 99.99 USD to PHP
     specs: {
       "Form Factor": "Micro ATX Mini Tower",
       "Side Panel": "Tempered Glass",
@@ -96,7 +96,7 @@ export const caseData = [
     id: 'case-5',
     name: 'Lian Li O11 Dynamic Mini Snow White',
     image: "/src/assets/Laptop1.png",
-    price: 129.99,
+    price: 7415.93, // Converted from 129.99 USD to PHP
     specs: {
       "Form Factor": "ATX Mid Tower",
       "Side Panel": "Tempered Glass",
@@ -119,7 +119,7 @@ export const caseData = [
     id: 'case-6',
     name: 'Cooler Master MasterBox Q300L MicroATX Mini Tower',
     image: "/src/assets/Laptop1.png",
-    price: 49.99,
+    price: 2851.43, // Converted from 49.99 USD to PHP
     specs: {
       "Form Factor": "Micro ATX Mini Tower",
       "Side Panel": "Acrylic",
@@ -142,7 +142,7 @@ export const caseData = [
     id: 'case-7',
     name: 'Phanteks Enthoo Pro Full Tower Chassis',
     image: "/src/assets/Laptop1.png",
-    price: 129.99,
+    price: 7415.93, // Converted from 129.99 USD to PHP
     specs: {
       "Form Factor": "ATX Full Tower",
       "Side Panel": "Tempered Glass",
@@ -165,7 +165,7 @@ export const caseData = [
     id: 'case-8',
     name: 'NZXT H1 Mini ITX Tower',
     image: "/src/assets/Laptop1.png",
-    price: 199.99,
+    price: 11413.93, // Converted from 199.99 USD to PHP
     specs: {
       "Form Factor": "Mini-ITX Tower",
       "Side Panel": "Tempered Glass",
@@ -188,7 +188,7 @@ export const caseData = [
     id: 'case-9',
     name: 'be quiet! Pure Base 500DX ATX Mid Tower',
     image: "/src/assets/Laptop1.png",
-    price: 109.99,
+    price: 6275.93, // Converted from 109.99 USD to PHP
     specs: {
       "Form Factor": "ATX Mid Tower",
       "Side Panel": "Tempered Glass",
@@ -211,7 +211,7 @@ export const caseData = [
     id: 'case-10',
     name: 'Thermaltake Core P3 ATX Mid Tower Open Frame',
     image: "/src/assets/Laptop1.png",
-    price: 139.99,
+    price: 7985.93, // Converted from 139.99 USD to PHP
     specs: {
       "Form Factor": "ATX Mid Tower",
       "Side Panel": "None",
@@ -234,7 +234,7 @@ export const caseData = [
     id: 'case-11',
     name: 'ASUS TUF Gaming GT301 ATX Mid Tower',
     image: "/src/assets/Laptop1.png",
-    price: 89.99,
+    price: 5135.93, // Converted from 89.99 USD to PHP
     specs: {
       "Form Factor": "ATX Mid Tower",
       "Side Panel": "Tempered Glass",
@@ -257,7 +257,7 @@ export const caseData = [
     id: 'case-12',
     name: 'SilverStone Sugo SG13 Mini-ITX Desktop',
     image: "/src/assets/Laptop1.png",
-    price: 59.99,
+    price: 3423.93, // Converted from 59.99 USD to PHP
     specs: {
       "Form Factor": "Mini-ITX Desktop",
       "Side Panel": "Steel",
@@ -280,7 +280,7 @@ export const caseData = [
     id: 'case-13',
     name: 'Corsair Obsidian 1000D Super Tower',
     image: "/src/assets/Laptop1.png",
-    price: 499.99,
+    price: 28528.93, // Converted from 499.99 USD to PHP
     specs: {
       "Form Factor": "EATX Full Tower",
       "Side Panel": "Tempered Glass",
@@ -303,7 +303,7 @@ export const caseData = [
     id: 'case-14',
     name: 'MSI MPG GUNGNIR 110R ATX Mid Tower',
     image: "/src/assets/Laptop1.png",
-    price: 119.99,
+    price: 6847.93, // Converted from 119.99 USD to PHP
     specs: {
       "Form Factor": "ATX Mid Tower",
       "Side Panel": "Tempered Glass",
@@ -326,7 +326,7 @@ export const caseData = [
     id: 'case-15',
     name: 'In Win 101 MicroATX Mid Tower',
     image: "/src/assets/Laptop1.png",
-    price: 79.99,
+    price: 4563.93, // Converted from 79.99 USD to PHP
     specs: {
       "Form Factor": "Micro ATX Mid Tower",
       "Side Panel": "Tempered Glass",
@@ -349,7 +349,7 @@ export const caseData = [
     id: 'case-16',
     name: 'DeepCool MATREXX 55 MESH ATX Mid Tower',
     image: "/src/assets/Laptop1.png",
-    price: 69.99,
+    price: 3993.93, // Converted from 69.99 USD to PHP
     specs: {
       "Form Factor": "ATX Mid Tower",
       "Side Panel": "Tempered Glass",
@@ -372,7 +372,7 @@ export const caseData = [
     id: 'case-17',
     name: 'Cougar MX330-G Air ATX Mid Tower',
     image: "/src/assets/Laptop1.png",
-    price: 49.99,
+    price: 2851.43, // Converted from 49.99 USD to PHP
     specs: {
       "Form Factor": "ATX Mid Tower",
       "Side Panel": "Acrylic",
@@ -395,7 +395,7 @@ export const caseData = [
     id: 'case-18',
     name: 'GAMDIAS TALOS E1 MESH MicroATX Mini Tower',
     image: "/src/assets/Laptop1.png",
-    price: 59.99,
+    price: 3423.93, // Converted from 59.99 USD to PHP
     specs: {
       "Form Factor": "Micro ATX Mini Tower",
       "Side Panel": "Tempered Glass",
@@ -418,7 +418,7 @@ export const caseData = [
     id: 'case-19',
     name: 'AeroCool Cylon RGB ATX Mid Tower',
     image: "/src/assets/Laptop1.png",
-    price: 54.99,
+    price: 3137.93, // Converted from 54.99 USD to PHP
     specs: {
       "Form Factor": "ATX Mid Tower",
       "Side Panel": "Acrylic",
@@ -441,7 +441,7 @@ export const caseData = [
     id: 'case-20',
     name: 'EVGA DG-75 ATX Mid Tower',
     image: "/src/assets/Laptop1.png",
-    price: 129.99,
+    price: 7415.93, // Converted from 129.99 USD to PHP
     specs: {
       "Form Factor": "ATX Mid Tower",
       "Side Panel": "Tempered Glass",
