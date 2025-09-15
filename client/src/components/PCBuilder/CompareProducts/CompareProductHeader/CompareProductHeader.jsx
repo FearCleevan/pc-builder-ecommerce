@@ -1,11 +1,10 @@
 // client/src/components/PCBuilder/CompareProducts/CompareProductHeader/CompareProductHeader.jsx
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import React, { useState, useRef, useEffect } from 'react';
 import styles from './CompareProductHeader.module.css';
 
-const CompareProductHeader = ({ componentType, onComponentTypeChange }) => {
+const CompareProductHeader = ({ componentType, onComponentTypeChange, onBackToBuilder }) => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-  const navigate = useNavigate();
+  const dropdownRef = useRef(null);
 
   const componentTypes = [
     { id: 'case', name: 'Case' },
@@ -31,14 +30,24 @@ const CompareProductHeader = ({ componentType, onComponentTypeChange }) => {
     setIsDropdownOpen(false);
   };
 
-  const handleBackToBuilder = () => {
-    navigate('/pc-builder');
-  };
+  // Close dropdown when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+        setIsDropdownOpen(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, []);
 
   return (
     <div className={styles.header}>
       <div className={styles.breadcrumb}>
-        <button onClick={handleBackToBuilder} className={styles.breadcrumbButton}>
+        <button onClick={onBackToBuilder} className={styles.breadcrumbButton}>
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
             <path d="m15 18-6-6 6-6"></path>
           </svg>
@@ -49,7 +58,7 @@ const CompareProductHeader = ({ componentType, onComponentTypeChange }) => {
       <div className={styles.headerContent}>
         <p className={styles.title}>Compare Products</p>
         
-        <div className={styles.dropdownContainer}>
+        <div className={styles.dropdownContainer} ref={dropdownRef}>
           <button 
             type="button" 
             className={styles.dropdownButton}

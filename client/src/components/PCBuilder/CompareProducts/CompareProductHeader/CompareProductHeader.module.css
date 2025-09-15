@@ -66,6 +66,7 @@
   font-size: 0.75rem;
   cursor: pointer;
   width: fit-content;
+  min-width: 150px;
 }
 
 .dropdownButtonContent {
@@ -78,6 +79,11 @@
   width: 1rem;
   height: 1rem;
   opacity: 0.5;
+  transition: transform 0.2s;
+}
+
+.dropdownButton[aria-expanded="true"] .chevron {
+  transform: rotate(180deg);
 }
 
 .dropdownMenu {
@@ -86,12 +92,12 @@
   right: 0;
   z-index: 50;
   margin-top: 0.25rem;
-  width: 12rem;
+  width: 200px;
   border-radius: 0.375rem;
   border: 1px solid #e5e7eb;
   background-color: white;
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-  max-height: 16rem;
+  max-height: 300px;
   overflow-y: auto;
 }
 
