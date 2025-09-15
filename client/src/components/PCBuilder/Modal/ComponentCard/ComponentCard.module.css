@@ -44,28 +44,6 @@
     transform: scale(1.05);
 }
 
-.badge3D {
-    position: absolute;
-    bottom: 0.5rem;
-    left: 0.5rem;
-    display: flex;
-    align-items: center;
-    gap: 0.25rem;
-    background-color: #f0f9ff;
-    color: #0369a1;
-    padding: 0.25rem 0.5rem;
-    border-radius: 9999px;
-    font-size: 0.75rem;
-    font-weight: 500;
-    justify-content: center;
-    width: fit-content;
-}
-
-.badge3D svg {
-    width: 12px;
-    height: 12px;
-}
-
 .content {
     padding: 0.5rem;
     display: flex;
