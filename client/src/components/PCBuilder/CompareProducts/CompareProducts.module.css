@@ -10,7 +10,7 @@
 .comparisonContainer {
   flex: 1;
   overflow: hidden;
-  margin-top: 1rem;
+  margin-bottom: 1rem;
 }
 
 .emptyComparison {
@@ -44,6 +44,13 @@
   font-size: 0.875rem;
 }
 
+.searchSection {
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 1px solid #e5e7eb;
+  left: 0;
+}
+
 .noResults {
   padding: 1rem;
   text-align: center;
@@ -55,11 +62,17 @@
 
 @media (min-width: 1024px) {
   .comparisonContainer {
-    max-width: 1200px;
-    margin: 1rem auto 0;
+    width: 100%;
+    margin: 1rem auto;
     border: 1px solid #e5e7eb;
     border-radius: 0.5rem;
     overflow: auto;
-    max-height: calc(100vh - 200px);
+    max-height: calc(100vh - 300px);
+  }
+  
+  .searchSection {
+    max-width: 1200px;
+
+    padding-top: 2rem;
   }
 }

@@ -1,5 +1,5 @@
 // client/src/components/PCBuilder/CompareProducts/CompareProducts.jsx
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import CompareProductHeader from './CompareProductHeader/CompareProductHeader';
 import SearchAndClearProduct from './SearchAndClearProduct/SearchAndClearProduct';
 import DisplayProductCompare from './DisplayProductCompare/DisplayProductCompare';
@@ -25,12 +25,12 @@ import { webcamData } from '../Modal/MockData/Webcam/Webcam';
 import { powerSupplyData } from '../Modal/MockData/Power Suppy/PowerSupply';
 
 const CompareProducts = ({ products, componentType, onExit }) => {
-  const [filteredProducts, setFilteredProducts] = useState(products || []);
+  const [comparisonProducts, setComparisonProducts] = useState(products || []);
   const [currentComponentType, setCurrentComponentType] = useState(componentType);
   const [searchTerm, setSearchTerm] = useState('');
   const [searchResults, setSearchResults] = useState([]);
   const [showSearchResults, setShowSearchResults] = useState(false);
-  const [allProducts, setAllProducts] = useState([]);
+  const searchContainerRef = useRef(null);
 
   // Component data mapping
   const componentDataMap = {
@@ -52,34 +52,33 @@ const CompareProducts = ({ products, componentType, onExit }) => {
     webcam: webcamData
   };
 
-  // Fetch products when component type changes
-  useEffect(() => {
-    if (currentComponentType && componentDataMap[currentComponentType.id]) {
-      const products = componentDataMap[currentComponentType.id];
-      setAllProducts(products);
-      setFilteredProducts(products);
-    }
-  }, [currentComponentType]);
-
   // Set initial products if provided
   useEffect(() => {
     if (products && products.length > 0) {
-      setFilteredProducts(products);
-      setAllProducts(products);
+      setComparisonProducts(products);
     }
   }, [products]);
 
   const handleSearch = (term) => {
     setSearchTerm(term);
-    
+
     if (term === '') {
       setShowSearchResults(false);
       setSearchResults([]);
     } else {
-      // Search through all products of the current component type
-      const results = allProducts.filter(product =>
+      // Get all products of the current component type from mock data
+      const allProducts = componentDataMap[currentComponentType.id] || [];
+
+      // Filter out products that are already in comparison
+      const availableProducts = allProducts.filter(
+        product => !comparisonProducts.some(p => p.id === product.id)
+      );
+
+      // Search through available products
+      const results = availableProducts.filter(product =>
         product.name.toLowerCase().includes(term.toLowerCase())
       );
+
       setSearchResults(results);
       setShowSearchResults(true);
     }
@@ -96,12 +95,12 @@ const CompareProducts = ({ products, componentType, onExit }) => {
     setSearchTerm('');
     setShowSearchResults(false);
     setSearchResults([]);
+    setComparisonProducts([]);
   };
 
   const handleRemoveProduct = (productId) => {
-    const updatedProducts = filteredProducts.filter(product => product.id !== productId);
-    setFilteredProducts(updatedProducts);
-    setAllProducts(updatedProducts);
+    const updatedProducts = comparisonProducts.filter(product => product.id !== productId);
+    setComparisonProducts(updatedProducts);
   };
 
   const handleViewDetails = (product) => {
@@ -115,12 +114,9 @@ const CompareProducts = ({ products, componentType, onExit }) => {
   };
 
   const handleAddToComparison = (product) => {
-    // Add product to comparison if not already there
-    if (!filteredProducts.some(p => p.id === product.id)) {
-      const updatedProducts = [...filteredProducts, product];
-      setFilteredProducts(updatedProducts);
-      setAllProducts(updatedProducts);
-    }
+    // Add product to comparison
+    const updatedProducts = [...comparisonProducts, product];
+    setComparisonProducts(updatedProducts);
     setShowSearchResults(false);
     setSearchTerm('');
   };
@@ -131,35 +127,32 @@ const CompareProducts = ({ products, componentType, onExit }) => {
 
   return (
     <div className={styles.compareProducts}>
-      <CompareProductHeader 
+      <CompareProductHeader
         componentType={currentComponentType}
         onComponentTypeChange={handleComponentTypeChange}
         onBackToBuilder={handleBackToBuilder}
       />
-      
-      <SearchAndClearProduct 
-        onSearch={handleSearch}
-        onClear={handleClear}
-        componentType={currentComponentType}
-      />
-      
-      {showSearchResults && searchResults.length > 0 && (
-        <SearchResults 
-          results={searchResults}
-          onAddToComparison={handleAddToComparison}
-        />
-      )}
 
-      {showSearchResults && searchResults.length === 0 && searchTerm && (
-        <div className={styles.noResults}>
-          <p>No products found for "{searchTerm}"</p>
-        </div>
-      )}
-      
+      <div className={styles.searchSection} ref={searchContainerRef}>
+        <SearchAndClearProduct
+          onSearch={handleSearch}
+          onClear={handleClear}
+          componentType={currentComponentType}
+        />
+
+        {showSearchResults && (
+          <SearchResults
+            results={searchResults}
+            onAddToComparison={handleAddToComparison}
+            parentRef={searchContainerRef}
+          />
+        )}
+      </div>
+
       <div className={styles.comparisonContainer}>
-        {filteredProducts.length > 0 ? (
-          <DisplayProductCompare 
-            products={filteredProducts}
+        {comparisonProducts.length > 0 ? (
+          <DisplayProductCompare
+            products={comparisonProducts}
             onRemove={handleRemoveProduct}
             onViewDetails={handleViewDetails}
             onAddToBuild={handleAddToBuild}
@@ -178,6 +171,12 @@ const CompareProducts = ({ products, componentType, onExit }) => {
           </div>
         )}
       </div>
+
+      {showSearchResults && searchResults.length === 0 && searchTerm && (
+        <div className={styles.noResults}>
+          <p>No products found for "{searchTerm}"</p>
+        </div>
+      )}
     </div>
   );
 };
