@@ -264,7 +264,7 @@ export const storageData = [
   },
   {
     id: 'storage-12',
-    name: 'Crucial MX500 2TB 2.5\" SATA SSD',
+    name: 'Crucial MX500 2TB 2.5" SATA SSD',
     image: "/src/assets/Laptop1.png",
     price: 7432.97,
     specs: {
@@ -288,7 +288,7 @@ export const storageData = [
   },
   {
     id: 'storage-13',
-    name: 'Western Digital Red Pro 10TB 3.5\" NAS HDD',
+    name: 'Western Digital Red Pro 10TB 3.5" NAS HDD',
     image: "/src/assets/Laptop1.png",
     price: 14292.97,
     specs: {
@@ -336,7 +336,7 @@ export const storageData = [
   },
   {
     id: 'storage-15',
-    name: 'Seagate BarraCuda 2TB 3.5\" HDD',
+    name: 'Seagate BarraCuda 2TB 3.5" HDD',
     image: "/src/assets/Laptop1.png",
     price: 3429.97,
     specs: {
@@ -453,7 +453,7 @@ export const storageData = [
   },
   {
     id: 'storage-20',
-    name: 'Seagate Exos X20 20TB 3.5\" Enterprise HDD',
+    name: 'Seagate Exos X20 20TB 3.5" Enterprise HDD',
     image: "/src/assets/Laptop1.png",
     price: 22868.97,
     specs: {
