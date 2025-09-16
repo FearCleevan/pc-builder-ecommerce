@@ -13,7 +13,7 @@ const SearchAndClearProduct = ({ onSearch, onClear, componentType }) => {
 
   const handleClear = () => {
     setSearchValue('');
-    onClear();
+    onClear(); // This will now call the parent's clear function
   };
 
   return (

@@ -1,11 +1,12 @@
 // client/src/components/PCBuilder/CompareProducts/CompareProducts.jsx
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useMemo } from 'react';
 import CompareProductHeader from './CompareProductHeader/CompareProductHeader';
 import SearchAndClearProduct from './SearchAndClearProduct/SearchAndClearProduct';
 import DisplayProductCompare from './DisplayProductCompare/DisplayProductCompare';
 import SearchResults from './SearchResults/SearchResults';
 import styles from './CompareProducts.module.css';
 
+// Import mock data (keep your existing imports)
 // Import mock data
 import { caseData } from '../Modal/MockData/Case/Case';
 import { cpuData } from '../Modal/MockData/CPU/CPU';
@@ -30,10 +31,11 @@ const CompareProducts = ({ products, componentType, onExit }) => {
   const [searchTerm, setSearchTerm] = useState('');
   const [searchResults, setSearchResults] = useState([]);
   const [showSearchResults, setShowSearchResults] = useState(false);
+  const [allProducts, setAllProducts] = useState([]);
   const searchContainerRef = useRef(null);
 
   // Component data mapping
-  const componentDataMap = {
+ const componentDataMap = useMemo(() => ({
     case: caseData,
     cpu: cpuData,
     motherboard: motherboardData,
@@ -50,7 +52,21 @@ const CompareProducts = ({ products, componentType, onExit }) => {
     headphones: headphonesData,
     microphone: microphoneData,
     webcam: webcamData
-  };
+  }), []); // Empty dependency array means this never changes
+
+  // Load products when component type changes
+  useEffect(() => {
+    if (currentComponentType && currentComponentType.id) {
+      const productsForType = componentDataMap[currentComponentType.id] || [];
+      setAllProducts(productsForType);
+      
+      // Clear comparison products when component type changes
+      setComparisonProducts([]);
+      setSearchTerm('');
+      setShowSearchResults(false);
+      setSearchResults([]);
+    }
+  }, [currentComponentType, componentDataMap]);
 
   // Set initial products if provided
   useEffect(() => {
@@ -66,9 +82,6 @@ const CompareProducts = ({ products, componentType, onExit }) => {
       setShowSearchResults(false);
       setSearchResults([]);
     } else {
-      // Get all products of the current component type from mock data
-      const allProducts = componentDataMap[currentComponentType.id] || [];
-
       // Filter out products that are already in comparison
       const availableProducts = allProducts.filter(
         product => !comparisonProducts.some(p => p.id === product.id)
@@ -88,14 +101,11 @@ const CompareProducts = ({ products, componentType, onExit }) => {
     setSearchTerm('');
     setShowSearchResults(false);
     setSearchResults([]);
+    setComparisonProducts([]); // This clears all comparison products
   };
 
   const handleComponentTypeChange = (newType) => {
     setCurrentComponentType(newType);
-    setSearchTerm('');
-    setShowSearchResults(false);
-    setSearchResults([]);
-    setComparisonProducts([]);
   };
 
   const handleRemoveProduct = (productId) => {
@@ -114,11 +124,15 @@ const CompareProducts = ({ products, componentType, onExit }) => {
   };
 
   const handleAddToComparison = (product) => {
-    // Add product to comparison
-    const updatedProducts = [...comparisonProducts, product];
-    setComparisonProducts(updatedProducts);
-    setShowSearchResults(false);
-    setSearchTerm('');
+    // Add product to comparison (max 4 products)
+    if (comparisonProducts.length < 4) {
+      const updatedProducts = [...comparisonProducts, product];
+      setComparisonProducts(updatedProducts);
+      setShowSearchResults(false);
+      setSearchTerm('');
+    } else {
+      alert('Maximum of 4 products can be compared at once');
+    }
   };
 
   const handleBackToBuilder = () => {
