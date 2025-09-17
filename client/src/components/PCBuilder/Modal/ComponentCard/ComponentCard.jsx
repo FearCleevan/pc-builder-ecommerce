@@ -10,6 +10,9 @@ const ComponentCard = ({ component, onSelect, onCompareToggle, isComparing }) =>
   const cardRef = useRef();
 
   useEffect(() => {
+    // Capture the current value in a variable
+    const currentCardRef = cardRef.current;
+
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
@@ -20,13 +23,13 @@ const ComponentCard = ({ component, onSelect, onCompareToggle, isComparing }) =>
       { threshold: 0.1 }
     );
 
-    if (cardRef.current) {
-      observer.observe(cardRef.current);
+    if (currentCardRef) {
+      observer.observe(currentCardRef);
     }
 
     return () => {
-      if (cardRef.current) {
-        observer.unobserve(cardRef.current);
+      if (currentCardRef) {
+        observer.unobserve(currentCardRef);
       }
     };
   }, []);
