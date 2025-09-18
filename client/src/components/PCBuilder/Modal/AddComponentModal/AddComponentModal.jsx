@@ -277,7 +277,7 @@ const AddComponentModal = ({ isOpen, onClose, onSelect, componentType, onCompare
                 } else if (typeof filterValue === 'object') {
                     // Checkbox filter - only apply if at least one option is selected
                     const selectedOptions = Object.entries(filterValue)
-                        .filter(([_, isSelected]) => isSelected)
+                        .filter(([, isSelected]) => isSelected)
                         .map(([option]) => option);
 
                     if (selectedOptions.length > 0) {

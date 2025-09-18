@@ -17,13 +17,35 @@
   align-items: center;
   gap: 8px;
   font-weight: 600;
-  box-shadow: 0 4px 12px rgba(0, 123, 255, 0.3);
+  box-shadow: 0 4px 12px rgba(255, 44, 44, 0.3);
   transition: all 0.3s ease;
+  position: relative;
 }
 
 .chatToggle:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 16px rgba(0, 123, 255, 0.4);
+  box-shadow: 0 6px 16px rgba(255, 44, 44, 0.4);
+}
+
+.aiStatusIndicator {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  background: #007bff;
+  color: white;
+  border-radius: 50%;
+  width: 18px;
+  height: 18px;
+  font-size: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  border: 2px solid white;
+}
+
+.aiStatusIndicator[data-active="false"] {
+  background: #6c757d;
 }
 
 .chatContainer {
@@ -55,6 +77,12 @@
   font-weight: 600;
 }
 
+.headerControls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
 .chatHeader button {
   background: none;
   border: none;
@@ -67,6 +95,55 @@
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+/* AI Toggle Switch */
+.aiToggle {
+  position: relative;
+  width: 50px;
+  height: 28px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  display: flex;
+  align-items: center;
+  padding: 0;
+}
+
+.aiMode {
+  background: #007bff;
+}
+
+.ruleMode {
+  background: #6c757d;
+}
+
+.toggleKnob {
+  position: absolute;
+  top: 3px;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.knobAI {
+  transform: translateX(22px);
+}
+
+.knobRule {
+  transform: translateX(3px);
+}
+
+.toggleIcon {
+  width: 14px;
+  height: 14px;
 }
 
 .messagesContainer {
@@ -90,11 +167,17 @@
   align-items: flex-start;
 }
 
+.systemMessage {
+  align-items: center;
+  justify-content: center;
+}
+
 .messageContent {
   max-width: 80%;
   padding: 10px 15px;
   border-radius: 18px;
   word-wrap: break-word;
+  line-height: 1.4;
 }
 
 .userMessage .messageContent {
@@ -108,6 +191,14 @@
   color: #333;
   border: 1px solid #e9ecef;
   border-bottom-left-radius: 4px;
+}
+
+.systemMessage .messageContent {
+  background: #6c757d;
+  color: white;
+  font-style: italic;
+  font-size: 12px;
+  padding: 8px 12px;
 }
 
 .timestamp {
@@ -166,6 +257,7 @@
 
 .inputContainer input:focus {
   border-color: #ff2c2c;
+  box-shadow: 0 0 0 2px rgba(255, 44, 44, 0.1);
 }
 
 .inputContainer button {
@@ -176,6 +268,11 @@
   padding: 10px 20px;
   cursor: pointer;
   font-weight: 600;
+  transition: background 0.2s ease;
+}
+
+.inputContainer button:hover:not(:disabled) {
+  background: #e50000;
 }
 
 .inputContainer button:disabled {
@@ -212,29 +309,10 @@
 .quickSuggestions button:hover {
   border-color: #ff2c2c;
   color: #ff2c2c;
+  transform: translateY(-1px);
 }
 
-/* Responsive design */
-@media (max-width: 480px) {
-  .aiAssistant {
-    bottom: 10px;
-    right: 10px;
-  }
-
-  .chatContainer {
-    width: 300px;
-    height: 400px;
-    right: -10px;
-  }
-
-  .chatToggle {
-    padding: 10px 16px;
-    font-size: 14px;
-  }
-}
-
-/* Add these styles to your existing AIAssistant.module.css */
-
+/* Product Card Styles */
 .productCard {
   background: white;
   border-radius: 8px;
@@ -242,6 +320,7 @@
   margin: 10px 0;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   border: 1px solid #e9ecef;
+  max-width: 100%;
 }
 
 .productImage {
@@ -253,18 +332,21 @@
   max-width: 100%;
   height: 120px;
   object-fit: contain;
+  border-radius: 4px;
 }
 
 .productInfo h4 {
   margin: 0 0 8px 0;
   font-size: 16px;
   color: #333;
+  font-weight: 600;
 }
 
 .productBrand {
   color: #666;
   font-size: 14px;
   margin: 0 0 8px 0;
+  font-weight: 500;
 }
 
 .productDescription {
@@ -276,13 +358,15 @@
 
 .productPrice {
   margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
 .currentPrice {
   font-size: 18px;
   font-weight: bold;
-  color: #007bff;
-  margin-right: 10px;
+  color: #ff2c2c;
 }
 
 .oldPrice {
@@ -293,12 +377,14 @@
 
 .productRating {
   margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
 .ratingStars {
   color: #ffc107;
   font-size: 16px;
-  margin-right: 8px;
 }
 
 .ratingText {
@@ -318,7 +404,8 @@
   border-radius: 4px;
   font-size: 12px;
   cursor: pointer;
-  transition: background-color 0.2s;
+  transition: all 0.2s ease;
+  font-weight: 500;
 }
 
 .viewButton {
@@ -328,6 +415,7 @@
 
 .viewButton:hover {
   background: #5a6268;
+  transform: translateY(-1px);
 }
 
 .cartButton {
@@ -337,139 +425,229 @@
 
 .cartButton:hover {
   background: #218838;
+  transform: translateY(-1px);
 }
 
 .buyButton {
-  background: #007bff;
+  background: #ff2c2c;
   color: white;
 }
 
 .buyButton:hover {
-  background: #0056b3;
+  background: #e50000;
+  transform: translateY(-1px);
 }
 
-/* Responsive adjustments */
-@media (max-width: 480px) {
-  .productActions {
-    flex-direction: column;
-  }
-  
-  .viewButton, .cartButton, .buyButton {
-    width: 100%;
-  }
+/* PC Build Styles */
+.pcBuild {
+  background: white;
+  border-radius: 8px;
+  padding: 15px;
+  margin: 10px 0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e9ecef;
+  max-width: 100%;
 }
 
-/* AI Mode Toggle Styles */
-.headerControls {
+.pcBuild h4 {
+  margin: 0 0 15px 0;
+  font-size: 16px;
+  color: #333;
+  font-weight: 600;
+  text-align: center;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #f8f9fa;
+}
+
+.buildComponents {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 15px;
+}
+
+.buildComponent {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
+  padding: 10px;
+  background: #f8f9fa;
+  border-radius: 6px;
+  border: 1px solid #e9ecef;
 }
 
-.aiToggle {
-  background: #6c757d;
-  color: white;
+.componentImage {
+  flex-shrink: 0;
+}
+
+.componentImage img {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+  border-radius: 4px;
+}
+
+.componentInfo {
+  flex: 1;
+}
+
+.componentInfo h5 {
+  margin: 0 0 4px 0;
+  font-size: 14px;
+  color: #333;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.componentInfo p {
+  margin: 0;
+  font-size: 13px;
+  color: #666;
+}
+
+.componentPrice {
+  color: #ff2c2c !important;
+  font-weight: 600;
+}
+
+.buildTotal {
+  text-align: center;
+  padding: 12px;
+  background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+  border-radius: 6px;
+  margin-bottom: 15px;
+  border: 1px solid #dee2e6;
+}
+
+.buildTotal strong {
+  font-size: 18px;
+  color: #ff2c2c;
+}
+
+.buildActions {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.saveBuildButton, .customizeButton, .buyBuildButton {
+  padding: 10px 15px;
   border: none;
-  padding: 5px 10px;
-  border-radius: 15px;
+  border-radius: 6px;
   font-size: 12px;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: all 0.2s ease;
+  font-weight: 500;
+  min-width: 100px;
 }
 
-.aiToggle.aiActive {
-  background: #007bff;
-}
-
-.aiStatusIndicator {
-  position: absolute;
-  top: -5px;
-  right: -5px;
-  background: #007bff;
-  color: white;
-  border-radius: 50%;
-  width: 18px;
-  height: 18px;
-  font-size: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: bold;
-}
-
-.aiStatusIndicator[data-active="false"] {
-  background: #6c757d;
-}
-
-.systemMessage {
-  align-items: center;
-  justify-content: center;
-}
-
-.systemMessage .messageContent {
+.saveBuildButton {
   background: #6c757d;
   color: white;
-  font-style: italic;
 }
 
-/* Responsive adjustments */
+.saveBuildButton:hover {
+  background: #5a6268;
+  transform: translateY(-1px);
+}
+
+.customizeButton {
+  background: #17a2b8;
+  color: white;
+}
+
+.customizeButton:hover {
+  background: #138496;
+  transform: translateY(-1px);
+}
+
+.buyBuildButton {
+  background: #ff2c2c;
+  color: white;
+}
+
+.buyBuildButton:hover {
+  background: #e50000;
+  transform: translateY(-1px);
+}
+
+/* Responsive design */
 @media (max-width: 480px) {
+  .aiAssistant {
+    bottom: 10px;
+    right: 10px;
+  }
+
+  .chatContainer {
+    width: 350px;
+    height: 500px;
+    right: -10px;
+  }
+
+  .chatToggle {
+    padding: 10px 16px;
+    font-size: 14px;
+  }
+
   .headerControls {
     flex-direction: column;
     gap: 5px;
   }
-  
-  .aiToggle {
-    font-size: 11px;
-    padding: 4px 8px;
+
+  .productActions,
+  .buildActions {
+    flex-direction: column;
+  }
+
+  .viewButton, .cartButton, .buyButton,
+  .saveBuildButton, .customizeButton, .buyBuildButton {
+    width: 100%;
+    text-align: center;
+  }
+
+  .buildComponent {
+    flex-direction: column;
+    text-align: center;
+    gap: 8px;
+  }
+
+  .componentImage img {
+    width: 40px;
+    height: 40px;
+  }
+
+  .quickSuggestions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .quickSuggestions span {
+    text-align: center;
+    margin-bottom: 5px;
+  }
+
+  .quickSuggestions button {
+    width: 100%;
+    text-align: center;
   }
 }
 
-.aiToggle {
-  position: relative;
-  width: 50px;
-  height: 28px;
-  border: none;
-  border-radius: 20px;
-  background: #6c757d;
-  cursor: pointer;
-  transition: background 0.3s ease;
-  display: flex;
-  align-items: center;
-  padding: 0;
+/* Scrollbar styling */
+.messagesContainer::-webkit-scrollbar {
+  width: 6px;
 }
 
-.aiMode {
-  background: #007bff; /* AI = blue */
+.messagesContainer::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 3px;
 }
 
-.ruleMode {
-  background: #6c757d; /* Rule-based = gray */
+.messagesContainer::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 3px;
 }
 
-.toggleKnob {
-  position: absolute;
-  top: 3px;
-  left: 3px;
-  width: 22px;
-  height: 22px;
-  border-radius: 50%;
-  background: white;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: transform 0.3s ease;
-}
-
-.knobAI {
-  transform: translateX(22px); /* Move right when AI */
-}
-
-.knobRule {
-  transform: translateX(0); /* Left when Rule-based */
-}
-
-.toggleIcon {
-  width: 14px;
-  height: 14px;
+.messagesContainer::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8;
 }
