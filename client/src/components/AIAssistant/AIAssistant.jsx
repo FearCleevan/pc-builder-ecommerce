@@ -5,29 +5,9 @@ import { laptopProducts } from '../MockData/laptopProducts';
 import { desktopProducts } from '../MockData/desktopProducts';
 import { otherProducts } from '../MockData/otherProducts';
 import { accessoriesProducts } from '../MockData/accessoriesProducts';
-import { categories, getSeriesItems, getFeatures, gpuOptions, processorOptions, screenSizeOptions, ramOptions, storageOptions } from '../MockData/LaptopMockData';
+import { categories, getSeriesItems, gpuOptions, processorOptions, screenSizeOptions, ramOptions, storageOptions } from '../MockData/LaptopMockData';
 
 // Import PC building components data
-
-
-// import { caseFilter } from '../MockData/Case/CaseFilter';
-// import { cpuFilter } from '../MockData/CPU/CPUFilter';
-// import { motherboardFilter } from '../MockData/Motherboard/MotherboardFilter';
-// import { gpuFilter } from '../MockData/GPU/GPUFilter';
-// import { ramFilter } from '../MockData/RAM/RamFilter';
-// import { cpuCoolerFilter } from '../MockData/CPU Cooler/CPUCoolerFilter';
-// import { powerSupplyFilter } from '../MockData/Power Supply/PowerSupplyFilter';
-// import { caseFanFilter } from '../MockData/Case Fan/CaseFanFilter';
-// import { monitorFilter } from '../MockData/Monitor/MonitorFilter';
-// import { mouseFilter } from '../MockData/Mouse/MouseFilter';
-// import { KeyboardFilter } from '../MockData/Keyboard/KeyboardFilter';
-// import { speakerFilter } from '../MockData/Speaker/SpeakerFilter';
-// import { headphonesFilter } from '../MockData/Headphones/HeadphonesFilter';
-// import { microphoneFilter } from '../MockData/Microphone/MicrophoneFilter';
-// import { webcamFilter } from '../MockData/Webcam/WebcamFilter';
-// import { storageFilter } from '../MockData/Storage/StorageFilter';
-
-import styles from './AIAssistant.module.css';
 import { caseData } from '../PCBuilder/Modal/MockData/Case/Case';
 import { cpuData } from '../PCBuilder/Modal/MockData/CPU/CPU';
 import { motherboardData } from '../PCBuilder/Modal/MockData/Motherboard/Motherboard';
@@ -44,6 +24,8 @@ import { speakerData } from '../PCBuilder/Modal/MockData/Speaker/Speaker';
 import { headphonesData } from '../PCBuilder/Modal/MockData/Headphones/Headphones';
 import { microphoneData } from '../PCBuilder/Modal/MockData/Microphone/Microphone';
 import { webcamData } from '../PCBuilder/Modal/MockData/Webcam/Webcam';
+
+import styles from './AIAssistant.module.css';
 
 // Gemini AI API integration
 const GEMINI_API_KEY = import.meta.env.VITE_GEMINI_API_KEY;
@@ -89,18 +71,6 @@ const AIAssistant = () => {
         ...microphoneData,
         ...webcamData
     ];
-
-    // Combine all filter options for better recommendations
-    // const allFilterOptions = {
-    //     categories,
-    //     gpuOptions,
-    //     processorOptions,
-    //     screenSizeOptions,
-    //     ramOptions,
-    //     storageOptions,
-    //     series: getSeriesItems(),
-    //     features: getFeatures()
-    // };
 
     const scrollToBottom = () => {
         messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
@@ -162,13 +132,6 @@ const AIAssistant = () => {
         return productKeywords.filter(keyword =>
             message.toLowerCase().includes(keyword)
         );
-    };
-
-    const extractProductName = (message) => {
-        const products = allItems.filter(p =>
-            message.toLowerCase().includes(p.name.toLowerCase())
-        );
-        return products.length > 0 ? products[0].name.toLowerCase() : '';
     };
 
     const extractBudget = (message) => {
@@ -564,7 +527,7 @@ const AIAssistant = () => {
 
         // Rule-based system with enhanced filtering
         const extractedFilters = extractFilters(userMessage);
-        const budget = extractBudget(userMessage);
+        // const budget = extractBudget(userMessage);
         const productNames = extractProductNames(message);
 
         // Greeting
@@ -994,13 +957,18 @@ const AIAssistant = () => {
                 <h4>{purpose.charAt(0).toUpperCase() + purpose.slice(1)} PC Build - ₱{totalPrice.toLocaleString()}</h4>
                 <div className={styles.buildComponents}>
                     {Object.entries(build).map(([type, component]) => (
-                        <div key={type} className={styles.buildComponent}>
+                        <div key={type} className={styles.buildComponentCard}>
                             <div className={styles.componentImage}>
                                 <img src={component.img} alt={component.name} />
                             </div>
                             <div className={styles.componentInfo}>
                                 <h5>{type.toUpperCase()}</h5>
-                                <p>{component.name}</p>
+                                <p className={styles.componentName}>{component.name}</p>
+                                <div className={styles.componentSpecs}>
+                                    {component.specs && Object.entries(component.specs).slice(0, 2).map(([key, value]) => (
+                                        <span key={key} className={styles.specItem}>{key}: {value}</span>
+                                    ))}
+                                </div>
                                 <p className={styles.componentPrice}>₱{component.price.toLocaleString()}</p>
                             </div>
                         </div>
