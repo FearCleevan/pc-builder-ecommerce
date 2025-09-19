@@ -57,27 +57,22 @@ const ComponentCard = ({ component, onSelect, onCompareToggle, isComparing }) =>
     <div ref={cardRef} className={styles.card} data-testid="part-card">
       {isVisible ? (
         <>
-          {/* ✅ Circle Check */}
-          <div
-            className={`${styles.circleCheck} ${isChecked ? styles.checked : ''}`}
-            onClick={toggleCheck}
-            data-testid="circle-check"
-          >
-            {isChecked && (
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="w-3 h-3 text-white"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="3"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              >
-                <path d="M20 6L9 17l-5-5" />
-              </svg>
-            )}
-          </div>
+          {/* ✅ Updated Circle Check with Chakra-inspired design */}
+          <label className={styles.chakraCheckbox} data-checked={isChecked ? "" : null}>
+            <input 
+              className={styles.chakraCheckboxInput} 
+              type="checkbox" 
+              checked={isChecked}
+              onChange={toggleCheck}
+            />
+            <span className={`${styles.chakraCheckboxControl} ${isChecked ? styles.checked : ''}`} aria-hidden="true" data-checked={isChecked ? "" : null}>
+              <div className={styles.checkboxSvgContainer}>
+                <svg viewBox="0 0 12 10" className={styles.checkboxSvg} style={{ opacity: isChecked ? 1 : 0 }}>
+                  <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
+                </svg>
+              </div>
+            </span>
+          </label>
 
           <div className={styles.imageContainer}>
             {!imageLoaded && <div className={styles.imagePlaceholder}></div>}

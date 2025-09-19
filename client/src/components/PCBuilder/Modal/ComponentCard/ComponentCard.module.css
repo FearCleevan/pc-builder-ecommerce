@@ -1,4 +1,4 @@
-/* client/src/components/PCBuilder/Modal/ComponentCard/ComponentCard.module.css */
+/* client/src/components/PCBuilder/ComponentCard/ComponentCard.module.css */
 .card {
     height: 420px;
     display: flex;
@@ -73,7 +73,6 @@
     line-clamp: 4;
     overflow: hidden;
 }
-
 
 .price {
     font-size: 0.875rem;
@@ -200,6 +199,7 @@
     outline: none;
     box-shadow: 0 0 0 2px white, 0 0 0 4px #ff2c2c;
 }
+
 .imagePlaceholder {
     position: absolute;
     top: 0;
@@ -218,34 +218,68 @@
     opacity: 1;
 }
 
-.circleCheck {
-  position: absolute;
-  top: 0.5rem;
-  left: 0.5rem;
-  height: 20px;
-  width: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 0.75rem;
-  font-weight: 500;
-  border-radius: 9999px;
-  background-color: #fff;
-  -webkit-backdrop-filter: blur(4px);
-  backdrop-filter: blur(4px);
-  cursor: pointer;
-  z-index: 10;
-  transition: all 0.2s ease-in-out;
-  border: 1px solid #d1d5db;
+/* New Chakra-inspired checkbox styles */
+.chakraCheckbox {
+    position: absolute;
+    top: 0.5rem;
+    left: 0.5rem;
+    display: inline-flex;
+    align-items: center;
+    vertical-align: top;
+    cursor: pointer;
+    z-index: 10;
 }
 
+.chakraCheckboxInput {
+    border: 0px;
+    clip: rect(0px, 0px, 0px, 0px);
+    height: 1px;
+    width: 1px;
+    margin: -1px;
+    padding: 0px;
+    overflow: hidden;
+    white-space: nowrap;
+    position: absolute;
+}
 
-.circleCheck:hover {
-  background-color: rgba(255, 255, 255, 0.7);
-  border: 1px solid #ff2c2c;
+.chakraCheckboxControl {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 20px;
+    height: 20px;
+    border-radius: 9999px;
+    border: 1px solid #d1d5db;
+    background-color: #fff;
+    transition: all 0.2s ease;
+    position: relative;
+}
+
+.chakraCheckboxControl:hover {
+    border-color: #ff2c2c;
 }
 
 .checked {
-    border: 1px solid #ff2c2c;
-    color: #ff2c2c;
+    border-color: #ff2c2c;
+    background-color: #ff2c2c;
+}
+
+.checkboxSvgContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    transform: none;
+}
+
+.checkboxSvg {
+    width: 12px;
+    height: 10px;
+    fill: none;
+    stroke-width: 2;
+    stroke: white;
+    stroke-dasharray: 16;
+    stroke-dashoffset: 0;
+    transition: opacity 0.2s ease;
 }
