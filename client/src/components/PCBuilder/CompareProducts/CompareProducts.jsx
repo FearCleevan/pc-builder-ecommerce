@@ -24,7 +24,7 @@ import { webcamData } from '../Modal/MockData/Webcam/Webcam';
 import { powerSupplyData } from '../Modal/MockData/Power Suppy/PowerSupply';
 
 const CompareProducts = ({ products, componentType, onExit }) => {
-  const [comparisonProducts, setComparisonProducts] = useState(products || []);
+  const [comparisonProducts, setComparisonProducts] = useState([]);
   const [currentComponentType, setCurrentComponentType] = useState(componentType);
   const [searchTerm, setSearchTerm] = useState('');
   const [searchResults, setSearchResults] = useState([]);
@@ -58,24 +58,31 @@ const CompareProducts = ({ products, componentType, onExit }) => {
       const productsForType = componentDataMap[currentComponentType.id] || [];
       setAllProducts(productsForType);
       
-      // Load comparison products from localStorage for this component type
+      // Load comparison products from localStorage for this specific component type
       const savedComparisonProducts = loadComparisonProducts(currentComponentType.id);
+      
       if (savedComparisonProducts.length > 0) {
+        // If we have saved products for this category, use them
         setComparisonProducts(savedComparisonProducts);
+      } else if (currentComponentType.id === componentType?.id && products && products.length > 0) {
+        // If this is the initial component type and we have passed products, use them
+        setComparisonProducts(products);
+        // Also save them to localStorage
+        saveComparisonProducts(currentComponentType.id, products);
       } else {
-        // If no saved products, use the passed products or empty array
-        setComparisonProducts(products || []);
+        // Otherwise, start with empty array
+        setComparisonProducts([]);
       }
       
       setSearchTerm('');
       setShowSearchResults(false);
       setSearchResults([]);
     }
-  }, [currentComponentType, componentDataMap, products]);
+  }, [currentComponentType, componentDataMap, componentType, products]);
 
   // Save comparison products to localStorage whenever they change
   useEffect(() => {
-    if (currentComponentType && currentComponentType.id) {
+    if (currentComponentType && currentComponentType.id && comparisonProducts.length > 0) {
       saveComparisonProducts(currentComponentType.id, comparisonProducts);
     }
   }, [comparisonProducts, currentComponentType]);
@@ -98,6 +105,14 @@ const CompareProducts = ({ products, componentType, onExit }) => {
       localStorage.setItem(`compare_${componentTypeId}`, JSON.stringify(products));
     } catch (error) {
       console.error('Error saving comparison products to localStorage:', error);
+    }
+  };
+
+  const clearComparisonProducts = (componentTypeId) => {
+    try {
+      localStorage.removeItem(`compare_${componentTypeId}`);
+    } catch (error) {
+      console.error('Error clearing comparison products from localStorage:', error);
     }
   };
 
@@ -127,11 +142,11 @@ const CompareProducts = ({ products, componentType, onExit }) => {
     setSearchTerm('');
     setShowSearchResults(false);
     setSearchResults([]);
-    setComparisonProducts([]); // This clears all comparison products
+    setComparisonProducts([]); // Clear the current comparison products
     
-    // Also clear from localStorage
+    // Also clear from localStorage for this specific component type
     if (currentComponentType && currentComponentType.id) {
-      localStorage.removeItem(`compare_${currentComponentType.id}`);
+      clearComparisonProducts(currentComponentType.id);
     }
   };
 

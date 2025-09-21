@@ -52,10 +52,12 @@ const AddComponentModal = ({ isOpen, onClose, onSelect, componentType, onCompare
     const [compareProducts, setCompareProducts] = useState([]);
 
     useEffect(() => {
-        if (isOpen && componentType) {
-            // Load saved comparison products for this component type
+        if (isOpen && componentType && componentType.id) {
+            // Load saved comparison products for this specific component type
             const savedComparisonProducts = loadComparisonProducts(componentType.id);
             setCompareProducts(savedComparisonProducts);
+        } else {
+            setCompareProducts([]);
         }
     }, [isOpen, componentType]);
 
@@ -69,6 +71,14 @@ const AddComponentModal = ({ isOpen, onClose, onSelect, componentType, onCompare
             console.error('Error loading comparison products from localStorage:', error);
         }
         return [];
+    };
+
+    const saveComparisonProducts = (componentTypeId, products) => {
+        try {
+            localStorage.setItem(`compare_${componentTypeId}`, JSON.stringify(products));
+        } catch (error) {
+            console.error('Error saving comparison products to localStorage:', error);
+        }
     };
 
     useEffect(() => {
@@ -243,22 +253,22 @@ const AddComponentModal = ({ isOpen, onClose, onSelect, componentType, onCompare
 
         setCompareProducts(updatedCompareProducts);
 
-        // Save to localStorage
-        if (componentType) {
-            try {
-                localStorage.setItem(`compare_${componentType.id}`, JSON.stringify(updatedCompareProducts));
-            } catch (error) {
-                console.error('Error saving comparison products to localStorage:', error);
-            }
+        // Save to localStorage for this specific component type
+        if (componentType && componentType.id) {
+            saveComparisonProducts(componentType.id, updatedCompareProducts);
         }
     };
 
     const handleClearCompare = () => {
         setCompareProducts([]);
 
-        // Clear from localStorage
-        if (componentType) {
-            localStorage.removeItem(`compare_${componentType.id}`);
+        // Clear from localStorage for this specific component type
+        if (componentType && componentType.id) {
+            try {
+                localStorage.removeItem(`compare_${componentType.id}`);
+            } catch (error) {
+                console.error('Error clearing comparison products from localStorage:', error);
+            }
         }
     };
 
