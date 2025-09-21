@@ -52,6 +52,26 @@ const AddComponentModal = ({ isOpen, onClose, onSelect, componentType, onCompare
     const [compareProducts, setCompareProducts] = useState([]);
 
     useEffect(() => {
+        if (isOpen && componentType) {
+            // Load saved comparison products for this component type
+            const savedComparisonProducts = loadComparisonProducts(componentType.id);
+            setCompareProducts(savedComparisonProducts);
+        }
+    }, [isOpen, componentType]);
+
+    const loadComparisonProducts = (componentTypeId) => {
+        try {
+            const savedData = localStorage.getItem(`compare_${componentTypeId}`);
+            if (savedData) {
+                return JSON.parse(savedData);
+            }
+        } catch (error) {
+            console.error('Error loading comparison products from localStorage:', error);
+        }
+        return [];
+    };
+
+    useEffect(() => {
         if (isOpen) {
             document.body.style.overflow = 'hidden';
             // Get mock data based on component type
@@ -213,15 +233,33 @@ const AddComponentModal = ({ isOpen, onClose, onSelect, componentType, onCompare
     };
 
     const handleCompareToggle = (component, isChecked) => {
+        let updatedCompareProducts;
+
         if (isChecked) {
-            setCompareProducts(prev => [...prev, component]);
+            updatedCompareProducts = [...compareProducts, component];
         } else {
-            setCompareProducts(prev => prev.filter(item => item.id !== component.id));
+            updatedCompareProducts = compareProducts.filter(item => item.id !== component.id);
+        }
+
+        setCompareProducts(updatedCompareProducts);
+
+        // Save to localStorage
+        if (componentType) {
+            try {
+                localStorage.setItem(`compare_${componentType.id}`, JSON.stringify(updatedCompareProducts));
+            } catch (error) {
+                console.error('Error saving comparison products to localStorage:', error);
+            }
         }
     };
 
     const handleClearCompare = () => {
         setCompareProducts([]);
+
+        // Clear from localStorage
+        if (componentType) {
+            localStorage.removeItem(`compare_${componentType.id}`);
+        }
     };
 
     const handleCompareNavigate = () => {

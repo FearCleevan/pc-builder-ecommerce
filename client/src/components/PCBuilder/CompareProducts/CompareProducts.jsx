@@ -1,4 +1,3 @@
-// client/src/components/PCBuilder/CompareProducts/CompareProducts.jsx
 import React, { useState, useEffect, useRef, useMemo } from 'react';
 import CompareProductHeader from './CompareProductHeader/CompareProductHeader';
 import SearchAndClearProduct from './SearchAndClearProduct/SearchAndClearProduct';
@@ -6,7 +5,6 @@ import DisplayProductCompare from './DisplayProductCompare/DisplayProductCompare
 import SearchResults from './SearchResults/SearchResults';
 import styles from './CompareProducts.module.css';
 
-// Import mock data (keep your existing imports)
 // Import mock data
 import { caseData } from '../Modal/MockData/Case/Case';
 import { cpuData } from '../Modal/MockData/CPU/CPU';
@@ -35,7 +33,7 @@ const CompareProducts = ({ products, componentType, onExit }) => {
   const searchContainerRef = useRef(null);
 
   // Component data mapping
- const componentDataMap = useMemo(() => ({
+  const componentDataMap = useMemo(() => ({
     case: caseData,
     cpu: cpuData,
     motherboard: motherboardData,
@@ -52,7 +50,7 @@ const CompareProducts = ({ products, componentType, onExit }) => {
     headphones: headphonesData,
     microphone: microphoneData,
     webcam: webcamData
-  }), []); // Empty dependency array means this never changes
+  }), []);
 
   // Load products when component type changes
   useEffect(() => {
@@ -60,20 +58,48 @@ const CompareProducts = ({ products, componentType, onExit }) => {
       const productsForType = componentDataMap[currentComponentType.id] || [];
       setAllProducts(productsForType);
       
-      // Clear comparison products when component type changes
-      setComparisonProducts([]);
+      // Load comparison products from localStorage for this component type
+      const savedComparisonProducts = loadComparisonProducts(currentComponentType.id);
+      if (savedComparisonProducts.length > 0) {
+        setComparisonProducts(savedComparisonProducts);
+      } else {
+        // If no saved products, use the passed products or empty array
+        setComparisonProducts(products || []);
+      }
+      
       setSearchTerm('');
       setShowSearchResults(false);
       setSearchResults([]);
     }
-  }, [currentComponentType, componentDataMap]);
+  }, [currentComponentType, componentDataMap, products]);
 
-  // Set initial products if provided
+  // Save comparison products to localStorage whenever they change
   useEffect(() => {
-    if (products && products.length > 0) {
-      setComparisonProducts(products);
+    if (currentComponentType && currentComponentType.id) {
+      saveComparisonProducts(currentComponentType.id, comparisonProducts);
     }
-  }, [products]);
+  }, [comparisonProducts, currentComponentType]);
+
+  // Helper functions for localStorage operations
+  const loadComparisonProducts = (componentTypeId) => {
+    try {
+      const savedData = localStorage.getItem(`compare_${componentTypeId}`);
+      if (savedData) {
+        return JSON.parse(savedData);
+      }
+    } catch (error) {
+      console.error('Error loading comparison products from localStorage:', error);
+    }
+    return [];
+  };
+
+  const saveComparisonProducts = (componentTypeId, products) => {
+    try {
+      localStorage.setItem(`compare_${componentTypeId}`, JSON.stringify(products));
+    } catch (error) {
+      console.error('Error saving comparison products to localStorage:', error);
+    }
+  };
 
   const handleSearch = (term) => {
     setSearchTerm(term);
@@ -102,6 +128,11 @@ const CompareProducts = ({ products, componentType, onExit }) => {
     setShowSearchResults(false);
     setSearchResults([]);
     setComparisonProducts([]); // This clears all comparison products
+    
+    // Also clear from localStorage
+    if (currentComponentType && currentComponentType.id) {
+      localStorage.removeItem(`compare_${currentComponentType.id}`);
+    }
   };
 
   const handleComponentTypeChange = (newType) => {
