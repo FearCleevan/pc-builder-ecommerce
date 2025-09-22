@@ -1,0 +1,208 @@
+/* client/src/components/PCBuilder/PCBuildHeader/BuildCostModal/BuildCostModal.module.css */
+.modalOverlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: fadeIn 0.2s ease-out;
+}
+
+.modalContent {
+  background: #f8f9fa;
+  color: #374151;
+  border-radius: 8px;
+  padding: 1rem;
+  width: 90%;
+  max-width: 400px;
+  max-height: calc(100vh - 180px);
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #e5e7eb;
+}
+
+.modalHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.modalTitle {
+  font-size: 1.25rem;
+  font-weight: 600;
+  line-height: 1;
+  margin: 0;
+}
+
+.closeButton {
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  padding: 0.25rem;
+  border-radius: 4px;
+  opacity: 0.7;
+  transition: opacity 0.2s;
+}
+
+.closeButton:hover {
+  opacity: 1;
+}
+
+.srOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.modalBody {
+  flex: 1;
+}
+
+.priceSummary {
+  margin-bottom: 1.5rem;
+}
+
+.totalPriceSection {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.totalPrice {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.priceIcon {
+  background: #22c55e;
+  border-radius: 50%;
+  padding: 0.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.priceIcon svg {
+  width: 1.25rem;
+  height: 1.25rem;
+  color: #166534;
+}
+
+.totalAmount {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #22c55e;
+}
+
+.actionButtonContainer {
+  position: relative;
+  z-index: 10;
+}
+
+.addToCartButton {
+  background: #3b82f6;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.875rem;
+  transition: background-color 0.2s;
+}
+
+.addToCartButton:hover:not(:disabled) {
+  background: #2563eb;
+}
+
+.addToCartButton:disabled {
+  background: #6b7280;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.priceDetails {
+  margin-top: 1.5rem;
+}
+
+.detailsTitle {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #9ca3af;
+  margin-bottom: 0.5rem;
+}
+
+.componentsList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  space-y: 0.5rem;
+}
+
+.componentItem {
+  padding: 0.75rem 0;
+  border-bottom: 1px solid #374151;
+}
+
+.componentItem:last-child {
+  border-bottom: none;
+}
+
+.componentInfo {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1.5rem;
+}
+
+.componentName {
+  color: #9ca3af;
+  font-size: 0.875rem;
+  flex: 1;
+}
+
+.componentPrice {
+  font-size: 0.875rem;
+  color: #22c55e;
+  margin: 0;
+  font-weight: 500;
+}
+
+.emptyState {
+  text-align: center;
+  padding: 2rem;
+  color: #6b7280;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translate(-50%, -48%) scale(0.95);
+    opacity: 0;
+  }
+  to {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+  }
+}

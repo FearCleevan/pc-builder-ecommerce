@@ -18,6 +18,17 @@ const PCBuilder = () => {
     setIsComparing(true);
   };
 
+  const [selectedComponents, setSelectedComponents] = useState({
+
+  });
+  const handleComponentSelect = (component, category) => {
+    setSelectedComponents(prev => ({
+      ...prev,
+      [category]: component
+    }));
+  };
+
+
   const handleExitCompare = () => {
     setIsComparing(false);
     setCompareData(null);
@@ -28,15 +39,15 @@ const PCBuilder = () => {
       <Header />
       <div className={styles.container}>
         {isComparing ? (
-          <CompareProducts 
-            products={compareData.products} 
+          <CompareProducts
+            products={compareData.products}
             componentType={compareData.componentType}
             onExit={handleExitCompare}
           />
         ) : (
           <>
             <CreateNewBuild />
-            <PCBuildHeader />
+            <PCBuildHeader selectedComponents={selectedComponents} />
             <PCBuildBody onCompareNavigate={handleCompareNavigate} />
             <PCBuildFooter />
           </>
