@@ -189,7 +189,7 @@
     justify-content: center;
 }
 
-.compareButton,
+.repickButton,
 .removeButton {
     background: none;
     border: none;
@@ -203,7 +203,7 @@
     justify-content: center;
 }
 
-.compareButton:hover {
+.repickButton:hover {
     background-color: #f3f4f6;
     color: #3b82f6;
 }

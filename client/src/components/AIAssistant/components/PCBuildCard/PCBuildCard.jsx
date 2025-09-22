@@ -1,17 +1,16 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import styles from '../../AIAssistant.module.css';
 
 /**
  * PC build card component for displaying and customizing PC build configurations
  * @param {object} props - Component props
  * @param {object} props.build - PC build object
- * @param {number} props.totalPrice - Total price of the build
  * @param {string} props.purpose - Purpose of the build
  * @param {function} props.onAction - Function to handle PC build actions
  * @param {object} props.componentData - All available component data for selection
  * @returns {JSX.Element} PC build card component
  */
-const PCBuildCard = ({ build, totalPrice, purpose, onAction, componentData }) => {
+const PCBuildCard = ({ build, purpose, onAction, componentData }) => {
   const [currentBuild, setCurrentBuild] = useState(build);
   const [totalPower, setTotalPower] = useState(0);
   const [compatibilityIssues, setCompatibilityIssues] = useState([]);
@@ -19,14 +18,8 @@ const PCBuildCard = ({ build, totalPrice, purpose, onAction, componentData }) =>
   const [selectedComponentType, setSelectedComponentType] = useState('');
   const [filteredComponents, setFilteredComponents] = useState([]);
 
-  // Calculate power consumption and compatibility when build changes
-  useEffect(() => {
-    calculatePowerConsumption();
-    checkCompatibility();
-  }, [currentBuild]);
-
   // Calculate total power consumption
-  const calculatePowerConsumption = () => {
+  const calculatePowerConsumption = useCallback(() => {
     let power = 0;
     Object.values(currentBuild).forEach(component => {
       if (component.specs) {
@@ -35,10 +28,10 @@ const PCBuildCard = ({ build, totalPrice, purpose, onAction, componentData }) =>
       }
     });
     setTotalPower(power);
-  };
+  }, [currentBuild]);
 
   // Check component compatibility
-  const checkCompatibility = () => {
+  const checkCompatibility = useCallback(() => {
     const issues = [];
     const { cpu, motherboard, ram, gpu, powerSupply } = currentBuild;
 
@@ -88,7 +81,13 @@ const PCBuildCard = ({ build, totalPrice, purpose, onAction, componentData }) =>
     }
 
     setCompatibilityIssues(issues);
-  };
+  }, [currentBuild, totalPower]);
+
+  // Calculate power consumption and compatibility when build changes
+  useEffect(() => {
+    calculatePowerConsumption();
+    checkCompatibility();
+  }, [currentBuild, calculatePowerConsumption, checkCompatibility]);
 
   // Open component selector for a specific type
   const openComponentSelector = (componentType) => {

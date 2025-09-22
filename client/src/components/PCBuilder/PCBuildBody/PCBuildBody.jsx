@@ -160,14 +160,6 @@ const PCBuildBody = ({
         setIsModalOpen(true);
     };
 
-    const handleCompareClick = (component, e) => {
-        e.stopPropagation();
-        const selectedComponentData = selectedComponents[component.id];
-        if (selectedComponentData) {
-            onCompareNavigate([selectedComponentData], component);
-        }
-    };
-
     // Determine which component should have the accent button
     const getNextComponentToSelect = () => {
         const componentIds = components.map(c => c.id);
@@ -247,18 +239,6 @@ const PCBuildBody = ({
                                         </td>
                                         <td className={styles.actionCell}>
                                             <div className={styles.actionButtons}>
-                                                <button
-                                                    className={styles.compareButton}
-                                                    onClick={(e) => handleCompareClick(component, e)}
-                                                    title="Compare component"
-                                                >
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                                                        <path d="M21 6H3"></path>
-                                                        <path d="M15 12H3"></path>
-                                                        <path d="M17 18H3"></path>
-                                                        <path d="m21 6-4 4 4 4"></path>
-                                                    </svg>
-                                                </button>
                                                 <button
                                                     className={styles.repickButton}
                                                     onClick={(e) => handleRepickComponent(component, e)}
