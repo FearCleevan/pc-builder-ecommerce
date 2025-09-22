@@ -53,13 +53,18 @@ const AddComponentModal = ({ isOpen, onClose, onSelect, componentType, onCompare
 
     useEffect(() => {
         if (isOpen && componentType && componentType.id) {
-            // Load saved comparison products for this specific component type
             const savedComparisonProducts = loadComparisonProducts(componentType.id);
-            setCompareProducts(savedComparisonProducts);
+            setCompareProducts(savedComparisonProducts || []);
         } else {
             setCompareProducts([]);
         }
     }, [isOpen, componentType]);
+
+    useEffect(() => {
+        if (componentType && componentType.id) {
+            saveComparisonProducts(componentType.id, compareProducts);
+        }
+    }, [compareProducts, componentType]);
 
     const loadComparisonProducts = (componentTypeId) => {
         try {
@@ -84,12 +89,10 @@ const AddComponentModal = ({ isOpen, onClose, onSelect, componentType, onCompare
     useEffect(() => {
         if (isOpen) {
             document.body.style.overflow = 'hidden';
-            // Get mock data based on component type
             const mockComponents = generateMockComponents(componentType);
             setComponents(mockComponents);
             setFilteredComponents(mockComponents);
             setIsLoading(false);
-            setCompareProducts([]); // Reset compare products when modal opens
         } else {
             document.body.style.overflow = 'unset';
             setSearchTerm('');

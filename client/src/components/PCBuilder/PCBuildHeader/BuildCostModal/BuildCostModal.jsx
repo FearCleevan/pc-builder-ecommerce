@@ -86,7 +86,7 @@ const BuildCostModal = ({ isOpen, onClose, selectedComponents, totalPrice }) => 
                 <li key={category} className={styles.componentItem}>
                   <div className={styles.componentInfo}>
                     <span className={styles.componentName}>
-                      {component?.name || `Unnamed ${category}`}
+                      {component?.name}
                     </span>
                     <p className={styles.componentPrice}>
                       {formatPrice(component?.price || 0)}

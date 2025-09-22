@@ -2,10 +2,14 @@ import React, { useState, useMemo } from 'react';
 import AddComponentModal from '../Modal/AddComponentModal/AddComponentModal';
 import styles from './PCBuildBody.module.css';
 
-const PCBuildBody = ({ onCompareNavigate }) => {
-    const [selectedComponent, setSelectedComponent] = useState(null);
+const PCBuildBody = ({
+    selectedComponents,
+    onComponentSelect,
+    onComponentRemove,
+    onCompareNavigate
+}) => {
     const [isModalOpen, setIsModalOpen] = useState(false);
-    const [selectedComponents, setSelectedComponents] = useState({});
+    const [selectedComponentType, setSelectedComponentType] = useState(null);
 
     const components = useMemo(() => [
         {
@@ -130,36 +134,38 @@ const PCBuildBody = ({ onCompareNavigate }) => {
     ], [])
 
     const handleComponentClick = (component) => {
-        setSelectedComponent(component);
+        setSelectedComponentType(component);
         setIsModalOpen(true);
     };
 
     const handleCloseModal = () => {
         setIsModalOpen(false);
-        setSelectedComponent(null);
+        setSelectedComponentType(null);
     };
 
     const handleComponentSelect = (componentData) => {
-        setSelectedComponents(prev => ({
-            ...prev,
-            [selectedComponent.id]: componentData
-        }));
-        setIsModalOpen(false);
-        setSelectedComponent(null);
+        if (selectedComponentType) {
+            onComponentSelect(componentData, selectedComponentType.id);
+        }
+        handleCloseModal();
     };
 
     const handleRemoveComponent = (componentId) => {
-        setSelectedComponents(prev => {
-            const newComponents = { ...prev };
-            delete newComponents[componentId];
-            return newComponents;
-        });
+        onComponentRemove(componentId);
     };
 
     const handleRepickComponent = (component, e) => {
         e.stopPropagation();
-        setSelectedComponent(component);
+        setSelectedComponentType(component);
         setIsModalOpen(true);
+    };
+
+    const handleCompareClick = (component, e) => {
+        e.stopPropagation();
+        const selectedComponentData = selectedComponents[component.id];
+        if (selectedComponentData) {
+            onCompareNavigate([selectedComponentData], component);
+        }
     };
 
     // Determine which component should have the accent button
@@ -194,7 +200,7 @@ const PCBuildBody = ({ onCompareNavigate }) => {
                 )}
                 <tbody className={styles.tbody}>
                     {components.map((component, index) => {
-                        const isSelected = selectedComponents[component.id];
+                        const isSelected = !!selectedComponents[component.id];
                         const shouldShowAccent = component.id === nextComponentId;
                         const selectedData = selectedComponents[component.id];
 
@@ -209,7 +215,7 @@ const PCBuildBody = ({ onCompareNavigate }) => {
                                         </td>
                                         <td className={styles.imageCell}>
                                             <div className={styles.componentImage}>
-                                                <img src={selectedData.image || "/src/assets/Laptop1.png"} alt={selectedData.name} />
+                                                <img src={selectedData.image || selectedData.SampleImg || "/src/assets/Laptop1.png"} alt={selectedData.name} />
                                                 {selectedData.has3D && (
                                                     <div className={styles.badge3D}>
                                                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -243,6 +249,18 @@ const PCBuildBody = ({ onCompareNavigate }) => {
                                             <div className={styles.actionButtons}>
                                                 <button
                                                     className={styles.compareButton}
+                                                    onClick={(e) => handleCompareClick(component, e)}
+                                                    title="Compare component"
+                                                >
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                                        <path d="M21 6H3"></path>
+                                                        <path d="M15 12H3"></path>
+                                                        <path d="M17 18H3"></path>
+                                                        <path d="m21 6-4 4 4 4"></path>
+                                                    </svg>
+                                                </button>
+                                                <button
+                                                    className={styles.repickButton}
                                                     onClick={(e) => handleRepickComponent(component, e)}
                                                     title="Choose different component"
                                                 >
@@ -305,8 +323,8 @@ const PCBuildBody = ({ onCompareNavigate }) => {
                 isOpen={isModalOpen}
                 onClose={handleCloseModal}
                 onSelect={handleComponentSelect}
-                componentType={selectedComponent}
-                onCompareNavigate={onCompareNavigate} // Add this prop
+                componentType={selectedComponentType}
+                onCompareNavigate={onCompareNavigate}
             />
         </>
     );
