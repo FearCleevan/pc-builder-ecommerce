@@ -255,24 +255,10 @@ const AddComponentModal = ({ isOpen, onClose, onSelect, componentType, onCompare
         }
 
         setCompareProducts(updatedCompareProducts);
-
-        // Save to localStorage for this specific component type
-        if (componentType && componentType.id) {
-            saveComparisonProducts(componentType.id, updatedCompareProducts);
-        }
     };
 
     const handleClearCompare = () => {
         setCompareProducts([]);
-
-        // Clear from localStorage for this specific component type
-        if (componentType && componentType.id) {
-            try {
-                localStorage.removeItem(`compare_${componentType.id}`);
-            } catch (error) {
-                console.error('Error clearing comparison products from localStorage:', error);
-            }
-        }
     };
 
     const handleCompareNavigate = () => {
