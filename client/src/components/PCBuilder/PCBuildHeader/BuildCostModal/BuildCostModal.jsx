@@ -1,4 +1,3 @@
-//client/src/components/PCBuilder/PCHeader/Modal/BuildCostModal.jsx
 // client/src/components/PCBuilder/PCBuildHeader/BuildCostModal/BuildCostModal.jsx
 import React from 'react';
 import styles from './BuildCostModal.module.css';
@@ -25,6 +24,16 @@ const BuildCostModal = ({ isOpen, onClose, selectedComponents, totalPrice }) => 
     console.log('Add to cart:', selectedComponents);
     // You can integrate with your cart system here
   };
+
+  // Filter out null components and only show selected ones
+  const selectedComponentsList = Object.entries(selectedComponents)
+    .filter(([category, component]) => component !== null)
+    .map(([category, component]) => ({
+      category,
+      ...component
+    }));
+
+  const hasComponents = selectedComponentsList.length > 0;
 
   return (
     <div 
@@ -71,7 +80,7 @@ const BuildCostModal = ({ isOpen, onClose, selectedComponents, totalPrice }) => 
                 <button 
                   className={styles.addToCartButton}
                   onClick={handleAddToCart}
-                  disabled={Object.keys(selectedComponents).length === 0}
+                  disabled={!hasComponents}
                 >
                   Add to Cart
                 </button>
@@ -81,26 +90,32 @@ const BuildCostModal = ({ isOpen, onClose, selectedComponents, totalPrice }) => 
 
           <div className={styles.priceDetails}>
             <h3 className={styles.detailsTitle}>Price Details</h3>
-            <ul className={styles.componentsList}>
-              {Object.entries(selectedComponents).map(([category, component]) => (
-                <li key={category} className={styles.componentItem}>
-                  <div className={styles.componentInfo}>
-                    <span className={styles.componentName}>
-                      {component?.name}
-                    </span>
-                    <p className={styles.componentPrice}>
-                      {formatPrice(component?.price || 0)}
-                    </p>
-                  </div>
-                </li>
-              ))}
-              
-              {Object.keys(selectedComponents).length === 0 && (
-                <li className={styles.emptyState}>
-                  <p>No components added yet</p>
-                </li>
-              )}
-            </ul>
+            {hasComponents ? (
+              <ul className={styles.componentsList}>
+                {selectedComponentsList.map((component) => (
+                  <li key={component.category} className={styles.componentItem}>
+                    <div className={styles.componentInfo}>
+                      <span className={styles.componentName}>
+                        {component.name}
+                      </span>
+                      <p className={styles.componentPrice}>
+                        {formatPrice(component.price || 0)}
+                      </p>
+                    </div>
+                  </li>
+                ))}
+              </ul>
+            ) : (
+              <div className={styles.emptyState}>
+                <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <line x1="12" y1="8" x2="12" y2="12"></line>
+                  <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                </svg>
+                <h4>No components added yet</h4>
+                <p>Start building your PC by adding components</p>
+              </div>
+            )}
           </div>
         </div>
       </div>
