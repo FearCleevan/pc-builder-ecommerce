@@ -19,7 +19,7 @@ const PCBuildHeader = ({ selectedComponents = {} }) => {
     
     // Smooth animation for price display
     if (newTotalPrice !== displayPrice) {
-      const duration = 1000; // 1 second animation
+      const duration = 2000; // 1 second animation
       const startTime = Date.now();
       const startValue = displayPrice;
       
