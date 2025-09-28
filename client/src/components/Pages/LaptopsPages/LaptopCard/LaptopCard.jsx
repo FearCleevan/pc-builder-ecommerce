@@ -161,12 +161,17 @@ const LaptopCard = ({ product }) => {
                     >
                         Buy Now
                     </button>
-                    <button 
+                    <button
                         className={styles.addToCartBtn}
                         onClick={handleAddToCart}
                         aria-label="Add to Cart"
                     >
-                        <FaShoppingCart />
+                        <FaShoppingCart
+                            style={{
+                                fontSize: '1rem',  // Resize
+                                color: '#ff2c2c'        // Change color
+                            }}
+                        />
                         <span className={styles.tooltip}>Add to Cart</span>
                     </button>
                 </div>
