@@ -11,7 +11,7 @@ const DesktopCard = ({ product }) => {
 
     // Intersection Observer for lazy loading
     useEffect(() => {
-        const node = cardRef.current; // capture the ref value once
+        const node = cardRef.current;
 
         if (!node) return;
 
@@ -24,7 +24,7 @@ const DesktopCard = ({ product }) => {
             },
             {
                 root: null,
-                rootMargin: "200px", // Load images 200px before they come into view
+                rootMargin: "200px",
                 threshold: 0.01,
             }
         );
@@ -32,10 +32,9 @@ const DesktopCard = ({ product }) => {
         observer.observe(node);
 
         return () => {
-            observer.unobserve(node); // use the captured node instead of cardRef.current
+            observer.unobserve(node);
         };
     }, []);
-
 
     // Load image when component is in view
     useEffect(() => {
@@ -49,7 +48,6 @@ const DesktopCard = ({ product }) => {
                 }
             };
             img.onerror = () => {
-                // Fallback image in case of error
                 if (imageRef.current) {
                     imageRef.current.src = '/fallback-image.jpg';
                     setIsImageLoaded(true);
@@ -57,6 +55,20 @@ const DesktopCard = ({ product }) => {
             };
         }
     }, [isInView, product.img]);
+
+    const handleAddToCart = (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        // Handle add to cart logic
+        console.log('Added to cart:', product.name);
+    };
+
+    const handleBuyNow = (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        // Handle buy now logic
+        console.log('Buy now:', product.name);
+    };
 
     const renderStars = (rating) => {
         const stars = [];
@@ -79,13 +91,12 @@ const DesktopCard = ({ product }) => {
     return (
         <div className={styles.productCard} ref={cardRef}>
             <div className={styles.productImage}>
-                {/* Lazy loaded image with placeholder */}
                 <img
                     ref={imageRef}
                     src={isImageLoaded ? product.img : '/placeholder-image.jpg'}
                     alt={product.name}
                     className={`${isImageLoaded ? styles.imageLoaded : styles.imageLoading}`}
-                    loading="lazy" // Native lazy loading as fallback
+                    loading="lazy"
                 />
 
                 {product.oldPrice > 0 && (
@@ -94,7 +105,6 @@ const DesktopCard = ({ product }) => {
                     </span>
                 )}
 
-                {/* Loading skeleton */}
                 {!isImageLoaded && (
                     <div className={styles.imagePlaceholder}>
                         <div className={styles.loadingSpinner}></div>
@@ -112,7 +122,6 @@ const DesktopCard = ({ product }) => {
                     </button>
                 </div>
 
-                {/* View Product Hover Button */}
                 <a
                     href={`/desktops/${product.id}`}
                     className={styles.viewProductBtn}
@@ -142,10 +151,19 @@ const DesktopCard = ({ product }) => {
                 </div>
 
                 <div className={styles.productButtons}>
-                    <button className={styles.buyNowBtn}>Buy Now</button>
-                    <button className={styles.addToCartBtn}>
+                    <button 
+                        className={styles.buyNowBtn}
+                        onClick={handleBuyNow}
+                    >
+                        Buy Now
+                    </button>
+                    <button 
+                        className={styles.addToCartBtn}
+                        onClick={handleAddToCart}
+                        aria-label="Add to Cart"
+                    >
                         <FaShoppingCart />
-                        <span>Add to Cart</span>
+                        <span className={styles.tooltip}>Add to Cart</span>
                     </button>
                 </div>
             </div>

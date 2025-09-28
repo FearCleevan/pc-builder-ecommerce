@@ -57,6 +57,20 @@ const LaptopCard = ({ product }) => {
         }
     }, [isInView, product.img]);
 
+    const handleAddToCart = (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        // Handle add to cart logic
+        console.log('Added to cart:', product.name);
+    };
+
+    const handleBuyNow = (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        // Handle buy now logic
+        console.log('Buy now:', product.name);
+    };
+
     const renderStars = (rating) => {
         const stars = [];
         const fullStars = Math.floor(rating);
@@ -141,10 +155,19 @@ const LaptopCard = ({ product }) => {
                 </div>
 
                 <div className={styles.productButtons}>
-                    <button className={styles.buyNowBtn}>Buy Now</button>
-                    <button className={styles.addToCartBtn}>
+                    <button 
+                        className={styles.buyNowBtn}
+                        onClick={handleBuyNow}
+                    >
+                        Buy Now
+                    </button>
+                    <button 
+                        className={styles.addToCartBtn}
+                        onClick={handleAddToCart}
+                        aria-label="Add to Cart"
+                    >
                         <FaShoppingCart />
-                        <span>Add to Cart</span>
+                        <span className={styles.tooltip}>Add to Cart</span>
                     </button>
                 </div>
             </div>
