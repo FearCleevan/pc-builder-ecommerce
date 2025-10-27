@@ -1,0 +1,884 @@
+/* client/src/components/AIAssistant/AIAssistant.module.css */
+.aiAssistant {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+}
+
+.chatToggle {
+  background: linear-gradient(135deg, #ff2c2c, #ff5252);
+  color: white;
+  border: none;
+  border-radius: 25px;
+  padding: 12px 20px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+  box-shadow: 0 4px 12px rgba(255, 44, 44, 0.3);
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.chatToggle:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(255, 44, 44, 0.4);
+}
+
+.aiStatusIndicator {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  background: #007bff;
+  color: white;
+  border-radius: 50%;
+  width: 18px;
+  height: 18px;
+  font-size: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  border: 2px solid white;
+}
+
+.aiStatusIndicator[data-active="false"] {
+  background: #6c757d;
+}
+
+.chatContainer {
+  position: absolute;
+  bottom: 60px;
+  right: 0;
+  width: 450px;
+  height: 700px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.chatHeader {
+  background: linear-gradient(135deg, #ff2c2c, #ff5252);
+  color: white;
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.chatHeader h3 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.headerControls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.chatHeader button {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+  padding: 0;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* AI Toggle Switch */
+.aiToggle {
+  position: relative;
+  width: 50px;
+  height: 28px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  display: flex;
+  align-items: center;
+  padding: 0;
+}
+
+.aiMode {
+  background: #007bff;
+}
+
+.ruleMode {
+  background: #6c757d;
+}
+
+.toggleKnob {
+  position: absolute;
+  top: 3px;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.knobAI {
+  transform: translateX(22px);
+}
+
+.knobRule {
+  transform: translateX(3px);
+}
+
+.toggleIcon {
+  width: 14px;
+  height: 14px;
+}
+
+.messagesContainer {
+  flex: 1;
+  padding: 15px;
+  overflow-y: auto;
+  background: #f8f9fa;
+}
+
+.message {
+  margin-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+.userMessage {
+  align-items: flex-end;
+}
+
+.botMessage {
+  align-items: flex-start;
+}
+
+.systemMessage {
+  align-items: center;
+  justify-content: center;
+}
+
+.messageContent {
+  max-width: 80%;
+  padding: 10px 15px;
+  border-radius: 18px;
+  word-wrap: break-word;
+  line-height: 1.4;
+}
+
+.userMessage .messageContent {
+  background: #ff2c2c;
+  color: white;
+  border-bottom-right-radius: 4px;
+}
+
+.botMessage .messageContent {
+  background: white;
+  color: #333;
+  border: 1px solid #e9ecef;
+  border-bottom-left-radius: 4px;
+}
+
+.systemMessage .messageContent {
+  background: #6c757d;
+  color: white;
+  font-style: italic;
+  font-size: 12px;
+  padding: 8px 12px;
+}
+
+.timestamp {
+  font-size: 11px;
+  color: #6c757d;
+  margin-top: 4px;
+}
+
+.typingIndicator {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #6c757d;
+  font-size: 12px;
+  margin-top: 10px;
+}
+
+.typingDots {
+  display: flex;
+  gap: 3px;
+}
+
+.typingDots span {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #6c757d;
+  animation: typing 1.4s infinite ease-in-out;
+}
+
+.typingDots span:nth-child(1) { animation-delay: 0s; }
+.typingDots span:nth-child(2) { animation-delay: 0.2s; }
+.typingDots span:nth-child(3) { animation-delay: 0.4s; }
+
+@keyframes typing {
+  0%, 60%, 100% { transform: translateY(0); }
+  30% { transform: translateY(-5px); }
+}
+
+.inputContainer {
+  display: flex;
+  padding: 15px;
+  gap: 10px;
+  border-top: 1px solid #e9ecef;
+  background: white;
+}
+
+.inputContainer input {
+  flex: 1;
+  padding: 10px 15px;
+  border: 1px solid #dee2e6;
+  border-radius: 20px;
+  outline: none;
+  font-size: 14px;
+}
+
+.inputContainer input:focus {
+  border-color: #ff2c2c;
+  box-shadow: 0 0 0 2px rgba(255, 44, 44, 0.1);
+}
+
+.inputContainer button {
+  background: #ff2c2c;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.2s ease;
+}
+
+.inputContainer button:hover:not(:disabled) {
+  background: #e50000;
+}
+
+.inputContainer button:disabled {
+  background: #6c757d;
+  cursor: not-allowed;
+}
+
+.quickSuggestions {
+  padding: 10px 15px;
+  background: #f8f9fa;
+  border-top: 1px solid #e9ecef;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+}
+
+.quickSuggestions span {
+  font-size: 12px;
+  color: #6c757d;
+  margin-right: 5px;
+}
+
+.quickSuggestions button {
+  background: white;
+  border: 1px solid #dee2e6;
+  border-radius: 15px;
+  padding: 5px 10px;
+  font-size: 11px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.quickSuggestions button:hover {
+  border-color: #ff2c2c;
+  color: #ff2c2c;
+  transform: translateY(-1px);
+}
+
+/* Product Card Styles */
+.productCard {
+  background: white;
+  border-radius: 8px;
+  padding: 15px;
+  margin: 10px 0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e9ecef;
+  max-width: 100%;
+}
+
+.productImage {
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.productImage img {
+  max-width: 100%;
+  height: 120px;
+  object-fit: contain;
+  border-radius: 4px;
+}
+
+.productInfo h4 {
+  margin: 0 0 8px 0;
+  font-size: 16px;
+  color: #333;
+  font-weight: 600;
+}
+
+.productBrand {
+  color: #666;
+  font-size: 14px;
+  margin: 0 0 8px 0;
+  font-weight: 500;
+}
+
+.productDescription {
+  color: #666;
+  font-size: 14px;
+  margin: 0 0 12px 0;
+  line-height: 1.4;
+}
+
+.productPrice {
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.currentPrice {
+  font-size: 18px;
+  font-weight: bold;
+  color: #ff2c2c;
+}
+
+.oldPrice {
+  font-size: 14px;
+  color: #999;
+  text-decoration: line-through;
+}
+
+.productRating {
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.ratingStars {
+  color: #ffc107;
+  font-size: 16px;
+}
+
+.ratingText {
+  color: #666;
+  font-size: 14px;
+}
+
+.productActions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.viewButton, .cartButton, .buyButton {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 4px;
+  font-size: 12px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-weight: 500;
+}
+
+.viewButton {
+  background: #6c757d;
+  color: white;
+}
+
+.viewButton:hover {
+  background: #5a6268;
+  transform: translateY(-1px);
+}
+
+.cartButton {
+  background: #28a745;
+  color: white;
+}
+
+.cartButton:hover {
+  background: #218838;
+  transform: translateY(-1px);
+}
+
+.buyButton {
+  background: #ff2c2c;
+  color: white;
+}
+
+.buyButton:hover {
+  background: #e50000;
+  transform: translateY(-1px);
+}
+
+/* PC Build Styles */
+.pcBuild {
+  background: white;
+  border-radius: 8px;
+  padding: 15px;
+  margin: 10px 0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e9ecef;
+  max-width: 100%;
+}
+
+.pcBuild h4 {
+  margin: 0 0 15px 0;
+  font-size: 16px;
+  color: #333;
+  font-weight: 600;
+  text-align: center;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #f8f9fa;
+}
+
+.buildComponents {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 15px;
+}
+
+.buildComponentCard {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px;
+  background: #f8f9fa;
+  border-radius: 6px;
+  border: 1px solid #e9ecef;
+  transition: all 0.2s ease;
+}
+
+.buildComponentCard:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-color: #ff2c2c;
+}
+
+.componentImage {
+  flex-shrink: 0;
+}
+
+.componentImage img {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+  border-radius: 4px;
+}
+
+.componentInfo {
+  flex: 1;
+}
+
+.componentInfo h5 {
+  margin: 0 0 4px 0;
+  font-size: 14px;
+  color: #333;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.componentName {
+  margin: 0 0 8px 0 !important;
+  font-size: 13px;
+  color: #666;
+  font-weight: 500;
+}
+
+.componentSpecs {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-bottom: 8px;
+}
+
+.specItem {
+  font-size: 11px;
+  color: #888;
+  background: white;
+  padding: 2px 6px;
+  border-radius: 4px;
+  border: 1px solid #eee;
+  display: inline-block;
+  margin-right: 4px;
+}
+
+.componentPrice {
+  color: #ff2c2c !important;
+  font-weight: 600;
+  margin: 0;
+  font-size: 14px;
+}
+
+.buildTotal {
+  text-align: center;
+  padding: 12px;
+  background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+  border-radius: 6px;
+  margin-bottom: 15px;
+  border: 1px solid #dee2e6;
+}
+
+.buildTotal strong {
+  font-size: 18px;
+  color: #ff2c2c;
+}
+
+.buildActions {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.saveBuildButton, .customizeButton, .buyBuildButton {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 6px;
+  font-size: 12px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-weight: 500;
+  min-width: 100px;
+}
+
+.saveBuildButton {
+  background: #6c757d;
+  color: white;
+}
+
+.saveBuildButton:hover {
+  background: #5a6268;
+  transform: translateY(-1px);
+}
+
+.customizeButton {
+  background: #17a2b8;
+  color: white;
+}
+
+.customizeButton:hover {
+  background: #138496;
+  transform: translateY(-1px);
+}
+
+.buyBuildButton {
+  background: #ff2c2c;
+  color: white;
+}
+
+.buyBuildButton:hover {
+  background: #e50000;
+  transform: translateY(-1px);
+}
+
+/* Responsive design */
+@media (max-width: 480px) {
+  .aiAssistant {
+    bottom: 10px;
+    right: 10px;
+  }
+
+  .chatContainer {
+    width: 350px;
+    height: 500px;
+    right: -10px;
+  }
+
+  .chatToggle {
+    padding: 10px 16px;
+    font-size: 14px;
+  }
+
+  .headerControls {
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .productActions,
+  .buildActions {
+    flex-direction: column;
+  }
+
+  .viewButton, .cartButton, .buyButton,
+  .saveBuildButton, .customizeButton, .buyBuildButton {
+    width: 100%;
+    text-align: center;
+  }
+
+  .buildComponentCard {
+    flex-direction: column;
+    text-align: center;
+    gap: 8px;
+  }
+
+  .componentImage img {
+    width: 40px;
+    height: 40px;
+  }
+
+  .quickSuggestions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .quickSuggestions span {
+    text-align: center;
+    margin-bottom: 5px;
+  }
+
+  .quickSuggestions button {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+/* Scrollbar styling */
+.messagesContainer::-webkit-scrollbar {
+  width: 6px;
+}
+
+.messagesContainer::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 3px;
+}
+
+.messagesContainer::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 3px;
+}
+
+.messagesContainer::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8;
+}
+
+/* Power Consumption Display */
+.powerConsumption {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  background: #e8f4fd;
+  border-radius: 6px;
+  margin-bottom: 15px;
+  border: 1px solid #b8d4f0;
+  font-size: 14px;
+}
+
+.powerConsumption span {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.powerConsumption strong {
+  color: #007bff;
+}
+
+/* Compatibility Issues */
+.compatibilityIssues {
+  background: #fff3cd;
+  border: 1px solid #ffeaa7;
+  border-radius: 6px;
+  padding: 12px;
+  margin-bottom: 15px;
+}
+
+.compatibilityIssues h5 {
+  margin: 0 0 8px 0;
+  color: #856404;
+  font-size: 14px;
+}
+
+.compatibilityIssue {
+  color: #856404;
+  font-size: 12px;
+  margin-bottom: 5px;
+  padding-left: 15px;
+  position: relative;
+}
+
+.compatibilityIssue:before {
+  content: "⚠️";
+  position: absolute;
+  left: 0;
+}
+
+/* Change Component Button */
+.changeComponentButton {
+  background: none;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  padding: 5px;
+  border-radius: 4px;
+  transition: background 0.2s ease;
+}
+
+.changeComponentButton:hover {
+  background: #f8f9fa;
+}
+
+/* Component Selector Modal */
+.componentSelector {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+}
+
+.componentSelectorContent {
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  max-width: 600px;
+  max-height: 80vh;
+  overflow-y: auto;
+  width: 90%;
+}
+
+.componentSelectorContent h4 {
+  margin: 0 0 15px 0;
+  text-align: center;
+  color: #333;
+}
+
+.componentList {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 15px;
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.componentOption {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px;
+  border: 1px solid #e9ecef;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.componentOption:hover {
+  border-color: #ff2c2c;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(255, 44, 44, 0.1);
+}
+
+.componentOption img {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+  border-radius: 4px;
+}
+
+.componentOptionInfo {
+  flex: 1;
+}
+
+.componentOptionInfo h5 {
+  margin: 0 0 5px 0;
+  font-size: 14px;
+  color: #333;
+}
+
+.componentOptionInfo p {
+  margin: 0 0 8px 0;
+  color: #ff2c2c;
+  font-weight: 600;
+}
+
+.componentOptionSpecs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.componentOptionSpecs span {
+  font-size: 11px;
+  color: #666;
+  background: #f8f9fa;
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+.closeSelector {
+  background: #6c757d;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 10px 20px;
+  cursor: pointer;
+  width: 100%;
+  font-weight: 500;
+  transition: background 0.2s ease;
+}
+
+.closeSelector:hover {
+  background: #5a6268;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .componentSelectorContent {
+    width: 95%;
+    padding: 15px;
+  }
+  
+  .componentOption {
+    flex-direction: column;
+    text-align: center;
+    gap: 8px;
+  }
+  
+  .componentOptionInfo {
+    text-align: center;
+  }
+  
+  .componentOptionSpecs {
+    justify-content: center;
+  }
+  
+  .powerConsumption {
+    flex-direction: column;
+    gap: 8px;
+    text-align: center;
+  }
+}

@@ -1,0 +1,45 @@
+/* client/src/components/PCBuilder/Modal/ModalHeader/ModalHeader.module.css */
+.modalHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 1rem;
+    border-bottom: 1px solid #e5e7eb;
+    gap: 1rem;
+}
+
+.modalTitle {
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #1f2937;
+    flex-shrink: 0;
+}
+
+.closeButton {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    border-radius: 4px;
+    color: #6b7280;
+    transition: all 0.15s ease;
+    flex-shrink: 0;
+}
+
+.closeButton:hover {
+    background-color: #f3f4f6;
+    color: #1f2937;
+}
+
+@media (max-width: 768px) {
+    .modalHeader {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .filterSection {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}

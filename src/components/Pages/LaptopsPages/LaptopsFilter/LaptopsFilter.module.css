@@ -1,0 +1,184 @@
+/* client/src/components/Pages/ProductsPages/ProductsFilter/ProductsFilter.module.css */
+.filterForm {
+  background: white;
+  padding: 20px;
+  border: 1px solid #e9ecef;
+}
+
+.filterForm.mobile {
+  padding: 15px;
+  border-radius: 0;
+  box-shadow: none;
+  border: none;
+}
+
+.filterFieldset {
+  border: none;
+  padding: 0;
+  margin: 0 0 20px 0;
+  border-bottom: 1px solid #e9ecef;
+  padding-bottom: 15px;
+}
+
+.filterFieldset:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.filterLegend {
+  width: 100%;
+  padding: 0;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+.filterLegendDown {
+  margin-bottom: 0;
+}
+
+.filterTitle {
+  display: flex;
+  align-items: center;
+  font-weight: 600;
+  color: #333;
+  font-size: 1rem;
+}
+
+.filterIcon {
+  font-size: 1.2rem;
+  margin-right: 8px;
+}
+
+.filterList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+}
+
+.filterListDown {
+  max-height: 500px;
+}
+
+.filterDropList {
+  list-style: none;
+  padding: 0;
+  margin: 10px 0 0 15px;
+}
+
+.filterItem {
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+}
+
+.filterCheckbox {
+  margin-right: 8px;
+  width: 16px;
+  height: 16px;
+}
+
+.filterLabel {
+  font-size: 0.9rem;
+  color: #495057;
+  cursor: pointer;
+}
+
+.filterDropdown {
+  margin-top: 10px;
+}
+
+.gpuSeries {
+  margin-bottom: 15px;
+  border: 1px solid #e9ecef;
+  border-radius: 4px;
+  padding: 10px;
+}
+
+.gpuSeries:last-child {
+  margin-bottom: 0;
+}
+
+.gpuSeriesHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  font-weight: 600;
+  color: #495057;
+}
+
+.gpuSeriesTitle {
+  font-size: 0.95rem;
+}
+
+.gpuSeriesToggle {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.filterShowAll {
+  background: none;
+  border: none;
+  color: #007bff;
+  cursor: pointer;
+  font-size: 0.9rem;
+  padding: 5px 0;
+  margin-top: 5px;
+  display: block;
+  width: 100%;
+  text-align: left;
+}
+
+.filterShowAll:hover {
+  text-decoration: underline;
+}
+
+.filterReset {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  background: #6c757d;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  margin-top: 15px;
+}
+
+.filterReset:hover {
+  background: #5a6268;
+}
+
+.resetIcon {
+  font-size: 1rem;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 992px) {
+  .filterForm.mobile {
+    padding: 15px 10px;
+  }
+  
+  .filterFieldset {
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+  }
+  
+  .filterListDown {
+    max-height: 300px;
+  }
+  
+  .gpuSeries {
+    padding: 8px;
+  }
+  
+  .gpuSeriesTitle {
+    font-size: 0.9rem;
+  }
+}
