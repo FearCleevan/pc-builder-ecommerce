@@ -12,7 +12,7 @@
 
 .modalContent {
   background: #f8f9fa;
-  color: #374151;
+  color: #252b35;
   border-radius: 8px;
   padding: 1rem;
   width: 90%;
@@ -141,7 +141,7 @@
 .detailsTitle {
   font-size: 0.875rem;
   font-weight: 500;
-  color: #9ca3af;
+  color: #252b35 !important;
   margin-bottom: 0.5rem;
 }
 
@@ -171,7 +171,7 @@
 }
 
 .componentName {
-  color: #9ca3af;
+  color: #252b35;
   font-size: 0.875rem;
   flex: 1;
 }
@@ -186,7 +186,7 @@
 .emptyState {
   text-align: center;
   padding: 2rem;
-  color: #6b7280;
+  color: #252b35;
 }
 
 @keyframes fadeIn {
