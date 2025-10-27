@@ -57,6 +57,20 @@ const ProductCard = ({ product }) => {
         }
     }, [isInView, product.img]);
 
+    const handleAddToCart = (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        // Handle add to cart logic
+        console.log('Added to cart:', product.name);
+    };
+
+    const handleBuyNow = (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        // Handle buy now logic
+        console.log('Buy now:', product.name);
+    };
+
     const renderStars = (rating) => {
         const stars = [];
         const fullStars = Math.floor(rating);
@@ -79,27 +93,27 @@ const ProductCard = ({ product }) => {
         <div className={styles.productCard} ref={cardRef}>
             <div className={styles.productImage}>
                 {/* Lazy loaded image with placeholder */}
-                <img 
+                <img
                     ref={imageRef}
-                    src={isImageLoaded ? product.img : '/placeholder-image.jpg'} 
+                    src={isImageLoaded ? product.img : '/placeholder-image.jpg'}
                     alt={product.name}
                     className={`${isImageLoaded ? styles.imageLoaded : styles.imageLoading}`}
                     loading="lazy" // Native lazy loading as fallback
                 />
-                
+
                 {product.oldPrice > 0 && (
                     <span className={styles.discountBadge}>
                         {Math.round((1 - product.price / product.oldPrice) * 100)}% OFF
                     </span>
                 )}
-                
+
                 {/* Loading skeleton */}
                 {!isImageLoaded && (
                     <div className={styles.imagePlaceholder}>
                         <div className={styles.loadingSpinner}></div>
                     </div>
                 )}
-                
+
                 <div className={styles.productActions}>
                     <button className={styles.wishlistBtn} aria-label="Add to Wishlist">
                         <FaHeart />
@@ -110,7 +124,7 @@ const ProductCard = ({ product }) => {
                         <span className={styles.tooltip}>Compare</span>
                     </button>
                 </div>
-                
+
                 {/* View Product Hover Button */}
                 <a
                     href={`/products/${product.id}`}
@@ -141,10 +155,24 @@ const ProductCard = ({ product }) => {
                 </div>
 
                 <div className={styles.productButtons}>
-                    <button className={styles.buyNowBtn}>Buy Now</button>
-                    <button className={styles.addToCartBtn}>
-                        <FaShoppingCart />
-                        <span>Add to Cart</span>
+                    <button
+                        className={styles.buyNowBtn}
+                        onClick={handleBuyNow}
+                    >
+                        Buy Now
+                    </button>
+                    <button
+                        className={styles.addToCartBtn}
+                        onClick={handleAddToCart}
+                        aria-label="Add to Cart"
+                    >
+                        <FaShoppingCart
+                            style={{
+                                fontSize: '1rem',  // Resize
+                                color: '#ff2c2c'        // Change color
+                            }}
+                        />
+                        <span className={styles.tooltip}>Add to Cart</span>
                     </button>
                 </div>
             </div>

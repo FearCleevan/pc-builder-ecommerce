@@ -51,7 +51,7 @@
   height: 200px;
   overflow: hidden;
   flex-shrink: 0;
-  background: #f8f9fa; /* Light background for placeholder */
+  background: #f8f9fa;
 }
 
 .productImage img {
@@ -61,7 +61,6 @@
   transition: transform 0.5s ease, opacity 0.3s ease;
 }
 
-/* Keep the rest of your existing CSS styles below */
 .productCard {
   background: white;
   border: 1px solid #e0e0e0;
@@ -136,10 +135,9 @@
   top: -40px;
   left: 50%;
   transform: translateX(-50%);
-  background: #333;
+  background: #ff2c2c;
   color: white;
   padding: 5px 10px;
-  border-radius: 4px;
   font-size: 0.8rem;
   white-space: nowrap;
   opacity: 0;
@@ -149,13 +147,13 @@
 }
 
 .wishlistBtn:hover .tooltip,
-.compareBtn:hover .tooltip {
+.compareBtn:hover .tooltip,
+.addToCartBtn:hover .tooltip {
   opacity: 1;
   visibility: visible;
   top: -35px;
 }
 
-/* View Product Button: hidden by default, fade-in from bottom on hover */
 .viewProductBtn {
   position: absolute;
   left: 50%;
@@ -181,10 +179,6 @@
   opacity: 1;
   pointer-events: auto;
   transform: translate(-50%, 0);
-}
-
-.viewProductBtn:active {
-  background: linear-gradient(135deg, #e60000 0%, #ff2c2c 100%);
 }
 
 .productInfo {
@@ -282,10 +276,11 @@
   margin-top: auto;
 }
 
+/* Simplified Buy Now Button */
 .buyNowBtn {
   flex: 2;
   padding: 12px;
-  background: linear-gradient(135deg, #ff2c2c 0%, #ff5252 100%);
+  background: #ff2c2c;
   color: white;
   border: none;
   font-weight: 600;
@@ -294,38 +289,32 @@
 }
 
 .buyNowBtn:hover {
-  background: linear-gradient(135deg, #e60000 0%, #ff2c2c 100%);
-  transform: translateY(-2px);
+  background: #ff2c2cd2;
 }
 
+/* Simplified Add to Cart Button */
 .addToCartBtn {
+  position: relative;
   flex: 1;
   padding: 12px;
-  background: #333;
-  color: white;
-  border: none;
+  background: #f8f9fa;
+  color: #333;
+  border: 1px solid #ff2c2c;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 5px;
   cursor: pointer;
   transition: all 0.3s ease;
-  position: relative;
-  overflow: hidden;
-}
-
-.addToCartBtn span {
-  transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
 .addToCartBtn:hover {
-  background: #555;
-  transform: translateY(-2px);
+  background: #ff2c2c;
+  color: white;
 }
 
-.addToCartBtn:hover span {
-  transform: translateX(100%);
-  opacity: 0;
+/* Target the SVG icon inside the button */
+.addToCartBtn:hover svg {
+  color: white !important;
 }
 
 /* Tablet view */
