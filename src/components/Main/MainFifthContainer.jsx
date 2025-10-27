@@ -1,7 +1,7 @@
 // client/src/components/Main/MainFifthContainer.jsx
 import React, { useRef } from 'react';
 import { FaShoppingCart, FaHeart, FaStar, FaRegStar, FaBalanceScale } from 'react-icons/fa';
-import styles from './MainFifthContainer.module.css';
+import styles from './MainFIfthContainer.module.css';
 import { formatPrice } from '../MockData/formatPrice';
 import { otherProducts } from '../MockData/otherProducts';
 
