@@ -63,7 +63,7 @@ const MainThirdContainer = ({ isMobile }) => {
                     <FaHeart />
                     <span className={styles.tooltip}>Add to Wishlist</span>
                   </button>
-                  <button className={styles.compareBtn} aria-label="Compare Product">
+                  <button className={styles.compareBtn} aria-label="Compare Products">
                     <FaBalanceScale />
                     <span className={styles.tooltip}>Compare</span>
                   </button>
