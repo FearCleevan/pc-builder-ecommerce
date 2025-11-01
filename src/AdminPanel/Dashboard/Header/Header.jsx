@@ -1,5 +1,13 @@
-//src/AdminPanel/Dashboard/Header/Header.jsx
 import React, { useState } from 'react';
+import { 
+  FiMenu, 
+  FiSearch, 
+  FiBell, 
+  FiUser, 
+  FiSettings, 
+  FiLogOut,
+  FiChevronDown
+} from 'react-icons/fi';
 import styles from './Header.module.css';
 
 const Header = ({ onToggleSidebar, isSidebarCollapsed }) => {
@@ -16,7 +24,7 @@ const Header = ({ onToggleSidebar, isSidebarCollapsed }) => {
           className={styles.sidebarToggle}
           onClick={onToggleSidebar}
         >
-          ☰
+          <FiMenu size={20} />
         </button>
       </div>
 
@@ -27,7 +35,9 @@ const Header = ({ onToggleSidebar, isSidebarCollapsed }) => {
             placeholder="Search products, orders, users..." 
             className={styles.searchInput}
           />
-          <button className={styles.searchButton}>🔍</button>
+          <button className={styles.searchButton}>
+            <FiSearch size={16} />
+          </button>
         </div>
       </div>
 
@@ -37,7 +47,7 @@ const Header = ({ onToggleSidebar, isSidebarCollapsed }) => {
             className={styles.notificationBell}
             onClick={() => setShowNotifications(!showNotifications)}
           >
-            🔔
+            <FiBell size={18} />
           </button>
           {showNotifications && (
             <div className={styles.notificationDropdown}>
@@ -49,6 +59,10 @@ const Header = ({ onToggleSidebar, isSidebarCollapsed }) => {
                 <strong>Low Stock</strong>
                 <span>Product XYZ is running low</span>
               </div>
+              <div className={styles.notificationItem}>
+                <strong>System Update</strong>
+                <span>New features available</span>
+              </div>
             </div>
           )}
         </div>
@@ -58,13 +72,25 @@ const Header = ({ onToggleSidebar, isSidebarCollapsed }) => {
             className={styles.profileButton}
             onClick={() => setShowProfileDropdown(!showProfileDropdown)}
           >
-            <div className={styles.avatar}>A</div>
+            <div className={styles.avatar}>
+              <FiUser size={16} />
+            </div>
+            <FiChevronDown size={14} />
           </button>
           {showProfileDropdown && (
             <div className={styles.profileDropdown}>
-              <button className={styles.dropdownItem}>Profile</button>
-              <button className={styles.dropdownItem}>Settings</button>
-              <button className={styles.dropdownItem}>Logout</button>
+              <button className={styles.dropdownItem}>
+                <FiUser size={16} />
+                <span>Profile</span>
+              </button>
+              <button className={styles.dropdownItem}>
+                <FiSettings size={16} />
+                <span>Settings</span>
+              </button>
+              <button className={styles.dropdownItem}>
+                <FiLogOut size={16} />
+                <span>Logout</span>
+              </button>
             </div>
           )}
         </div>

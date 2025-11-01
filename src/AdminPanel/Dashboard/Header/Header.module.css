@@ -40,11 +40,13 @@
 .sidebarToggle {
   background: none;
   border: none;
-  font-size: 1.5rem;
   cursor: pointer;
   padding: 8px;
   border-radius: 4px;
   transition: background-color 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .sidebarToggle:hover {
@@ -81,6 +83,9 @@
   color: white;
   cursor: pointer;
   transition: background-color 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .searchButton:hover {
@@ -153,9 +158,12 @@
   background: none;
   border: none;
   cursor: pointer;
-  padding: 4px;
-  border-radius: 50%;
+  padding: 8px;
+  border-radius: 20px;
   transition: background-color 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
 .profileButton:hover {
@@ -163,16 +171,14 @@
 }
 
 .avatar {
-  width: 40px;
-  height: 40px;
+  width: 36px;
+  height: 36px;
   background: linear-gradient(90deg, #ff2c2c, #ff6600);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   color: white;
-  font-weight: bold;
-  font-size: 16px;
 }
 
 .profileDropdown {
@@ -196,6 +202,10 @@
   cursor: pointer;
   transition: background-color 0.2s ease;
   border-bottom: 1px solid #f0f0f0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
 }
 
 .dropdownItem:last-child {
@@ -204,5 +214,9 @@
 
 .dropdownItem:hover {
   background-color: #f8f9fa;
+  color: #ff2c2c;
+}
+
+.dropdownItem:hover svg {
   color: #ff2c2c;
 }
