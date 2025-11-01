@@ -80,6 +80,82 @@
   box-shadow: 0 0 0 2px rgba(255,44,44,0.1);
 }
 
+/* Password Input Container */
+.passwordInputContainer {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.passwordInput {
+  padding-right: 45px !important;
+  width: 100%;
+}
+
+.passwordToggle {
+  position: absolute;
+  right: 12px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #666;
+  transition: color 0.2s ease;
+}
+
+.passwordToggle:hover {
+  color: #ff2c2c;
+  background-color: rgba(255, 44, 44, 0.1);
+}
+
+.eyeIcon {
+  width: 20px;
+  height: 20px;
+}
+
+/* Remember Me & Forgot Password */
+.rememberForgotContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  margin-top: -5px;
+}
+
+.rememberMe {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: #333;
+  cursor: pointer;
+}
+
+.checkbox {
+  width: 16px;
+  height: 16px;
+  accent-color: #ff2c2c;
+  cursor: pointer;
+}
+
+.forgotPassword {
+  background: none;
+  border: none;
+  color: #ff2c2c;
+  font-size: 14px;
+  cursor: pointer;
+  text-decoration: underline;
+  transition: color 0.2s ease;
+}
+
+.forgotPassword:hover {
+  color: #ff5252;
+}
+
 .loginBtn {
   width: 100%;
   padding: 12px;
