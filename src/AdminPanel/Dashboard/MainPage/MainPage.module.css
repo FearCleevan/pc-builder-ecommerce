@@ -3,133 +3,585 @@
   background: #f8f9fa;
   min-height: calc(100vh - 70px);
   overflow-y: auto;
+  display: flex;
+  flex-direction: column;
 }
 
 .pageHeader {
-  padding: 30px 30px 0 30px;
-  margin-bottom: 0;
+  padding: 25px 30px 10px 30px;
+  background: #f8f9fa;
 }
 
-.pageHeader h1 {
+.pageTitle {
   font-size: 2rem;
   color: #2c3e50;
-  margin-bottom: 5px;
+  margin: 0 0 5px 0;
   font-weight: 700;
 }
 
-.pageHeader p {
+.pageSubtitle {
   color: #7f8c8d;
   font-size: 14px;
   margin: 0;
 }
 
-/* Custom global styles for MUI components to match your design */
-:global(.MuiPaper-root) {
-  border-radius: 12px !important;
+/* Dashboard Content */
+.dashboardContent {
+  flex: 1;
+  padding: 0 30px 30px 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
 }
 
-:global(.MuiCard-root) {
-  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out !important;
-  border-radius: 12px !important;
+.otherPageContent {
+  flex: 1;
+  padding: 0 30px 30px 30px;
 }
 
-:global(.MuiCard-root:hover) {
-  transform: translateY(-2px) !important;
-  box-shadow: 0 8px 25px rgba(0,0,0,0.15) !important;
+/* Stats Grid */
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
 }
 
-:global(.MuiButton-contained) {
-  background: linear-gradient(90deg, #ff2c2c, #ff6600) !important;
-  font-weight: 600 !important;
-  text-transform: none !important;
-  border-radius: 8px !important;
+.statCard {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-:global(.MuiButton-outlined) {
-  border-color: #ff2c2c !important;
-  color: #ff2c2c !important;
-  text-transform: none !important;
-  border-radius: 8px !important;
-  font-weight: 600 !important;
+.statCard:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
 }
 
-:global(.MuiButton-outlined:hover) {
-  background-color: rgba(255, 44, 44, 0.04) !important;
-  border-color: #ff5252 !important;
+.statHeader {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+  gap: 12px;
 }
 
-:global(.MuiChip-root) {
-  border-radius: 6px !important;
-  font-weight: 600 !important;
+.statIcon {
+  font-size: 1.5rem;
+  background: rgba(255,255,255,0.2);
+  padding: 8px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
 }
 
-:global(.MuiLinearProgress-root) {
-  border-radius: 4px !important;
-  height: 8px !important;
+.statTitle {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 600;
+  color: white;
 }
 
-:global(.MuiAvatar-root) {
-  border-radius: 8px !important;
+.statValue {
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+  line-height: 1;
 }
 
-/* Custom chart styles */
-:global(.MuiLineElement-root) {
-  stroke-width: 2 !important;
+.statChange {
+  background: rgba(255,255,255,0.3);
+  color: white;
+  padding: 4px 12px;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  display: inline-block;
 }
 
-:global(.MuiAreaElement-root) {
-  fill: url(#gradient) !important;
+/* Charts Row */
+.chartsRow {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 24px;
 }
 
-/* List item styles */
-:global(.MuiListItem-root) {
-  border-radius: 8px !important;
-  margin-bottom: 4px !important;
+.chartCard {
+  background: white;
+  padding: 24px;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.08);
 }
 
-:global(.MuiListItem-root:hover) {
-  background-color: rgba(255, 44, 44, 0.04) !important;
+.cardHeader {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
 }
 
-/* Calendar customization */
-:global(.MuiPickersDay-root) {
-  border-radius: 6px !important;
+.cardIcon {
+  font-size: 1.2rem;
+  background: #f8f9fa;
+  padding: 8px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
 }
 
-:global(.Mui-selected) {
-  background: linear-gradient(90deg, #ff2c2c, #ff6600) !important;
+.cardTitle {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #2c3e50;
 }
 
-/* Typography colors */
-:global(.MuiTypography-h4) {
-  color: #2c3e50 !important;
-  font-weight: 700 !important;
+/* Line Chart */
+.lineChart {
+  width: 100%;
+  height: 300px;
 }
 
-:global(.MuiTypography-h6) {
-  color: #2c3e50 !important;
-  font-weight: 600 !important;
+.chartContainer {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  height: 100%;
+  padding: 20px 0;
+  gap: 8px;
 }
 
-:global(.MuiTypography-body2) {
-  color: #7f8c8d !important;
+.barContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+  height: 100%;
 }
 
-/* Grid spacing adjustments */
-:global(.MuiGrid-root) {
-  margin-top: 0 !important;
+.bar {
+  background: linear-gradient(to top, #ff2c2c, #ff6600);
+  border-radius: 4px 4px 0 0;
+  min-height: 20px;
+  width: 100%;
+  position: relative;
+  transition: all 0.3s ease;
+  cursor: pointer;
 }
 
-/* Card content spacing */
-:global(.MuiCardContent-root) {
-  padding: 20px !important;
+.bar:hover {
+  opacity: 0.8;
+  transform: scale(1.05);
 }
 
-:global(.MuiCardContent-root:last-child) {
-  padding-bottom: 20px !important;
+.barValue {
+  position: absolute;
+  top: -25px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #2c3e50;
+  color: white;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  white-space: nowrap;
+  opacity: 0;
+  transition: opacity 0.3s ease;
 }
 
-/* Custom scrollbar for the main content */
+.bar:hover .barValue {
+  opacity: 1;
+}
+
+.barLabel {
+  margin-top: 8px;
+  font-size: 0.75rem;
+  color: #7f8c8d;
+  font-weight: 600;
+}
+
+/* Pie Chart */
+.pieChart {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  height: 300px;
+}
+
+.pieContainer {
+  width: 200px;
+  height: 200px;
+}
+
+.pieSvg {
+  width: 100%;
+  height: 100%;
+}
+
+.pieSlice {
+  transition: opacity 0.3s ease;
+  cursor: pointer;
+}
+
+.pieSlice:hover {
+  opacity: 0.8;
+}
+
+.pieLegend {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+}
+
+.legendItem {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 0;
+}
+
+.legendColor {
+  width: 12px;
+  height: 12px;
+  border-radius: 2px;
+}
+
+.legendLabel {
+  flex: 1;
+  font-size: 0.875rem;
+  color: #2c3e50;
+  font-weight: 500;
+}
+
+.legendValue {
+  font-size: 0.875rem;
+  color: #7f8c8d;
+  font-weight: 600;
+}
+
+/* Bottom Row */
+.bottomRow {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.infoCard {
+  background: white;
+  padding: 24px;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+  display: flex;
+  flex-direction: column;
+}
+
+/* Activities & Notifications */
+.activitiesList,
+.notificationsList {
+  flex: 1;
+  max-height: 300px;
+  overflow-y: auto;
+  margin-bottom: 16px;
+}
+
+.activityItem,
+.notificationItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 12px 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.activityItem:last-child,
+.notificationItem:last-child {
+  border-bottom: none;
+}
+
+.activityIcon,
+.notificationIcon {
+  font-size: 1rem;
+  background: #f8f9fa;
+  padding: 6px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 32px;
+  height: 32px;
+}
+
+.activityContent,
+.notificationContent {
+  flex: 1;
+}
+
+.activityAction,
+.notificationMessage {
+  font-size: 0.875rem;
+  color: #2c3e50;
+  font-weight: 500;
+  margin-bottom: 4px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.activityMeta,
+.notificationTime {
+  font-size: 0.75rem;
+  color: #7f8c8d;
+}
+
+.notificationBadge {
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.warning {
+  background: #fff3cd;
+  color: #856404;
+  border: 1px solid #ffeaa7;
+}
+
+.success {
+  background: #d1edff;
+  color: #0c5460;
+  border: 1px solid #bee5eb;
+}
+
+.info {
+  background: #d1ecf1;
+  color: #0c5460;
+  border: 1px solid #bee5eb;
+}
+
+.default {
+  background: #f8f9fa;
+  color: #6c757d;
+  border: 1px solid #e9ecef;
+}
+
+/* Calendar */
+.calendar {
+  margin-bottom: 16px;
+}
+
+.calendarHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.calendarNav {
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: 4px;
+  transition: background-color 0.2s ease;
+}
+
+.calendarNav:hover {
+  background-color: #f8f9fa;
+}
+
+.calendarMonth {
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+.calendarGrid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 4px;
+}
+
+.calendarDayHeader {
+  text-align: center;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #7f8c8d;
+  padding: 8px 4px;
+}
+
+.calendarDay {
+  text-align: center;
+  padding: 8px 4px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  font-size: 0.875rem;
+}
+
+.calendarDay:hover {
+  background-color: #f8f9fa;
+}
+
+.calendarDaySelected {
+  background: linear-gradient(90deg, #ff2c2c, #ff6600);
+  color: white;
+}
+
+.upcomingEvents {
+  margin-top: auto;
+  padding-top: 16px;
+  border-top: 1px solid #f0f0f0;
+}
+
+.eventsTitle {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #2c3e50;
+  margin-bottom: 8px;
+}
+
+.eventItem {
+  font-size: 0.75rem;
+  color: #7f8c8d;
+  margin-bottom: 4px;
+}
+
+/* Bottom Section */
+.bottomSection {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+/* Progress Bars */
+.progressContainer {
+  margin-bottom: 20px;
+}
+
+.progressLabel {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+  font-size: 0.875rem;
+  color: #2c3e50;
+  font-weight: 500;
+}
+
+.progressBar {
+  background: #f0f0f0;
+  border-radius: 4px;
+  height: 8px;
+  overflow: hidden;
+}
+
+.progressFill {
+  background: linear-gradient(90deg, #ff2c2c, #ff6600);
+  height: 100%;
+  border-radius: 4px;
+  transition: width 0.3s ease;
+}
+
+/* Buttons */
+.primaryButton,
+.outlineButton {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 16px;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-align: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.primaryButton {
+  background: linear-gradient(90deg, #ff2c2c, #ff6600);
+  color: white;
+}
+
+.primaryButton:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(255, 44, 44, 0.3);
+}
+
+.outlineButton {
+  background: white;
+  color: #ff2c2c;
+  border: 2px solid #ff2c2c;
+}
+
+.outlineButton:hover {
+  background: rgba(255, 44, 44, 0.04);
+  border-color: #ff5252;
+}
+
+.buttonIcon {
+  font-size: 1rem;
+}
+
+.actionsGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+/* Other Pages */
+.pageCard {
+  background: white;
+  padding: 32px;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+}
+
+.pageDescription {
+  color: #7f8c8d;
+  margin-bottom: 24px;
+  line-height: 1.6;
+}
+
+.placeholder {
+  text-align: center;
+  padding: 40px 20px;
+  background: #f8f9fa;
+  border-radius: 8px;
+  border: 2px dashed #e0e0e0;
+}
+
+.placeholderIcon {
+  font-size: 3rem;
+  margin-bottom: 16px;
+}
+
+.placeholderTitle {
+  font-size: 1.5rem;
+  color: #2c3e50;
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+.placeholderText {
+  color: #7f8c8d;
+  font-size: 0.875rem;
+}
+
+/* Scrollbar */
 .main::-webkit-scrollbar {
   width: 6px;
 }
@@ -148,136 +600,70 @@
   background: #a8a8a8;
 }
 
-/* Responsive adjustments */
+.activitiesList::-webkit-scrollbar,
+.notificationsList::-webkit-scrollbar {
+  width: 4px;
+}
+
+.activitiesList::-webkit-scrollbar-track,
+.notificationsList::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.activitiesList::-webkit-scrollbar-thumb,
+.notificationsList::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 2px;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .chartsRow {
+    grid-template-columns: 1fr;
+  }
+  
+  .bottomRow {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
 @media (max-width: 768px) {
-  .main {
-    padding: 15px;
-  }
-  
   .pageHeader {
-    padding: 15px 15px 0 15px;
+    padding: 15px 15px 10px 15px;
   }
   
-  .pageHeader h1 {
+  .dashboardContent {
+    padding: 0 15px 15px 15px;
+    gap: 16px;
+  }
+  
+  .statsGrid {
+    grid-template-columns: 1fr;
+  }
+  
+  .bottomRow {
+    grid-template-columns: 1fr;
+  }
+  
+  .bottomSection {
+    grid-template-columns: 1fr;
+  }
+  
+  .actionsGrid {
+    grid-template-columns: 1fr;
+  }
+  
+  .pageTitle {
     font-size: 1.5rem;
   }
 }
 
-/* Animation for stat cards */
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
+@media (max-width: 480px) {
+  .chartCard {
+    padding: 16px;
   }
-  to {
-    opacity: 1;
-    transform: translateY(0);
+  
+  .infoCard {
+    padding: 16px;
   }
-}
-
-:global(.MuiCard-root) {
-  animation: fadeInUp 0.5s ease-out;
-}
-
-/* Gradient background for special cards */
-.gradientCard {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
-  color: white !important;
-}
-
-/* Custom shadow depths */
-:global(.MuiPaper-elevation1) {
-  box-shadow: 0 2px 10px rgba(0,0,0,0.08) !important;
-}
-
-:global(.MuiPaper-elevation3) {
-  box-shadow: 0 4px 20px rgba(0,0,0,0.12) !important;
-}
-
-/* Success/warning colors */
-:global(.MuiChip-colorSuccess) {
-  background-color: #27ae60 !important;
-  color: white !important;
-}
-
-:global(.MuiChip-colorWarning) {
-  background-color: #f39c12 !important;
-  color: white !important;
-}
-
-:global(.MuiChip-colorInfo) {
-  background-color: #3498db !important;
-  color: white !important;
-}
-
-/* List item icon colors */
-:global(.MuiListItemIcon-root) {
-  min-width: 40px !important;
-}
-
-/* Calendar specific styles */
-:global(.MuiDateCalendar-root) {
-  width: 100% !important;
-}
-
-:global(.MuiPickersCalendarHeader-root) {
-  margin-bottom: 16px !important;
-}
-
-/* Progress bar colors */
-:global(.MuiLinearProgress-barColorPrimary) {
-  background: linear-gradient(90deg, #ff2c2c, #ff6600) !important;
-}
-
-/* Table styles for future use */
-:global(.MuiTable-root) {
-  border-radius: 12px !important;
-  overflow: hidden !important;
-}
-
-:global(.MuiTableHead-root) {
-  background-color: #f8f9fa !important;
-}
-
-:global(.MuiTableCell-head) {
-  font-weight: 600 !important;
-  color: #2c3e50 !important;
-  background-color: #f8f9fa !important;
-}
-
-/* Form control styles */
-:global(.MuiFormControl-root) {
-  margin-bottom: 16px !important;
-}
-
-:global(.MuiInputBase-root) {
-  border-radius: 8px !important;
-}
-
-:global(.MuiOutlinedInput-root) {
-  border-radius: 8px !important;
-}
-
-/* Dialog styles */
-:global(.MuiDialog-paper) {
-  border-radius: 12px !important;
-  padding: 0 !important;
-}
-
-/* Menu styles */
-:global(.MuiMenu-paper) {
-  border-radius: 8px !important;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.15) !important;
-  border: 1px solid #e0e0e0 !important;
-}
-
-/* Tab styles */
-:global(.MuiTab-root) {
-  text-transform: none !important;
-  font-weight: 600 !important;
-}
-
-:global(.MuiTabs-indicator) {
-  background: linear-gradient(90deg, #ff2c2c, #ff6600) !important;
-  height: 3px !important;
 }
