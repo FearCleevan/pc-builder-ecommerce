@@ -73,6 +73,7 @@
   text-align: left;
   font-size: 13px;
   transition: background-color 0.2s ease;
+  font-weight: 500;
 }
 
 .subMenuItem:hover {

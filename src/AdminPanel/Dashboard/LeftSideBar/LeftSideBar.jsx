@@ -7,7 +7,7 @@ import {
   FiUsers, 
   FiSettings, 
   FiBell, 
-  FiStore,
+  FiShoppingBag,
   FiChevronDown,
   FiChevronRight
 } from 'react-icons/fi';
@@ -28,7 +28,7 @@ const LeftSideBar = ({ isCollapsed, onMenuClick }) => {
     { name: 'CUSTOMERS', icon: <FiUsers size={18} />, hasDropdown: true, items: ['Users', 'Reviews'] },
     { name: 'ADMINISTRATION', icon: <FiSettings size={18} />, hasDropdown: true, items: ['Admin Accounts', 'Roles & Permissions', 'Audit Logs'] },
     { name: 'NOTIFICATIONS', icon: <FiBell size={18} />, hasDropdown: true, items: ['Alerts', 'Notification Settings'] },
-    { name: 'STORE SETTINGS', icon: <FiStore size={18} />, hasDropdown: true, items: ['General Settings', 'Payment Settings', 'Shipping Settings', 'Banners & Promotions'] }
+    { name: 'STORE SETTINGS', icon: <FiShoppingBag size={18} />, hasDropdown: true, items: ['General Settings', 'Payment Settings', 'Shipping Settings', 'Banners & Promotions'] }
   ];
 
   return (
@@ -62,7 +62,7 @@ const LeftSideBar = ({ isCollapsed, onMenuClick }) => {
                     className={styles.subMenuItem}
                     onClick={() => onMenuClick(`${item.name} - ${subItem}`)}
                   >
-                    • {subItem}
+                    {subItem}
                   </button>
                 ))}
               </div>
