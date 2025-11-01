@@ -31,14 +31,14 @@
   transition: transform 0.2s ease, color 0.2s ease;
 }
 
-.tb {
+.tb-large {
   font-family: 'Ethnocentric', sans-serif !important;
-  font-size: 3rem; /* larger TB */
+  font-size: 3rem;
   font-weight: 700;
   font-style: italic;
   background: linear-gradient(90deg, #ff2c2c, #ff6600);
-  background-clip: text;
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   color: transparent;
   text-decoration: underline;
