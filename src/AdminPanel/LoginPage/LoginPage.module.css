@@ -1,0 +1,105 @@
+@font-face {
+  font-family: 'Ethnocentric';
+  src: url('/fonts/Ethnocentric Rg.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.loginWrapper {
+  height: 100vh;
+  width: 100%;
+  background: #f5f5f5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.loginCard {
+  width: 420px;
+  background: #ffffff;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0px 6px 20px rgba(0,0,0,0.08);
+  text-align: center;
+}
+
+.logo {
+  font-family: 'Ethnocentric', sans-serif !important;
+  font-size: 2rem;
+  letter-spacing: 1px;
+  margin-bottom: 5px;
+}
+
+.tb {
+  font-family: 'Ethnocentric', sans-serif !important;
+  font-size: 2.6rem;
+  font-weight: 700;
+  font-style: italic;
+  background: linear-gradient(90deg, #ff2c2c, #ff6600);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  padding-right: 3px;
+}
+
+.title {
+  font-size: 1.3rem;
+  margin: 10px 0 25px;
+  font-weight: 600;
+  color: #333;
+}
+
+.form {
+  width: 100%;
+  text-align: left;
+}
+
+.inputGroup {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.inputGroup label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 6px;
+}
+
+.inputGroup input {
+  padding: 12px 15px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  outline: none;
+  font-size: 15px;
+  transition: all 0.2s ease;
+}
+
+.inputGroup input:focus {
+  border-color: #ff2c2c;
+  box-shadow: 0 0 0 2px rgba(255,44,44,0.1);
+}
+
+.loginBtn {
+  width: 100%;
+  padding: 12px;
+  background: #ff2c2c;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin-top: 10px;
+}
+
+.loginBtn:hover {
+  background: #ff5252;
+}
+
+.footerText {
+  margin-top: 20px;
+  font-size: 13px;
+  color: #666;
+}
