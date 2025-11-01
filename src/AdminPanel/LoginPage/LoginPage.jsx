@@ -6,6 +6,7 @@ const LoginPage = () => {
   const [password, setPassword] = useState("");
   const [rememberMe, setRememberMe] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
+  const navigate = useNavigate();
 
   // Load saved credentials on component mount
   useEffect(() => {
@@ -27,14 +28,14 @@ const LoginPage = () => {
       localStorage.setItem("rememberedEmail", email);
       localStorage.setItem("rememberMe", "true");
     } else {
-      // Clear saved data if remember me is unchecked
       localStorage.removeItem("rememberedEmail");
       localStorage.removeItem("rememberMe");
     }
     
-    // TODO: integrate Firebase login
+    // Navigate to admin dashboard
+    navigate("/admin/dashboard");
   };
-
+  
   const togglePasswordVisibility = () => {
     setShowPassword(!showPassword);
   };
