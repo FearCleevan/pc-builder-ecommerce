@@ -8,6 +8,7 @@ import LaptopsPages from './components/Pages/LaptopsPages/LaptopsPages';
 import DesktopsPages from './components/Pages/DesktopsPages/DesktopsPages';
 
 import LoginPage from './AdminPanel/LoginPage/LoginPage';
+import DashboardPanel from './AdminPanel/Dashboard/DashboardPanel/DashboardPanel';
 
 import './index.css';
 
@@ -24,6 +25,7 @@ function App() {
 
           {/* ✅ Admin Login Route */}
           <Route path="/admin" element={<LoginPage />} />
+          <Route path="/admin/dashboard" element={<DashboardPanel />} />
         </Routes>
       </div>
     </Router>
