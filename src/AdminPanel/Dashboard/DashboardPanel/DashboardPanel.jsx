@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import { CssBaseline } from '@mui/material';
 import Header from '../Header/Header';
@@ -77,6 +77,23 @@ const theme = createTheme({
 const DashboardPanel = () => {
   const [isSidebarCollapsed, setIsSidebarCollapsed] = useState(false);
   const [activeMenu, setActiveMenu] = useState('DASHBOARD');
+  const [isMobile, setIsMobile] = useState(false);
+
+  // Detect mobile devices and adjust sidebar accordingly
+  useEffect(() => {
+    const checkDevice = () => {
+      const mobile = window.innerWidth <= 768;
+      setIsMobile(mobile);
+      if (mobile) {
+        setIsSidebarCollapsed(true);
+      }
+    };
+
+    checkDevice();
+    window.addEventListener('resize', checkDevice);
+    
+    return () => window.removeEventListener('resize', checkDevice);
+  }, []);
 
   const toggleSidebar = () => {
     setIsSidebarCollapsed(!isSidebarCollapsed);
@@ -84,6 +101,10 @@ const DashboardPanel = () => {
 
   const handleMenuClick = (menuName) => {
     setActiveMenu(menuName);
+    // Auto-close sidebar on mobile after menu selection
+    if (isMobile) {
+      setIsSidebarCollapsed(true);
+    }
   };
 
   return (
@@ -98,7 +119,15 @@ const DashboardPanel = () => {
           <LeftSideBar 
             isCollapsed={isSidebarCollapsed}
             onMenuClick={handleMenuClick}
+            isMobile={isMobile}
           />
+          {/* Overlay for mobile when sidebar is open */}
+          {!isSidebarCollapsed && isMobile && (
+            <div 
+              className={styles.overlay}
+              onClick={() => setIsSidebarCollapsed(true)}
+            />
+          )}
           <MainPage activeMenu={activeMenu} />
         </div>
       </div>
