@@ -105,7 +105,7 @@ const DashboardPanel = () => {
     setActiveMenu(menuName);
     
     // Handle navigation based on menu selection
-    if (menuName === 'ADMINISTRATION - Admin Accounts') {
+    if (menuName === 'ADMINISTRATION - User Management') {
       setCurrentPage('user-management');
     } else if (menuName === 'DASHBOARD') {
       setCurrentPage('dashboard');

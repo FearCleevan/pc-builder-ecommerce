@@ -364,3 +364,147 @@
         flex-direction: column;
     }
 }
+
+/* Action Buttons */
+.actionButtons {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.editButton {
+  background: #3498db;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.editButton:hover {
+  background: #2980b9;
+  transform: translateY(-1px);
+}
+
+.deleteButton {
+  background: #e74c3c;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.deleteButton:hover {
+  background: #c0392b;
+  transform: translateY(-1px);
+}
+
+/* Delete Modal Styles */
+.modalContent {
+  padding: 24px;
+}
+
+.deleteWarning {
+  font-size: 48px;
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+.userToDelete {
+  background: #f8f9fa;
+  padding: 16px;
+  border-radius: 8px;
+  margin: 16px 0;
+  text-align: center;
+}
+
+.userToDelete strong {
+  display: block;
+  color: #2c3e50;
+  font-size: 16px;
+  margin-bottom: 4px;
+}
+
+.userToDelete span {
+  display: block;
+  color: #7f8c8d;
+  font-size: 14px;
+}
+
+.userToDelete .userRole {
+  background: linear-gradient(90deg, #ff2c2c, #ff6600);
+  color: white;
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  display: inline-block;
+  margin-top: 4px;
+}
+
+.deleteNote {
+  color: #7f8c8d;
+  font-size: 14px;
+  text-align: center;
+  margin: 0;
+}
+
+.deleteConfirmButton {
+  padding: 12px 24px;
+  background: #e74c3c;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.deleteConfirmButton:hover {
+  background: #c0392b;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(231, 76, 60, 0.3);
+}
+
+/* Form Notes */
+.roleNote {
+  color: #7f8c8d;
+  font-size: 12px;
+  margin: 8px 0 0 0;
+  font-style: italic;
+}
+
+.fieldNote {
+  color: #7f8c8d;
+  font-size: 12px;
+  margin: 4px 0 0 0;
+  font-style: italic;
+}
+
+.disabledInput {
+  background-color: #f8f9fa;
+  color: #6c757d;
+  cursor: not-allowed;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .actionButtons {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .editButton,
+  .deleteButton {
+    width: 100%;
+  }
+}

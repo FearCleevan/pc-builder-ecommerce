@@ -3,6 +3,7 @@ import {
   getAllUsers, 
   createUser, 
   updateUserRole, 
+  deleteUser,
   USER_ROLES, 
   ROLE_PERMISSIONS,
   PERMISSIONS,
@@ -16,9 +17,16 @@ const UserManagement = ({ onBackToDashboard }) => {
   const [currentUser, setCurrentUser] = useState(null);
   const [loading, setLoading] = useState(false);
   const [showCreateModal, setShowCreateModal] = useState(false);
+  const [showEditModal, setShowEditModal] = useState(false);
+  const [showDeleteModal, setShowDeleteModal] = useState(false);
+  const [selectedUser, setSelectedUser] = useState(null);
   const [formData, setFormData] = useState({
     email: '',
     password: '',
+    displayName: '',
+    role: USER_ROLES.VIEWER
+  });
+  const [editFormData, setEditFormData] = useState({
     displayName: '',
     role: USER_ROLES.VIEWER
   });
@@ -47,6 +55,11 @@ const UserManagement = ({ onBackToDashboard }) => {
     }
   };
 
+  // Check if super admin already exists
+  const superAdminExists = () => {
+    return users.some(user => user.role === USER_ROLES.SUPER_ADMIN);
+  };
+
   const handleCreateUser = async (e) => {
     e.preventDefault();
     setError('');
@@ -54,6 +67,12 @@ const UserManagement = ({ onBackToDashboard }) => {
 
     if (!hasPermission(currentUser, PERMISSIONS.CREATE_USERS)) {
       setError('You do not have permission to create users');
+      return;
+    }
+
+    // Prevent creating super admin if one already exists
+    if (formData.role === USER_ROLES.SUPER_ADMIN && superAdminExists()) {
+      setError('A Super Admin already exists. Only one Super Admin is allowed.');
       return;
     }
 
@@ -73,9 +92,93 @@ const UserManagement = ({ onBackToDashboard }) => {
     }
   };
 
+  const handleEditUser = (user) => {
+    setSelectedUser(user);
+    setEditFormData({
+      displayName: user.displayName || '',
+      role: user.role
+    });
+    setShowEditModal(true);
+  };
+
+  const handleUpdateUser = async (e) => {
+    e.preventDefault();
+    setError('');
+    setSuccess('');
+
+    if (!hasPermission(currentUser, PERMISSIONS.EDIT_USERS)) {
+      setError('You do not have permission to edit users');
+      return;
+    }
+
+    // Prevent changing role to super admin if one already exists and it's not the current super admin
+    if (editFormData.role === USER_ROLES.SUPER_ADMIN && 
+        selectedUser.role !== USER_ROLES.SUPER_ADMIN && 
+        superAdminExists()) {
+      setError('A Super Admin already exists. Only one Super Admin is allowed.');
+      return;
+    }
+
+    try {
+      await updateUserRole(selectedUser.id, editFormData.role);
+      setSuccess('User updated successfully');
+      setShowEditModal(false);
+      setSelectedUser(null);
+      loadUsers();
+    } catch (error) {
+      setError(error.message);
+    }
+  };
+
+  const handleDeleteClick = (user) => {
+    setSelectedUser(user);
+    setShowDeleteModal(true);
+  };
+
+  const handleDeleteUser = async () => {
+    if (!hasPermission(currentUser, PERMISSIONS.DELETE_USERS)) {
+      setError('You do not have permission to delete users');
+      setShowDeleteModal(false);
+      return;
+    }
+
+    // Prevent deleting yourself
+    if (selectedUser.id === currentUser.uid) {
+      setError('You cannot delete your own account');
+      setShowDeleteModal(false);
+      return;
+    }
+
+    // Prevent deleting super admin
+    if (selectedUser.role === USER_ROLES.SUPER_ADMIN) {
+      setError('Cannot delete Super Admin account');
+      setShowDeleteModal(false);
+      return;
+    }
+
+    try {
+      await deleteUser(selectedUser.id);
+      setSuccess('User deleted successfully');
+      setShowDeleteModal(false);
+      setSelectedUser(null);
+      loadUsers();
+    } catch (error) {
+      setError(error.message);
+    }
+  };
+
   const handleRoleChange = async (userId, newRole) => {
     if (!hasPermission(currentUser, PERMISSIONS.EDIT_USERS)) {
       setError('You do not have permission to edit users');
+      return;
+    }
+
+    // Prevent changing role to super admin if one already exists
+    const user = users.find(u => u.id === userId);
+    if (newRole === USER_ROLES.SUPER_ADMIN && 
+        user.role !== USER_ROLES.SUPER_ADMIN && 
+        superAdminExists()) {
+      setError('A Super Admin already exists. Only one Super Admin is allowed.');
       return;
     }
 
@@ -112,6 +215,23 @@ const UserManagement = ({ onBackToDashboard }) => {
       [USER_ROLES.VIEWER]: 'Viewer'
     };
     return names[role] || role;
+  };
+
+  // Filter available roles based on current conditions
+  const getAvailableRoles = (user = null) => {
+    const roles = Object.values(USER_ROLES);
+    
+    // If super admin already exists, remove super admin from available roles
+    // unless we're editing the existing super admin
+    if (superAdminExists()) {
+      if (user && user.role === USER_ROLES.SUPER_ADMIN) {
+        // Allow keeping super admin role for existing super admin
+        return roles;
+      }
+      return roles.filter(role => role !== USER_ROLES.SUPER_ADMIN);
+    }
+    
+    return roles;
   };
 
   if (loading) {
@@ -187,23 +307,48 @@ const UserManagement = ({ onBackToDashboard }) => {
                 </span>
               </div>
               <div className={styles.colActions}>
-                {hasPermission(currentUser, PERMISSIONS.EDIT_USERS) && 
-                 currentUser.uid !== user.id && (
-                  <select 
-                    value={user.role}
-                    onChange={(e) => handleRoleChange(user.id, e.target.value)}
-                    className={styles.roleSelect}
-                  >
-                    {Object.values(USER_ROLES).map(role => (
-                      <option key={role} value={role}>
-                        {getRoleDisplayName(role)}
-                      </option>
-                    ))}
-                  </select>
-                )}
-                {currentUser.uid === user.id && (
-                  <span className={styles.currentUserBadge}>You</span>
-                )}
+                <div className={styles.actionButtons}>
+                  {hasPermission(currentUser, PERMISSIONS.EDIT_USERS) && (
+                    <button
+                      className={styles.editButton}
+                      onClick={() => handleEditUser(user)}
+                      title="Edit User"
+                    >
+                      Edit
+                    </button>
+                  )}
+                  
+                  {hasPermission(currentUser, PERMISSIONS.EDIT_USERS) && 
+                   currentUser.uid !== user.id && (
+                    <select 
+                      value={user.role}
+                      onChange={(e) => handleRoleChange(user.id, e.target.value)}
+                      className={styles.roleSelect}
+                    >
+                      {getAvailableRoles(user).map(role => (
+                        <option key={role} value={role}>
+                          {getRoleDisplayName(role)}
+                        </option>
+                      ))}
+                    </select>
+                  )}
+                  
+                  {hasPermission(currentUser, PERMISSIONS.DELETE_USERS) && 
+                   currentUser.uid !== user.id && 
+                   user.role !== USER_ROLES.SUPER_ADMIN && (
+                    <button
+                      className={styles.deleteButton}
+                      onClick={() => handleDeleteClick(user)}
+                      title="Delete User"
+                    >
+                      Delete
+                    </button>
+                  )}
+                  
+                  {currentUser.uid === user.id && (
+                    <span className={styles.currentUserBadge}>You</span>
+                  )}
+                </div>
               </div>
             </div>
           ))}
@@ -262,14 +407,17 @@ const UserManagement = ({ onBackToDashboard }) => {
                   value={formData.role}
                   onChange={(e) => setFormData({...formData, role: e.target.value})}
                 >
-                  {Object.values(USER_ROLES)
-                    .filter(role => role !== USER_ROLES.SUPER_ADMIN) // Prevent creating super admins
-                    .map(role => (
+                  {getAvailableRoles().map(role => (
                     <option key={role} value={role}>
                       {getRoleDisplayName(role)}
                     </option>
                   ))}
                 </select>
+                {superAdminExists() && (
+                  <p className={styles.roleNote}>
+                    Note: Super Admin role is not available as one already exists.
+                  </p>
+                )}
               </div>
 
               <div className={styles.modalActions}>
@@ -288,6 +436,128 @@ const UserManagement = ({ onBackToDashboard }) => {
                 </button>
               </div>
             </form>
+          </div>
+        </div>
+      )}
+
+      {/* Edit User Modal */}
+      {showEditModal && selectedUser && (
+        <div className={styles.modalOverlay}>
+          <div className={styles.modal}>
+            <div className={styles.modalHeader}>
+              <h2>Edit User</h2>
+              <button 
+                className={styles.closeButton}
+                onClick={() => setShowEditModal(false)}
+              >
+                ×
+              </button>
+            </div>
+
+            <form onSubmit={handleUpdateUser} className={styles.modalForm}>
+              <div className={styles.formGroup}>
+                <label>Display Name</label>
+                <input
+                  type="text"
+                  value={editFormData.displayName}
+                  onChange={(e) => setEditFormData({...editFormData, displayName: e.target.value})}
+                  required
+                />
+              </div>
+
+              <div className={styles.formGroup}>
+                <label>Email</label>
+                <input
+                  type="email"
+                  value={selectedUser.email}
+                  disabled
+                  className={styles.disabledInput}
+                />
+                <p className={styles.fieldNote}>Email cannot be changed</p>
+              </div>
+
+              <div className={styles.formGroup}>
+                <label>Role</label>
+                <select
+                  value={editFormData.role}
+                  onChange={(e) => setEditFormData({...editFormData, role: e.target.value})}
+                >
+                  {getAvailableRoles(selectedUser).map(role => (
+                    <option key={role} value={role}>
+                      {getRoleDisplayName(role)}
+                    </option>
+                  ))}
+                </select>
+                {superAdminExists() && selectedUser.role !== USER_ROLES.SUPER_ADMIN && (
+                  <p className={styles.roleNote}>
+                    Note: Super Admin role is not available as one already exists.
+                  </p>
+                )}
+              </div>
+
+              <div className={styles.modalActions}>
+                <button
+                  type="button"
+                  className={styles.cancelButton}
+                  onClick={() => setShowEditModal(false)}
+                >
+                  Cancel
+                </button>
+                <button
+                  type="submit"
+                  className={styles.submitButton}
+                >
+                  Update User
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      )}
+
+      {/* Delete Confirmation Modal */}
+      {showDeleteModal && selectedUser && (
+        <div className={styles.modalOverlay}>
+          <div className={styles.modal}>
+            <div className={styles.modalHeader}>
+              <h2>Delete User</h2>
+              <button 
+                className={styles.closeButton}
+                onClick={() => setShowDeleteModal(false)}
+              >
+                ×
+              </button>
+            </div>
+
+            <div className={styles.modalContent}>
+              <div className={styles.deleteWarning}>
+                ⚠️
+              </div>
+              <p>Are you sure you want to delete this user?</p>
+              <div className={styles.userToDelete}>
+                <strong>{selectedUser.displayName || 'No Name'}</strong>
+                <span>{selectedUser.email}</span>
+                <span className={styles.userRole}>{getRoleDisplayName(selectedUser.role)}</span>
+              </div>
+              <p className={styles.deleteNote}>
+                This action cannot be undone. The user will be permanently removed from the system.
+              </p>
+            </div>
+
+            <div className={styles.modalActions}>
+              <button
+                className={styles.cancelButton}
+                onClick={() => setShowDeleteModal(false)}
+              >
+                Cancel
+              </button>
+              <button
+                className={styles.deleteConfirmButton}
+                onClick={handleDeleteUser}
+              >
+                Delete User
+              </button>
+            </div>
           </div>
         </div>
       )}
