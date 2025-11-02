@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { 
   FiHome, 
   FiPackage, 
@@ -13,8 +13,9 @@ import {
 } from 'react-icons/fi';
 import styles from './LeftSideBar.module.css';
 
-const LeftSideBar = ({ isCollapsed, onMenuClick }) => {
+const LeftSideBar = ({ isCollapsed, onMenuClick, isMobile }) => {
   const [activeDropdown, setActiveDropdown] = useState(null);
+  const [hoveredMenu, setHoveredMenu] = useState(null);
 
   const toggleDropdown = (menuName) => {
     setActiveDropdown(activeDropdown === menuName ? null : menuName);
@@ -31,11 +32,26 @@ const LeftSideBar = ({ isCollapsed, onMenuClick }) => {
     { name: 'STORE SETTINGS', icon: <FiShoppingBag size={18} />, hasDropdown: true, items: ['General Settings', 'Payment Settings', 'Shipping Settings', 'Banners & Promotions'] }
   ];
 
+  const handleMenuHover = (menuName) => {
+    if (isCollapsed) {
+      setHoveredMenu(menuName);
+    }
+  };
+
+  const handleMenuLeave = () => {
+    setHoveredMenu(null);
+  };
+
   return (
-    <aside className={`${styles.sidebar} ${isCollapsed ? styles.collapsed : ''}`}>
+    <aside className={`${styles.sidebar} ${isCollapsed ? styles.collapsed : ''} ${isMobile ? styles.mobile : ''}`}>
       <nav className={styles.nav}>
         {menuItems.map((item) => (
-          <div key={item.name} className={styles.menuItem}>
+          <div 
+            key={item.name} 
+            className={styles.menuItem}
+            onMouseEnter={() => handleMenuHover(item.name)}
+            onMouseLeave={handleMenuLeave}
+          >
             <button
               className={styles.menuButton}
               onClick={() => item.hasDropdown ? toggleDropdown(item.name) : onMenuClick(item.name)}
@@ -70,6 +86,13 @@ const LeftSideBar = ({ isCollapsed, onMenuClick }) => {
           </div>
         ))}
       </nav>
+      
+      {/* Enhanced tooltip for collapsed state */}
+      {isCollapsed && hoveredMenu && (
+        <div className={styles.enhancedTooltip}>
+          {hoveredMenu}
+        </div>
+      )}
     </aside>
   );
 };
