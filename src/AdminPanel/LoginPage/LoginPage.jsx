@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import { loginUser, getCurrentUser, ensureUserDocument } from "../../firebase/services/authService";
 import styles from "./LoginPage.module.css";
 
 const LoginPage = () => {
@@ -7,7 +8,25 @@ const LoginPage = () => {
   const [password, setPassword] = useState("");
   const [rememberMe, setRememberMe] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState("");
   const navigate = useNavigate();
+
+  // Check if user is already logged in
+  useEffect(() => {
+    const checkAuthStatus = async () => {
+      try {
+        const user = await getCurrentUser();
+        if (user && user.isActive) {
+          navigate("/admin/dashboard");
+        }
+      } catch (error) {
+        console.log("No active session");
+      }
+    };
+
+    checkAuthStatus();
+  }, [navigate]);
 
   // Load saved credentials on component mount
   useEffect(() => {
@@ -20,21 +39,47 @@ const LoginPage = () => {
     }
   }, []);
 
-  const handleLogin = (e) => {
+  const handleLogin = async (e) => {
     e.preventDefault();
-    console.log("Email:", email, "Password:", password, "Remember Me:", rememberMe);
-    
-    // Handle remember me functionality
-    if (rememberMe) {
-      localStorage.setItem("rememberedEmail", email);
-      localStorage.setItem("rememberMe", "true");
-    } else {
-      localStorage.removeItem("rememberedEmail");
-      localStorage.removeItem("rememberMe");
+    setIsLoading(true);
+    setError("");
+
+    try {
+      console.log("Attempting login with:", email);
+      
+      const result = await loginUser(email, password);
+      
+      if (result.user) {
+        console.log("Login successful, user:", result.user);
+        
+        // Handle remember me functionality
+        if (rememberMe) {
+          localStorage.setItem("rememberedEmail", email);
+          localStorage.setItem("rememberMe", "true");
+        } else {
+          localStorage.removeItem("rememberedEmail");
+          localStorage.removeItem("rememberMe");
+        }
+        
+        // Store user info in session storage
+        sessionStorage.setItem("currentUser", JSON.stringify(result.user));
+        
+        console.log("Navigating to dashboard");
+        // Navigate to admin dashboard
+        navigate("/admin/dashboard");
+      }
+    } catch (error) {
+      console.error("Login error:", error);
+      
+      // More specific error handling
+      if (error.message.includes('not properly configured') || error.message.includes('No user document')) {
+        setError("Account configuration issue. Please contact administrator.");
+      } else {
+        setError(error.message);
+      }
+    } finally {
+      setIsLoading(false);
     }
-    
-    // Navigate to admin dashboard
-    navigate("/admin/dashboard");
   };
 
   const togglePasswordVisibility = () => {
@@ -42,7 +87,6 @@ const LoginPage = () => {
   };
 
   const handleForgotPassword = () => {
-    // TODO: implement forgot password logic
     console.log("Forgot password clicked for:", email);
     alert("Forgot password functionality to be implemented");
   };
@@ -51,7 +95,6 @@ const LoginPage = () => {
     const isChecked = e.target.checked;
     setRememberMe(isChecked);
     
-    // If user unchecks remember me, clear the saved email immediately
     if (!isChecked) {
       localStorage.removeItem("rememberedEmail");
       localStorage.removeItem("rememberMe");
@@ -67,6 +110,12 @@ const LoginPage = () => {
 
         <h2 className={styles.title}>Admin Login</h2>
 
+        {error && (
+          <div className={styles.errorMessage}>
+            {error}
+          </div>
+        )}
+
         <form className={styles.form} onSubmit={handleLogin}>
           <div className={styles.inputGroup}>
             <label>Email</label>
@@ -76,6 +125,7 @@ const LoginPage = () => {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               required 
+              disabled={isLoading}
             />
           </div>
 
@@ -89,22 +139,15 @@ const LoginPage = () => {
                 onChange={(e) => setPassword(e.target.value)}
                 required
                 className={styles.passwordInput}
+                disabled={isLoading}
               />
               <button
                 type="button"
                 className={styles.passwordToggle}
                 onClick={togglePasswordVisibility}
+                disabled={isLoading}
               >
-                {showPassword ? (
-                  <svg className={styles.eyeIcon} viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
-                  </svg>
-                ) : (
-                  <svg className={styles.eyeIcon} viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13.875 18.825A10.05 10.05 0 0112 19c-4.478 0-8.268-2.943-9.543-7a9.97 9.97 0 011.563-3.029m5.858.908a3 3 0 114.243 4.243M9.878 9.878l4.242 4.242M9.88 9.88l-3.29-3.29m7.532 7.532l3.29 3.29M3 3l3.59 3.59m0 0A9.953 9.953 0 0112 5c4.478 0 8.268 2.943 9.543 7a10.025 10.025 0 01-4.132 5.411m0 0L21 21" />
-                  </svg>
-                )}
+                {showPassword ? "👁️" : "👁️‍🗨️"}
               </button>
             </div>
           </div>
@@ -116,6 +159,7 @@ const LoginPage = () => {
                 checked={rememberMe}
                 onChange={handleRememberMeChange}
                 className={styles.checkbox}
+                disabled={isLoading}
               />
               <span>Remember me</span>
             </label>
@@ -124,13 +168,25 @@ const LoginPage = () => {
               type="button"
               className={styles.forgotPassword}
               onClick={handleForgotPassword}
+              disabled={isLoading}
             >
               Forgot password?
             </button>
           </div>
 
-          <button className={styles.loginBtn} type="submit">
-            Login
+          <button 
+            className={`${styles.loginBtn} ${isLoading ? styles.loading : ''}`} 
+            type="submit"
+            disabled={isLoading}
+          >
+            {isLoading ? (
+              <>
+                <div className={styles.spinner}></div>
+                Logging in...
+              </>
+            ) : (
+              'Login'
+            )}
           </button>
         </form>
 

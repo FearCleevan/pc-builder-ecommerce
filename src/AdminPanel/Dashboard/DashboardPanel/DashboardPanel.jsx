@@ -5,6 +5,7 @@ import Header from '../Header/Header';
 import LeftSideBar from '../LeftSideBar/LeftSideBar';
 import MainPage from '../MainPage/MainPage';
 import styles from './DashboardPanel.module.css';
+import UserManagement from '../../UserManagement/UserManagement';
 
 // Create MUI theme to match your design
 const theme = createTheme({
@@ -77,6 +78,7 @@ const theme = createTheme({
 const DashboardPanel = () => {
   const [isSidebarCollapsed, setIsSidebarCollapsed] = useState(false);
   const [activeMenu, setActiveMenu] = useState('DASHBOARD');
+  const [currentPage, setCurrentPage] = useState('dashboard');
   const [isMobile, setIsMobile] = useState(false);
 
   // Detect mobile devices and adjust sidebar accordingly
@@ -101,9 +103,35 @@ const DashboardPanel = () => {
 
   const handleMenuClick = (menuName) => {
     setActiveMenu(menuName);
+    
+    // Handle navigation based on menu selection
+    if (menuName === 'ADMINISTRATION - Admin Accounts') {
+      setCurrentPage('user-management');
+    } else if (menuName === 'DASHBOARD') {
+      setCurrentPage('dashboard');
+    } else {
+      setCurrentPage('dashboard');
+      setActiveMenu(menuName);
+    }
+    
     // Auto-close sidebar on mobile after menu selection
     if (isMobile) {
       setIsSidebarCollapsed(true);
+    }
+  };
+
+  const handleBackToDashboard = () => {
+    setCurrentPage('dashboard');
+    setActiveMenu('DASHBOARD');
+  };
+
+  const renderContent = () => {
+    switch (currentPage) {
+      case 'user-management':
+        return <UserManagement onBackToDashboard={handleBackToDashboard} />;
+      case 'dashboard':
+      default:
+        return <MainPage activeMenu={activeMenu} />;
     }
   };
 
@@ -114,12 +142,15 @@ const DashboardPanel = () => {
         <Header 
           onToggleSidebar={toggleSidebar}
           isSidebarCollapsed={isSidebarCollapsed}
+          currentPage={currentPage}
+          onBackToDashboard={handleBackToDashboard}
         />
         <div className={styles.dashboardBody}>
           <LeftSideBar 
             isCollapsed={isSidebarCollapsed}
             onMenuClick={handleMenuClick}
             isMobile={isMobile}
+            currentPage={currentPage}
           />
           {/* Overlay for mobile when sidebar is open */}
           {!isSidebarCollapsed && isMobile && (
@@ -128,7 +159,7 @@ const DashboardPanel = () => {
               onClick={() => setIsSidebarCollapsed(true)}
             />
           )}
-          <MainPage activeMenu={activeMenu} />
+          {renderContent()}
         </div>
       </div>
     </ThemeProvider>

@@ -13,9 +13,16 @@ import {
 } from 'react-icons/fi';
 import styles from './LeftSideBar.module.css';
 
-const LeftSideBar = ({ isCollapsed, onMenuClick, isMobile }) => {
+const LeftSideBar = ({ isCollapsed, onMenuClick, isMobile, currentPage }) => {
   const [activeDropdown, setActiveDropdown] = useState(null);
   const [hoveredMenu, setHoveredMenu] = useState(null);
+
+  // Keep ADMINISTRATION dropdown open when on user management page
+  useEffect(() => {
+    if (currentPage === 'user-management') {
+      setActiveDropdown('ADMINISTRATION');
+    }
+  }, [currentPage]);
 
   const toggleDropdown = (menuName) => {
     setActiveDropdown(activeDropdown === menuName ? null : menuName);
@@ -42,6 +49,16 @@ const LeftSideBar = ({ isCollapsed, onMenuClick, isMobile }) => {
     setHoveredMenu(null);
   };
 
+  const handleMenuItemClick = (item, subItem = null) => {
+    if (item.hasDropdown && !subItem) {
+      toggleDropdown(item.name);
+    } else if (subItem) {
+      onMenuClick(`${item.name} - ${subItem}`);
+    } else {
+      onMenuClick(item.name);
+    }
+  };
+
   return (
     <aside className={`${styles.sidebar} ${isCollapsed ? styles.collapsed : ''} ${isMobile ? styles.mobile : ''}`}>
       <nav className={styles.nav}>
@@ -53,8 +70,10 @@ const LeftSideBar = ({ isCollapsed, onMenuClick, isMobile }) => {
             onMouseLeave={handleMenuLeave}
           >
             <button
-              className={styles.menuButton}
-              onClick={() => item.hasDropdown ? toggleDropdown(item.name) : onMenuClick(item.name)}
+              className={`${styles.menuButton} ${
+                currentPage === 'user-management' && item.name === 'ADMINISTRATION' ? styles.activeMenu : ''
+              }`}
+              onClick={() => handleMenuItemClick(item)}
               data-tooltip={isCollapsed ? item.name : ''}
             >
               <span className={styles.menuIcon}>{item.icon}</span>
@@ -75,8 +94,10 @@ const LeftSideBar = ({ isCollapsed, onMenuClick, isMobile }) => {
                 {item.items.map((subItem) => (
                   <button
                     key={subItem}
-                    className={styles.subMenuItem}
-                    onClick={() => onMenuClick(`${item.name} - ${subItem}`)}
+                    className={`${styles.subMenuItem} ${
+                      currentPage === 'user-management' && subItem === 'Admin Accounts' ? styles.activeSubMenu : ''
+                    }`}
+                    onClick={() => handleMenuItemClick(item, subItem)}
                   >
                     {subItem}
                   </button>

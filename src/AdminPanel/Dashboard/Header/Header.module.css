@@ -489,3 +489,160 @@
     width: 200px;
   }
 }
+
+/* Logout Modal Styles */
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+  padding: 20px;
+}
+
+.modal {
+  background: white;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 400px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+  animation: modalSlideIn 0.2s ease-out;
+}
+
+@keyframes modalSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.modalHeader {
+  padding: 24px 24px 0 24px;
+  text-align: center;
+}
+
+.modalHeader h2 {
+  margin: 0;
+  color: #2c3e50;
+  font-size: 1.5rem;
+}
+
+.modalContent {
+  padding: 24px;
+  text-align: center;
+}
+
+.modalIcon {
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, #ff6b6b, #ff2c2c);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 16px auto;
+  color: white;
+}
+
+.modalContent p {
+  margin: 0 0 8px 0;
+  color: #2c3e50;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.modalSubtext {
+  color: #7f8c8d !important;
+  font-size: 14px !important;
+  font-weight: 400 !important;
+  margin: 0 !important;
+}
+
+.modalActions {
+  display: flex;
+  gap: 12px;
+  padding: 0 24px 24px 24px;
+}
+
+.modalActions button {
+  flex: 1;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.cancelButton {
+  background: #f8f9fa;
+  color: #2c3e50;
+  border: 1px solid #e0e0e0;
+}
+
+.cancelButton:hover:not(:disabled) {
+  background: #e9ecef;
+}
+
+.confirmButton {
+  background: linear-gradient(90deg, #ff2c2c, #ff6600);
+  color: white;
+}
+
+.confirmButton:hover:not(:disabled) {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(255, 44, 44, 0.3);
+}
+
+.confirmButton:disabled,
+.cancelButton:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none !important;
+}
+
+/* Spinner for logout button */
+.spinner {
+  width: 16px;
+  height: 16px;
+  border: 2px solid transparent;
+  border-top: 2px solid currentColor;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Ensure modal appears above other elements */
+.header {
+  position: relative;
+  z-index: 1000;
+}
+
+/* Mobile responsive for modal */
+@media (max-width: 768px) {
+  .modal {
+    margin: 20px;
+    max-width: none;
+  }
+  
+  .modalActions {
+    flex-direction: column;
+  }
+}
