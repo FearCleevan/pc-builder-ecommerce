@@ -101,34 +101,23 @@ export const ROLE_PERMISSIONS = {
 // Login function
 export const loginUser = async (email, password) => {
   try {
-    console.log('Attempting login for:', email);
-    
     const userCredential = await signInWithEmailAndPassword(auth, email, password);
     const user = userCredential.user;
-    
-    console.log('Firebase auth successful, fetching user data from Firestore...');
-    console.log('User UID:', user.uid);
     
     // Get user role from Firestore
     const userDocRef = doc(db, 'users', user.uid);
     const userDoc = await getDoc(userDocRef);
     
-    console.log('User document exists:', userDoc.exists());
-    
     if (!userDoc.exists()) {
-      console.log('No user document found in Firestore for UID:', user.uid);
       throw new Error('User account not properly configured. Please contact administrator.');
     }
     
     const userData = userDoc.data();
-    console.log('User data from Firestore:', userData);
     
     // Check if user is active
     if (userData.isActive === false) {
       throw new Error('This account has been deactivated');
     }
-    
-    console.log('Login successful for user:', userData.displayName);
     
     return {
       user: {
@@ -141,8 +130,6 @@ export const loginUser = async (email, password) => {
       }
     };
   } catch (error) {
-    console.error('Login error:', error);
-    
     // Handle specific Firestore errors
     if (error.message.includes('network') || error.message.includes('timeout')) {
       throw new Error('Network error. Please check your connection and try again.');
@@ -161,8 +148,6 @@ export const createUser = async (userData) => {
     const userCredential = await createUserWithEmailAndPassword(auth, email, password);
     const user = userCredential.user;
     
-    console.log('User created in Auth, UID:', user.uid);
-    
     // Update profile
     await updateProfile(user, { displayName });
     
@@ -176,11 +161,8 @@ export const createUser = async (userData) => {
       isActive: true
     });
     
-    console.log('User document created in Firestore');
-    
     return { success: true, userId: user.uid };
   } catch (error) {
-    console.error('Create user error:', error);
     throw new Error(getAuthErrorMessage(error.code));
   }
 };
@@ -192,10 +174,8 @@ export const deleteUser = async (userId) => {
     // To fully delete the user from Firebase Auth, you'd need Firebase Admin SDK on backend
     await deleteDoc(doc(db, 'users', userId));
     
-    console.log('User document deleted from Firestore');
     return { success: true };
   } catch (error) {
-    console.error('Error deleting user:', error);
     throw new Error('Failed to delete user');
   }
 };
@@ -211,7 +191,6 @@ export const updateUser = async (userId, userData) => {
     await updateDoc(doc(db, 'users', userId), updateData);
     return { success: true };
   } catch (error) {
-    console.error('Error updating user:', error);
     throw new Error('Failed to update user');
   }
 };
@@ -226,7 +205,6 @@ export const deactivateUser = async (userId) => {
     });
     return { success: true };
   } catch (error) {
-    console.error('Error deactivating user:', error);
     throw new Error('Failed to deactivate user');
   }
 };
@@ -241,7 +219,6 @@ export const reactivateUser = async (userId) => {
     });
     return { success: true };
   } catch (error) {
-    console.error('Error reactivating user:', error);
     throw new Error('Failed to reactivate user');
   }
 };
@@ -253,7 +230,6 @@ export const ensureUserDocument = async (user) => {
     const userDoc = await getDoc(userDocRef);
     
     if (!userDoc.exists()) {
-      console.log('Auto-creating user document for:', user.uid);
       await setDoc(userDocRef, {
         email: user.email,
         displayName: user.displayName || 'Admin User',
@@ -261,7 +237,6 @@ export const ensureUserDocument = async (user) => {
         createdAt: new Date().toISOString(),
         isActive: true
       });
-      console.log('User document auto-created');
     }
   } catch (error) {
     console.error('Error ensuring user document:', error);
@@ -295,16 +270,11 @@ export const getCurrentUser = async () => {
   try {
     const user = auth.currentUser;
     if (!user) {
-      console.log('No current user in auth');
       return null;
     }
     
-    console.log('Current user UID:', user.uid);
-    
     const userDoc = await getDoc(doc(db, 'users', user.uid));
     if (!userDoc.exists()) {
-      console.log('No user document found for current user');
-      
       // Auto-create document if missing
       await ensureUserDocument(user);
       const newUserDoc = await getDoc(doc(db, 'users', user.uid));
@@ -325,7 +295,6 @@ export const getCurrentUser = async () => {
     }
     
     const userData = userDoc.data();
-    console.log('Current user data:', userData);
     
     return {
       uid: user.uid,
@@ -374,7 +343,6 @@ export const onAuthChange = (callback) => {
   return onAuthStateChanged(auth, async (user) => {
     try {
       if (user) {
-        console.log('Auth state changed - user logged in:', user.uid);
         const userDoc = await getDoc(doc(db, 'users', user.uid));
         
         if (userDoc.exists()) {
@@ -408,7 +376,6 @@ export const onAuthChange = (callback) => {
           }
         }
       }
-      console.log('Auth state changed - no user');
       callback(null);
     } catch (error) {
       console.error('Auth state change error:', error);
