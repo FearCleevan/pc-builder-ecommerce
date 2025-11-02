@@ -34,7 +34,7 @@ const LeftSideBar = ({ isCollapsed, onMenuClick, isMobile, currentPage }) => {
     { name: 'INVENTORY', icon: <FiArchive size={18} />, hasDropdown: true, items: ['Inventory Monitor', 'Inventory Logs'] },
     { name: 'ORDERS', icon: <FiShoppingCart size={18} />, hasDropdown: true, items: ['All Orders', 'Carts (Abandoned / Active)'] },
     { name: 'CUSTOMERS', icon: <FiUsers size={18} />, hasDropdown: true, items: ['Users', 'Reviews'] },
-    { name: 'ADMINISTRATION', icon: <FiSettings size={18} />, hasDropdown: true, items: ['Admin Accounts', 'Roles & Permissions', 'Audit Logs'] },
+    { name: 'ADMINISTRATION', icon: <FiSettings size={18} />, hasDropdown: true, items: ['User Management', 'Roles & Permissions', 'Audit Logs'] },
     { name: 'NOTIFICATIONS', icon: <FiBell size={18} />, hasDropdown: true, items: ['Alerts', 'Notification Settings'] },
     { name: 'STORE SETTINGS', icon: <FiShoppingBag size={18} />, hasDropdown: true, items: ['General Settings', 'Payment Settings', 'Shipping Settings', 'Banners & Promotions'] }
   ];
