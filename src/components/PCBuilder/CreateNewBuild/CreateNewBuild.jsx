@@ -23,7 +23,6 @@ const CreateNewBuild = () => {
   const handleCreateNewBuild = () => {
     // Reset to a new empty build
     console.log('Create new build');
-    // You'll need to implement this function to reset the builder
   };
 
   return (
