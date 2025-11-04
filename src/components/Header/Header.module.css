@@ -31,7 +31,7 @@
   transition: transform 0.2s ease, color 0.2s ease;
 }
 
-.tb-large {
+.tb {
   font-family: 'Ethnocentric', sans-serif !important;
   font-size: 3rem;
   font-weight: 700;
