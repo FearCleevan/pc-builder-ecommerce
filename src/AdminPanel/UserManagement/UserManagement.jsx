@@ -540,7 +540,7 @@ const UserManagement = ({ onBackToDashboard }) => {
                 <span className={styles.userRole}>{getRoleDisplayName(selectedUser.role)}</span>
               </div>
               <p className={styles.deleteNote}>
-                This action cannot be undone. The user will be permanently removed from the system.
+                This action cannot be undone. The user will be permanently removed.
               </p>
             </div>
 
