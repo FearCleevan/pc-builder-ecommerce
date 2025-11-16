@@ -266,7 +266,9 @@
 }
 
 .modalForm {
-    padding: 24px;
+    padding-top: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
 }
 
 .formGroup {
@@ -327,6 +329,7 @@
     cursor: pointer;
     font-weight: 600;
     transition: all 0.2s ease;
+    margin-bottom: 20px;
 }
 
 .submitButton:hover {

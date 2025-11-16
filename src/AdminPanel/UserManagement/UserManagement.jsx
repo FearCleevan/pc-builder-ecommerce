@@ -5,11 +5,10 @@ import {
   updateUserRole, 
   deleteUser,
   USER_ROLES, 
-  ROLE_PERMISSIONS,
   PERMISSIONS,
   hasPermission 
 } from '../../firebase/services/authService';
-import { getCurrentUser } from '../../firebase/services/authService';
+import { getCurrentUser, logoutUser } from '../../firebase/services/authService';
 import styles from './UserManagement.module.css';
 
 const UserManagement = ({ onBackToDashboard }) => {
@@ -32,6 +31,11 @@ const UserManagement = ({ onBackToDashboard }) => {
   });
   const [error, setError] = useState('');
   const [success, setSuccess] = useState('');
+  const [creatingUser, setCreatingUser] = useState(false);
+  const [updatingUser, setUpdatingUser] = useState(false);
+  const [deletingUser, setDeletingUser] = useState(false);
+  const [updatingRole, setUpdatingRole] = useState(null);
+  const [showRefreshPrompt, setShowRefreshPrompt] = useState(false);
 
   useEffect(() => {
     loadCurrentUser();
@@ -55,7 +59,6 @@ const UserManagement = ({ onBackToDashboard }) => {
     }
   };
 
-  // Check if super admin already exists
   const superAdminExists = () => {
     return users.some(user => user.role === USER_ROLES.SUPER_ADMIN);
   };
@@ -64,21 +67,31 @@ const UserManagement = ({ onBackToDashboard }) => {
     e.preventDefault();
     setError('');
     setSuccess('');
+    setCreatingUser(true);
 
     if (!hasPermission(currentUser, PERMISSIONS.CREATE_USERS)) {
       setError('You do not have permission to create users');
+      setCreatingUser(false);
       return;
     }
 
     // Prevent creating super admin if one already exists
     if (formData.role === USER_ROLES.SUPER_ADMIN && superAdminExists()) {
       setError('A Super Admin already exists. Only one Super Admin is allowed.');
+      setCreatingUser(false);
       return;
     }
 
     try {
-      await createUser(formData);
-      setSuccess('User created successfully');
+      const result = await createUser(formData, currentUser);
+      
+      if (result.requiresRefresh) {
+        setSuccess(result.message);
+        setShowRefreshPrompt(true);
+      } else {
+        setSuccess('User created successfully!');
+      }
+      
       setShowCreateModal(false);
       setFormData({
         email: '',
@@ -89,6 +102,8 @@ const UserManagement = ({ onBackToDashboard }) => {
       loadUsers();
     } catch (error) {
       setError(error.message);
+    } finally {
+      setCreatingUser(false);
     }
   };
 
@@ -105,9 +120,11 @@ const UserManagement = ({ onBackToDashboard }) => {
     e.preventDefault();
     setError('');
     setSuccess('');
+    setUpdatingUser(true);
 
     if (!hasPermission(currentUser, PERMISSIONS.EDIT_USERS)) {
       setError('You do not have permission to edit users');
+      setUpdatingUser(false);
       return;
     }
 
@@ -116,6 +133,7 @@ const UserManagement = ({ onBackToDashboard }) => {
         selectedUser.role !== USER_ROLES.SUPER_ADMIN && 
         superAdminExists()) {
       setError('A Super Admin already exists. Only one Super Admin is allowed.');
+      setUpdatingUser(false);
       return;
     }
 
@@ -127,6 +145,8 @@ const UserManagement = ({ onBackToDashboard }) => {
       loadUsers();
     } catch (error) {
       setError(error.message);
+    } finally {
+      setUpdatingUser(false);
     }
   };
 
@@ -136,9 +156,14 @@ const UserManagement = ({ onBackToDashboard }) => {
   };
 
   const handleDeleteUser = async () => {
+    setError('');
+    setSuccess('');
+    setDeletingUser(true);
+
     if (!hasPermission(currentUser, PERMISSIONS.DELETE_USERS)) {
       setError('You do not have permission to delete users');
       setShowDeleteModal(false);
+      setDeletingUser(false);
       return;
     }
 
@@ -146,6 +171,7 @@ const UserManagement = ({ onBackToDashboard }) => {
     if (selectedUser.id === currentUser.uid) {
       setError('You cannot delete your own account');
       setShowDeleteModal(false);
+      setDeletingUser(false);
       return;
     }
 
@@ -153,6 +179,7 @@ const UserManagement = ({ onBackToDashboard }) => {
     if (selectedUser.role === USER_ROLES.SUPER_ADMIN) {
       setError('Cannot delete Super Admin account');
       setShowDeleteModal(false);
+      setDeletingUser(false);
       return;
     }
 
@@ -164,12 +191,19 @@ const UserManagement = ({ onBackToDashboard }) => {
       loadUsers();
     } catch (error) {
       setError(error.message);
+    } finally {
+      setDeletingUser(false);
     }
   };
 
   const handleRoleChange = async (userId, newRole) => {
+    setError('');
+    setSuccess('');
+    setUpdatingRole(userId);
+
     if (!hasPermission(currentUser, PERMISSIONS.EDIT_USERS)) {
       setError('You do not have permission to edit users');
+      setUpdatingRole(null);
       return;
     }
 
@@ -179,6 +213,7 @@ const UserManagement = ({ onBackToDashboard }) => {
         user.role !== USER_ROLES.SUPER_ADMIN && 
         superAdminExists()) {
       setError('A Super Admin already exists. Only one Super Admin is allowed.');
+      setUpdatingRole(null);
       return;
     }
 
@@ -188,21 +223,31 @@ const UserManagement = ({ onBackToDashboard }) => {
       loadUsers();
     } catch (error) {
       setError(error.message);
+    } finally {
+      setUpdatingRole(null);
+    }
+  };
+
+  const handleRefresh = () => {
+    window.location.reload();
+  };
+
+  const handleLogoutAndRefresh = async () => {
+    try {
+      await logoutUser();
+      window.location.reload();
+    } catch (error) {
+      setError('Failed to logout: ' + error.message);
     }
   };
 
   const getRoleBadgeClass = (role) => {
     switch (role) {
-      case USER_ROLES.SUPER_ADMIN:
-        return styles.roleSuperAdmin;
-      case USER_ROLES.ADMIN:
-        return styles.roleAdmin;
-      case USER_ROLES.MANAGER:
-        return styles.roleManager;
-      case USER_ROLES.SUPPORT:
-        return styles.roleSupport;
-      default:
-        return styles.roleViewer;
+      case USER_ROLES.SUPER_ADMIN: return styles.roleSuperAdmin;
+      case USER_ROLES.ADMIN: return styles.roleAdmin;
+      case USER_ROLES.MANAGER: return styles.roleManager;
+      case USER_ROLES.SUPPORT: return styles.roleSupport;
+      default: return styles.roleViewer;
     }
   };
 
@@ -217,15 +262,11 @@ const UserManagement = ({ onBackToDashboard }) => {
     return names[role] || role;
   };
 
-  // Filter available roles based on current conditions
   const getAvailableRoles = (user = null) => {
     const roles = Object.values(USER_ROLES);
     
-    // If super admin already exists, remove super admin from available roles
-    // unless we're editing the existing super admin
     if (superAdminExists()) {
       if (user && user.role === USER_ROLES.SUPER_ADMIN) {
-        // Allow keeping super admin role for existing super admin
         return roles;
       }
       return roles.filter(role => role !== USER_ROLES.SUPER_ADMIN);
@@ -255,7 +296,20 @@ const UserManagement = ({ onBackToDashboard }) => {
       {success && (
         <div className={styles.successMessage}>
           {success}
-          <button onClick={() => setSuccess('')} className={styles.closeSuccess}>×</button>
+          {showRefreshPrompt && (
+            <div className={styles.refreshActions}>
+              <button onClick={handleRefresh} className={styles.refreshButton}>
+                Refresh Page
+              </button>
+              <button onClick={handleLogoutAndRefresh} className={styles.logoutButton}>
+                Logout & Refresh
+              </button>
+            </div>
+          )}
+          <button onClick={() => {
+            setSuccess('');
+            setShowRefreshPrompt(false);
+          }} className={styles.closeSuccess}>×</button>
         </div>
       )}
 
@@ -264,8 +318,9 @@ const UserManagement = ({ onBackToDashboard }) => {
           <button 
             className={styles.createButton}
             onClick={() => setShowCreateModal(true)}
+            disabled={creatingUser}
           >
-            + Create New User
+            {creatingUser ? 'Creating...' : '+ Create New User'}
           </button>
         )}
       </div>
@@ -313,6 +368,7 @@ const UserManagement = ({ onBackToDashboard }) => {
                       className={styles.editButton}
                       onClick={() => handleEditUser(user)}
                       title="Edit User"
+                      disabled={updatingUser || deletingUser}
                     >
                       Edit
                     </button>
@@ -324,10 +380,11 @@ const UserManagement = ({ onBackToDashboard }) => {
                       value={user.role}
                       onChange={(e) => handleRoleChange(user.id, e.target.value)}
                       className={styles.roleSelect}
+                      disabled={updatingRole === user.id}
                     >
                       {getAvailableRoles(user).map(role => (
                         <option key={role} value={role}>
-                          {getRoleDisplayName(role)}
+                          {updatingRole === user.id && role === user.role ? 'Updating...' : getRoleDisplayName(role)}
                         </option>
                       ))}
                     </select>
@@ -340,6 +397,7 @@ const UserManagement = ({ onBackToDashboard }) => {
                       className={styles.deleteButton}
                       onClick={() => handleDeleteClick(user)}
                       title="Delete User"
+                      disabled={deletingUser}
                     >
                       Delete
                     </button>
@@ -363,7 +421,8 @@ const UserManagement = ({ onBackToDashboard }) => {
               <h2>Create New User</h2>
               <button 
                 className={styles.closeButton}
-                onClick={() => setShowCreateModal(false)}
+                onClick={() => !creatingUser && setShowCreateModal(false)}
+                disabled={creatingUser}
               >
                 ×
               </button>
@@ -377,6 +436,7 @@ const UserManagement = ({ onBackToDashboard }) => {
                   value={formData.displayName}
                   onChange={(e) => setFormData({...formData, displayName: e.target.value})}
                   required
+                  disabled={creatingUser}
                 />
               </div>
 
@@ -387,6 +447,7 @@ const UserManagement = ({ onBackToDashboard }) => {
                   value={formData.email}
                   onChange={(e) => setFormData({...formData, email: e.target.value})}
                   required
+                  disabled={creatingUser}
                 />
               </div>
 
@@ -398,6 +459,7 @@ const UserManagement = ({ onBackToDashboard }) => {
                   onChange={(e) => setFormData({...formData, password: e.target.value})}
                   required
                   minLength="6"
+                  disabled={creatingUser}
                 />
               </div>
 
@@ -406,6 +468,7 @@ const UserManagement = ({ onBackToDashboard }) => {
                 <select
                   value={formData.role}
                   onChange={(e) => setFormData({...formData, role: e.target.value})}
+                  disabled={creatingUser}
                 >
                   {getAvailableRoles().map(role => (
                     <option key={role} value={role}>
@@ -425,14 +488,23 @@ const UserManagement = ({ onBackToDashboard }) => {
                   type="button"
                   className={styles.cancelButton}
                   onClick={() => setShowCreateModal(false)}
+                  disabled={creatingUser}
                 >
                   Cancel
                 </button>
                 <button
                   type="submit"
                   className={styles.submitButton}
+                  disabled={creatingUser}
                 >
-                  Create User
+                  {creatingUser ? (
+                    <span className={styles.buttonLoading}>
+                      <span className={styles.spinner}></span>
+                      Creating...
+                    </span>
+                  ) : (
+                    'Create User'
+                  )}
                 </button>
               </div>
             </form>
@@ -448,7 +520,8 @@ const UserManagement = ({ onBackToDashboard }) => {
               <h2>Edit User</h2>
               <button 
                 className={styles.closeButton}
-                onClick={() => setShowEditModal(false)}
+                onClick={() => !updatingUser && setShowEditModal(false)}
+                disabled={updatingUser}
               >
                 ×
               </button>
@@ -462,6 +535,7 @@ const UserManagement = ({ onBackToDashboard }) => {
                   value={editFormData.displayName}
                   onChange={(e) => setEditFormData({...editFormData, displayName: e.target.value})}
                   required
+                  disabled={updatingUser}
                 />
               </div>
 
@@ -481,6 +555,7 @@ const UserManagement = ({ onBackToDashboard }) => {
                 <select
                   value={editFormData.role}
                   onChange={(e) => setEditFormData({...editFormData, role: e.target.value})}
+                  disabled={updatingUser}
                 >
                   {getAvailableRoles(selectedUser).map(role => (
                     <option key={role} value={role}>
@@ -500,14 +575,23 @@ const UserManagement = ({ onBackToDashboard }) => {
                   type="button"
                   className={styles.cancelButton}
                   onClick={() => setShowEditModal(false)}
+                  disabled={updatingUser}
                 >
                   Cancel
                 </button>
                 <button
                   type="submit"
                   className={styles.submitButton}
+                  disabled={updatingUser}
                 >
-                  Update User
+                  {updatingUser ? (
+                    <span className={styles.buttonLoading}>
+                      <span className={styles.spinner}></span>
+                      Updating...
+                    </span>
+                  ) : (
+                    'Update User'
+                  )}
                 </button>
               </div>
             </form>
@@ -523,7 +607,8 @@ const UserManagement = ({ onBackToDashboard }) => {
               <h2>Delete User</h2>
               <button 
                 className={styles.closeButton}
-                onClick={() => setShowDeleteModal(false)}
+                onClick={() => !deletingUser && setShowDeleteModal(false)}
+                disabled={deletingUser}
               >
                 ×
               </button>
@@ -548,14 +633,23 @@ const UserManagement = ({ onBackToDashboard }) => {
               <button
                 className={styles.cancelButton}
                 onClick={() => setShowDeleteModal(false)}
+                disabled={deletingUser}
               >
                 Cancel
               </button>
               <button
                 className={styles.deleteConfirmButton}
                 onClick={handleDeleteUser}
+                disabled={deletingUser}
               >
-                Delete User
+                {deletingUser ? (
+                  <span className={styles.buttonLoading}>
+                    <span className={styles.spinner}></span>
+                    Deleting...
+                  </span>
+                ) : (
+                  'Delete User'
+                )}
               </button>
             </div>
           </div>
