@@ -311,6 +311,7 @@
     cursor: pointer;
     font-weight: 600;
     transition: all 0.2s ease;
+    margin-bottom: 20px;
 }
 
 .cancelButton:hover {
@@ -467,6 +468,8 @@
   cursor: pointer;
   font-weight: 600;
   transition: all 0.2s ease;
+  margin-bottom: 20px;
+  margin-right: 20px;
 }
 
 .deleteConfirmButton:hover {

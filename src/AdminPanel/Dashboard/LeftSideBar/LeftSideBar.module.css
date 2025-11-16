@@ -114,12 +114,10 @@
 }
 
 .subMenuItem:hover {
-  background: #3d566e;
   color: #ff2c2c;
-  padding-left: 45px;
 }
 
-.subMenuItem:hover::before {
+/* .subMenuItem:hover::before {
   content: '';
   position: absolute;
   left: 30px;
@@ -129,7 +127,7 @@
   height: 4px;
   background: #ff2c2c;
   border-radius: 50%;
-}
+} */
 
 /* Enhanced tooltip for collapsed state */
 .enhancedTooltip {
