@@ -13,10 +13,6 @@ import QuickSuggestions from './components/QuickSuggestions/QuickSuggestions';
 // Import styles
 import styles from './AIAssistant.module.css';
 
-/**
- * Main AI Assistant component
- * Provides a chat interface for product recommendations, PC building, and technical assistance
- */
 const AIAssistant = () => {
   // Use custom hooks for state management
   const {
