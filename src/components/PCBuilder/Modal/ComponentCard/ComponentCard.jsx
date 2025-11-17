@@ -1,7 +1,7 @@
-// client/src/components/PCBuilder/ComponentCard/ComponentCard.jsx
 import React, { useState, useEffect, useRef } from 'react';
-import Desktop1Image from '../../../../assets/Desktop1.jpg';
 import styles from './ComponentCard.module.css';
+import CloudinaryImage from '../../../AIAssistant/components/common/CloudinaryImage/CloudinaryImage';
+import Desktop1Image from '../../../../assets/Desktop1.jpg';
 
 const ComponentCard = ({ component, onSelect, onCompareToggle, isComparing }) => {
   const [isVisible, setIsVisible] = useState(false);
@@ -10,7 +10,6 @@ const ComponentCard = ({ component, onSelect, onCompareToggle, isComparing }) =>
   const cardRef = useRef();
 
   useEffect(() => {
-    // Capture the current value in a variable
     const currentCardRef = cardRef.current;
 
     const observer = new IntersectionObserver(
@@ -46,8 +45,13 @@ const ComponentCard = ({ component, onSelect, onCompareToggle, isComparing }) =>
     setImageLoaded(true);
   };
 
+  const handleImageError = () => {
+    // Fallback logic if Cloudinary image fails
+    setImageLoaded(true); // Still mark as loaded to show fallback
+  };
+
   const toggleCheck = (e) => {
-    e.stopPropagation(); // prevent card click propagation
+    e.stopPropagation();
     const newCheckedState = !isChecked;
     setIsChecked(newCheckedState);
     onCompareToggle(component, newCheckedState);
@@ -57,7 +61,7 @@ const ComponentCard = ({ component, onSelect, onCompareToggle, isComparing }) =>
     <div ref={cardRef} className={styles.card} data-testid="part-card">
       {isVisible ? (
         <>
-          {/* ✅ Updated Circle Check with Chakra-inspired design */}
+          {/* Checkbox */}
           <label className={styles.chakraCheckbox} data-checked={isChecked ? "" : null}>
             <input 
               className={styles.chakraCheckboxInput} 
@@ -74,16 +78,36 @@ const ComponentCard = ({ component, onSelect, onCompareToggle, isComparing }) =>
             </span>
           </label>
 
+          {/* Cloudinary Image with Loading State */}
           <div className={styles.imageContainer}>
             {!imageLoaded && <div className={styles.imagePlaceholder}></div>}
+            
+            {/* Option 1: Use CloudinaryImage with fallback */}
+            <CloudinaryImage
+              productName={component.name}
+              componentType="cpu" // Make this dynamic based on component type
+              alt={component.name}
+              className={`${styles.image} ${imageLoaded ? styles.imageLoaded : ''}`}
+              onLoad={handleImageLoad}
+              onError={handleImageError}
+              fallbackSrc={component.SampleImg || Desktop1Image}
+            />
+            
+            {/* Option 2: If CloudinaryImage doesn't support onLoad/onError, use this instead: */}
+            {/*
             <img
-              src={component.SampleImg || Desktop1Image}
+              src={getCloudinaryUrl(component)} // You'll need to create this function
               alt={component.name}
               className={`${styles.image} ${imageLoaded ? styles.imageLoaded : ''}`}
               loading="lazy"
               decoding="async"
               onLoad={handleImageLoad}
+              onError={(e) => {
+                e.target.src = component.SampleImg || Desktop1Image;
+                handleImageLoad();
+              }}
             />
+            */}
           </div>
 
           <div className={styles.content}>
