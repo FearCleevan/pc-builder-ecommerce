@@ -212,6 +212,7 @@ class CloudinaryService {
           normalized.includes("13700f") ||
           normalized.includes("13700k") ||
           normalized.includes("13700kf") ||
+          normalized.includes("14600k") ||
           normalized.includes("14700") ||
           normalized.includes("14700f") ||
           normalized.includes("14700k") ||
