@@ -11,6 +11,10 @@
     "upload:assets": "node scripts/upload-assets.js",
     "upload:cpu": "node scripts/upload-assets.js ./assets/cpu",
     "upload:gpu": "node scripts/upload-assets.js ./assets/video-card",
+    "upload:new": "node scripts/upload-new-assets.js",
+    "upload:new-cpu": "node scripts/upload-new-assets.js ./assets/cpu",
+    "upload:new-gpu": "node scripts/upload-new-assets.js ./assets/video-card",
+    "upload:single": "node scripts/upload-single.js",
     "upload:motherboard": "node scripts/upload-assets.js ./assets/motherboard"
   },
   "dependencies": {
