@@ -11,11 +11,17 @@
     "upload:assets": "node scripts/upload-assets.js",
     "upload:cpu": "node scripts/upload-assets.js ./assets/cpu",
     "upload:gpu": "node scripts/upload-assets.js ./assets/video-card",
+    "upload:motherboard": "node scripts/upload-assets.js ./assets/motherboard",
     "upload:new": "node scripts/upload-new-assets.js",
     "upload:new-cpu": "node scripts/upload-new-assets.js ./assets/cpu",
     "upload:new-gpu": "node scripts/upload-new-assets.js ./assets/video-card",
-    "upload:single": "node scripts/upload-single.js",
-    "upload:motherboard": "node scripts/upload-assets.js ./assets/motherboard"
+    "upload:new-motherboard": "node scripts/upload-new-assets.js ./assets/motherboard",
+    "upload:new-ram": "node scripts/upload-new-assets.js ./assets/memory",
+    "upload:new-storage": "node scripts/upload-new-assets.js ./assets/storage",
+    "upload:new-psu": "node scripts/upload-new-assets.js ./assets/power-supply",
+    "upload:new-cooler": "node scripts/upload-new-assets.js ./assets/cpu-cooler",
+    "upload:new-case": "node scripts/upload-new-assets.js ./assets/case",
+    "upload:single": "node scripts/upload-single.js"
   },
   "dependencies": {
     "@emotion/react": "^11.14.0",

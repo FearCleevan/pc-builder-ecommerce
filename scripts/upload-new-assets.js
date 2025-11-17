@@ -4,20 +4,11 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 import dotenv from 'dotenv';
 
-// Load environment variables from scripts/.env
 dotenv.config({ path: path.join(path.dirname(fileURLToPath(import.meta.url)), '.env') });
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-// Debug: Check if env vars are loaded
-console.log('🔧 Cloudinary Config Check:');
-console.log('Cloud Name:', process.env.CLOUDINARY_CLOUD_NAME ? '✅ Loaded' : '❌ Missing');
-console.log('API Key:', process.env.CLOUDINARY_API_KEY ? '✅ Loaded' : '❌ Missing');
-console.log('API Secret:', process.env.CLOUDINARY_API_SECRET ? '✅ Loaded' : '❌ Missing');
-console.log('');
-
-// Configure Cloudinary with direct values (no VITE_ prefix)
 cloudinary.v2.config({
   cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
   api_key: process.env.CLOUDINARY_API_KEY,
@@ -56,10 +47,29 @@ const COMPONENT_CATEGORIES = {
   'ups': 'Uninterruptible Power Supplies'
 };
 
-class AssetUploader {
+class SmartAssetUploader {
   constructor() {
     this.uploadedAssets = [];
+    this.skippedAssets = [];
     this.failedUploads = [];
+    this.existingAssets = new Set();
+  }
+
+  async loadExistingAssets() {
+    console.log('🔍 Loading existing assets from Cloudinary...');
+    try {
+      const result = await cloudinary.v2.search
+        .expression('folder:pc-builder/*')
+        .max_results(500)
+        .execute();
+
+      result.resources.forEach(resource => {
+        this.existingAssets.add(resource.public_id);
+      });
+      console.log(`📁 Found ${this.existingAssets.size} existing assets`);
+    } catch (error) {
+      console.warn('⚠️ Could not load existing assets:', error.message);
+    }
   }
 
   normalizeFileName(filename) {
@@ -70,35 +80,42 @@ class AssetUploader {
   }
 
   extractComponentInfo(filePath) {
-    // Handle different path separators for Windows/Linux
     const normalizedPath = filePath.replace(/\\/g, '/');
     const parts = normalizedPath.split('/');
     
-    // Find the indices dynamically
     const assetsIndex = parts.indexOf('assets');
-    if (assetsIndex === -1) {
-      throw new Error('Invalid file path: assets folder not found');
-    }
+    if (assetsIndex === -1) throw new Error('Invalid file path');
     
-    const category = parts[assetsIndex + 1]; // 'cpu'
-    const brand = parts[assetsIndex + 2]; // 'amd', 'intel'
-    const model = parts[assetsIndex + 3]; // 'lga 1700', 'am4'
+    const category = parts[assetsIndex + 1];
+    const brand = parts[assetsIndex + 2];
+    const model = parts[assetsIndex + 3];
     
     return {
       category,
       brand,
       model: model ? model.replace(/\s+/g, '') : 'unknown',
       displayCategory: COMPONENT_CATEGORIES[category] || category,
-      normalizedName: this.normalizeFileName(filePath)
+      normalizedName: this.normalizeFileName(filePath),
+      public_id: `pc-builder/${category}/${brand}/${model ? model.replace(/\s+/g, '') : 'unknown'}/${this.normalizeFileName(filePath)}`
     };
+  }
+
+  async checkIfAssetExists(publicId) {
+    return this.existingAssets.has(publicId);
   }
 
   async uploadImage(filePath) {
     try {
       const componentInfo = this.extractComponentInfo(filePath);
       
+      const alreadyExists = await this.checkIfAssetExists(componentInfo.public_id);
+      if (alreadyExists) {
+        console.log(`⏭️  Skipping: ${componentInfo.normalizedName}`);
+        this.skippedAssets.push({ ...componentInfo, reason: 'Already exists' });
+        return null;
+      }
+
       console.log(`📤 Uploading: ${componentInfo.normalizedName}`);
-      console.log(`   📁 Folder: pc-builder/${componentInfo.category}/${componentInfo.brand}/${componentInfo.model}`);
       
       const result = await cloudinary.v2.uploader.upload(filePath, {
         folder: `pc-builder/${componentInfo.category}/${componentInfo.brand}/${componentInfo.model}`,
@@ -107,19 +124,7 @@ class AssetUploader {
         unique_filename: false,
         overwrite: false,
         resource_type: 'image',
-        tags: [
-          'pc-builder',
-          componentInfo.category,
-          componentInfo.brand,
-          componentInfo.model,
-          componentInfo.displayCategory
-        ],
-        context: {
-          category: componentInfo.displayCategory,
-          brand: componentInfo.brand,
-          model: componentInfo.model,
-          component: componentInfo.normalizedName
-        },
+        tags: ['pc-builder', componentInfo.category, componentInfo.brand, componentInfo.model],
         transformation: [
           { width: 800, height: 800, crop: 'limit' },
           { quality: 'auto' },
@@ -130,44 +135,39 @@ class AssetUploader {
       const assetInfo = {
         ...componentInfo,
         public_id: result.public_id,
-        url: result.secure_url,
-        cloudinary_id: result.public_id
+        url: result.secure_url
       };
 
       this.uploadedAssets.push(assetInfo);
       console.log(`✅ Uploaded: ${assetInfo.normalizedName}`);
-      console.log(`   🔗 URL: ${result.secure_url}`);
       
       return assetInfo;
     } catch (error) {
-      console.error(`❌ Failed to upload ${filePath}:`, error.message);
-      this.failedUploads.push({
-        file: filePath,
-        error: error.message
-      });
+      console.error(`❌ Failed: ${filePath}`, error.message);
+      this.failedUploads.push({ file: filePath, error: error.message });
       return null;
     }
   }
 
   findAllImageFiles(dir, fileList = []) {
     const files = fs.readdirSync(dir);
-    
     files.forEach(file => {
       const filePath = path.join(dir, file);
       const stat = fs.statSync(filePath);
-      
       if (stat.isDirectory()) {
         this.findAllImageFiles(filePath, fileList);
       } else if (/\.(jpg|jpeg|png|webp)$/i.test(file)) {
         fileList.push(filePath);
       }
     });
-    
     return fileList;
   }
 
-  async bulkUpload(assetsDir = './assets') {
-    console.log('🔍 Scanning for image files...');
+  async uploadNewAssets(assetsDir = './assets') {
+    console.log('🖥️  PC Builder - Smart Cloudinary Upload\n');
+    
+    await this.loadExistingAssets();
+    console.log('🔍 Scanning for new image files...');
     
     if (!fs.existsSync(assetsDir)) {
       console.error('❌ Assets directory not found!');
@@ -175,27 +175,32 @@ class AssetUploader {
     }
 
     const allImageFiles = this.findAllImageFiles(assetsDir);
-    console.log(`📁 Found ${allImageFiles.length} image files`);
+    console.log(`📁 Found ${allImageFiles.length} image files locally`);
 
-    if (allImageFiles.length === 0) {
-      console.log('No image files found in assets directory');
+    const newImageFiles = [];
+    for (const filePath of allImageFiles) {
+      const componentInfo = this.extractComponentInfo(filePath);
+      const exists = await this.checkIfAssetExists(componentInfo.public_id);
+      if (!exists) newImageFiles.push(filePath);
+    }
+
+    console.log(`🚀 ${newImageFiles.length} new files to upload (${allImageFiles.length - newImageFiles.length} already exist)`);
+
+    if (newImageFiles.length === 0) {
+      console.log('🎉 All assets already uploaded!');
       return;
     }
 
-    console.log('🚀 Starting bulk upload...\n');
-
-    const batchSize = 3; // Reduced for better debugging
-    for (let i = 0; i < allImageFiles.length; i += batchSize) {
-      const batch = allImageFiles.slice(i, i + batchSize);
-      console.log(`\n🔄 Processing batch ${Math.floor(i/batchSize) + 1}...`);
+    const batchSize = 3;
+    for (let i = 0; i < newImageFiles.length; i += batchSize) {
+      const batch = newImageFiles.slice(i, i + batchSize);
+      console.log(`\n🔄 Batch ${Math.floor(i/batchSize) + 1}...`);
       
-      const batchPromises = batch.map(file => this.uploadImage(file));
-      await Promise.allSettled(batchPromises);
+      await Promise.allSettled(batch.map(file => this.uploadImage(file)));
       
-      const progress = Math.min(i + batchSize, allImageFiles.length);
-      console.log(`📊 Progress: ${progress}/${allImageFiles.length} (${Math.round(progress/allImageFiles.length*100)}%)`);
+      const progress = Math.min(i + batchSize, newImageFiles.length);
+      console.log(`📊 ${progress}/${newImageFiles.length} (${Math.round(progress/newImageFiles.length*100)}%)`);
       
-      // Increased delay between batches
       await new Promise(resolve => setTimeout(resolve, 2000));
     }
 
@@ -204,66 +209,40 @@ class AssetUploader {
 
   generateReport() {
     console.log('\n' + '='.repeat(50));
-    console.log('📊 UPLOAD REPORT');
+    console.log('📊 SMART UPLOAD REPORT');
     console.log('='.repeat(50));
     
-    console.log(`✅ Successfully uploaded: ${this.uploadedAssets.length} files`);
-    console.log(`❌ Failed uploads: ${this.failedUploads.length} files`);
-
-    const byCategory = this.uploadedAssets.reduce((acc, asset) => {
-      acc[asset.displayCategory] = (acc[asset.displayCategory] || 0) + 1;
-      return acc;
-    }, {});
-
-    console.log('\n📁 By Category:');
-    Object.entries(byCategory).forEach(([category, count]) => {
-      console.log(`   ${category}: ${count} files`);
-    });
+    console.log(`✅ Newly uploaded: ${this.uploadedAssets.length}`);
+    console.log(`⏭️  Skipped: ${this.skippedAssets.length}`);
+    console.log(`❌ Failed: ${this.failedUploads.length}`);
 
     const results = {
       timestamp: new Date().toISOString(),
       uploaded: this.uploadedAssets,
-      failed: this.failedUploads,
-      summary: {
-        total: this.uploadedAssets.length + this.failedUploads.length,
-        successful: this.uploadedAssets.length,
-        failed: this.failedUploads.length,
-        byCategory: byCategory
-      }
+      skipped: this.skippedAssets,
+      failed: this.failedUploads
     };
 
-    const resultsFilename = `upload-results-${Date.now()}.json`;
-    fs.writeFileSync(
-      resultsFilename,
-      JSON.stringify(results, null, 2)
-    );
+    const resultsFilename = `smart-upload-results-${Date.now()}.json`;
+    fs.writeFileSync(resultsFilename, JSON.stringify(results, null, 2));
+    console.log(`\n💾 Results: ${resultsFilename}`);
 
-    console.log(`\n💾 Detailed results saved to: ${resultsFilename}`);
-
-    if (this.failedUploads.length > 0) {
-      console.log('\n❌ Failed uploads:');
-      this.failedUploads.forEach(failed => {
-        console.log(`   - ${failed.file}: ${failed.error}`);
-      });
+    if (this.uploadedAssets.length > 0) {
+      console.log('\n✅ New uploads:');
+      this.uploadedAssets.forEach(asset => console.log(`   - ${asset.normalizedName}`));
     }
   }
 }
 
-// CLI execution
 async function main() {
-  const uploader = new AssetUploader();
-  
+  const uploader = new SmartAssetUploader();
   const args = process.argv.slice(2);
   const assetsDir = args[0] || './assets';
-  
-  console.log('🖥️  PC Builder - Cloudinary Bulk Upload');
-  console.log('========================================\n');
-  
-  await uploader.bulkUpload(assetsDir);
+  await uploader.uploadNewAssets(assetsDir);
 }
 
 if (process.argv[1] === fileURLToPath(import.meta.url)) {
   main().catch(console.error);
 }
 
-export default AssetUploader;
+export default SmartAssetUploader;
