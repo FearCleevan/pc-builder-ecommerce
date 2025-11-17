@@ -1,0 +1,1194 @@
+{
+  "timestamp": "2025-11-17T16:59:18.584Z",
+  "uploaded": [
+    {
+      "category": "cpu",
+      "brand": "amd",
+      "model": "am4",
+      "displayCategory": "Processors",
+      "normalizedName": "AMD Ryzen 5 3600",
+      "public_id": "pc-builder/cpu/amd/am4/AMD Ryzen 5 3600",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763398583/pc-builder/cpu/amd/am4/AMD%20Ryzen%205%203600.jpg",
+      "cloudinary_id": "pc-builder/cpu/amd/am4/AMD Ryzen 5 3600"
+    },
+    {
+      "category": "cpu",
+      "brand": "amd",
+      "model": "am4",
+      "displayCategory": "Processors",
+      "normalizedName": "AMD Ryzen 5 5500",
+      "public_id": "pc-builder/cpu/amd/am4/AMD Ryzen 5 5500",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763398583/pc-builder/cpu/amd/am4/AMD%20Ryzen%205%205500.jpg",
+      "cloudinary_id": "pc-builder/cpu/amd/am4/AMD Ryzen 5 5500"
+    },
+    {
+      "category": "cpu",
+      "brand": "amd",
+      "model": "am4",
+      "displayCategory": "Processors",
+      "normalizedName": "AMD Ryzen 5 4500",
+      "public_id": "pc-builder/cpu/amd/am4/AMD Ryzen 5 4500",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763398583/pc-builder/cpu/amd/am4/AMD%20Ryzen%205%204500.jpg",
+      "cloudinary_id": "pc-builder/cpu/amd/am4/AMD Ryzen 5 4500"
+    },
+    {
+      "category": "cpu",
+      "brand": "amd",
+      "model": "am4",
+      "displayCategory": "Processors",
+      "normalizedName": "AMD Ryzen 5 5500GT",
+      "public_id": "pc-builder/cpu/amd/am4/AMD Ryzen 5 5500GT",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763398586/pc-builder/cpu/amd/am4/AMD%20Ryzen%205%205500GT.jpg",
+      "cloudinary_id": "pc-builder/cpu/amd/am4/AMD Ryzen 5 5500GT"
+    },
+    {
+      "category": "cpu",
+      "brand": "amd",
+      "model": "am4",
+      "displayCategory": "Processors",
+      "normalizedName": "AMD Ryzen 5 5600",
+      "public_id": "pc-builder/cpu/amd/am4/AMD Ryzen 5 5600",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763398586/pc-builder/cpu/amd/am4/AMD%20Ryzen%205%205600.jpg",
+      "cloudinary_id": "pc-builder/cpu/amd/am4/AMD Ryzen 5 5600"
+    },
+    {
+      "category": "cpu",
+      "brand": "amd",
+      "model": "am4",
+      "displayCategory": "Processors",
+      "normalizedName": "AMD Ryzen 5 5600G",
+      "public_id": "pc-builder/cpu/amd/am4/AMD Ryzen 5 5600G",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763398586/pc-builder/cpu/amd/am4/AMD%20Ryzen%205%205600G.jpg",
+      "cloudinary_id": "pc-builder/cpu/amd/am4/AMD Ryzen 5 5600G"
+    },
+    {
+      "category": "cpu",
+      "brand": "amd",
+      "model": "am4",
+      "displayCategory": "Processors",
+      "normalizedName": "AMD Ryzen 5 5600X",
+      "public_id": "pc-builder/cpu/amd/am4/AMD Ryzen 5 5600X",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763398590/pc-builder/cpu/amd/am4/AMD%20Ryzen%205%205600X.jpg",
+      "cloudinary_id": "pc-builder/cpu/amd/am4/AMD Ryzen 5 5600X"
+    },
+    {
+      "category": "cpu",
+      "brand": "amd",
+      "model": "am4",
+      "displayCategory": "Processors",
+      "normalizedName": "AMD Ryzen 5 5600GT",
+      "public_id": "pc-builder/cpu/amd/am4/AMD Ryzen 5 5600GT",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763398590/pc-builder/cpu/amd/am4/AMD%20Ryzen%205%205600GT.jpg",
+      "cloudinary_id": "pc-builder/cpu/amd/am4/AMD Ryzen 5 5600GT"
+    },
+    {
+      "category": "cpu",
+      "brand": "amd",
+      "model": "am4",
+      "displayCategory": "Processors",
+      "normalizedName": "AMD Ryzen 5 5600X-1",
+      "public_id": "pc-builder/cpu/amd/am4/AMD Ryzen 5 5600X-1",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763398590/pc-builder/cpu/amd/am4/AMD%20Ryzen%205%205600X-1.jpg",
+      "cloudinary_id": "pc-builder/cpu/amd/am4/AMD Ryzen 5 5600X-1"
+    },
+    {
+      "category": "cpu",
+      "brand": "amd",
+      "model": "am4",
+      "displayCategory": "Processors",
+      "normalizedName": "AMD Ryzen 5 5600XT",
+      "public_id": "pc-builder/cpu/amd/am4/AMD Ryzen 5 5600XT",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763398593/pc-builder/cpu/amd/am4/AMD%20Ryzen%205%205600XT.jpg",
+      "cloudinary_id": "pc-builder/cpu/amd/am4/AMD Ryzen 5 5600XT"
+    },
+    {
+      "category": "cpu",
+      "brand": "amd",
+      "model": "am4",
+      "displayCategory": "Processors",
+      "normalizedName": "AMD Ryzen 7 1700X",
+      "public_id": "pc-builder/cpu/amd/am4/AMD Ryzen 7 1700X",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763398593/pc-builder/cpu/amd/am4/AMD%20Ryzen%207%201700X.jpg",
+      "cloudinary_id": "pc-builder/cpu/amd/am4/AMD Ryzen 7 1700X"
+    },
+    {
+      "category": "cpu",
+      "brand": "amd",
+      "model": "am4",
+      "displayCategory": "Processors",
+      "normalizedName": "AMD Ryzen 7 1700",
+      "public_id": "pc-builder/cpu/amd/am4/AMD Ryzen 7 1700",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763398593/pc-builder/cpu/amd/am4/AMD%20Ryzen%207%201700.jpg",
+      "cloudinary_id": "pc-builder/cpu/amd/am4/AMD Ryzen 7 1700"
+    },
+    {
+      "category": "cpu",
+      "brand": "amd",
+      "model": "am4",
+      "displayCategory": "Processors",
+      "normalizedName": "AMD Ryzen 7 2700",
+      "public_id": "pc-builder/cpu/amd/am4/AMD Ryzen 7 2700",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763398597/pc-builder/cpu/amd/am4/AMD%20Ryzen%207%202700.jpg",
+      "cloudinary_id": "pc-builder/cpu/amd/am4/AMD Ryzen 7 2700"
+    },
+    {
+      "category": "cpu",
+      "brand": "amd",
+      "model": "am4",
+      "displayCategory": "Processors",
+      "normalizedName": "AMD Ryzen 7 3700X",
+      "public_id": "pc-builder/cpu/amd/am4/AMD Ryzen 7 3700X",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763398597/pc-builder/cpu/amd/am4/AMD%20Ryzen%207%203700X.jpg",
+      "cloudinary_id": "pc-builder/cpu/amd/am4/AMD Ryzen 7 3700X"
+    },
+    {
+      "category": "cpu",
+      "brand": "amd",
+      "model": "am4",
+      "displayCategory": "Processors",
+      "normalizedName": "AMD Ryzen 7 2700X",
+      "public_id": "pc-builder/cpu/amd/am4/AMD Ryzen 7 2700X",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763398598/pc-builder/cpu/amd/am4/AMD%20Ryzen%207%202700X.jpg",
+      "cloudinary_id": "pc-builder/cpu/amd/am4/AMD Ryzen 7 2700X"
+    },
+    {
+      "category": "cpu",
+      "brand": "amd",
+      "model": "am4",
+      "displayCategory": "Processors",
+      "normalizedName": "AMD Ryzen 7 5700",
+      "public_id": "pc-builder/cpu/amd/am4/AMD Ryzen 7 5700",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763398602/pc-builder/cpu/amd/am4/AMD%20Ryzen%207%205700.jpg",
+      "cloudinary_id": "pc-builder/cpu/amd/am4/AMD Ryzen 7 5700"
+    },
+    {
+      "category": "cpu",
+      "brand": "amd",
+      "model": "am4",
+      "displayCategory": "Processors",
+      "normalizedName": "AMD Ryzen 7 5700G",
+      "public_id": "pc-builder/cpu/amd/am4/AMD Ryzen 7 5700G",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763398602/pc-builder/cpu/amd/am4/AMD%20Ryzen%207%205700G.jpg",
+      "cloudinary_id": "pc-builder/cpu/amd/am4/AMD Ryzen 7 5700G"
+    },
+    {
+      "category": "cpu",
+      "brand": "amd",
+      "model": "am4",
+      "displayCategory": "Processors",
+      "normalizedName": "AMD Ryzen 7 3800X",
+      "public_id": "pc-builder/cpu/amd/am4/AMD Ryzen 7 3800X",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763398602/pc-builder/cpu/amd/am4/AMD%20Ryzen%207%203800X.jpg",
+      "cloudinary_id": "pc-builder/cpu/amd/am4/AMD Ryzen 7 3800X"
+    },
+    {
+      "category": "cpu",
+      "brand": "amd",
+      "model": "am4",
+      "displayCategory": "Processors",
+      "normalizedName": "AMD Ryzen 7 5800X",
+      "public_id": "pc-builder/cpu/amd/am4/AMD Ryzen 7 5800X",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763398606/pc-builder/cpu/amd/am4/AMD%20Ryzen%207%205800X.jpg",
+      "cloudinary_id": "pc-builder/cpu/amd/am4/AMD Ryzen 7 5800X"
+    },
+    {
+      "category": "cpu",
+      "brand": "amd",
+      "model": "am4",
+      "displayCategory": "Processors",
+      "normalizedName": "AMD Ryzen 7 5700X",
+      "public_id": "pc-builder/cpu/amd/am4/AMD Ryzen 7 5700X",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763398606/pc-builder/cpu/amd/am4/AMD%20Ryzen%207%205700X.jpg",
+      "cloudinary_id": "pc-builder/cpu/amd/am4/AMD Ryzen 7 5700X"
+    },
+    {
+      "category": "cpu",
+      "brand": "amd",
+      "model": "am4",
+      "displayCategory": "Processors",
+      "normalizedName": "AMD Ryzen 7 5700X3D",
+      "public_id": "pc-builder/cpu/amd/am4/AMD Ryzen 7 5700X3D",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763398607/pc-builder/cpu/amd/am4/AMD%20Ryzen%207%205700X3D.jpg",
+      "cloudinary_id": "pc-builder/cpu/amd/am4/AMD Ryzen 7 5700X3D"
+    },
+    {
+      "category": "cpu",
+      "brand": "amd",
+      "model": "am4",
+      "displayCategory": "Processors",
+      "normalizedName": "AMD Ryzen 9 3900X",
+      "public_id": "pc-builder/cpu/amd/am4/AMD Ryzen 9 3900X",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763398610/pc-builder/cpu/amd/am4/AMD%20Ryzen%209%203900X.jpg",
+      "cloudinary_id": "pc-builder/cpu/amd/am4/AMD Ryzen 9 3900X"
+    },
+    {
+      "category": "cpu",
+      "brand": "amd",
+      "model": "am4",
+      "displayCategory": "Processors",
+      "normalizedName": "AMD Ryzen 7 5800X3D",
+      "public_id": "pc-builder/cpu/amd/am4/AMD Ryzen 7 5800X3D",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763398610/pc-builder/cpu/amd/am4/AMD%20Ryzen%207%205800X3D.jpg",
+      "cloudinary_id": "pc-builder/cpu/amd/am4/AMD Ryzen 7 5800X3D"
+    },
+    {
+      "category": "cpu",
+      "brand": "amd",
+      "model": "am4",
+      "displayCategory": "Processors",
+      "normalizedName": "AMD Ryzen 7 5800XT",
+      "public_id": "pc-builder/cpu/amd/am4/AMD Ryzen 7 5800XT",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763398610/pc-builder/cpu/amd/am4/AMD%20Ryzen%207%205800XT.jpg",
+      "cloudinary_id": "pc-builder/cpu/amd/am4/AMD Ryzen 7 5800XT"
+    },
+    {
+      "category": "cpu",
+      "brand": "amd",
+      "model": "am4",
+      "displayCategory": "Processors",
+      "normalizedName": "AMD Ryzen 9 3900XT",
+      "public_id": "pc-builder/cpu/amd/am4/AMD Ryzen 9 3900XT",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763398614/pc-builder/cpu/amd/am4/AMD%20Ryzen%209%203900XT.jpg",
+      "cloudinary_id": "pc-builder/cpu/amd/am4/AMD Ryzen 9 3900XT"
+    },
+    {
+      "category": "cpu",
+      "brand": "amd",
+      "model": "am4",
+      "displayCategory": "Processors",
+      "normalizedName": "AMD Ryzen 9 5900X",
+      "public_id": "pc-builder/cpu/amd/am4/AMD Ryzen 9 5900X",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763398614/pc-builder/cpu/amd/am4/AMD%20Ryzen%209%205900X.jpg",
+      "cloudinary_id": "pc-builder/cpu/amd/am4/AMD Ryzen 9 5900X"
+    },
+    {
+      "category": "cpu",
+      "brand": "amd",
+      "model": "am4",
+      "displayCategory": "Processors",
+      "normalizedName": "AMD Ryzen 9 5950X",
+      "public_id": "pc-builder/cpu/amd/am4/AMD Ryzen 9 5950X",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763398615/pc-builder/cpu/amd/am4/AMD%20Ryzen%209%205950X.jpg",
+      "cloudinary_id": "pc-builder/cpu/amd/am4/AMD Ryzen 9 5950X"
+    },
+    {
+      "category": "cpu",
+      "brand": "amd",
+      "model": "am5",
+      "displayCategory": "Processors",
+      "normalizedName": "AMD Ryzen 5 7500F",
+      "public_id": "pc-builder/cpu/amd/am5/AMD Ryzen 5 7500F",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763398619/pc-builder/cpu/amd/am5/AMD%20Ryzen%205%207500F.jpg",
+      "cloudinary_id": "pc-builder/cpu/amd/am5/AMD Ryzen 5 7500F"
+    },
+    {
+      "category": "cpu",
+      "brand": "amd",
+      "model": "am5",
+      "displayCategory": "Processors",
+      "normalizedName": "AMD Ryzen 5 7400F",
+      "public_id": "pc-builder/cpu/amd/am5/AMD Ryzen 5 7400F",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763398619/pc-builder/cpu/amd/am5/AMD%20Ryzen%205%207400F.jpg",
+      "cloudinary_id": "pc-builder/cpu/amd/am5/AMD Ryzen 5 7400F"
+    },
+    {
+      "category": "cpu",
+      "brand": "amd",
+      "model": "am5",
+      "displayCategory": "Processors",
+      "normalizedName": "AMD Ryzen 5 7500X3D",
+      "public_id": "pc-builder/cpu/amd/am5/AMD Ryzen 5 7500X3D",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763398619/pc-builder/cpu/amd/am5/AMD%20Ryzen%205%207500X3D.jpg",
+      "cloudinary_id": "pc-builder/cpu/amd/am5/AMD Ryzen 5 7500X3D"
+    },
+    {
+      "category": "cpu",
+      "brand": "amd",
+      "model": "am5",
+      "displayCategory": "Processors",
+      "normalizedName": "AMD Ryzen 5 7600X",
+      "public_id": "pc-builder/cpu/amd/am5/AMD Ryzen 5 7600X",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763398622/pc-builder/cpu/amd/am5/AMD%20Ryzen%205%207600X.jpg",
+      "cloudinary_id": "pc-builder/cpu/amd/am5/AMD Ryzen 5 7600X"
+    },
+    {
+      "category": "cpu",
+      "brand": "amd",
+      "model": "am5",
+      "displayCategory": "Processors",
+      "normalizedName": "AMD Ryzen 5 7600X3D",
+      "public_id": "pc-builder/cpu/amd/am5/AMD Ryzen 5 7600X3D",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763398622/pc-builder/cpu/amd/am5/AMD%20Ryzen%205%207600X3D.jpg",
+      "cloudinary_id": "pc-builder/cpu/amd/am5/AMD Ryzen 5 7600X3D"
+    },
+    {
+      "category": "cpu",
+      "brand": "amd",
+      "model": "am5",
+      "displayCategory": "Processors",
+      "normalizedName": "AMD Ryzen 5 7600",
+      "public_id": "pc-builder/cpu/amd/am5/AMD Ryzen 5 7600",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763398623/pc-builder/cpu/amd/am5/AMD%20Ryzen%205%207600.jpg",
+      "cloudinary_id": "pc-builder/cpu/amd/am5/AMD Ryzen 5 7600"
+    },
+    {
+      "category": "cpu",
+      "brand": "amd",
+      "model": "am5",
+      "displayCategory": "Processors",
+      "normalizedName": "AMD Ryzen 5 8600G",
+      "public_id": "pc-builder/cpu/amd/am5/AMD Ryzen 5 8600G",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763398626/pc-builder/cpu/amd/am5/AMD%20Ryzen%205%208600G.jpg",
+      "cloudinary_id": "pc-builder/cpu/amd/am5/AMD Ryzen 5 8600G"
+    },
+    {
+      "category": "cpu",
+      "brand": "amd",
+      "model": "am5",
+      "displayCategory": "Processors",
+      "normalizedName": "AMD Ryzen 5 8400F",
+      "public_id": "pc-builder/cpu/amd/am5/AMD Ryzen 5 8400F",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763398626/pc-builder/cpu/amd/am5/AMD%20Ryzen%205%208400F.jpg",
+      "cloudinary_id": "pc-builder/cpu/amd/am5/AMD Ryzen 5 8400F"
+    },
+    {
+      "category": "cpu",
+      "brand": "amd",
+      "model": "am5",
+      "displayCategory": "Processors",
+      "normalizedName": "AMD Ryzen 5 8500G",
+      "public_id": "pc-builder/cpu/amd/am5/AMD Ryzen 5 8500G",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763398626/pc-builder/cpu/amd/am5/AMD%20Ryzen%205%208500G.jpg",
+      "cloudinary_id": "pc-builder/cpu/amd/am5/AMD Ryzen 5 8500G"
+    },
+    {
+      "category": "cpu",
+      "brand": "amd",
+      "model": "am5",
+      "displayCategory": "Processors",
+      "normalizedName": "AMD Ryzen 7 7700",
+      "public_id": "pc-builder/cpu/amd/am5/AMD Ryzen 7 7700",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763398630/pc-builder/cpu/amd/am5/AMD%20Ryzen%207%207700.jpg",
+      "cloudinary_id": "pc-builder/cpu/amd/am5/AMD Ryzen 7 7700"
+    },
+    {
+      "category": "cpu",
+      "brand": "amd",
+      "model": "am5",
+      "displayCategory": "Processors",
+      "normalizedName": "AMD Ryzen 5 9600X",
+      "public_id": "pc-builder/cpu/amd/am5/AMD Ryzen 5 9600X",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763398630/pc-builder/cpu/amd/am5/AMD%20Ryzen%205%209600X.jpg",
+      "cloudinary_id": "pc-builder/cpu/amd/am5/AMD Ryzen 5 9600X"
+    },
+    {
+      "category": "cpu",
+      "brand": "amd",
+      "model": "am5",
+      "displayCategory": "Processors",
+      "normalizedName": "AMD Ryzen 5 9600",
+      "public_id": "pc-builder/cpu/amd/am5/AMD Ryzen 5 9600",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763398631/pc-builder/cpu/amd/am5/AMD%20Ryzen%205%209600.jpg",
+      "cloudinary_id": "pc-builder/cpu/amd/am5/AMD Ryzen 5 9600"
+    },
+    {
+      "category": "cpu",
+      "brand": "amd",
+      "model": "am5",
+      "displayCategory": "Processors",
+      "normalizedName": "AMD Ryzen 7 7700X",
+      "public_id": "pc-builder/cpu/amd/am5/AMD Ryzen 7 7700X",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763398636/pc-builder/cpu/amd/am5/AMD%20Ryzen%207%207700X.jpg",
+      "cloudinary_id": "pc-builder/cpu/amd/am5/AMD Ryzen 7 7700X"
+    },
+    {
+      "category": "cpu",
+      "brand": "amd",
+      "model": "am5",
+      "displayCategory": "Processors",
+      "normalizedName": "AMD Ryzen 7 8700F",
+      "public_id": "pc-builder/cpu/amd/am5/AMD Ryzen 7 8700F",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763398637/pc-builder/cpu/amd/am5/AMD%20Ryzen%207%208700F.jpg",
+      "cloudinary_id": "pc-builder/cpu/amd/am5/AMD Ryzen 7 8700F"
+    },
+    {
+      "category": "cpu",
+      "brand": "amd",
+      "model": "am5",
+      "displayCategory": "Processors",
+      "normalizedName": "AMD Ryzen 7 7800X3D",
+      "public_id": "pc-builder/cpu/amd/am5/AMD Ryzen 7 7800X3D",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763398637/pc-builder/cpu/amd/am5/AMD%20Ryzen%207%207800X3D.jpg",
+      "cloudinary_id": "pc-builder/cpu/amd/am5/AMD Ryzen 7 7800X3D"
+    },
+    {
+      "category": "cpu",
+      "brand": "amd",
+      "model": "am5",
+      "displayCategory": "Processors",
+      "normalizedName": "AMD Ryzen 7 9800X3D",
+      "public_id": "pc-builder/cpu/amd/am5/AMD Ryzen 7 9800X3D",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763398641/pc-builder/cpu/amd/am5/AMD%20Ryzen%207%209800X3D.jpg",
+      "cloudinary_id": "pc-builder/cpu/amd/am5/AMD Ryzen 7 9800X3D"
+    },
+    {
+      "category": "cpu",
+      "brand": "amd",
+      "model": "am5",
+      "displayCategory": "Processors",
+      "normalizedName": "AMD Ryzen 7 9700X",
+      "public_id": "pc-builder/cpu/amd/am5/AMD Ryzen 7 9700X",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763398641/pc-builder/cpu/amd/am5/AMD%20Ryzen%207%209700X.jpg",
+      "cloudinary_id": "pc-builder/cpu/amd/am5/AMD Ryzen 7 9700X"
+    },
+    {
+      "category": "cpu",
+      "brand": "amd",
+      "model": "am5",
+      "displayCategory": "Processors",
+      "normalizedName": "AMD Ryzen 7 8700G",
+      "public_id": "pc-builder/cpu/amd/am5/AMD Ryzen 7 8700G",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763398641/pc-builder/cpu/amd/am5/AMD%20Ryzen%207%208700G.jpg",
+      "cloudinary_id": "pc-builder/cpu/amd/am5/AMD Ryzen 7 8700G"
+    },
+    {
+      "category": "cpu",
+      "brand": "amd",
+      "model": "am5",
+      "displayCategory": "Processors",
+      "normalizedName": "AMD Ryzen 9 7900",
+      "public_id": "pc-builder/cpu/amd/am5/AMD Ryzen 9 7900",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763398644/pc-builder/cpu/amd/am5/AMD%20Ryzen%209%207900.jpg",
+      "cloudinary_id": "pc-builder/cpu/amd/am5/AMD Ryzen 9 7900"
+    },
+    {
+      "category": "cpu",
+      "brand": "amd",
+      "model": "am5",
+      "displayCategory": "Processors",
+      "normalizedName": "AMD Ryzen 9 7900X3D",
+      "public_id": "pc-builder/cpu/amd/am5/AMD Ryzen 9 7900X3D",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763398644/pc-builder/cpu/amd/am5/AMD%20Ryzen%209%207900X3D.jpg",
+      "cloudinary_id": "pc-builder/cpu/amd/am5/AMD Ryzen 9 7900X3D"
+    },
+    {
+      "category": "cpu",
+      "brand": "amd",
+      "model": "am5",
+      "displayCategory": "Processors",
+      "normalizedName": "AMD Ryzen 9 7900X",
+      "public_id": "pc-builder/cpu/amd/am5/AMD Ryzen 9 7900X",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763398645/pc-builder/cpu/amd/am5/AMD%20Ryzen%209%207900X.jpg",
+      "cloudinary_id": "pc-builder/cpu/amd/am5/AMD Ryzen 9 7900X"
+    },
+    {
+      "category": "cpu",
+      "brand": "amd",
+      "model": "am5",
+      "displayCategory": "Processors",
+      "normalizedName": "AMD Ryzen 9 9900X",
+      "public_id": "pc-builder/cpu/amd/am5/AMD Ryzen 9 9900X",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763398648/pc-builder/cpu/amd/am5/AMD%20Ryzen%209%209900X.jpg",
+      "cloudinary_id": "pc-builder/cpu/amd/am5/AMD Ryzen 9 9900X"
+    },
+    {
+      "category": "cpu",
+      "brand": "amd",
+      "model": "am5",
+      "displayCategory": "Processors",
+      "normalizedName": "AMD Ryzen 9 7950X3D",
+      "public_id": "pc-builder/cpu/amd/am5/AMD Ryzen 9 7950X3D",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763398649/pc-builder/cpu/amd/am5/AMD%20Ryzen%209%207950X3D.jpg",
+      "cloudinary_id": "pc-builder/cpu/amd/am5/AMD Ryzen 9 7950X3D"
+    },
+    {
+      "category": "cpu",
+      "brand": "amd",
+      "model": "am5",
+      "displayCategory": "Processors",
+      "normalizedName": "AMD Ryzen 9 7950X",
+      "public_id": "pc-builder/cpu/amd/am5/AMD Ryzen 9 7950X",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763398649/pc-builder/cpu/amd/am5/AMD%20Ryzen%209%207950X.jpg",
+      "cloudinary_id": "pc-builder/cpu/amd/am5/AMD Ryzen 9 7950X"
+    },
+    {
+      "category": "cpu",
+      "brand": "amd",
+      "model": "am5",
+      "displayCategory": "Processors",
+      "normalizedName": "AMD Ryzen 9 9950X3D",
+      "public_id": "pc-builder/cpu/amd/am5/AMD Ryzen 9 9950X3D",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763398652/pc-builder/cpu/amd/am5/AMD%20Ryzen%209%209950X3D.jpg",
+      "cloudinary_id": "pc-builder/cpu/amd/am5/AMD Ryzen 9 9950X3D"
+    },
+    {
+      "category": "cpu",
+      "brand": "amd",
+      "model": "am5",
+      "displayCategory": "Processors",
+      "normalizedName": "AMD Ryzen 9 9950X",
+      "public_id": "pc-builder/cpu/amd/am5/AMD Ryzen 9 9950X",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763398652/pc-builder/cpu/amd/am5/AMD%20Ryzen%209%209950X.jpg",
+      "cloudinary_id": "pc-builder/cpu/amd/am5/AMD Ryzen 9 9950X"
+    },
+    {
+      "category": "cpu",
+      "brand": "amd",
+      "model": "am5",
+      "displayCategory": "Processors",
+      "normalizedName": "AMD Ryzen 9 9900X3D",
+      "public_id": "pc-builder/cpu/amd/am5/AMD Ryzen 9 9900X3D",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763398653/pc-builder/cpu/amd/am5/AMD%20Ryzen%209%209900X3D.jpg",
+      "cloudinary_id": "pc-builder/cpu/amd/am5/AMD Ryzen 9 9900X3D"
+    },
+    {
+      "category": "cpu",
+      "brand": "intel",
+      "model": "lga1200",
+      "displayCategory": "Processors",
+      "normalizedName": "Intel Core i3-10100F",
+      "public_id": "pc-builder/cpu/intel/lga1200/Intel Core i3-10100F",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763398656/pc-builder/cpu/intel/lga1200/Intel%20Core%20i3-10100F.jpg",
+      "cloudinary_id": "pc-builder/cpu/intel/lga1200/Intel Core i3-10100F"
+    },
+    {
+      "category": "cpu",
+      "brand": "intel",
+      "model": "lga1200",
+      "displayCategory": "Processors",
+      "normalizedName": "Intel Core i3-10105",
+      "public_id": "pc-builder/cpu/intel/lga1200/Intel Core i3-10105",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763398656/pc-builder/cpu/intel/lga1200/Intel%20Core%20i3-10105.jpg",
+      "cloudinary_id": "pc-builder/cpu/intel/lga1200/Intel Core i3-10105"
+    },
+    {
+      "category": "cpu",
+      "brand": "intel",
+      "model": "lga1200",
+      "displayCategory": "Processors",
+      "normalizedName": "Intel Core i3-10100",
+      "public_id": "pc-builder/cpu/intel/lga1200/Intel Core i3-10100",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763398658/pc-builder/cpu/intel/lga1200/Intel%20Core%20i3-10100.jpg",
+      "cloudinary_id": "pc-builder/cpu/intel/lga1200/Intel Core i3-10100"
+    },
+    {
+      "category": "cpu",
+      "brand": "intel",
+      "model": "lga1200",
+      "displayCategory": "Processors",
+      "normalizedName": "Intel Core i5-10400",
+      "public_id": "pc-builder/cpu/intel/lga1200/Intel Core i5-10400",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763398662/pc-builder/cpu/intel/lga1200/Intel%20Core%20i5-10400.jpg",
+      "cloudinary_id": "pc-builder/cpu/intel/lga1200/Intel Core i5-10400"
+    },
+    {
+      "category": "cpu",
+      "brand": "intel",
+      "model": "lga1200",
+      "displayCategory": "Processors",
+      "normalizedName": "Intel Core i3-10320",
+      "public_id": "pc-builder/cpu/intel/lga1200/Intel Core i3-10320",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763398662/pc-builder/cpu/intel/lga1200/Intel%20Core%20i3-10320.jpg",
+      "cloudinary_id": "pc-builder/cpu/intel/lga1200/Intel Core i3-10320"
+    },
+    {
+      "category": "cpu",
+      "brand": "intel",
+      "model": "lga1200",
+      "displayCategory": "Processors",
+      "normalizedName": "Intel Core i3-10105F",
+      "public_id": "pc-builder/cpu/intel/lga1200/Intel Core i3-10105F",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763398674/pc-builder/cpu/intel/lga1200/Intel%20Core%20i3-10105F.jpg",
+      "cloudinary_id": "pc-builder/cpu/intel/lga1200/Intel Core i3-10105F"
+    },
+    {
+      "category": "cpu",
+      "brand": "intel",
+      "model": "lga1200",
+      "displayCategory": "Processors",
+      "normalizedName": "Intel Core i5-10500",
+      "public_id": "pc-builder/cpu/intel/lga1200/Intel Core i5-10500",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763398678/pc-builder/cpu/intel/lga1200/Intel%20Core%20i5-10500.jpg",
+      "cloudinary_id": "pc-builder/cpu/intel/lga1200/Intel Core i5-10500"
+    },
+    {
+      "category": "cpu",
+      "brand": "intel",
+      "model": "lga1200",
+      "displayCategory": "Processors",
+      "normalizedName": "Intel Core i5-10600",
+      "public_id": "pc-builder/cpu/intel/lga1200/Intel Core i5-10600",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763398677/pc-builder/cpu/intel/lga1200/Intel%20Core%20i5-10600.jpg",
+      "cloudinary_id": "pc-builder/cpu/intel/lga1200/Intel Core i5-10600"
+    },
+    {
+      "category": "cpu",
+      "brand": "intel",
+      "model": "lga1200",
+      "displayCategory": "Processors",
+      "normalizedName": "Intel Core i5-10400F",
+      "public_id": "pc-builder/cpu/intel/lga1200/Intel Core i5-10400F",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763398679/pc-builder/cpu/intel/lga1200/Intel%20Core%20i5-10400F.jpg",
+      "cloudinary_id": "pc-builder/cpu/intel/lga1200/Intel Core i5-10400F"
+    },
+    {
+      "category": "cpu",
+      "brand": "intel",
+      "model": "lga1200",
+      "displayCategory": "Processors",
+      "normalizedName": "Intel Core i5-11400",
+      "public_id": "pc-builder/cpu/intel/lga1200/Intel Core i5-11400",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763398683/pc-builder/cpu/intel/lga1200/Intel%20Core%20i5-11400.jpg",
+      "cloudinary_id": "pc-builder/cpu/intel/lga1200/Intel Core i5-11400"
+    },
+    {
+      "category": "cpu",
+      "brand": "intel",
+      "model": "lga1200",
+      "displayCategory": "Processors",
+      "normalizedName": "Intel Core i5-10600K",
+      "public_id": "pc-builder/cpu/intel/lga1200/Intel Core i5-10600K",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763398683/pc-builder/cpu/intel/lga1200/Intel%20Core%20i5-10600K.jpg",
+      "cloudinary_id": "pc-builder/cpu/intel/lga1200/Intel Core i5-10600K"
+    },
+    {
+      "category": "cpu",
+      "brand": "intel",
+      "model": "lga1200",
+      "displayCategory": "Processors",
+      "normalizedName": "Intel Core i5-10600KF",
+      "public_id": "pc-builder/cpu/intel/lga1200/Intel Core i5-10600KF",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763398683/pc-builder/cpu/intel/lga1200/Intel%20Core%20i5-10600KF.jpg",
+      "cloudinary_id": "pc-builder/cpu/intel/lga1200/Intel Core i5-10600KF"
+    },
+    {
+      "category": "cpu",
+      "brand": "intel",
+      "model": "lga1200",
+      "displayCategory": "Processors",
+      "normalizedName": "Intel Core i5-11600",
+      "public_id": "pc-builder/cpu/intel/lga1200/Intel Core i5-11600",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763398687/pc-builder/cpu/intel/lga1200/Intel%20Core%20i5-11600.jpg",
+      "cloudinary_id": "pc-builder/cpu/intel/lga1200/Intel Core i5-11600"
+    },
+    {
+      "category": "cpu",
+      "brand": "intel",
+      "model": "lga1200",
+      "displayCategory": "Processors",
+      "normalizedName": "Intel Core i5-11400F",
+      "public_id": "pc-builder/cpu/intel/lga1200/Intel Core i5-11400F",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763398687/pc-builder/cpu/intel/lga1200/Intel%20Core%20i5-11400F.jpg",
+      "cloudinary_id": "pc-builder/cpu/intel/lga1200/Intel Core i5-11400F"
+    },
+    {
+      "category": "cpu",
+      "brand": "intel",
+      "model": "lga1200",
+      "displayCategory": "Processors",
+      "normalizedName": "Intel Core i5-11500",
+      "public_id": "pc-builder/cpu/intel/lga1200/Intel Core i5-11500",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763398691/pc-builder/cpu/intel/lga1200/Intel%20Core%20i5-11500.jpg",
+      "cloudinary_id": "pc-builder/cpu/intel/lga1200/Intel Core i5-11500"
+    },
+    {
+      "category": "cpu",
+      "brand": "intel",
+      "model": "lga1200",
+      "displayCategory": "Processors",
+      "normalizedName": "Intel Core i7-10700",
+      "public_id": "pc-builder/cpu/intel/lga1200/Intel Core i7-10700",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763398695/pc-builder/cpu/intel/lga1200/Intel%20Core%20i7-10700.jpg",
+      "cloudinary_id": "pc-builder/cpu/intel/lga1200/Intel Core i7-10700"
+    },
+    {
+      "category": "cpu",
+      "brand": "intel",
+      "model": "lga1200",
+      "displayCategory": "Processors",
+      "normalizedName": "Intel Core i5-11600K",
+      "public_id": "pc-builder/cpu/intel/lga1200/Intel Core i5-11600K",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763398695/pc-builder/cpu/intel/lga1200/Intel%20Core%20i5-11600K.jpg",
+      "cloudinary_id": "pc-builder/cpu/intel/lga1200/Intel Core i5-11600K"
+    },
+    {
+      "category": "cpu",
+      "brand": "intel",
+      "model": "lga1200",
+      "displayCategory": "Processors",
+      "normalizedName": "Intel Core i5-11600KF",
+      "public_id": "pc-builder/cpu/intel/lga1200/Intel Core i5-11600KF",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763398698/pc-builder/cpu/intel/lga1200/Intel%20Core%20i5-11600KF.jpg",
+      "cloudinary_id": "pc-builder/cpu/intel/lga1200/Intel Core i5-11600KF"
+    },
+    {
+      "category": "cpu",
+      "brand": "intel",
+      "model": "lga1200",
+      "displayCategory": "Processors",
+      "normalizedName": "Intel Core i7-10700KF",
+      "public_id": "pc-builder/cpu/intel/lga1200/Intel Core i7-10700KF",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763398701/pc-builder/cpu/intel/lga1200/Intel%20Core%20i7-10700KF.jpg",
+      "cloudinary_id": "pc-builder/cpu/intel/lga1200/Intel Core i7-10700KF"
+    },
+    {
+      "category": "cpu",
+      "brand": "intel",
+      "model": "lga1200",
+      "displayCategory": "Processors",
+      "normalizedName": "Intel Core i7-10700K",
+      "public_id": "pc-builder/cpu/intel/lga1200/Intel Core i7-10700K",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763398701/pc-builder/cpu/intel/lga1200/Intel%20Core%20i7-10700K.jpg",
+      "cloudinary_id": "pc-builder/cpu/intel/lga1200/Intel Core i7-10700K"
+    },
+    {
+      "category": "cpu",
+      "brand": "intel",
+      "model": "lga1200",
+      "displayCategory": "Processors",
+      "normalizedName": "Intel Core i7-10700F",
+      "public_id": "pc-builder/cpu/intel/lga1200/Intel Core i7-10700F",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763398702/pc-builder/cpu/intel/lga1200/Intel%20Core%20i7-10700F.jpg",
+      "cloudinary_id": "pc-builder/cpu/intel/lga1200/Intel Core i7-10700F"
+    },
+    {
+      "category": "cpu",
+      "brand": "intel",
+      "model": "lga1200",
+      "displayCategory": "Processors",
+      "normalizedName": "Intel Core i7-11700F",
+      "public_id": "pc-builder/cpu/intel/lga1200/Intel Core i7-11700F",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763398705/pc-builder/cpu/intel/lga1200/Intel%20Core%20i7-11700F.jpg",
+      "cloudinary_id": "pc-builder/cpu/intel/lga1200/Intel Core i7-11700F"
+    },
+    {
+      "category": "cpu",
+      "brand": "intel",
+      "model": "lga1200",
+      "displayCategory": "Processors",
+      "normalizedName": "Intel Core i7-11700K",
+      "public_id": "pc-builder/cpu/intel/lga1200/Intel Core i7-11700K",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763398705/pc-builder/cpu/intel/lga1200/Intel%20Core%20i7-11700K.jpg",
+      "cloudinary_id": "pc-builder/cpu/intel/lga1200/Intel Core i7-11700K"
+    },
+    {
+      "category": "cpu",
+      "brand": "intel",
+      "model": "lga1200",
+      "displayCategory": "Processors",
+      "normalizedName": "Intel Core i7-11700",
+      "public_id": "pc-builder/cpu/intel/lga1200/Intel Core i7-11700",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763398705/pc-builder/cpu/intel/lga1200/Intel%20Core%20i7-11700.jpg",
+      "cloudinary_id": "pc-builder/cpu/intel/lga1200/Intel Core i7-11700"
+    },
+    {
+      "category": "cpu",
+      "brand": "intel",
+      "model": "lga1200",
+      "displayCategory": "Processors",
+      "normalizedName": "Intel Core i9-10900",
+      "public_id": "pc-builder/cpu/intel/lga1200/Intel Core i9-10900",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763398709/pc-builder/cpu/intel/lga1200/Intel%20Core%20i9-10900.jpg",
+      "cloudinary_id": "pc-builder/cpu/intel/lga1200/Intel Core i9-10900"
+    },
+    {
+      "category": "cpu",
+      "brand": "intel",
+      "model": "lga1200",
+      "displayCategory": "Processors",
+      "normalizedName": "Intel Core i9-10850K",
+      "public_id": "pc-builder/cpu/intel/lga1200/Intel Core i9-10850K",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763398709/pc-builder/cpu/intel/lga1200/Intel%20Core%20i9-10850K.jpg",
+      "cloudinary_id": "pc-builder/cpu/intel/lga1200/Intel Core i9-10850K"
+    },
+    {
+      "category": "cpu",
+      "brand": "intel",
+      "model": "lga1200",
+      "displayCategory": "Processors",
+      "normalizedName": "Intel Core i7-11700KF",
+      "public_id": "pc-builder/cpu/intel/lga1200/Intel Core i7-11700KF",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763398709/pc-builder/cpu/intel/lga1200/Intel%20Core%20i7-11700KF.jpg",
+      "cloudinary_id": "pc-builder/cpu/intel/lga1200/Intel Core i7-11700KF"
+    },
+    {
+      "category": "cpu",
+      "brand": "intel",
+      "model": "lga1200",
+      "displayCategory": "Processors",
+      "normalizedName": "Intel Core i9-10900KF",
+      "public_id": "pc-builder/cpu/intel/lga1200/Intel Core i9-10900KF",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763398713/pc-builder/cpu/intel/lga1200/Intel%20Core%20i9-10900KF.jpg",
+      "cloudinary_id": "pc-builder/cpu/intel/lga1200/Intel Core i9-10900KF"
+    },
+    {
+      "category": "cpu",
+      "brand": "intel",
+      "model": "lga1200",
+      "displayCategory": "Processors",
+      "normalizedName": "Intel Core i9-10900K",
+      "public_id": "pc-builder/cpu/intel/lga1200/Intel Core i9-10900K",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763398713/pc-builder/cpu/intel/lga1200/Intel%20Core%20i9-10900K.jpg",
+      "cloudinary_id": "pc-builder/cpu/intel/lga1200/Intel Core i9-10900K"
+    },
+    {
+      "category": "cpu",
+      "brand": "intel",
+      "model": "lga1200",
+      "displayCategory": "Processors",
+      "normalizedName": "Intel Core i9-10900F",
+      "public_id": "pc-builder/cpu/intel/lga1200/Intel Core i9-10900F",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763398713/pc-builder/cpu/intel/lga1200/Intel%20Core%20i9-10900F.jpg",
+      "cloudinary_id": "pc-builder/cpu/intel/lga1200/Intel Core i9-10900F"
+    },
+    {
+      "category": "cpu",
+      "brand": "intel",
+      "model": "lga1200",
+      "displayCategory": "Processors",
+      "normalizedName": "Intel Core i9-11900",
+      "public_id": "pc-builder/cpu/intel/lga1200/Intel Core i9-11900",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763398716/pc-builder/cpu/intel/lga1200/Intel%20Core%20i9-11900.jpg",
+      "cloudinary_id": "pc-builder/cpu/intel/lga1200/Intel Core i9-11900"
+    },
+    {
+      "category": "cpu",
+      "brand": "intel",
+      "model": "lga1200",
+      "displayCategory": "Processors",
+      "normalizedName": "Intel Core i9-11900K",
+      "public_id": "pc-builder/cpu/intel/lga1200/Intel Core i9-11900K",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763398716/pc-builder/cpu/intel/lga1200/Intel%20Core%20i9-11900K.jpg",
+      "cloudinary_id": "pc-builder/cpu/intel/lga1200/Intel Core i9-11900K"
+    },
+    {
+      "category": "cpu",
+      "brand": "intel",
+      "model": "lga1200",
+      "displayCategory": "Processors",
+      "normalizedName": "Intel Core i9-11900F",
+      "public_id": "pc-builder/cpu/intel/lga1200/Intel Core i9-11900F",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763398716/pc-builder/cpu/intel/lga1200/Intel%20Core%20i9-11900F.jpg",
+      "cloudinary_id": "pc-builder/cpu/intel/lga1200/Intel Core i9-11900F"
+    },
+    {
+      "category": "cpu",
+      "brand": "intel",
+      "model": "lga1200",
+      "displayCategory": "Processors",
+      "normalizedName": "Intel Core i9-11900KF",
+      "public_id": "pc-builder/cpu/intel/lga1200/Intel Core i9-11900KF",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763398720/pc-builder/cpu/intel/lga1200/Intel%20Core%20i9-11900KF.jpg",
+      "cloudinary_id": "pc-builder/cpu/intel/lga1200/Intel Core i9-11900KF"
+    },
+    {
+      "category": "cpu",
+      "brand": "intel",
+      "model": "lga1700",
+      "displayCategory": "Processors",
+      "normalizedName": "Intel Core i3-12100F",
+      "public_id": "pc-builder/cpu/intel/lga1700/Intel Core i3-12100F",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763398720/pc-builder/cpu/intel/lga1700/Intel%20Core%20i3-12100F.jpg",
+      "cloudinary_id": "pc-builder/cpu/intel/lga1700/Intel Core i3-12100F"
+    },
+    {
+      "category": "cpu",
+      "brand": "intel",
+      "model": "lga1700",
+      "displayCategory": "Processors",
+      "normalizedName": "Intel Core i3-12100",
+      "public_id": "pc-builder/cpu/intel/lga1700/Intel Core i3-12100",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763398720/pc-builder/cpu/intel/lga1700/Intel%20Core%20i3-12100.jpg",
+      "cloudinary_id": "pc-builder/cpu/intel/lga1700/Intel Core i3-12100"
+    },
+    {
+      "category": "cpu",
+      "brand": "intel",
+      "model": "lga1700",
+      "displayCategory": "Processors",
+      "normalizedName": "Intel Core i3-13100F",
+      "public_id": "pc-builder/cpu/intel/lga1700/Intel Core i3-13100F",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763398724/pc-builder/cpu/intel/lga1700/Intel%20Core%20i3-13100F.jpg",
+      "cloudinary_id": "pc-builder/cpu/intel/lga1700/Intel Core i3-13100F"
+    },
+    {
+      "category": "cpu",
+      "brand": "intel",
+      "model": "lga1700",
+      "displayCategory": "Processors",
+      "normalizedName": "Intel Core i3-14100F",
+      "public_id": "pc-builder/cpu/intel/lga1700/Intel Core i3-14100F",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763398724/pc-builder/cpu/intel/lga1700/Intel%20Core%20i3-14100F.jpg",
+      "cloudinary_id": "pc-builder/cpu/intel/lga1700/Intel Core i3-14100F"
+    },
+    {
+      "category": "cpu",
+      "brand": "intel",
+      "model": "lga1700",
+      "displayCategory": "Processors",
+      "normalizedName": "Intel Core i5-12400",
+      "public_id": "pc-builder/cpu/intel/lga1700/Intel Core i5-12400",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763398724/pc-builder/cpu/intel/lga1700/Intel%20Core%20i5-12400.jpg",
+      "cloudinary_id": "pc-builder/cpu/intel/lga1700/Intel Core i5-12400"
+    },
+    {
+      "category": "cpu",
+      "brand": "intel",
+      "model": "lga1700",
+      "displayCategory": "Processors",
+      "normalizedName": "Intel Core i5-12400F",
+      "public_id": "pc-builder/cpu/intel/lga1700/Intel Core i5-12400F",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763398727/pc-builder/cpu/intel/lga1700/Intel%20Core%20i5-12400F.jpg",
+      "cloudinary_id": "pc-builder/cpu/intel/lga1700/Intel Core i5-12400F"
+    },
+    {
+      "category": "cpu",
+      "brand": "intel",
+      "model": "lga1700",
+      "displayCategory": "Processors",
+      "normalizedName": "Intel Core i5-12600KF",
+      "public_id": "pc-builder/cpu/intel/lga1700/Intel Core i5-12600KF",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763398727/pc-builder/cpu/intel/lga1700/Intel%20Core%20i5-12600KF.jpg",
+      "cloudinary_id": "pc-builder/cpu/intel/lga1700/Intel Core i5-12600KF"
+    },
+    {
+      "category": "cpu",
+      "brand": "intel",
+      "model": "lga1700",
+      "displayCategory": "Processors",
+      "normalizedName": "Intel Core i5-12600K",
+      "public_id": "pc-builder/cpu/intel/lga1700/Intel Core i5-12600K",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763398727/pc-builder/cpu/intel/lga1700/Intel%20Core%20i5-12600K.jpg",
+      "cloudinary_id": "pc-builder/cpu/intel/lga1700/Intel Core i5-12600K"
+    },
+    {
+      "category": "cpu",
+      "brand": "intel",
+      "model": "lga1700",
+      "displayCategory": "Processors",
+      "normalizedName": "Intel Core i5-13600K",
+      "public_id": "pc-builder/cpu/intel/lga1700/Intel Core i5-13600K",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763398731/pc-builder/cpu/intel/lga1700/Intel%20Core%20i5-13600K.jpg",
+      "cloudinary_id": "pc-builder/cpu/intel/lga1700/Intel Core i5-13600K"
+    },
+    {
+      "category": "cpu",
+      "brand": "intel",
+      "model": "lga1700",
+      "displayCategory": "Processors",
+      "normalizedName": "Intel Core i5-13600KF",
+      "public_id": "pc-builder/cpu/intel/lga1700/Intel Core i5-13600KF",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763398731/pc-builder/cpu/intel/lga1700/Intel%20Core%20i5-13600KF.jpg",
+      "cloudinary_id": "pc-builder/cpu/intel/lga1700/Intel Core i5-13600KF"
+    },
+    {
+      "category": "cpu",
+      "brand": "intel",
+      "model": "lga1700",
+      "displayCategory": "Processors",
+      "normalizedName": "Intel Core i5-13400F",
+      "public_id": "pc-builder/cpu/intel/lga1700/Intel Core i5-13400F",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763398731/pc-builder/cpu/intel/lga1700/Intel%20Core%20i5-13400F.jpg",
+      "cloudinary_id": "pc-builder/cpu/intel/lga1700/Intel Core i5-13400F"
+    },
+    {
+      "category": "cpu",
+      "brand": "intel",
+      "model": "lga1700",
+      "displayCategory": "Processors",
+      "normalizedName": "Intel Core i5-14400",
+      "public_id": "pc-builder/cpu/intel/lga1700/Intel Core i5-14400",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763398734/pc-builder/cpu/intel/lga1700/Intel%20Core%20i5-14400.jpg",
+      "cloudinary_id": "pc-builder/cpu/intel/lga1700/Intel Core i5-14400"
+    },
+    {
+      "category": "cpu",
+      "brand": "intel",
+      "model": "lga1700",
+      "displayCategory": "Processors",
+      "normalizedName": "Intel Core i5-14400F",
+      "public_id": "pc-builder/cpu/intel/lga1700/Intel Core i5-14400F",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763398734/pc-builder/cpu/intel/lga1700/Intel%20Core%20i5-14400F.jpg",
+      "cloudinary_id": "pc-builder/cpu/intel/lga1700/Intel Core i5-14400F"
+    },
+    {
+      "category": "cpu",
+      "brand": "intel",
+      "model": "lga1700",
+      "displayCategory": "Processors",
+      "normalizedName": "Intel Core i5-14600K",
+      "public_id": "pc-builder/cpu/intel/lga1700/Intel Core i5-14600K",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763398734/pc-builder/cpu/intel/lga1700/Intel%20Core%20i5-14600K.jpg",
+      "cloudinary_id": "pc-builder/cpu/intel/lga1700/Intel Core i5-14600K"
+    },
+    {
+      "category": "cpu",
+      "brand": "intel",
+      "model": "lga1700",
+      "displayCategory": "Processors",
+      "normalizedName": "Intel Core i5-14600KF",
+      "public_id": "pc-builder/cpu/intel/lga1700/Intel Core i5-14600KF",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763398738/pc-builder/cpu/intel/lga1700/Intel%20Core%20i5-14600KF.jpg",
+      "cloudinary_id": "pc-builder/cpu/intel/lga1700/Intel Core i5-14600KF"
+    },
+    {
+      "category": "cpu",
+      "brand": "intel",
+      "model": "lga1700",
+      "displayCategory": "Processors",
+      "normalizedName": "Intel Core i7-12700F",
+      "public_id": "pc-builder/cpu/intel/lga1700/Intel Core i7-12700F",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763398738/pc-builder/cpu/intel/lga1700/Intel%20Core%20i7-12700F.jpg",
+      "cloudinary_id": "pc-builder/cpu/intel/lga1700/Intel Core i7-12700F"
+    },
+    {
+      "category": "cpu",
+      "brand": "intel",
+      "model": "lga1700",
+      "displayCategory": "Processors",
+      "normalizedName": "Intel Core i7-12700K",
+      "public_id": "pc-builder/cpu/intel/lga1700/Intel Core i7-12700K",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763398739/pc-builder/cpu/intel/lga1700/Intel%20Core%20i7-12700K.jpg",
+      "cloudinary_id": "pc-builder/cpu/intel/lga1700/Intel Core i7-12700K"
+    },
+    {
+      "category": "cpu",
+      "brand": "intel",
+      "model": "lga1700",
+      "displayCategory": "Processors",
+      "normalizedName": "Intel Core i7-13700K",
+      "public_id": "pc-builder/cpu/intel/lga1700/Intel Core i7-13700K",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763398742/pc-builder/cpu/intel/lga1700/Intel%20Core%20i7-13700K.jpg",
+      "cloudinary_id": "pc-builder/cpu/intel/lga1700/Intel Core i7-13700K"
+    },
+    {
+      "category": "cpu",
+      "brand": "intel",
+      "model": "lga1700",
+      "displayCategory": "Processors",
+      "normalizedName": "Intel Core i7-12700KF",
+      "public_id": "pc-builder/cpu/intel/lga1700/Intel Core i7-12700KF",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763398742/pc-builder/cpu/intel/lga1700/Intel%20Core%20i7-12700KF.jpg",
+      "cloudinary_id": "pc-builder/cpu/intel/lga1700/Intel Core i7-12700KF"
+    },
+    {
+      "category": "cpu",
+      "brand": "intel",
+      "model": "lga1700",
+      "displayCategory": "Processors",
+      "normalizedName": "Intel Core i7-13700F",
+      "public_id": "pc-builder/cpu/intel/lga1700/Intel Core i7-13700F",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763398742/pc-builder/cpu/intel/lga1700/Intel%20Core%20i7-13700F.jpg",
+      "cloudinary_id": "pc-builder/cpu/intel/lga1700/Intel Core i7-13700F"
+    },
+    {
+      "category": "cpu",
+      "brand": "intel",
+      "model": "lga1700",
+      "displayCategory": "Processors",
+      "normalizedName": "Intel Core i7-14700F",
+      "public_id": "pc-builder/cpu/intel/lga1700/Intel Core i7-14700F",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763398745/pc-builder/cpu/intel/lga1700/Intel%20Core%20i7-14700F.jpg",
+      "cloudinary_id": "pc-builder/cpu/intel/lga1700/Intel Core i7-14700F"
+    },
+    {
+      "category": "cpu",
+      "brand": "intel",
+      "model": "lga1700",
+      "displayCategory": "Processors",
+      "normalizedName": "Intel Core i7-13700KF",
+      "public_id": "pc-builder/cpu/intel/lga1700/Intel Core i7-13700KF",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763398745/pc-builder/cpu/intel/lga1700/Intel%20Core%20i7-13700KF.jpg",
+      "cloudinary_id": "pc-builder/cpu/intel/lga1700/Intel Core i7-13700KF"
+    },
+    {
+      "category": "cpu",
+      "brand": "intel",
+      "model": "lga1700",
+      "displayCategory": "Processors",
+      "normalizedName": "Intel Core i7-14700K",
+      "public_id": "pc-builder/cpu/intel/lga1700/Intel Core i7-14700K",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763398745/pc-builder/cpu/intel/lga1700/Intel%20Core%20i7-14700K.jpg",
+      "cloudinary_id": "pc-builder/cpu/intel/lga1700/Intel Core i7-14700K"
+    },
+    {
+      "category": "cpu",
+      "brand": "intel",
+      "model": "lga1700",
+      "displayCategory": "Processors",
+      "normalizedName": "Intel Core i7-14700KF",
+      "public_id": "pc-builder/cpu/intel/lga1700/Intel Core i7-14700KF",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763398749/pc-builder/cpu/intel/lga1700/Intel%20Core%20i7-14700KF.jpg",
+      "cloudinary_id": "pc-builder/cpu/intel/lga1700/Intel Core i7-14700KF"
+    },
+    {
+      "category": "cpu",
+      "brand": "intel",
+      "model": "lga1700",
+      "displayCategory": "Processors",
+      "normalizedName": "Intel Core i9-12900K",
+      "public_id": "pc-builder/cpu/intel/lga1700/Intel Core i9-12900K",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763398749/pc-builder/cpu/intel/lga1700/Intel%20Core%20i9-12900K.jpg",
+      "cloudinary_id": "pc-builder/cpu/intel/lga1700/Intel Core i9-12900K"
+    },
+    {
+      "category": "cpu",
+      "brand": "intel",
+      "model": "lga1700",
+      "displayCategory": "Processors",
+      "normalizedName": "Intel Core i9-12900KF",
+      "public_id": "pc-builder/cpu/intel/lga1700/Intel Core i9-12900KF",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763398749/pc-builder/cpu/intel/lga1700/Intel%20Core%20i9-12900KF.jpg",
+      "cloudinary_id": "pc-builder/cpu/intel/lga1700/Intel Core i9-12900KF"
+    },
+    {
+      "category": "cpu",
+      "brand": "intel",
+      "model": "lga1700",
+      "displayCategory": "Processors",
+      "normalizedName": "Intel Core i9-14900K",
+      "public_id": "pc-builder/cpu/intel/lga1700/Intel Core i9-14900K",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763398752/pc-builder/cpu/intel/lga1700/Intel%20Core%20i9-14900K.jpg",
+      "cloudinary_id": "pc-builder/cpu/intel/lga1700/Intel Core i9-14900K"
+    },
+    {
+      "category": "cpu",
+      "brand": "intel",
+      "model": "lga1700",
+      "displayCategory": "Processors",
+      "normalizedName": "Intel Core i9-13900K",
+      "public_id": "pc-builder/cpu/intel/lga1700/Intel Core i9-13900K",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763398752/pc-builder/cpu/intel/lga1700/Intel%20Core%20i9-13900K.jpg",
+      "cloudinary_id": "pc-builder/cpu/intel/lga1700/Intel Core i9-13900K"
+    },
+    {
+      "category": "cpu",
+      "brand": "intel",
+      "model": "lga1700",
+      "displayCategory": "Processors",
+      "normalizedName": "Intel Core i9-14900KF",
+      "public_id": "pc-builder/cpu/intel/lga1700/Intel Core i9-14900KF",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763398752/pc-builder/cpu/intel/lga1700/Intel%20Core%20i9-14900KF.jpg",
+      "cloudinary_id": "pc-builder/cpu/intel/lga1700/Intel Core i9-14900KF"
+    },
+    {
+      "category": "cpu",
+      "brand": "intel",
+      "model": "lga1700",
+      "displayCategory": "Processors",
+      "normalizedName": "Intel Core i9-14900KS",
+      "public_id": "pc-builder/cpu/intel/lga1700/Intel Core i9-14900KS",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763398755/pc-builder/cpu/intel/lga1700/Intel%20Core%20i9-14900KS.jpg",
+      "cloudinary_id": "pc-builder/cpu/intel/lga1700/Intel Core i9-14900KS"
+    }
+  ],
+  "failed": [],
+  "summary": {
+    "total": 118,
+    "successful": 118,
+    "failed": 0,
+    "byCategory": {
+      "Processors": 118
+    }
+  }
+}

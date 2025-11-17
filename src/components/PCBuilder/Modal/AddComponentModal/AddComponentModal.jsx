@@ -1,3 +1,4 @@
+//src/components/PCBuilder/Modal/AddComponentModal/AddComponentModal.jsx
 import React, { useEffect, useState, useMemo } from 'react';
 import ModalHeader from '../ModalHeader/ModalHeader';
 import ProductFilter from '../ProductFilter/ProductFilter';

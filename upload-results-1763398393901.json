@@ -1,0 +1,484 @@
+{
+  "timestamp": "2025-11-17T16:53:13.900Z",
+  "uploaded": [],
+  "failed": [
+    {
+      "file": "assets\\cpu\\amd\\am4\\AMD Ryzen 5 3600.jpg",
+      "error": "Must supply api_key"
+    },
+    {
+      "file": "assets\\cpu\\amd\\am4\\AMD Ryzen 5 4500.jpg",
+      "error": "Must supply api_key"
+    },
+    {
+      "file": "assets\\cpu\\amd\\am4\\AMD Ryzen 5 5500.jpg",
+      "error": "Must supply api_key"
+    },
+    {
+      "file": "assets\\cpu\\amd\\am4\\AMD Ryzen 5 5500GT.jpg",
+      "error": "Must supply api_key"
+    },
+    {
+      "file": "assets\\cpu\\amd\\am4\\AMD Ryzen 5 5600.jpg",
+      "error": "Must supply api_key"
+    },
+    {
+      "file": "assets\\cpu\\amd\\am4\\AMD Ryzen 5 5600G.jpg",
+      "error": "Must supply api_key"
+    },
+    {
+      "file": "assets\\cpu\\amd\\am4\\AMD Ryzen 5 5600GT.jpg",
+      "error": "Must supply api_key"
+    },
+    {
+      "file": "assets\\cpu\\amd\\am4\\AMD Ryzen 5 5600X-1.jpg",
+      "error": "Must supply api_key"
+    },
+    {
+      "file": "assets\\cpu\\amd\\am4\\AMD Ryzen 5 5600X.jpg",
+      "error": "Must supply api_key"
+    },
+    {
+      "file": "assets\\cpu\\amd\\am4\\AMD Ryzen 5 5600XT.jpg",
+      "error": "Must supply api_key"
+    },
+    {
+      "file": "assets\\cpu\\amd\\am4\\AMD Ryzen 7 1700.jpg",
+      "error": "Must supply api_key"
+    },
+    {
+      "file": "assets\\cpu\\amd\\am4\\AMD Ryzen 7 1700X.jpg",
+      "error": "Must supply api_key"
+    },
+    {
+      "file": "assets\\cpu\\amd\\am4\\AMD Ryzen 7 2700.jpg",
+      "error": "Must supply api_key"
+    },
+    {
+      "file": "assets\\cpu\\amd\\am4\\AMD Ryzen 7 2700X.jpg",
+      "error": "Must supply api_key"
+    },
+    {
+      "file": "assets\\cpu\\amd\\am4\\AMD Ryzen 7 3700X.jpg",
+      "error": "Must supply api_key"
+    },
+    {
+      "file": "assets\\cpu\\amd\\am4\\AMD Ryzen 7 3800X.jpg",
+      "error": "Must supply api_key"
+    },
+    {
+      "file": "assets\\cpu\\amd\\am4\\AMD Ryzen 7 5700.jpg",
+      "error": "Must supply api_key"
+    },
+    {
+      "file": "assets\\cpu\\amd\\am4\\AMD Ryzen 7 5700G.jpg",
+      "error": "Must supply api_key"
+    },
+    {
+      "file": "assets\\cpu\\amd\\am4\\AMD Ryzen 7 5700X.jpg",
+      "error": "Must supply api_key"
+    },
+    {
+      "file": "assets\\cpu\\amd\\am4\\AMD Ryzen 7 5700X3D.jpg",
+      "error": "Must supply api_key"
+    },
+    {
+      "file": "assets\\cpu\\amd\\am4\\AMD Ryzen 7 5800X.jpg",
+      "error": "Must supply api_key"
+    },
+    {
+      "file": "assets\\cpu\\amd\\am4\\AMD Ryzen 7 5800X3D.jpg",
+      "error": "Must supply api_key"
+    },
+    {
+      "file": "assets\\cpu\\amd\\am4\\AMD Ryzen 7 5800XT.jpg",
+      "error": "Must supply api_key"
+    },
+    {
+      "file": "assets\\cpu\\amd\\am4\\AMD Ryzen 9 3900X.jpg",
+      "error": "Must supply api_key"
+    },
+    {
+      "file": "assets\\cpu\\amd\\am4\\AMD Ryzen 9 3900XT.jpg",
+      "error": "Must supply api_key"
+    },
+    {
+      "file": "assets\\cpu\\amd\\am4\\AMD Ryzen 9 5900X.jpg",
+      "error": "Must supply api_key"
+    },
+    {
+      "file": "assets\\cpu\\amd\\am4\\AMD Ryzen 9 5950X.jpg",
+      "error": "Must supply api_key"
+    },
+    {
+      "file": "assets\\cpu\\amd\\am5\\AMD Ryzen 5 7400F.jpg",
+      "error": "Must supply api_key"
+    },
+    {
+      "file": "assets\\cpu\\amd\\am5\\AMD Ryzen 5 7500F.jpg",
+      "error": "Must supply api_key"
+    },
+    {
+      "file": "assets\\cpu\\amd\\am5\\AMD Ryzen 5 7500X3D.jpg",
+      "error": "Must supply api_key"
+    },
+    {
+      "file": "assets\\cpu\\amd\\am5\\AMD Ryzen 5 7600.jpg",
+      "error": "Must supply api_key"
+    },
+    {
+      "file": "assets\\cpu\\amd\\am5\\AMD Ryzen 5 7600X.jpg",
+      "error": "Must supply api_key"
+    },
+    {
+      "file": "assets\\cpu\\amd\\am5\\AMD Ryzen 5 7600X3D.jpg",
+      "error": "Must supply api_key"
+    },
+    {
+      "file": "assets\\cpu\\amd\\am5\\AMD Ryzen 5 8400F.jpg",
+      "error": "Must supply api_key"
+    },
+    {
+      "file": "assets\\cpu\\amd\\am5\\AMD Ryzen 5 8500G.jpg",
+      "error": "Must supply api_key"
+    },
+    {
+      "file": "assets\\cpu\\amd\\am5\\AMD Ryzen 5 8600G.jpg",
+      "error": "Must supply api_key"
+    },
+    {
+      "file": "assets\\cpu\\amd\\am5\\AMD Ryzen 5 9600.jpg",
+      "error": "Must supply api_key"
+    },
+    {
+      "file": "assets\\cpu\\amd\\am5\\AMD Ryzen 5 9600X.jpg",
+      "error": "Must supply api_key"
+    },
+    {
+      "file": "assets\\cpu\\amd\\am5\\AMD Ryzen 7 7700.jpg",
+      "error": "Must supply api_key"
+    },
+    {
+      "file": "assets\\cpu\\amd\\am5\\AMD Ryzen 7 7700X.jpg",
+      "error": "Must supply api_key"
+    },
+    {
+      "file": "assets\\cpu\\amd\\am5\\AMD Ryzen 7 7800X3D.jpg",
+      "error": "Must supply api_key"
+    },
+    {
+      "file": "assets\\cpu\\amd\\am5\\AMD Ryzen 7 8700F.jpg",
+      "error": "Must supply api_key"
+    },
+    {
+      "file": "assets\\cpu\\amd\\am5\\AMD Ryzen 7 8700G.jpg",
+      "error": "Must supply api_key"
+    },
+    {
+      "file": "assets\\cpu\\amd\\am5\\AMD Ryzen 7 9700X.jpg",
+      "error": "Must supply api_key"
+    },
+    {
+      "file": "assets\\cpu\\amd\\am5\\AMD Ryzen 7 9800X3D.jpg",
+      "error": "Must supply api_key"
+    },
+    {
+      "file": "assets\\cpu\\amd\\am5\\AMD Ryzen 9 7900.jpg",
+      "error": "Must supply api_key"
+    },
+    {
+      "file": "assets\\cpu\\amd\\am5\\AMD Ryzen 9 7900X.jpg",
+      "error": "Must supply api_key"
+    },
+    {
+      "file": "assets\\cpu\\amd\\am5\\AMD Ryzen 9 7900X3D.jpg",
+      "error": "Must supply api_key"
+    },
+    {
+      "file": "assets\\cpu\\amd\\am5\\AMD Ryzen 9 7950X.jpg",
+      "error": "Must supply api_key"
+    },
+    {
+      "file": "assets\\cpu\\amd\\am5\\AMD Ryzen 9 7950X3D.jpg",
+      "error": "Must supply api_key"
+    },
+    {
+      "file": "assets\\cpu\\amd\\am5\\AMD Ryzen 9 9900X.jpg",
+      "error": "Must supply api_key"
+    },
+    {
+      "file": "assets\\cpu\\amd\\am5\\AMD Ryzen 9 9900X3D.jpg",
+      "error": "Must supply api_key"
+    },
+    {
+      "file": "assets\\cpu\\amd\\am5\\AMD Ryzen 9 9950X.jpg",
+      "error": "Must supply api_key"
+    },
+    {
+      "file": "assets\\cpu\\amd\\am5\\AMD Ryzen 9 9950X3D.jpg",
+      "error": "Must supply api_key"
+    },
+    {
+      "file": "assets\\cpu\\intel\\lga 1200\\Intel Core i3-10100.jpg",
+      "error": "Must supply api_key"
+    },
+    {
+      "file": "assets\\cpu\\intel\\lga 1200\\Intel Core i3-10100F.jpg",
+      "error": "Must supply api_key"
+    },
+    {
+      "file": "assets\\cpu\\intel\\lga 1200\\Intel Core i3-10105.jpg",
+      "error": "Must supply api_key"
+    },
+    {
+      "file": "assets\\cpu\\intel\\lga 1200\\Intel Core i3-10105F.jpg",
+      "error": "Must supply api_key"
+    },
+    {
+      "file": "assets\\cpu\\intel\\lga 1200\\Intel Core i3-10320.jpg",
+      "error": "Must supply api_key"
+    },
+    {
+      "file": "assets\\cpu\\intel\\lga 1200\\Intel Core i5-10400.jpg",
+      "error": "Must supply api_key"
+    },
+    {
+      "file": "assets\\cpu\\intel\\lga 1200\\Intel Core i5-10400F.jpg",
+      "error": "Must supply api_key"
+    },
+    {
+      "file": "assets\\cpu\\intel\\lga 1200\\Intel Core i5-10500.jpg",
+      "error": "Must supply api_key"
+    },
+    {
+      "file": "assets\\cpu\\intel\\lga 1200\\Intel Core i5-10600.jpg",
+      "error": "Must supply api_key"
+    },
+    {
+      "file": "assets\\cpu\\intel\\lga 1200\\Intel Core i5-10600K.jpg",
+      "error": "Must supply api_key"
+    },
+    {
+      "file": "assets\\cpu\\intel\\lga 1200\\Intel Core i5-10600KF.jpg",
+      "error": "Must supply api_key"
+    },
+    {
+      "file": "assets\\cpu\\intel\\lga 1200\\Intel Core i5-11400.jpg",
+      "error": "Must supply api_key"
+    },
+    {
+      "file": "assets\\cpu\\intel\\lga 1200\\Intel Core i5-11400F.jpg",
+      "error": "Must supply api_key"
+    },
+    {
+      "file": "assets\\cpu\\intel\\lga 1200\\Intel Core i5-11500.jpg",
+      "error": "Must supply api_key"
+    },
+    {
+      "file": "assets\\cpu\\intel\\lga 1200\\Intel Core i5-11600.jpg",
+      "error": "Must supply api_key"
+    },
+    {
+      "file": "assets\\cpu\\intel\\lga 1200\\Intel Core i5-11600K.jpg",
+      "error": "Must supply api_key"
+    },
+    {
+      "file": "assets\\cpu\\intel\\lga 1200\\Intel Core i5-11600KF.jpg",
+      "error": "Must supply api_key"
+    },
+    {
+      "file": "assets\\cpu\\intel\\lga 1200\\Intel Core i7-10700.jpg",
+      "error": "Must supply api_key"
+    },
+    {
+      "file": "assets\\cpu\\intel\\lga 1200\\Intel Core i7-10700F.jpg",
+      "error": "Must supply api_key"
+    },
+    {
+      "file": "assets\\cpu\\intel\\lga 1200\\Intel Core i7-10700K.jpg",
+      "error": "Must supply api_key"
+    },
+    {
+      "file": "assets\\cpu\\intel\\lga 1200\\Intel Core i7-10700KF.jpg",
+      "error": "Must supply api_key"
+    },
+    {
+      "file": "assets\\cpu\\intel\\lga 1200\\Intel Core i7-11700.jpg",
+      "error": "Must supply api_key"
+    },
+    {
+      "file": "assets\\cpu\\intel\\lga 1200\\Intel Core i7-11700F.jpg",
+      "error": "Must supply api_key"
+    },
+    {
+      "file": "assets\\cpu\\intel\\lga 1200\\Intel Core i7-11700K.jpg",
+      "error": "Must supply api_key"
+    },
+    {
+      "file": "assets\\cpu\\intel\\lga 1200\\Intel Core i7-11700KF.jpg",
+      "error": "Must supply api_key"
+    },
+    {
+      "file": "assets\\cpu\\intel\\lga 1200\\Intel Core i9-10850K.jpg",
+      "error": "Must supply api_key"
+    },
+    {
+      "file": "assets\\cpu\\intel\\lga 1200\\Intel Core i9-10900.jpg",
+      "error": "Must supply api_key"
+    },
+    {
+      "file": "assets\\cpu\\intel\\lga 1200\\Intel Core i9-10900F.jpg",
+      "error": "Must supply api_key"
+    },
+    {
+      "file": "assets\\cpu\\intel\\lga 1200\\Intel Core i9-10900K.jpg",
+      "error": "Must supply api_key"
+    },
+    {
+      "file": "assets\\cpu\\intel\\lga 1200\\Intel Core i9-10900KF.jpg",
+      "error": "Must supply api_key"
+    },
+    {
+      "file": "assets\\cpu\\intel\\lga 1200\\Intel Core i9-11900.jpg",
+      "error": "Must supply api_key"
+    },
+    {
+      "file": "assets\\cpu\\intel\\lga 1200\\Intel Core i9-11900F.jpg",
+      "error": "Must supply api_key"
+    },
+    {
+      "file": "assets\\cpu\\intel\\lga 1200\\Intel Core i9-11900K.jpg",
+      "error": "Must supply api_key"
+    },
+    {
+      "file": "assets\\cpu\\intel\\lga 1200\\Intel Core i9-11900KF.jpg",
+      "error": "Must supply api_key"
+    },
+    {
+      "file": "assets\\cpu\\intel\\lga 1700\\Intel Core i3-12100.jpg",
+      "error": "Must supply api_key"
+    },
+    {
+      "file": "assets\\cpu\\intel\\lga 1700\\Intel Core i3-12100F.jpg",
+      "error": "Must supply api_key"
+    },
+    {
+      "file": "assets\\cpu\\intel\\lga 1700\\Intel Core i3-13100F.jpg",
+      "error": "Must supply api_key"
+    },
+    {
+      "file": "assets\\cpu\\intel\\lga 1700\\Intel Core i3-14100F.jpg",
+      "error": "Must supply api_key"
+    },
+    {
+      "file": "assets\\cpu\\intel\\lga 1700\\Intel Core i5-12400.jpg",
+      "error": "Must supply api_key"
+    },
+    {
+      "file": "assets\\cpu\\intel\\lga 1700\\Intel Core i5-12400F.jpg",
+      "error": "Must supply api_key"
+    },
+    {
+      "file": "assets\\cpu\\intel\\lga 1700\\Intel Core i5-12600K.jpg",
+      "error": "Must supply api_key"
+    },
+    {
+      "file": "assets\\cpu\\intel\\lga 1700\\Intel Core i5-12600KF.jpg",
+      "error": "Must supply api_key"
+    },
+    {
+      "file": "assets\\cpu\\intel\\lga 1700\\Intel Core i5-13400F.jpg",
+      "error": "Must supply api_key"
+    },
+    {
+      "file": "assets\\cpu\\intel\\lga 1700\\Intel Core i5-13600K.jpg",
+      "error": "Must supply api_key"
+    },
+    {
+      "file": "assets\\cpu\\intel\\lga 1700\\Intel Core i5-13600KF.jpg",
+      "error": "Must supply api_key"
+    },
+    {
+      "file": "assets\\cpu\\intel\\lga 1700\\Intel Core i5-14400.jpg",
+      "error": "Must supply api_key"
+    },
+    {
+      "file": "assets\\cpu\\intel\\lga 1700\\Intel Core i5-14400F.jpg",
+      "error": "Must supply api_key"
+    },
+    {
+      "file": "assets\\cpu\\intel\\lga 1700\\Intel Core i5-14600K.jpg",
+      "error": "Must supply api_key"
+    },
+    {
+      "file": "assets\\cpu\\intel\\lga 1700\\Intel Core i5-14600KF.jpg",
+      "error": "Must supply api_key"
+    },
+    {
+      "file": "assets\\cpu\\intel\\lga 1700\\Intel Core i7-12700F.jpg",
+      "error": "Must supply api_key"
+    },
+    {
+      "file": "assets\\cpu\\intel\\lga 1700\\Intel Core i7-12700K.jpg",
+      "error": "Must supply api_key"
+    },
+    {
+      "file": "assets\\cpu\\intel\\lga 1700\\Intel Core i7-12700KF.jpg",
+      "error": "Must supply api_key"
+    },
+    {
+      "file": "assets\\cpu\\intel\\lga 1700\\Intel Core i7-13700F.jpg",
+      "error": "Must supply api_key"
+    },
+    {
+      "file": "assets\\cpu\\intel\\lga 1700\\Intel Core i7-13700K.jpg",
+      "error": "Must supply api_key"
+    },
+    {
+      "file": "assets\\cpu\\intel\\lga 1700\\Intel Core i7-13700KF.jpg",
+      "error": "Must supply api_key"
+    },
+    {
+      "file": "assets\\cpu\\intel\\lga 1700\\Intel Core i7-14700F.jpg",
+      "error": "Must supply api_key"
+    },
+    {
+      "file": "assets\\cpu\\intel\\lga 1700\\Intel Core i7-14700K.jpg",
+      "error": "Must supply api_key"
+    },
+    {
+      "file": "assets\\cpu\\intel\\lga 1700\\Intel Core i7-14700KF.jpg",
+      "error": "Must supply api_key"
+    },
+    {
+      "file": "assets\\cpu\\intel\\lga 1700\\Intel Core i9-12900K.jpg",
+      "error": "Must supply api_key"
+    },
+    {
+      "file": "assets\\cpu\\intel\\lga 1700\\Intel Core i9-12900KF.jpg",
+      "error": "Must supply api_key"
+    },
+    {
+      "file": "assets\\cpu\\intel\\lga 1700\\Intel Core i9-13900K.jpg",
+      "error": "Must supply api_key"
+    },
+    {
+      "file": "assets\\cpu\\intel\\lga 1700\\Intel Core i9-14900K.jpg",
+      "error": "Must supply api_key"
+    },
+    {
+      "file": "assets\\cpu\\intel\\lga 1700\\Intel Core i9-14900KF.jpg",
+      "error": "Must supply api_key"
+    },
+    {
+      "file": "assets\\cpu\\intel\\lga 1700\\Intel Core i9-14900KS.jpg",
+      "error": "Must supply api_key"
+    }
+  ],
+  "summary": {
+    "total": 118,
+    "successful": 0,
+    "failed": 118,
+    "byCategory": {}
+  }
+}

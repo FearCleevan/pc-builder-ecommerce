@@ -7,7 +7,11 @@
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "upload:assets": "node scripts/upload-assets.js",
+    "upload:cpu": "node scripts/upload-assets.js ./assets/cpu",
+    "upload:gpu": "node scripts/upload-assets.js ./assets/video-card",
+    "upload:motherboard": "node scripts/upload-assets.js ./assets/motherboard"
   },
   "dependencies": {
     "@emotion/react": "^11.14.0",
@@ -17,7 +21,9 @@
     "@mui/x-charts": "^8.16.0",
     "@mui/x-date-pickers": "^8.16.0",
     "axios": "^1.11.0",
+    "cloudinary": "^2.8.0",
     "date-fns": "^4.1.0",
+    "dotenv": "^17.2.3",
     "firebase": "^12.5.0",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
