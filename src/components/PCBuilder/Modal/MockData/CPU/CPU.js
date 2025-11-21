@@ -1,5 +1,3 @@
-// import CloudinaryService from '../../../../../services/cloudinaryService';
-
 import CloudinaryService from "../../../../../firebase/services/cloudinaryService";
 
 // Helper function to generate Cloudinary image URLs
