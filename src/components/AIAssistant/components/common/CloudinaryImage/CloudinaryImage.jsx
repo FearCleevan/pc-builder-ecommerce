@@ -7,12 +7,12 @@ import CloudinaryService from '../../../../../firebase/services/cloudinaryServic
 
 const CloudinaryImage = ({ 
   productName, 
-  componentType = 'cpu',
+  componentType, // REMOVE the default value here
   alt,
   className = '',
   width = 400,
   height = 400,
-  fallbackImage = DefaultImage, // Use your default image
+  fallbackImage = DefaultImage,
   onLoad,
   onError,
   ...props 
@@ -41,6 +41,9 @@ const CloudinaryImage = ({
           case 'cpu':
             cloudinaryUrl = CloudinaryService.getProcessorImage(productName, { width, height });
             break;
+          case 'motherboard':
+            cloudinaryUrl = CloudinaryService.getMotherboardImage(productName, { width, height });
+            break;
           // Add other component types as needed
           default:
             cloudinaryUrl = CloudinaryService.getDefaultImage(componentType, 'default', { width, height });
@@ -51,7 +54,7 @@ const CloudinaryImage = ({
           throw new Error('Empty Cloudinary URL generated');
         }
 
-        console.log(`🖼️ Loading image for: ${productName}`, cloudinaryUrl);
+        console.log(`🖼️ Loading ${componentType} image for: ${productName}`, cloudinaryUrl);
 
         // Check if the image exists on Cloudinary
         const exists = await CloudinaryService.checkImageExists(cloudinaryUrl);
@@ -59,12 +62,12 @@ const CloudinaryImage = ({
         if (exists) {
           setImageUrl(cloudinaryUrl);
         } else {
-          console.warn(`❌ Image not found on Cloudinary: ${productName}`);
+          console.warn(`❌ ${componentType} image not found on Cloudinary: ${productName}`);
           setImageUrl(fallbackImage);
           setHasError(true);
         }
       } catch (error) {
-        console.warn(`❌ Error loading image for ${productName}:`, error.message);
+        console.warn(`❌ Error loading ${componentType} image for ${productName}:`, error.message);
         setImageUrl(fallbackImage);
         setHasError(true);
       } finally {
@@ -81,7 +84,7 @@ const CloudinaryImage = ({
   };
 
   const handleImageError = (e) => {
-    console.warn(`🖼️ Image failed to load: ${productName}`, imageUrl);
+    console.warn(`🖼️ ${componentType} image failed to load: ${productName}`, imageUrl);
     
     // If Cloudinary image fails, fall back to default image
     if (imageUrl && imageUrl.includes('cloudinary.com') && imageUrl !== fallbackImage) {
@@ -114,7 +117,7 @@ const CloudinaryImage = ({
       
       <img
         src={imageUrl}
-        alt={alt || productName || 'Component image'}
+        alt={alt || productName || `${componentType} image`}
         className={`${styles.image} ${isLoading ? styles.loading : ''} ${hasError ? styles.error : ''}`}
         onLoad={handleImageLoad}
         onError={handleImageError}
@@ -124,6 +127,11 @@ const CloudinaryImage = ({
       />
     </div>
   );
+};
+
+// Set default props separately
+CloudinaryImage.defaultProps = {
+  componentType: 'motherboard' // Change default to motherboard or remove entirely
 };
 
 export default CloudinaryImage;

@@ -9,6 +9,45 @@ const ComponentCard = ({ component, onSelect, onCompareToggle, isComparing }) =>
   const [isChecked, setIsChecked] = useState(false);
   const cardRef = useRef();
 
+  // Map all component types to Cloudinary component types
+  const getComponentType = () => {
+    if (!component || !component.type) return 'cpu'; // Default fallback
+    
+    const typeMap = {
+      'cpu': 'cpu',
+      'cpu-cooler': 'cooler',
+      'motherboard': 'motherboard',
+      'memory': 'ram',
+      'storage': 'storage',
+      'video-card': 'gpu',
+      'power-supply': 'psu',
+      'case': 'case',
+      'peripherals': 'peripherals',
+      'headphones': 'headphones',
+      'keyboard': 'keyboard',
+      'mouse': 'mouse',
+      'speakers': 'speakers',
+      'webcam': 'webcam',
+      'display': 'monitor',
+      'monitor': 'monitor',
+      'software': 'software',
+      'operating-system': 'software',
+      'expansion': 'expansion',
+      'sound-card': 'sound-card',
+      'wired-networking': 'networking',
+      'wireless-networking': 'networking',
+      'accessories': 'accessories',
+      'case-fan': 'cooler',
+      'fan-controller': 'accessories',
+      'thermal-compound': 'accessories',
+      'external-hard-drive': 'storage',
+      'optical-drive': 'storage',
+      'ups': 'psu'
+    };
+
+    return typeMap[component.type.toLowerCase()] || component.type.toLowerCase();
+  };
+
   useEffect(() => {
     const currentCardRef = cardRef.current;
 
@@ -46,8 +85,7 @@ const ComponentCard = ({ component, onSelect, onCompareToggle, isComparing }) =>
   };
 
   const handleImageError = () => {
-    // Fallback logic if Cloudinary image fails
-    setImageLoaded(true); // Still mark as loaded to show fallback
+    setImageLoaded(true);
   };
 
   const toggleCheck = (e) => {
@@ -56,6 +94,8 @@ const ComponentCard = ({ component, onSelect, onCompareToggle, isComparing }) =>
     setIsChecked(newCheckedState);
     onCompareToggle(component, newCheckedState);
   };
+
+  const componentType = getComponentType();
 
   return (
     <div ref={cardRef} className={styles.card} data-testid="part-card">
@@ -82,32 +122,15 @@ const ComponentCard = ({ component, onSelect, onCompareToggle, isComparing }) =>
           <div className={styles.imageContainer}>
             {!imageLoaded && <div className={styles.imagePlaceholder}></div>}
             
-            {/* Option 1: Use CloudinaryImage with fallback */}
             <CloudinaryImage
               productName={component.name}
-              componentType="cpu" // Make this dynamic based on component type
+              componentType={componentType}
               alt={component.name}
               className={`${styles.image} ${imageLoaded ? styles.imageLoaded : ''}`}
               onLoad={handleImageLoad}
               onError={handleImageError}
               fallbackSrc={component.SampleImg || Desktop1Image}
             />
-            
-            {/* Option 2: If CloudinaryImage doesn't support onLoad/onError, use this instead: */}
-            {/*
-            <img
-              src={getCloudinaryUrl(component)} // You'll need to create this function
-              alt={component.name}
-              className={`${styles.image} ${imageLoaded ? styles.imageLoaded : ''}`}
-              loading="lazy"
-              decoding="async"
-              onLoad={handleImageLoad}
-              onError={(e) => {
-                e.target.src = component.SampleImg || Desktop1Image;
-                handleImageLoad();
-              }}
-            />
-            */}
           </div>
 
           <div className={styles.content}>
