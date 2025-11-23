@@ -1,6 +1,7 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useEffect } from 'react';
 import AddComponentModal from '../Modal/AddComponentModal/AddComponentModal';
 import styles from './PCBuildBody.module.css';
+import CloudinaryImage from '../../AIAssistant/components/common/CloudinaryImage/CloudinaryImage';
 
 const PCBuildBody = ({
     selectedComponents,
@@ -10,6 +11,29 @@ const PCBuildBody = ({
 }) => {
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [selectedComponentType, setSelectedComponentType] = useState(null);
+
+    // Map component IDs to Cloudinary component types
+    const getCloudinaryComponentType = (componentId) => {
+        const typeMap = {
+            'cpu': 'cpu',
+            'motherboard': 'motherboard',
+            'gpu': 'gpu',
+            'ram': 'ram',
+            'storage': 'storage',
+            'cpuCooler': 'cooler',
+            'powerSupply': 'psu',
+            'case': 'case',
+            'caseFan': 'cooler',
+            'monitor': 'monitor',
+            'mouse': 'mouse',
+            'keyboard': 'keyboard',
+            'speaker': 'speakers',
+            'headphones': 'headphones',
+            'microphone': 'accessories',
+            'webcam': 'webcam'
+        };
+        return typeMap[componentId] || componentId;
+    };
 
     const components = useMemo(() => [
         {
@@ -128,7 +152,7 @@ const PCBuildBody = ({
             id: 'webcam',
             name: 'Webcam',
             icon: (
-                <svg xmlns="http://www.w3.org/2000/svg" id="Layer_1" data-name="Layer 1" viewBox="0 0 50 50" width="20" height="15"><path d="M25 10.65c-4.48 0-8.13 3.65-8.13 8.14s3.65 8.14 8.13 8.14 8.14-3.65 8.14-8.14-3.65-8.14-8.14-8.14Zm-1.97 9.3c-1.74 0-3.14-1.41-3.14-3.14s1.4-3.14 3.14-3.14 3.13 1.41 3.13 3.14-1.4 3.14-3.13 3.14Z" fill="#424242"></path><path d="M41.73 4.03H8.27c-2.22 0-4.03 1.8-4.03 4.02v21.48c0 2.22 1.81 4.03 4.03 4.03H22.5v5.94c0 .07.01.13.02.2h-4.74c-1.89 0-3.43 1.54-3.43 3.43s1.54 3.43 3.43 3.43h14.44c1.89 0 3.43-1.54 3.43-3.43s-1.54-3.43-3.43-3.43h-4.74c0-.07.02-.13.02-.2v-5.94h14.23a4.03 4.03 0 0 0 4.03-4.03V8.05c0-2.22-1.8-4.02-4.03-4.02ZM9.51 11.62c-1.26 0-2.29-1.03-2.29-2.3s1.03-2.29 2.29-2.29 2.3 1.03 2.3 2.29-1.03 2.3-2.3 2.3ZM27.5 29.64c-.8.19-1.64.29-2.5.29s-1.7-.1-2.5-.29c-4.94-1.13-8.63-5.57-8.63-10.85 0-6.14 4.99-11.14 11.13-11.14s11.14 5 11.14 11.14c0 5.28-3.7 9.72-8.64 10.85Z" fill="#424242"></path></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" id="Layer_1" data-name="Layer 1" viewBox="0 0 50 50" width="20" height="15"><path d="M25 10.65c-4.48 0-8.13 3.65-8.13 8.14s3.65 8.14 8.13 8.14 8.14-3.65 8.14-8.14-3.65-8.14-8.14-8.14Zm-1.97 9.3c-1.74 0-3.14-1.41-3.14-3.14s1.4-3.14 3.14-3.14 3.13 1.41 3.13 3.14-1.4 3.14-3.13 3.14Z" fill="#424242"></path><path d="M41.73 4.03H8.27c-2.22 0-4.03 1.8-4.03 4.02v21.48c0 2.22 1.81 4.03 4.03 4.03H22.5v5.94c0 .07.01.13.02.20h-4.74c-1.89 0-3.43 1.54-3.43 3.43s1.54 3.43 3.43 3.43h14.44c1.89 0 3.43-1.54 3.43-3.43s-1.54-3.43-3.43-3.43h-4.74c0-.07.02-.13.02-.20v-5.94h14.23a4.03 4.03 0 0 0 4.03-4.03V8.05c0-2.22-1.8-4.02-4.03-4.02ZM9.51 11.62c-1.26 0-2.29-1.03-2.29-2.30s1.03-2.29 2.29-2.29 2.3 1.03 2.3 2.29-1.03 2.3-2.3 2.3ZM27.5 29.64c-.8.19-1.64.29-2.5.29s-1.7-.10-2.5-.29c-4.94-1.13-8.63-5.57-8.63-10.85 0-6.14 4.99-11.14 11.13-11.14s11.14 5 11.14 11.14c0 5.28-3.70 9.72-8.64 10.85Z" fill="#424242"></path></svg>
             )
         },
     ], [])
@@ -195,6 +219,7 @@ const PCBuildBody = ({
                         const isSelected = !!selectedComponents[component.id];
                         const shouldShowAccent = component.id === nextComponentId;
                         const selectedData = selectedComponents[component.id];
+                        const cloudinaryComponentType = getCloudinaryComponentType(component.id);
 
                         return (
                             <tr key={index} className={`${styles.componentRow} ${isSelected ? styles.selectedRow : ''}`}>
@@ -207,16 +232,13 @@ const PCBuildBody = ({
                                         </td>
                                         <td className={styles.imageCell}>
                                             <div className={styles.componentImage}>
-                                                <img src={selectedData.image || selectedData.SampleImg || "/src/assets/Laptop1.png"} alt={selectedData.name} />
-                                                {selectedData.has3D && (
-                                                    <div className={styles.badge3D}>
-                                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                                                            <path d="M16.466 7.5C15.643 4.237 13.952 2 12 2 9.239 2 7 6.477 7 12s2.239 10 5 10c.342 0 .677-.069 1-.2"></path>
-                                                            <path d="m15.194 13.707 3.814 1.86-1.86 3.814"></path>
-                                                            <path d="M19 15.57c-1.804.885-4.274 1.43-7 1.43-5.523 0-10-2.239-10-5s4.477-5 10-5c4.838 0 8.873 1.718 9.8 4"></path>
-                                                        </svg>
-                                                    </div>
-                                                )}
+                                                <CloudinaryImage
+                                                    productName={selectedData.name}
+                                                    componentType={cloudinaryComponentType}
+                                                    alt={selectedData.name}
+                                                    className={styles.cloudinaryImage}
+                                                    fallbackSrc={selectedData.image || selectedData.SampleImg || "/src/assets/Laptop1.png"}
+                                                />
                                             </div>
                                         </td>
                                         <td className={styles.nameCell}>

@@ -1,3 +1,4 @@
+//src/components/PCBuilder/Modal/MockData/CPU/CPU.js
 import CloudinaryService from "../../../../../firebase/services/cloudinaryService";
 
 // Helper function to generate Cloudinary image URLs

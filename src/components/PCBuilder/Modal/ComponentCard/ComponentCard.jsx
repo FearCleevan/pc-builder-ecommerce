@@ -9,43 +9,95 @@ const ComponentCard = ({ component, onSelect, onCompareToggle, isComparing }) =>
   const [isChecked, setIsChecked] = useState(false);
   const cardRef = useRef();
 
-  // Map all component types to Cloudinary component types
+  // Enhanced component type detection that works with or without explicit type
   const getComponentType = () => {
-    if (!component || !component.type) return 'cpu'; // Default fallback
+    if (!component) return 'cpu'; // Default fallback
     
-    const typeMap = {
-      'cpu': 'cpu',
-      'cpu-cooler': 'cooler',
-      'motherboard': 'motherboard',
-      'memory': 'ram',
-      'storage': 'storage',
-      'video-card': 'gpu',
-      'power-supply': 'psu',
-      'case': 'case',
-      'peripherals': 'peripherals',
-      'headphones': 'headphones',
-      'keyboard': 'keyboard',
-      'mouse': 'mouse',
-      'speakers': 'speakers',
-      'webcam': 'webcam',
-      'display': 'monitor',
-      'monitor': 'monitor',
-      'software': 'software',
-      'operating-system': 'software',
-      'expansion': 'expansion',
-      'sound-card': 'sound-card',
-      'wired-networking': 'networking',
-      'wireless-networking': 'networking',
-      'accessories': 'accessories',
-      'case-fan': 'cooler',
-      'fan-controller': 'accessories',
-      'thermal-compound': 'accessories',
-      'external-hard-drive': 'storage',
-      'optical-drive': 'storage',
-      'ups': 'psu'
-    };
+    // If component has explicit type, use the mapping
+    if (component.type) {
+      const typeMap = {
+        'cpu': 'cpu',
+        'cpu-cooler': 'cooler',
+        'motherboard': 'motherboard',
+        'memory': 'ram',
+        'storage': 'storage',
+        'video-card': 'gpu',
+        'power-supply': 'psu',
+        'case': 'case',
+        'peripherals': 'peripherals',
+        'headphones': 'headphones',
+        'keyboard': 'keyboard',
+        'mouse': 'mouse',
+        'speakers': 'speakers',
+        'webcam': 'webcam',
+        'display': 'monitor',
+        'monitor': 'monitor',
+        'software': 'software',
+        'operating-system': 'software',
+        'expansion': 'expansion',
+        'sound-card': 'sound-card',
+        'wired-networking': 'networking',
+        'wireless-networking': 'networking',
+        'accessories': 'accessories',
+        'case-fan': 'cooler',
+        'fan-controller': 'accessories',
+        'thermal-compound': 'accessories',
+        'external-hard-drive': 'storage',
+        'optical-drive': 'storage',
+        'ups': 'psu'
+      };
 
-    return typeMap[component.type.toLowerCase()] || component.type.toLowerCase();
+      return typeMap[component.type.toLowerCase()] || component.type.toLowerCase();
+    }
+
+    // Auto-detect component type based on component properties
+    return detectComponentType(component);
+  };
+
+  // Auto-detect component type based on component data
+  const detectComponentType = (component) => {
+    if (!component || !component.name) return 'cpu';
+    
+    const name = component.name.toLowerCase();
+    const specs = component.specs || {};
+
+    // CPU detection
+    if (name.includes('ryzen') || name.includes('core') || name.includes('intel') || 
+        name.includes('amd') || name.includes('xeon') || name.includes('pentium') ||
+        specs.Socket || specs['Core Count'] || specs['Thread Count']) {
+      return 'cpu';
+    }
+    
+    // Motherboard detection
+    if (name.includes('motherboard') || name.includes('mainboard') || name.includes('mb ') ||
+        name.includes('b450') || name.includes('b550') || name.includes('b650') ||
+        name.includes('x570') || name.includes('x670') || name.includes('z690') ||
+        name.includes('z790') || specs.Chipset || specs['Form Factor'] === 'ATX' ||
+        specs['Form Factor'] === 'Micro-ATX' || specs['Form Factor'] === 'Mini-ITX') {
+      return 'motherboard';
+    }
+    
+    // GPU detection
+    if (name.includes('rtx') || name.includes('gtx') || name.includes('radeon') ||
+        name.includes('geforce') || name.includes('video card') || name.includes('gpu') ||
+        specs['Video Memory'] || specs['Memory Interface']) {
+      return 'gpu';
+    }
+    
+    // RAM detection
+    if (name.includes('ram') || name.includes('memory') || name.includes('ddr') ||
+        specs['Memory Type'] || specs['Memory Speed']) {
+      return 'ram';
+    }
+    
+    // Storage detection
+    if (name.includes('ssd') || name.includes('hdd') || name.includes('nvme') ||
+        name.includes('solid state') || name.includes('hard drive') || specs.Capacity) {
+      return 'storage';
+    }
+    
+    // Default to CPU if unknown
+    return 'cpu';
   };
 
   useEffect(() => {

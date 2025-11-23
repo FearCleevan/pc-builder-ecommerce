@@ -7,7 +7,7 @@ import CloudinaryService from '../../../../../firebase/services/cloudinaryServic
 
 const CloudinaryImage = ({ 
   productName, 
-  componentType, // REMOVE the default value here
+  componentType, 
   alt,
   className = '',
   width = 400,
@@ -20,6 +20,9 @@ const CloudinaryImage = ({
   const [imageUrl, setImageUrl] = useState(null);
   const [hasError, setHasError] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
+
+  // Auto-detect component type if not provided
+  const detectedComponentType = componentType || detectComponentTypeFromName(productName);
 
   useEffect(() => {
     const loadImage = async () => {
@@ -37,24 +40,19 @@ const CloudinaryImage = ({
         // Generate Cloudinary URL based on product name and type
         let cloudinaryUrl;
         
-        switch (componentType) {
-          case 'cpu':
-            cloudinaryUrl = CloudinaryService.getProcessorImage(productName, { width, height });
-            break;
-          case 'motherboard':
-            cloudinaryUrl = CloudinaryService.getMotherboardImage(productName, { width, height });
-            break;
-          // Add other component types as needed
-          default:
-            cloudinaryUrl = CloudinaryService.getDefaultImage(componentType, 'default', { width, height });
-        }
+        // Use the generic component image method that handles all types
+        cloudinaryUrl = CloudinaryService.getComponentImage(
+          detectedComponentType, 
+          productName, 
+          { width, height }
+        );
 
         // Validate the URL is not empty
         if (!cloudinaryUrl || cloudinaryUrl === '') {
           throw new Error('Empty Cloudinary URL generated');
         }
 
-        console.log(`🖼️ Loading ${componentType} image for: ${productName}`, cloudinaryUrl);
+        console.log(`🖼️ Loading ${detectedComponentType} image for: ${productName}`, cloudinaryUrl);
 
         // Check if the image exists on Cloudinary
         const exists = await CloudinaryService.checkImageExists(cloudinaryUrl);
@@ -62,12 +60,12 @@ const CloudinaryImage = ({
         if (exists) {
           setImageUrl(cloudinaryUrl);
         } else {
-          console.warn(`❌ ${componentType} image not found on Cloudinary: ${productName}`);
+          console.warn(`❌ ${detectedComponentType} image not found on Cloudinary: ${productName}`);
           setImageUrl(fallbackImage);
           setHasError(true);
         }
       } catch (error) {
-        console.warn(`❌ Error loading ${componentType} image for ${productName}:`, error.message);
+        console.warn(`❌ Error loading ${detectedComponentType} image for ${productName}:`, error.message);
         setImageUrl(fallbackImage);
         setHasError(true);
       } finally {
@@ -76,7 +74,7 @@ const CloudinaryImage = ({
     };
 
     loadImage();
-  }, [productName, componentType, width, height, fallbackImage]);
+  }, [productName, detectedComponentType, width, height, fallbackImage]);
 
   const handleImageLoad = (e) => {
     setIsLoading(false);
@@ -84,7 +82,7 @@ const CloudinaryImage = ({
   };
 
   const handleImageError = (e) => {
-    console.warn(`🖼️ ${componentType} image failed to load: ${productName}`, imageUrl);
+    console.warn(`🖼️ ${detectedComponentType} image failed to load: ${productName}`, imageUrl);
     
     // If Cloudinary image fails, fall back to default image
     if (imageUrl && imageUrl.includes('cloudinary.com') && imageUrl !== fallbackImage) {
@@ -117,7 +115,7 @@ const CloudinaryImage = ({
       
       <img
         src={imageUrl}
-        alt={alt || productName || `${componentType} image`}
+        alt={alt || productName || `${detectedComponentType} image`}
         className={`${styles.image} ${isLoading ? styles.loading : ''} ${hasError ? styles.error : ''}`}
         onLoad={handleImageLoad}
         onError={handleImageError}
@@ -129,9 +127,45 @@ const CloudinaryImage = ({
   );
 };
 
-// Set default props separately
-CloudinaryImage.defaultProps = {
-  componentType: 'motherboard' // Change default to motherboard or remove entirely
+// Helper function to detect component type from product name
+const detectComponentTypeFromName = (productName) => {
+  if (!productName) return 'cpu';
+  
+  const name = productName.toLowerCase();
+  
+  // CPU detection
+  if (name.includes('ryzen') || name.includes('core') || name.includes('intel') || 
+      name.includes('amd') || name.includes('xeon') || name.includes('pentium')) {
+    return 'cpu';
+  }
+  
+  // Motherboard detection
+  if (name.includes('motherboard') || name.includes('mainboard') || name.includes('mb ') ||
+      name.includes('b450') || name.includes('b550') || name.includes('b650') ||
+      name.includes('x570') || name.includes('x670') || name.includes('z690') ||
+      name.includes('z790')) {
+    return 'motherboard';
+  }
+  
+  // GPU detection
+  if (name.includes('rtx') || name.includes('gtx') || name.includes('radeon') ||
+      name.includes('geforce') || name.includes('video card') || name.includes('gpu')) {
+    return 'gpu';
+  }
+  
+  // RAM detection
+  if (name.includes('ram') || name.includes('memory') || name.includes('ddr')) {
+    return 'ram';
+  }
+  
+  // Storage detection
+  if (name.includes('ssd') || name.includes('hdd') || name.includes('nvme') ||
+      name.includes('solid state') || name.includes('hard drive')) {
+    return 'storage';
+  }
+  
+  // Default to CPU if unknown
+  return 'cpu';
 };
 
 export default CloudinaryImage;
