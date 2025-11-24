@@ -1,0 +1,1704 @@
+{
+  "timestamp": "2025-11-24T00:48:25.055Z",
+  "uploaded": [
+    {
+      "category": "motherboard",
+      "brand": "atx",
+      "model": "am4",
+      "displayCategory": "Motherboards",
+      "normalizedName": "ASRock B450 Pro4 R20 ATX AM4",
+      "public_id": "pc-builder/motherboard/atx/am4/ASRock B450 Pro4 R20 ATX AM4",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763743332/pc-builder/motherboard/atx/am4/ASRock%20B450%20Pro4%20R20%20ATX%20AM4.jpg"
+    },
+    {
+      "category": "motherboard",
+      "brand": "atx",
+      "model": "am4",
+      "displayCategory": "Motherboards",
+      "normalizedName": "Asus PRIME B550-PLUS AC-HES ATX AM4",
+      "public_id": "pc-builder/motherboard/atx/am4/Asus PRIME B550-PLUS AC-HES ATX AM4",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763743332/pc-builder/motherboard/atx/am4/Asus%20PRIME%20B550-PLUS%20AC-HES%20ATX%20AM4.jpg"
+    },
+    {
+      "category": "motherboard",
+      "brand": "atx",
+      "model": "am4",
+      "displayCategory": "Motherboards",
+      "normalizedName": "ASRock B550 Phantom Gaming 4 ac ATX AM4",
+      "public_id": "pc-builder/motherboard/atx/am4/ASRock B550 Phantom Gaming 4 ac ATX AM4",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763743333/pc-builder/motherboard/atx/am4/ASRock%20B550%20Phantom%20Gaming%204%20ac%20ATX%20AM4.jpg"
+    },
+    {
+      "category": "motherboard",
+      "brand": "atx",
+      "model": "am4",
+      "displayCategory": "Motherboards",
+      "normalizedName": "Asus ROG STRIX B550-A GAMING ATX AM4",
+      "public_id": "pc-builder/motherboard/atx/am4/Asus ROG STRIX B550-A GAMING ATX AM4",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763743336/pc-builder/motherboard/atx/am4/Asus%20ROG%20STRIX%20B550-A%20GAMING%20ATX%20AM4.jpg"
+    },
+    {
+      "category": "motherboard",
+      "brand": "atx",
+      "model": "am4",
+      "displayCategory": "Motherboards",
+      "normalizedName": "Asus ROG STRIX B450-F GAMING II ATX AM4",
+      "public_id": "pc-builder/motherboard/atx/am4/Asus ROG STRIX B450-F GAMING II ATX AM4",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763743336/pc-builder/motherboard/atx/am4/Asus%20ROG%20STRIX%20B450-F%20GAMING%20II%20ATX%20AM4.jpg"
+    },
+    {
+      "category": "motherboard",
+      "brand": "atx",
+      "model": "am4",
+      "displayCategory": "Motherboards",
+      "normalizedName": "Asus ROG STRIX B450-F GAMING ATX AM4",
+      "public_id": "pc-builder/motherboard/atx/am4/Asus ROG STRIX B450-F GAMING ATX AM4",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763743336/pc-builder/motherboard/atx/am4/Asus%20ROG%20STRIX%20B450-F%20GAMING%20ATX%20AM4.jpg"
+    },
+    {
+      "category": "motherboard",
+      "brand": "atx",
+      "model": "am4",
+      "displayCategory": "Motherboards",
+      "normalizedName": "Asus ROG STRIX B550-F GAMING ATX AM4",
+      "public_id": "pc-builder/motherboard/atx/am4/Asus ROG STRIX B550-F GAMING ATX AM4",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763743339/pc-builder/motherboard/atx/am4/Asus%20ROG%20STRIX%20B550-F%20GAMING%20ATX%20AM4.jpg"
+    },
+    {
+      "category": "motherboard",
+      "brand": "atx",
+      "model": "am4",
+      "displayCategory": "Motherboards",
+      "normalizedName": "Asus ROG STRIX B550-F GAMING WIFI II ATX AM4",
+      "public_id": "pc-builder/motherboard/atx/am4/Asus ROG STRIX B550-F GAMING WIFI II ATX AM4",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763743339/pc-builder/motherboard/atx/am4/Asus%20ROG%20STRIX%20B550-F%20GAMING%20WIFI%20II%20ATX%20AM4.jpg"
+    },
+    {
+      "category": "motherboard",
+      "brand": "atx",
+      "model": "am4",
+      "displayCategory": "Motherboards",
+      "normalizedName": "Asus TUF GAMING B550-PLUS WIFI II ATX AM4",
+      "public_id": "pc-builder/motherboard/atx/am4/Asus TUF GAMING B550-PLUS WIFI II ATX AM4",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763743340/pc-builder/motherboard/atx/am4/Asus%20TUF%20GAMING%20B550-PLUS%20WIFI%20II%20ATX%20AM4.jpg"
+    },
+    {
+      "category": "motherboard",
+      "brand": "atx",
+      "model": "am4",
+      "displayCategory": "Motherboards",
+      "normalizedName": "Gigabyte B550 AORUS ELITE AX V2 ATX AM4",
+      "public_id": "pc-builder/motherboard/atx/am4/Gigabyte B550 AORUS ELITE AX V2 ATX AM4",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763743343/pc-builder/motherboard/atx/am4/Gigabyte%20B550%20AORUS%20ELITE%20AX%20V2%20ATX%20AM4.jpg"
+    },
+    {
+      "category": "motherboard",
+      "brand": "atx",
+      "model": "am4",
+      "displayCategory": "Motherboards",
+      "normalizedName": "Gigabyte B550 EAGLE WIFI6 ATX AM4",
+      "public_id": "pc-builder/motherboard/atx/am4/Gigabyte B550 EAGLE WIFI6 ATX AM4",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763743343/pc-builder/motherboard/atx/am4/Gigabyte%20B550%20EAGLE%20WIFI6%20ATX%20AM4.jpg"
+    },
+    {
+      "category": "motherboard",
+      "brand": "atx",
+      "model": "am4",
+      "displayCategory": "Motherboards",
+      "normalizedName": "Asus TUF GAMING X570-PLUS WI-FI ATX AM4",
+      "public_id": "pc-builder/motherboard/atx/am4/Asus TUF GAMING X570-PLUS WI-FI ATX AM4",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763743343/pc-builder/motherboard/atx/am4/Asus%20TUF%20GAMING%20X570-PLUS%20WI-FI%20ATX%20AM4.jpg"
+    },
+    {
+      "category": "motherboard",
+      "brand": "atx",
+      "model": "am4",
+      "displayCategory": "Motherboards",
+      "normalizedName": "MSI B450 TOMAHAWK MAX ATX AM4",
+      "public_id": "pc-builder/motherboard/atx/am4/MSI B450 TOMAHAWK MAX ATX AM4",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763743347/pc-builder/motherboard/atx/am4/MSI%20B450%20TOMAHAWK%20MAX%20ATX%20AM4.jpg"
+    },
+    {
+      "category": "motherboard",
+      "brand": "atx",
+      "model": "am4",
+      "displayCategory": "Motherboards",
+      "normalizedName": "Gigabyte B550 UD AC ATX AM4",
+      "public_id": "pc-builder/motherboard/atx/am4/Gigabyte B550 UD AC ATX AM4",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763743347/pc-builder/motherboard/atx/am4/Gigabyte%20B550%20UD%20AC%20ATX%20AM4.jpg"
+    },
+    {
+      "category": "motherboard",
+      "brand": "atx",
+      "model": "am4",
+      "displayCategory": "Motherboards",
+      "normalizedName": "Gigabyte B550 GAMING X V2 ATX AM4",
+      "public_id": "pc-builder/motherboard/atx/am4/Gigabyte B550 GAMING X V2 ATX AM4",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763743347/pc-builder/motherboard/atx/am4/Gigabyte%20B550%20GAMING%20X%20V2%20ATX%20AM4.jpg"
+    },
+    {
+      "category": "motherboard",
+      "brand": "atx",
+      "model": "am4",
+      "displayCategory": "Motherboards",
+      "normalizedName": "MSI B550-A PRO ATX AM4",
+      "public_id": "pc-builder/motherboard/atx/am4/MSI B550-A PRO ATX AM4",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763743350/pc-builder/motherboard/atx/am4/MSI%20B550-A%20PRO%20ATX%20AM4.jpg"
+    },
+    {
+      "category": "motherboard",
+      "brand": "atx",
+      "model": "am4",
+      "displayCategory": "Motherboards",
+      "normalizedName": "MSI MAG B550 TOMAHAWK ATX AM4",
+      "public_id": "pc-builder/motherboard/atx/am4/MSI MAG B550 TOMAHAWK ATX AM4",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763743351/pc-builder/motherboard/atx/am4/MSI%20MAG%20B550%20TOMAHAWK%20ATX%20AM4.jpg"
+    },
+    {
+      "category": "motherboard",
+      "brand": "atx",
+      "model": "am4",
+      "displayCategory": "Motherboards",
+      "normalizedName": "MSI B550 GAMING GEN3 ATX AM4",
+      "public_id": "pc-builder/motherboard/atx/am4/MSI B550 GAMING GEN3 ATX AM4",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763743350/pc-builder/motherboard/atx/am4/MSI%20B550%20GAMING%20GEN3%20ATX%20AM4.jpg"
+    },
+    {
+      "category": "motherboard",
+      "brand": "atx",
+      "model": "am4",
+      "displayCategory": "Motherboards",
+      "normalizedName": "MSI MPG B550 GAMING PLUS ATX AM4",
+      "public_id": "pc-builder/motherboard/atx/am4/MSI MPG B550 GAMING PLUS ATX AM4",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763743354/pc-builder/motherboard/atx/am4/MSI%20MPG%20B550%20GAMING%20PLUS%20ATX%20AM4.jpg"
+    },
+    {
+      "category": "motherboard",
+      "brand": "atx",
+      "model": "am4",
+      "displayCategory": "Motherboards",
+      "normalizedName": "MSI MAG B550 TOMAHAWK MAX WIFI ATX AM4",
+      "public_id": "pc-builder/motherboard/atx/am4/MSI MAG B550 TOMAHAWK MAX WIFI ATX AM4",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763743354/pc-builder/motherboard/atx/am4/MSI%20MAG%20B550%20TOMAHAWK%20MAX%20WIFI%20ATX%20AM4.jpg"
+    },
+    {
+      "category": "motherboard",
+      "brand": "atx",
+      "model": "am5",
+      "displayCategory": "Motherboards",
+      "normalizedName": "Asus B650E MAX GAMING WIFI W ATX AM5",
+      "public_id": "pc-builder/motherboard/atx/am5/Asus B650E MAX GAMING WIFI W ATX AM5",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763945151/pc-builder/motherboard/atx/am5/Asus%20B650E%20MAX%20GAMING%20WIFI%20W%20ATX%20AM5.jpg"
+    },
+    {
+      "category": "motherboard",
+      "brand": "atx",
+      "model": "am5",
+      "displayCategory": "Motherboards",
+      "normalizedName": "Asus PRIME B650-PLUS WIFI ATX AM5",
+      "public_id": "pc-builder/motherboard/atx/am5/Asus PRIME B650-PLUS WIFI ATX AM5",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763945154/pc-builder/motherboard/atx/am5/Asus%20PRIME%20B650-PLUS%20WIFI%20ATX%20AM5.jpg"
+    },
+    {
+      "category": "motherboard",
+      "brand": "atx",
+      "model": "am5",
+      "displayCategory": "Motherboards",
+      "normalizedName": "Asus ROG STRIX B850-F GAMING WIFI ATX AM5",
+      "public_id": "pc-builder/motherboard/atx/am5/Asus ROG STRIX B850-F GAMING WIFI ATX AM5",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763945154/pc-builder/motherboard/atx/am5/Asus%20ROG%20STRIX%20B850-F%20GAMING%20WIFI%20ATX%20AM5.jpg"
+    },
+    {
+      "category": "motherboard",
+      "brand": "atx",
+      "model": "am5",
+      "displayCategory": "Motherboards",
+      "normalizedName": "Asus ROG STRIX B850-A GAMING WIFI ATX AM5",
+      "public_id": "pc-builder/motherboard/atx/am5/Asus ROG STRIX B850-A GAMING WIFI ATX AM5",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763945154/pc-builder/motherboard/atx/am5/Asus%20ROG%20STRIX%20B850-A%20GAMING%20WIFI%20ATX%20AM5.jpg"
+    },
+    {
+      "category": "motherboard",
+      "brand": "atx",
+      "model": "am5",
+      "displayCategory": "Motherboards",
+      "normalizedName": "Asus ROG STRIX X870E-E GAMING WIFI ATX AM5",
+      "public_id": "pc-builder/motherboard/atx/am5/Asus ROG STRIX X870E-E GAMING WIFI ATX AM5",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763945158/pc-builder/motherboard/atx/am5/Asus%20ROG%20STRIX%20X870E-E%20GAMING%20WIFI%20ATX%20AM5.jpg"
+    },
+    {
+      "category": "motherboard",
+      "brand": "atx",
+      "model": "am5",
+      "displayCategory": "Motherboards",
+      "normalizedName": "Asus TUF GAMING B650E-E WIFI ATX AM5",
+      "public_id": "pc-builder/motherboard/atx/am5/Asus TUF GAMING B650E-E WIFI ATX AM5",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763945158/pc-builder/motherboard/atx/am5/Asus%20TUF%20GAMING%20B650E-E%20WIFI%20ATX%20AM5.jpg"
+    },
+    {
+      "category": "motherboard",
+      "brand": "atx",
+      "model": "am5",
+      "displayCategory": "Motherboards",
+      "normalizedName": "Asus TUF GAMING B850-PLUS WIFI ATX AM5",
+      "public_id": "pc-builder/motherboard/atx/am5/Asus TUF GAMING B850-PLUS WIFI ATX AM5",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763945158/pc-builder/motherboard/atx/am5/Asus%20TUF%20GAMING%20B850-PLUS%20WIFI%20ATX%20AM5.jpg"
+    },
+    {
+      "category": "motherboard",
+      "brand": "atx",
+      "model": "am5",
+      "displayCategory": "Motherboards",
+      "normalizedName": "Gigabyte B850 AORUS ELITE WIFI7 ATX AM5",
+      "public_id": "pc-builder/motherboard/atx/am5/Gigabyte B850 AORUS ELITE WIFI7 ATX AM5",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763945161/pc-builder/motherboard/atx/am5/Gigabyte%20B850%20AORUS%20ELITE%20WIFI7%20ATX%20AM5.jpg"
+    },
+    {
+      "category": "motherboard",
+      "brand": "atx",
+      "model": "am5",
+      "displayCategory": "Motherboards",
+      "normalizedName": "Gigabyte B650 EAGLE AX ATX AM5",
+      "public_id": "pc-builder/motherboard/atx/am5/Gigabyte B650 EAGLE AX ATX AM5",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763945161/pc-builder/motherboard/atx/am5/Gigabyte%20B650%20EAGLE%20AX%20ATX%20AM5.jpg"
+    },
+    {
+      "category": "motherboard",
+      "brand": "atx",
+      "model": "am5",
+      "displayCategory": "Motherboards",
+      "normalizedName": "Gigabyte B850 AORUS ELITE WIFI7 ICE ATX AM5",
+      "public_id": "pc-builder/motherboard/atx/am5/Gigabyte B850 AORUS ELITE WIFI7 ICE ATX AM5",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763945161/pc-builder/motherboard/atx/am5/Gigabyte%20B850%20AORUS%20ELITE%20WIFI7%20ICE%20ATX%20AM5.jpg"
+    },
+    {
+      "category": "motherboard",
+      "brand": "atx",
+      "model": "am5",
+      "displayCategory": "Motherboards",
+      "normalizedName": "Gigabyte B850 GAMING X WIFI6E ATX AM5",
+      "public_id": "pc-builder/motherboard/atx/am5/Gigabyte B850 GAMING X WIFI6E ATX AM5",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763945164/pc-builder/motherboard/atx/am5/Gigabyte%20B850%20GAMING%20X%20WIFI6E%20ATX%20AM5.jpg"
+    },
+    {
+      "category": "motherboard",
+      "brand": "atx",
+      "model": "am5",
+      "displayCategory": "Motherboards",
+      "normalizedName": "Gigabyte X870 AORUS ELITE WIFI7 ICE ATX AM5",
+      "public_id": "pc-builder/motherboard/atx/am5/Gigabyte X870 AORUS ELITE WIFI7 ICE ATX AM5",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763945164/pc-builder/motherboard/atx/am5/Gigabyte%20X870%20AORUS%20ELITE%20WIFI7%20ICE%20ATX%20AM5.jpg"
+    },
+    {
+      "category": "motherboard",
+      "brand": "atx",
+      "model": "am5",
+      "displayCategory": "Motherboards",
+      "normalizedName": "Gigabyte B850 GAMING WIFI6 ATX AM5",
+      "public_id": "pc-builder/motherboard/atx/am5/Gigabyte B850 GAMING WIFI6 ATX AM5",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763945164/pc-builder/motherboard/atx/am5/Gigabyte%20B850%20GAMING%20WIFI6%20ATX%20AM5.jpg"
+    },
+    {
+      "category": "motherboard",
+      "brand": "atx",
+      "model": "am5",
+      "displayCategory": "Motherboards",
+      "normalizedName": "MSI B850 GAMING PLUS WIFI ATX AM5",
+      "public_id": "pc-builder/motherboard/atx/am5/MSI B850 GAMING PLUS WIFI ATX AM5",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763945168/pc-builder/motherboard/atx/am5/MSI%20B850%20GAMING%20PLUS%20WIFI%20ATX%20AM5.jpg"
+    },
+    {
+      "category": "motherboard",
+      "brand": "atx",
+      "model": "am5",
+      "displayCategory": "Motherboards",
+      "normalizedName": "MSI B650 GAMING PLUS WIFI ATX AM5",
+      "public_id": "pc-builder/motherboard/atx/am5/MSI B650 GAMING PLUS WIFI ATX AM5",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763945168/pc-builder/motherboard/atx/am5/MSI%20B650%20GAMING%20PLUS%20WIFI%20ATX%20AM5.jpg"
+    },
+    {
+      "category": "motherboard",
+      "brand": "atx",
+      "model": "am5",
+      "displayCategory": "Motherboards",
+      "normalizedName": "Gigabyte X870E AORUS ELITE WIFI7 ATX AM5",
+      "public_id": "pc-builder/motherboard/atx/am5/Gigabyte X870E AORUS ELITE WIFI7 ATX AM5",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763945169/pc-builder/motherboard/atx/am5/Gigabyte%20X870E%20AORUS%20ELITE%20WIFI7%20ATX%20AM5.jpg"
+    },
+    {
+      "category": "motherboard",
+      "brand": "atx",
+      "model": "am5",
+      "displayCategory": "Motherboards",
+      "normalizedName": "MSI MAG B850 TOMAHAWK MAX WIFI ATX AM5",
+      "public_id": "pc-builder/motherboard/atx/am5/MSI MAG B850 TOMAHAWK MAX WIFI ATX AM5",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763945172/pc-builder/motherboard/atx/am5/MSI%20MAG%20B850%20TOMAHAWK%20MAX%20WIFI%20ATX%20AM5.jpg"
+    },
+    {
+      "category": "motherboard",
+      "brand": "atx",
+      "model": "am5",
+      "displayCategory": "Motherboards",
+      "normalizedName": "MSI MAG X870 TOMAHAWK WIFI ATX AM5",
+      "public_id": "pc-builder/motherboard/atx/am5/MSI MAG X870 TOMAHAWK WIFI ATX AM5",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763945172/pc-builder/motherboard/atx/am5/MSI%20MAG%20X870%20TOMAHAWK%20WIFI%20ATX%20AM5.jpg"
+    },
+    {
+      "category": "motherboard",
+      "brand": "atx",
+      "model": "am5",
+      "displayCategory": "Motherboards",
+      "normalizedName": "MSI MAG B650 TOMAHAWK WIFI ATX AM5",
+      "public_id": "pc-builder/motherboard/atx/am5/MSI MAG B650 TOMAHAWK WIFI ATX AM5",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763945172/pc-builder/motherboard/atx/am5/MSI%20MAG%20B650%20TOMAHAWK%20WIFI%20ATX%20AM5.jpg"
+    },
+    {
+      "category": "motherboard",
+      "brand": "atx",
+      "model": "lga1151",
+      "displayCategory": "Motherboards",
+      "normalizedName": "Asus PRIME Z270-A ATX LGA1151",
+      "public_id": "pc-builder/motherboard/atx/lga1151/Asus PRIME Z270-A ATX LGA1151",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763945176/pc-builder/motherboard/atx/lga1151/Asus%20PRIME%20Z270-A%20ATX%20LGA1151.jpg"
+    },
+    {
+      "category": "motherboard",
+      "brand": "atx",
+      "model": "am5",
+      "displayCategory": "Motherboards",
+      "normalizedName": "MSI PRO B650-S WIFI ATX AM5",
+      "public_id": "pc-builder/motherboard/atx/am5/MSI PRO B650-S WIFI ATX AM5",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763945176/pc-builder/motherboard/atx/am5/MSI%20PRO%20B650-S%20WIFI%20ATX%20AM5.jpg"
+    },
+    {
+      "category": "motherboard",
+      "brand": "atx",
+      "model": "lga1151",
+      "displayCategory": "Motherboards",
+      "normalizedName": "Asus PRIME Z390-A ATX LGA1151",
+      "public_id": "pc-builder/motherboard/atx/lga1151/Asus PRIME Z390-A ATX LGA1151",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763945176/pc-builder/motherboard/atx/lga1151/Asus%20PRIME%20Z390-A%20ATX%20LGA1151.jpg"
+    },
+    {
+      "category": "motherboard",
+      "brand": "atx",
+      "model": "lga1151",
+      "displayCategory": "Motherboards",
+      "normalizedName": "Asus PRIME Z390-P ATX LGA1151",
+      "public_id": "pc-builder/motherboard/atx/lga1151/Asus PRIME Z390-P ATX LGA1151",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763945179/pc-builder/motherboard/atx/lga1151/Asus%20PRIME%20Z390-P%20ATX%20LGA1151.jpg"
+    },
+    {
+      "category": "motherboard",
+      "brand": "atx",
+      "model": "lga1151",
+      "displayCategory": "Motherboards",
+      "normalizedName": "Asus ROG STRIX Z390-E GAMING ATX LGA1151",
+      "public_id": "pc-builder/motherboard/atx/lga1151/Asus ROG STRIX Z390-E GAMING ATX LGA1151",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763945179/pc-builder/motherboard/atx/lga1151/Asus%20ROG%20STRIX%20Z390-E%20GAMING%20ATX%20LGA1151.jpg"
+    },
+    {
+      "category": "motherboard",
+      "brand": "atx",
+      "model": "lga1151",
+      "displayCategory": "Motherboards",
+      "normalizedName": "Gigabyte Z390 AORUS PRO WIFI ATX LGA1151",
+      "public_id": "pc-builder/motherboard/atx/lga1151/Gigabyte Z390 AORUS PRO WIFI ATX LGA1151",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763945179/pc-builder/motherboard/atx/lga1151/Gigabyte%20Z390%20AORUS%20PRO%20WIFI%20ATX%20LGA1151.jpg"
+    },
+    {
+      "category": "motherboard",
+      "brand": "atx",
+      "model": "lga1151",
+      "displayCategory": "Motherboards",
+      "normalizedName": "Gigabyte Z390 UD ATX LGA1151",
+      "public_id": "pc-builder/motherboard/atx/lga1151/Gigabyte Z390 UD ATX LGA1151",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763945182/pc-builder/motherboard/atx/lga1151/Gigabyte%20Z390%20UD%20ATX%20LGA1151.jpg"
+    },
+    {
+      "category": "motherboard",
+      "brand": "atx",
+      "model": "lga1151",
+      "displayCategory": "Motherboards",
+      "normalizedName": "MSI MPG Z390 GAMING PLUS ATX LGA1151",
+      "public_id": "pc-builder/motherboard/atx/lga1151/MSI MPG Z390 GAMING PLUS ATX LGA1151",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763945182/pc-builder/motherboard/atx/lga1151/MSI%20MPG%20Z390%20GAMING%20PLUS%20ATX%20LGA1151.jpg"
+    },
+    {
+      "category": "motherboard",
+      "brand": "atx",
+      "model": "lga1151",
+      "displayCategory": "Motherboards",
+      "normalizedName": "MSI MPG Z390 GAMING EDGE AC ATX LGA1151",
+      "public_id": "pc-builder/motherboard/atx/lga1151/MSI MPG Z390 GAMING EDGE AC ATX LGA1151",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763945182/pc-builder/motherboard/atx/lga1151/MSI%20MPG%20Z390%20GAMING%20EDGE%20AC%20ATX%20LGA1151.jpg"
+    },
+    {
+      "category": "motherboard",
+      "brand": "atx",
+      "model": "lga1151",
+      "displayCategory": "Motherboards",
+      "normalizedName": "MSI Z370-A PRO ATX LGA1151",
+      "public_id": "pc-builder/motherboard/atx/lga1151/MSI Z370-A PRO ATX LGA1151",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763945185/pc-builder/motherboard/atx/lga1151/MSI%20Z370-A%20PRO%20ATX%20LGA1151.jpg"
+    },
+    {
+      "category": "motherboard",
+      "brand": "atx",
+      "model": "lga1151",
+      "displayCategory": "Motherboards",
+      "normalizedName": "MSI Z390-A PRO ATX LGA1151",
+      "public_id": "pc-builder/motherboard/atx/lga1151/MSI Z390-A PRO ATX LGA1151",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763945185/pc-builder/motherboard/atx/lga1151/MSI%20Z390-A%20PRO%20ATX%20LGA1151.jpg"
+    },
+    {
+      "category": "motherboard",
+      "brand": "atx",
+      "model": "lga1200",
+      "displayCategory": "Motherboards",
+      "normalizedName": "Asus PRIME B560-PLUS ATX LGA1200",
+      "public_id": "pc-builder/motherboard/atx/lga1200/Asus PRIME B560-PLUS ATX LGA1200",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763945186/pc-builder/motherboard/atx/lga1200/Asus%20PRIME%20B560-PLUS%20ATX%20LGA1200.jpg"
+    },
+    {
+      "category": "motherboard",
+      "brand": "atx",
+      "model": "lga1200",
+      "displayCategory": "Motherboards",
+      "normalizedName": "Asus PRIME Z590-P ATX LGA1200",
+      "public_id": "pc-builder/motherboard/atx/lga1200/Asus PRIME Z590-P ATX LGA1200",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763945189/pc-builder/motherboard/atx/lga1200/Asus%20PRIME%20Z590-P%20ATX%20LGA1200.jpg"
+    },
+    {
+      "category": "motherboard",
+      "brand": "atx",
+      "model": "lga1200",
+      "displayCategory": "Motherboards",
+      "normalizedName": "Asus ROG STRIX Z490-E GAMING ATX LGA1200",
+      "public_id": "pc-builder/motherboard/atx/lga1200/Asus ROG STRIX Z490-E GAMING ATX LGA1200",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763945189/pc-builder/motherboard/atx/lga1200/Asus%20ROG%20STRIX%20Z490-E%20GAMING%20ATX%20LGA1200.jpg"
+    },
+    {
+      "category": "motherboard",
+      "brand": "atx",
+      "model": "lga1200",
+      "displayCategory": "Motherboards",
+      "normalizedName": "MSI MPG Z490 GAMING EDGE WIFI ATX LGA1200",
+      "public_id": "pc-builder/motherboard/atx/lga1200/MSI MPG Z490 GAMING EDGE WIFI ATX LGA1200",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763945192/pc-builder/motherboard/atx/lga1200/MSI%20MPG%20Z490%20GAMING%20EDGE%20WIFI%20ATX%20LGA1200.jpg"
+    },
+    {
+      "category": "motherboard",
+      "brand": "atx",
+      "model": "lga1200",
+      "displayCategory": "Motherboards",
+      "normalizedName": "Asus ROG STRIX Z590-E GAMING WIFI ATX LGA1200",
+      "public_id": "pc-builder/motherboard/atx/lga1200/Asus ROG STRIX Z590-E GAMING WIFI ATX LGA1200",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763945192/pc-builder/motherboard/atx/lga1200/Asus%20ROG%20STRIX%20Z590-E%20GAMING%20WIFI%20ATX%20LGA1200.jpg"
+    },
+    {
+      "category": "motherboard",
+      "brand": "atx",
+      "model": "lga1200",
+      "displayCategory": "Motherboards",
+      "normalizedName": "Asus TUF Gaming Z590-PLUS WIFI ATX LGA1200",
+      "public_id": "pc-builder/motherboard/atx/lga1200/Asus TUF Gaming Z590-PLUS WIFI ATX LGA1200",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763945192/pc-builder/motherboard/atx/lga1200/Asus%20TUF%20Gaming%20Z590-PLUS%20WIFI%20ATX%20LGA1200.jpg"
+    },
+    {
+      "category": "motherboard",
+      "brand": "atx",
+      "model": "lga1200",
+      "displayCategory": "Motherboards",
+      "normalizedName": "MSI Z490-A PRO ATX LGA1200",
+      "public_id": "pc-builder/motherboard/atx/lga1200/MSI Z490-A PRO ATX LGA1200",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763945196/pc-builder/motherboard/atx/lga1200/MSI%20Z490-A%20PRO%20ATX%20LGA1200.jpg"
+    },
+    {
+      "category": "motherboard",
+      "brand": "atx",
+      "model": "lga1700",
+      "displayCategory": "Motherboards",
+      "normalizedName": "Asus PRIME B660-PLUS D4 ATX LGA1700",
+      "public_id": "pc-builder/motherboard/atx/lga1700/Asus PRIME B660-PLUS D4 ATX LGA1700",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763945196/pc-builder/motherboard/atx/lga1700/Asus%20PRIME%20B660-PLUS%20D4%20ATX%20LGA1700.jpg"
+    },
+    {
+      "category": "motherboard",
+      "brand": "atx",
+      "model": "lga1200",
+      "displayCategory": "Motherboards",
+      "normalizedName": "MSI MPG Z490 GAMING PLUS ATX LGA1200",
+      "public_id": "pc-builder/motherboard/atx/lga1200/MSI MPG Z490 GAMING PLUS ATX LGA1200",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763945196/pc-builder/motherboard/atx/lga1200/MSI%20MPG%20Z490%20GAMING%20PLUS%20ATX%20LGA1200.jpg"
+    },
+    {
+      "category": "motherboard",
+      "brand": "atx",
+      "model": "lga1700",
+      "displayCategory": "Motherboards",
+      "normalizedName": "Asus TUF GAMING Z790-PLUS WIFI D4 ATX LGA1700",
+      "public_id": "pc-builder/motherboard/atx/lga1700/Asus TUF GAMING Z790-PLUS WIFI D4 ATX LGA1700",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763945199/pc-builder/motherboard/atx/lga1700/Asus%20TUF%20GAMING%20Z790-PLUS%20WIFI%20D4%20ATX%20LGA1700.jpg"
+    },
+    {
+      "category": "motherboard",
+      "brand": "atx",
+      "model": "lga1700",
+      "displayCategory": "Motherboards",
+      "normalizedName": "Asus PRIME B760-PLUS D4 ATX LGA1700",
+      "public_id": "pc-builder/motherboard/atx/lga1700/Asus PRIME B760-PLUS D4 ATX LGA1700",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763945199/pc-builder/motherboard/atx/lga1700/Asus%20PRIME%20B760-PLUS%20D4%20ATX%20LGA1700.jpg"
+    },
+    {
+      "category": "motherboard",
+      "brand": "atx",
+      "model": "lga1700",
+      "displayCategory": "Motherboards",
+      "normalizedName": "Asus TUF GAMING Z690-PLUS WIFI D4 ATX LGA1700",
+      "public_id": "pc-builder/motherboard/atx/lga1700/Asus TUF GAMING Z690-PLUS WIFI D4 ATX LGA1700",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763945199/pc-builder/motherboard/atx/lga1700/Asus%20TUF%20GAMING%20Z690-PLUS%20WIFI%20D4%20ATX%20LGA1700.jpg"
+    },
+    {
+      "category": "motherboard",
+      "brand": "atx",
+      "model": "lga1700",
+      "displayCategory": "Motherboards",
+      "normalizedName": "MSI MAG Z690 TOMAHAWK WIFI DDR4 ATX LGA1700",
+      "public_id": "pc-builder/motherboard/atx/lga1700/MSI MAG Z690 TOMAHAWK WIFI DDR4 ATX LGA1700",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763945203/pc-builder/motherboard/atx/lga1700/MSI%20MAG%20Z690%20TOMAHAWK%20WIFI%20DDR4%20ATX%20LGA1700.jpg"
+    },
+    {
+      "category": "motherboard",
+      "brand": "atx",
+      "model": "lga1700",
+      "displayCategory": "Motherboards",
+      "normalizedName": "Gigabyte B760 GAMING X DDR4 ATX LGA1700",
+      "public_id": "pc-builder/motherboard/atx/lga1700/Gigabyte B760 GAMING X DDR4 ATX LGA1700",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763945203/pc-builder/motherboard/atx/lga1700/Gigabyte%20B760%20GAMING%20X%20DDR4%20ATX%20LGA1700.jpg"
+    },
+    {
+      "category": "motherboard",
+      "brand": "atx",
+      "model": "lga1700",
+      "displayCategory": "Motherboards",
+      "normalizedName": "MSI B760 GAMING PLUS WIFI DDR4 ATX LGA1700",
+      "public_id": "pc-builder/motherboard/atx/lga1700/MSI B760 GAMING PLUS WIFI DDR4 ATX LGA1700",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763945203/pc-builder/motherboard/atx/lga1700/MSI%20B760%20GAMING%20PLUS%20WIFI%20DDR4%20ATX%20LGA1700.jpg"
+    },
+    {
+      "category": "motherboard",
+      "brand": "atx",
+      "model": "lga1700",
+      "displayCategory": "Motherboards",
+      "normalizedName": "MSI PRO Z790-P WIFI DDR4 ATX LGA1700",
+      "public_id": "pc-builder/motherboard/atx/lga1700/MSI PRO Z790-P WIFI DDR4 ATX LGA1700",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763945208/pc-builder/motherboard/atx/lga1700/MSI%20PRO%20Z790-P%20WIFI%20DDR4%20ATX%20LGA1700.jpg"
+    },
+    {
+      "category": "motherboard",
+      "brand": "atx",
+      "model": "lga1700",
+      "displayCategory": "Motherboards",
+      "normalizedName": "MSI PRO Z690-A DDR4 ATX LGA1700",
+      "public_id": "pc-builder/motherboard/atx/lga1700/MSI PRO Z690-A DDR4 ATX LGA1700",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763945208/pc-builder/motherboard/atx/lga1700/MSI%20PRO%20Z690-A%20DDR4%20ATX%20LGA1700.jpg"
+    },
+    {
+      "category": "motherboard",
+      "brand": "atx",
+      "model": "lga1700",
+      "displayCategory": "Motherboards",
+      "normalizedName": "MSI PRO B760-P WIFI DDR4 ATX LGA1700",
+      "public_id": "pc-builder/motherboard/atx/lga1700/MSI PRO B760-P WIFI DDR4 ATX LGA1700",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763945208/pc-builder/motherboard/atx/lga1700/MSI%20PRO%20B760-P%20WIFI%20DDR4%20ATX%20LGA1700.jpg"
+    },
+    {
+      "category": "motherboard",
+      "brand": "micro atx",
+      "model": "am4",
+      "displayCategory": "Motherboards",
+      "normalizedName": "ASRock B450M ac R20 Micro ATX AM4",
+      "public_id": "pc-builder/motherboard/micro atx/am4/ASRock B450M ac R20 Micro ATX AM4",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763743358/pc-builder/motherboard/micro%20atx/am4/ASRock%20B450M%20ac%20R20%20Micro%20ATX%20AM4.jpg"
+    },
+    {
+      "category": "motherboard",
+      "brand": "micro atx",
+      "model": "am4",
+      "displayCategory": "Motherboards",
+      "normalizedName": "ASRock A520M-HDV Micro ATX AM4",
+      "public_id": "pc-builder/motherboard/micro atx/am4/ASRock A520M-HDV Micro ATX AM4",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763743354/pc-builder/motherboard/micro%20atx/am4/ASRock%20A520M-HDV%20Micro%20ATX%20AM4.jpg"
+    },
+    {
+      "category": "motherboard",
+      "brand": "micro atx",
+      "model": "am4",
+      "displayCategory": "Motherboards",
+      "normalizedName": "ASRock B450M PRO4 R20 Micro ATX AM4",
+      "public_id": "pc-builder/motherboard/micro atx/am4/ASRock B450M PRO4 R20 Micro ATX AM4",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763743358/pc-builder/motherboard/micro%20atx/am4/ASRock%20B450M%20PRO4%20R20%20Micro%20ATX%20AM4.jpg"
+    },
+    {
+      "category": "motherboard",
+      "brand": "micro atx",
+      "model": "am4",
+      "displayCategory": "Motherboards",
+      "normalizedName": "ASRock B550M Pro4 Micro ATX AM4",
+      "public_id": "pc-builder/motherboard/micro atx/am4/ASRock B550M Pro4 Micro ATX AM4",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763743362/pc-builder/motherboard/micro%20atx/am4/ASRock%20B550M%20Pro4%20Micro%20ATX%20AM4.jpg"
+    },
+    {
+      "category": "motherboard",
+      "brand": "micro atx",
+      "model": "am4",
+      "displayCategory": "Motherboards",
+      "normalizedName": "ASRock B450M-HDV R40 Micro ATX AM4",
+      "public_id": "pc-builder/motherboard/micro atx/am4/ASRock B450M-HDV R40 Micro ATX AM4",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763743358/pc-builder/motherboard/micro%20atx/am4/ASRock%20B450M-HDV%20R40%20Micro%20ATX%20AM4.jpg"
+    },
+    {
+      "category": "motherboard",
+      "brand": "micro atx",
+      "model": "am4",
+      "displayCategory": "Motherboards",
+      "normalizedName": "ASRock B550M-HDV Micro ATX AM4",
+      "public_id": "pc-builder/motherboard/micro atx/am4/ASRock B550M-HDV Micro ATX AM4",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763743361/pc-builder/motherboard/micro%20atx/am4/ASRock%20B550M-HDV%20Micro%20ATX%20AM4.jpg"
+    },
+    {
+      "category": "motherboard",
+      "brand": "micro atx",
+      "model": "am4",
+      "displayCategory": "Motherboards",
+      "normalizedName": "Asus Prime B450M-A II Micro ATX AM4",
+      "public_id": "pc-builder/motherboard/micro atx/am4/Asus Prime B450M-A II Micro ATX AM4",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763743361/pc-builder/motherboard/micro%20atx/am4/Asus%20Prime%20B450M-A%20II%20Micro%20ATX%20AM4.jpg"
+    },
+    {
+      "category": "motherboard",
+      "brand": "micro atx",
+      "model": "am4",
+      "displayCategory": "Motherboards",
+      "normalizedName": "Asus PRIME B550M-A WIFI II Micro ATX AM4",
+      "public_id": "pc-builder/motherboard/micro atx/am4/Asus PRIME B550M-A WIFI II Micro ATX AM4",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763743365/pc-builder/motherboard/micro%20atx/am4/Asus%20PRIME%20B550M-A%20WIFI%20II%20Micro%20ATX%20AM4.jpg"
+    },
+    {
+      "category": "motherboard",
+      "brand": "micro atx",
+      "model": "am4",
+      "displayCategory": "Motherboards",
+      "normalizedName": "Asus TUF GAMING A520M-PLUS WIFI Micro ATX AM4",
+      "public_id": "pc-builder/motherboard/micro atx/am4/Asus TUF GAMING A520M-PLUS WIFI Micro ATX AM4",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763743365/pc-builder/motherboard/micro%20atx/am4/Asus%20TUF%20GAMING%20A520M-PLUS%20WIFI%20Micro%20ATX%20AM4.jpg"
+    },
+    {
+      "category": "motherboard",
+      "brand": "micro atx",
+      "model": "am4",
+      "displayCategory": "Motherboards",
+      "normalizedName": "Asus TUF GAMING B550M-PLUS WIFI II Micro ATX AM4",
+      "public_id": "pc-builder/motherboard/micro atx/am4/Asus TUF GAMING B550M-PLUS WIFI II Micro ATX AM4",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763743365/pc-builder/motherboard/micro%20atx/am4/Asus%20TUF%20GAMING%20B550M-PLUS%20WIFI%20II%20Micro%20ATX%20AM4.jpg"
+    },
+    {
+      "category": "motherboard",
+      "brand": "micro atx",
+      "model": "am4",
+      "displayCategory": "Motherboards",
+      "normalizedName": "Gigabyte A520M DS3H V2 Micro ATX AM4",
+      "public_id": "pc-builder/motherboard/micro atx/am4/Gigabyte A520M DS3H V2 Micro ATX AM4",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763743368/pc-builder/motherboard/micro%20atx/am4/Gigabyte%20A520M%20DS3H%20V2%20Micro%20ATX%20AM4.jpg"
+    },
+    {
+      "category": "motherboard",
+      "brand": "micro atx",
+      "model": "am4",
+      "displayCategory": "Motherboards",
+      "normalizedName": "Gigabyte A520M K V2 Micro ATX AM4",
+      "public_id": "pc-builder/motherboard/micro atx/am4/Gigabyte A520M K V2 Micro ATX AM4",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763743368/pc-builder/motherboard/micro%20atx/am4/Gigabyte%20A520M%20K%20V2%20Micro%20ATX%20AM4.jpg"
+    },
+    {
+      "category": "motherboard",
+      "brand": "micro atx",
+      "model": "am4",
+      "displayCategory": "Motherboards",
+      "normalizedName": "Gigabyte B550M GAMING X WIFI6 Micro ATX AM4",
+      "public_id": "pc-builder/motherboard/micro atx/am4/Gigabyte B550M GAMING X WIFI6 Micro ATX AM4",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763743372/pc-builder/motherboard/micro%20atx/am4/Gigabyte%20B550M%20GAMING%20X%20WIFI6%20Micro%20ATX%20AM4.jpg"
+    },
+    {
+      "category": "motherboard",
+      "brand": "micro atx",
+      "model": "am4",
+      "displayCategory": "Motherboards",
+      "normalizedName": "Gigabyte B550M AORUS ELITE AX Micro ATX AM4",
+      "public_id": "pc-builder/motherboard/micro atx/am4/Gigabyte B550M AORUS ELITE AX Micro ATX AM4",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763743368/pc-builder/motherboard/micro%20atx/am4/Gigabyte%20B550M%20AORUS%20ELITE%20AX%20Micro%20ATX%20AM4.jpg"
+    },
+    {
+      "category": "motherboard",
+      "brand": "micro atx",
+      "model": "am4",
+      "displayCategory": "Motherboards",
+      "normalizedName": "Gigabyte B550M DS3H Micro ATX AM4",
+      "public_id": "pc-builder/motherboard/micro atx/am4/Gigabyte B550M DS3H Micro ATX AM4",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763743372/pc-builder/motherboard/micro%20atx/am4/Gigabyte%20B550M%20DS3H%20Micro%20ATX%20AM4.jpg"
+    },
+    {
+      "category": "motherboard",
+      "brand": "micro atx",
+      "model": "am4",
+      "displayCategory": "Motherboards",
+      "normalizedName": "MSI A520M-A PRO Micro ATX AM4",
+      "public_id": "pc-builder/motherboard/micro atx/am4/MSI A520M-A PRO Micro ATX AM4",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763743376/pc-builder/motherboard/micro%20atx/am4/MSI%20A520M-A%20PRO%20Micro%20ATX%20AM4.jpg"
+    },
+    {
+      "category": "motherboard",
+      "brand": "micro atx",
+      "model": "am4",
+      "displayCategory": "Motherboards",
+      "normalizedName": "MSI B450M-A PRO MAX II Micro ATX AM4",
+      "public_id": "pc-builder/motherboard/micro atx/am4/MSI B450M-A PRO MAX II Micro ATX AM4",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763743376/pc-builder/motherboard/micro%20atx/am4/MSI%20B450M-A%20PRO%20MAX%20II%20Micro%20ATX%20AM4.jpg"
+    },
+    {
+      "category": "motherboard",
+      "brand": "micro atx",
+      "model": "am4",
+      "displayCategory": "Motherboards",
+      "normalizedName": "Gigabyte B550M K Micro ATX AM4",
+      "public_id": "pc-builder/motherboard/micro atx/am4/Gigabyte B550M K Micro ATX AM4",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763743372/pc-builder/motherboard/micro%20atx/am4/Gigabyte%20B550M%20K%20Micro%20ATX%20AM4.jpg"
+    },
+    {
+      "category": "motherboard",
+      "brand": "micro atx",
+      "model": "am4",
+      "displayCategory": "Motherboards",
+      "normalizedName": "MSI B550M PRO-VDH WIFI Micro ATX AM4",
+      "public_id": "pc-builder/motherboard/micro atx/am4/MSI B550M PRO-VDH WIFI Micro ATX AM4",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763743376/pc-builder/motherboard/micro%20atx/am4/MSI%20B550M%20PRO-VDH%20WIFI%20Micro%20ATX%20AM4.jpg"
+    },
+    {
+      "category": "motherboard",
+      "brand": "micro atx",
+      "model": "am4",
+      "displayCategory": "Motherboards",
+      "normalizedName": "MSI PRO B550M-VC WIFI Micro ATX AM4",
+      "public_id": "pc-builder/motherboard/micro atx/am4/MSI PRO B550M-VC WIFI Micro ATX AM4",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763743380/pc-builder/motherboard/micro%20atx/am4/MSI%20PRO%20B550M-VC%20WIFI%20Micro%20ATX%20AM4.jpg"
+    },
+    {
+      "category": "motherboard",
+      "brand": "micro atx",
+      "model": "am5",
+      "displayCategory": "Motherboards",
+      "normalizedName": "ASRock B650M Pro RS Micro ATX AM5",
+      "public_id": "pc-builder/motherboard/micro atx/am5/ASRock B650M Pro RS Micro ATX AM5",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763945229/pc-builder/motherboard/micro%20atx/am5/ASRock%20B650M%20Pro%20RS%20Micro%20ATX%20AM5.jpg"
+    },
+    {
+      "category": "motherboard",
+      "brand": "micro atx",
+      "model": "am5",
+      "displayCategory": "Motherboards",
+      "normalizedName": "ASRock B650M-HDV M2 White Micro ATX AM5",
+      "public_id": "pc-builder/motherboard/micro atx/am5/ASRock B650M-HDV M2 White Micro ATX AM5",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763945232/pc-builder/motherboard/micro%20atx/am5/ASRock%20B650M-HDV%20M2%20White%20Micro%20ATX%20AM5.jpg"
+    },
+    {
+      "category": "motherboard",
+      "brand": "micro atx",
+      "model": "am5",
+      "displayCategory": "Motherboards",
+      "normalizedName": "ASRock B650M-HDV M2 Micro ATX AM5",
+      "public_id": "pc-builder/motherboard/micro atx/am5/ASRock B650M-HDV M2 Micro ATX AM5",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763945232/pc-builder/motherboard/micro%20atx/am5/ASRock%20B650M-HDV%20M2%20Micro%20ATX%20AM5.jpg"
+    },
+    {
+      "category": "motherboard",
+      "brand": "micro atx",
+      "model": "am5",
+      "displayCategory": "Motherboards",
+      "normalizedName": "ASRock B650M Pro RS WiFi Micro ATX AM5",
+      "public_id": "pc-builder/motherboard/micro atx/am5/ASRock B650M Pro RS WiFi Micro ATX AM5",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763945232/pc-builder/motherboard/micro%20atx/am5/ASRock%20B650M%20Pro%20RS%20WiFi%20Micro%20ATX%20AM5.jpg"
+    },
+    {
+      "category": "motherboard",
+      "brand": "micro atx",
+      "model": "am5",
+      "displayCategory": "Motherboards",
+      "normalizedName": "ASRock B850M Pro-A WiFi Micro ATX AM5",
+      "public_id": "pc-builder/motherboard/micro atx/am5/ASRock B850M Pro-A WiFi Micro ATX AM5",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763945235/pc-builder/motherboard/micro%20atx/am5/ASRock%20B850M%20Pro-A%20WiFi%20Micro%20ATX%20AM5.jpg"
+    },
+    {
+      "category": "motherboard",
+      "brand": "micro atx",
+      "model": "am5",
+      "displayCategory": "Motherboards",
+      "normalizedName": "ASRock B850M-X WiFi R20 Micro ATX AM5",
+      "public_id": "pc-builder/motherboard/micro atx/am5/ASRock B850M-X WiFi R20 Micro ATX AM5",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763945236/pc-builder/motherboard/micro%20atx/am5/ASRock%20B850M-X%20WiFi%20R20%20Micro%20ATX%20AM5.jpg"
+    },
+    {
+      "category": "motherboard",
+      "brand": "micro atx",
+      "model": "am5",
+      "displayCategory": "Motherboards",
+      "normalizedName": "Asus TUF GAMING B850M-PLUS WIFI Micro ATX AM5",
+      "public_id": "pc-builder/motherboard/micro atx/am5/Asus TUF GAMING B850M-PLUS WIFI Micro ATX AM5",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763945235/pc-builder/motherboard/micro%20atx/am5/Asus%20TUF%20GAMING%20B850M-PLUS%20WIFI%20Micro%20ATX%20AM5.jpg"
+    },
+    {
+      "category": "motherboard",
+      "brand": "micro atx",
+      "model": "am5",
+      "displayCategory": "Motherboards",
+      "normalizedName": "MSI PRO B650M-A WIFI Micro ATX AM5",
+      "public_id": "pc-builder/motherboard/micro atx/am5/MSI PRO B650M-A WIFI Micro ATX AM5",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763945239/pc-builder/motherboard/micro%20atx/am5/MSI%20PRO%20B650M-A%20WIFI%20Micro%20ATX%20AM5.jpg"
+    },
+    {
+      "category": "motherboard",
+      "brand": "micro atx",
+      "model": "am5",
+      "displayCategory": "Motherboards",
+      "normalizedName": "Gigabyte B650M GAMING PLUS WIFI Micro ATX AM5",
+      "public_id": "pc-builder/motherboard/micro atx/am5/Gigabyte B650M GAMING PLUS WIFI Micro ATX AM5",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763945239/pc-builder/motherboard/micro%20atx/am5/Gigabyte%20B650M%20GAMING%20PLUS%20WIFI%20Micro%20ATX%20AM5.jpg"
+    },
+    {
+      "category": "motherboard",
+      "brand": "micro atx",
+      "model": "am5",
+      "displayCategory": "Motherboards",
+      "normalizedName": "Gigabyte B850M GAMING X WIFI6E Micro ATX AM5",
+      "public_id": "pc-builder/motherboard/micro atx/am5/Gigabyte B850M GAMING X WIFI6E Micro ATX AM5",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763945239/pc-builder/motherboard/micro%20atx/am5/Gigabyte%20B850M%20GAMING%20X%20WIFI6E%20Micro%20ATX%20AM5.jpg"
+    },
+    {
+      "category": "motherboard",
+      "brand": "micro atx",
+      "model": "lga1151",
+      "displayCategory": "Motherboards",
+      "normalizedName": "ASRock H370M-HDV Micro ATX LGA1151",
+      "public_id": "pc-builder/motherboard/micro atx/lga1151/ASRock H370M-HDV Micro ATX LGA1151",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763945243/pc-builder/motherboard/micro%20atx/lga1151/ASRock%20H370M-HDV%20Micro%20ATX%20LGA1151.jpg"
+    },
+    {
+      "category": "motherboard",
+      "brand": "micro atx",
+      "model": "lga1151",
+      "displayCategory": "Motherboards",
+      "normalizedName": "ASRock B365M Pro4 Micro ATX LGA1151",
+      "public_id": "pc-builder/motherboard/micro atx/lga1151/ASRock B365M Pro4 Micro ATX LGA1151",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763945243/pc-builder/motherboard/micro%20atx/lga1151/ASRock%20B365M%20Pro4%20Micro%20ATX%20LGA1151.jpg"
+    },
+    {
+      "category": "motherboard",
+      "brand": "micro atx",
+      "model": "lga1151",
+      "displayCategory": "Motherboards",
+      "normalizedName": "ASRock B250M-HDV Micro ATX LGA1151",
+      "public_id": "pc-builder/motherboard/micro atx/lga1151/ASRock B250M-HDV Micro ATX LGA1151",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763945243/pc-builder/motherboard/micro%20atx/lga1151/ASRock%20B250M-HDV%20Micro%20ATX%20LGA1151.jpg"
+    },
+    {
+      "category": "motherboard",
+      "brand": "micro atx",
+      "model": "lga1151",
+      "displayCategory": "Motherboards",
+      "normalizedName": "Asus PRIME B360M-A Micro ATX LGA1151",
+      "public_id": "pc-builder/motherboard/micro atx/lga1151/Asus PRIME B360M-A Micro ATX LGA1151",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763945246/pc-builder/motherboard/micro%20atx/lga1151/Asus%20PRIME%20B360M-A%20Micro%20ATX%20LGA1151.jpg"
+    },
+    {
+      "category": "motherboard",
+      "brand": "micro atx",
+      "model": "lga1151",
+      "displayCategory": "Motherboards",
+      "normalizedName": "Asus PRIME H310M-E R20 Micro ATX LGA1151",
+      "public_id": "pc-builder/motherboard/micro atx/lga1151/Asus PRIME H310M-E R20 Micro ATX LGA1151",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763945246/pc-builder/motherboard/micro%20atx/lga1151/Asus%20PRIME%20H310M-E%20R20%20Micro%20ATX%20LGA1151.jpg"
+    },
+    {
+      "category": "motherboard",
+      "brand": "micro atx",
+      "model": "lga1151",
+      "displayCategory": "Motherboards",
+      "normalizedName": "Asus H110M-K Micro ATX LGA1151",
+      "public_id": "pc-builder/motherboard/micro atx/lga1151/Asus H110M-K Micro ATX LGA1151",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763945247/pc-builder/motherboard/micro%20atx/lga1151/Asus%20H110M-K%20Micro%20ATX%20LGA1151.jpg"
+    },
+    {
+      "category": "motherboard",
+      "brand": "micro atx",
+      "model": "lga1151",
+      "displayCategory": "Motherboards",
+      "normalizedName": "Gigabyte B365M DS3H WIFI Micro ATX LGA1151",
+      "public_id": "pc-builder/motherboard/micro atx/lga1151/Gigabyte B365M DS3H WIFI Micro ATX LGA1151",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763945250/pc-builder/motherboard/micro%20atx/lga1151/Gigabyte%20B365M%20DS3H%20WIFI%20Micro%20ATX%20LGA1151.jpg"
+    },
+    {
+      "category": "motherboard",
+      "brand": "micro atx",
+      "model": "lga1151",
+      "displayCategory": "Motherboards",
+      "normalizedName": "Gigabyte B365M DS3H Micro ATX LGA1151",
+      "public_id": "pc-builder/motherboard/micro atx/lga1151/Gigabyte B365M DS3H Micro ATX LGA1151",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763945250/pc-builder/motherboard/micro%20atx/lga1151/Gigabyte%20B365M%20DS3H%20Micro%20ATX%20LGA1151.jpg"
+    },
+    {
+      "category": "motherboard",
+      "brand": "micro atx",
+      "model": "lga1151",
+      "displayCategory": "Motherboards",
+      "normalizedName": "Gigabyte GA-B250M-DS3H Micro ATX LGA1151",
+      "public_id": "pc-builder/motherboard/micro atx/lga1151/Gigabyte GA-B250M-DS3H Micro ATX LGA1151",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763945250/pc-builder/motherboard/micro%20atx/lga1151/Gigabyte%20GA-B250M-DS3H%20Micro%20ATX%20LGA1151.jpg"
+    },
+    {
+      "category": "motherboard",
+      "brand": "micro atx",
+      "model": "lga1200",
+      "displayCategory": "Motherboards",
+      "normalizedName": "ASRock H510M-HDV M2 SE Micro ATX LGA1200",
+      "public_id": "pc-builder/motherboard/micro atx/lga1200/ASRock H510M-HDV M2 SE Micro ATX LGA1200",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763945253/pc-builder/motherboard/micro%20atx/lga1200/ASRock%20H510M-HDV%20M2%20SE%20Micro%20ATX%20LGA1200.jpg"
+    },
+    {
+      "category": "motherboard",
+      "brand": "micro atx",
+      "model": "lga1200",
+      "displayCategory": "Motherboards",
+      "normalizedName": "ASRock H470M-HVS Micro ATX LGA1200",
+      "public_id": "pc-builder/motherboard/micro atx/lga1200/ASRock H470M-HVS Micro ATX LGA1200",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763945253/pc-builder/motherboard/micro%20atx/lga1200/ASRock%20H470M-HVS%20Micro%20ATX%20LGA1200.jpg"
+    },
+    {
+      "category": "motherboard",
+      "brand": "micro atx",
+      "model": "lga1151",
+      "displayCategory": "Motherboards",
+      "normalizedName": "Gigabyte GA-H110M-A Micro ATX LGA1151",
+      "public_id": "pc-builder/motherboard/micro atx/lga1151/Gigabyte GA-H110M-A Micro ATX LGA1151",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763945253/pc-builder/motherboard/micro%20atx/lga1151/Gigabyte%20GA-H110M-A%20Micro%20ATX%20LGA1151.jpg"
+    },
+    {
+      "category": "motherboard",
+      "brand": "micro atx",
+      "model": "lga1200",
+      "displayCategory": "Motherboards",
+      "normalizedName": "Asus PRIME H510M-A Micro ATX LGA1200",
+      "public_id": "pc-builder/motherboard/micro atx/lga1200/Asus PRIME H510M-A Micro ATX LGA1200",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763945257/pc-builder/motherboard/micro%20atx/lga1200/Asus%20PRIME%20H510M-A%20Micro%20ATX%20LGA1200.jpg"
+    },
+    {
+      "category": "motherboard",
+      "brand": "micro atx",
+      "model": "lga1200",
+      "displayCategory": "Motherboards",
+      "normalizedName": "Asus PRIME B560M-A Micro ATX LGA1200",
+      "public_id": "pc-builder/motherboard/micro atx/lga1200/Asus PRIME B560M-A Micro ATX LGA1200",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763945257/pc-builder/motherboard/micro%20atx/lga1200/Asus%20PRIME%20B560M-A%20Micro%20ATX%20LGA1200.jpg"
+    },
+    {
+      "category": "motherboard",
+      "brand": "micro atx",
+      "model": "lga1200",
+      "displayCategory": "Motherboards",
+      "normalizedName": "Asus PRIME H510M-K Micro ATX LGA1200",
+      "public_id": "pc-builder/motherboard/micro atx/lga1200/Asus PRIME H510M-K Micro ATX LGA1200",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763945257/pc-builder/motherboard/micro%20atx/lga1200/Asus%20PRIME%20H510M-K%20Micro%20ATX%20LGA1200.jpg"
+    },
+    {
+      "category": "motherboard",
+      "brand": "micro atx",
+      "model": "lga1200",
+      "displayCategory": "Motherboards",
+      "normalizedName": "Gigabyte H410M H V2 Micro ATX LGA1200",
+      "public_id": "pc-builder/motherboard/micro atx/lga1200/Gigabyte H410M H V2 Micro ATX LGA1200",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763945261/pc-builder/motherboard/micro%20atx/lga1200/Gigabyte%20H410M%20H%20V2%20Micro%20ATX%20LGA1200.jpg"
+    },
+    {
+      "category": "motherboard",
+      "brand": "micro atx",
+      "model": "lga1200",
+      "displayCategory": "Motherboards",
+      "normalizedName": "Gigabyte B560M DS3H AC Micro ATX LGA1200",
+      "public_id": "pc-builder/motherboard/micro atx/lga1200/Gigabyte B560M DS3H AC Micro ATX LGA1200",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763945261/pc-builder/motherboard/micro%20atx/lga1200/Gigabyte%20B560M%20DS3H%20AC%20Micro%20ATX%20LGA1200.jpg"
+    },
+    {
+      "category": "motherboard",
+      "brand": "micro atx",
+      "model": "lga1200",
+      "displayCategory": "Motherboards",
+      "normalizedName": "Asus TUF GAMING B560M-PLUS WIFI Micro ATX LGA1200",
+      "public_id": "pc-builder/motherboard/micro atx/lga1200/Asus TUF GAMING B560M-PLUS WIFI Micro ATX LGA1200",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763945260/pc-builder/motherboard/micro%20atx/lga1200/Asus%20TUF%20GAMING%20B560M-PLUS%20WIFI%20Micro%20ATX%20LGA1200.jpg"
+    },
+    {
+      "category": "motherboard",
+      "brand": "micro atx",
+      "model": "lga1700",
+      "displayCategory": "Motherboards",
+      "normalizedName": "ASRock B660M Pro RS Micro ATX LGA1700",
+      "public_id": "pc-builder/motherboard/micro atx/lga1700/ASRock B660M Pro RS Micro ATX LGA1700",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763945264/pc-builder/motherboard/micro%20atx/lga1700/ASRock%20B660M%20Pro%20RS%20Micro%20ATX%20LGA1700.jpg"
+    },
+    {
+      "category": "motherboard",
+      "brand": "micro atx",
+      "model": "lga1200",
+      "displayCategory": "Motherboards",
+      "normalizedName": "MSI B560M PRO-E Micro ATX LGA1200",
+      "public_id": "pc-builder/motherboard/micro atx/lga1200/MSI B560M PRO-E Micro ATX LGA1200",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763945264/pc-builder/motherboard/micro%20atx/lga1200/MSI%20B560M%20PRO-E%20Micro%20ATX%20LGA1200.jpg"
+    },
+    {
+      "category": "motherboard",
+      "brand": "micro atx",
+      "model": "lga1200",
+      "displayCategory": "Motherboards",
+      "normalizedName": "MSI B460M PRO-VDH WIFI Micro ATX LGA1200",
+      "public_id": "pc-builder/motherboard/micro atx/lga1200/MSI B460M PRO-VDH WIFI Micro ATX LGA1200",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763945264/pc-builder/motherboard/micro%20atx/lga1200/MSI%20B460M%20PRO-VDH%20WIFI%20Micro%20ATX%20LGA1200.jpg"
+    },
+    {
+      "category": "motherboard",
+      "brand": "micro atx",
+      "model": "lga1700",
+      "displayCategory": "Motherboards",
+      "normalizedName": "Asus B760M-AYW WIFI D4 II Micro ATX LGA1700",
+      "public_id": "pc-builder/motherboard/micro atx/lga1700/Asus B760M-AYW WIFI D4 II Micro ATX LGA1700",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763945268/pc-builder/motherboard/micro%20atx/lga1700/Asus%20B760M-AYW%20WIFI%20D4%20II%20Micro%20ATX%20LGA1700.jpg"
+    },
+    {
+      "category": "motherboard",
+      "brand": "micro atx",
+      "model": "lga1700",
+      "displayCategory": "Motherboards",
+      "normalizedName": "ASRock B760M PG Lightning Wifi Micro ATX LGA1700",
+      "public_id": "pc-builder/motherboard/micro atx/lga1700/ASRock B760M PG Lightning Wifi Micro ATX LGA1700",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763945268/pc-builder/motherboard/micro%20atx/lga1700/ASRock%20B760M%20PG%20Lightning%20Wifi%20Micro%20ATX%20LGA1700.jpg"
+    },
+    {
+      "category": "motherboard",
+      "brand": "micro atx",
+      "model": "lga1700",
+      "displayCategory": "Motherboards",
+      "normalizedName": "ASRock B760M PG Riptide Wifi Micro ATX LGA1700",
+      "public_id": "pc-builder/motherboard/micro atx/lga1700/ASRock B760M PG Riptide Wifi Micro ATX LGA1700",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763945268/pc-builder/motherboard/micro%20atx/lga1700/ASRock%20B760M%20PG%20Riptide%20Wifi%20Micro%20ATX%20LGA1700.jpg"
+    },
+    {
+      "category": "motherboard",
+      "brand": "micro atx",
+      "model": "lga1700",
+      "displayCategory": "Motherboards",
+      "normalizedName": "Gigabyte B760M GAMING PLUS WIFI DDR4 Micro ATX LGA1700",
+      "public_id": "pc-builder/motherboard/micro atx/lga1700/Gigabyte B760M GAMING PLUS WIFI DDR4 Micro ATX LGA1700",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763945271/pc-builder/motherboard/micro%20atx/lga1700/Gigabyte%20B760M%20GAMING%20PLUS%20WIFI%20DDR4%20Micro%20ATX%20LGA1700.jpg"
+    },
+    {
+      "category": "motherboard",
+      "brand": "micro atx",
+      "model": "lga1700",
+      "displayCategory": "Motherboards",
+      "normalizedName": "Asus PRIME B760M-A AX Micro ATX LGA1700",
+      "public_id": "pc-builder/motherboard/micro atx/lga1700/Asus PRIME B760M-A AX Micro ATX LGA1700",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763945271/pc-builder/motherboard/micro%20atx/lga1700/Asus%20PRIME%20B760M-A%20AX%20Micro%20ATX%20LGA1700.jpg"
+    },
+    {
+      "category": "motherboard",
+      "brand": "micro atx",
+      "model": "lga1700",
+      "displayCategory": "Motherboards",
+      "normalizedName": "Asus TUF GAMING B760M-PLUS WIFI II Micro ATX LGA1700",
+      "public_id": "pc-builder/motherboard/micro atx/lga1700/Asus TUF GAMING B760M-PLUS WIFI II Micro ATX LGA1700",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763945271/pc-builder/motherboard/micro%20atx/lga1700/Asus%20TUF%20GAMING%20B760M-PLUS%20WIFI%20II%20Micro%20ATX%20LGA1700.jpg"
+    },
+    {
+      "category": "motherboard",
+      "brand": "micro atx",
+      "model": "lga1700",
+      "displayCategory": "Motherboards",
+      "normalizedName": "MSI B760M GAMING PLUS WIFI Micro ATX LGA1700",
+      "public_id": "pc-builder/motherboard/micro atx/lga1700/MSI B760M GAMING PLUS WIFI Micro ATX LGA1700",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763945275/pc-builder/motherboard/micro%20atx/lga1700/MSI%20B760M%20GAMING%20PLUS%20WIFI%20Micro%20ATX%20LGA1700.jpg"
+    },
+    {
+      "category": "motherboard",
+      "brand": "micro atx",
+      "model": "lga1700",
+      "displayCategory": "Motherboards",
+      "normalizedName": "MSI PRO H610M-G DDR4 Micro ATX LGA1700",
+      "public_id": "pc-builder/motherboard/micro atx/lga1700/MSI PRO H610M-G DDR4 Micro ATX LGA1700",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763945275/pc-builder/motherboard/micro%20atx/lga1700/MSI%20PRO%20H610M-G%20DDR4%20Micro%20ATX%20LGA1700.jpg"
+    },
+    {
+      "category": "motherboard",
+      "brand": "micro atx",
+      "model": "lga1700",
+      "displayCategory": "Motherboards",
+      "normalizedName": "MSI PRO B760M-P DDR4 Micro ATX LGA1700",
+      "public_id": "pc-builder/motherboard/micro atx/lga1700/MSI PRO B760M-P DDR4 Micro ATX LGA1700",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763945275/pc-builder/motherboard/micro%20atx/lga1700/MSI%20PRO%20B760M-P%20DDR4%20Micro%20ATX%20LGA1700.jpg"
+    },
+    {
+      "category": "motherboard",
+      "brand": "mini itx",
+      "model": "am4",
+      "displayCategory": "Motherboards",
+      "normalizedName": "ASRock B550 Phantom Gaming-ITX ax Mini ITX AM4",
+      "public_id": "pc-builder/motherboard/mini itx/am4/ASRock B550 Phantom Gaming-ITX ax Mini ITX AM4",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763743384/pc-builder/motherboard/mini%20itx/am4/ASRock%20B550%20Phantom%20Gaming-ITX%20ax%20Mini%20ITX%20AM4.jpg"
+    },
+    {
+      "category": "motherboard",
+      "brand": "mini itx",
+      "model": "am4",
+      "displayCategory": "Motherboards",
+      "normalizedName": "ASRock A520M-ITX ac Mini ITX AM4",
+      "public_id": "pc-builder/motherboard/mini itx/am4/ASRock A520M-ITX ac Mini ITX AM4",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763743380/pc-builder/motherboard/mini%20itx/am4/ASRock%20A520M-ITX%20ac%20Mini%20ITX%20AM4.jpg"
+    },
+    {
+      "category": "motherboard",
+      "brand": "mini itx",
+      "model": "am4",
+      "displayCategory": "Motherboards",
+      "normalizedName": "ASRock AB350 Gaming-ITX ac Mini ITX AM4",
+      "public_id": "pc-builder/motherboard/mini itx/am4/ASRock AB350 Gaming-ITX ac Mini ITX AM4",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763743380/pc-builder/motherboard/mini%20itx/am4/ASRock%20AB350%20Gaming-ITX%20ac%20Mini%20ITX%20AM4.jpg"
+    },
+    {
+      "category": "motherboard",
+      "brand": "mini itx",
+      "model": "am4",
+      "displayCategory": "Motherboards",
+      "normalizedName": "ASRock Fatal1ty B450 Gaming-ITX ac Mini ITX AM4",
+      "public_id": "pc-builder/motherboard/mini itx/am4/ASRock Fatal1ty B450 Gaming-ITX ac Mini ITX AM4",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763743384/pc-builder/motherboard/mini%20itx/am4/ASRock%20Fatal1ty%20B450%20Gaming-ITX%20ac%20Mini%20ITX%20AM4.jpg"
+    },
+    {
+      "category": "motherboard",
+      "brand": "mini itx",
+      "model": "am4",
+      "displayCategory": "Motherboards",
+      "normalizedName": "ASRock B550M-ITX ac Mini ITX AM4",
+      "public_id": "pc-builder/motherboard/mini itx/am4/ASRock B550M-ITX ac Mini ITX AM4",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763743384/pc-builder/motherboard/mini%20itx/am4/ASRock%20B550M-ITX%20ac%20Mini%20ITX%20AM4.jpg"
+    },
+    {
+      "category": "motherboard",
+      "brand": "mini itx",
+      "model": "am4",
+      "displayCategory": "Motherboards",
+      "normalizedName": "ASRock X570 Phantom Gaming-ITX TB3 Mini ITX AM4",
+      "public_id": "pc-builder/motherboard/mini itx/am4/ASRock X570 Phantom Gaming-ITX TB3 Mini ITX AM4",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763743387/pc-builder/motherboard/mini%20itx/am4/ASRock%20X570%20Phantom%20Gaming-ITX%20TB3%20Mini%20ITX%20AM4.jpg"
+    },
+    {
+      "category": "motherboard",
+      "brand": "mini itx",
+      "model": "am4",
+      "displayCategory": "Motherboards",
+      "normalizedName": "Asus ROG Strix B450-I Gaming Mini ITX AM4",
+      "public_id": "pc-builder/motherboard/mini itx/am4/Asus ROG Strix B450-I Gaming Mini ITX AM4",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763743387/pc-builder/motherboard/mini%20itx/am4/Asus%20ROG%20Strix%20B450-I%20Gaming%20Mini%20ITX%20AM4.jpg"
+    },
+    {
+      "category": "motherboard",
+      "brand": "mini itx",
+      "model": "am4",
+      "displayCategory": "Motherboards",
+      "normalizedName": "Asus ROG STRIX B550-I GAMING Mini ITX AM4",
+      "public_id": "pc-builder/motherboard/mini itx/am4/Asus ROG STRIX B550-I GAMING Mini ITX AM4",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763743387/pc-builder/motherboard/mini%20itx/am4/Asus%20ROG%20STRIX%20B550-I%20GAMING%20Mini%20ITX%20AM4.jpg"
+    },
+    {
+      "category": "motherboard",
+      "brand": "mini itx",
+      "model": "am4",
+      "displayCategory": "Motherboards",
+      "normalizedName": "Asus ROG STRIX X470-I GAMING Mini ITX AM4",
+      "public_id": "pc-builder/motherboard/mini itx/am4/Asus ROG STRIX X470-I GAMING Mini ITX AM4",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763743391/pc-builder/motherboard/mini%20itx/am4/Asus%20ROG%20STRIX%20X470-I%20GAMING%20Mini%20ITX%20AM4.jpg"
+    },
+    {
+      "category": "motherboard",
+      "brand": "mini itx",
+      "model": "am4",
+      "displayCategory": "Motherboards",
+      "normalizedName": "Gigabyte A520I AC Mini ITX AM4",
+      "public_id": "pc-builder/motherboard/mini itx/am4/Gigabyte A520I AC Mini ITX AM4",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763743394/pc-builder/motherboard/mini%20itx/am4/Gigabyte%20A520I%20AC%20Mini%20ITX%20AM4.jpg"
+    },
+    {
+      "category": "motherboard",
+      "brand": "mini itx",
+      "model": "am4",
+      "displayCategory": "Motherboards",
+      "normalizedName": "Asus ROG Strix X570-I Gaming Mini ITX AM4",
+      "public_id": "pc-builder/motherboard/mini itx/am4/Asus ROG Strix X570-I Gaming Mini ITX AM4",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763743391/pc-builder/motherboard/mini%20itx/am4/Asus%20ROG%20Strix%20X570-I%20Gaming%20Mini%20ITX%20AM4.jpg"
+    },
+    {
+      "category": "motherboard",
+      "brand": "mini itx",
+      "model": "am4",
+      "displayCategory": "Motherboards",
+      "normalizedName": "Biostar B450NH Mini ITX AM4",
+      "public_id": "pc-builder/motherboard/mini itx/am4/Biostar B450NH Mini ITX AM4",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763743391/pc-builder/motherboard/mini%20itx/am4/Biostar%20B450NH%20Mini%20ITX%20AM4.jpg"
+    },
+    {
+      "category": "motherboard",
+      "brand": "mini itx",
+      "model": "am4",
+      "displayCategory": "Motherboards",
+      "normalizedName": "Gigabyte X570 I AORUS PRO WIFI Mini ITX AM4",
+      "public_id": "pc-builder/motherboard/mini itx/am4/Gigabyte X570 I AORUS PRO WIFI Mini ITX AM4",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763743397/pc-builder/motherboard/mini%20itx/am4/Gigabyte%20X570%20I%20AORUS%20PRO%20WIFI%20Mini%20ITX%20AM4.jpg"
+    },
+    {
+      "category": "motherboard",
+      "brand": "mini itx",
+      "model": "am4",
+      "displayCategory": "Motherboards",
+      "normalizedName": "Gigabyte B550I AORUS PRO AX Mini ITX AM4",
+      "public_id": "pc-builder/motherboard/mini itx/am4/Gigabyte B550I AORUS PRO AX Mini ITX AM4",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763743394/pc-builder/motherboard/mini%20itx/am4/Gigabyte%20B550I%20AORUS%20PRO%20AX%20Mini%20ITX%20AM4.jpg"
+    },
+    {
+      "category": "motherboard",
+      "brand": "mini itx",
+      "model": "am4",
+      "displayCategory": "Motherboards",
+      "normalizedName": "Gigabyte B450 I AORUS PRO WIFI Mini ITX AM4",
+      "public_id": "pc-builder/motherboard/mini itx/am4/Gigabyte B450 I AORUS PRO WIFI Mini ITX AM4",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763743394/pc-builder/motherboard/mini%20itx/am4/Gigabyte%20B450%20I%20AORUS%20PRO%20WIFI%20Mini%20ITX%20AM4.jpg"
+    },
+    {
+      "category": "motherboard",
+      "brand": "mini itx",
+      "model": "am4",
+      "displayCategory": "Motherboards",
+      "normalizedName": "MSI B450I GAMING PLUS MAX WIFI Mini ITX AM4",
+      "public_id": "pc-builder/motherboard/mini itx/am4/MSI B450I GAMING PLUS MAX WIFI Mini ITX AM4",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763743401/pc-builder/motherboard/mini%20itx/am4/MSI%20B450I%20GAMING%20PLUS%20MAX%20WIFI%20Mini%20ITX%20AM4.jpg"
+    },
+    {
+      "category": "motherboard",
+      "brand": "mini itx",
+      "model": "am4",
+      "displayCategory": "Motherboards",
+      "normalizedName": "MSI B450I GAMING PLUS AC Mini ITX AM4",
+      "public_id": "pc-builder/motherboard/mini itx/am4/MSI B450I GAMING PLUS AC Mini ITX AM4",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763743397/pc-builder/motherboard/mini%20itx/am4/MSI%20B450I%20GAMING%20PLUS%20AC%20Mini%20ITX%20AM4.jpg"
+    },
+    {
+      "category": "motherboard",
+      "brand": "mini itx",
+      "model": "am4",
+      "displayCategory": "Motherboards",
+      "normalizedName": "Gigabyte X570SI AORUS PRO AX Mini ITX AM4",
+      "public_id": "pc-builder/motherboard/mini itx/am4/Gigabyte X570SI AORUS PRO AX Mini ITX AM4",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763743398/pc-builder/motherboard/mini%20itx/am4/Gigabyte%20X570SI%20AORUS%20PRO%20AX%20Mini%20ITX%20AM4.jpg"
+    },
+    {
+      "category": "motherboard",
+      "brand": "mini itx",
+      "model": "am4",
+      "displayCategory": "Motherboards",
+      "normalizedName": "MSI MPG B550I GAMING EDGE WIFI Mini ITX AM4",
+      "public_id": "pc-builder/motherboard/mini itx/am4/MSI MPG B550I GAMING EDGE WIFI Mini ITX AM4",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763743401/pc-builder/motherboard/mini%20itx/am4/MSI%20MPG%20B550I%20GAMING%20EDGE%20WIFI%20Mini%20ITX%20AM4.jpg"
+    },
+    {
+      "category": "motherboard",
+      "brand": "mini itx",
+      "model": "am4",
+      "displayCategory": "Motherboards",
+      "normalizedName": "MSI MPG B550I GAMING EDGE MAX WIFI Mini ITX AM4",
+      "public_id": "pc-builder/motherboard/mini itx/am4/MSI MPG B550I GAMING EDGE MAX WIFI Mini ITX AM4",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763743401/pc-builder/motherboard/mini%20itx/am4/MSI%20MPG%20B550I%20GAMING%20EDGE%20MAX%20WIFI%20Mini%20ITX%20AM4.jpg"
+    },
+    {
+      "category": "motherboard",
+      "brand": "mini itx",
+      "model": "am5",
+      "displayCategory": "Motherboards",
+      "normalizedName": "ASRock A620AI WiFi Mini ITX AM5",
+      "public_id": "pc-builder/motherboard/mini itx/am5/ASRock A620AI WiFi Mini ITX AM5",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763945295/pc-builder/motherboard/mini%20itx/am5/ASRock%20A620AI%20WiFi%20Mini%20ITX%20AM5.jpg"
+    },
+    {
+      "category": "motherboard",
+      "brand": "mini itx",
+      "model": "am5",
+      "displayCategory": "Motherboards",
+      "normalizedName": "Asus ROG STRIX B650E-I GAMING WIFI Mini ITX AM5",
+      "public_id": "pc-builder/motherboard/mini itx/am5/Asus ROG STRIX B650E-I GAMING WIFI Mini ITX AM5",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763945298/pc-builder/motherboard/mini%20itx/am5/Asus%20ROG%20STRIX%20B650E-I%20GAMING%20WIFI%20Mini%20ITX%20AM5.jpg"
+    },
+    {
+      "category": "motherboard",
+      "brand": "mini itx",
+      "model": "am5",
+      "displayCategory": "Motherboards",
+      "normalizedName": "ASRock B850I Lightning WiFi Mini ITX AM5",
+      "public_id": "pc-builder/motherboard/mini itx/am5/ASRock B850I Lightning WiFi Mini ITX AM5",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763945299/pc-builder/motherboard/mini%20itx/am5/ASRock%20B850I%20Lightning%20WiFi%20Mini%20ITX%20AM5.jpg"
+    },
+    {
+      "category": "motherboard",
+      "brand": "mini itx",
+      "model": "am5",
+      "displayCategory": "Motherboards",
+      "normalizedName": "ASRock B650I Lightning Wifi Mini ITX AM5",
+      "public_id": "pc-builder/motherboard/mini itx/am5/ASRock B650I Lightning Wifi Mini ITX AM5",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763945298/pc-builder/motherboard/mini%20itx/am5/ASRock%20B650I%20Lightning%20Wifi%20Mini%20ITX%20AM5.jpg"
+    },
+    {
+      "category": "motherboard",
+      "brand": "mini itx",
+      "model": "am5",
+      "displayCategory": "Motherboards",
+      "normalizedName": "Asus ROG STRIX X870-I GAMING WIFI Mini ITX AM5",
+      "public_id": "pc-builder/motherboard/mini itx/am5/Asus ROG STRIX X870-I GAMING WIFI Mini ITX AM5",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763945302/pc-builder/motherboard/mini%20itx/am5/Asus%20ROG%20STRIX%20X870-I%20GAMING%20WIFI%20Mini%20ITX%20AM5.jpg"
+    },
+    {
+      "category": "motherboard",
+      "brand": "mini itx",
+      "model": "am5",
+      "displayCategory": "Motherboards",
+      "normalizedName": "Gigabyte A620I AX Mini ITX AM5",
+      "public_id": "pc-builder/motherboard/mini itx/am5/Gigabyte A620I AX Mini ITX AM5",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763945302/pc-builder/motherboard/mini%20itx/am5/Gigabyte%20A620I%20AX%20Mini%20ITX%20AM5.jpg"
+    },
+    {
+      "category": "motherboard",
+      "brand": "mini itx",
+      "model": "am5",
+      "displayCategory": "Motherboards",
+      "normalizedName": "Asus ROG STRIX B850-I GAMING WIFI Mini ITX AM5",
+      "public_id": "pc-builder/motherboard/mini itx/am5/Asus ROG STRIX B850-I GAMING WIFI Mini ITX AM5",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763945302/pc-builder/motherboard/mini%20itx/am5/Asus%20ROG%20STRIX%20B850-I%20GAMING%20WIFI%20Mini%20ITX%20AM5.jpg"
+    },
+    {
+      "category": "motherboard",
+      "brand": "mini itx",
+      "model": "am5",
+      "displayCategory": "Motherboards",
+      "normalizedName": "MSI MPG B850I EDGE TI WIFI Mini ITX AM5",
+      "public_id": "pc-builder/motherboard/mini itx/am5/MSI MPG B850I EDGE TI WIFI Mini ITX AM5",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763945305/pc-builder/motherboard/mini%20itx/am5/MSI%20MPG%20B850I%20EDGE%20TI%20WIFI%20Mini%20ITX%20AM5.jpg"
+    },
+    {
+      "category": "motherboard",
+      "brand": "mini itx",
+      "model": "am5",
+      "displayCategory": "Motherboards",
+      "normalizedName": "MSI MPG B650I EDGE WIFI Mini ITX AM5",
+      "public_id": "pc-builder/motherboard/mini itx/am5/MSI MPG B650I EDGE WIFI Mini ITX AM5",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763945305/pc-builder/motherboard/mini%20itx/am5/MSI%20MPG%20B650I%20EDGE%20WIFI%20Mini%20ITX%20AM5.jpg"
+    },
+    {
+      "category": "motherboard",
+      "brand": "mini itx",
+      "model": "am5",
+      "displayCategory": "Motherboards",
+      "normalizedName": "Gigabyte X870I AORUS PRO ICE Mini ITX AM5",
+      "public_id": "pc-builder/motherboard/mini itx/am5/Gigabyte X870I AORUS PRO ICE Mini ITX AM5",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763945305/pc-builder/motherboard/mini%20itx/am5/Gigabyte%20X870I%20AORUS%20PRO%20ICE%20Mini%20ITX%20AM5.jpg"
+    },
+    {
+      "category": "motherboard",
+      "brand": "mini itx",
+      "model": "lga1151",
+      "displayCategory": "Motherboards",
+      "normalizedName": "Asus H110I-PLUS Mini ITX LGA1151",
+      "public_id": "pc-builder/motherboard/mini itx/lga1151/Asus H110I-PLUS Mini ITX LGA1151",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763945308/pc-builder/motherboard/mini%20itx/lga1151/Asus%20H110I-PLUS%20Mini%20ITX%20LGA1151.jpg"
+    },
+    {
+      "category": "motherboard",
+      "brand": "mini itx",
+      "model": "lga1151",
+      "displayCategory": "Motherboards",
+      "normalizedName": "ASRock Z370M-ITX ac Mini ITX LGA1151",
+      "public_id": "pc-builder/motherboard/mini itx/lga1151/ASRock Z370M-ITX ac Mini ITX LGA1151",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763945308/pc-builder/motherboard/mini%20itx/lga1151/ASRock%20Z370M-ITX%20ac%20Mini%20ITX%20LGA1151.jpg"
+    },
+    {
+      "category": "motherboard",
+      "brand": "mini itx",
+      "model": "lga1151",
+      "displayCategory": "Motherboards",
+      "normalizedName": "ASRock B360M-ITX ac Mini ITX LGA1151",
+      "public_id": "pc-builder/motherboard/mini itx/lga1151/ASRock B360M-ITX ac Mini ITX LGA1151",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763945309/pc-builder/motherboard/mini%20itx/lga1151/ASRock%20B360M-ITX%20ac%20Mini%20ITX%20LGA1151.jpg"
+    },
+    {
+      "category": "motherboard",
+      "brand": "mini itx",
+      "model": "lga1151",
+      "displayCategory": "Motherboards",
+      "normalizedName": "Asus ROG STRIX Z270i GAMING Mini ITX LGA1151",
+      "public_id": "pc-builder/motherboard/mini itx/lga1151/Asus ROG STRIX Z270i GAMING Mini ITX LGA1151",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763945312/pc-builder/motherboard/mini%20itx/lga1151/Asus%20ROG%20STRIX%20Z270i%20GAMING%20Mini%20ITX%20LGA1151.jpg"
+    },
+    {
+      "category": "motherboard",
+      "brand": "mini itx",
+      "model": "lga1151",
+      "displayCategory": "Motherboards",
+      "normalizedName": "Asus ROG Strix Z370-I Gaming Mini ITX LGA1151",
+      "public_id": "pc-builder/motherboard/mini itx/lga1151/Asus ROG Strix Z370-I Gaming Mini ITX LGA1151",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763945312/pc-builder/motherboard/mini%20itx/lga1151/Asus%20ROG%20Strix%20Z370-I%20Gaming%20Mini%20ITX%20LGA1151.jpg"
+    },
+    {
+      "category": "motherboard",
+      "brand": "mini itx",
+      "model": "lga1151",
+      "displayCategory": "Motherboards",
+      "normalizedName": "Asus ROG STRIX Z390-I GAMING Mini ITX LGA1151",
+      "public_id": "pc-builder/motherboard/mini itx/lga1151/Asus ROG STRIX Z390-I GAMING Mini ITX LGA1151",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763945312/pc-builder/motherboard/mini%20itx/lga1151/Asus%20ROG%20STRIX%20Z390-I%20GAMING%20Mini%20ITX%20LGA1151.jpg"
+    },
+    {
+      "category": "motherboard",
+      "brand": "mini itx",
+      "model": "lga1151",
+      "displayCategory": "Motherboards",
+      "normalizedName": "Gigabyte Z390 I AORUS PRO WIFI Mini ITX LGA1151",
+      "public_id": "pc-builder/motherboard/mini itx/lga1151/Gigabyte Z390 I AORUS PRO WIFI Mini ITX LGA1151",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763945315/pc-builder/motherboard/mini%20itx/lga1151/Gigabyte%20Z390%20I%20AORUS%20PRO%20WIFI%20Mini%20ITX%20LGA1151.jpg"
+    },
+    {
+      "category": "motherboard",
+      "brand": "mini itx",
+      "model": "lga1151",
+      "displayCategory": "Motherboards",
+      "normalizedName": "Asus Z170I PRO GAMING Mini ITX LGA1151",
+      "public_id": "pc-builder/motherboard/mini itx/lga1151/Asus Z170I PRO GAMING Mini ITX LGA1151",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763945315/pc-builder/motherboard/mini%20itx/lga1151/Asus%20Z170I%20PRO%20GAMING%20Mini%20ITX%20LGA1151.jpg"
+    },
+    {
+      "category": "motherboard",
+      "brand": "mini itx",
+      "model": "lga1151",
+      "displayCategory": "Motherboards",
+      "normalizedName": "Gigabyte GA-H270N-WIFI Mini ITX LGA1151",
+      "public_id": "pc-builder/motherboard/mini itx/lga1151/Gigabyte GA-H270N-WIFI Mini ITX LGA1151",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763945315/pc-builder/motherboard/mini%20itx/lga1151/Gigabyte%20GA-H270N-WIFI%20Mini%20ITX%20LGA1151.jpg"
+    },
+    {
+      "category": "motherboard",
+      "brand": "mini itx",
+      "model": "lga1200",
+      "displayCategory": "Motherboards",
+      "normalizedName": "ASRock Z490 Phantom Gaming-ITX TB3 Mini ITX LGA1200",
+      "public_id": "pc-builder/motherboard/mini itx/lga1200/ASRock Z490 Phantom Gaming-ITX TB3 Mini ITX LGA1200",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763945318/pc-builder/motherboard/mini%20itx/lga1200/ASRock%20Z490%20Phantom%20Gaming-ITX%20TB3%20Mini%20ITX%20LGA1200.jpg"
+    },
+    {
+      "category": "motherboard",
+      "brand": "mini itx",
+      "model": "lga1200",
+      "displayCategory": "Motherboards",
+      "normalizedName": "ASRock B560M-ITX ac Mini ITX LGA1200",
+      "public_id": "pc-builder/motherboard/mini itx/lga1200/ASRock B560M-ITX ac Mini ITX LGA1200",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763945318/pc-builder/motherboard/mini%20itx/lga1200/ASRock%20B560M-ITX%20ac%20Mini%20ITX%20LGA1200.jpg"
+    },
+    {
+      "category": "motherboard",
+      "brand": "mini itx",
+      "model": "lga1151",
+      "displayCategory": "Motherboards",
+      "normalizedName": "MSI MPG Z390I GAMING EDGE AC Mini ITX LGA1151",
+      "public_id": "pc-builder/motherboard/mini itx/lga1151/MSI MPG Z390I GAMING EDGE AC Mini ITX LGA1151",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763945318/pc-builder/motherboard/mini%20itx/lga1151/MSI%20MPG%20Z390I%20GAMING%20EDGE%20AC%20Mini%20ITX%20LGA1151.jpg"
+    },
+    {
+      "category": "motherboard",
+      "brand": "mini itx",
+      "model": "lga1200",
+      "displayCategory": "Motherboards",
+      "normalizedName": "Asus ROG STRIX Z590-I GAMING WIFI Mini ITX LGA1200",
+      "public_id": "pc-builder/motherboard/mini itx/lga1200/Asus ROG STRIX Z590-I GAMING WIFI Mini ITX LGA1200",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763945321/pc-builder/motherboard/mini%20itx/lga1200/Asus%20ROG%20STRIX%20Z590-I%20GAMING%20WIFI%20Mini%20ITX%20LGA1200.jpg"
+    },
+    {
+      "category": "motherboard",
+      "brand": "mini itx",
+      "model": "lga1200",
+      "displayCategory": "Motherboards",
+      "normalizedName": "Gigabyte Z490I AORUS ULTRA Mini ITX LGA1200",
+      "public_id": "pc-builder/motherboard/mini itx/lga1200/Gigabyte Z490I AORUS ULTRA Mini ITX LGA1200",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763945321/pc-builder/motherboard/mini%20itx/lga1200/Gigabyte%20Z490I%20AORUS%20ULTRA%20Mini%20ITX%20LGA1200.jpg"
+    },
+    {
+      "category": "motherboard",
+      "brand": "mini itx",
+      "model": "lga1200",
+      "displayCategory": "Motherboards",
+      "normalizedName": "Asus ROG STRIX Z490-I GAMING Mini ITX LGA1200",
+      "public_id": "pc-builder/motherboard/mini itx/lga1200/Asus ROG STRIX Z490-I GAMING Mini ITX LGA1200",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763945321/pc-builder/motherboard/mini%20itx/lga1200/Asus%20ROG%20STRIX%20Z490-I%20GAMING%20Mini%20ITX%20LGA1200.jpg"
+    },
+    {
+      "category": "motherboard",
+      "brand": "mini itx",
+      "model": "lga1200",
+      "displayCategory": "Motherboards",
+      "normalizedName": "Gigabyte Z590I AORUS ULTRA Mini ITX LGA1200",
+      "public_id": "pc-builder/motherboard/mini itx/lga1200/Gigabyte Z590I AORUS ULTRA Mini ITX LGA1200",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763945325/pc-builder/motherboard/mini%20itx/lga1200/Gigabyte%20Z590I%20AORUS%20ULTRA%20Mini%20ITX%20LGA1200.jpg"
+    },
+    {
+      "category": "motherboard",
+      "brand": "mini itx",
+      "model": "lga1200",
+      "displayCategory": "Motherboards",
+      "normalizedName": "MSI H510I PRO WIFI Mini ITX LGA1200",
+      "public_id": "pc-builder/motherboard/mini itx/lga1200/MSI H510I PRO WIFI Mini ITX LGA1200",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763945325/pc-builder/motherboard/mini%20itx/lga1200/MSI%20H510I%20PRO%20WIFI%20Mini%20ITX%20LGA1200.jpg"
+    },
+    {
+      "category": "motherboard",
+      "brand": "mini itx",
+      "model": "lga1200",
+      "displayCategory": "Motherboards",
+      "normalizedName": "Gigabyte Z590I VISION D Mini ITX LGA1200",
+      "public_id": "pc-builder/motherboard/mini itx/lga1200/Gigabyte Z590I VISION D Mini ITX LGA1200",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763945325/pc-builder/motherboard/mini%20itx/lga1200/Gigabyte%20Z590I%20VISION%20D%20Mini%20ITX%20LGA1200.jpg"
+    },
+    {
+      "category": "motherboard",
+      "brand": "mini itx",
+      "model": "lga1700",
+      "displayCategory": "Motherboards",
+      "normalizedName": "ASRock B760I Lightning WiFi Mini ITX LGA1700",
+      "public_id": "pc-builder/motherboard/mini itx/lga1700/ASRock B760I Lightning WiFi Mini ITX LGA1700",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763945328/pc-builder/motherboard/mini%20itx/lga1700/ASRock%20B760I%20Lightning%20WiFi%20Mini%20ITX%20LGA1700.jpg"
+    },
+    {
+      "category": "motherboard",
+      "brand": "mini itx",
+      "model": "lga1200",
+      "displayCategory": "Motherboards",
+      "normalizedName": "MSI MPG B560I GAMING EDGE WIFI Mini ITX LGA1200",
+      "public_id": "pc-builder/motherboard/mini itx/lga1200/MSI MPG B560I GAMING EDGE WIFI Mini ITX LGA1200",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763945328/pc-builder/motherboard/mini%20itx/lga1200/MSI%20MPG%20B560I%20GAMING%20EDGE%20WIFI%20Mini%20ITX%20LGA1200.jpg"
+    },
+    {
+      "category": "motherboard",
+      "brand": "mini itx",
+      "model": "lga1200",
+      "displayCategory": "Motherboards",
+      "normalizedName": "MSI MEG Z490I UNIFY Mini ITX LGA1200",
+      "public_id": "pc-builder/motherboard/mini itx/lga1200/MSI MEG Z490I UNIFY Mini ITX LGA1200",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763945328/pc-builder/motherboard/mini%20itx/lga1200/MSI%20MEG%20Z490I%20UNIFY%20Mini%20ITX%20LGA1200.jpg"
+    },
+    {
+      "category": "motherboard",
+      "brand": "mini itx",
+      "model": "lga1700",
+      "displayCategory": "Motherboards",
+      "normalizedName": "ASRock Z690M-ITX ax Mini ITX LGA1700",
+      "public_id": "pc-builder/motherboard/mini itx/lga1700/ASRock Z690M-ITX ax Mini ITX LGA1700",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763945331/pc-builder/motherboard/mini%20itx/lga1700/ASRock%20Z690M-ITX%20ax%20Mini%20ITX%20LGA1700.jpg"
+    },
+    {
+      "category": "motherboard",
+      "brand": "mini itx",
+      "model": "lga1700",
+      "displayCategory": "Motherboards",
+      "normalizedName": "ASRock B760M-ITX D4 WiFi Mini ITX LGA1700",
+      "public_id": "pc-builder/motherboard/mini itx/lga1700/ASRock B760M-ITX D4 WiFi Mini ITX LGA1700",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763945331/pc-builder/motherboard/mini%20itx/lga1700/ASRock%20B760M-ITX%20D4%20WiFi%20Mini%20ITX%20LGA1700.jpg"
+    },
+    {
+      "category": "motherboard",
+      "brand": "mini itx",
+      "model": "lga1700",
+      "displayCategory": "Motherboards",
+      "normalizedName": "ASRock Z790M-ITX WIFI Mini ITX LGA1700",
+      "public_id": "pc-builder/motherboard/mini itx/lga1700/ASRock Z790M-ITX WIFI Mini ITX LGA1700",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763945331/pc-builder/motherboard/mini%20itx/lga1700/ASRock%20Z790M-ITX%20WIFI%20Mini%20ITX%20LGA1700.jpg"
+    },
+    {
+      "category": "motherboard",
+      "brand": "mini itx",
+      "model": "lga1700",
+      "displayCategory": "Motherboards",
+      "normalizedName": "Asus PRIME H610I-PLUS D4-CSM Mini ITX LGA1700",
+      "public_id": "pc-builder/motherboard/mini itx/lga1700/Asus PRIME H610I-PLUS D4-CSM Mini ITX LGA1700",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763945335/pc-builder/motherboard/mini%20itx/lga1700/Asus%20PRIME%20H610I-PLUS%20D4-CSM%20Mini%20ITX%20LGA1700.jpg"
+    },
+    {
+      "category": "motherboard",
+      "brand": "mini itx",
+      "model": "lga1700",
+      "displayCategory": "Motherboards",
+      "normalizedName": "Asus ROG STRIX B760-I GAMING WIFI Mini ITX LGA1700",
+      "public_id": "pc-builder/motherboard/mini itx/lga1700/Asus ROG STRIX B760-I GAMING WIFI Mini ITX LGA1700",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763945335/pc-builder/motherboard/mini%20itx/lga1700/Asus%20ROG%20STRIX%20B760-I%20GAMING%20WIFI%20Mini%20ITX%20LGA1700.jpg"
+    },
+    {
+      "category": "motherboard",
+      "brand": "mini itx",
+      "model": "lga1700",
+      "displayCategory": "Motherboards",
+      "normalizedName": "Asus ROG STRIX B660-I GAMING WIFI Mini ITX LGA1700",
+      "public_id": "pc-builder/motherboard/mini itx/lga1700/Asus ROG STRIX B660-I GAMING WIFI Mini ITX LGA1700",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763945335/pc-builder/motherboard/mini%20itx/lga1700/Asus%20ROG%20STRIX%20B660-I%20GAMING%20WIFI%20Mini%20ITX%20LGA1700.jpg"
+    },
+    {
+      "category": "motherboard",
+      "brand": "mini itx",
+      "model": "lga1700",
+      "displayCategory": "Motherboards",
+      "normalizedName": "MSI MPG B760I EDGE WIFI Mini ITX LGA1700",
+      "public_id": "pc-builder/motherboard/mini itx/lga1700/MSI MPG B760I EDGE WIFI Mini ITX LGA1700",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763945338/pc-builder/motherboard/mini%20itx/lga1700/MSI%20MPG%20B760I%20EDGE%20WIFI%20Mini%20ITX%20LGA1700.jpg"
+    },
+    {
+      "category": "motherboard",
+      "brand": "mini itx",
+      "model": "lga1700",
+      "displayCategory": "Motherboards",
+      "normalizedName": "Gigabyte H610I DDR4 Mini ITX LGA1700",
+      "public_id": "pc-builder/motherboard/mini itx/lga1700/Gigabyte H610I DDR4 Mini ITX LGA1700",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763945338/pc-builder/motherboard/mini%20itx/lga1700/Gigabyte%20H610I%20DDR4%20Mini%20ITX%20LGA1700.jpg"
+    },
+    {
+      "category": "motherboard",
+      "brand": "mini itx",
+      "model": "lga1700",
+      "displayCategory": "Motherboards",
+      "normalizedName": "Gigabyte B760I AORUS PRO Mini ITX LGA1700",
+      "public_id": "pc-builder/motherboard/mini itx/lga1700/Gigabyte B760I AORUS PRO Mini ITX LGA1700",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763945338/pc-builder/motherboard/mini%20itx/lga1700/Gigabyte%20B760I%20AORUS%20PRO%20Mini%20ITX%20LGA1700.jpg"
+    }
+  ],
+  "skipped": [],
+  "failed": [
+    {
+      "file": "assets\\motherboard\\atx\\lga 1200\\Asus PRIME Z490-P ATX LGA1200.jpg",
+      "error": "Server return invalid JSON response. Status Code 400. SyntaxError: Unexpected token 'B', \"Bad Request\" is not valid JSON"
+    }
+  ]
+}
