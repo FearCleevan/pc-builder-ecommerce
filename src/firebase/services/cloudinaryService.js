@@ -43,7 +43,7 @@ class CloudinaryService {
 
   static extractProductInfo(productName, componentType = 'cpu') {
     if (!productName) {
-      return { brand: "unknown", socket: "unknown", normalizedName: "", formFactor: "unknown" };
+      return { brand: "unknown", socket: "unknown", normalizedName: "", formFactor: "unknown", caseType: "unknown" };
     }
 
     // Auto-detect component type if not provided
@@ -59,6 +59,7 @@ class CloudinaryService {
     let brand = "unknown";
     let socket = "unknown";
     let formFactor = "unknown";
+    let caseType = "unknown";
 
     if (detectedType === 'cpu') {
       // CPU detection logic
@@ -178,7 +179,6 @@ class CloudinaryService {
       else if (normalized.includes("asrock")) brand = "asrock";
       else if (normalized.includes("biostar")) brand = "biostar";
       else if (normalized.includes("evga")) brand = "evga";
-      else if (normalized.includes("asus")) brand = "asus";
 
       // Enhanced socket detection
       if (normalized.includes("am4")) socket = "am4";
@@ -202,19 +202,59 @@ class CloudinaryService {
         formFactor = "atx";
       }
 
-      console.log(`🔍 Motherboard Analysis:`, {
-        productName,
-        normalized,
-        detectedBrand: brand,
-        detectedSocket: socket,
-        detectedFormFactor: formFactor
-      });
+    } else if (detectedType === 'case') {
+      // Case detection logic - match Cloudinary structure
+      // Extract brand from case name
+      if (normalized.includes("antec")) brand = "antec";
+      else if (normalized.includes("corsair")) brand = "corsair";
+      else if (normalized.includes("fractal")) brand = "fractal design";
+      else if (normalized.includes("lian li")) brand = "lian li";
+      else if (normalized.includes("nzxt")) brand = "nzxt";
+      else if (normalized.includes("cooler master")) brand = "cooler master";
+      else if (normalized.includes("phanteks")) brand = "phanteks";
+      else if (normalized.includes("be quiet")) brand = "be quiet";
+      else if (normalized.includes("asus")) brand = "asus";
+      else brand = "unknown";
+
+      // Extract form factor and case type based on Cloudinary structure
+      if (normalized.includes("atx full")) {
+        formFactor = "atx";
+        caseType = "atxfull";
+      } else if (normalized.includes("atx mid")) {
+        formFactor = "atx";
+        caseType = "atxmid";
+      } else if (normalized.includes("micro atx mid")) {
+        formFactor = "micro atx";
+        caseType = "microatxmid";
+      } else if (normalized.includes("micro atx mini")) {
+        formFactor = "micro atx";
+        caseType = "microatxmini";
+      } else if (normalized.includes("mini itx desktop")) {
+        formFactor = "mini itx";
+        caseType = "miniitxdesktop";
+      } else if (normalized.includes("mini itx tower")) {
+        formFactor = "mini itx";
+        caseType = "miniitxtower";
+      } else if (normalized.includes("mini itx")) {
+        formFactor = "mini itx";
+        caseType = "miniitxdesktop"; // default
+      } else if (normalized.includes("micro atx")) {
+        formFactor = "micro atx";
+        caseType = "microatxmid"; // default
+      } else if (normalized.includes("atx")) {
+        formFactor = "atx";
+        caseType = "atxmid"; // default
+      } else {
+        formFactor = "atx";
+        caseType = "atxmid";
+      }
     }
 
     return {
       brand,
       socket,
       formFactor,
+      caseType,
       normalizedName: this.normalizeForCloudinary(productName),
       detectedType
     };
@@ -224,6 +264,11 @@ class CloudinaryService {
     if (!productName) return 'cpu';
     
     const name = productName.toLowerCase();
+    
+    // Case detection
+    if (name.includes('case') || name.includes('tower') || name.includes('chassis')) {
+      return 'case';
+    }
     
     // CPU detection
     if (name.includes('ryzen') || name.includes('core') || name.includes('intel') || 
@@ -257,6 +302,16 @@ class CloudinaryService {
     if (name.includes('ssd') || name.includes('hdd') || name.includes('nvme') ||
         name.includes('solid state') || name.includes('hard drive') || name.includes('m.2')) {
       return 'storage';
+    }
+    
+    // CPU Cooler detection
+    if (name.includes('cooler') || name.includes('heatsink') || name.includes('aio')) {
+      return 'cooler';
+    }
+    
+    // Power Supply detection
+    if (name.includes('power supply') || name.includes('psu') || name.includes('watt')) {
+      return 'psu';
     }
     
     // Default to CPU if unknown
@@ -335,6 +390,45 @@ class CloudinaryService {
     }
   }
 
+  static getCaseImage(productName, options = {}) {
+    try {
+      const { formFactor, caseType, normalizedName, brand } =
+        this.extractProductInfo(productName, 'case');
+
+      if (!normalizedName) {
+        console.warn("❌ Empty normalized name for case:", productName);
+        return null;
+      }
+
+      // Case path: pc-builder/case/{form-factor}/{case-type}/{productName}
+      // Based on your Cloudinary structure:
+      // - atx/atxfull/
+      // - atx/atxmid/
+      // - micro atx/microatxmid/
+      // - micro atx/microatxmini/
+      // - mini itx/miniitxdesktop/
+      // - mini itx/miniitxtower/
+      const publicId = `pc-builder/case/${formFactor}/${caseType}/${normalizedName}`;
+      const url = this.buildCloudinaryUrl(publicId, options);
+
+      if (!url) {
+        console.warn("❌ Could not generate Cloudinary URL for case:", productName);
+        return null;
+      }
+
+      console.log(`🖼️ Case Image URL: ${url}`);
+      console.log(`📁 Cloudinary Path: case/${formFactor}/${caseType}/${normalizedName}`);
+      
+      return url;
+    } catch (error) {
+      console.warn(
+        `❌ Error generating case image for ${productName}:`,
+        error
+      );
+      return null;
+    }
+  }
+
   static getDefaultImage(category, brand = "default", options = {}) {
     try {
       const publicId = `pc-builder/${category}/${brand}/default`;
@@ -369,6 +463,8 @@ class CloudinaryService {
         return this.getProcessorImage(productName, options);
       case 'motherboard':
         return this.getMotherboardImage(productName, options);
+      case 'case':
+        return this.getCaseImage(productName, options);
       case 'gpu':
         return this.getDefaultImage('gpu', 'default', options);
       case 'ram':
@@ -379,8 +475,6 @@ class CloudinaryService {
         return this.getDefaultImage('cooler', 'default', options);
       case 'psu':
         return this.getDefaultImage('psu', 'default', options);
-      case 'case':
-        return this.getDefaultImage('case', 'default', options);
       // Add other component types as needed
       default:
         return this.getDefaultImage(detectedType, 'default', options);
@@ -389,12 +483,14 @@ class CloudinaryService {
 
   // New method to directly generate Cloudinary path for debugging
   static getCloudinaryPath(componentType, productName) {
-    const { formFactor, socket, normalizedName, brand } = this.extractProductInfo(productName, componentType);
+    const { formFactor, socket, normalizedName, brand, caseType } = this.extractProductInfo(productName, componentType);
     
     if (componentType === 'motherboard') {
       return `pc-builder/motherboard/${formFactor}/${socket}/${normalizedName}`;
     } else if (componentType === 'cpu') {
       return `pc-builder/cpu/${brand}/${socket}/${normalizedName}`;
+    } else if (componentType === 'case') {
+      return `pc-builder/case/${formFactor}/${caseType}/${normalizedName}`;
     }
     
     return `pc-builder/${componentType}/default/${normalizedName}`;

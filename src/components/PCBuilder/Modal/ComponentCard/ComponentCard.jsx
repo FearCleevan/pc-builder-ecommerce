@@ -61,6 +61,13 @@ const ComponentCard = ({ component, onSelect, onCompareToggle, isComparing }) =>
     const name = component.name.toLowerCase();
     const specs = component.specs || {};
 
+    // Case detection - ADDED THIS SECTION
+    if (name.includes('case') || name.includes('tower') || name.includes('chassis') ||
+        specs['Form Factor'] || specs['Max GPU Length'] || specs['Max CPU Cooler Height'] ||
+        specs['Side Panel'] || specs['Volume'] || specs['Weight']) {
+      return 'case';
+    }
+    
     // CPU detection
     if (name.includes('ryzen') || name.includes('core') || name.includes('intel') || 
         name.includes('amd') || name.includes('xeon') || name.includes('pentium') ||
@@ -94,6 +101,18 @@ const ComponentCard = ({ component, onSelect, onCompareToggle, isComparing }) =>
     if (name.includes('ssd') || name.includes('hdd') || name.includes('nvme') ||
         name.includes('solid state') || name.includes('hard drive') || specs.Capacity) {
       return 'storage';
+    }
+    
+    // CPU Cooler detection - ADDED THIS SECTION
+    if (name.includes('cooler') || name.includes('heatsink') || name.includes('aio') ||
+        specs['RPM'] || specs['Noise Level'] || specs['Compatible Sockets']) {
+      return 'cooler';
+    }
+    
+    // Power Supply detection - ADDED THIS SECTION
+    if (name.includes('power supply') || name.includes('psu') || name.includes('watt') ||
+        specs['Wattage'] || specs['Efficiency'] || specs['Modular']) {
+      return 'psu';
     }
     
     // Default to CPU if unknown

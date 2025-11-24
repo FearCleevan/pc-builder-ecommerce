@@ -52,7 +52,8 @@ const CloudinaryImage = ({
           throw new Error('Empty Cloudinary URL generated');
         }
 
-        console.log(`🖼️ Loading ${detectedComponentType} image for: ${productName}`, cloudinaryUrl);
+        console.log(`🖼️ Loading ${detectedComponentType} image for: ${productName}`);
+        console.log(`📁 Cloudinary Path:`, CloudinaryService.getCloudinaryPath(detectedComponentType, productName));
 
         // Check if the image exists on Cloudinary
         const exists = await CloudinaryService.checkImageExists(cloudinaryUrl);
@@ -61,6 +62,7 @@ const CloudinaryImage = ({
           setImageUrl(cloudinaryUrl);
         } else {
           console.warn(`❌ ${detectedComponentType} image not found on Cloudinary: ${productName}`);
+          console.warn(`📁 Attempted path:`, CloudinaryService.getCloudinaryPath(detectedComponentType, productName));
           setImageUrl(fallbackImage);
           setHasError(true);
         }
@@ -127,15 +129,21 @@ const CloudinaryImage = ({
   );
 };
 
-// Helper function to detect component type from product name
+// Enhanced helper function to detect component type from product name
 const detectComponentTypeFromName = (productName) => {
   if (!productName) return 'cpu';
   
   const name = productName.toLowerCase();
   
+  // Case detection - ADDED THIS SECTION
+  if (name.includes('case') || name.includes('tower') || name.includes('chassis')) {
+    return 'case';
+  }
+  
   // CPU detection
   if (name.includes('ryzen') || name.includes('core') || name.includes('intel') || 
-      name.includes('amd') || name.includes('xeon') || name.includes('pentium')) {
+      name.includes('amd') || name.includes('xeon') || name.includes('pentium') ||
+      name.includes('cpu') || name.includes('processor')) {
     return 'cpu';
   }
   
@@ -143,13 +151,15 @@ const detectComponentTypeFromName = (productName) => {
   if (name.includes('motherboard') || name.includes('mainboard') || name.includes('mb ') ||
       name.includes('b450') || name.includes('b550') || name.includes('b650') ||
       name.includes('x570') || name.includes('x670') || name.includes('z690') ||
-      name.includes('z790')) {
+      name.includes('z790') || name.includes('h610') || name.includes('h670') ||
+      name.includes('atx') || name.includes('micro atx') || name.includes('mini itx')) {
     return 'motherboard';
   }
   
   // GPU detection
   if (name.includes('rtx') || name.includes('gtx') || name.includes('radeon') ||
-      name.includes('geforce') || name.includes('video card') || name.includes('gpu')) {
+      name.includes('geforce') || name.includes('video card') || name.includes('gpu') ||
+      name.includes('graphics card')) {
     return 'gpu';
   }
   
@@ -160,8 +170,49 @@ const detectComponentTypeFromName = (productName) => {
   
   // Storage detection
   if (name.includes('ssd') || name.includes('hdd') || name.includes('nvme') ||
-      name.includes('solid state') || name.includes('hard drive')) {
+      name.includes('solid state') || name.includes('hard drive') || name.includes('m.2')) {
     return 'storage';
+  }
+  
+  // CPU Cooler detection - ADDED THIS SECTION
+  if (name.includes('cooler') || name.includes('heatsink') || name.includes('aio') ||
+      name.includes('liquid cooler') || name.includes('air cooler')) {
+    return 'cooler';
+  }
+  
+  // Power Supply detection - ADDED THIS SECTION
+  if (name.includes('power supply') || name.includes('psu') || name.includes('watt')) {
+    return 'psu';
+  }
+  
+  // Monitor detection - ADDED THIS SECTION
+  if (name.includes('monitor') || name.includes('display') || name.includes('screen')) {
+    return 'monitor';
+  }
+  
+  // Keyboard detection - ADDED THIS SECTION
+  if (name.includes('keyboard')) {
+    return 'keyboard';
+  }
+  
+  // Mouse detection - ADDED THIS SECTION
+  if (name.includes('mouse')) {
+    return 'mouse';
+  }
+  
+  // Speaker detection - ADDED THIS SECTION
+  if (name.includes('speaker')) {
+    return 'speaker';
+  }
+  
+  // Headphones detection - ADDED THIS SECTION
+  if (name.includes('headphone') || name.includes('headset')) {
+    return 'headphones';
+  }
+  
+  // Webcam detection - ADDED THIS SECTION
+  if (name.includes('webcam') || name.includes('camera')) {
+    return 'webcam';
   }
   
   // Default to CPU if unknown
