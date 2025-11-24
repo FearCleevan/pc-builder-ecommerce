@@ -1,0 +1,628 @@
+{
+  "timestamp": "2025-11-24T06:07:33.722Z",
+  "uploaded": [
+    {
+      "category": "case",
+      "brand": "atx",
+      "model": "atxfull",
+      "displayCategory": "Cases",
+      "normalizedName": "Antec C8 ATX Full Tower",
+      "public_id": "pc-builder/case/atx/atxfull/Antec C8 ATX Full Tower",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763964412/pc-builder/case/atx/atxfull/Antec%20C8%20ATX%20Full%20Tower.jpg"
+    },
+    {
+      "category": "case",
+      "brand": "atx",
+      "model": "atxfull",
+      "displayCategory": "Cases",
+      "normalizedName": "Corsair 7000D AIRFLOW ATX Full",
+      "public_id": "pc-builder/case/atx/atxfull/Corsair 7000D AIRFLOW ATX Full",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763964412/pc-builder/case/atx/atxfull/Corsair%207000D%20AIRFLOW%20ATX%20Full.jpg"
+    },
+    {
+      "category": "case",
+      "brand": "atx",
+      "model": "atxfull",
+      "displayCategory": "Cases",
+      "normalizedName": "Antec FLUX PRO ATX Full",
+      "public_id": "pc-builder/case/atx/atxfull/Antec FLUX PRO ATX Full",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763964413/pc-builder/case/atx/atxfull/Antec%20FLUX%20PRO%20ATX%20Full.jpg"
+    },
+    {
+      "category": "case",
+      "brand": "atx",
+      "model": "atxfull",
+      "displayCategory": "Cases",
+      "normalizedName": "Corsair 9000D RGB AIRFLOW ATX Full",
+      "public_id": "pc-builder/case/atx/atxfull/Corsair 9000D RGB AIRFLOW ATX Full",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763964416/pc-builder/case/atx/atxfull/Corsair%209000D%20RGB%20AIRFLOW%20ATX%20Full.jpg"
+    },
+    {
+      "category": "case",
+      "brand": "atx",
+      "model": "atxfull",
+      "displayCategory": "Cases",
+      "normalizedName": "Fractal Design North XL ATX Full",
+      "public_id": "pc-builder/case/atx/atxfull/Fractal Design North XL ATX Full",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763964416/pc-builder/case/atx/atxfull/Fractal%20Design%20North%20XL%20ATX%20Full.jpg"
+    },
+    {
+      "category": "case",
+      "brand": "atx",
+      "model": "atxfull",
+      "displayCategory": "Cases",
+      "normalizedName": "Fractal Design Pop XL Air ATX Full",
+      "public_id": "pc-builder/case/atx/atxfull/Fractal Design Pop XL Air ATX Full",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763964416/pc-builder/case/atx/atxfull/Fractal%20Design%20Pop%20XL%20Air%20ATX%20Full.jpg"
+    },
+    {
+      "category": "case",
+      "brand": "atx",
+      "model": "atxfull",
+      "displayCategory": "Cases",
+      "normalizedName": "Fractal Design Pop XL Silent ATX Full",
+      "public_id": "pc-builder/case/atx/atxfull/Fractal Design Pop XL Silent ATX Full",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763964419/pc-builder/case/atx/atxfull/Fractal%20Design%20Pop%20XL%20Silent%20ATX%20Full.jpg"
+    },
+    {
+      "category": "case",
+      "brand": "atx",
+      "model": "atxfull",
+      "displayCategory": "Cases",
+      "normalizedName": "Lian Li O11 Dynamic EVO XL ATX Full White",
+      "public_id": "pc-builder/case/atx/atxfull/Lian Li O11 Dynamic EVO XL ATX Full White",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763964419/pc-builder/case/atx/atxfull/Lian%20Li%20O11%20Dynamic%20EVO%20XL%20ATX%20Full%20White.jpg"
+    },
+    {
+      "category": "case",
+      "brand": "atx",
+      "model": "atxfull",
+      "displayCategory": "Cases",
+      "normalizedName": "Lian Li O11 Dynamic EVO XL ATX Full",
+      "public_id": "pc-builder/case/atx/atxfull/Lian Li O11 Dynamic EVO XL ATX Full",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763964419/pc-builder/case/atx/atxfull/Lian%20Li%20O11%20Dynamic%20EVO%20XL%20ATX%20Full.jpg"
+    },
+    {
+      "category": "case",
+      "brand": "atx",
+      "model": "atxfull",
+      "displayCategory": "Cases",
+      "normalizedName": "Silverstone ALTA F2 ATX Full",
+      "public_id": "pc-builder/case/atx/atxfull/Silverstone ALTA F2 ATX Full",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763964423/pc-builder/case/atx/atxfull/Silverstone%20ALTA%20F2%20ATX%20Full.jpg"
+    },
+    {
+      "category": "case",
+      "brand": "atx",
+      "model": "atxmid",
+      "displayCategory": "Cases",
+      "normalizedName": "Corsair 3500X ARGB ATX Mid Tower",
+      "public_id": "pc-builder/case/atx/atxmid/Corsair 3500X ARGB ATX Mid Tower",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763964423/pc-builder/case/atx/atxmid/Corsair%203500X%20ARGB%20ATX%20Mid%20Tower.jpg"
+    },
+    {
+      "category": "case",
+      "brand": "atx",
+      "model": "atxfull",
+      "displayCategory": "Cases",
+      "normalizedName": "Lian Li PC-O11 Dynamic ATX Full",
+      "public_id": "pc-builder/case/atx/atxfull/Lian Li PC-O11 Dynamic ATX Full",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763964423/pc-builder/case/atx/atxfull/Lian%20Li%20PC-O11%20Dynamic%20ATX%20Full.jpg"
+    },
+    {
+      "category": "case",
+      "brand": "atx",
+      "model": "atxmid",
+      "displayCategory": "Cases",
+      "normalizedName": "Corsair 4000D Airflow ATX Mid Tower",
+      "public_id": "pc-builder/case/atx/atxmid/Corsair 4000D Airflow ATX Mid Tower",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763964426/pc-builder/case/atx/atxmid/Corsair%204000D%20Airflow%20ATX%20Mid%20Tower.jpg"
+    },
+    {
+      "category": "case",
+      "brand": "atx",
+      "model": "atxmid",
+      "displayCategory": "Cases",
+      "normalizedName": "Fractal Design North ATX Mid Tower",
+      "public_id": "pc-builder/case/atx/atxmid/Fractal Design North ATX Mid Tower",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763964426/pc-builder/case/atx/atxmid/Fractal%20Design%20North%20ATX%20Mid%20Tower.jpg"
+    },
+    {
+      "category": "case",
+      "brand": "atx",
+      "model": "atxmid",
+      "displayCategory": "Cases",
+      "normalizedName": "Corsair FRAME 4000D RS ARGB ATX Mid Tower",
+      "public_id": "pc-builder/case/atx/atxmid/Corsair FRAME 4000D RS ARGB ATX Mid Tower",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763964426/pc-builder/case/atx/atxmid/Corsair%20FRAME%204000D%20RS%20ARGB%20ATX%20Mid%20Tower.jpg"
+    },
+    {
+      "category": "case",
+      "brand": "atx",
+      "model": "atxmid",
+      "displayCategory": "Cases",
+      "normalizedName": "HYTE Y70 Touch Infinite ATX Mid Tower Black",
+      "public_id": "pc-builder/case/atx/atxmid/HYTE Y70 Touch Infinite ATX Mid Tower Black",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763964429/pc-builder/case/atx/atxmid/HYTE%20Y70%20Touch%20Infinite%20ATX%20Mid%20Tower%20Black.jpg"
+    },
+    {
+      "category": "case",
+      "brand": "atx",
+      "model": "atxmid",
+      "displayCategory": "Cases",
+      "normalizedName": "Lian Li Lancool 207 ATX Mid Tower",
+      "public_id": "pc-builder/case/atx/atxmid/Lian Li Lancool 207 ATX Mid Tower",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763964429/pc-builder/case/atx/atxmid/Lian%20Li%20Lancool%20207%20ATX%20Mid%20Tower.jpg"
+    },
+    {
+      "category": "case",
+      "brand": "atx",
+      "model": "atxmid",
+      "displayCategory": "Cases",
+      "normalizedName": "HYTE Y70 Touch Infinite ATX Mid Tower",
+      "public_id": "pc-builder/case/atx/atxmid/HYTE Y70 Touch Infinite ATX Mid Tower",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763964429/pc-builder/case/atx/atxmid/HYTE%20Y70%20Touch%20Infinite%20ATX%20Mid%20Tower.jpg"
+    },
+    {
+      "category": "case",
+      "brand": "atx",
+      "model": "atxmid",
+      "displayCategory": "Cases",
+      "normalizedName": "Lian Li O11 VISION COMPACT ATX Mid Tower",
+      "public_id": "pc-builder/case/atx/atxmid/Lian Li O11 VISION COMPACT ATX Mid Tower",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763964432/pc-builder/case/atx/atxmid/Lian%20Li%20O11%20VISION%20COMPACT%20ATX%20Mid%20Tower.jpg"
+    },
+    {
+      "category": "case",
+      "brand": "atx",
+      "model": "atxmid",
+      "displayCategory": "Cases",
+      "normalizedName": "Lian Li O11D EVO RGB ATX Mid Tower",
+      "public_id": "pc-builder/case/atx/atxmid/Lian Li O11D EVO RGB ATX Mid Tower",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763964432/pc-builder/case/atx/atxmid/Lian%20Li%20O11D%20EVO%20RGB%20ATX%20Mid%20Tower.jpg"
+    },
+    {
+      "category": "case",
+      "brand": "atx",
+      "model": "atxmid",
+      "displayCategory": "Cases",
+      "normalizedName": "Lian Li LANCOOL 217 ATX Mid Tower",
+      "public_id": "pc-builder/case/atx/atxmid/Lian Li LANCOOL 217 ATX Mid Tower",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763964433/pc-builder/case/atx/atxmid/Lian%20Li%20LANCOOL%20217%20ATX%20Mid%20Tower.jpg"
+    },
+    {
+      "category": "case",
+      "brand": "atx",
+      "model": "atxmid",
+      "displayCategory": "Cases",
+      "normalizedName": "NZXT H5 Flow 2024 ATX Mid Tower",
+      "public_id": "pc-builder/case/atx/atxmid/NZXT H5 Flow 2024 ATX Mid Tower",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763964436/pc-builder/case/atx/atxmid/NZXT%20H5%20Flow%202024%20ATX%20Mid%20Tower.jpg"
+    },
+    {
+      "category": "case",
+      "brand": "atx",
+      "model": "atxmid",
+      "displayCategory": "Cases",
+      "normalizedName": "NZXT H5 Flow 2024 ATX Mid Tower White",
+      "public_id": "pc-builder/case/atx/atxmid/NZXT H5 Flow 2024 ATX Mid Tower White",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763964436/pc-builder/case/atx/atxmid/NZXT%20H5%20Flow%202024%20ATX%20Mid%20Tower%20White.jpg"
+    },
+    {
+      "category": "case",
+      "brand": "atx",
+      "model": "atxmid",
+      "displayCategory": "Cases",
+      "normalizedName": "Lian Li Vector V100R ATX Mid Tower",
+      "public_id": "pc-builder/case/atx/atxmid/Lian Li Vector V100R ATX Mid Tower",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763964436/pc-builder/case/atx/atxmid/Lian%20Li%20Vector%20V100R%20ATX%20Mid%20Tower.jpg"
+    },
+    {
+      "category": "case",
+      "brand": "atx",
+      "model": "atxmid",
+      "displayCategory": "Cases",
+      "normalizedName": "NZXT H9 Flow 2025 ATX Mid Tower",
+      "public_id": "pc-builder/case/atx/atxmid/NZXT H9 Flow 2025 ATX Mid Tower",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763964440/pc-builder/case/atx/atxmid/NZXT%20H9%20Flow%202025%20ATX%20Mid%20Tower.jpg"
+    },
+    {
+      "category": "case",
+      "brand": "atx",
+      "model": "atxmid",
+      "displayCategory": "Cases",
+      "normalizedName": "NZXT H6 Flow ATX Mid Tower",
+      "public_id": "pc-builder/case/atx/atxmid/NZXT H6 Flow ATX Mid Tower",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763964440/pc-builder/case/atx/atxmid/NZXT%20H6%20Flow%20ATX%20Mid%20Tower.jpg"
+    },
+    {
+      "category": "case",
+      "brand": "atx",
+      "model": "atxmid",
+      "displayCategory": "Cases",
+      "normalizedName": "Phanteks Eclipse G370A ATX Mid Tower",
+      "public_id": "pc-builder/case/atx/atxmid/Phanteks Eclipse G370A ATX Mid Tower",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763964440/pc-builder/case/atx/atxmid/Phanteks%20Eclipse%20G370A%20ATX%20Mid%20Tower.jpg"
+    },
+    {
+      "category": "case",
+      "brand": "micro atx",
+      "model": "microatxmid",
+      "displayCategory": "Cases",
+      "normalizedName": "Antec NX200M MicroATX Mid",
+      "public_id": "pc-builder/case/micro atx/microatxmid/Antec NX200M MicroATX Mid",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763964443/pc-builder/case/micro%20atx/microatxmid/Antec%20NX200M%20MicroATX%20Mid.jpg"
+    },
+    {
+      "category": "case",
+      "brand": "atx",
+      "model": "atxmid",
+      "displayCategory": "Cases",
+      "normalizedName": "Phanteks XT PRO ULTRA ATX Mid Tower",
+      "public_id": "pc-builder/case/atx/atxmid/Phanteks XT PRO ULTRA ATX Mid Tower",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763964443/pc-builder/case/atx/atxmid/Phanteks%20XT%20PRO%20ULTRA%20ATX%20Mid%20Tower.jpg"
+    },
+    {
+      "category": "case",
+      "brand": "atx",
+      "model": "atxmid",
+      "displayCategory": "Cases",
+      "normalizedName": "Phanteks XT PRO ATX Mid Tower",
+      "public_id": "pc-builder/case/atx/atxmid/Phanteks XT PRO ATX Mid Tower",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763964444/pc-builder/case/atx/atxmid/Phanteks%20XT%20PRO%20ATX%20Mid%20Tower.jpg"
+    },
+    {
+      "category": "case",
+      "brand": "micro atx",
+      "model": "microatxmid",
+      "displayCategory": "Cases",
+      "normalizedName": "Cooler Master Elite 301 MicroATX Mid",
+      "public_id": "pc-builder/case/micro atx/microatxmid/Cooler Master Elite 301 MicroATX Mid",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763964447/pc-builder/case/micro%20atx/microatxmid/Cooler%20Master%20Elite%20301%20MicroATX%20Mid.jpg"
+    },
+    {
+      "category": "case",
+      "brand": "micro atx",
+      "model": "microatxmid",
+      "displayCategory": "Cases",
+      "normalizedName": "Fractal Design Pop Mini Air MicroATX Mid",
+      "public_id": "pc-builder/case/micro atx/microatxmid/Fractal Design Pop Mini Air MicroATX Mid",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763964447/pc-builder/case/micro%20atx/microatxmid/Fractal%20Design%20Pop%20Mini%20Air%20MicroATX%20Mid.jpg"
+    },
+    {
+      "category": "case",
+      "brand": "micro atx",
+      "model": "microatxmid",
+      "displayCategory": "Cases",
+      "normalizedName": "Montech AIR 100 ARGB MicroATX Mid White",
+      "public_id": "pc-builder/case/micro atx/microatxmid/Montech AIR 100 ARGB MicroATX Mid White",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763964447/pc-builder/case/micro%20atx/microatxmid/Montech%20AIR%20100%20ARGB%20MicroATX%20Mid%20White.jpg"
+    },
+    {
+      "category": "case",
+      "brand": "micro atx",
+      "model": "microatxmid",
+      "displayCategory": "Cases",
+      "normalizedName": "Montech AIR 100 ARGB MicroATX Mid",
+      "public_id": "pc-builder/case/micro atx/microatxmid/Montech AIR 100 ARGB MicroATX Mid",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763964450/pc-builder/case/micro%20atx/microatxmid/Montech%20AIR%20100%20ARGB%20MicroATX%20Mid.jpg"
+    },
+    {
+      "category": "case",
+      "brand": "micro atx",
+      "model": "microatxmid",
+      "displayCategory": "Cases",
+      "normalizedName": "NZXT H3 Flow MicroATX Mid White",
+      "public_id": "pc-builder/case/micro atx/microatxmid/NZXT H3 Flow MicroATX Mid White",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763964450/pc-builder/case/micro%20atx/microatxmid/NZXT%20H3%20Flow%20MicroATX%20Mid%20White.jpg"
+    },
+    {
+      "category": "case",
+      "brand": "micro atx",
+      "model": "microatxmid",
+      "displayCategory": "Cases",
+      "normalizedName": "NZXT H3 Flow MicroATX Mid",
+      "public_id": "pc-builder/case/micro atx/microatxmid/NZXT H3 Flow MicroATX Mid",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763964451/pc-builder/case/micro%20atx/microatxmid/NZXT%20H3%20Flow%20MicroATX%20Mid.jpg"
+    },
+    {
+      "category": "case",
+      "brand": "micro atx",
+      "model": "microatxmid",
+      "displayCategory": "Cases",
+      "normalizedName": "Zalman T3 PLUS MicroATX Mid",
+      "public_id": "pc-builder/case/micro atx/microatxmid/Zalman T3 PLUS MicroATX Mid",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763964454/pc-builder/case/micro%20atx/microatxmid/Zalman%20T3%20PLUS%20MicroATX%20Mid.jpg"
+    },
+    {
+      "category": "case",
+      "brand": "micro atx",
+      "model": "microatxmid",
+      "displayCategory": "Cases",
+      "normalizedName": "Phanteks XT M3 MicroATX Mid White",
+      "public_id": "pc-builder/case/micro atx/microatxmid/Phanteks XT M3 MicroATX Mid White",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763964454/pc-builder/case/micro%20atx/microatxmid/Phanteks%20XT%20M3%20MicroATX%20Mid%20White.jpg"
+    },
+    {
+      "category": "case",
+      "brand": "micro atx",
+      "model": "microatxmid",
+      "displayCategory": "Cases",
+      "normalizedName": "Phanteks XT M3 MicroATX Mid",
+      "public_id": "pc-builder/case/micro atx/microatxmid/Phanteks XT M3 MicroATX Mid",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763964454/pc-builder/case/micro%20atx/microatxmid/Phanteks%20XT%20M3%20MicroATX%20Mid.jpg"
+    },
+    {
+      "category": "case",
+      "brand": "micro atx",
+      "model": "microatxmini",
+      "displayCategory": "Cases",
+      "normalizedName": "Cooler Master MasterBox Q300L MicroATX Mini",
+      "public_id": "pc-builder/case/micro atx/microatxmini/Cooler Master MasterBox Q300L MicroATX Mini",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763964457/pc-builder/case/micro%20atx/microatxmini/Cooler%20Master%20MasterBox%20Q300L%20MicroATX%20Mini.jpg"
+    },
+    {
+      "category": "case",
+      "brand": "micro atx",
+      "model": "microatxmini",
+      "displayCategory": "Cases",
+      "normalizedName": "Asus Prime AP201 MicroATX Mini",
+      "public_id": "pc-builder/case/micro atx/microatxmini/Asus Prime AP201 MicroATX Mini",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763964457/pc-builder/case/micro%20atx/microatxmini/Asus%20Prime%20AP201%20MicroATX%20Mini.jpg"
+    },
+    {
+      "category": "case",
+      "brand": "micro atx",
+      "model": "microatxmini",
+      "displayCategory": "Cases",
+      "normalizedName": "Cooler Master Elite 302 MicroATX Mini",
+      "public_id": "pc-builder/case/micro atx/microatxmini/Cooler Master Elite 302 MicroATX Mini",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763964457/pc-builder/case/micro%20atx/microatxmini/Cooler%20Master%20Elite%20302%20MicroATX%20Mini.jpg"
+    },
+    {
+      "category": "case",
+      "brand": "micro atx",
+      "model": "microatxmini",
+      "displayCategory": "Cases",
+      "normalizedName": "Corsair 2500X MicroATX Mini",
+      "public_id": "pc-builder/case/micro atx/microatxmini/Corsair 2500X MicroATX Mini",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763964461/pc-builder/case/micro%20atx/microatxmini/Corsair%202500X%20MicroATX%20Mini.jpg"
+    },
+    {
+      "category": "case",
+      "brand": "micro atx",
+      "model": "microatxmini",
+      "displayCategory": "Cases",
+      "normalizedName": "Cooler Master Q300L V2 MicroATX Mini",
+      "public_id": "pc-builder/case/micro atx/microatxmini/Cooler Master Q300L V2 MicroATX Mini",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763964461/pc-builder/case/micro%20atx/microatxmini/Cooler%20Master%20Q300L%20V2%20MicroATX%20Mini.jpg"
+    },
+    {
+      "category": "case",
+      "brand": "micro atx",
+      "model": "microatxmini",
+      "displayCategory": "Cases",
+      "normalizedName": "Corsair 2500X MicroATX Mini White",
+      "public_id": "pc-builder/case/micro atx/microatxmini/Corsair 2500X MicroATX Mini White",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763964461/pc-builder/case/micro%20atx/microatxmini/Corsair%202500X%20MicroATX%20Mini%20White.jpg"
+    },
+    {
+      "category": "case",
+      "brand": "micro atx",
+      "model": "microatxmini",
+      "displayCategory": "Cases",
+      "normalizedName": "Montech X5M MicroATX Mini",
+      "public_id": "pc-builder/case/micro atx/microatxmini/Montech X5M MicroATX Mini",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763964465/pc-builder/case/micro%20atx/microatxmini/Montech%20X5M%20MicroATX%20Mini.jpg"
+    },
+    {
+      "category": "case",
+      "brand": "micro atx",
+      "model": "microatxmini",
+      "displayCategory": "Cases",
+      "normalizedName": "Lian Li A3-mATX MicroATX Mini",
+      "public_id": "pc-builder/case/micro atx/microatxmini/Lian Li A3-mATX MicroATX Mini",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763964465/pc-builder/case/micro%20atx/microatxmini/Lian%20Li%20A3-mATX%20MicroATX%20Mini.jpg"
+    },
+    {
+      "category": "case",
+      "brand": "micro atx",
+      "model": "microatxmini",
+      "displayCategory": "Cases",
+      "normalizedName": "Lian Li A3-mATX MicroATX Mini White",
+      "public_id": "pc-builder/case/micro atx/microatxmini/Lian Li A3-mATX MicroATX Mini White",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763964466/pc-builder/case/micro%20atx/microatxmini/Lian%20Li%20A3-mATX%20MicroATX%20Mini%20White.jpg"
+    },
+    {
+      "category": "case",
+      "brand": "mini itx",
+      "model": "miniitxdesktop",
+      "displayCategory": "Cases",
+      "normalizedName": "Cooler Master MasterBox NR200 Mini ITX Desktop White",
+      "public_id": "pc-builder/case/mini itx/miniitxdesktop/Cooler Master MasterBox NR200 Mini ITX Desktop White",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763964468/pc-builder/case/mini%20itx/miniitxdesktop/Cooler%20Master%20MasterBox%20NR200%20Mini%20ITX%20Desktop%20White.jpg"
+    },
+    {
+      "category": "case",
+      "brand": "mini itx",
+      "model": "miniitxdesktop",
+      "displayCategory": "Cases",
+      "normalizedName": "Cooler Master MasterBox NR200 Mini ITX Desktop",
+      "public_id": "pc-builder/case/mini itx/miniitxdesktop/Cooler Master MasterBox NR200 Mini ITX Desktop",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763964469/pc-builder/case/mini%20itx/miniitxdesktop/Cooler%20Master%20MasterBox%20NR200%20Mini%20ITX%20Desktop.jpg"
+    },
+    {
+      "category": "case",
+      "brand": "micro atx",
+      "model": "microatxmini",
+      "displayCategory": "Cases",
+      "normalizedName": "Thermaltake Versa H18 MicroATX Mini",
+      "public_id": "pc-builder/case/micro atx/microatxmini/Thermaltake Versa H18 MicroATX Mini",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763964469/pc-builder/case/micro%20atx/microatxmini/Thermaltake%20Versa%20H18%20MicroATX%20Mini.jpg"
+    },
+    {
+      "category": "case",
+      "brand": "mini itx",
+      "model": "miniitxdesktop",
+      "displayCategory": "Cases",
+      "normalizedName": "Fractal Design Terra Mini ITX Desktop White",
+      "public_id": "pc-builder/case/mini itx/miniitxdesktop/Fractal Design Terra Mini ITX Desktop White",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763964472/pc-builder/case/mini%20itx/miniitxdesktop/Fractal%20Design%20Terra%20Mini%20ITX%20Desktop%20White.jpg"
+    },
+    {
+      "category": "case",
+      "brand": "mini itx",
+      "model": "miniitxdesktop",
+      "displayCategory": "Cases",
+      "normalizedName": "Cooler Master MasterBox NR200P V2 Mini ITX Desktop",
+      "public_id": "pc-builder/case/mini itx/miniitxdesktop/Cooler Master MasterBox NR200P V2 Mini ITX Desktop",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763964472/pc-builder/case/mini%20itx/miniitxdesktop/Cooler%20Master%20MasterBox%20NR200P%20V2%20Mini%20ITX%20Desktop.jpg"
+    },
+    {
+      "category": "case",
+      "brand": "mini itx",
+      "model": "miniitxdesktop",
+      "displayCategory": "Cases",
+      "normalizedName": "Deepcool CH160 Mini ITX Desktop",
+      "public_id": "pc-builder/case/mini itx/miniitxdesktop/Deepcool CH160 Mini ITX Desktop",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763964472/pc-builder/case/mini%20itx/miniitxdesktop/Deepcool%20CH160%20Mini%20ITX%20Desktop.jpg"
+    },
+    {
+      "category": "case",
+      "brand": "mini itx",
+      "model": "miniitxdesktop",
+      "displayCategory": "Cases",
+      "normalizedName": "Lian Li A4-H20 X4 Mini ITX Desktop",
+      "public_id": "pc-builder/case/mini itx/miniitxdesktop/Lian Li A4-H20 X4 Mini ITX Desktop",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763964475/pc-builder/case/mini%20itx/miniitxdesktop/Lian%20Li%20A4-H20%20X4%20Mini%20ITX%20Desktop.jpg"
+    },
+    {
+      "category": "case",
+      "brand": "mini itx",
+      "model": "miniitxdesktop",
+      "displayCategory": "Cases",
+      "normalizedName": "Lian Li A4-H20 A4 Mini ITX Desktop",
+      "public_id": "pc-builder/case/mini itx/miniitxdesktop/Lian Li A4-H20 A4 Mini ITX Desktop",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763964475/pc-builder/case/mini%20itx/miniitxdesktop/Lian%20Li%20A4-H20%20A4%20Mini%20ITX%20Desktop.jpg"
+    },
+    {
+      "category": "case",
+      "brand": "mini itx",
+      "model": "miniitxdesktop",
+      "displayCategory": "Cases",
+      "normalizedName": "Fractal Design Terra Mini ITX Desktop",
+      "public_id": "pc-builder/case/mini itx/miniitxdesktop/Fractal Design Terra Mini ITX Desktop",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763964475/pc-builder/case/mini%20itx/miniitxdesktop/Fractal%20Design%20Terra%20Mini%20ITX%20Desktop.jpg"
+    },
+    {
+      "category": "case",
+      "brand": "mini itx",
+      "model": "miniitxdesktop",
+      "displayCategory": "Cases",
+      "normalizedName": "Thermaltake Core V1 Mini ITX Desktop",
+      "public_id": "pc-builder/case/mini itx/miniitxdesktop/Thermaltake Core V1 Mini ITX Desktop",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763964478/pc-builder/case/mini%20itx/miniitxdesktop/Thermaltake%20Core%20V1%20Mini%20ITX%20Desktop.jpg"
+    },
+    {
+      "category": "case",
+      "brand": "mini itx",
+      "model": "miniitxtower",
+      "displayCategory": "Cases",
+      "normalizedName": "Corsair 2000D AIRFLOW Mini ITX Tower",
+      "public_id": "pc-builder/case/mini itx/miniitxtower/Corsair 2000D AIRFLOW Mini ITX Tower",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763964478/pc-builder/case/mini%20itx/miniitxtower/Corsair%202000D%20AIRFLOW%20Mini%20ITX%20Tower.jpg"
+    },
+    {
+      "category": "case",
+      "brand": "mini itx",
+      "model": "miniitxdesktop",
+      "displayCategory": "Cases",
+      "normalizedName": "PC Cooler I100 PRO MESH Mini ITX Desktop",
+      "public_id": "pc-builder/case/mini itx/miniitxdesktop/PC Cooler I100 PRO MESH Mini ITX Desktop",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763964478/pc-builder/case/mini%20itx/miniitxdesktop/PC%20Cooler%20I100%20PRO%20MESH%20Mini%20ITX%20Desktop.jpg"
+    },
+    {
+      "category": "case",
+      "brand": "mini itx",
+      "model": "miniitxtower",
+      "displayCategory": "Cases",
+      "normalizedName": "Fractal Design Mood Mini ITX Tower",
+      "public_id": "pc-builder/case/mini itx/miniitxtower/Fractal Design Mood Mini ITX Tower",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763964482/pc-builder/case/mini%20itx/miniitxtower/Fractal%20Design%20Mood%20Mini%20ITX%20Tower.jpg"
+    },
+    {
+      "category": "case",
+      "brand": "mini itx",
+      "model": "miniitxtower",
+      "displayCategory": "Cases",
+      "normalizedName": "Fractal Design Node 304 Mini ITX Tower",
+      "public_id": "pc-builder/case/mini itx/miniitxtower/Fractal Design Node 304 Mini ITX Tower",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763964482/pc-builder/case/mini%20itx/miniitxtower/Fractal%20Design%20Node%20304%20Mini%20ITX%20Tower.jpg"
+    },
+    {
+      "category": "case",
+      "brand": "mini itx",
+      "model": "miniitxtower",
+      "displayCategory": "Cases",
+      "normalizedName": "Fractal Design Era 2 Mini ITX Tower",
+      "public_id": "pc-builder/case/mini itx/miniitxtower/Fractal Design Era 2 Mini ITX Tower",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763964482/pc-builder/case/mini%20itx/miniitxtower/Fractal%20Design%20Era%202%20Mini%20ITX%20Tower.jpg"
+    },
+    {
+      "category": "case",
+      "brand": "mini itx",
+      "model": "miniitxtower",
+      "displayCategory": "Cases",
+      "normalizedName": "Fractal Design Ridge PCIe 40 Mini ITX Tower",
+      "public_id": "pc-builder/case/mini itx/miniitxtower/Fractal Design Ridge PCIe 40 Mini ITX Tower",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763964485/pc-builder/case/mini%20itx/miniitxtower/Fractal%20Design%20Ridge%20PCIe%2040%20Mini%20ITX%20Tower.jpg"
+    },
+    {
+      "category": "case",
+      "brand": "mini itx",
+      "model": "miniitxtower",
+      "displayCategory": "Cases",
+      "normalizedName": "HYTE REVOLT 3 Mini ITX Tower",
+      "public_id": "pc-builder/case/mini itx/miniitxtower/HYTE REVOLT 3 Mini ITX Tower",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763964485/pc-builder/case/mini%20itx/miniitxtower/HYTE%20REVOLT%203%20Mini%20ITX%20Tower.jpg"
+    },
+    {
+      "category": "case",
+      "brand": "mini itx",
+      "model": "miniitxtower",
+      "displayCategory": "Cases",
+      "normalizedName": "Fractal Design Ridge PCIe 40 Mini ITX Tower White",
+      "public_id": "pc-builder/case/mini itx/miniitxtower/Fractal Design Ridge PCIe 40 Mini ITX Tower White",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763964485/pc-builder/case/mini%20itx/miniitxtower/Fractal%20Design%20Ridge%20PCIe%2040%20Mini%20ITX%20Tower%20White.jpg"
+    },
+    {
+      "category": "case",
+      "brand": "mini itx",
+      "model": "miniitxtower",
+      "displayCategory": "Cases",
+      "normalizedName": "Jonsbo N10 Mini ITX Tower",
+      "public_id": "pc-builder/case/mini itx/miniitxtower/Jonsbo N10 Mini ITX Tower",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763964488/pc-builder/case/mini%20itx/miniitxtower/Jonsbo%20N10%20Mini%20ITX%20Tower.jpg"
+    },
+    {
+      "category": "case",
+      "brand": "mini itx",
+      "model": "miniitxtower",
+      "displayCategory": "Cases",
+      "normalizedName": "NCASE M1 Mini ITX Tower",
+      "public_id": "pc-builder/case/mini itx/miniitxtower/NCASE M1 Mini ITX Tower",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763964488/pc-builder/case/mini%20itx/miniitxtower/NCASE%20M1%20Mini%20ITX%20Tower.jpg"
+    },
+    {
+      "category": "case",
+      "brand": "mini itx",
+      "model": "miniitxtower",
+      "displayCategory": "Cases",
+      "normalizedName": "ZZEW A1 Plus Mini ITX Tower",
+      "public_id": "pc-builder/case/mini itx/miniitxtower/ZZEW A1 Plus Mini ITX Tower",
+      "url": "https://res.cloudinary.com/dtebf3uea/image/upload/v1763964488/pc-builder/case/mini%20itx/miniitxtower/ZZEW%20A1%20Plus%20Mini%20ITX%20Tower.jpg"
+    }
+  ],
+  "skipped": [],
+  "failed": []
+}

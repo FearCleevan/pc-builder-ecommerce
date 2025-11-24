@@ -462,5 +462,931 @@ export const caseData = [
     has3D: false,
     store: "Amazon",
     stock: "In stock"
-  }
+  },
+  // Micro ATX Mid Tower Cases (10 samples)
+{
+  id: 'case-21',
+  name: 'Antec NX200M MicroATX Mid Tower',
+  image: "/src/assets/Laptop1.png",
+  price: 3993.93, // Converted from 69.99 USD to PHP
+  specs: {
+    "Form Factor": "Micro ATX Mid Tower",
+    "Side Panel": "Tempered Glass",
+    "Manufacturer": "Antec",
+    "Color": "BLACK",
+    "Transparent Side Panel": "Yes",
+    "Max GPU Length": "330 mm",
+    "Max CPU Cooler Height": "160 mm",
+    "3.5\" Drive Bays": 2,
+    "2.5\" Drive Bays": 3,
+    "Expansion Slots": 4,
+    "Volume": "38 L",
+    "Weight": "12.8 lbs"
+  },
+  has3D: false,
+  store: "Newegg",
+  stock: "In stock"
+},
+{
+  id: 'case-22',
+  name: 'Cooler Master Elite 301 MicroATX Mid Tower',
+  image: "/src/assets/Laptop1.png",
+  price: 3423.93, // Converted from 59.99 USD to PHP
+  specs: {
+    "Form Factor": "Micro ATX Mid Tower",
+    "Side Panel": "Acrylic",
+    "Manufacturer": "Cooler Master",
+    "Color": "BLACK",
+    "Transparent Side Panel": "Yes",
+    "Max GPU Length": "320 mm",
+    "Max CPU Cooler Height": "155 mm",
+    "3.5\" Drive Bays": 2,
+    "2.5\" Drive Bays": 2,
+    "Expansion Slots": 4,
+    "Volume": "36 L",
+    "Weight": "11.5 lbs"
+  },
+  has3D: false,
+  store: "Amazon",
+  stock: "In stock"
+},
+{
+  id: 'case-23',
+  name: 'Fractal Design Pop Mini Air MicroATX Mid Tower',
+  image: "/src/assets/Laptop1.png",
+  price: 5705.93, // Converted from 99.99 USD to PHP
+  specs: {
+    "Form Factor": "Micro ATX Mid Tower",
+    "Side Panel": "Tempered Glass",
+    "Manufacturer": "Fractal Design",
+    "Color": "BLACK",
+    "Transparent Side Panel": "Yes",
+    "Max GPU Length": "360 mm",
+    "Max CPU Cooler Height": "170 mm",
+    "3.5\" Drive Bays": 2,
+    "2.5\" Drive Bays": 3,
+    "Expansion Slots": 4,
+    "Volume": "40 L",
+    "Weight": "15.2 lbs"
+  },
+  has3D: false,
+  store: "Best Buy",
+  stock: "In stock"
+},
+{
+  id: 'case-24',
+  name: 'Montech AIR 100 ARGB MicroATX Mid Tower White',
+  image: "/src/assets/Laptop1.png",
+  price: 4563.93, // Converted from 79.99 USD to PHP
+  specs: {
+    "Form Factor": "Micro ATX Mid Tower",
+    "Side Panel": "Tempered Glass",
+    "Manufacturer": "Montech",
+    "Color": "WHITE",
+    "Transparent Side Panel": "Yes",
+    "Max GPU Length": "330 mm",
+    "Max CPU Cooler Height": "165 mm",
+    "3.5\" Drive Bays": 2,
+    "2.5\" Drive Bays": 3,
+    "Expansion Slots": 4,
+    "Volume": "37 L",
+    "Weight": "13.8 lbs"
+  },
+  has3D: false,
+  store: "Newegg",
+  stock: "In stock"
+},
+{
+  id: 'case-25',
+  name: 'Montech AIR 100 ARGB MicroATX Mid Tower',
+  image: "/src/assets/Laptop1.png",
+  price: 4563.93, // Converted from 79.99 USD to PHP
+  specs: {
+    "Form Factor": "Micro ATX Mid Tower",
+    "Side Panel": "Tempered Glass",
+    "Manufacturer": "Montech",
+    "Color": "BLACK",
+    "Transparent Side Panel": "Yes",
+    "Max GPU Length": "330 mm",
+    "Max CPU Cooler Height": "165 mm",
+    "3.5\" Drive Bays": 2,
+    "2.5\" Drive Bays": 3,
+    "Expansion Slots": 4,
+    "Volume": "37 L",
+    "Weight": "13.8 lbs"
+  },
+  has3D: false,
+  store: "Amazon",
+  stock: "In stock"
+},
+{
+  id: 'case-26',
+  name: 'NZXT H3 Flow MicroATX Mid Tower White',
+  image: "/src/assets/Laptop1.png",
+  price: 6847.93, // Converted from 119.99 USD to PHP
+  specs: {
+    "Form Factor": "Micro ATX Mid Tower",
+    "Side Panel": "Tempered Glass",
+    "Manufacturer": "NZXT",
+    "Color": "WHITE",
+    "Transparent Side Panel": "Yes",
+    "Max GPU Length": "365 mm",
+    "Max CPU Cooler Height": "165 mm",
+    "3.5\" Drive Bays": 2,
+    "2.5\" Drive Bays": 3,
+    "Expansion Slots": 4,
+    "Volume": "42 L",
+    "Weight": "16.5 lbs"
+  },
+  has3D: true,
+  store: "Best Buy",
+  stock: "In stock"
+},
+{
+  id: 'case-27',
+  name: 'NZXT H3 Flow MicroATX Mid Tower',
+  image: "/src/assets/Laptop1.png",
+  price: 6847.93, // Converted from 119.99 USD to PHP
+  specs: {
+    "Form Factor": "Micro ATX Mid Tower",
+    "Side Panel": "Tempered Glass",
+    "Manufacturer": "NZXT",
+    "Color": "BLACK",
+    "Transparent Side Panel": "Yes",
+    "Max GPU Length": "365 mm",
+    "Max CPU Cooler Height": "165 mm",
+    "3.5\" Drive Bays": 2,
+    "2.5\" Drive Bays": 3,
+    "Expansion Slots": 4,
+    "Volume": "42 L",
+    "Weight": "16.5 lbs"
+  },
+  has3D: true,
+  store: "Newegg",
+  stock: "In stock"
+},
+{
+  id: 'case-28',
+  name: 'Phanteks XT M3 MicroATX Mid Tower White',
+  image: "/src/assets/Laptop1.png",
+  price: 5135.93, // Converted from 89.99 USD to PHP
+  specs: {
+    "Form Factor": "Micro ATX Mid Tower",
+    "Side Panel": "Tempered Glass",
+    "Manufacturer": "Phanteks",
+    "Color": "WHITE",
+    "Transparent Side Panel": "Yes",
+    "Max GPU Length": "355 mm",
+    "Max CPU Cooler Height": "162 mm",
+    "3.5\" Drive Bays": 2,
+    "2.5\" Drive Bays": 3,
+    "Expansion Slots": 4,
+    "Volume": "39 L",
+    "Weight": "14.9 lbs"
+  },
+  has3D: false,
+  store: "Amazon",
+  stock: "In stock"
+},
+{
+  id: 'case-29',
+  name: 'Phanteks XT M3 MicroATX Mid Tower',
+  image: "/src/assets/Laptop1.png",
+  price: 5135.93, // Converted from 89.99 USD to PHP
+  specs: {
+    "Form Factor": "Micro ATX Mid Tower",
+    "Side Panel": "Tempered Glass",
+    "Manufacturer": "Phanteks",
+    "Color": "BLACK",
+    "Transparent Side Panel": "Yes",
+    "Max GPU Length": "355 mm",
+    "Max CPU Cooler Height": "162 mm",
+    "3.5\" Drive Bays": 2,
+    "2.5\" Drive Bays": 3,
+    "Expansion Slots": 4,
+    "Volume": "39 L",
+    "Weight": "14.9 lbs"
+  },
+  has3D: false,
+  store: "Best Buy",
+  stock: "In stock"
+},
+{
+  id: 'case-30',
+  name: 'Zalman T3 PLUS MicroATX Mid Tower',
+  image: "/src/assets/Laptop1.png",
+  price: 2851.43, // Converted from 49.99 USD to PHP
+  specs: {
+    "Form Factor": "Micro ATX Mid Tower",
+    "Side Panel": "Acrylic",
+    "Manufacturer": "Zalman",
+    "Color": "BLACK",
+    "Transparent Side Panel": "Yes",
+    "Max GPU Length": "310 mm",
+    "Max CPU Cooler Height": "155 mm",
+    "3.5\" Drive Bays": 2,
+    "2.5\" Drive Bays": 2,
+    "Expansion Slots": 4,
+    "Volume": "35 L",
+    "Weight": "10.8 lbs"
+  },
+  has3D: false,
+  store: "Newegg",
+  stock: "In stock"
+},
+
+// Micro ATX Mini Tower Cases (10 samples)
+{
+  id: 'case-31',
+  name: 'Asus Prime AP201 MicroATX Mini Tower',
+  image: "/src/assets/Laptop1.png",
+  price: 5705.93, // Converted from 99.99 USD to PHP
+  specs: {
+    "Form Factor": "Micro ATX Mini Tower",
+    "Side Panel": "Mesh",
+    "Manufacturer": "Asus",
+    "Color": "BLACK",
+    "Transparent Side Panel": "No",
+    "Max GPU Length": "338 mm",
+    "Max CPU Cooler Height": "170 mm",
+    "3.5\" Drive Bays": 1,
+    "2.5\" Drive Bays": 3,
+    "Expansion Slots": 4,
+    "Volume": "33 L",
+    "Weight": "14.2 lbs"
+  },
+  has3D: true,
+  store: "Amazon",
+  stock: "In stock"
+},
+{
+  id: 'case-32',
+  name: 'Cooler Master Elite 302 MicroATX Mini Tower',
+  image: "/src/assets/Laptop1.png",
+  price: 3423.93, // Converted from 59.99 USD to PHP
+  specs: {
+    "Form Factor": "Micro ATX Mini Tower",
+    "Side Panel": "Steel",
+    "Manufacturer": "Cooler Master",
+    "Color": "BLACK",
+    "Transparent Side Panel": "No",
+    "Max GPU Length": "300 mm",
+    "Max CPU Cooler Height": "148 mm",
+    "3.5\" Drive Bays": 2,
+    "2.5\" Drive Bays": 2,
+    "Expansion Slots": 4,
+    "Volume": "30 L",
+    "Weight": "11.3 lbs"
+  },
+  has3D: false,
+  store: "Best Buy",
+  stock: "In stock"
+},
+{
+  id: 'case-33',
+  name: 'Cooler Master MasterBox Q300L MicroATX Mini Tower',
+  image: "/src/assets/Laptop1.png",
+  price: 3993.93, // Converted from 69.99 USD to PHP
+  specs: {
+    "Form Factor": "Micro ATX Mini Tower",
+    "Side Panel": "Acrylic",
+    "Manufacturer": "Cooler Master",
+    "Color": "BLACK",
+    "Transparent Side Panel": "Yes",
+    "Max GPU Length": "360 mm",
+    "Max CPU Cooler Height": "159 mm",
+    "3.5\" Drive Bays": 2,
+    "2.5\" Drive Bays": 3,
+    "Expansion Slots": 4,
+    "Volume": "33 L",
+    "Weight": "9.9 lbs"
+  },
+  has3D: false,
+  store: "Newegg",
+  stock: "In stock"
+},
+{
+  id: 'case-34',
+  name: 'Cooler Master Q300L V2 MicroATX Mini Tower',
+  image: "/src/assets/Laptop1.png",
+  price: 4563.93, // Converted from 79.99 USD to PHP
+  specs: {
+    "Form Factor": "Micro ATX Mini Tower",
+    "Side Panel": "Tempered Glass",
+    "Manufacturer": "Cooler Master",
+    "Color": "BLACK",
+    "Transparent Side Panel": "Yes",
+    "Max GPU Length": "365 mm",
+    "Max CPU Cooler Height": "162 mm",
+    "3.5\" Drive Bays": 2,
+    "2.5\" Drive Bays": 3,
+    "Expansion Slots": 4,
+    "Volume": "34 L",
+    "Weight": "10.5 lbs"
+  },
+  has3D: false,
+  store: "Amazon",
+  stock: "In stock"
+},
+{
+  id: 'case-35',
+  name: 'Corsair 2500X MicroATX Mini Tower White',
+  image: "/src/assets/Laptop1.png",
+  price: 7985.93, // Converted from 139.99 USD to PHP
+  specs: {
+    "Form Factor": "Micro ATX Mini Tower",
+    "Side Panel": "Tempered Glass",
+    "Manufacturer": "Corsair",
+    "Color": "WHITE",
+    "Transparent Side Panel": "Yes",
+    "Max GPU Length": "360 mm",
+    "Max CPU Cooler Height": "170 mm",
+    "3.5\" Drive Bays": 1,
+    "2.5\" Drive Bays": 4,
+    "Expansion Slots": 4,
+    "Volume": "36 L",
+    "Weight": "16.8 lbs"
+  },
+  has3D: true,
+  store: "Best Buy",
+  stock: "In stock"
+},
+{
+  id: 'case-36',
+  name: 'Corsair 2500X MicroATX Mini Tower',
+  image: "/src/assets/Laptop1.png",
+  price: 7985.93, // Converted from 139.99 USD to PHP
+  specs: {
+    "Form Factor": "Micro ATX Mini Tower",
+    "Side Panel": "Tempered Glass",
+    "Manufacturer": "Corsair",
+    "Color": "BLACK",
+    "Transparent Side Panel": "Yes",
+    "Max GPU Length": "360 mm",
+    "Max CPU Cooler Height": "170 mm",
+    "3.5\" Drive Bays": 1,
+    "2.5\" Drive Bays": 4,
+    "Expansion Slots": 4,
+    "Volume": "36 L",
+    "Weight": "16.8 lbs"
+  },
+  has3D: true,
+  store: "Newegg",
+  stock: "In stock"
+},
+{
+  id: 'case-37',
+  name: 'Lian Li A3-mATX MicroATX Mini Tower White',
+  image: "/src/assets/Laptop1.png",
+  price: 6847.93, // Converted from 119.99 USD to PHP
+  specs: {
+    "Form Factor": "Micro ATX Mini Tower",
+    "Side Panel": "Tempered Glass",
+    "Manufacturer": "Lian Li",
+    "Color": "WHITE",
+    "Transparent Side Panel": "Yes",
+    "Max GPU Length": "380 mm",
+    "Max CPU Cooler Height": "168 mm",
+    "3.5\" Drive Bays": 1,
+    "2.5\" Drive Bays": 4,
+    "Expansion Slots": 4,
+    "Volume": "35 L",
+    "Weight": "15.6 lbs"
+  },
+  has3D: true,
+  store: "Amazon",
+  stock: "In stock"
+},
+{
+  id: 'case-38',
+  name: 'Lian Li A3-mATX MicroATX Mini Tower',
+  image: "/src/assets/Laptop1.png",
+  price: 6847.93, // Converted from 119.99 USD to PHP
+  specs: {
+    "Form Factor": "Micro ATX Mini Tower",
+    "Side Panel": "Tempered Glass",
+    "Manufacturer": "Lian Li",
+    "Color": "BLACK",
+    "Transparent Side Panel": "Yes",
+    "Max GPU Length": "380 mm",
+    "Max CPU Cooler Height": "168 mm",
+    "3.5\" Drive Bays": 1,
+    "2.5\" Drive Bays": 4,
+    "Expansion Slots": 4,
+    "Volume": "35 L",
+    "Weight": "15.6 lbs"
+  },
+  has3D: true,
+  store: "Best Buy",
+  stock: "In stock"
+},
+{
+  id: 'case-39',
+  name: 'Montech XSM MicroATX Mini Tower',
+  image: "/src/assets/Laptop1.png",
+  price: 4563.93, // Converted from 79.99 USD to PHP
+  specs: {
+    "Form Factor": "Micro ATX Mini Tower",
+    "Side Panel": "Mesh",
+    "Manufacturer": "Montech",
+    "Color": "BLACK",
+    "Transparent Side Panel": "No",
+    "Max GPU Length": "320 mm",
+    "Max CPU Cooler Height": "155 mm",
+    "3.5\" Drive Bays": 1,
+    "2.5\" Drive Bays": 2,
+    "Expansion Slots": 4,
+    "Volume": "32 L",
+    "Weight": "12.4 lbs"
+  },
+  has3D: false,
+  store: "Newegg",
+  stock: "In stock"
+},
+{
+  id: 'case-40',
+  name: 'Thermaltake Versa H18 MicroATX Mini Tower',
+  image: "/src/assets/Laptop1.png",
+  price: 3993.93, // Converted from 69.99 USD to PHP
+  specs: {
+    "Form Factor": "Micro ATX Mini Tower",
+    "Side Panel": "Acrylic",
+    "Manufacturer": "Thermaltake",
+    "Color": "BLACK",
+    "Transparent Side Panel": "Yes",
+    "Max GPU Length": "315 mm",
+    "Max CPU Cooler Height": "155 mm",
+    "3.5\" Drive Bays": 2,
+    "2.5\" Drive Bays": 2,
+    "Expansion Slots": 4,
+    "Volume": "31 L",
+    "Weight": "11.7 lbs"
+  },
+  has3D: false,
+  store: "Amazon",
+  stock: "In stock"
+},
+// Mini ITX Desktop Cases (10 samples)
+{
+  id: 'case-41',
+  name: 'Cooler Master MasterBox NR200 Mini ITX Desktop White',
+  image: "/src/assets/Laptop1.png",
+  price: 6847.93, // Converted from 119.99 USD to PHP
+  specs: {
+    "Form Factor": "Mini ITX Desktop",
+    "Side Panel": "Mesh",
+    "Manufacturer": "Cooler Master",
+    "Color": "WHITE",
+    "Transparent Side Panel": "No",
+    "Max GPU Length": "330 mm",
+    "Max CPU Cooler Height": "155 mm",
+    "3.5\" Drive Bays": 2,
+    "2.5\" Drive Bays": 3,
+    "Expansion Slots": 3,
+    "Volume": "18 L",
+    "Weight": "12.8 lbs"
+  },
+  has3D: true,
+  store: "Newegg",
+  stock: "In stock"
+},
+{
+  id: 'case-42',
+  name: 'Cooler Master MasterBox NR200 Mini ITX Desktop',
+  image: "/src/assets/Laptop1.png",
+  price: 6847.93, // Converted from 119.99 USD to PHP
+  specs: {
+    "Form Factor": "Mini ITX Desktop",
+    "Side Panel": "Mesh",
+    "Manufacturer": "Cooler Master",
+    "Color": "BLACK",
+    "Transparent Side Panel": "No",
+    "Max GPU Length": "330 mm",
+    "Max CPU Cooler Height": "155 mm",
+    "3.5\" Drive Bays": 2,
+    "2.5\" Drive Bays": 3,
+    "Expansion Slots": 3,
+    "Volume": "18 L",
+    "Weight": "12.8 lbs"
+  },
+  has3D: true,
+  store: "Amazon",
+  stock: "In stock"
+},
+{
+  id: 'case-43',
+  name: 'Cooler Master MasterBox NR200P V2 Mini ITX Desktop',
+  image: "/src/assets/Laptop1.png",
+  price: 7985.93, // Converted from 139.99 USD to PHP
+  specs: {
+    "Form Factor": "Mini ITX Desktop",
+    "Side Panel": "Tempered Glass",
+    "Manufacturer": "Cooler Master",
+    "Color": "BLACK",
+    "Transparent Side Panel": "Yes",
+    "Max GPU Length": "335 mm",
+    "Max CPU Cooler Height": "158 mm",
+    "3.5\" Drive Bays": 2,
+    "2.5\" Drive Bays": 4,
+    "Expansion Slots": 3,
+    "Volume": "19 L",
+    "Weight": "13.2 lbs"
+  },
+  has3D: true,
+  store: "Best Buy",
+  stock: "In stock"
+},
+{
+  id: 'case-44',
+  name: 'Deepcool CH160 Mini ITX Desktop',
+  image: "/src/assets/Laptop1.png",
+  price: 5135.93, // Converted from 89.99 USD to PHP
+  specs: {
+    "Form Factor": "Mini ITX Desktop",
+    "Side Panel": "Mesh",
+    "Manufacturer": "Deepcool",
+    "Color": "BLACK",
+    "Transparent Side Panel": "No",
+    "Max GPU Length": "320 mm",
+    "Max CPU Cooler Height": "150 mm",
+    "3.5\" Drive Bays": 1,
+    "2.5\" Drive Bays": 2,
+    "Expansion Slots": 2,
+    "Volume": "16 L",
+    "Weight": "10.5 lbs"
+  },
+  has3D: false,
+  store: "Newegg",
+  stock: "In stock"
+},
+{
+  id: 'case-45',
+  name: 'Fractal Design Terra Mini ITX Desktop White',
+  image: "/src/assets/Laptop1.png",
+  price: 10258.29, // Converted from 179.97 USD to PHP
+  specs: {
+    "Form Factor": "Mini ITX Desktop",
+    "Side Panel": "Aluminum",
+    "Manufacturer": "Fractal Design",
+    "Color": "WHITE",
+    "Transparent Side Panel": "No",
+    "Max GPU Length": "305 mm",
+    "Max CPU Cooler Height": "145 mm",
+    "3.5\" Drive Bays": 0,
+    "2.5\" Drive Bays": 2,
+    "Expansion Slots": 2,
+    "Volume": "15 L",
+    "Weight": "14.2 lbs"
+  },
+  has3D: true,
+  store: "Amazon",
+  stock: "In stock"
+},
+{
+  id: 'case-46',
+  name: 'Fractal Design Terra Mini ITX Desktop',
+  image: "/src/assets/Laptop1.png",
+  price: 10258.29, // Converted from 179.97 USD to PHP
+  specs: {
+    "Form Factor": "Mini ITX Desktop",
+    "Side Panel": "Aluminum",
+    "Manufacturer": "Fractal Design",
+    "Color": "BLACK",
+    "Transparent Side Panel": "No",
+    "Max GPU Length": "305 mm",
+    "Max CPU Cooler Height": "145 mm",
+    "3.5\" Drive Bays": 0,
+    "2.5\" Drive Bays": 2,
+    "Expansion Slots": 2,
+    "Volume": "15 L",
+    "Weight": "14.2 lbs"
+  },
+  has3D: true,
+  store: "Best Buy",
+  stock: "In stock"
+},
+{
+  id: 'case-47',
+  name: 'Lian Li A4-H20 A4 Mini ITX Desktop',
+  image: "/src/assets/Laptop1.png",
+  price: 9123.93, // Converted from 159.99 USD to PHP
+  specs: {
+    "Form Factor": "Mini ITX Desktop",
+    "Side Panel": "Aluminum",
+    "Manufacturer": "Lian Li",
+    "Color": "BLACK",
+    "Transparent Side Panel": "No",
+    "Max GPU Length": "322 mm",
+    "Max CPU Cooler Height": "55 mm",
+    "3.5\" Drive Bays": 0,
+    "2.5\" Drive Bays": 2,
+    "Expansion Slots": 2,
+    "Volume": "11 L",
+    "Weight": "8.8 lbs"
+  },
+  has3D: true,
+  store: "Newegg",
+  stock: "In stock"
+},
+{
+  id: 'case-48',
+  name: 'Lian Li A4-H20 X4 Mini ITX Desktop',
+  image: "/src/assets/Laptop1.png",
+  price: 10258.29, // Converted from 179.97 USD to PHP
+  specs: {
+    "Form Factor": "Mini ITX Desktop",
+    "Side Panel": "Aluminum",
+    "Manufacturer": "Lian Li",
+    "Color": "BLACK",
+    "Transparent Side Panel": "No",
+    "Max GPU Length": "335 mm",
+    "Max CPU Cooler Height": "60 mm",
+    "3.5\" Drive Bays": 0,
+    "2.5\" Drive Bays": 2,
+    "Expansion Slots": 2,
+    "Volume": "12 L",
+    "Weight": "9.2 lbs"
+  },
+  has3D: true,
+  store: "Amazon",
+  stock: "In stock"
+},
+{
+  id: 'case-49',
+  name: 'PC Cooler I100 PRO MESH Mini ITX Desktop',
+  image: "/src/assets/Laptop1.png",
+  price: 4563.93, // Converted from 79.99 USD to PHP
+  specs: {
+    "Form Factor": "Mini ITX Desktop",
+    "Side Panel": "Mesh",
+    "Manufacturer": "PC Cooler",
+    "Color": "BLACK",
+    "Transparent Side Panel": "No",
+    "Max GPU Length": "310 mm",
+    "Max CPU Cooler Height": "148 mm",
+    "3.5\" Drive Bays": 1,
+    "2.5\" Drive Bays": 2,
+    "Expansion Slots": 2,
+    "Volume": "17 L",
+    "Weight": "11.3 lbs"
+  },
+  has3D: false,
+  store: "Best Buy",
+  stock: "In stock"
+},
+{
+  id: 'case-50',
+  name: 'Thermaltake Core V1 Mini ITX Desktop',
+  image: "/src/assets/Laptop1.png",
+  price: 5705.93, // Converted from 99.99 USD to PHP
+  specs: {
+    "Form Factor": "Mini ITX Desktop",
+    "Side Panel": "Acrylic",
+    "Manufacturer": "Thermaltake",
+    "Color": "BLACK",
+    "Transparent Side Panel": "Yes",
+    "Max GPU Length": "285 mm",
+    "Max CPU Cooler Height": "140 mm",
+    "3.5\" Drive Bays": 1,
+    "2.5\" Drive Bays": 2,
+    "Expansion Slots": 2,
+    "Volume": "14 L",
+    "Weight": "10.1 lbs"
+  },
+  has3D: false,
+  store: "Newegg",
+  stock: "In stock"
+},
+
+// Mini ITX Tower Cases (10 samples)
+{
+  id: 'case-51',
+  name: 'Corsair 2000D AIRFLOW Mini ITX Tower',
+  image: "/src/assets/Laptop1.png",
+  price: 8559.43, // Converted from 149.99 USD to PHP
+  specs: {
+    "Form Factor": "Mini ITX Tower",
+    "Side Panel": "Mesh",
+    "Manufacturer": "Corsair",
+    "Color": "BLACK",
+    "Transparent Side Panel": "No",
+    "Max GPU Length": "365 mm",
+    "Max CPU Cooler Height": "165 mm",
+    "3.5\" Drive Bays": 1,
+    "2.5\" Drive Bays": 3,
+    "Expansion Slots": 3,
+    "Volume": "22 L",
+    "Weight": "15.8 lbs"
+  },
+  has3D: true,
+  store: "Amazon",
+  stock: "In stock"
+},
+{
+  id: 'case-52',
+  name: 'Fractal Design Era 2 Mini ITX Tower',
+  image: "/src/assets/Laptop1.png",
+  price: 9123.93, // Converted from 159.99 USD to PHP
+  specs: {
+    "Form Factor": "Mini ITX Tower",
+    "Side Panel": "Aluminum",
+    "Manufacturer": "Fractal Design",
+    "Color": "BLACK",
+    "Transparent Side Panel": "No",
+    "Max GPU Length": "295 mm",
+    "Max CPU Cooler Height": "135 mm",
+    "3.5\" Drive Bays": 0,
+    "2.5\" Drive Bays": 2,
+    "Expansion Slots": 2,
+    "Volume": "16 L",
+    "Weight": "13.5 lbs"
+  },
+  has3D: true,
+  store: "Best Buy",
+  stock: "In stock"
+},
+{
+  id: 'case-53',
+  name: 'Fractal Design Mood Mini ITX Tower',
+  image: "/src/assets/Laptop1.png",
+  price: 7985.93, // Converted from 139.99 USD to PHP
+  specs: {
+    "Form Factor": "Mini ITX Tower",
+    "Side Panel": "Wood/Steel",
+    "Manufacturer": "Fractal Design",
+    "Color": "NATURAL",
+    "Transparent Side Panel": "No",
+    "Max GPU Length": "310 mm",
+    "Max CPU Cooler Height": "142 mm",
+    "3.5\" Drive Bays": 0,
+    "2.5\" Drive Bays": 2,
+    "Expansion Slots": 2,
+    "Volume": "18 L",
+    "Weight": "14.2 lbs"
+  },
+  has3D: true,
+  store: "Newegg",
+  stock: "In stock"
+},
+{
+  id: 'case-54',
+  name: 'Fractal Design Node 304 Mini ITX Tower',
+  image: "/src/assets/Laptop1.png",
+  price: 6847.93, // Converted from 119.99 USD to PHP
+  specs: {
+    "Form Factor": "Mini ITX Tower",
+    "Side Panel": "Steel",
+    "Manufacturer": "Fractal Design",
+    "Color": "BLACK",
+    "Transparent Side Panel": "No",
+    "Max GPU Length": "310 mm",
+    "Max CPU Cooler Height": "165 mm",
+    "3.5\" Drive Bays": 3,
+    "2.5\" Drive Bays": 3,
+    "Expansion Slots": 2,
+    "Volume": "20 L",
+    "Weight": "16.8 lbs"
+  },
+  has3D: false,
+  store: "Amazon",
+  stock: "In stock"
+},
+{
+  id: 'case-55',
+  name: 'Fractal Design Ridge PCIe 4.0 Mini ITX Tower White',
+  image: "/src/assets/Laptop1.png",
+  price: 10258.29, // Converted from 179.97 USD to PHP
+  specs: {
+    "Form Factor": "Mini ITX Tower",
+    "Side Panel": "Aluminum",
+    "Manufacturer": "Fractal Design",
+    "Color": "WHITE",
+    "Transparent Side Panel": "No",
+    "Max GPU Length": "335 mm",
+    "Max CPU Cooler Height": "70 mm",
+    "3.5\" Drive Bays": 0,
+    "2.5\" Drive Bays": 3,
+    "Expansion Slots": 2,
+    "Volume": "13 L",
+    "Weight": "11.9 lbs"
+  },
+  has3D: true,
+  store: "Best Buy",
+  stock: "In stock"
+},
+{
+  id: 'case-56',
+  name: 'Fractal Design Ridge PCIe 4.0 Mini ITX Tower',
+  image: "/src/assets/Laptop1.png",
+  price: 10258.29, // Converted from 179.97 USD to PHP
+  specs: {
+    "Form Factor": "Mini ITX Tower",
+    "Side Panel": "Aluminum",
+    "Manufacturer": "Fractal Design",
+    "Color": "BLACK",
+    "Transparent Side Panel": "No",
+    "Max GPU Length": "335 mm",
+    "Max CPU Cooler Height": "70 mm",
+    "3.5\" Drive Bays": 0,
+    "2.5\" Drive Bays": 3,
+    "Expansion Slots": 2,
+    "Volume": "13 L",
+    "Weight": "11.9 lbs"
+  },
+  has3D: true,
+  store: "Newegg",
+  stock: "In stock"
+},
+{
+  id: 'case-57',
+  name: 'HYTE REVOLT 3 Mini ITX Tower',
+  image: "/src/assets/Laptop1.png",
+  price: 8559.43, // Converted from 149.99 USD to PHP
+  specs: {
+    "Form Factor": "Mini ITX Tower",
+    "Side Panel": "Steel",
+    "Manufacturer": "HYTE",
+    "Color": "BLACK",
+    "Transparent Side Panel": "No",
+    "Max GPU Length": "335 mm",
+    "Max CPU Cooler Height": "145 mm",
+    "3.5\" Drive Bays": 1,
+    "2.5\" Drive Bays": 2,
+    "Expansion Slots": 2,
+    "Volume": "19 L",
+    "Weight": "14.6 lbs"
+  },
+  has3D: true,
+  store: "Amazon",
+  stock: "In stock"
+},
+{
+  id: 'case-58',
+  name: 'Jonsbo N10 Mini ITX Tower',
+  image: "/src/assets/Laptop1.png",
+  price: 6275.93, // Converted from 109.99 USD to PHP
+  specs: {
+    "Form Factor": "Mini ITX Tower",
+    "Side Panel": "Aluminum",
+    "Manufacturer": "Jonsbo",
+    "Color": "BLACK",
+    "Transparent Side Panel": "No",
+    "Max GPU Length": "320 mm",
+    "Max CPU Cooler Height": "155 mm",
+    "3.5\" Drive Bays": 1,
+    "2.5\" Drive Bays": 2,
+    "Expansion Slots": 2,
+    "Volume": "17 L",
+    "Weight": "12.4 lbs"
+  },
+  has3D: false,
+  store: "Best Buy",
+  stock: "In stock"
+},
+{
+  id: 'case-59',
+  name: 'NCASE M1 Mini ITX Tower',
+  image: "/src/assets/Laptop1.png",
+  price: 17119.93, // Converted from 299.99 USD to PHP
+  specs: {
+    "Form Factor": "Mini ITX Tower",
+    "Side Panel": "Aluminum",
+    "Manufacturer": "NCASE",
+    "Color": "BLACK",
+    "Transparent Side Panel": "No",
+    "Max GPU Length": "322 mm",
+    "Max CPU Cooler Height": "130 mm",
+    "3.5\" Drive Bays": 0,
+    "2.5\" Drive Bays": 2,
+    "Expansion Slots": 2,
+    "Volume": "12 L",
+    "Weight": "9.8 lbs"
+  },
+  has3D: true,
+  store: "Newegg",
+  stock: "In stock"
+},
+{
+  id: 'case-60',
+  name: 'ZZEW A1 Plus Mini ITX Tower',
+  image: "/src/assets/Laptop1.png",
+  price: 5705.93, // Converted from 99.99 USD to PHP
+  specs: {
+    "Form Factor": "Mini ITX Tower",
+    "Side Panel": "Tempered Glass",
+    "Manufacturer": "ZZEW",
+    "Color": "BLACK",
+    "Transparent Side Panel": "Yes",
+    "Max GPU Length": "330 mm",
+    "Max CPU Cooler Height": "160 mm",
+    "3.5\" Drive Bays": 1,
+    "2.5\" Drive Bays": 2,
+    "Expansion Slots": 2,
+    "Volume": "21 L",
+    "Weight": "13.7 lbs"
+  },
+  has3D: false,
+  store: "Amazon",
+  stock: "In stock"
+}
 ];
