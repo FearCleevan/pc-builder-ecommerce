@@ -1,23 +1,24 @@
 //client/src/components/PCBuilder/Modal/MockData/Case/Case.js
 export const caseData = [
+  // ATX Full Tower Cases (10 samples)
   {
     id: 'case-1',
-    name: 'HYTE Y60 ATX Mid Tower White Tempered Glass Side Panel',
+    name: 'Antec CB ATX Full Tower',
     image: "/src/assets/Laptop1.png",
-    price: 10258.29, // Converted from 179.97 USD to PHP
+    price: 11413.93, // Converted from 199.99 USD to PHP
     specs: {
-      "Form Factor": "ATX Mid Tower",
+      "Form Factor": "ATX Full Tower",
       "Side Panel": "Tempered Glass",
-      "Manufacturer": "HYTE",
-      "Color": "WHITE",
+      "Manufacturer": "Antec",
+      "Color": "BLACK",
       "Transparent Side Panel": "Yes",
-      "Max GPU Length": "440 mm",
-      "Max CPU Cooler Height": "180 mm",
-      "3.5\" Drive Bays": 2,
+      "Max GPU Length": "450 mm",
+      "Max CPU Cooler Height": "185 mm",
+      "3.5\" Drive Bays": 6,
       "2.5\" Drive Bays": 4,
-      "Expansion Slots": 7,
-      "Volume": "58 L",
-      "Weight": "13.2 lbs"
+      "Expansion Slots": 8,
+      "Volume": "68 L",
+      "Weight": "28.5 lbs"
     },
     has3D: true,
     store: "Newegg",
@@ -25,22 +26,22 @@ export const caseData = [
   },
   {
     id: 'case-2',
-    name: 'NZXT H510 Elite ATX Mid Tower Black',
+    name: 'Antec FLUX PRO ATX Full Tower',
     image: "/src/assets/Laptop1.png",
-    price: 8559.43, // Converted from 149.99 USD to PHP
+    price: 11999.93, // Converted from 209.99 USD to PHP
     specs: {
-      "Form Factor": "ATX Mid Tower",
+      "Form Factor": "ATX Full Tower",
       "Side Panel": "Tempered Glass",
-      "Manufacturer": "NZXT",
+      "Manufacturer": "Antec",
       "Color": "BLACK",
       "Transparent Side Panel": "Yes",
-      "Max GPU Length": "381 mm",
-      "Max CPU Cooler Height": "165 mm",
-      "3.5\" Drive Bays": 2,
-      "2.5\" Drive Bays": 3,
-      "Expansion Slots": 7,
-      "Volume": "46 L",
-      "Weight": "18.3 lbs"
+      "Max GPU Length": "460 mm",
+      "Max CPU Cooler Height": "190 mm",
+      "3.5\" Drive Bays": 5,
+      "2.5\" Drive Bays": 6,
+      "Expansion Slots": 8,
+      "Volume": "72 L",
+      "Weight": "30.2 lbs"
     },
     has3D: true,
     store: "Amazon",
@@ -48,9 +49,218 @@ export const caseData = [
   },
   {
     id: 'case-3',
+    name: 'Corsair 7000D AIRFLOW ATX Full Tower',
+    image: "/src/assets/Laptop1.png",
+    price: 17119.93, // Converted from 299.99 USD to PHP
+    specs: {
+      "Form Factor": "ATX Full Tower",
+      "Side Panel": "Tempered Glass",
+      "Manufacturer": "Corsair",
+      "Color": "BLACK",
+      "Transparent Side Panel": "Yes",
+      "Max GPU Length": "500 mm",
+      "Max CPU Cooler Height": "195 mm",
+      "3.5\" Drive Bays": 4,
+      "2.5\" Drive Bays": 6,
+      "Expansion Slots": 9,
+      "Volume": "85 L",
+      "Weight": "32.8 lbs"
+    },
+    has3D: true,
+    store: "Best Buy",
+    stock: "In stock"
+  },
+  {
+    id: 'case-4',
+    name: 'Corsair 9000D RGB AIRFLOW ATX Full Tower',
+    image: "/src/assets/Laptop1.png",
+    price: 22827.93, // Converted from 399.99 USD to PHP
+    specs: {
+      "Form Factor": "ATX Full Tower",
+      "Side Panel": "Tempered Glass",
+      "Manufacturer": "Corsair",
+      "Color": "BLACK",
+      "Transparent Side Panel": "Yes",
+      "Max GPU Length": "520 mm",
+      "Max CPU Cooler Height": "200 mm",
+      "3.5\" Drive Bays": 6,
+      "2.5\" Drive Bays": 8,
+      "Expansion Slots": 10,
+      "Volume": "95 L",
+      "Weight": "35.5 lbs"
+    },
+    has3D: true,
+    store: "Newegg",
+    stock: "In stock"
+  },
+  {
+    id: 'case-5',
+    name: 'Fractal Design North XL ATX Full Tower',
+    image: "/src/assets/Laptop1.png",
+    price: 14279.93, // Converted from 249.99 USD to PHP
+    specs: {
+      "Form Factor": "ATX Full Tower",
+      "Side Panel": "Tempered Glass",
+      "Manufacturer": "Fractal Design",
+      "Color": "BLACK",
+      "Transparent Side Panel": "Yes",
+      "Max GPU Length": "480 mm",
+      "Max CPU Cooler Height": "190 mm",
+      "3.5\" Drive Bays": 5,
+      "2.5\" Drive Bays": 5,
+      "Expansion Slots": 8,
+      "Volume": "78 L",
+      "Weight": "29.3 lbs"
+    },
+    has3D: true,
+    store: "Amazon",
+    stock: "In stock"
+  },
+  {
+    id: 'case-6',
+    name: 'Fractal Design Pop XL Air ATX Full Tower',
+    image: "/src/assets/Laptop1.png",
+    price: 10258.29, // Converted from 179.97 USD to PHP
+    specs: {
+      "Form Factor": "ATX Full Tower",
+      "Side Panel": "Tempered Glass",
+      "Manufacturer": "Fractal Design",
+      "Color": "WHITE",
+      "Transparent Side Panel": "Yes",
+      "Max GPU Length": "470 mm",
+      "Max CPU Cooler Height": "185 mm",
+      "3.5\" Drive Bays": 4,
+      "2.5\" Drive Bays": 6,
+      "Expansion Slots": 8,
+      "Volume": "75 L",
+      "Weight": "27.8 lbs"
+    },
+    has3D: false,
+    store: "Best Buy",
+    stock: "In stock"
+  },
+  {
+    id: 'case-7',
+    name: 'Fractal Design Pop XL Silent ATX Full Tower',
+    image: "/src/assets/Laptop1.png",
+    price: 10813.93, // Converted from 189.49 USD to PHP
+    specs: {
+      "Form Factor": "ATX Full Tower",
+      "Side Panel": "Tempered Glass",
+      "Manufacturer": "Fractal Design",
+      "Color": "BLACK",
+      "Transparent Side Panel": "Yes",
+      "Max GPU Length": "465 mm",
+      "Max CPU Cooler Height": "188 mm",
+      "3.5\" Drive Bays": 5,
+      "2.5\" Drive Bays": 5,
+      "Expansion Slots": 8,
+      "Volume": "76 L",
+      "Weight": "30.1 lbs"
+    },
+    has3D: false,
+    store: "Newegg",
+    stock: "In stock"
+  },
+  {
+    id: 'case-8',
+    name: 'Lian Li O11 Dynamic EVO XL ATX Full Tower White',
+    image: "/src/assets/Laptop1.png",
+    price: 17119.93, // Converted from 299.99 USD to PHP
+    specs: {
+      "Form Factor": "ATX Full Tower",
+      "Side Panel": "Tempered Glass",
+      "Manufacturer": "Lian Li",
+      "Color": "WHITE",
+      "Transparent Side Panel": "Yes",
+      "Max GPU Length": "500 mm",
+      "Max CPU Cooler Height": "195 mm",
+      "3.5\" Drive Bays": 3,
+      "2.5\" Drive Bays": 7,
+      "Expansion Slots": 9,
+      "Volume": "82 L",
+      "Weight": "31.2 lbs"
+    },
+    has3D: true,
+    store: "Amazon",
+    stock: "In stock"
+  },
+  {
+    id: 'case-9',
+    name: 'Lian Li O11 Dynamic EVO XL ATX Full Tower',
+    image: "/src/assets/Laptop1.png",
+    price: 17119.93, // Converted from 299.99 USD to PHP
+    specs: {
+      "Form Factor": "ATX Full Tower",
+      "Side Panel": "Tempered Glass",
+      "Manufacturer": "Lian Li",
+      "Color": "BLACK",
+      "Transparent Side Panel": "Yes",
+      "Max GPU Length": "500 mm",
+      "Max CPU Cooler Height": "195 mm",
+      "3.5\" Drive Bays": 3,
+      "2.5\" Drive Bays": 7,
+      "Expansion Slots": 9,
+      "Volume": "82 L",
+      "Weight": "31.2 lbs"
+    },
+    has3D: true,
+    store: "Best Buy",
+    stock: "In stock"
+  },
+  {
+    id: 'case-10',
+    name: 'Silverstone ALTA F2 ATX Full Tower',
+    image: "/src/assets/Laptop1.png",
+    price: 14279.93, // Converted from 249.99 USD to PHP
+    specs: {
+      "Form Factor": "ATX Full Tower",
+      "Side Panel": "Tempered Glass",
+      "Manufacturer": "Silverstone",
+      "Color": "BLACK",
+      "Transparent Side Panel": "Yes",
+      "Max GPU Length": "490 mm",
+      "Max CPU Cooler Height": "192 mm",
+      "3.5\" Drive Bays": 6,
+      "2.5\" Drive Bays": 5,
+      "Expansion Slots": 8,
+      "Volume": "80 L",
+      "Weight": "33.5 lbs"
+    },
+    has3D: true,
+    store: "Newegg",
+    stock: "In stock"
+  },
+
+  // ATX Mid Tower Cases (10 samples)
+  {
+    id: 'case-11',
+    name: 'Corsair 3500X ARGB ATX Mid Tower',
+    image: "/src/assets/Laptop1.png",
+    price: 7985.93, // Converted from 139.99 USD to PHP
+    specs: {
+      "Form Factor": "ATX Mid Tower",
+      "Side Panel": "Tempered Glass",
+      "Manufacturer": "Corsair",
+      "Color": "BLACK",
+      "Transparent Side Panel": "Yes",
+      "Max GPU Length": "380 mm",
+      "Max CPU Cooler Height": "175 mm",
+      "3.5\" Drive Bays": 2,
+      "2.5\" Drive Bays": 4,
+      "Expansion Slots": 7,
+      "Volume": "52 L",
+      "Weight": "18.9 lbs"
+    },
+    has3D: true,
+    store: "Amazon",
+    stock: "In stock"
+  },
+  {
+    id: 'case-12',
     name: 'Corsair 4000D Airflow ATX Mid Tower',
     image: "/src/assets/Laptop1.png",
-    price: 5419.43, // Converted from 94.99 USD to PHP
+    price: 6847.93, // Converted from 119.99 USD to PHP
     specs: {
       "Form Factor": "ATX Mid Tower",
       "Side Panel": "Tempered Glass",
@@ -70,230 +280,23 @@ export const caseData = [
     stock: "In stock"
   },
   {
-    id: 'case-4',
-    name: 'Fractal Design Meshify C Mini MicroATX Mini Tower',
-    image: "/src/assets/Laptop1.png",
-    price: 5705.93, // Converted from 99.99 USD to PHP
-    specs: {
-      "Form Factor": "Micro ATX Mini Tower",
-      "Side Panel": "Tempered Glass",
-      "Manufacturer": "Fractal Design",
-      "Color": "BLACK",
-      "Transparent Side Panel": "Yes",
-      "Max GPU Length": "315 mm",
-      "Max CPU Cooler Height": "172 mm",
-      "3.5\" Drive Bays": 2,
-      "2.5\" Drive Bays": 3,
-      "Expansion Slots": 4,
-      "Volume": "39 L",
-      "Weight": "16.3 lbs"
-    },
-    has3D: false,
-    store: "Newegg",
-    stock: "In stock"
-  },
-  {
-    id: 'case-5',
-    name: 'Lian Li O11 Dynamic Mini Snow White',
-    image: "/src/assets/Laptop1.png",
-    price: 7415.93, // Converted from 129.99 USD to PHP
-    specs: {
-      "Form Factor": "ATX Mid Tower",
-      "Side Panel": "Tempered Glass",
-      "Manufacturer": "Lian Li",
-      "Color": "WHITE",
-      "Transparent Side Panel": "Yes",
-      "Max GPU Length": "395 mm",
-      "Max CPU Cooler Height": "170 mm",
-      "3.5\" Drive Bays": 1,
-      "2.5\" Drive Bays": 5,
-      "Expansion Slots": 7,
-      "Volume": "49 L",
-      "Weight": "15.4 lbs"
-    },
-    has3D: true,
-    store: "Amazon",
-    stock: "In stock"
-  },
-  {
-    id: 'case-6',
-    name: 'Cooler Master MasterBox Q300L MicroATX Mini Tower',
-    image: "/src/assets/Laptop1.png",
-    price: 2851.43, // Converted from 49.99 USD to PHP
-    specs: {
-      "Form Factor": "Micro ATX Mini Tower",
-      "Side Panel": "Acrylic",
-      "Manufacturer": "Cooler Master",
-      "Color": "BLACK",
-      "Transparent Side Panel": "Yes",
-      "Max GPU Length": "360 mm",
-      "Max CPU Cooler Height": "159 mm",
-      "3.5\" Drive Bays": 2,
-      "2.5\" Drive Bays": 3,
-      "Expansion Slots": 4,
-      "Volume": "33 L",
-      "Weight": "9.9 lbs"
-    },
-    has3D: false,
-    store: "Best Buy",
-    stock: "In stock"
-  },
-  {
-    id: 'case-7',
-    name: 'Phanteks Enthoo Pro Full Tower Chassis',
-    image: "/src/assets/Laptop1.png",
-    price: 7415.93, // Converted from 129.99 USD to PHP
-    specs: {
-      "Form Factor": "ATX Full Tower",
-      "Side Panel": "Tempered Glass",
-      "Manufacturer": "Phanteks",
-      "Color": "BLACK",
-      "Transparent Side Panel": "Yes",
-      "Max GPU Length": "490 mm",
-      "Max CPU Cooler Height": "193 mm",
-      "3.5\" Drive Bays": 6,
-      "2.5\" Drive Bays": 6,
-      "Expansion Slots": 8,
-      "Volume": "76 L",
-      "Weight": "29.8 lbs"
-    },
-    has3D: true,
-    store: "Newegg",
-    stock: "In stock"
-  },
-  {
-    id: 'case-8',
-    name: 'NZXT H1 Mini ITX Tower',
-    image: "/src/assets/Laptop1.png",
-    price: 11413.93, // Converted from 199.99 USD to PHP
-    specs: {
-      "Form Factor": "Mini-ITX Tower",
-      "Side Panel": "Tempered Glass",
-      "Manufacturer": "NZXT",
-      "Color": "BLACK",
-      "Transparent Side Panel": "Yes",
-      "Max GPU Length": "305 mm",
-      "Max CPU Cooler Height": "140 mm",
-      "3.5\" Drive Bays": 0,
-      "2.5\" Drive Bays": 2,
-      "Expansion Slots": 2,
-      "Volume": "27 L",
-      "Weight": "13.2 lbs"
-    },
-    has3D: true,
-    store: "Amazon",
-    stock: "In stock"
-  },
-  {
-    id: 'case-9',
-    name: 'be quiet! Pure Base 500DX ATX Mid Tower',
-    image: "/src/assets/Laptop1.png",
-    price: 6275.93, // Converted from 109.99 USD to PHP
-    specs: {
-      "Form Factor": "ATX Mid Tower",
-      "Side Panel": "Tempered Glass",
-      "Manufacturer": "be quiet!",
-      "Color": "BLACK",
-      "Transparent Side Panel": "Yes",
-      "Max GPU Length": "369 mm",
-      "Max CPU Cooler Height": "190 mm",
-      "3.5\" Drive Bays": 2,
-      "2.5\" Drive Bays": 4,
-      "Expansion Slots": 7,
-      "Volume": "49 L",
-      "Weight": "19.6 lbs"
-    },
-    has3D: false,
-    store: "Best Buy",
-    stock: "In stock"
-  },
-  {
-    id: 'case-10',
-    name: 'Thermaltake Core P3 ATX Mid Tower Open Frame',
-    image: "/src/assets/Laptop1.png",
-    price: 7985.93, // Converted from 139.99 USD to PHP
-    specs: {
-      "Form Factor": "ATX Mid Tower",
-      "Side Panel": "None",
-      "Manufacturer": "Thermaltake",
-      "Color": "BLACK",
-      "Transparent Side Panel": "No",
-      "Max GPU Length": "420 mm",
-      "Max CPU Cooler Height": "180 mm",
-      "3.5\" Drive Bays": 2,
-      "2.5\" Drive Bays": 4,
-      "Expansion Slots": 7,
-      "Volume": "N/A",
-      "Weight": "20.1 lbs"
-    },
-    has3D: true,
-    store: "Newegg",
-    stock: "In stock"
-  },
-  {
-    id: 'case-11',
-    name: 'ASUS TUF Gaming GT301 ATX Mid Tower',
-    image: "/src/assets/Laptop1.png",
-    price: 5135.93, // Converted from 89.99 USD to PHP
-    specs: {
-      "Form Factor": "ATX Mid Tower",
-      "Side Panel": "Tempered Glass",
-      "Manufacturer": "ASUS",
-      "Color": "BLACK",
-      "Transparent Side Panel": "Yes",
-      "Max GPU Length": "330 mm",
-      "Max CPU Cooler Height": "160 mm",
-      "3.5\" Drive Bays": 2,
-      "2.5\" Drive Bays": 4,
-      "Expansion Slots": 7,
-      "Volume": "47 L",
-      "Weight": "15.4 lbs"
-    },
-    has3D: false,
-    store: "Amazon",
-    stock: "In stock"
-  },
-  {
-    id: 'case-12',
-    name: 'SilverStone Sugo SG13 Mini-ITX Desktop',
-    image: "/src/assets/Laptop1.png",
-    price: 3423.93, // Converted from 59.99 USD to PHP
-    specs: {
-      "Form Factor": "Mini-ITX Desktop",
-      "Side Panel": "Steel",
-      "Manufacturer": "SilverStone",
-      "Color": "WHITE",
-      "Transparent Side Panel": "No",
-      "Max GPU Length": "266 mm",
-      "Max CPU Cooler Height": "61 mm",
-      "3.5\" Drive Bays": 1,
-      "2.5\" Drive Bays": 2,
-      "Expansion Slots": 2,
-      "Volume": "11.5 L",
-      "Weight": "7.1 lbs"
-    },
-    has3D: false,
-    store: "Best Buy",
-    stock: "In stock"
-  },
-  {
     id: 'case-13',
-    name: 'Corsair Obsidian 1000D Super Tower',
+    name: 'Corsair FRAME 4000D RS ARGB ATX Mid Tower',
     image: "/src/assets/Laptop1.png",
-    price: 28528.93, // Converted from 499.99 USD to PHP
+    price: 9123.93, // Converted from 159.99 USD to PHP
     specs: {
-      "Form Factor": "EATX Full Tower",
+      "Form Factor": "ATX Mid Tower",
       "Side Panel": "Tempered Glass",
       "Manufacturer": "Corsair",
       "Color": "BLACK",
       "Transparent Side Panel": "Yes",
-      "Max GPU Length": "500 mm",
-      "Max CPU Cooler Height": "190 mm",
-      "3.5\" Drive Bays": 4,
-      "2.5\" Drive Bays": 6,
-      "Expansion Slots": 10,
-      "Volume": "121 L",
-      "Weight": "35.3 lbs"
+      "Max GPU Length": "370 mm",
+      "Max CPU Cooler Height": "172 mm",
+      "3.5\" Drive Bays": 2,
+      "2.5\" Drive Bays": 5,
+      "Expansion Slots": 7,
+      "Volume": "48 L",
+      "Weight": "19.2 lbs"
     },
     has3D: true,
     store: "Newegg",
@@ -301,137 +304,137 @@ export const caseData = [
   },
   {
     id: 'case-14',
-    name: 'MSI MPG GUNGNIR 110R ATX Mid Tower',
+    name: 'Fractal Design North ATX Mid Tower',
     image: "/src/assets/Laptop1.png",
-    price: 6847.93, // Converted from 119.99 USD to PHP
+    price: 10258.29, // Converted from 179.97 USD to PHP
     specs: {
       "Form Factor": "ATX Mid Tower",
       "Side Panel": "Tempered Glass",
-      "Manufacturer": "MSI",
-      "Color": "WHITE",
+      "Manufacturer": "Fractal Design",
+      "Color": "BLACK",
       "Transparent Side Panel": "Yes",
-      "Max GPU Length": "340 mm",
+      "Max GPU Length": "355 mm",
       "Max CPU Cooler Height": "170 mm",
       "3.5\" Drive Bays": 2,
-      "2.5\" Drive Bays": 4,
+      "2.5\" Drive Bays": 3,
       "Expansion Slots": 7,
-      "Volume": "48 L",
-      "Weight": "17.6 lbs"
+      "Volume": "44 L",
+      "Weight": "16.8 lbs"
     },
-    has3D: false,
+    has3D: true,
     store: "Amazon",
     stock: "In stock"
   },
   {
     id: 'case-15',
-    name: 'In Win 101 MicroATX Mid Tower',
+    name: 'HYTE Y70 Touch Infinite ATX Mid Tower Black',
     image: "/src/assets/Laptop1.png",
-    price: 4563.93, // Converted from 79.99 USD to PHP
+    price: 17119.93, // Converted from 299.99 USD to PHP
     specs: {
-      "Form Factor": "Micro ATX Mid Tower",
+      "Form Factor": "ATX Mid Tower",
       "Side Panel": "Tempered Glass",
-      "Manufacturer": "In Win",
+      "Manufacturer": "HYTE",
       "Color": "BLACK",
       "Transparent Side Panel": "Yes",
-      "Max GPU Length": "320 mm",
-      "Max CPU Cooler Height": "160 mm",
+      "Max GPU Length": "460 mm",
+      "Max CPU Cooler Height": "185 mm",
       "3.5\" Drive Bays": 2,
-      "2.5\" Drive Bays": 3,
-      "Expansion Slots": 5,
-      "Volume": "42 L",
-      "Weight": "14.3 lbs"
+      "2.5\" Drive Bays": 5,
+      "Expansion Slots": 7,
+      "Volume": "58 L",
+      "Weight": "28.3 lbs"
     },
-    has3D: false,
+    has3D: true,
     store: "Best Buy",
     stock: "In stock"
   },
   {
     id: 'case-16',
-    name: 'DeepCool MATREXX 55 MESH ATX Mid Tower',
+    name: 'HYTE Y70 Touch Infinite ATX Mid Tower',
     image: "/src/assets/Laptop1.png",
-    price: 3993.93, // Converted from 69.99 USD to PHP
+    price: 17119.93, // Converted from 299.99 USD to PHP
     specs: {
       "Form Factor": "ATX Mid Tower",
       "Side Panel": "Tempered Glass",
-      "Manufacturer": "DeepCool",
-      "Color": "BLACK",
+      "Manufacturer": "HYTE",
+      "Color": "WHITE",
       "Transparent Side Panel": "Yes",
-      "Max GPU Length": "370 mm",
-      "Max CPU Cooler Height": "165 mm",
+      "Max GPU Length": "460 mm",
+      "Max CPU Cooler Height": "185 mm",
       "3.5\" Drive Bays": 2,
-      "2.5\" Drive Bays": 3,
+      "2.5\" Drive Bays": 5,
       "Expansion Slots": 7,
-      "Volume": "46 L",
-      "Weight": "14.6 lbs"
+      "Volume": "58 L",
+      "Weight": "28.3 lbs"
     },
-    has3D: false,
+    has3D: true,
     store: "Newegg",
     stock: "In stock"
   },
   {
     id: 'case-17',
-    name: 'Cougar MX330-G Air ATX Mid Tower',
+    name: 'Lian Li Lancool 207 ATX Mid Tower',
     image: "/src/assets/Laptop1.png",
-    price: 2851.43, // Converted from 49.99 USD to PHP
+    price: 7985.93, // Converted from 139.99 USD to PHP
     specs: {
       "Form Factor": "ATX Mid Tower",
-      "Side Panel": "Acrylic",
-      "Manufacturer": "Cougar",
+      "Side Panel": "Tempered Glass",
+      "Manufacturer": "Lian Li",
       "Color": "BLACK",
       "Transparent Side Panel": "Yes",
-      "Max GPU Length": "350 mm",
-      "Max CPU Cooler Height": "155 mm",
+      "Max GPU Length": "420 mm",
+      "Max CPU Cooler Height": "176 mm",
       "3.5\" Drive Bays": 2,
-      "2.5\" Drive Bays": 3,
+      "2.5\" Drive Bays": 4,
       "Expansion Slots": 7,
-      "Volume": "44 L",
-      "Weight": "11.9 lbs"
+      "Volume": "50 L",
+      "Weight": "19.8 lbs"
     },
-    has3D: false,
+    has3D: true,
     store: "Amazon",
     stock: "In stock"
   },
   {
     id: 'case-18',
-    name: 'GAMDIAS TALOS E1 MESH MicroATX Mini Tower',
+    name: 'Lian Li LANCOOL 217 ATX Mid Tower',
     image: "/src/assets/Laptop1.png",
-    price: 3423.93, // Converted from 59.99 USD to PHP
+    price: 8559.43, // Converted from 149.99 USD to PHP
     specs: {
-      "Form Factor": "Micro ATX Mini Tower",
+      "Form Factor": "ATX Mid Tower",
       "Side Panel": "Tempered Glass",
-      "Manufacturer": "GAMDIAS",
+      "Manufacturer": "Lian Li",
       "Color": "BLACK",
       "Transparent Side Panel": "Yes",
-      "Max GPU Length": "320 mm",
-      "Max CPU Cooler Height": "160 mm",
+      "Max GPU Length": "430 mm",
+      "Max CPU Cooler Height": "178 mm",
       "3.5\" Drive Bays": 2,
-      "2.5\" Drive Bays": 2,
-      "Expansion Slots": 4,
-      "Volume": "36 L",
-      "Weight": "12.3 lbs"
+      "2.5\" Drive Bays": 5,
+      "Expansion Slots": 7,
+      "Volume": "52 L",
+      "Weight": "20.5 lbs"
     },
-    has3D: false,
+    has3D: true,
     store: "Best Buy",
     stock: "In stock"
   },
   {
     id: 'case-19',
-    name: 'AeroCool Cylon RGB ATX Mid Tower',
+    name: 'NZXT H5 Flow (2024) ATX Mid Tower White',
     image: "/src/assets/Laptop1.png",
-    price: 3137.93, // Converted from 54.99 USD to PHP
+    price: 6847.93, // Converted from 119.99 USD to PHP
     specs: {
       "Form Factor": "ATX Mid Tower",
-      "Side Panel": "Acrylic",
-      "Manufacturer": "AeroCool",
-      "Color": "BLACK",
+      "Side Panel": "Tempered Glass",
+      "Manufacturer": "NZXT",
+      "Color": "WHITE",
       "Transparent Side Panel": "Yes",
-      "Max GPU Length": "330 mm",
-      "Max CPU Cooler Height": "155 mm",
+      "Max GPU Length": "365 mm",
+      "Max CPU Cooler Height": "165 mm",
       "3.5\" Drive Bays": 2,
       "2.5\" Drive Bays": 3,
       "Expansion Slots": 7,
-      "Volume": "42 L",
-      "Weight": "11.2 lbs"
+      "Volume": "43 L",
+      "Weight": "16.2 lbs"
     },
     has3D: false,
     store: "Newegg",
@@ -439,24 +442,24 @@ export const caseData = [
   },
   {
     id: 'case-20',
-    name: 'EVGA DG-75 ATX Mid Tower',
+    name: 'NZXT H5 Flow (2024) ATX Mid Tower',
     image: "/src/assets/Laptop1.png",
-    price: 7415.93, // Converted from 129.99 USD to PHP
+    price: 6847.93, // Converted from 119.99 USD to PHP
     specs: {
       "Form Factor": "ATX Mid Tower",
       "Side Panel": "Tempered Glass",
-      "Manufacturer": "EVGA",
+      "Manufacturer": "NZXT",
       "Color": "BLACK",
       "Transparent Side Panel": "Yes",
-      "Max GPU Length": "350 mm",
+      "Max GPU Length": "365 mm",
       "Max CPU Cooler Height": "165 mm",
       "3.5\" Drive Bays": 2,
-      "2.5\" Drive Bays": 4,
+      "2.5\" Drive Bays": 3,
       "Expansion Slots": 7,
-      "Volume": "47 L",
-      "Weight": "18.7 lbs"
+      "Volume": "43 L",
+      "Weight": "16.2 lbs"
     },
-    has3D: true,
+    has3D: false,
     store: "Amazon",
     stock: "In stock"
   }

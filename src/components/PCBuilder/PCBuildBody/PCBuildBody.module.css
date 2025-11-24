@@ -355,3 +355,24 @@
         justify-content: flex-start;
     }
 }
+
+.clearAllContainer {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 1rem;
+}
+
+.clearAllButton {
+    background-color: #ff4444;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background-color 0.2s;
+}
+
+.clearAllButton:hover {
+    background-color: #cc0000;
+}

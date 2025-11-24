@@ -2,12 +2,13 @@ import React, { useState, useEffect } from 'react';
 import styles from './PCBuildHeader.module.css';
 import BuildCostModal from './BuildCostModal/BuildCostModal';
 
-const PCBuildHeader = ({ selectedComponents = {} }) => {
+const PCBuildHeader = ({ selectedComponents = {}, onClearAll, hasSelectedComponents }) => {
   const [isEditing, setIsEditing] = useState(false);
   const [buildName, setBuildName] = useState('New Build');
   const [totalPrice, setTotalPrice] = useState(0);
   const [displayPrice, setDisplayPrice] = useState(0);
   const [isCostModalOpen, setIsCostModalOpen] = useState(false);
+  const [isClearAllModalOpen, setIsClearAllModalOpen] = useState(false);
   
   // Calculate total price whenever selectedComponents changes
   useEffect(() => {
@@ -63,6 +64,19 @@ const PCBuildHeader = ({ selectedComponents = {} }) => {
 
   const handleCostModalClose = () => {
     setIsCostModalOpen(false);
+  };
+
+  const handleClearAllClick = () => {
+    setIsClearAllModalOpen(true);
+  };
+
+  const handleClearAllConfirm = () => {
+    onClearAll();
+    setIsClearAllModalOpen(false);
+  };
+
+  const handleClearAllCancel = () => {
+    setIsClearAllModalOpen(false);
   };
 
   const formatPrice = (price) => {
@@ -131,6 +145,28 @@ const PCBuildHeader = ({ selectedComponents = {} }) => {
               </div>
             </div>
           </div>
+
+          {/* Clear All Button */}
+          {hasSelectedComponents && (
+            <div className={styles.clearAllSection}>
+              <button 
+                className={styles.clearAllButton}
+                onClick={handleClearAllClick}
+              >
+                <span className={styles.buttonIcon}>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M3 6h18"></path>
+                    <path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6"></path>
+                    <path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2"></path>
+                    <line x1="10" x2="10" y1="11" y2="17"></line>
+                    <line x1="14" x2="14" y1="11" y2="17"></line>
+                  </svg>
+                </span>
+                <span className={styles.tabletText}>Clear All Components</span>
+                <span className={styles.mobileText}>Clear All</span>
+              </button>
+            </div>
+          )}
         </div>
 
         <div className={styles.statsContainer}>
@@ -303,6 +339,46 @@ const PCBuildHeader = ({ selectedComponents = {} }) => {
         selectedComponents={selectedComponents}
         totalPrice={totalPrice}
       />
+
+      {/* Clear All Confirmation Modal */}
+      {isClearAllModalOpen && (
+        <div className={styles.modalOverlay}>
+          <div className={styles.modalContent}>
+            <div className={styles.modalHeader}>
+              <div className={styles.modalIcon}>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M3 6h18"></path>
+                  <path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6"></path>
+                  <path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2"></path>
+                  <line x1="10" x2="10" y1="11" y2="17"></line>
+                  <line x1="14" x2="14" y1="11" y2="17"></line>
+                </svg>
+              </div>
+              <h3 className={styles.modalTitle}>Clear All Components</h3>
+            </div>
+            
+            <div className={styles.modalBody}>
+              <p>Are you sure you want to clear all components from your build?</p>
+              <p className={styles.modalWarning}>This action cannot be undone.</p>
+            </div>
+            
+            <div className={styles.modalActions}>
+              <button 
+                className={styles.cancelButton}
+                onClick={handleClearAllCancel}
+              >
+                Cancel
+              </button>
+              <button 
+                className={styles.confirmButton}
+                onClick={handleClearAllConfirm}
+              >
+                Clear All
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </>
   );
 };
