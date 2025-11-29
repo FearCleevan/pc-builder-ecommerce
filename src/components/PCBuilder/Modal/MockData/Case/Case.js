@@ -85,9 +85,9 @@ export const caseData = [
   },
   {
     id: 'case-4',
-    name: 'Corsair 9000D RGB AIRFLOW ATX Full Tower',
+    name: 'Corsair 9000D RGB AIRFLOW ATX Full',
     type: "case",
-    image: generateImageUrl('Corsair 9000D RGB AIRFLOW ATX Full Tower'),
+    image: generateImageUrl('Corsair 9000D RGB AIRFLOW ATX Full'),
     price: 22827.93, // Converted from 399.99 USD to PHP
     specs: {
       "Form Factor": "ATX Full Tower",
@@ -109,9 +109,9 @@ export const caseData = [
   },
   {
     id: 'case-5',
-    name: 'Fractal Design North XL ATX Full Tower',
+    name: 'Fractal Design North XL ATX Full',
     type: "case",
-    image: generateImageUrl('Fractal Design North XL ATX Full Tower'),
+    image: generateImageUrl('Fractal Design North XL ATX Full'),
     price: 14279.93, // Converted from 249.99 USD to PHP
     specs: {
       "Form Factor": "ATX Full Tower",
@@ -133,9 +133,9 @@ export const caseData = [
   },
   {
     id: 'case-6',
-    name: 'Fractal Design Pop XL Air ATX Full Tower',
+    name: 'Fractal Design Pop XL Air ATX Full',
     type: "case",
-    image: generateImageUrl('Fractal Design Pop XL Air ATX Full Tower'),
+    image: generateImageUrl('Fractal Design Pop XL Air ATX Full'),
     price: 10258.29, // Converted from 179.97 USD to PHP
     specs: {
       "Form Factor": "ATX Full Tower",
@@ -157,9 +157,9 @@ export const caseData = [
   },
   {
     id: 'case-7',
-    name: 'Fractal Design Pop XL Silent ATX Full Tower',
+    name: 'Fractal Design Pop XL Silent ATX Full',
     type: "case",
-    image: generateImageUrl('Fractal Design Pop XL Silent ATX Full Tower'),
+    image: generateImageUrl('Fractal Design Pop XL Silent ATX Full'),
     price: 10813.93, // Converted from 189.49 USD to PHP
     specs: {
       "Form Factor": "ATX Full Tower",
@@ -181,9 +181,9 @@ export const caseData = [
   },
   {
     id: 'case-8',
-    name: 'Lian Li O11 Dynamic EVO XL ATX Full Tower White',
+    name: 'Lian Li O11 Dynamic EVO XL ATX Full White',
     type: "case",
-    image: generateImageUrl('Lian Li O11 Dynamic EVO XL ATX Full Tower White'),
+    image: generateImageUrl('Lian Li O11 Dynamic EVO XL ATX Full White'),
     price: 17119.93, // Converted from 299.99 USD to PHP
     specs: {
       "Form Factor": "ATX Full Tower",
@@ -205,9 +205,9 @@ export const caseData = [
   },
   {
     id: 'case-9',
-    name: 'Lian Li O11 Dynamic EVO XL ATX Full Tower',
+    name: 'Lian Li O11 Dynamic EVO XL ATX Full',
     type: "case",
-    image: generateImageUrl('Lian Li O11 Dynamic EVO XL ATX Full Tower'),
+    image: generateImageUrl('Lian Li O11 Dynamic EVO XL ATX Full'),
     price: 17119.93, // Converted from 299.99 USD to PHP
     specs: {
       "Form Factor": "ATX Full Tower",
@@ -229,9 +229,9 @@ export const caseData = [
   },
   {
     id: 'case-10',
-    name: 'Silverstone ALTA F2 ATX Full Tower',
+    name: 'Silverstone ALTA F2 ATX Full',
     type: "case",
-    image: generateImageUrl('Silverstone ALTA F2 ATX Full Tower'),
+    image: generateImageUrl('Silverstone ALTA F2 ATX Full'),
     price: 14279.93, // Converted from 249.99 USD to PHP
     specs: {
       "Form Factor": "ATX Full Tower",
