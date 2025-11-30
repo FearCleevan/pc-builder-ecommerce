@@ -1,4 +1,28 @@
 import React from 'react';
+import { 
+  FiTrendingUp, 
+  FiShoppingCart, 
+  FiUsers, 
+  FiPackage,
+  FiBell,
+  FiClock,
+  FiCalendar,
+  FiSettings,
+  FiUserPlus,
+  FiDollarSign,
+  FiPieChart,
+  FiActivity,
+  FiPlus,
+  FiEye,
+  FiUser,
+  FiChevronLeft,
+  FiChevronRight
+} from 'react-icons/fi';
+import { 
+  HiOutlineExclamation,
+  HiOutlineCheckCircle,
+  HiOutlineInformationCircle
+} from 'react-icons/hi';
 import styles from './MainPage.module.css';
 
 const MainPage = ({ activeMenu }) => {
@@ -9,11 +33,11 @@ const MainPage = ({ activeMenu }) => {
   };
 
   const categoryData = [
-    { id: 0, value: 35, label: 'Electronics', color: '#ff2c2c' },
-    { id: 1, value: 25, label: 'Clothing', color: '#ff6600' },
-    { id: 2, value: 20, label: 'Home & Garden', color: '#4CAF50' },
-    { id: 3, value: 15, label: 'Sports', color: '#2196F3' },
-    { id: 4, value: 5, label: 'Others', color: '#9C27B0' }
+    { id: 0, value: 35, label: 'Electronics', color: 'var(--primary-color)' },
+    { id: 1, value: 25, label: 'Clothing', color: 'var(--accent-color-1)' },
+    { id: 2, value: 20, label: 'Home & Garden', color: 'var(--accent-color-2)' },
+    { id: 3, value: 15, label: 'Sports', color: 'var(--accent-color-3)' },
+    { id: 4, value: 5, label: 'Others', color: 'var(--accent-color-4)' }
   ];
 
   const recentActivities = [
@@ -32,23 +56,33 @@ const MainPage = ({ activeMenu }) => {
   ];
 
   const quickStats = [
-    { icon: '💰', title: 'Revenue', value: '$24,580', change: '+12%' },
-    { icon: '🛒', title: 'Orders', value: '1,248', change: '+8%' },
-    { icon: '👥', title: 'Customers', value: '8,452', change: '+15%' },
-    { icon: '📦', title: 'Products', value: '356', change: '+5%' }
+    { icon: <FiDollarSign />, title: 'Revenue', value: '$24,580', change: '+12%' },
+    { icon: <FiShoppingCart />, title: 'Orders', value: '1,248', change: '+8%' },
+    { icon: <FiUsers />, title: 'Customers', value: '8,452', change: '+15%' },
+    { icon: <FiPackage />, title: 'Products', value: '356', change: '+5%' }
   ];
 
   const getActivityIcon = (type) => {
     const icons = {
-      order: '🛒',
-      product: '📦',
-      user: '👤',
-      payment: '💳',
-      inventory: '📋'
+      order: <FiShoppingCart />,
+      product: <FiPackage />,
+      user: <FiUserPlus />,
+      payment: <FiDollarSign />,
+      inventory: <FiActivity />
     };
-    return icons[type] || '⏱️';
+    return icons[type] || <FiClock />;
   };
 
+  const getNotificationIcon = (type) => {
+    const icons = {
+      warning: <HiOutlineExclamation />,
+      success: <HiOutlineCheckCircle />,
+      info: <HiOutlineInformationCircle />
+    };
+    return icons[type] || <HiOutlineInformationCircle />;
+  };
+
+  // Add the missing function
   const getNotificationColor = (type) => {
     const colors = {
       warning: styles.warning,
@@ -180,7 +214,9 @@ const MainPage = ({ activeMenu }) => {
           <div className={styles.chartsRow}>
             <div className={styles.chartCard}>
               <div className={styles.cardHeader}>
-                <span className={styles.cardIcon}>📈</span>
+                <div className={styles.cardIcon}>
+                  <FiTrendingUp />
+                </div>
                 <h3 className={styles.cardTitle}>Revenue Analytics</h3>
               </div>
               <LineChart data={revenueData.data} labels={revenueData.labels} />
@@ -188,6 +224,9 @@ const MainPage = ({ activeMenu }) => {
 
             <div className={styles.chartCard}>
               <div className={styles.cardHeader}>
+                <div className={styles.cardIcon}>
+                  <FiPieChart />
+                </div>
                 <h3 className={styles.cardTitle}>Category Distribution</h3>
               </div>
               <PieChart data={categoryData} />
@@ -199,7 +238,9 @@ const MainPage = ({ activeMenu }) => {
             {/* Recent Activities */}
             <div className={styles.infoCard}>
               <div className={styles.cardHeader}>
-                <span className={styles.cardIcon}>⏱️</span>
+                <div className={styles.cardIcon}>
+                  <FiClock />
+                </div>
                 <h3 className={styles.cardTitle}>Recent Activities</h3>
               </div>
               <div className={styles.activitiesList}>
@@ -223,14 +264,16 @@ const MainPage = ({ activeMenu }) => {
             {/* Notifications */}
             <div className={styles.infoCard}>
               <div className={styles.cardHeader}>
-                <span className={styles.cardIcon}>🔔</span>
+                <div className={styles.cardIcon}>
+                  <FiBell />
+                </div>
                 <h3 className={styles.cardTitle}>System Notifications</h3>
               </div>
               <div className={styles.notificationsList}>
                 {notifications.map((noti) => (
                   <div key={noti.id} className={styles.notificationItem}>
                     <div className={styles.notificationIcon}>
-                      {noti.type === 'success' ? '✅' : '⚠️'}
+                      {getNotificationIcon(noti.type)}
                     </div>
                     <div className={styles.notificationContent}>
                       <div className={styles.notificationMessage}>
@@ -250,14 +293,20 @@ const MainPage = ({ activeMenu }) => {
             {/* Calendar */}
             <div className={styles.infoCard}>
               <div className={styles.cardHeader}>
-                <span className={styles.cardIcon}>📅</span>
+                <div className={styles.cardIcon}>
+                  <FiCalendar />
+                </div>
                 <h3 className={styles.cardTitle}>Calendar</h3>
               </div>
               <div className={styles.calendar}>
                 <div className={styles.calendarHeader}>
-                  <button className={styles.calendarNav}>‹</button>
+                  <button className={styles.calendarNav}>
+                    <FiChevronLeft />
+                  </button>
                   <span className={styles.calendarMonth}>November 2024</span>
-                  <button className={styles.calendarNav}>›</button>
+                  <button className={styles.calendarNav}>
+                    <FiChevronRight />
+                  </button>
                 </div>
                 <div className={styles.calendarGrid}>
                   {['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'].map(day => (
@@ -284,29 +333,39 @@ const MainPage = ({ activeMenu }) => {
           {/* Performance Metrics & Quick Actions */}
           <div className={styles.bottomSection}>
             <div className={styles.infoCard}>
-              <h3 className={styles.cardTitle}>System Performance</h3>
+              <div className={styles.cardHeader}>
+                <div className={styles.cardIcon}>
+                  <FiActivity />
+                </div>
+                <h3 className={styles.cardTitle}>System Performance</h3>
+              </div>
               <ProgressBar value={65} label="CPU Usage" />
               <ProgressBar value={45} label="Memory Usage" />
               <ProgressBar value={78} label="Storage" />
             </div>
 
             <div className={styles.infoCard}>
-              <h3 className={styles.cardTitle}>Quick Actions</h3>
+              <div className={styles.cardHeader}>
+                <div className={styles.cardIcon}>
+                  <FiSettings />
+                </div>
+                <h3 className={styles.cardTitle}>Quick Actions</h3>
+              </div>
               <div className={styles.actionsGrid}>
                 <button className={styles.primaryButton}>
-                  <span className={styles.buttonIcon}>📦</span>
+                  <FiPlus className={styles.buttonIcon} />
                   Add Product
                 </button>
                 <button className={styles.outlineButton}>
-                  <span className={styles.buttonIcon}>🛒</span>
+                  <FiEye className={styles.buttonIcon} />
                   View Orders
                 </button>
                 <button className={styles.outlineButton}>
-                  <span className={styles.buttonIcon}>👥</span>
+                  <FiUsers className={styles.buttonIcon} />
                   Manage Users
                 </button>
                 <button className={styles.outlineButton}>
-                  <span className={styles.buttonIcon}>⚙️</span>
+                  <FiSettings className={styles.buttonIcon} />
                   Settings
                 </button>
               </div>
