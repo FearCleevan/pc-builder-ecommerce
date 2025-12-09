@@ -1,0 +1,21 @@
+.productListingContainer {
+    padding: 20px;
+    background: #f5f6fa;
+    padding: 20px;
+    width: 100%;
+    box-sizing: border-box;
+    overflow-y: auto;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .productListingContainer {
+        padding: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .productListingContainer {
+        padding: 5px;
+    }
+}

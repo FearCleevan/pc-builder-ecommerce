@@ -10,6 +10,7 @@ import DashboardPanel from './AdminPanel/Dashboard/DashboardPanel/DashboardPanel
 import UserManagement from './AdminPanel/UserManagement/UserManagement';
 import './index.css';
 import { onAuthChange } from './firebase/services/authService';
+import ProductListing from './AdminPanel/Dashboard/Products/ProductListing/MainPage';
 
 function App() {
   const [currentUser, setCurrentUser] = useState(null);
@@ -102,6 +103,16 @@ function App() {
             element={
               <ProtectedAdminRoute>
                 <DashboardPanel />
+              </ProtectedAdminRoute>
+            } 
+          />
+
+          {/* Direct access routes (optional - can be removed if using only DashboardPanel) */}
+          <Route 
+            path="/admin/productlisting" 
+            element={
+              <ProtectedAdminRoute>
+                <ProductListing />
               </ProtectedAdminRoute>
             } 
           />

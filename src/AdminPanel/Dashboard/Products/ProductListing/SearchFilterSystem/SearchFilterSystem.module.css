@@ -1,0 +1,225 @@
+.searchFilterContainer {
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.searchBar {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.searchInputWrapper {
+  flex: 1;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.searchIcon {
+  position: absolute;
+  left: 15px;
+  color: #7f8c8d;
+  z-index: 1;
+}
+
+.searchInput {
+  width: 100%;
+  padding: 12px 20px 12px 45px;
+  border: 2px solid #e9ecef;
+  border-radius: 10px;
+  font-size: 14px;
+  transition: all 0.3s ease;
+  background: #f8f9fa;
+}
+
+.searchInput:focus {
+  outline: none;
+  border-color: #3498db;
+  background: white;
+  box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+}
+
+.clearSearchButton {
+  position: absolute;
+  right: 15px;
+  background: none;
+  border: none;
+  color: #e74c3c;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.filterToggleButton {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 20px;
+  background: #f8f9fa;
+  border: 2px solid #e9ecef;
+  border-radius: 10px;
+  color: #495057;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.filterToggleButton:hover {
+  background: #e9ecef;
+  border-color: #dee2e6;
+}
+
+.filterToggleButton.active {
+  background: #3498db;
+  border-color: #3498db;
+  color: white;
+}
+
+.filterBadge {
+  background: #e74c3c;
+  color: white;
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.advancedFilters {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  padding: 20px;
+  background: #f8f9fa;
+  border-radius: 10px;
+  border: 1px solid #e9ecef;
+  animation: slideDown 0.3s ease;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.filterGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.filterLabel {
+  font-size: 13px;
+  font-weight: 600;
+  color: #495057;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.filterSelect {
+  padding: 10px 15px;
+  border: 1px solid #dee2e6;
+  border-radius: 8px;
+  background: white;
+  font-size: 14px;
+  color: #2c3e50;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.filterSelect:focus {
+  outline: none;
+  border-color: #3498db;
+  box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+}
+
+.priceRangeInputs {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.priceInput {
+  flex: 1;
+  padding: 10px 15px;
+  border: 1px solid #dee2e6;
+  border-radius: 8px;
+  font-size: 14px;
+  text-align: center;
+}
+
+.priceInput:focus {
+  outline: none;
+  border-color: #3498db;
+}
+
+.priceSeparator {
+  color: #7f8c8d;
+  font-weight: 600;
+}
+
+.filterActions {
+  grid-column: 1 / -1;
+  display: flex;
+  justify-content: flex-end;
+  padding-top: 10px;
+  border-top: 1px solid #e9ecef;
+}
+
+.clearFiltersButton {
+  padding: 10px 20px;
+  background: #e74c3c;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.clearFiltersButton:hover {
+  background: #c0392b;
+  transform: translateY(-2px);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .searchBar {
+    flex-direction: column;
+  }
+  
+  .advancedFilters {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .searchInput {
+    padding: 10px 15px 10px 40px;
+    font-size: 13px;
+  }
+  
+  .filterToggleButton {
+    padding: 10px 15px;
+    font-size: 13px;
+  }
+  
+  .priceRangeInputs {
+    flex-direction: column;
+  }
+  
+  .priceSeparator {
+    margin: 5px 0;
+  }
+}

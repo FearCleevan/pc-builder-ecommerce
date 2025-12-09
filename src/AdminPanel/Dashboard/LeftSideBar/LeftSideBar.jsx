@@ -17,10 +17,12 @@ const LeftSideBar = ({ isCollapsed, onMenuClick, isMobile, currentPage }) => {
   const [activeDropdown, setActiveDropdown] = useState(null);
   const [hoveredMenu, setHoveredMenu] = useState(null);
 
-  // Keep ADMINISTRATION dropdown open when on user management page
+  // Keep dropdowns open when on their related pages
   useEffect(() => {
     if (currentPage === 'user-management') {
       setActiveDropdown('ADMINISTRATION');
+    } else if (currentPage === 'product-listing') {
+      setActiveDropdown('PRODUCTS');
     }
   }, [currentPage]);
 
@@ -71,7 +73,9 @@ const LeftSideBar = ({ isCollapsed, onMenuClick, isMobile, currentPage }) => {
           >
             <button
               className={`${styles.menuButton} ${
-                currentPage === 'user-management' && item.name === 'ADMINISTRATION' ? styles.activeMenu : ''
+                (currentPage === 'user-management' && item.name === 'ADMINISTRATION') ||
+                (currentPage === 'product-listing' && item.name === 'PRODUCTS') 
+                  ? styles.activeMenu : ''
               }`}
               onClick={() => handleMenuItemClick(item)}
               data-tooltip={isCollapsed ? item.name : ''}
@@ -95,7 +99,9 @@ const LeftSideBar = ({ isCollapsed, onMenuClick, isMobile, currentPage }) => {
                   <button
                     key={subItem}
                     className={`${styles.subMenuItem} ${
-                      currentPage === 'user-management' && subItem === 'Admin Accounts' ? styles.activeSubMenu : ''
+                      (currentPage === 'user-management' && subItem === 'User Management') ||
+                      (currentPage === 'product-listing' && subItem === 'All Products')
+                        ? styles.activeSubMenu : ''
                     }`}
                     onClick={() => handleMenuItemClick(item, subItem)}
                   >

@@ -1,0 +1,393 @@
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.modal {
+  background: white;
+  border-radius: 16px;
+  width: 90%;
+  max-width: 500px;
+  max-height: 90vh;
+  overflow-y: auto;
+  animation: slideUp 0.3s ease;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.modalHeader {
+  padding: 20px 25px;
+  border-bottom: 1px solid #e9ecef;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  background: white;
+  z-index: 1;
+  border-radius: 16px 16px 0 0;
+}
+
+.modalTitle {
+  font-size: 20px;
+  font-weight: 700;
+  color: #2c3e50;
+  margin: 0;
+}
+
+.closeButton {
+  background: none;
+  border: none;
+  color: #6c757d;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+}
+
+.closeButton:hover {
+  background: #f8f9fa;
+  color: #e74c3c;
+}
+
+.modalContent {
+  padding: 25px;
+}
+
+/* Form Styles */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #495057;
+}
+
+.input,
+.select {
+  padding: 12px 16px;
+  border: 2px solid #e9ecef;
+  border-radius: 8px;
+  font-size: 14px;
+  color: #2c3e50;
+  transition: all 0.2s ease;
+  background: white;
+}
+
+.input:focus,
+.select:focus {
+  outline: none;
+  border-color: #3498db;
+  box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+}
+
+.formActions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+.cancelButton {
+  padding: 12px 24px;
+  background: #f8f9fa;
+  border: 2px solid #e9ecef;
+  border-radius: 8px;
+  color: #495057;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.cancelButton:hover {
+  background: #e9ecef;
+  border-color: #dee2e6;
+}
+
+.saveButton {
+  padding: 12px 24px;
+  background: #3498db;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.saveButton:hover {
+  background: #2980b9;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(52, 152, 219, 0.2);
+}
+
+/* Toggle Stock Styles */
+.toggleContent,
+.deleteContent,
+.viewContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.toggleIcon,
+.deleteIcon {
+  margin-bottom: 20px;
+}
+
+.toggleTitle,
+.deleteTitle,
+.viewTitle {
+  font-size: 18px;
+  font-weight: 700;
+  color: #2c3e50;
+  margin: 0 0 15px 0;
+}
+
+.toggleDescription,
+.deleteDescription {
+  font-size: 14px;
+  color: #6c757d;
+  line-height: 1.6;
+  margin: 0 0 25px 0;
+}
+
+.deleteDescription strong {
+  color: #2c3e50;
+}
+
+.toggleActions,
+.deleteActions {
+  display: flex;
+  gap: 15px;
+  width: 100%;
+}
+
+.toggleButton {
+  flex: 1;
+  padding: 12px 24px;
+  background: #27ae60;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.toggleButton:hover {
+  background: #219653;
+  transform: translateY(-2px);
+}
+
+.deleteButton {
+  flex: 1;
+  padding: 12px 24px;
+  background: #e74c3c;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.deleteButton:hover {
+  background: #c0392b;
+  transform: translateY(-2px);
+}
+
+/* View Details Styles */
+.viewHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 25px;
+}
+
+.viewGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 15px;
+  width: 100%;
+  margin-bottom: 25px;
+}
+
+.viewItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 0;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.viewItem:last-child {
+  border-bottom: none;
+}
+
+.viewLabel {
+  font-weight: 600;
+  color: #495057;
+  font-size: 14px;
+}
+
+.viewValue {
+  color: #2c3e50;
+  font-size: 14px;
+  text-align: right;
+}
+
+.statusBadge {
+  display: inline-block;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.statusBadge.in_stock {
+  background: #d4edda;
+  color: #155724;
+}
+
+.statusBadge.low_stock {
+  background: #fff3cd;
+  color: #856404;
+}
+
+.statusBadge.out_of_stock {
+  background: #f8d7da;
+  color: #721c24;
+}
+
+.lowStockIndicator {
+  color: #e74c3c;
+  font-weight: 600;
+  font-size: 13px;
+}
+
+.ratingStars {
+  color: #f1c40f;
+  font-size: 16px;
+  margin-right: 8px;
+}
+
+.ratingValue {
+  color: #7f8c8d;
+  font-weight: 600;
+}
+
+.viewActions {
+  width: 100%;
+}
+
+.closeViewButton {
+  width: 100%;
+  padding: 12px 24px;
+  background: #3498db;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.closeViewButton:hover {
+  background: #2980b9;
+  transform: translateY(-2px);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .modal {
+    width: 95%;
+    max-height: 95vh;
+  }
+  
+  .modalHeader,
+  .modalContent {
+    padding: 20px;
+  }
+  
+  .toggleActions,
+  .deleteActions {
+    flex-direction: column;
+  }
+  
+  .formActions {
+    flex-direction: column;
+  }
+  
+  .cancelButton,
+  .saveButton,
+  .toggleButton,
+  .deleteButton {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .modalTitle {
+    font-size: 18px;
+  }
+  
+  .viewItem {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+  }
+  
+  .viewValue {
+    text-align: left;
+  }
+}
