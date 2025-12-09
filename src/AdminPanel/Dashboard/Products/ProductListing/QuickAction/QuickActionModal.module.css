@@ -1,14 +1,17 @@
+/* QuickActionModal.module.css */
+
 .modalOverlay {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.7);
+  background: rgba(0, 0, 0, 0.5);
   display: flex;
   align-items: center;
   justify-content: center;
   z-index: 1000;
+  padding: 20px;
   animation: fadeIn 0.3s ease;
 }
 
@@ -19,66 +22,70 @@
 
 .modal {
   background: white;
-  border-radius: 16px;
-  width: 90%;
-  max-width: 500px;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 800px;
   max-height: 90vh;
-  overflow-y: auto;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
   animation: slideUp 0.3s ease;
 }
 
 @keyframes slideUp {
-  from {
-    transform: translateY(20px);
+  from { 
     opacity: 0;
+    transform: translateY(20px);
   }
-  to {
-    transform: translateY(0);
+  to { 
     opacity: 1;
+    transform: translateY(0);
   }
+}
+
+.viewModal {
+  max-width: 900px;
 }
 
 .modalHeader {
-  padding: 20px 25px;
-  border-bottom: 1px solid #e9ecef;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  position: sticky;
-  top: 0;
-  background: white;
-  z-index: 1;
-  border-radius: 16px 16px 0 0;
+  padding: 20px 24px;
+  background: #f8f9fa;
+  border-bottom: 1px solid #e9ecef;
 }
 
 .modalTitle {
+  margin: 0;
   font-size: 20px;
   font-weight: 700;
   color: #2c3e50;
-  margin: 0;
 }
 
 .closeButton {
   background: none;
   border: none;
-  color: #6c757d;
+  padding: 8px;
   cursor: pointer;
-  transition: all 0.2s ease;
+  border-radius: 8px;
+  color: #6c757d;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
+  transition: all 0.2s ease;
 }
 
 .closeButton:hover {
-  background: #f8f9fa;
-  color: #e74c3c;
+  background: #e9ecef;
+  color: #2c3e50;
 }
 
 .modalContent {
-  padding: 25px;
+  padding: 24px;
+  overflow-y: auto;
+  flex: 1;
 }
 
 /* Form Styles */
@@ -86,6 +93,60 @@
   display: flex;
   flex-direction: column;
   gap: 20px;
+}
+
+.tabs {
+  display: flex;
+  gap: 4px;
+  border-bottom: 2px solid #e9ecef;
+  margin-bottom: 20px;
+}
+
+.tab {
+  padding: 12px 24px;
+  background: none;
+  border: none;
+  color: #6c757d;
+  font-weight: 600;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.2s ease;
+}
+
+.tab:hover {
+  color: #3498db;
+}
+
+.activeTab {
+  color: #3498db;
+}
+
+.activeTab::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: #3498db;
+}
+
+.tabContent {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.formRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+@media (max-width: 768px) {
+  .formRow {
+    grid-template-columns: 1fr;
+  }
 }
 
 .formGroup {
@@ -97,190 +158,111 @@
 .label {
   font-size: 14px;
   font-weight: 600;
-  color: #495057;
+  color: #2c3e50;
 }
 
-.input,
-.select {
-  padding: 12px 16px;
-  border: 2px solid #e9ecef;
+.input, .select, .textarea {
+  padding: 10px 12px;
+  border: 1px solid #dee2e6;
   border-radius: 8px;
   font-size: 14px;
   color: #2c3e50;
-  transition: all 0.2s ease;
   background: white;
+  transition: all 0.2s ease;
 }
 
-.input:focus,
-.select:focus {
+.input:focus, .select:focus, .textarea:focus {
   outline: none;
   border-color: #3498db;
   box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
 }
 
-.formActions {
+.textarea {
+  resize: vertical;
+  min-height: 60px;
+}
+
+.tagsPreview {
   display: flex;
-  justify-content: flex-end;
-  gap: 15px;
-  margin-top: 10px;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 8px;
 }
 
-.cancelButton {
-  padding: 12px 24px;
-  background: #f8f9fa;
-  border: 2px solid #e9ecef;
-  border-radius: 8px;
-  color: #495057;
+.tagPreview {
+  padding: 4px 10px;
+  background: #e8f4fc;
+  color: #3498db;
+  border-radius: 12px;
+  font-size: 12px;
   font-weight: 600;
-  font-size: 14px;
-  cursor: pointer;
-  transition: all 0.3s ease;
 }
 
-.cancelButton:hover {
-  background: #e9ecef;
-  border-color: #dee2e6;
+.sectionTitle {
+  font-size: 16px;
+  font-weight: 700;
+  color: #2c3e50;
+  margin: 20px 0 12px 0;
+  padding-bottom: 8px;
+  border-bottom: 2px solid #e9ecef;
 }
 
-.saveButton {
-  padding: 12px 24px;
-  background: #3498db;
-  border: none;
-  border-radius: 8px;
-  color: white;
-  font-weight: 600;
-  font-size: 14px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.saveButton:hover {
-  background: #2980b9;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(52, 152, 219, 0.2);
-}
-
-/* Toggle Stock Styles */
+/* Action Content Styles */
 .toggleContent,
 .deleteContent,
-.viewContent {
+.duplicateContent {
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
+  gap: 20px;
+  padding: 20px 0;
 }
 
 .toggleIcon,
-.deleteIcon {
-  margin-bottom: 20px;
+.deleteIcon,
+.duplicateIcon {
+  margin-bottom: 10px;
 }
 
 .toggleTitle,
 .deleteTitle,
-.viewTitle {
-  font-size: 18px;
+.duplicateTitle {
+  margin: 0;
+  font-size: 20px;
   font-weight: 700;
   color: #2c3e50;
-  margin: 0 0 15px 0;
 }
 
 .toggleDescription,
-.deleteDescription {
-  font-size: 14px;
+.deleteDescription,
+.duplicateDescription {
+  margin: 0;
   color: #6c757d;
-  line-height: 1.6;
-  margin: 0 0 25px 0;
+  line-height: 1.5;
+  max-width: 500px;
 }
 
-.deleteDescription strong {
-  color: #2c3e50;
-}
-
-.toggleActions,
-.deleteActions {
+/* View Content Styles */
+.viewContent {
   display: flex;
-  gap: 15px;
-  width: 100%;
+  flex-direction: column;
+  gap: 24px;
 }
 
-.toggleButton {
-  flex: 1;
-  padding: 12px 24px;
-  background: #27ae60;
-  border: none;
-  border-radius: 8px;
-  color: white;
-  font-weight: 600;
-  font-size: 14px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.toggleButton:hover {
-  background: #219653;
-  transform: translateY(-2px);
-}
-
-.deleteButton {
-  flex: 1;
-  padding: 12px 24px;
-  background: #e74c3c;
-  border: none;
-  border-radius: 8px;
-  color: white;
-  font-weight: 600;
-  font-size: 14px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.deleteButton:hover {
-  background: #c0392b;
-  transform: translateY(-2px);
-}
-
-/* View Details Styles */
 .viewHeader {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 100%;
-  margin-bottom: 25px;
+  padding-bottom: 16px;
+  border-bottom: 2px solid #e9ecef;
 }
 
-.viewGrid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 15px;
-  width: 100%;
-  margin-bottom: 25px;
-}
-
-.viewItem {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 12px 0;
-  border-bottom: 1px solid #e9ecef;
-}
-
-.viewItem:last-child {
-  border-bottom: none;
-}
-
-.viewLabel {
-  font-weight: 600;
-  color: #495057;
-  font-size: 14px;
-}
-
-.viewValue {
+.viewTitle {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 700;
   color: #2c3e50;
-  font-size: 14px;
-  text-align: right;
 }
 
 .statusBadge {
@@ -298,96 +280,446 @@
   color: #155724;
 }
 
-.statusBadge.low_stock {
-  background: #fff3cd;
-  color: #856404;
-}
-
 .statusBadge.out_of_stock {
   background: #f8d7da;
   color: #721c24;
 }
 
+.imageGallery {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.mainImage {
+  width: 100%;
+  height: 300px;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #f8f9fa;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mainImage img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  padding: 20px;
+}
+
+.thumbnails {
+  display: flex;
+  gap: 12px;
+  overflow-x: auto;
+  padding: 8px 0;
+}
+
+.thumbnail {
+  width: 80px;
+  height: 80px;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #f8f9fa;
+  flex-shrink: 0;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: all 0.2s ease;
+}
+
+.thumbnail:hover {
+  border-color: #3498db;
+}
+
+.thumbnail img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.viewSection {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.viewRow {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 16px;
+}
+
+.viewItem {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.viewLabel {
+  font-size: 12px;
+  color: #6c757d;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.viewValue {
+  font-size: 15px;
+  color: #2c3e50;
+  font-weight: 600;
+}
+
+.viewSubcategory {
+  color: #7f8c8d;
+  font-size: 14px;
+  font-weight: normal;
+}
+
+.lowStockValue {
+  color: #e74c3c;
+  font-weight: 700;
+}
+
 .lowStockIndicator {
   color: #e74c3c;
+  font-size: 12px;
   font-weight: 600;
+}
+
+/* Specs Styles */
+.specsPreview {
+  background: #f8f9fa;
+  border-radius: 12px;
+  padding: 20px;
+}
+
+.specsSummary {
+  font-size: 16px;
+  color: #2c3e50;
+  margin-bottom: 16px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.specsDetails {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.specsCategory {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.specsCategory strong {
+  color: #2c3e50;
+  font-size: 14px;
+}
+
+.specsCategory ul {
+  margin: 0;
+  padding-left: 20px;
+  list-style: none;
+}
+
+.specsCategory li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6px 0;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.specsCategory li:last-child {
+  border-bottom: none;
+}
+
+.specKey {
+  color: #6c757d;
   font-size: 13px;
+  flex: 1;
+}
+
+.specValue {
+  color: #2c3e50;
+  font-size: 13px;
+  font-weight: 600;
+  flex: 2;
+  text-align: right;
+}
+
+/* Rating Styles */
+.ratingSection {
+  background: #f8f9fa;
+  border-radius: 12px;
+  padding: 20px;
+}
+
+.ratingOverview {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.ratingStarsLarge {
+  font-size: 24px;
+  display: flex;
+  gap: 2px;
+}
+
+.ratingScore {
+  display: flex;
+  flex-direction: column;
+}
+
+.ratingAverage {
+  font-size: 32px;
+  font-weight: 700;
+  color: #2c3e50;
+}
+
+.ratingCount {
+  font-size: 14px;
+  color: #6c757d;
 }
 
 .ratingStars {
-  color: #f1c40f;
-  font-size: 16px;
-  margin-right: 8px;
+  display: flex;
+  gap: 2px;
 }
 
-.ratingValue {
-  color: #7f8c8d;
+.fullStar {
+  color: #f39c12;
+}
+
+.halfStar {
+  color: #f39c12;
+  opacity: 0.7;
+}
+
+.emptyStar {
+  color: #e0e0e0;
+}
+
+.ratingBreakdown {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.ratingBar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.ratingLabel {
+  width: 80px;
+  font-size: 13px;
+  color: #6c757d;
+}
+
+.ratingBarContainer {
+  flex: 1;
+  height: 8px;
+  background: #e9ecef;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.ratingBarFill {
+  height: 100%;
+  background: #f39c12;
+  border-radius: 4px;
+  transition: width 0.3s ease;
+}
+
+.ratingCountSmall {
+  width: 40px;
+  font-size: 13px;
+  color: #6c757d;
+  text-align: right;
+}
+
+/* Tags & SEO Styles */
+.tagsSection {
+  background: #f8f9fa;
+  border-radius: 12px;
+  padding: 20px;
+}
+
+.tagsList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.tag {
+  padding: 6px 12px;
+  background: #e8f4fc;
+  color: #3498db;
+  border-radius: 16px;
+  font-size: 12px;
   font-weight: 600;
+  text-transform: lowercase;
 }
 
+.seoKeywords {
+  padding-top: 16px;
+  border-top: 1px solid #e9ecef;
+}
+
+.seoKeywords strong {
+  color: #2c3e50;
+  font-size: 14px;
+  margin-bottom: 8px;
+  display: block;
+}
+
+.seoKeywords p {
+  margin: 8px 0 0 0;
+  color: #6c757d;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+/* Action Buttons */
+.toggleActions,
+.deleteActions,
+.duplicateActions,
+.formActions,
 .viewActions {
-  width: 100%;
+  display: flex;
+  gap: 12px;
+  justify-content: flex-end;
+  padding-top: 20px;
+  border-top: 1px solid #e9ecef;
 }
 
+.cancelButton,
+.toggleButton,
+.deleteButton,
+.duplicateButton,
+.saveButton,
 .closeViewButton {
-  width: 100%;
   padding: 12px 24px;
-  background: #3498db;
-  border: none;
   border-radius: 8px;
-  color: white;
   font-weight: 600;
   font-size: 14px;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: all 0.2s ease;
+  border: 2px solid transparent;
+}
+
+.cancelButton {
+  background: #f8f9fa;
+  color: #6c757d;
+  border-color: #dee2e6;
+}
+
+.cancelButton:hover {
+  background: #e9ecef;
+  border-color: #ced4da;
+}
+
+.toggleButton {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+}
+
+.toggleButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+}
+
+.deleteButton {
+  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  color: white;
+}
+
+.deleteButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(240, 147, 251, 0.3);
+}
+
+.duplicateButton {
+  background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+  color: white;
+}
+
+.duplicateButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(79, 172, 254, 0.3);
+}
+
+.saveButton {
+  background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+  color: white;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.saveButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(67, 233, 123, 0.3);
+}
+
+.closeViewButton {
+  background: #3498db;
+  color: white;
 }
 
 .closeViewButton:hover {
   background: #2980b9;
   transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(52, 152, 219, 0.3);
 }
 
-/* Responsive design */
+/* Responsive Design */
 @media (max-width: 768px) {
   .modal {
-    width: 95%;
     max-height: 95vh;
   }
   
-  .modalHeader,
+  .modalHeader {
+    padding: 16px;
+  }
+  
   .modalContent {
-    padding: 20px;
+    padding: 16px;
+  }
+  
+  .formRow {
+    grid-template-columns: 1fr;
+  }
+  
+  .viewRow {
+    grid-template-columns: 1fr;
   }
   
   .toggleActions,
-  .deleteActions {
-    flex-direction: column;
-  }
-  
-  .formActions {
+  .deleteActions,
+  .duplicateActions,
+  .formActions,
+  .viewActions {
     flex-direction: column;
   }
   
   .cancelButton,
-  .saveButton,
   .toggleButton,
-  .deleteButton {
+  .deleteButton,
+  .duplicateButton,
+  .saveButton,
+  .closeViewButton {
     width: 100%;
-  }
-}
-
-@media (max-width: 480px) {
-  .modalTitle {
-    font-size: 18px;
-  }
-  
-  .viewItem {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 5px;
-  }
-  
-  .viewValue {
-    text-align: left;
+    justify-content: center;
   }
 }
