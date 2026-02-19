@@ -1,5 +1,5 @@
 // client/src/components/Main/Main.jsx
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
 import MainSecondContainer from './MainSecondContainer';
@@ -19,28 +19,35 @@ import Banner4 from '../../assets/banner4.jpeg';
 // Import mock data
 import { banners as mockBanners } from '../MockData/banners';
 
+const BREAKPOINTS = {
+  mobileMax: 767,
+};
+
 const Main = () => {
   const [currentBanner, setCurrentBanner] = useState(0);
-  const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
-  const [isTablet, setIsTablet] = useState(window.innerWidth >= 768 && window.innerWidth < 1024);
+  const [isMobile, setIsMobile] = useState(() => window.innerWidth <= BREAKPOINTS.mobileMax);
 
-  // Add images to banners
-  const banners = mockBanners.map((banner, index) => {
-    const bannerImages = [Banner1, Banner2, Banner3, Banner4];
-    return {
-      ...banner,
-      image: bannerImages[index] || Banner1
-    };
-  });
+  const bannerImages = {
+    banner1: Banner1,
+    banner2: Banner2,
+    banner3: Banner3,
+    banner4: Banner4,
+  };
+
+  // Add image URLs to banner data by imageKey
+  const banners = mockBanners.map((banner) => ({
+    ...banner,
+    image: bannerImages[banner.imageKey] || Banner1,
+  }));
 
   // Check screen size
   useEffect(() => {
     const handleResize = () => {
       const width = window.innerWidth;
-      setIsMobile(width < 768);
-      setIsTablet(width >= 768 && width < 1024);
+      setIsMobile(width <= BREAKPOINTS.mobileMax);
     };
 
+    handleResize();
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
   }, []);
@@ -65,11 +72,17 @@ const Main = () => {
           <div className={styles.bannerContainer}>
             {banners.map((banner, index) => (
               <div
-                key={index}
+                key={banner.id || index}
                 className={`${styles.bannerSlide} ${index === currentBanner ? styles.active : ''}`}
-                style={{ backgroundImage: `url(${banner.image})` }}
+                style={{
+                  backgroundImage: `url(${banner.image})`,
+                  backgroundPosition: banner.backgroundPosition || 'center',
+                }}
               >
-                <div className={styles.bannerOverlay}></div>
+                <div
+                  className={styles.bannerOverlay}
+                  style={{ background: `rgba(0, 0, 0, ${banner.overlayOpacity ?? 0.45})` }}
+                />
               </div>
             ))}
 
@@ -93,14 +106,22 @@ const Main = () => {
             </div>
           </div>
 
-          {/* Banner Text Component */}
-          <div className={styles.bannerText}>
+        </section>
+
+        <section className={styles.bannerInfoSection}>
+          <div className={styles.bannerInfoCard}>
+            {banners[currentBanner].eyebrow && (
+              <span className={styles.bannerEyebrow}>{banners[currentBanner].eyebrow}</span>
+            )}
             <h1>{banners[currentBanner].title}</h1>
             <p>{banners[currentBanner].description}</p>
-            <div className={styles.heroButtons}>
-              <button className={styles.primaryButton}>Start Building</button>
-              <button className={styles.secondaryButton}>Explore Pre-builts</button>
-            </div>
+          </div>
+        </section>
+
+        <section className={styles.heroCtaSection}>
+          <div className={styles.heroButtons}>
+            <button className={styles.primaryButton}>Start Building</button>
+            <button className={styles.secondaryButton}>Explore Pre-builts</button>
           </div>
         </section>
 

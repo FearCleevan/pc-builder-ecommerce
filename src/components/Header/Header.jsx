@@ -8,6 +8,7 @@ import {
   FaTimes,
   FaBars,
   FaArrowLeft,
+  FaArrowUp,
 } from "react-icons/fa";
 import styles from "./Header.module.css";
 import ProductNavbar from "./ProductNavbar/ProductNavbar";
@@ -82,6 +83,8 @@ const Header = () => {
   const [activeNav, setActiveNav] = useState(null);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [showScrollTop, setShowScrollTop] = useState(false);
   const [mobileView, setMobileView] = useState("main");
   const [activeCategory, setActiveCategory] = useState("Components");
   const [isProduct, setIsProduct] = useState(true);
@@ -158,6 +161,12 @@ const Header = () => {
     };
 
     const handleScroll = () => {
+      const scrolled = window.scrollY > 10;
+      const showTopButton = window.scrollY > 320;
+
+      setIsScrolled(scrolled);
+      setShowScrollTop(showTopButton);
+
       if (activeNav && window.innerWidth >= 900) {
         setActiveNav(null);
         setIsMobileMenuOpen(false);
@@ -226,6 +235,7 @@ const Header = () => {
   };
 
   const toggleMobileMenu = () => {
+    setIsSearchOpen(false);
     setIsMobileMenuOpen(!isMobileMenuOpen);
     setMobileView("main");
     setActiveNav(null);
@@ -245,6 +255,7 @@ const Header = () => {
   };
 
   const handleBackToMainMenu = () => setMobileView("main");
+  const scrollToTop = () => window.scrollTo({ top: 0, behavior: "smooth" });
 
   // Helper function to get the correct data based on active section
   const getCategories = () => {
@@ -283,7 +294,7 @@ const Header = () => {
 
   return (
     <>
-      <nav className={styles.nav} ref={menuRef}>
+      <nav className={`${styles.nav} ${isScrolled ? styles.navScrolled : ""}`} ref={menuRef}>
         <div className={styles.container}>
           <div className={styles.mainArea}>
             {/* Mobile hamburger button */}
@@ -724,6 +735,14 @@ const Header = () => {
       {isMobileMenuOpen && (
         <div className={styles.overlay} onClick={closeAllMenus}></div>
       )}
+
+      <button
+        className={`${styles.scrollTopButton} ${showScrollTop ? styles.visible : ""}`}
+        onClick={scrollToTop}
+        aria-label="Scroll to top"
+      >
+        <FaArrowUp size={16} />
+      </button>
 
       {/* AI Assistant Chat Box - Fixed at bottom right */}
       <AIAssistant />
