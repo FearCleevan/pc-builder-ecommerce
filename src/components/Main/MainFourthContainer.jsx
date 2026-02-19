@@ -7,14 +7,71 @@ import { laptopProducts } from '../MockData/laptopProducts';
 
 const MainFourthContainer = ({ isMobile }) => {
   const laptopRef = useRef(null);
+  const dragState = useRef({
+    isDragging: false,
+    startX: 0,
+    scrollLeft: 0,
+    hasMoved: false,
+  });
+  const suppressClickRef = useRef(false);
 
   const scroll = (ref, direction) => {
     if (ref.current) {
-      const cardWidth = ref.current.querySelector('.card').offsetWidth + (isMobile ? 10 : 20);
+      const firstCard = ref.current.querySelector(`.${styles.productCard}`);
+      if (!firstCard) return;
+
+      const gap = parseFloat(window.getComputedStyle(ref.current).columnGap || window.getComputedStyle(ref.current).gap || '0');
+      const cardWidth = firstCard.getBoundingClientRect().width + gap;
       ref.current.scrollBy({
         left: direction === "left" ? -cardWidth : cardWidth,
         behavior: "smooth",
       });
+    }
+  };
+
+  const handlePointerDown = (event) => {
+    if (!laptopRef.current) return;
+
+    dragState.current.isDragging = true;
+    dragState.current.startX = event.clientX;
+    dragState.current.scrollLeft = laptopRef.current.scrollLeft;
+    dragState.current.hasMoved = false;
+
+    laptopRef.current.classList.add(styles.dragging);
+    laptopRef.current.setPointerCapture(event.pointerId);
+  };
+
+  const handlePointerMove = (event) => {
+    if (!dragState.current.isDragging || !laptopRef.current) return;
+
+    const deltaX = event.clientX - dragState.current.startX;
+    if (Math.abs(deltaX) > 4) dragState.current.hasMoved = true;
+    laptopRef.current.scrollLeft = dragState.current.scrollLeft - deltaX;
+  };
+
+  const handlePointerUp = (event) => {
+    if (!laptopRef.current) return;
+
+    if (dragState.current.hasMoved) {
+      suppressClickRef.current = true;
+      setTimeout(() => {
+        suppressClickRef.current = false;
+      }, 0);
+    }
+
+    dragState.current.isDragging = false;
+    dragState.current.hasMoved = false;
+    laptopRef.current.classList.remove(styles.dragging);
+
+    if (laptopRef.current.hasPointerCapture(event.pointerId)) {
+      laptopRef.current.releasePointerCapture(event.pointerId);
+    }
+  };
+
+  const handleCarouselClickCapture = (event) => {
+    if (suppressClickRef.current) {
+      event.preventDefault();
+      event.stopPropagation();
     }
   };
 
@@ -48,10 +105,17 @@ const MainFourthContainer = ({ isMobile }) => {
             &#8249;
           </button>
         )}
-        <div className={styles.productCarousel} ref={laptopRef}>
+        <div
+          className={styles.productCarousel}
+          ref={laptopRef}
+          onPointerDown={handlePointerDown}
+          onPointerMove={handlePointerMove}
+          onPointerUp={handlePointerUp}
+          onPointerCancel={handlePointerUp}
+          onClickCapture={handleCarouselClickCapture}
+        >
           {laptopProducts.map((product) => (
-            <div key={product.id} className={`${styles.productCard} card`}>
-              {/* Same product card structure as MainThirdContainer */}
+            <div key={product.id} className={styles.productCard}>
               <div className={styles.productImage}>
                 <img src={product.img} alt={product.name} />
                 {product.oldPrice > 0 && (

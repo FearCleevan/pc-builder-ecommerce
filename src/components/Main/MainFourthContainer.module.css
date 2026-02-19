@@ -1,6 +1,6 @@
 /* client/src/components/Main/MainFourthContainer.module.css */
 .newArrivals {
-  padding: 60px 5%;
+  padding: clamp(36px, 5vw, 64px) 5%;
   background: #fff;
 }
 
@@ -8,26 +8,29 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 30px;
+  gap: 12px;
+  margin: 0 auto 26px;
+  max-width: 1400px;
 }
 
 .sectionHeader h2 {
-  font-size: 2.2rem;
-  color: #333;
+  font-size: clamp(1.6rem, 3.2vw, 2.2rem);
+  color: #161616;
+  margin: 0;
 }
 
 .viewAll {
   color: #ff2c2c;
   text-decoration: none;
   font-weight: 600;
-  transition: all 0.3s ease;
+  transition: all 0.25s ease;
   padding: 8px 16px;
   border-radius: 20px;
   border: 1px solid transparent;
+  background: #fff;
 }
 
 .viewAll:hover {
-  text-decoration: none;
   background-color: #fff5f5;
   border-color: #ff2c2c;
 }
@@ -42,11 +45,14 @@
 
 .productCarousel {
   display: flex;
-  gap: 20px;
+  gap: clamp(12px, 2vw, 20px);
   overflow-x: auto;
   scroll-behavior: smooth;
-  padding: 10px;
-  scroll-snap-type: x mandatory;
+  padding: 10px 4px;
+  scroll-snap-type: none;
+  cursor: grab;
+  user-select: none;
+  scrollbar-width: none;
   -ms-overflow-style: none;
 }
 
@@ -54,38 +60,45 @@
   display: none;
 }
 
-/* Product Card Styles */
+.productCarousel.dragging {
+  cursor: grabbing;
+  scroll-behavior: auto;
+}
+
 .productCard {
-  min-width: 280px;
-  background: white;
+  min-width: clamp(240px, 26vw, 300px);
+  background: #fff;
+  border: 1px solid #e8ebf0;
   border-radius: 16px;
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 8px 22px rgba(11, 18, 32, 0.08);
   overflow: hidden;
-  transition: all 0.3s ease;
-  scroll-snap-align: start;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
   position: relative;
 }
 
 .productCard:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+  transform: translateY(-6px);
+  box-shadow: 0 16px 30px rgba(11, 18, 32, 0.14);
+  border-color: #ffd0d0;
 }
 
 .productImage {
   position: relative;
-  height: 200px;
+  height: clamp(158px, 19vw, 210px);
   overflow: hidden;
+  background: linear-gradient(180deg, #fbfcff 0%, #f4f7fb 100%);
 }
 
 .productImage img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  transition: transform 0.5s ease;
+  object-fit: contain;
+  transition: transform 0.45s ease;
+  padding: 10px;
 }
 
 .productCard:hover .productImage img {
-  transform: scale(1.05);
+  transform: scale(1.04);
 }
 
 .discountBadge {
@@ -93,11 +106,11 @@
   top: 10px;
   left: 10px;
   background: #ff2c2c;
-  color: white;
+  color: #fff;
   padding: 5px 10px;
-  border-radius: 20px;
-  font-size: 0.8rem;
-  font-weight: 600;
+  border-radius: 999px;
+  font-size: 0.78rem;
+  font-weight: 700;
   z-index: 2;
 }
 
@@ -107,52 +120,57 @@
   right: 10px;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 8px;
   opacity: 0;
-  transition: opacity 0.3s ease;
+  transform: translateY(6px);
+  transition: opacity 0.25s ease, transform 0.25s ease;
   z-index: 2;
 }
 
 .productCard:hover .productActions {
   opacity: 1;
+  transform: translateY(0);
 }
 
-.wishlistBtn, .compareBtn {
+.wishlistBtn,
+.compareBtn {
   position: relative;
-  width: 40px;
-  height: 40px;
+  width: 38px;
+  height: 38px;
   border-radius: 50%;
-  border: none;
-  background: white;
-  color: #555;
+  border: 1px solid #e6e6e6;
+  background: #fff;
+  color: #444;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  transition: all 0.3s ease;
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
 }
 
-.wishlistBtn:hover, .compareBtn:hover {
+.wishlistBtn:hover,
+.compareBtn:hover {
   background: #ff2c2c;
-  color: white;
-  transform: scale(1.1);
+  border-color: #ff2c2c;
+  color: #fff;
+  transform: scale(1.06);
 }
 
 .tooltip {
   position: absolute;
-  top: -40px;
+  top: -36px;
   left: 50%;
   transform: translateX(-50%);
-  background: #333;
-  color: white;
-  padding: 5px 10px;
-  border-radius: 4px;
-  font-size: 0.8rem;
+  background: #1f232a;
+  color: #fff;
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-size: 0.72rem;
   white-space: nowrap;
   opacity: 0;
   visibility: hidden;
-  transition: all 0.3s ease;
+  transition: all 0.22s ease;
   pointer-events: none;
 }
 
@@ -160,33 +178,35 @@
 .compareBtn:hover .tooltip {
   opacity: 1;
   visibility: visible;
-  top: -35px;
+  top: -32px;
 }
 
 .productInfo {
-  padding: 20px;
+  padding: 16px;
 }
 
 .productBrand {
-  font-size: 0.9rem;
-  color: #666;
+  font-size: 0.82rem;
+  color: #677286;
   display: block;
-  margin-bottom: 5px;
-  font-weight: 500;
+  margin-bottom: 4px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
 }
 
 .productName {
-  font-size: 1.1rem;
-  color: #333;
-  margin-bottom: 8px;
+  font-size: 1.05rem;
+  color: #20242c;
+  margin: 0 0 8px;
   font-weight: 700;
-  line-height: 1.3;
+  line-height: 1.35;
 }
 
 .productDesc {
   font-size: 0.9rem;
-  color: #777;
-  margin-bottom: 12px;
+  color: #5f6776;
+  margin: 0 0 12px;
   line-height: 1.4;
   display: -webkit-box;
   -webkit-box-orient: vertical;
@@ -196,124 +216,129 @@
 }
 
 .productRating {
-  margin-bottom: 12px;
+  margin-bottom: 10px;
 }
 
 .stars {
   display: flex;
   align-items: center;
-  gap: 5px;
+  gap: 4px;
 }
 
-.starIcon {
-  color: #ffc107;
+.starIcon,
+.starIconHalf {
+  color: #f6b500;
   font-size: 0.9rem;
 }
 
 .starIconHalf {
-  color: #ffc107;
-  font-size: 0.9rem;
   position: relative;
 }
 
 .starIconHalf:after {
-  content: "★";
+  content: "\2605";
   position: absolute;
   left: 0;
   width: 50%;
   overflow: hidden;
-  color: #ffc107;
+  color: #f6b500;
 }
 
 .stars span {
-  font-size: 0.8rem;
-  color: #777;
+  font-size: 0.78rem;
+  color: #7a8393;
   margin-left: 5px;
 }
 
 .productPrice {
-  margin-bottom: 15px;
+  margin-bottom: 14px;
 }
 
 .oldPrice {
   display: block;
-  font-size: 0.9rem;
-  color: #999;
+  font-size: 0.86rem;
+  color: #9ea7b5;
   text-decoration: line-through;
+  margin-bottom: 2px;
 }
 
 .currentPrice {
-  font-size: 1.3rem;
-  font-weight: 700;
+  font-size: 1.28rem;
+  font-weight: 800;
   color: #ff2c2c;
 }
 
 .productButtons {
-  display: flex;
-  gap: 10px;
-  margin-bottom: 10px;
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 8px;
+}
+
+.buyNowBtn,
+.addToCartBtn {
+  min-height: 42px;
+  border: none;
+  border-radius: 10px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.22s ease, box-shadow 0.22s ease, background-color 0.22s ease, color 0.22s ease;
 }
 
 .buyNowBtn {
-  flex: 2;
-  padding: 12px;
-  background: linear-gradient(135deg, #ff2c2c 0%, #ff5252 100%);
-  color: white;
-  border: none;
-  border-radius: 8px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.3s ease;
+  background: linear-gradient(135deg, #ff2c2c 0%, #ff5a5a 100%);
+  color: #fff;
+  box-shadow: 0 8px 16px rgba(255, 44, 44, 0.25);
 }
 
 .buyNowBtn:hover {
-  background: linear-gradient(135deg, #e60000 0%, #ff2c2c 100%);
   transform: translateY(-2px);
+  box-shadow: 0 12px 18px rgba(255, 44, 44, 0.32);
+}
+
+.buyNowBtn:active,
+.addToCartBtn:active {
+  transform: translateY(0);
 }
 
 .addToCartBtn {
-  flex: 1;
-  padding: 12px;
-  background: #333;
-  color: white;
-  border: none;
-  border-radius: 8px;
-  display: flex;
+  background: #fff;
+  border: 1px solid #cfd6e2;
+  color: #1f2a3c;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 5px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  position: relative;
-  overflow: hidden;
-}
-
-.addToCartBtn span {
-  transition: transform 0.3s ease, opacity 0.3s ease;
+  gap: 6px;
 }
 
 .addToCartBtn:hover {
-  background: #555;
+  background: #1f2a3c;
+  border-color: #1f2a3c;
+  color: #fff;
   transform: translateY(-2px);
+  box-shadow: 0 10px 14px rgba(31, 42, 60, 0.2);
 }
 
-.addToCartBtn:hover span {
-  transform: translateX(100%);
-  opacity: 0;
+.buyNowBtn:focus-visible,
+.addToCartBtn:focus-visible,
+.wishlistBtn:focus-visible,
+.compareBtn:focus-visible,
+.viewAll:focus-visible {
+  outline: 2px solid #ff8f8f;
+  outline-offset: 2px;
 }
 
 .carouselArrow {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background: white;
+  background: rgba(255, 255, 255, 0.95);
   border: none;
   font-size: 1.5rem;
   width: 45px;
   height: 45px;
   border-radius: 50%;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: all 0.25s ease;
   z-index: 2;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
   display: flex;
@@ -324,7 +349,7 @@
 .carouselArrow:hover {
   background: #ff2c2c;
   color: #fff;
-  transform: translateY(-50%) scale(1.1);
+  transform: translateY(-50%) scale(1.08);
 }
 
 .carouselArrow.left {
@@ -335,10 +360,24 @@
   right: -20px;
 }
 
-/* Responsive Design */
 @media (max-width: 1199px) {
-  .productCard {
-    min-width: 260px;
+  .carouselArrow.left {
+    left: -8px;
+  }
+
+  .carouselArrow.right {
+    right: -8px;
+  }
+}
+
+@media (max-width: 991px) {
+  .sectionHeader {
+    margin-bottom: 18px;
+  }
+
+  .productActions {
+    opacity: 1;
+    transform: none;
   }
 }
 
@@ -346,67 +385,41 @@
   .carouselArrow {
     display: none;
   }
-  
+
   .productCarousel {
-    padding: 5px;
-    gap: 15px;
+    padding: 6px 2px;
   }
-  
+
   .productCard {
     min-width: 220px;
   }
-  
-  .productImage {
-    height: 160px;
-  }
-  
-  .productInfo {
-    padding: 15px;
-  }
-  
-  .productName {
-    font-size: 1rem;
-  }
-  
-  .productDesc {
-    font-size: 0.85rem;
-  }
-  
-  .currentPrice {
-    font-size: 1.1rem;
-  }
-  
+
   .productButtons {
-    flex-direction: column;
+    grid-template-columns: 1fr;
   }
-  
+
   .sectionHeader {
     flex-direction: column;
     align-items: flex-start;
-    gap: 10px;
-  }
-  
-  .sectionHeader h2 {
-    font-size: 1.8rem;
   }
 }
 
 @media (max-width: 480px) {
+  .newArrivals {
+    padding: 30px 4%;
+  }
+
   .productCard {
-    min-width: 200px;
+    min-width: 250px;
   }
-  
+
   .productImage {
-    height: 140px;
+    height: 172px;
   }
-  
-  .wishlistBtn, .compareBtn {
-    width: 35px;
-    height: 35px;
-  }
-  
-  .tooltip {
-    font-size: 0.7rem;
-    padding: 4px 8px;
+
+  .wishlistBtn,
+  .compareBtn {
+    width: 34px;
+    height: 34px;
   }
 }
