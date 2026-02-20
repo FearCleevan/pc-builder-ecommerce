@@ -18,6 +18,12 @@ import { webcamData } from "../PCBuilder/Modal/MockData/Webcam/Webcam";
 const DEFAULT_RATING = 4.5;
 const DEFAULT_REVIEWS = 100;
 
+const CATEGORY_LABELS = {
+  Components: "component",
+  Peripherals: "peripheral",
+  Accessories: "accessory",
+};
+
 const getBrandFromSpecs = (specs = {}) => {
   return (
     specs.Manufacturer ||
@@ -28,13 +34,42 @@ const getBrandFromSpecs = (specs = {}) => {
   );
 };
 
+const getTopSpecs = (specs = {}, count = 8) =>
+  Object.entries(specs).slice(0, count);
+
+const generateProductDescription = (product, category, subcategory) => {
+  const brand = getBrandFromSpecs(product.specs);
+  const itemType = CATEGORY_LABELS[category] || "product";
+  const highlights = getTopSpecs(product.specs, 8);
+
+  const lines = [
+    `${product.name} is a ${brand} ${itemType} built for reliable performance and broad compatibility.`,
+  ];
+
+  if (subcategory) {
+    lines.push(`Category Focus: Tuned for ${subcategory.replace(/-/g, " ")} usage and daily workloads.`);
+  }
+
+  highlights.forEach(([key, value]) => {
+    lines.push(`${key}: ${value}.`);
+  });
+
+  return lines.join("\n");
+};
+
 const createNormalizer =
   ({ category, subcategoryResolver, seriesResolver }) =>
   (product) => ({
     id: product.id,
     name: product.name,
     brand: getBrandFromSpecs(product.specs),
-    description: `${product.name} with detailed specifications for comparison.`,
+    description: generateProductDescription(
+      product,
+      category,
+      typeof subcategoryResolver === "function"
+        ? subcategoryResolver(product)
+        : subcategoryResolver
+    ),
     img: product.image || "/src/assets/Laptop1.png",
     price: product.price || 0,
     oldPrice: 0,
