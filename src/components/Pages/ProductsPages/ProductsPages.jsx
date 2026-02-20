@@ -5,14 +5,13 @@ import ProductsFilter from './ProductsFilter/ProductsFilter';
 import ProductsGrid from './ProductsGrid/ProductsGrid';
 import ProductsBreadcrumb from './ProductsBreadcrumb/ProductsBreadcrumb';
 import Pagination from './Pagination/Pagination';
-import { accessoriesProducts } from '../../MockData/accessoriesProducts';
-import { pcBuilderProducts } from '../../MockData/pcBuilderProducts';
+import { productsCatalog } from '../../MockData/productsCatalog';
 import styles from './ProductsPages.module.css';
 import Header from '../../Header/Header';
 import Footer from '../../Footer/Footer';
 
 const ProductsPages = () => {
-  const [allProducts] = useState([...pcBuilderProducts, ...accessoriesProducts]);
+  const [allProducts] = useState(productsCatalog);
   const [filteredProducts, setFilteredProducts] = useState(allProducts);
   const [activeFilters, setActiveFilters] = useState({
     category: '',

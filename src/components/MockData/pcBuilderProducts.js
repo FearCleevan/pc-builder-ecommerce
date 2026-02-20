@@ -49,6 +49,10 @@ const createNormalizer =
       typeof subcategoryResolver === "function"
         ? subcategoryResolver(product)
         : subcategoryResolver,
+    specs: product.specs || {},
+    store: product.store || "Online Store",
+    stock: product.stock || "In stock",
+    type: product.type || null,
   });
 
 const normalizeCpu = createNormalizer({

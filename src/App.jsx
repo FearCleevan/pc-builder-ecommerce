@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import Main from './components/Main/Main';
 import ProductsPages from './components/Pages/ProductsPages/ProductsPages';
+import ProductDetails from './components/Pages/ProductsPages/ProductDetails/ProductDetails';
 import PCBuilder from './components/PCBuilder/PCBuilder';
 import LaptopsPages from './components/Pages/LaptopsPages/LaptopsPages';
 import DesktopsPages from './components/Pages/DesktopsPages/DesktopsPages';
@@ -74,6 +75,7 @@ function App() {
           {/* Public E-commerce Routes */}
           <Route path="/" element={<Main />} />
           <Route path="/products" element={<ProductsPages />} />
+          <Route path="/products/:id" element={<ProductDetails />} />
           <Route path="/laptops" element={<LaptopsPages />} />
           <Route path="/desktops" element={<DesktopsPages />} />
           <Route path="/pc-builder" element={<PCBuilder />} />
