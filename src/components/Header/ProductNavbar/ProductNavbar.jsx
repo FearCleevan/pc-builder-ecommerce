@@ -122,8 +122,9 @@ const ProductNavbar = forwardRef(({ isOpen, onClose}, ref) => {
               ))}
             </ul>
           </div>
+        </div>
 
-          <div className={styles.exploreSection}>
+        <div className={styles.exploreSection}>
             <h4>EXPLORE</h4>
             <ul>
               {getExploreItems(activeCategory).map(item => (
@@ -139,7 +140,6 @@ const ProductNavbar = forwardRef(({ isOpen, onClose}, ref) => {
               ))}
             </ul>
           </div>
-        </div>
 
         {/* Right side promo */}
         <div className={styles.rightPromo}>
