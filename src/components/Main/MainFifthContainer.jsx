@@ -69,6 +69,13 @@ const MainFifthContainer = ({ isMobile }) => {
                     <span className={styles.tooltip}>Compare</span>
                   </button>
                 </div>
+                <a
+                  href={`/products/${product.id}`}
+                  className={styles.viewProductBtn}
+                  tabIndex={-1}
+                >
+                  View Product
+                </a>
               </div>
               <div className={styles.productInfo}>
                 <span className={styles.productBrand}>{product.brand}</span>
@@ -90,7 +97,7 @@ const MainFifthContainer = ({ isMobile }) => {
                   <button className={styles.buyNowBtn}>Buy Now</button>
                   <button className={styles.addToCartBtn}>
                     <FaShoppingCart />
-                    <span>Add to Cart</span>
+                    <span className={styles.tooltip}>Add to Cart</span>
                   </button>
                 </div>
               </div>
