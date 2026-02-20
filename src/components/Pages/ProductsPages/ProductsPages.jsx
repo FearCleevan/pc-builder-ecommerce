@@ -6,13 +6,13 @@ import ProductsGrid from './ProductsGrid/ProductsGrid';
 import ProductsBreadcrumb from './ProductsBreadcrumb/ProductsBreadcrumb';
 import Pagination from './Pagination/Pagination';
 import { accessoriesProducts } from '../../MockData/accessoriesProducts';
-import { otherProducts } from '../../MockData/otherProducts';
+import { pcBuilderProducts } from '../../MockData/pcBuilderProducts';
 import styles from './ProductsPages.module.css';
 import Header from '../../Header/Header';
 import Footer from '../../Footer/Footer';
 
 const ProductsPages = () => {
-  const [allProducts] = useState([...otherProducts, ...accessoriesProducts]);
+  const [allProducts] = useState([...pcBuilderProducts, ...accessoriesProducts]);
   const [filteredProducts, setFilteredProducts] = useState(allProducts);
   const [activeFilters, setActiveFilters] = useState({
     category: '',
