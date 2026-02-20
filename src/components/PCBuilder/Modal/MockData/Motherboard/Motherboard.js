@@ -39,8 +39,7 @@ export const motherboardData = [
       "USB 4 Headers": 0,
     },
     has3D: false,
-    store: "Newegg",
-    stock: "In stock",
+    stockCount: 10
   },
   {
     id: "mb-2",
@@ -71,8 +70,7 @@ export const motherboardData = [
       "USB 4 Headers": 0,
     },
     has3D: false,
-    store: "Amazon",
-    stock: "In stock",
+    stockCount: 10
   },
   {
     id: "mb-3",
@@ -103,8 +101,7 @@ export const motherboardData = [
       "USB 4 Headers": 0,
     },
     has3D: false,
-    store: "Best Buy",
-    stock: "In stock",
+    stockCount: 10
   },
   {
     id: "mb-4",
@@ -135,8 +132,7 @@ export const motherboardData = [
       "USB 4 Headers": 0,
     },
     has3D: false,
-    store: "Newegg",
-    stock: "In stock",
+    stockCount: 0
   },
   {
     id: "mb-5",
@@ -167,8 +163,7 @@ export const motherboardData = [
       "USB 4 Headers": 0,
     },
     has3D: true,
-    store: "Amazon",
-    stock: "In stock",
+    stockCount: 10
   },
   {
     id: "mb-6",
@@ -199,8 +194,7 @@ export const motherboardData = [
       "USB 4 Headers": 0,
     },
     has3D: true,
-    store: "Best Buy",
-    stock: "In stock",
+    stockCount: 10
   },
   {
     id: "mb-7",
@@ -231,8 +225,7 @@ export const motherboardData = [
       "USB 4 Headers": 0,
     },
     has3D: false,
-    store: "Newegg",
-    stock: "In stock",
+    stockCount: 10
   },
   {
     id: "mb-8",
@@ -263,8 +256,7 @@ export const motherboardData = [
       "USB 4 Headers": 0,
     },
     has3D: true,
-    store: "Amazon",
-    stock: "In stock",
+    stockCount: 10
   },
   {
     id: "mb-9",
@@ -295,8 +287,7 @@ export const motherboardData = [
       "USB 4 Headers": 0,
     },
     has3D: false,
-    store: "Best Buy",
-    stock: "In stock",
+    stockCount: 10
   },
   {
     id: "mb-10",
@@ -327,8 +318,7 @@ export const motherboardData = [
       "USB 4 Headers": 0,
     },
     has3D: false,
-    store: "Newegg",
-    stock: "In stock",
+    stockCount: 10
   },
   {
     id: "mb-11",
@@ -359,8 +349,7 @@ export const motherboardData = [
       "USB 4 Headers": 0,
     },
     has3D: false,
-    store: "Amazon",
-    stock: "In stock",
+    stockCount: 10
   },
   {
     id: "mb-12",
@@ -391,8 +380,7 @@ export const motherboardData = [
       "USB 4 Headers": 0,
     },
     has3D: false,
-    store: "Best Buy",
-    stock: "In stock",
+    stockCount: 10
   },
   {
     id: "mb-13",
@@ -423,8 +411,7 @@ export const motherboardData = [
       "USB 4 Headers": 0,
     },
     has3D: false,
-    store: "Newegg",
-    stock: "In stock",
+    stockCount: 0
   },
   {
     id: "mb-14",
@@ -455,8 +442,7 @@ export const motherboardData = [
       "USB 4 Headers": 0,
     },
     has3D: true,
-    store: "Amazon",
-    stock: "In stock",
+    stockCount: 10
   },
   {
     id: "mb-15",
@@ -487,8 +473,7 @@ export const motherboardData = [
       "USB 4 Headers": 0,
     },
     has3D: false,
-    store: "Best Buy",
-    stock: "In stock",
+    stockCount: 10
   },
   {
     id: "mb-16",
@@ -519,8 +504,7 @@ export const motherboardData = [
       "USB 4 Headers": 0,
     },
     has3D: true,
-    store: "Newegg",
-    stock: "In stock",
+    stockCount: 10
   },
   {
     id: "mb-17",
@@ -551,8 +535,7 @@ export const motherboardData = [
       "USB 4 Headers": 0,
     },
     has3D: true,
-    store: "Amazon",
-    stock: "In stock",
+    stockCount: 10
   },
   {
     id: "mb-18",
@@ -583,8 +566,7 @@ export const motherboardData = [
       "USB 4 Headers": 0,
     },
     has3D: true,
-    store: "Best Buy",
-    stock: "In stock",
+    stockCount: 10
   },
   {
     id: "mb-19",
@@ -615,8 +597,7 @@ export const motherboardData = [
       "USB 4 Headers": 0,
     },
     has3D: false,
-    store: "Newegg",
-    stock: "In stock",
+    stockCount: 10
   },
   {
     id: "mb-20",
@@ -647,8 +628,7 @@ export const motherboardData = [
       "USB 4 Headers": 0,
     },
     has3D: true,
-    store: "Amazon",
-    stock: "In stock",
+    stockCount: 10
   },
   // AM5 Motherboards
   {
@@ -679,8 +659,7 @@ export const motherboardData = [
       "USB 4 Headers": 0,
     },
     has3D: true,
-    store: "Newegg",
-    stock: "In stock",
+    stockCount: 10
   },
   {
     id: "mb-22",
@@ -710,8 +689,7 @@ export const motherboardData = [
       "USB 4 Headers": 0,
     },
     has3D: false,
-    store: "Amazon",
-    stock: "In stock",
+    stockCount: 0
   },
   {
     id: "mb-23",
@@ -741,8 +719,7 @@ export const motherboardData = [
       "USB 4 Headers": 0,
     },
     has3D: false,
-    store: "Best Buy",
-    stock: "In stock",
+    stockCount: 10
   },
   {
     id: "mb-24",
@@ -772,8 +749,7 @@ export const motherboardData = [
       "USB 4 Headers": 0,
     },
     has3D: false,
-    store: "Newegg",
-    stock: "In stock",
+    stockCount: 10
   },
   {
     id: "mb-25",
@@ -803,8 +779,7 @@ export const motherboardData = [
       "USB 4 Headers": 0,
     },
     has3D: true,
-    store: "Amazon",
-    stock: "In stock",
+    stockCount: 10
   },
 
   // LGA 1151 Motherboards
@@ -836,8 +811,7 @@ export const motherboardData = [
       "USB 4 Headers": 0,
     },
     has3D: false,
-    store: "Newegg",
-    stock: "In stock",
+    stockCount: 10
   },
   {
     id: "mb-27",
@@ -867,8 +841,7 @@ export const motherboardData = [
       "USB 4 Headers": 0,
     },
     has3D: true,
-    store: "Amazon",
-    stock: "In stock",
+    stockCount: 10
   },
   {
     id: "mb-28",
@@ -898,8 +871,7 @@ export const motherboardData = [
       "USB 4 Headers": 0,
     },
     has3D: false,
-    store: "Best Buy",
-    stock: "In stock",
+    stockCount: 10
   },
   {
     id: "mb-29",
@@ -929,8 +901,7 @@ export const motherboardData = [
       "USB 4 Headers": 0,
     },
     has3D: false,
-    store: "Newegg",
-    stock: "In stock",
+    stockCount: 10
   },
   {
     id: "mb-30",
@@ -960,8 +931,7 @@ export const motherboardData = [
       "USB 4 Headers": 0,
     },
     has3D: false,
-    store: "Amazon",
-    stock: "In stock",
+    stockCount: 10
   },
 
   // LGA 1200 Motherboards
@@ -993,8 +963,7 @@ export const motherboardData = [
       "USB 4 Headers": 0,
     },
     has3D: false,
-    store: "Best Buy",
-    stock: "In stock",
+    stockCount: 0
   },
   {
     id: "mb-32",
@@ -1024,8 +993,7 @@ export const motherboardData = [
       "USB 4 Headers": 0,
     },
     has3D: true,
-    store: "Newegg",
-    stock: "In stock",
+    stockCount: 10
   },
   {
     id: "mb-33",
@@ -1055,8 +1023,7 @@ export const motherboardData = [
       "USB 4 Headers": 0,
     },
     has3D: false,
-    store: "Amazon",
-    stock: "In stock",
+    stockCount: 10
   },
   {
     id: "mb-34",
@@ -1086,8 +1053,7 @@ export const motherboardData = [
       "USB 4 Headers": 0,
     },
     has3D: true,
-    store: "Best Buy",
-    stock: "In stock",
+    stockCount: 10
   },
   {
     id: "mb-35",
@@ -1117,8 +1083,7 @@ export const motherboardData = [
       "USB 4 Headers": 0,
     },
     has3D: false,
-    store: "Newegg",
-    stock: "In stock",
+    stockCount: 10
   },
 
   // LGA 1700 Motherboards
@@ -1150,8 +1115,7 @@ export const motherboardData = [
       "USB 4 Headers": 0,
     },
     has3D: false,
-    store: "Amazon",
-    stock: "In stock",
+    stockCount: 10
   },
   {
     id: "mb-37",
@@ -1181,8 +1145,7 @@ export const motherboardData = [
       "USB 4 Headers": 0,
     },
     has3D: true,
-    store: "Best Buy",
-    stock: "In stock",
+    stockCount: 10
   },
   {
     id: "mb-38",
@@ -1212,8 +1175,7 @@ export const motherboardData = [
       "USB 4 Headers": 0,
     },
     has3D: true,
-    store: "Newegg",
-    stock: "In stock",
+    stockCount: 10
   },
   {
     id: "mb-39",
@@ -1243,8 +1205,7 @@ export const motherboardData = [
       "USB 4 Headers": 0,
     },
     has3D: true,
-    store: "Amazon",
-    stock: "In stock",
+    stockCount: 10
   },
   {
     id: "mb-40",
@@ -1274,8 +1235,7 @@ export const motherboardData = [
       "USB 4 Headers": 0,
     },
     has3D: false,
-    store: "Best Buy",
-    stock: "In stock",
+    stockCount: 0
   },
   // AM5 Micro ATX Motherboards
   {
@@ -1306,8 +1266,7 @@ export const motherboardData = [
       "USB 4 Headers": 0,
     },
     has3D: false,
-    store: "Newegg",
-    stock: "In stock",
+    stockCount: 10
   },
   {
     id: "mb-42",
@@ -1337,8 +1296,7 @@ export const motherboardData = [
       "USB 4 Headers": 0,
     },
     has3D: false,
-    store: "Amazon",
-    stock: "In stock",
+    stockCount: 10
   },
   {
     id: "mb-43",
@@ -1368,8 +1326,7 @@ export const motherboardData = [
       "USB 4 Headers": 0,
     },
     has3D: true,
-    store: "Best Buy",
-    stock: "In stock",
+    stockCount: 10
   },
   {
     id: "mb-44",
@@ -1399,8 +1356,7 @@ export const motherboardData = [
       "USB 4 Headers": 0,
     },
     has3D: false,
-    store: "Newegg",
-    stock: "In stock",
+    stockCount: 10
   },
   {
     id: "mb-45",
@@ -1430,8 +1386,7 @@ export const motherboardData = [
       "USB 4 Headers": 0,
     },
     has3D: true,
-    store: "Amazon",
-    stock: "In stock",
+    stockCount: 10
   },
 
   // LGA 1151 Micro ATX Motherboards
@@ -1463,8 +1418,7 @@ export const motherboardData = [
       "USB 4 Headers": 0,
     },
     has3D: false,
-    store: "Best Buy",
-    stock: "In stock",
+    stockCount: 10
   },
   {
     id: "mb-47",
@@ -1494,8 +1448,7 @@ export const motherboardData = [
       "USB 4 Headers": 0,
     },
     has3D: false,
-    store: "Newegg",
-    stock: "In stock",
+    stockCount: 10
   },
   {
     id: "mb-48",
@@ -1525,8 +1478,7 @@ export const motherboardData = [
       "USB 4 Headers": 0,
     },
     has3D: false,
-    store: "Amazon",
-    stock: "In stock",
+    stockCount: 10
   },
   {
     id: "mb-49",
@@ -1556,8 +1508,7 @@ export const motherboardData = [
       "USB 4 Headers": 0,
     },
     has3D: false,
-    store: "Best Buy",
-    stock: "In stock",
+    stockCount: 0
   },
   {
     id: "mb-50",
@@ -1587,8 +1538,7 @@ export const motherboardData = [
       "USB 4 Headers": 0,
     },
     has3D: false,
-    store: "Newegg",
-    stock: "In stock",
+    stockCount: 10
   },
 
   // LGA 1200 Micro ATX Motherboards
@@ -1620,8 +1570,7 @@ export const motherboardData = [
       "USB 4 Headers": 0,
     },
     has3D: false,
-    store: "Amazon",
-    stock: "In stock",
+    stockCount: 10
   },
   {
     id: "mb-52",
@@ -1653,8 +1602,7 @@ export const motherboardData = [
       "USB 4 Headers": 0,
     },
     has3D: true,
-    store: "Best Buy",
-    stock: "In stock",
+    stockCount: 10
   },
   {
     id: "mb-53",
@@ -1684,8 +1632,7 @@ export const motherboardData = [
       "USB 4 Headers": 0,
     },
     has3D: false,
-    store: "Newegg",
-    stock: "In stock",
+    stockCount: 10
   },
   {
     id: "mb-54",
@@ -1715,8 +1662,7 @@ export const motherboardData = [
       "USB 4 Headers": 0,
     },
     has3D: false,
-    store: "Amazon",
-    stock: "In stock",
+    stockCount: 10
   },
   {
     id: "mb-55",
@@ -1746,8 +1692,7 @@ export const motherboardData = [
       "USB 4 Headers": 0,
     },
     has3D: false,
-    store: "Best Buy",
-    stock: "In stock",
+    stockCount: 10
   },
 
   // LGA 1700 Micro ATX Motherboards
@@ -1779,8 +1724,7 @@ export const motherboardData = [
       "USB 4 Headers": 0,
     },
     has3D: false,
-    store: "Newegg",
-    stock: "In stock",
+    stockCount: 10
   },
   {
     id: "mb-57",
@@ -1810,8 +1754,7 @@ export const motherboardData = [
       "USB 4 Headers": 0,
     },
     has3D: false,
-    store: "Amazon",
-    stock: "In stock",
+    stockCount: 10
   },
   {
     id: "mb-58",
@@ -1843,8 +1786,7 @@ export const motherboardData = [
       "USB 4 Headers": 0,
     },
     has3D: true,
-    store: "Best Buy",
-    stock: "In stock",
+    stockCount: 0
   },
   {
     id: "mb-59",
@@ -1874,8 +1816,7 @@ export const motherboardData = [
       "USB 4 Headers": 0,
     },
     has3D: true,
-    store: "Newegg",
-    stock: "In stock",
+    stockCount: 10
   },
   {
     id: "mb-60",
@@ -1907,7 +1848,6 @@ export const motherboardData = [
       "USB 4 Headers": 0,
     },
     has3D: true,
-    store: "Amazon",
-    stock: "In stock",
+    stockCount: 10
   },
 ];

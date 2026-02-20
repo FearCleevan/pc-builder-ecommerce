@@ -24,9 +24,8 @@ export const headphonesData = [
       "Compatibility": "PC, PS4, PS5, Mobile"
     },
     has3D: false,
-    store: "Newegg",
-    stock: "In stock"
-  },
+    stockCount: 10
+    },
   {
     id: 'headphones-2',
     name: 'Sennheiser HD 660S2 Open-Back Headphones',
@@ -51,9 +50,8 @@ export const headphonesData = [
       "Compatibility": "極力, Hi-Fi systems"
     },
     has3D: false,
-    store: "Amazon",
-    stock: "In stock"
-  },
+    stockCount: 10
+    },
   {
     id: '極力-3',
     name: 'Sony WH-1000XM5 Wireless Noise Canceling Headphones',
@@ -78,9 +76,8 @@ export const headphonesData = [
       "Compatibility": "PC, Mobile, Bluetooth devices"
     },
     has3D: false,
-    store: "Best Buy",
-    stock: "In stock"
-  },
+    stockCount: 0
+    },
   {
     id: 'headphones-4',
     name: 'Bose QuietComfort Ultra Wireless Headphones',
@@ -105,9 +102,8 @@ export const headphonesData = [
       "Compatibility": "PC, Mobile, Bluetooth devices"
     },
     has3D: false,
-    store: "Newegg",
-    stock: "In stock"
-  },
+    stockCount: 10
+    },
   {
     id: 'headphones-5',
     name: 'Audio-Technica ATH-M50x Professional Monitor Headphones',
@@ -132,9 +128,8 @@ export const headphonesData = [
       "Compatibility": "PC, Studio equipment"
     },
     has3D: false,
-    store: "Amazon",
-    stock: "In stock"
-  },
+    stockCount: 10
+    },
   {
     id: 'headphones-6',
     name: 'Razer BlackShark V2 Pro Wireless Gaming Headset',
@@ -159,9 +154,8 @@ export const headphonesData = [
       "Compatibility": "PC, PS4, PS5, Mobile"
     },
     has3D: false,
-    store: "Best Buy",
-    stock: "In stock"
-  },
+    stockCount: 10
+    },
   {
     id: 'headphones-7',
     name: 'Beyerdynamic DT 990 PRO Studio Headphones',
@@ -186,9 +180,8 @@ export const headphonesData = [
       "Compatibility": "PC, Studio equipment"
     },
     has3D: false,
-    store: "Newegg",
-    stock: "In stock"
-  },
+    stockCount: 10
+    },
   {
     id: 'headphones-8',
     name: 'Apple AirPods Max Wireless Headphones',
@@ -213,9 +206,8 @@ export const headphonesData = [
       "Compatibility": "Apple devices, Bluetooth"
     },
     has3D: false,
-    store: "Amazon",
-    stock: "In stock"
-  },
+    stockCount: 10
+    },
   {
     id: 'headphones-9',
     name: 'HyperX Cloud Alpha Wireless Gaming Headset',
@@ -240,9 +232,8 @@ export const headphonesData = [
       "Compatibility": "PC, PS4, PS5"
     },
     has3D: false,
-    store: "Best Buy",
-    stock: "In stock"
-  },
+    stockCount: 10
+    },
   {
     id: 'headphones-10',
     name: 'Audeze LCD-2 Classic Planar Magnetic Headphones',
@@ -267,9 +258,8 @@ export const headphonesData = [
       "Compatibility": "PC, Hi-Fi systems"
     },
     has3D: false,
-    store: "Newegg",
-    stock: "In stock"
-  },
+    stockCount: 10
+    },
   {
     id: 'headphones-11',
     name: 'Logitech G Pro X 2 Lightspeed Wireless Gaming Headset',
@@ -294,9 +284,8 @@ export const headphonesData = [
       "Compatibility": "PC, PS4, PS5, Mobile"
     },
     has3D: false,
-    store: "Amazon",
-    stock: "In stock"
-  },
+    stockCount: 10
+    },
   {
     id: 'headphones-12',
     name: 'Focal Utopia 2022 Open-Back Headphones',
@@ -321,9 +310,8 @@ export const headphonesData = [
       "Compatibility": "Hi-Fi systems"
     },
     has3D: false,
-    store: "Best Buy",
-    stock: "In stock"
-  },
+    stockCount: 0
+    },
   {
     id: 'headphones-13',
     name: 'Corsair HS80 MAX Wireless Gaming Headset',
@@ -348,9 +336,8 @@ export const headphonesData = [
       "Compatibility": "PC, PS4, PS5, Mobile"
     },
     has3D: false,
-    store: "Newegg",
-    stock: "In stock"
-  },
+    stockCount: 10
+    },
   {
     id: 'headphones-14',
     name: 'Shure SRH1540 Professional Closed-Back Headphones',
@@ -375,9 +362,8 @@ export const headphonesData = [
       "Compatibility": "PC, Studio equipment"
     },
     has3D: false,
-    store: "Amazon",
-    stock: "In stock"
-  },
+    stockCount: 10
+    },
   {
     id: 'headphones-15',
     name: 'Turtle Beach Stealth Pro Wireless Gaming Headset',
@@ -402,9 +388,8 @@ export const headphonesData = [
       "Compatibility": "PC, PS4, PS5, Xbox, Mobile"
     },
     has3D: false,
-    store: "Best Buy",
-    stock: "In stock"
-  },
+    stockCount: 10
+    },
   {
     id: 'headphones-16',
     name: 'AKG K371 Closed-Back Studio Headphones',
@@ -429,9 +414,8 @@ export const headphonesData = [
       "Compatibility": "PC, Studio equipment"
     },
     has3D: false,
-    store: "Newegg",
-    stock: "In stock"
-  },
+    stockCount: 10
+    },
   {
     id: 'headphones-17',
     name: 'EPOS H6PRO Open Acoustic Gaming Headset',
@@ -456,9 +440,8 @@ export const headphonesData = [
       "Compatibility": "PC, PS4, PS5, Xbox"
     },
     has3D: false,
-    store: "Amazon",
-    stock: "In stock"
-  },
+    stockCount: 10
+    },
   {
     id: 'headphones-18',
     name: 'Philips Fidelio X3 Open-Back Headphones',
@@ -483,9 +466,8 @@ export const headphonesData = [
       "Compatibility": "PC, Hi-Fi systems"
     },
     has3D: false,
-    store: "Best Buy",
-    stock: "In stock"
-  },
+    stockCount: 10
+    },
   {
     id: 'headphones-19',
     name: 'JBL Quantum 910 Wireless Gaming Headset',
@@ -510,9 +492,8 @@ export const headphonesData = [
       "Compatibility": "PC, PS4, PS5, Xbox, Mobile"
     },
     has3D: false,
-    store: "Newegg",
-    stock: "In stock"
-  },
+    stockCount: 10
+    },
   {
     id: 'headphones-20',
     name: 'Drop + Sennheiser HD 8XX Headphones',
@@ -537,7 +518,6 @@ export const headphonesData = [
       "Compatibility": "PC, Hi-Fi systems"
     },
     has3D: false,
-    store: "Amazon",
-    stock: "In stock"
-  }
+    stockCount: 10
+    }
 ];

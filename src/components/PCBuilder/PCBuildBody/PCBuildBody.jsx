@@ -197,6 +197,12 @@ const PCBuildBody = ({
 
     const nextComponentId = getNextComponentToSelect();
     const hasSelectedComponents = Object.keys(selectedComponents).filter(key => selectedComponents[key]).length > 0;
+    const getStockLabel = (item) => {
+        if (typeof item?.stockCount === 'number') {
+            return item.stockCount <= 0 ? 'Out of stock' : 'In stock';
+        }
+        return item?.stock || 'In stock';
+    };
 
     return (
         <>
@@ -247,7 +253,7 @@ const PCBuildBody = ({
                                             </div>
                                         </td>
                                         <td className={styles.stockCell}>
-                                            <span className={styles.inStock}>{selectedData.stock || "In stock"}</span>
+                                            <span className={styles.inStock}>{getStockLabel(selectedData)}</span>
                                         </td>
                                         <td className={styles.priceCell}>
                                             <div className={styles.priceWrapper}>

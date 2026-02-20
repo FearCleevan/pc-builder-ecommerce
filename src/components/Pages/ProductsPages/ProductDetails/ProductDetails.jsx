@@ -15,6 +15,10 @@ const ProductDetails = () => {
   const [statusMessage, setStatusMessage] = useState("");
 
   const product = useMemo(() => getProductById(id), [id]);
+  const stockCount =
+    typeof product?.stockCount === "number" ? product.stockCount : 10;
+  const stockLabel = stockCount <= 0 ? "Out of stock" : "In stock";
+  const isOutOfStock = stockCount <= 0;
 
   const relatedProducts = useMemo(() => {
     if (!product) return [];
@@ -85,19 +89,19 @@ const ProductDetails = () => {
   };
 
   const handleAddToCart = () => {
-    if (!product) return;
+    if (!product || isOutOfStock) return;
     updateCart(product, quantity);
     setStatusMessage(`${quantity} item(s) added to cart.`);
   };
 
   const handleBuyNow = () => {
-    if (!product) return;
+    if (!product || isOutOfStock) return;
     updateCart(product, quantity);
     setStatusMessage("Added to cart. Checkout flow can be connected next.");
   };
 
   const handleAddToBuild = () => {
-    if (!product) return;
+    if (!product || isOutOfStock) return;
 
     const buildQueue = JSON.parse(localStorage.getItem("tb_build_queue") || "[]");
     buildQueue.push({
@@ -160,8 +164,9 @@ const ProductDetails = () => {
             <p className={styles.description}>{product.description}</p>
 
             <div className={styles.metaRow}>
-              <span className={styles.metaBadge}>Stock: {product.stock || "In stock"}</span>
-              <span className={styles.metaBadge}>Store: {product.store || "Online Store"}</span>
+              <span className={styles.metaBadge}>
+                Stock: {stockLabel} ({stockCount})
+              </span>
             </div>
 
             <div className={styles.priceSection}>
@@ -179,6 +184,7 @@ const ProductDetails = () => {
                   type="button"
                   className={styles.qtyButton}
                   onClick={() => handleQuantityChange(-1)}
+                  disabled={isOutOfStock}
                 >
                   <FaMinus />
                 </button>
@@ -187,19 +193,35 @@ const ProductDetails = () => {
                   type="button"
                   className={styles.qtyButton}
                   onClick={() => handleQuantityChange(1)}
+                  disabled={isOutOfStock}
                 >
                   <FaPlus />
                 </button>
               </div>
 
-              <button type="button" className={styles.cartButton} onClick={handleAddToCart}>
+              <button
+                type="button"
+                className={styles.cartButton}
+                onClick={handleAddToCart}
+                disabled={isOutOfStock}
+              >
                 <FaShoppingCart />
                 Add to Cart
               </button>
-              <button type="button" className={styles.buyButton} onClick={handleBuyNow}>
+              <button
+                type="button"
+                className={styles.buyButton}
+                onClick={handleBuyNow}
+                disabled={isOutOfStock}
+              >
                 Buy Now
               </button>
-              <button type="button" className={styles.buildButton} onClick={handleAddToBuild}>
+              <button
+                type="button"
+                className={styles.buildButton}
+                onClick={handleAddToBuild}
+                disabled={isOutOfStock}
+              >
                 Add to Build
               </button>
             </div>
@@ -244,4 +266,3 @@ const ProductDetails = () => {
 };
 
 export default ProductDetails;
-

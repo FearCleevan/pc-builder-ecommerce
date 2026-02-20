@@ -20,9 +20,8 @@ export const caseFanData = [
       "Warranty": "6 years"
     },
     has3D: false,
-    store: "Amazon",
-    stock: "In stock"
-  },
+    stockCount: 10
+    },
   {
     id: 'fan-2',
     name: 'Corsair LL120 RGB 120mm Dual Light Loop RGB LED PWM Fan',
@@ -43,9 +42,8 @@ export const caseFanData = [
       "Warranty": "2 years"
     },
     has3D: false,
-    store: "Newegg",
-    stock: "In stock"
-  },
+    stockCount: 10
+    },
   {
     id: 'fan-3',
     name: 'ARCTIC P12 PWM PST 120mm Pressure Optimized Fan',
@@ -66,9 +64,8 @@ export const caseFanData = [
       "Warranty": "10 years"
     },
     has3D: false,
-    store: "Best Buy",
-    stock: "In stock"
-  },
+    stockCount: 0
+    },
   {
     id: 'fan-4',
     name: 'be quiet! Silent Wings 3 140mm PWM High-Speed Fan',
@@ -89,9 +86,8 @@ export const caseFanData = [
       "Warranty": "3 years"
     },
     has3D: false,
-    store: "Amazon",
-    stock: "In stock"
-  },
+    stockCount: 10
+    },
   {
     id: 'fan-5',
     name: 'Lian Li UNI FAN SL120 120mm RGB PWM Fan',
@@ -112,9 +108,8 @@ export const caseFanData = [
       "Warranty": "2 years"
     },
     has3D: false,
-    store: "Newegg",
-    stock: "In stock"
-  },
+    stockCount: 10
+    },
   {
     id: 'fan-6',
     name: 'Noctua NF-A14 PWM 140mm Premium Quiet Fan',
@@ -135,9 +130,8 @@ export const caseFanData = [
       "Warranty": "6 years"
     },
     has3D: false,
-    store: "Best Buy",
-    stock: "In stock"
-  },
+    stockCount: 10
+    },
   {
     id: 'fan-7',
     name: 'Cooler Master SickleFlow 120 120mm ARGB Fan',
@@ -158,9 +152,8 @@ export const caseFanData = [
       "Warranty": "2 years"
     },
     has3D: false,
-    store: "Amazon",
-    stock: "In stock"
-  },
+    stockCount: 10
+    },
   {
     id: 'fan-8',
     name: 'Phanteks PH-F120T30 120mm Ultra High Performance Fan',
@@ -181,9 +174,8 @@ export const caseFanData = [
       "Warranty": "5 years"
     },
     has3D: false,
-    store: "Newegg",
-    stock: "In stock"
-  },
+    stockCount: 10
+    },
   {
     id: 'fan-9',
     name: 'ARCTIC F12 PWM PST 120mm Value Pack (5 Fans)',
@@ -204,9 +196,8 @@ export const caseFanData = [
       "Warranty": "10 years"
     },
     has3D: false,
-    store: "Best Buy",
-    stock: "In stock"
-  },
+    stockCount: 10
+    },
   {
     id: 'fan-10',
     name: 'be quiet! Light Wings 120mm PWM High-Speed RGB Fan',
@@ -227,9 +218,8 @@ export const caseFanData = [
       "Warranty": "3 years"
     },
     has3D: false,
-    store: "Amazon",
-    stock: "In stock"
-  },
+    stockCount: 10
+    },
   {
     id: 'fan-11',
     name: 'Noctua NF-F12 iPPC-3000 PWM 120mm Industrial Fan',
@@ -250,9 +240,8 @@ export const caseFanData = [
       "Warranty": "3 years"
     },
     has3D: false,
-    store: "Newegg",
-    stock: "In stock"
-  },
+    stockCount: 10
+    },
   {
     id: 'fan-12',
     name: 'Corsair QL120 RGB 120mm PWM Fan',
@@ -273,9 +262,8 @@ export const caseFanData = [
       "Warranty": "2 years"
     },
     has3D: false,
-    store: "Best Buy",
-    stock: "In stock"
-  },
+    stockCount: 0
+    },
   {
     id: 'fan-13',
     name: 'Thermalright TL-C12 120mm PWM Fan',
@@ -296,9 +284,8 @@ export const caseFanData = [
       "Warranty": "2 years"
     },
     has3D: false,
-    store: "Amazon",
-    stock: "In stock"
-  },
+    stockCount: 10
+    },
   {
     id: 'fan-14',
     name: 'Fractal Design Dynamic X2 GP-12 120mm PWM Fan',
@@ -319,9 +306,8 @@ export const caseFanData = [
       "Warranty": "3 years"
     },
     has3D: false,
-    store: "Newegg",
-    stock: "In stock"
-  },
+    stockCount: 10
+    },
   {
     id: 'fan-15',
     name: 'EK-Vardar EVO 120ER 120mm PWM D-RGB Fan',
@@ -342,9 +328,8 @@ export const caseFanData = [
       "Warranty": "2 years"
     },
     has3D: false,
-    store: "Best Buy",
-    stock: "In stock"
-  },
+    stockCount: 10
+    },
   {
     id: 'fan-16',
     name: 'Scythe Kaze Flex 120mm PWM Fan',
@@ -365,9 +350,8 @@ export const caseFanData = [
       "Warranty": "2 years"
     },
     has3D: false,
-    store: "Amazon",
-    stock: "In stock"
-  },
+    stockCount: 10
+    },
   {
     id: 'fan-17',
     name: 'upHere 120mm RGB PWM Case Fan 3-Pack',
@@ -388,9 +372,8 @@ export const caseFanData = [
       "Warranty": "1 year"
     },
     has3D: false,
-    store: "Newegg",
-    stock: "In stock"
-  },
+    stockCount: 10
+    },
   {
     id: 'fan-18',
     name: 'NoiseBlocker NB-eLoop B12-PS 120mm PWM Fan',
@@ -411,9 +394,8 @@ export const caseFanData = [
       "Warranty": "3 years"
     },
     has3D: false,
-    store: "Best Buy",
-    stock: "In stock"
-  },
+    stockCount: 10
+    },
   {
     id: 'fan-19',
     name: 'SilverStone Air Slimmer 120 120mm Slim PWM Fan',
@@ -434,9 +416,8 @@ export const caseFanData = [
       "Warranty": "2 years"
     },
     has3D: false,
-    store: "Amazon",
-    stock: "In stock"
-  },
+    stockCount: 10
+    },
   {
     id: 'fan-20',
     name: 'Gelid Solutions Silent 9 92mm PWM Fan',
@@ -457,7 +438,6 @@ export const caseFanData = [
       "Warranty": "3 years"
     },
     has3D: false,
-    store: "Newegg",
-    stock: "In stock"
-  }
+    stockCount: 10
+    }
 ];

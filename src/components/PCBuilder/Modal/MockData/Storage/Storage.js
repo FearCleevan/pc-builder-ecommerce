@@ -21,9 +21,8 @@ export const storageData = [
       "Warranty": "5 years"
     },
     has3D: false,
-    store: "Amazon",
-    stock: "In stock"
-  },
+    stockCount: 10
+    },
   {
     id: 'storage-2',
     name: 'Western Digital WD Blue 4TB 3.5" HDD',
@@ -44,9 +43,8 @@ export const storageData = [
       "Warranty": "2 years"
     },
     has3D: false,
-    store: "Newegg",
-    stock: "In stock"
-  },
+    stockCount: 10
+    },
   {
     id: 'storage-3',
     name: 'Crucial P5 Plus 1TB PCIe 4.0 NVMe SSD',
@@ -68,9 +66,8 @@ export const storageData = [
       "Warranty": "5 years"
     },
     has3D: false,
-    store: "Best Buy",
-    stock: "In stock"
-  },
+    stockCount: 10
+    },
   {
     id: 'storage-4',
     name: 'Seagate IronWolf Pro 12TB 3.5" NAS HDD',
@@ -92,9 +89,8 @@ export const storageData = [
       "Warranty": "5 years"
     },
     has3D: false,
-    store: "Amazon",
-    stock: "In stock"
-  },
+    stockCount: 10
+    },
   {
     id: 'storage-5',
     name: 'SK Hynix Platinum P41 2TB PCIe 4.0 NVMe SSD',
@@ -116,9 +112,8 @@ export const storageData = [
       "Warranty": "5 years"
     },
     has3D: false,
-    store: "Newegg",
-    stock: "In stock"
-  },
+    stockCount: 10
+    },
   {
     id: 'storage-6',
     name: 'Samsung 870 EVO 1TB 2.5" SATA SSD',
@@ -140,9 +135,8 @@ export const storageData = [
       "Warranty": "5 years"
     },
     has3D: false,
-    store: "Best Buy",
-    stock: "In stock"
-  },
+    stockCount: 10
+    },
   {
     id: 'storage-7',
     name: 'Sabrent Rocket 4 Plus 4TB PCIe 4.0 NVMe SSD',
@@ -164,9 +158,8 @@ export const storageData = [
       "Warranty": "5 years"
     },
     has3D: false,
-    store: "Amazon",
-    stock: "In stock"
-  },
+    stockCount: 10
+    },
   {
     id: 'storage-8',
     name: 'Toshiba X300 8TB 3.5" Performance HDD',
@@ -187,9 +180,8 @@ export const storageData = [
       "Warranty": "2 years"
     },
     has3D: false,
-    store: "Newegg",
-    stock: "In stock"
-  },
+    stockCount: 0
+    },
   {
     id: 'storage-9',
     name: 'WD Black SN850X 1TB PCIe 4.0 NVMe SSD',
@@ -211,9 +203,8 @@ export const storageData = [
       "Warranty": "5 years"
     },
     has3D: false,
-    store: "Best Buy",
-    stock: "In stock"
-  },
+    stockCount: 10
+    },
   {
     id: 'storage-10',
     name: 'Kingston NV2 2TB PCIe 4.0 NVMe SSD',
@@ -235,9 +226,8 @@ export const storageData = [
       "Warranty": "3 years"
     },
     has3D: false,
-    store: "Amazon",
-    stock: "In stock"
-  },
+    stockCount: 10
+    },
   {
     id: 'storage-11',
     name: 'Seagate FireCuda 530 2TB PCIe 4.0 NVMe SSD',
@@ -259,9 +249,8 @@ export const storageData = [
       "Warranty": "5 years"
     },
     has3D: false,
-    store: "Newegg",
-    stock: "In stock"
-  },
+    stockCount: 10
+    },
   {
     id: 'storage-12',
     name: 'Crucial MX500 2TB 2.5" SATA SSD',
@@ -283,9 +272,8 @@ export const storageData = [
       "Warranty": "5 years"
     },
     has3D: false,
-    store: "Best Buy",
-    stock: "In stock"
-  },
+    stockCount: 10
+    },
   {
     id: 'storage-13',
     name: 'Western Digital Red Pro 10TB 3.5" NAS HDD',
@@ -307,9 +295,8 @@ export const storageData = [
       "Warranty": "5 years"
     },
     has3D: false,
-    store: "Amazon",
-    stock: "In stock"
-  },
+    stockCount: 10
+    },
   {
     id: 'storage-14',
     name: 'G.Skill Trident Z44Q 4TB PCIe 4.0 NVMe SSD',
@@ -331,9 +318,8 @@ export const storageData = [
       "Warranty": "5 years"
     },
     has3D: false,
-    store: "Newegg",
-    stock: "In stock"
-  },
+    stockCount: 10
+    },
   {
     id: 'storage-15',
     name: 'Seagate BarraCuda 2TB 3.5" HDD',
@@ -354,9 +340,8 @@ export const storageData = [
       "Warranty": "2 years"
     },
     has3D: false,
-    store: "Best Buy",
-    stock: "In stock"
-  },
+    stockCount: 10
+    },
   {
     id: 'storage-16',
     name: 'ADATA XPG GAMMIX S70 Blade 2TB PCIe 4.0 NVMe SSD',
@@ -378,9 +363,8 @@ export const storageData = [
       "Warranty": "5 years"
     },
     has3D: false,
-    store: "Amazon",
-    stock: "In stock"
-  },
+    stockCount: 10
+    },
   {
     id: 'storage-17',
     name: 'Intel 670p 2TB PCIe 3.0 NVMe SSD',
@@ -402,9 +386,8 @@ export const storageData = [
       "Warranty": "5 years"
     },
     has3D: false,
-    store: "Newegg",
-    stock: "In stock"
-  },
+    stockCount: 0
+    },
   {
     id: 'storage-18',
     name: 'SanDisk Extreme Pro 1TB Portable SSD',
@@ -424,9 +407,8 @@ export const storageData = [
       "Warranty": "5 years"
     },
     has3D: false,
-    store: "Best Buy",
-    stock: "In stock"
-  },
+    stockCount: 10
+    },
   {
     id: 'storage-19',
     name: 'Samsung 990 Pro 4TB PCIe 4.0 NVMe SSD',
@@ -448,9 +430,8 @@ export const storageData = [
       "Warranty": "5 years"
     },
     has3D: false,
-    store: "Amazon",
-    stock: "In stock"
-  },
+    stockCount: 10
+    },
   {
     id: 'storage-20',
     name: 'Seagate Exos X20 20TB 3.5" Enterprise HDD',
@@ -472,7 +453,6 @@ export const storageData = [
       "Warranty": "5 years"
     },
     has3D: false,
-    store: "Newegg",
-    stock: "In stock"
-  }
+    stockCount: 10
+    }
 ];

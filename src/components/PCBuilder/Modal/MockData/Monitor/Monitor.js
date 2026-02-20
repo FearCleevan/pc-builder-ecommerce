@@ -24,9 +24,8 @@ export const monitorData = [
       "Weight": "7.7 kg"
     },
     has3D: false,
-    store: "Newegg",
-    stock: "In stock"
-  },
+    stockCount: 10
+    },
   {
     id: 'monitor-2',
     name: 'LG 27GP850 27" Nano IPS QHD 180Hz Gaming Monitor',
@@ -51,9 +50,8 @@ export const monitorData = [
       "Weight": "5.9 kg"
     },
     has3D: false,
-    store: "Amazon",
-    stock: "In stock"
-  },
+    stockCount: 10
+    },
   {
     id: 'monitor-3',
     name: 'Dell S2721DGF 27" QHD 165Hz IPS Gaming Monitor',
@@ -78,9 +76,8 @@ export const monitorData = [
       "Weight": "6.1 kg"
     },
     has3D: false,
-    store: "Best Buy",
-    stock: "In stock"
-  },
+    stockCount: 10
+    },
   {
     id: 'monitor-4',
     name: 'ASUS ROG Swift PG32UQX 32" 4K 144Hz Mini-LED',
@@ -105,9 +102,8 @@ export const monitorData = [
       "Weight": "11.2 kg"
     },
     has3D: false,
-    store: "Newegg",
-    stock: "In stock"
-  },
+    stockCount: 10
+    },
   {
     id: 'monitor-5',
     name: 'Acer Nitro XV272U 27" WQHD 170Hz IPS Monitor',
@@ -132,9 +128,8 @@ export const monitorData = [
       "Weight": "5.5 kg"
     },
     has3D: false,
-    store: "Amazon",
-    stock: "In stock"
-  },
+    stockCount: 10
+    },
   {
     id: 'monitor-6',
     name: 'MSI Optix MAG274QRF-QD 27" QHD 165Hz Quantum Dot',
@@ -159,9 +154,8 @@ export const monitorData = [
       "Weight": "6.3 kg"
     },
     has3D: false,
-    store: "Best Buy",
-    stock: "In stock"
-  },
+    stockCount: 0
+    },
   {
     id: 'monitor-7',
     name: 'Gigabyte M28U 28" 4K 144Hz SS IPS Gaming Monitor',
@@ -186,9 +180,8 @@ export const monitorData = [
       "Weight": "6.3 kg"
     },
     has3D: false,
-    store: "Newegg",
-    stock: "In stock"
-  },
+    stockCount: 10
+    },
   {
     id: 'monitor-8',
     name: 'Alienware AW3423DW 34" QD-OLED 175Hz Curved',
@@ -213,9 +206,8 @@ export const monitorData = [
       "Weight": "9.3 kg"
     },
     has3D: false,
-    store: "Amazon",
-    stock: "In stock"
-  },
+    stockCount: 10
+    },
   {
     id: 'monitor-9',
     name: 'ViewSonic XG270QG 27" QHD 165Hz Nano IPS G-Sync',
@@ -240,9 +232,8 @@ export const monitorData = [
       "Weight": "6.7 kg"
     },
     has3D: false,
-    store: "Best Buy",
-    stock: "In stock"
-  },
+    stockCount: 10
+    },
   {
     id: 'monitor-10',
     name: 'HP X27q 27" QHD 165Hz IPS Gaming Monitor',
@@ -267,9 +258,8 @@ export const monitorData = [
       "Weight": "5.2 kg"
     },
     has3D: false,
-    store: "Newegg",
-    stock: "In stock"
-  },
+    stockCount: 10
+    },
   {
     id: 'monitor-11',
     name: 'Samsung Odyssey Neo G9 49" DQHD 240Hz Mini-LED',
@@ -294,9 +284,8 @@ export const monitorData = [
       "Weight": "16.7 kg"
     },
     has3D: false,
-    store: "Amazon",
-    stock: "In stock"
-  },
+    stockCount: 10
+    },
   {
     id: 'monitor-12',
     name: 'LG 27GN950-B 27" 4K Nano IPS 240Hz Gaming Monitor',
@@ -321,9 +310,8 @@ export const monitorData = [
       "Weight": "6.8 kg"
     },
     has3D: false,
-    store: "Best Buy",
-    stock: "In stock"
-  },
+    stockCount: 10
+    },
   {
     id: 'monitor-13',
     name: 'AOC 24G2 24" Full HD 144Hz IPS Gaming Monitor',
@@ -348,9 +336,8 @@ export const monitorData = [
       "Weight": "4.2 kg"
     },
     has3D: false,
-    store: "Newegg",
-    stock: "In stock"
-  },
+    stockCount: 10
+    },
   {
     id: 'monitor-14',
     name: 'Dell U2720Q 27" 4K USB-C IPS Ultrasharp Monitor',
@@ -375,9 +362,8 @@ export const monitorData = [
       "Weight": "4.2 kg"
     },
     has3D: false,
-    store: "Amazon",
-    stock: "In stock"
-  },
+    stockCount: 10
+    },
   {
     id: 'monitor-15',
     name: 'ASUS TUF Gaming VG279QM 27" Full HD 280Hz IPS',
@@ -402,9 +388,8 @@ export const monitorData = [
       "Weight": "5.8 kg"
     },
     has3D: false,
-    store: "Best Buy",
-    stock: "In stock"
-  },
+    stockCount: 0
+    },
   {
     id: 'monitor-16',
     name: 'Philips 346B1C 34" UWQHD 100Hz Curved Business Monitor',
@@ -429,9 +414,8 @@ export const monitorData = [
       "Weight": "9.1 kg"
     },
     has3D: false,
-    store: "Newegg",
-    stock: "In stock"
-  },
+    stockCount: 10
+    },
   {
     id: 'monitor-17',
     name: 'MSI MPG ARTYMIS 343CQR 34" WQHD 165Hz Curved',
@@ -456,9 +440,8 @@ export const monitorData = [
       "Weight": "8.9 kg"
     },
     has3D: false,
-    store: "Amazon",
-    stock: "In stock"
-  },
+    stockCount: 10
+    },
   {
     id: 'monitor-18',
     name: 'Gigabyte G27Q 27" QHD 144Hz IPS Gaming Monitor',
@@ -483,9 +466,8 @@ export const monitorData = [
       "Weight": "5.6 kg"
     },
     has3D: false,
-    store: "Best Buy",
-    stock: "In stock"
-  },
+    stockCount: 10
+    },
   {
     id: 'monitor-19',
     name: 'Samsung UR55 28" 4K 60Hz IPS HDR Monitor',
@@ -510,9 +492,8 @@ export const monitorData = [
       "Weight": "4.8 kg"
     },
     has3D: false,
-    store: "Newegg",
-    stock: "In stock"
-  },
+    stockCount: 10
+    },
   {
     id: 'monitor-20',
     name: 'ViewSonic ELITE XG270 27" Full HD 240Hz IPS',
@@ -537,7 +518,6 @@ export const monitorData = [
       "Weight": "6.2 kg"
     },
     has3D: false,
-    store: "Amazon",
-    stock: "In stock"
-  }
+    stockCount: 10
+    }
 ];

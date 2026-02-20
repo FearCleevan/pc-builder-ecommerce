@@ -25,9 +25,8 @@ export const powerSupplyData = [
       "Warranty": "10 years"
     },
     has3D: false,
-    store: "Newegg",
-    stock: "In stock"
-  },
+    stockCount: 10
+    },
   {
     id: 'psu-2',
     name: 'Seasonic FOCUS GX-850 850W 80+ Gold',
@@ -53,9 +52,8 @@ export const powerSupplyData = [
       "Warranty": "10 years"
     },
     has3D: false,
-    store: "Amazon",
-    stock: "In stock"
-  },
+    stockCount: 10
+    },
   {
     id: 'psu-3',
     name: 'EVGA SuperNOVA 1600 T2 1600W 80+ Titanium',
@@ -81,9 +79,8 @@ export const powerSupplyData = [
       "Warranty": "10 years"
     },
     has3D: false,
-    store: "Best Buy",
-    stock: "In stock"
-  },
+    stockCount: 10
+    },
   {
     id: 'psu-4',
     name: 'Corsair SF750 750W 80+ Platinum SFX',
@@ -109,9 +106,8 @@ export const powerSupplyData = [
       "Warranty": "7 years"
     },
     has3D: false,
-    store: "Newegg",
-    stock: "In stock"
-  },
+    stockCount: 10
+    },
   {
     id: 'psu-5',
     name: 'be quiet! Straight Power 11 650W 80+ Platinum',
@@ -137,9 +133,8 @@ export const powerSupplyData = [
       "Warranty": "5 years"
     },
     has3D: false,
-    store: "Amazon",
-    stock: "In stock"
-  },
+    stockCount: 0
+    },
   {
     id: 'psu-6',
     name: 'Thermaltake Toughpower GF3 1350W 80+ Gold',
@@ -165,9 +160,8 @@ export const powerSupplyData = [
       "Warranty": "10 years"
     },
     has3D: false,
-    store: "Best Buy",
-    stock: "In stock"
-  },
+    stockCount: 10
+    },
   {
     id: 'psu-7',
     name: 'Cooler Master V850 Gold V2 850W 80+ Gold',
@@ -193,9 +187,8 @@ export const powerSupplyData = [
       "Warranty": "10 years"
     },
     has3D: false,
-    store: "Newegg",
-    stock: "In stock"
-  },
+    stockCount: 10
+    },
   {
     id: 'psu-8',
     name: 'ASUS ROG Thor 1200P2 1200W 80+ Platinum',
@@ -221,9 +214,8 @@ export const powerSupplyData = [
       "Warranty": "10 years"
     },
     has3D: true,
-    store: "Amazon",
-    stock: "In stock"
-  },
+    stockCount: 10
+    },
   {
     id: 'psu-9',
     name: 'SeaSonic PRIME TX-1000 1000W 80+ Titanium',
@@ -249,9 +241,8 @@ export const powerSupplyData = [
       "Warranty": "12 years"
     },
     has3D: false,
-    store: "Best Buy",
-    stock: "In stock"
-  },
+    stockCount: 10
+    },
   {
     id: 'psu-10',
     name: 'EVGA 600 BR 600W 80+ Bronze',
@@ -277,9 +268,8 @@ export const powerSupplyData = [
       "Warranty": "3 years"
     },
     has3D: false,
-    store: "Newegg",
-    stock: "In stock"
-  },
+    stockCount: 10
+    },
   {
     id: 'psu-11',
     name: 'FSP Group Dagger Pro 850W 80+ Gold SFX',
@@ -305,9 +295,8 @@ export const powerSupplyData = [
       "Warranty": "5 years"
   },
     has3D: false,
-    store: "Amazon",
-    stock: "In stock"
-  },
+    stockCount: 10
+    },
   {
     id: 'psu-12',
     name: 'NZXT C1200 1200W 80+ Gold',
@@ -333,9 +322,8 @@ export const powerSupplyData = [
       "Warranty": "10 years"
     },
     has3D: false,
-    store: "Best Buy",
-    stock: "In stock"
-  },
+    stockCount: 10
+    },
   {
     id: 'psu-13',
     name: 'Super Flower Leadex III Gold 850W 80+ Gold',
@@ -361,9 +349,8 @@ export const powerSupplyData = [
       "Warranty": "10 years"
     },
     has3D: false,
-    store: "Newegg",
-    stock: "In stock"
-  },
+    stockCount: 10
+    },
   {
     id: 'psu-14',
     name: 'Phanteks AMP 1000W 80+ Gold',
@@ -389,9 +376,8 @@ export const powerSupplyData = [
       "Warranty": "10 years"
     },
     has3D: false,
-    store: "Amazon",
-    stock: "In stock"
-  },
+    stockCount: 0
+    },
   {
     id: 'psu-15',
     name: 'be quiet! Dark Power 13 850W 80+ Titanium',
@@ -417,9 +403,8 @@ export const powerSupplyData = [
       "Warranty": "5 years"
     },
     has3D: false,
-    store: "Best Buy",
-    stock: "In stock"
-  },
+    stockCount: 10
+    },
   {
     id: 'psu-16',
     name: 'SilverStone Extreme 850R Platinum 850W 80+ Platinum',
@@ -445,9 +430,8 @@ export const powerSupplyData = [
       "Warranty": "7 years"
     },
     has3D: false,
-    store: "Newegg",
-    stock: "In stock"
-  },
+    stockCount: 10
+    },
   {
     id: 'psu-17',
     name: 'Gigabyte UD850GM 850W 80+ Gold',
@@ -473,9 +457,8 @@ export const powerSupplyData = [
       "Warranty": "5 years"
     },
     has3D: false,
-    store: "Amazon",
-    stock: "In stock"
-  },
+    stockCount: 10
+    },
   {
     id: 'psu-18',
     name: 'Cooler Master V550 Gold V2 550W 80+ Gold',
@@ -501,9 +484,8 @@ export const powerSupplyData = [
       "Warranty": "10 years"
     },
     has3D: false,
-    store: "Best Buy",
-    stock: "In stock"
-  },
+    stockCount: 10
+    },
   {
     id: 'psu-19',
     name: 'Seasonic FOCUS SPX-750 750W 80+ Platinum SFX-L',
@@ -529,9 +511,8 @@ export const powerSupplyData = [
       "Warranty": "10 years"
     },
     has3D: false,
-    store: "Newegg",
-    stock: "In stock"
-  },
+    stockCount: 10
+    },
   {
     id: 'psu-20',
     name: 'EVGA SuperNOVA 550 G3 550W 80+ Gold',
@@ -557,7 +538,6 @@ export const powerSupplyData = [
       "Warranty": "7 years"
     },
     has3D: false,
-    store: "Amazon",
-    stock: "In stock"
-  }
+    stockCount: 10
+    }
 ];

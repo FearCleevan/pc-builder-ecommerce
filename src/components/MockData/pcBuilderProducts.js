@@ -50,8 +50,8 @@ const createNormalizer =
         ? subcategoryResolver(product)
         : subcategoryResolver,
     specs: product.specs || {},
-    store: product.store || "Online Store",
-    stock: product.stock || "In stock",
+    stockCount:
+      typeof product.stockCount === "number" ? product.stockCount : 10,
     type: product.type || null,
   });
 

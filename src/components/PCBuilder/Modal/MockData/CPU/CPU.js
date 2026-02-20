@@ -29,9 +29,7 @@ export const cpuData = [
       "Manufacturer": "AMD"
     },
     has3D: true,
-    store: "Newegg",
-    stock: "In stock"
-  },
+    stockCount: 0    },
   {
     id: 'cpu-2',
     name: 'Intel Core i9-13900K',
@@ -51,9 +49,7 @@ export const cpuData = [
       "Manufacturer": "Intel"
     },
     has3D: true,
-    store: "Amazon",
-    stock: "In stock"
-  },
+    stockCount: 10    },
   {
     id: 'cpu-3',
     name: 'AMD Ryzen 7 7800X3D',
@@ -73,9 +69,7 @@ export const cpuData = [
       "Manufacturer": "AMD"
     },
     has3D: true,
-    store: "Best Buy",
-    stock: "In stock"
-  },
+    stockCount: 10    },
   {
     id: 'cpu-4',
     name: 'Intel Core i7-13700K',
@@ -95,9 +89,7 @@ export const cpuData = [
       "Manufacturer": "Intel"
     },
     has3D: true,
-    store: "Newegg",
-    stock: "In stock"
-  },
+    stockCount: 10    },
   {
     id: 'cpu-5',
     name: 'AMD Ryzen 5 7600X',
@@ -117,9 +109,7 @@ export const cpuData = [
       "Manufacturer": "AMD"
     },
     has3D: false,
-    store: "Amazon",
-    stock: "In stock"
-  },
+    stockCount: 10    },
   {
     id: 'cpu-6',
     name: 'Intel Core i5-13600K',
@@ -139,9 +129,7 @@ export const cpuData = [
       "Manufacturer": "Intel"
     },
     has3D: false,
-    store: "Best Buy",
-    stock: "In stock"
-  },
+    stockCount: 10    },
   {
     id: 'cpu-7',
     name: 'AMD Ryzen 9 5950X',
@@ -161,9 +149,7 @@ export const cpuData = [
       "Manufacturer": "AMD"
     },
     has3D: true,
-    store: "Newegg",
-    stock: "In stock"
-  },
+    stockCount: 10    },
   {
     id: 'cpu-8',
     name: 'Intel Core i9-12900K',
@@ -183,9 +169,7 @@ export const cpuData = [
       "Manufacturer": "Intel"
     },
     has3D: true,
-    store: "Amazon",
-    stock: "In stock"
-  },
+    stockCount: 10    },
   {
     id: 'cpu-9',
     name: 'AMD Ryzen 7 5800X3D',
@@ -205,9 +189,7 @@ export const cpuData = [
       "Manufacturer": "AMD"
     },
     has3D: false,
-    store: "Best Buy",
-    stock: "In stock"
-  },
+    stockCount: 10    },
   {
     id: 'cpu-10',
     name: 'Intel Core i7-12700K',
@@ -227,9 +209,7 @@ export const cpuData = [
       "Manufacturer": "Intel"
     },
     has3D: false,
-    store: "Newegg",
-    stock: "In stock"
-  },
+    stockCount: 0    },
   {
     id: 'cpu-11',
     name: 'AMD Ryzen 5 5600X',
@@ -249,9 +229,7 @@ export const cpuData = [
       "Manufacturer": "AMD"
     },
     has3D: false,
-    store: "Amazon",
-    stock: "In stock"
-  },
+    stockCount: 10    },
   {
     id: 'cpu-12',
     name: 'Intel Core i5-12600K',
@@ -271,9 +249,7 @@ export const cpuData = [
       "Manufacturer": "Intel"
     },
     has3D: false,
-    store: "Best Buy",
-    stock: "In stock"
-  },
+    stockCount: 10    },
   {
     id: 'cpu-13',
     name: 'AMD Ryzen 9 7900X',
@@ -293,9 +269,7 @@ export const cpuData = [
       "Manufacturer": "AMD"
     },
     has3D: true,
-    store: "Newegg",
-    stock: "In stock"
-  },
+    stockCount: 10    },
   {
     id: 'cpu-14',
     name: 'Intel Core i3-13100',
@@ -315,9 +289,7 @@ export const cpuData = [
       "Manufacturer": "Intel"
     },
     has3D: false,
-    store: "Amazon",
-    stock: "In stock"
-  },
+    stockCount: 10    },
   {
     id: 'cpu-15',
     name: 'AMD Ryzen 3 4100',
@@ -337,9 +309,7 @@ export const cpuData = [
       "Manufacturer": "AMD"
     },
     has3D: false,
-    store: "Best Buy",
-    stock: "In stock"
-  },
+    stockCount: 10    },
   {
     id: 'cpu-16',
     name: 'Intel Pentium Gold G7400',
@@ -359,9 +329,7 @@ export const cpuData = [
       "Manufacturer": "Intel"
     },
     has3D: false,
-    store: "Newegg",
-    stock: "In stock"
-  },
+    stockCount: 10    },
   {
     id: 'cpu-17',
     name: 'AMD Ryzen Threadripper 3970X',
@@ -381,9 +349,7 @@ export const cpuData = [
       "Manufacturer": "AMD"
     },
     has3D: true,
-    store: "Amazon",
-    stock: "In stock"
-  },
+    stockCount: 10    },
   {
     id: 'cpu-18',
     name: 'Intel Xeon W-3375',
@@ -403,9 +369,7 @@ export const cpuData = [
       "Manufacturer": "Intel"
     },
     has3D: true,
-    store: "Newegg",
-    stock: "In stock"
-  },
+    stockCount: 10    },
   {
     id: 'cpu-19',
     name: 'AMD Ryzen 7 5700G',
@@ -425,9 +389,7 @@ export const cpuData = [
       "Manufacturer": "AMD"
     },
     has3D: false,
-    store: "Best Buy",
-    stock: "In stock"
-  },
+    stockCount: 0    },
   {
     id: 'cpu-20',
     name: 'Intel Core i9-11900K',
@@ -447,9 +409,7 @@ export const cpuData = [
       "Manufacturer": "Intel"
     },
     has3D: true,
-    store: "Amazon",
-    stock: "In stock"
-  },
+    stockCount: 10    },
   // Additional CPUs to match your uploaded assets
   {
     id: 'cpu-21',
@@ -470,9 +430,7 @@ export const cpuData = [
       "Manufacturer": "AMD"
     },
     has3D: false,
-    store: "Amazon",
-    stock: "In stock"
-  },
+    stockCount: 10    },
   {
     id: 'cpu-22',
     name: 'AMD Ryzen 5 4500',
@@ -492,9 +450,7 @@ export const cpuData = [
       "Manufacturer": "AMD"
     },
     has3D: false,
-    store: "Newegg",
-    stock: "In stock"
-  },
+    stockCount: 10    },
   {
     id: 'cpu-23',
     name: 'AMD Ryzen 5 5500',
@@ -514,9 +470,7 @@ export const cpuData = [
       "Manufacturer": "AMD"
     },
     has3D: false,
-    store: "Best Buy",
-    stock: "In stock"
-  },
+    stockCount: 10    },
   {
     id: 'cpu-24',
     name: 'AMD Ryzen 5 5500GT',
@@ -536,9 +490,7 @@ export const cpuData = [
       "Manufacturer": "AMD"
     },
     has3D: false,
-    store: "Amazon",
-    stock: "In stock"
-  },
+    stockCount: 10    },
   {
     id: 'cpu-25',
     name: 'AMD Ryzen 5 5600',
@@ -558,9 +510,7 @@ export const cpuData = [
       "Manufacturer": "AMD"
     },
     has3D: false,
-    store: "Newegg",
-    stock: "In stock"
-  },
+    stockCount: 10    },
   {
     id: 'cpu-26',
     name: 'AMD Ryzen 5 5600G',
@@ -580,9 +530,7 @@ export const cpuData = [
       "Manufacturer": "AMD"
     },
     has3D: false,
-    store: "Best Buy",
-    stock: "In stock"
-  },
+    stockCount: 10    },
   {
     id: 'cpu-27',
     name: 'AMD Ryzen 5 5600XT',
@@ -602,9 +550,7 @@ export const cpuData = [
       "Manufacturer": "AMD"
     },
     has3D: false,
-    store: "Amazon",
-    stock: "In stock"
-  },
+    stockCount: 10    },
   {
     id: 'cpu-28',
     name: 'Intel Core i3-10100',
@@ -624,9 +570,7 @@ export const cpuData = [
       "Manufacturer": "Intel"
     },
     has3D: false,
-    store: "Newegg",
-    stock: "In stock"
-  },
+    stockCount: 0    },
   {
     id: 'cpu-29',
     name: 'Intel Core i3-12100',
@@ -646,9 +590,7 @@ export const cpuData = [
       "Manufacturer": "Intel"
     },
     has3D: false,
-    store: "Amazon",
-    stock: "In stock"
-  },
+    stockCount: 10    },
   {
     id: 'cpu-30',
     name: 'Intel Core i5-14600K',
@@ -668,7 +610,5 @@ export const cpuData = [
       "Manufacturer": "Intel"
     },
     has3D: false,
-    store: "Best Buy",
-    stock: "In stock"
-  }
+    stockCount: 10    }
 ];

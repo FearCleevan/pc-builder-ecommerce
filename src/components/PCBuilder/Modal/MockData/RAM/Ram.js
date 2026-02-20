@@ -24,9 +24,8 @@ export const ramData = [
       "XMP/EXPO": "XMP 3.0"
     },
     has3D: false,
-    store: "Amazon",
-    stock: "In stock"
-  },
+    stockCount: 10
+    },
   {
     id: 'ram-2',
     name: 'G.Skill Trident Z5 RGB 64GB DDR5 6400MHz',
@@ -51,9 +50,8 @@ export const ramData = [
       "XMP/EXPO": "XMP 3.0"
     },
     has3D: false,
-    store: "Newegg",
-    stock: "In stock"
-  },
+    stockCount: 10
+    },
   {
     id: 'ram-3',
     name: 'Kingston FURY Beast 16GB DDR5 5200MHz',
@@ -78,9 +76,8 @@ export const ramData = [
       "XMP/EXPO": "XMP 3.0"
     },
     has3D: false,
-    store: "Best Buy",
-    stock: "In stock"
-  },
+    stockCount: 0
+    },
   {
     id: 'ram-4',
     name: 'Crucial Pro 32GB DDR4 3200MHz',
@@ -105,9 +102,8 @@ export const ramData = [
       "XMP/EXPO": "XMP 2.0"
     },
     has3D: false,
-    store: "Amazon",
-    stock: "In stock"
-  },
+    stockCount: 10
+    },
   {
     id: 'ram-5',
     name: 'Corsair Vengeance LPX 64GB DDR4 3600MHz',
@@ -132,9 +128,8 @@ export const ramData = [
       "XMP/EXPO": "XMP 2.0"
     },
     has3D: false,
-    store: "Newegg",
-    stock: "In stock"
-  },
+    stockCount: 10
+    },
   {
     id: 'ram-6',
     name: 'G.Skill Ripjaws V 16GB DDR4 4000MHz',
@@ -159,9 +154,8 @@ export const ramData = [
       "XMP/EXPO": "XMP 2.0"
     },
     has3D: false,
-    store: "Best Buy",
-    stock: "In stock"
-  },
+    stockCount: 10
+    },
   {
     id: 'ram-7',
     name: 'Teamgroup T-Force Delta RGB 32GB DDR4 3600MHz',
@@ -186,9 +180,8 @@ export const ramData = [
       "XMP/EXPO": "XMP 2.0"
     },
     has3D: false,
-    store: "Amazon",
-    stock: "In stock"
-  },
+    stockCount: 10
+    },
   {
     id: 'ram-8',
     name: 'Samsung 32GB DDR5 4800MHz ECC Registered',
@@ -213,9 +206,8 @@ export const ramData = [
       "XMP/EXPO": "No"
     },
     has3D: false,
-    store: "Newegg",
-    stock: "In stock"
-  },
+    stockCount: 10
+    },
   {
     id: 'ram-9',
     name: 'HyperX Fury 8GB DDR3 1866MHz',
@@ -240,9 +232,8 @@ export const ramData = [
       "XMP/EXPO": "XMP 1.3"
     },
     has3D: false,
-    store: "Best Buy",
-    stock: "In stock"
-  },
+    stockCount: 10
+    },
   {
     id: 'ram-10',
     name: 'Patriot Viper Steel 128GB DDR4 3600MHz',
@@ -267,9 +258,8 @@ export const ramData = [
       "XMP/EXPO": "XMP 2.0"
     },
     has3D: false,
-    store: "Amazon",
-    stock: "In stock"
-  },
+    stockCount: 10
+    },
   {
     id: 'ram-11',
     name: 'OLOy Blade RGB 16GB DDR5 7200MHz',
@@ -294,9 +284,8 @@ export const ramData = [
       "XMP/EXPO": "XMP 3.0"
     },
     has3D: false,
-    store: "Newegg",
-    stock: "In stock"
-  },
+    stockCount: 10
+    },
   {
     id: 'ram-12',
     name: 'Silicon Power Zenith 64GB DDR5 6000MHz',
@@ -321,9 +310,8 @@ export const ramData = [
       "XMP/EXPO": "XMP 3.0"
     },
     has3D: false,
-    store: "Best Buy",
-    stock: "In stock"
-  },
+    stockCount: 0
+    },
   {
     id: 'ram-13',
     name: 'ADATA XPG Lancer 32GB DDR5 8000MHz',
@@ -348,9 +336,8 @@ export const ramData = [
       "XMP/EXPO": "XMP 3.0"
     },
     has3D: false,
-    store: "Amazon",
-    stock: "In stock"
-  },
+    stockCount: 10
+    },
   {
     id: 'ram-14',
     name: 'Micron 16GB DDR4 2666MHz SODIMM',
@@ -375,9 +362,8 @@ export const ramData = [
       "XMP/EXPO": "No"
     },
     has3D: false,
-    store: "Newegg",
-    stock: "In stock"
-  },
+    stockCount: 10
+    },
   {
     id: 'ram-15',
     name: 'G.Skill Trident Z Neo 32GB DDR4 3800MHz',
@@ -402,9 +388,8 @@ export const ramData = [
       "XMP/EXPO": "XMP 2.0"
     },
     has3D: false,
-    store: "Best Buy",
-    stock: "In stock"
-  },
+    stockCount: 10
+    },
   {
     id: 'ram-16',
     name: 'Kingston ValueRAM 8GB DDR3 1600MHz',
@@ -429,9 +414,8 @@ export const ramData = [
       "XMP/EXPO": "No"
     },
     has3D: false,
-    store: "Amazon",
-    stock: "In stock"
-  },
+    stockCount: 10
+    },
   {
     id: 'ram-17',
     name: 'Corsair Dominator Platinum 64GB DDR5 6600MHz',
@@ -456,9 +440,8 @@ export const ramData = [
       "XMP/EXPO": "XMP 3.0"
     },
     has3D: false,
-    store: "Newegg",
-    stock: "In stock"
-  },
+    stockCount: 10
+    },
   {
     id: 'ram-18',
     name: 'Teamgroup Vulcan Z 16GB DDR4 3200MHz',
@@ -483,9 +466,8 @@ export const ramData = [
       "XMP/EXPO": "XMP 2.0"
     },
     has3D: false,
-    store: "Best Buy",
-    stock: "In stock"
-  },
+    stockCount: 10
+    },
   {
     id: 'ram-19',
     name: 'Samsung 128GB DDR4 3200MHz ECC Registered',
@@ -510,9 +492,8 @@ export const ramData = [
       "XMP/EXPO": "No"
     },
     has3D: false,
-    store: "Amazon",
-    stock: "In stock"
-  },
+    stockCount: 10
+    },
   {
     id: 'ram-20',
     name: 'GeIL Orion RGB 32GB DDR5 5600MHz',
@@ -537,7 +518,6 @@ export const ramData = [
       "XMP/EXPO": "XMP 3.0"
     },
     has3D: false,
-    store: "Newegg",
-    stock: "In stock"
-  }
+    stockCount: 10
+    }
 ];

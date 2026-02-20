@@ -23,9 +23,8 @@ export const webcamData = [
       "Weight": "0.33 lbs"
     },
     has3D: false,
-    store: "Newegg",
-    stock: "In stock"
-  },
+    stockCount: 10
+    },
   {
     id: 'webcam-2',
     name: 'Razer Kiyo Pro Ultra 4K Webcam',
@@ -49,9 +48,8 @@ export const webcamData = [
       "Weight": "0.5 lbs"
     },
     has3D: false,
-    store: "Amazon",
-    stock: "In stock"
-  },
+    stockCount: 10
+    },
   {
     id: 'webcam-3',
     name: 'Logitech C920x HD Pro Webcam',
@@ -75,9 +73,8 @@ export const webcamData = [
       "Weight": "0.31 lbs"
     },
     has3D: false,
-    store: "Best Buy",
-    stock: "In stock"
-  },
+    stockCount: 10
+    },
   {
     id: 'webcam-4',
     name: 'Elgato Facecam Professional 1080p Webcam',
@@ -101,9 +98,8 @@ export const webcamData = [
       "Weight": "0.35 lbs"
     },
     has3D: false,
-    store: "Newegg",
-    stock: "In stock"
-  },
+    stockCount: 10
+    },
   {
     id: 'webcam-5',
     name: 'Microsoft LifeCam Studio 1080p HD Webcam',
@@ -127,9 +123,8 @@ export const webcamData = [
       "Weight": "0.28 lbs"
     },
     has3D: false,
-    store: "Amazon",
-    stock: "In stock"
-  },
+    stockCount: 10
+    },
   {
     id: 'webcam-6',
     name: 'Anker PowerConf C200 2K Webcam',
@@ -153,9 +148,8 @@ export const webcamData = [
       "Weight": "0.4 lbs"
     },
     has3D: false,
-    store: "Best Buy",
-    stock: "In stock"
-  },
+    stockCount: 0
+    },
   {
     id: 'webcam-7',
     name: 'NexiGo N60 1080p Webcam with Ring Light',
@@ -179,9 +173,8 @@ export const webcamData = [
       "Weight": "0.45 lbs"
     },
     has3D: false,
-    store: "Newegg",
-    stock: "In stock"
-  },
+    stockCount: 10
+    },
   {
     id: 'webcam-8',
     name: 'Creative Live! Cam Sync 1080p V2 Webcam',
@@ -205,9 +198,8 @@ export const webcamData = [
       "Weight": "0.22 lbs"
     },
     has3D: false,
-    store: "Amazon",
-    stock: "In stock"
-  },
+    stockCount: 10
+    },
   {
     id: 'webcam-9',
     name: 'ASUS Webcam C3 1080p HD Webcam',
@@ -231,9 +223,8 @@ export const webcamData = [
       "Weight": "0.3 lbs"
     },
     has3D: false,
-    store: "Best Buy",
-    stock: "In stock"
-  },
+    stockCount: 10
+    },
   {
     id: 'webcam-10',
     name: 'OBSBOT Tiny 2 4K AI Webcam',
@@ -257,9 +248,8 @@ export const webcamData = [
       "Weight": "0.38 lbs"
     },
     has3D: false,
-    store: "Newegg",
-    stock: "In stock"
-  },
+    stockCount: 10
+    },
   {
     id: 'webcam-11',
     name: 'Logitech StreamCam Premium 1080p Webcam',
@@ -283,9 +273,8 @@ export const webcamData = [
       "Weight": "0.33 lbs"
     },
     has3D: false,
-    store: "Amazon",
-    stock: "In stock"
-  },
+    stockCount: 10
+    },
   {
     id: 'webcam-12',
     name: 'Razer Kiyo X 1080p Webcam',
@@ -309,9 +298,8 @@ export const webcamData = [
       "Weight": "0.4 lbs"
     },
     has3D: false,
-    store: "Best Buy",
-    stock: "In stock"
-  },
+    stockCount: 10
+    },
   {
     id: 'webcam-13',
     name: 'AUKEY PC-LM1 1080p Webcam',
@@ -335,9 +323,8 @@ export const webcamData = [
       "Weight": "0.3 lbs"
     },
     has3D: false,
-    store: "Newegg",
-    stock: "In stock"
-  },
+    stockCount: 10
+    },
   {
     id: 'webcam-14',
     name: 'Insta360 Link AI-Powered 4K Webcam',
@@ -361,9 +348,8 @@ export const webcamData = [
       "Weight": "0.42 lbs"
     },
     has3D: false,
-    store: "Amazon",
-    stock: "In stock"
-  },
+    stockCount: 10
+    },
   {
     id: 'webcam-15',
     name: 'Wansview 1080p Webcam with Microphone',
@@ -387,9 +373,8 @@ export const webcamData = [
       "Weight": "0.35 lbs"
     },
     has3D: false,
-    store: "Best Buy",
-    stock: "In stock"
-  },
+    stockCount: 0
+    },
   {
     id: 'webcam-16',
     name: 'Logitech for Creators Mevo Start Wireless Webcam',
@@ -413,9 +398,8 @@ export const webcamData = [
       "Weight": "0.5 lbs"
     },
     has3D: false,
-    store: "Newegg",
-    stock: "In stock"
-  },
+    stockCount: 10
+    },
   {
     id: 'webcam-17',
     name: 'AVerMedia PW513 1080p Webcam',
@@ -439,9 +423,8 @@ export const webcamData = [
       "Weight": "0.38 lbs"
     },
     has3D: false,
-    store: "Amazon",
-    stock: "In stock"
-  },
+    stockCount: 10
+    },
   {
     id: 'webcam-18',
     name: 'Green Extreme 4K Webcam with Ring Light',
@@ -465,9 +448,8 @@ export const webcamData = [
       "Weight": "0.65 lbs"
     },
     has3D: false,
-    store: "Best Buy",
-    stock: "In stock"
-  },
+    stockCount: 10
+    },
   {
     id: 'webcam-19',
     name: 'Adesso Cybertrack H4 1080p Webcam',
@@ -491,9 +473,8 @@ export const webcamData = [
       "Weight": "0.32 lbs"
     },
     has3D: false,
-    store: "Newegg",
-    stock: "In stock"
-  },
+    stockCount: 10
+    },
   {
     id: 'webcam-20',
     name: 'VDO360 4K Conference Webcam',
@@ -517,7 +498,6 @@ export const webcamData = [
       "Weight": "1.1 lbs"
     },
     has3D: false,
-    store: "Amazon",
-    stock: "In stock"
-  }
+    stockCount: 10
+    }
 ];

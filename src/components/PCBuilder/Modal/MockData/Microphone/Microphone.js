@@ -24,9 +24,8 @@ export const microphoneData = [
       "Dimensions": "4.9 x 4.7 x 11.6 inches"
     },
     has3D: false,
-    store: "Amazon",
-    stock: "In stock"
-  },
+    stockCount: 10
+    },
   {
     id: 'microphone-2',
     name: 'Audio-Technica AT2020USB+ Cardioid Condenser USB Microphone',
@@ -51,9 +50,8 @@ export const microphoneData = [
       "Dimensions": "6.38 x 2.05 x 2.05 inches"
     },
     has3D: false,
-    store: "Newegg",
-    stock: "In stock"
-  },
+    stockCount: 10
+    },
   {
     id: 'microphone-3',
     name: 'Razer Seiren V2 Pro USB Streaming Microphone',
@@ -78,9 +76,8 @@ export const microphoneData = [
       "Dimensions": "6.3 x 4.1 x 12.2 inches"
     },
     has3D: false,
-    store: "Best Buy",
-    stock: "In stock"
-  },
+    stockCount: 10
+    },
   {
     id: 'microphone-4',
     name: 'HyperX QuadCast S USB Condenser Microphone',
@@ -106,9 +103,8 @@ export const microphoneData = [
       "RGB Lighting": "Yes"
     },
     has3D: false,
-    store: "Amazon",
-    stock: "In stock"
-  },
+    stockCount: 10
+    },
   {
     id: 'microphone-5',
     name: 'RØDE NT-USB+ Studio Condenser USB Microphone',
@@ -133,9 +129,8 @@ export const microphoneData = [
       "Dimensions": "7.87 x 2.56 x 2.56 inches"
     },
     has3D: false,
-    store: "Newegg",
-    stock: "In stock"
-  },
+    stockCount: 10
+    },
   {
     id: 'microphone-6',
     name: 'Elgato Wave:3 USB Condenser Microphone',
@@ -161,9 +156,8 @@ export const microphoneData = [
       "Clipguard Technology": "Yes"
     },
     has3D: false,
-    store: "Best Buy",
-    stock: "In stock"
-  },
+    stockCount: 10
+    },
   {
     id: 'microphone-7',
     name: 'Amazon Basics Desktop Mini Condenser Microphone',
@@ -188,9 +182,8 @@ export const microphoneData = [
       "Dimensions": "3.9 x 2.4 x 2.4 inches"
     },
     has3D: false,
-    store: "Amazon",
-    stock: "In stock"
-  },
+    stockCount: 10
+    },
   {
     id: 'microphone-8',
     name: 'Blue Yeti Nano USB Microphone',
@@ -215,9 +208,8 @@ export const microphoneData = [
       "Dimensions": "5.9 x 4.3 x 7.9 inches"
     },
     has3D: false,
-    store: "Newegg",
-    stock: "In stock"
-  },
+    stockCount: 0
+    },
   {
     id: 'microphone-9',
     name: 'Audio-Technica AT2005USB Dynamic Microphone',
@@ -242,9 +234,8 @@ export const microphoneData = [
       "Dimensions": "6.38 x 2.05 x 2.05 inches"
     },
     has3D: false,
-    store: "Best Buy",
-    stock: "In stock"
-  },
+    stockCount: 10
+    },
   {
     id: 'microphone-10',
     name: 'RØDE VideoMic NTG Shotgun USB Microphone',
@@ -269,9 +260,8 @@ export const microphoneData = [
       "Dimensions": "8.3 x 2.0 x 2.0 inches"
     },
     has3D: false,
-    store: "Amazon",
-    stock: "In stock"
-  },
+    stockCount: 10
+    },
   {
     id: 'microphone-11',
     name: 'HyperX SoloCast USB Condenser Microphone',
@@ -296,9 +286,8 @@ export const microphoneData = [
       "Dimensions": "4.3 x 4.3 x 10.0 inches"
     },
     has3D: false,
-    store: "Newegg",
-    stock: "In stock"
-  },
+    stockCount: 10
+    },
   {
     id: 'microphone-12',
     name: 'Elgato Wave DX Dynamic XLR Microphone',
@@ -323,9 +312,8 @@ export const microphoneData = [
       "Dimensions": "6.5 x 2.0 x 2.0 inches"
     },
     has3D: false,
-    store: "Best Buy",
-    stock: "In stock"
-  },
+    stockCount: 10
+    },
   {
     id: 'microphone-13',
     name: 'Razer Seiren Emote USB Streaming Microphone',
@@ -351,9 +339,8 @@ export const microphoneData = [
       "Emote Display": "Yes"
     },
     has3D: false,
-    store: "Amazon",
-    stock: "In stock"
-  },
+    stockCount: 10
+    },
   {
     id: 'microphone-14',
     name: 'Audio-Technica AT2040 Hypercardioid Dynamic Microphone',
@@ -378,9 +365,8 @@ export const microphoneData = [
       "Dimensions": "6.38 x 2.05 x 2.05 inches"
     },
     has3D: false,
-    store: "Newegg",
-    stock: "In stock"
-  },
+    stockCount: 10
+    },
   {
     id: 'microphone-15',
     name: 'RØDE PodMic Dynamic Broadcast Microphone',
@@ -405,9 +391,8 @@ export const microphoneData = [
       "Dimensions": "6.1 x 3.5 x 3.5 inches"
     },
     has3D: false,
-    store: "Best Buy",
-    stock: "In stock"
-  },
+    stockCount: 10
+    },
   {
     id: 'microphone-16',
     name: 'Blue Snowball Ice USB Microphone',
@@ -432,9 +417,8 @@ export const microphoneData = [
       "Dimensions": "4.72 x 4.72 x 4.72 inches"
     },
     has3D: false,
-    store: "Amazon",
-    stock: "In stock"
-  },
+    stockCount: 10
+    },
   {
     id: 'microphone-17',
     name: 'HyperX DuoCast USB Condenser Microphone',
@@ -459,9 +443,8 @@ export const microphoneData = [
       "Dimensions": "5.7 x 5.7 x 10.0 inches"
     },
     has3D: false,
-    store: "Newegg",
-    stock: "In stock"
-  },
+    stockCount: 0
+    },
   {
     id: 'microphone-18',
     name: 'Elgato Wave:1 USB Condenser Microphone',
@@ -486,9 +469,8 @@ export const microphoneData = [
       "Dimensions": "6.1 x 2.0 x 2.0 inches"
     },
     has3D: false,
-    store: "Best Buy",
-    stock: "In stock"
-  },
+    stockCount: 10
+    },
   {
     id: 'microphone-19',
     name: 'Razer Seiren Mini USB Condenser Microphone',
@@ -513,9 +495,8 @@ export const microphoneData = [
       "Dimensions": "3.9 x 3.9 x 9.8 inches"
     },
     has3D: false,
-    store: "Amazon",
-    stock: "In stock"
-  },
+    stockCount: 10
+    },
   {
     id: 'microphone-20',
     name: 'Audio-Technica AT2020USB-XP USB Microphone',
@@ -540,7 +521,6 @@ export const microphoneData = [
       "Dimensions": "6.38 x 2.05 x 2.05 inches"
     },
     has3D: false,
-    store: "Newegg",
-    stock: "In stock"
-  }
+    stockCount: 10
+    }
 ];

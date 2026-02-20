@@ -32,9 +32,9 @@ export const caseData = [
       "Weight": "28.5 lbs"
     },
     has3D: true,
-    store: "Newegg",
-    stock: "In stock"
-  },
+    stockCount: 10
+
+    },
   {
     id: 'case-2',
     name: 'Antec FLUX PRO ATX Full',
@@ -56,9 +56,9 @@ export const caseData = [
       "Weight": "30.2 lbs"
     },
     has3D: true,
-    store: "Amazon",
-    stock: "In stock"
-  },
+    stockCount: 10
+
+    },
   {
     id: 'case-3',
     name: 'Corsair 7000D AIRFLOW ATX Full Tower',
@@ -80,9 +80,9 @@ export const caseData = [
       "Weight": "32.8 lbs"
     },
     has3D: true,
-    store: "Best Buy",
-    stock: "In stock"
-  },
+    stockCount: 10
+
+    },
   {
     id: 'case-4',
     name: 'Corsair 9000D RGB AIRFLOW ATX Full',
@@ -104,9 +104,9 @@ export const caseData = [
       "Weight": "35.5 lbs"
     },
     has3D: true,
-    store: "Newegg",
-    stock: "In stock"
-  },
+    stockCount: 10
+
+    },
   {
     id: 'case-5',
     name: 'Fractal Design North XL ATX Full',
@@ -128,9 +128,9 @@ export const caseData = [
       "Weight": "29.3 lbs"
     },
     has3D: true,
-    store: "Amazon",
-    stock: "In stock"
-  },
+    stockCount: 10
+
+    },
   {
     id: 'case-6',
     name: 'Fractal Design Pop XL Air ATX Full',
@@ -152,9 +152,9 @@ export const caseData = [
       "Weight": "27.8 lbs"
     },
     has3D: false,
-    store: "Best Buy",
-    stock: "In stock"
-  },
+    stockCount: 10
+
+    },
   {
     id: 'case-7',
     name: 'Fractal Design Pop XL Silent ATX Full',
@@ -176,9 +176,9 @@ export const caseData = [
       "Weight": "30.1 lbs"
     },
     has3D: false,
-    store: "Newegg",
-    stock: "In stock"
-  },
+    stockCount: 10
+
+    },
   {
     id: 'case-8',
     name: 'Lian Li O11 Dynamic EVO XL ATX Full White',
@@ -200,9 +200,9 @@ export const caseData = [
       "Weight": "31.2 lbs"
     },
     has3D: true,
-    store: "Amazon",
-    stock: "In stock"
-  },
+    stockCount: 10
+
+    },
   {
     id: 'case-9',
     name: 'Lian Li O11 Dynamic EVO XL ATX Full',
@@ -224,9 +224,9 @@ export const caseData = [
       "Weight": "31.2 lbs"
     },
     has3D: true,
-    store: "Best Buy",
-    stock: "In stock"
-  },
+    stockCount: 0
+
+    },
   {
     id: 'case-10',
     name: 'Silverstone ALTA F2 ATX Full',
@@ -248,9 +248,9 @@ export const caseData = [
       "Weight": "33.5 lbs"
     },
     has3D: true,
-    store: "Newegg",
-    stock: "In stock"
-  },
+    stockCount: 10
+
+    },
 
   // ATX Mid Tower Cases (10 samples)
   {
@@ -274,9 +274,9 @@ export const caseData = [
       "Weight": "18.9 lbs"
     },
     has3D: true,
-    store: "Amazon",
-    stock: "In stock"
-  },
+    stockCount: 10
+
+    },
   {
     id: 'case-12',
     name: 'Corsair 4000D Airflow ATX Mid Tower',
@@ -298,9 +298,9 @@ export const caseData = [
       "Weight": "17.6 lbs"
     },
     has3D: false,
-    store: "Best Buy",
-    stock: "In stock"
-  },
+    stockCount: 10
+
+    },
   {
     id: 'case-13',
     name: 'Corsair FRAME 4000D RS ARGB ATX Mid Tower',
@@ -322,9 +322,9 @@ export const caseData = [
       "Weight": "19.2 lbs"
     },
     has3D: true,
-    store: "Newegg",
-    stock: "In stock"
-  },
+    stockCount: 10
+
+    },
   {
     id: 'case-14',
     name: 'Fractal Design North ATX Mid Tower',
@@ -346,9 +346,9 @@ export const caseData = [
       "Weight": "16.8 lbs"
     },
     has3D: true,
-    store: "Amazon",
-    stock: "In stock"
-  },
+    stockCount: 10
+
+    },
   {
     id: 'case-15',
     name: 'HYTE Y70 Touch Infinite ATX Mid Tower Black',
@@ -370,9 +370,9 @@ export const caseData = [
       "Weight": "28.3 lbs"
     },
     has3D: true,
-    store: "Best Buy",
-    stock: "In stock"
-  },
+    stockCount: 10
+
+    },
   {
     id: 'case-16',
     name: 'HYTE Y70 Touch Infinite ATX Mid Tower',
@@ -394,9 +394,9 @@ export const caseData = [
       "Weight": "28.3 lbs"
     },
     has3D: true,
-    store: "Newegg",
-    stock: "In stock"
-  },
+    stockCount: 10
+
+    },
   {
     id: 'case-17',
     name: 'Lian Li Lancool 207 ATX Mid Tower',
@@ -418,9 +418,9 @@ export const caseData = [
       "Weight": "19.8 lbs"
     },
     has3D: true,
-    store: "Amazon",
-    stock: "In stock"
-  },
+    stockCount: 10
+
+    },
   {
     id: 'case-18',
     name: 'Lian Li LANCOOL 217 ATX Mid Tower',
@@ -442,9 +442,9 @@ export const caseData = [
       "Weight": "20.5 lbs"
     },
     has3D: true,
-    store: "Best Buy",
-    stock: "In stock"
-  },
+    stockCount: 0
+
+    },
   {
     id: 'case-19',
     name: 'NZXT H5 Flow (2024) ATX Mid Tower White',
@@ -466,9 +466,9 @@ export const caseData = [
       "Weight": "16.2 lbs"
     },
     has3D: false,
-    store: "Newegg",
-    stock: "In stock"
-  },
+    stockCount: 10
+
+    },
   {
     id: 'case-20',
     name: 'NZXT H5 Flow (2024) ATX Mid Tower',
@@ -490,9 +490,9 @@ export const caseData = [
       "Weight": "16.2 lbs"
     },
     has3D: false,
-    store: "Amazon",
-    stock: "In stock"
-  },
+    stockCount: 10
+
+    },
   // Micro ATX Mid Tower Cases (10 samples)
 {
   id: 'case-21',
@@ -515,9 +515,9 @@ export const caseData = [
     "Weight": "12.8 lbs"
   },
   has3D: false,
-  store: "Newegg",
-  stock: "In stock"
-},
+  stockCount: 10
+
+  },
 {
   id: 'case-22',
   name: 'Cooler Master Elite 301 MicroATX Mid',
@@ -539,9 +539,9 @@ export const caseData = [
     "Weight": "11.5 lbs"
   },
   has3D: false,
-  store: "Amazon",
-  stock: "In stock"
-},
+  stockCount: 10
+
+  },
 {
   id: 'case-23',
   name: 'Fractal Design Pop Mini Air MicroATX Mid Tower',
@@ -563,9 +563,9 @@ export const caseData = [
     "Weight": "15.2 lbs"
   },
   has3D: false,
-  store: "Best Buy",
-  stock: "In stock"
-},
+  stockCount: 10
+
+  },
 {
   id: 'case-24',
   name: 'Montech AIR 100 ARGB MicroATX Mid Tower White',
@@ -587,9 +587,9 @@ export const caseData = [
     "Weight": "13.8 lbs"
   },
   has3D: false,
-  store: "Newegg",
-  stock: "In stock"
-},
+  stockCount: 10
+
+  },
 {
   id: 'case-25',
   name: 'Montech AIR 100 ARGB MicroATX Mid Tower',
@@ -611,9 +611,9 @@ export const caseData = [
     "Weight": "13.8 lbs"
   },
   has3D: false,
-  store: "Amazon",
-  stock: "In stock"
-},
+  stockCount: 10
+
+  },
 {
   id: 'case-26',
   name: 'NZXT H3 Flow MicroATX Mid Tower White',
@@ -635,9 +635,9 @@ export const caseData = [
     "Weight": "16.5 lbs"
   },
   has3D: true,
-  store: "Best Buy",
-  stock: "In stock"
-},
+  stockCount: 10
+
+  },
 {
   id: 'case-27',
   name: 'NZXT H3 Flow MicroATX Mid Tower',
@@ -659,9 +659,9 @@ export const caseData = [
     "Weight": "16.5 lbs"
   },
   has3D: true,
-  store: "Newegg",
-  stock: "In stock"
-},
+  stockCount: 0
+
+  },
 {
   id: 'case-28',
   name: 'Phanteks XT M3 MicroATX Mid Tower White',
@@ -683,9 +683,9 @@ export const caseData = [
     "Weight": "14.9 lbs"
   },
   has3D: false,
-  store: "Amazon",
-  stock: "In stock"
-},
+  stockCount: 10
+
+  },
 {
   id: 'case-29',
   name: 'Phanteks XT M3 MicroATX Mid Tower',
@@ -707,9 +707,9 @@ export const caseData = [
     "Weight": "14.9 lbs"
   },
   has3D: false,
-  store: "Best Buy",
-  stock: "In stock"
-},
+  stockCount: 10
+
+  },
 {
   id: 'case-30',
   name: 'Zalman T3 PLUS MicroATX Mid Tower',
@@ -731,9 +731,9 @@ export const caseData = [
     "Weight": "10.8 lbs"
   },
   has3D: false,
-  store: "Newegg",
-  stock: "In stock"
-},
+  stockCount: 10
+
+  },
 
 // Micro ATX Mini Tower Cases (10 samples)
 {
@@ -757,9 +757,9 @@ export const caseData = [
     "Weight": "14.2 lbs"
   },
   has3D: true,
-  store: "Amazon",
-  stock: "In stock"
-},
+  stockCount: 10
+
+  },
 {
   id: 'case-32',
   name: 'Cooler Master Elite 302 MicroATX Mini Tower',
@@ -781,9 +781,9 @@ export const caseData = [
     "Weight": "11.3 lbs"
   },
   has3D: false,
-  store: "Best Buy",
-  stock: "In stock"
-},
+  stockCount: 10
+
+  },
 {
   id: 'case-33',
   name: 'Cooler Master MasterBox Q300L MicroATX Mini Tower',
@@ -805,9 +805,9 @@ export const caseData = [
     "Weight": "9.9 lbs"
   },
   has3D: false,
-  store: "Newegg",
-  stock: "In stock"
-},
+  stockCount: 10
+
+  },
 {
   id: 'case-34',
   name: 'Cooler Master Q300L V2 MicroATX Mini Tower',
@@ -829,9 +829,9 @@ export const caseData = [
     "Weight": "10.5 lbs"
   },
   has3D: false,
-  store: "Amazon",
-  stock: "In stock"
-},
+  stockCount: 10
+
+  },
 {
   id: 'case-35',
   name: 'Corsair 2500X MicroATX Mini Tower White',
@@ -853,9 +853,9 @@ export const caseData = [
     "Weight": "16.8 lbs"
   },
   has3D: true,
-  store: "Best Buy",
-  stock: "In stock"
-},
+  stockCount: 10
+
+  },
 {
   id: 'case-36',
   name: 'Corsair 2500X MicroATX Mini Tower',
@@ -877,9 +877,9 @@ export const caseData = [
     "Weight": "16.8 lbs"
   },
   has3D: true,
-  store: "Newegg",
-  stock: "In stock"
-},
+  stockCount: 0
+
+  },
 {
   id: 'case-37',
   name: 'Lian Li A3-mATX MicroATX Mini Tower White',
@@ -901,9 +901,9 @@ export const caseData = [
     "Weight": "15.6 lbs"
   },
   has3D: true,
-  store: "Amazon",
-  stock: "In stock"
-},
+  stockCount: 10
+
+  },
 {
   id: 'case-38',
   name: 'Lian Li A3-mATX MicroATX Mini Tower',
@@ -925,9 +925,9 @@ export const caseData = [
     "Weight": "15.6 lbs"
   },
   has3D: true,
-  store: "Best Buy",
-  stock: "In stock"
-},
+  stockCount: 10
+
+  },
 {
   id: 'case-39',
   name: 'Montech XSM MicroATX Mini Tower',
@@ -949,9 +949,9 @@ export const caseData = [
     "Weight": "12.4 lbs"
   },
   has3D: false,
-  store: "Newegg",
-  stock: "In stock"
-},
+  stockCount: 10
+
+  },
 {
   id: 'case-40',
   name: 'Thermaltake Versa H18 MicroATX Mini Tower',
@@ -973,9 +973,9 @@ export const caseData = [
     "Weight": "11.7 lbs"
   },
   has3D: false,
-  store: "Amazon",
-  stock: "In stock"
-},
+  stockCount: 10
+
+  },
 // Mini ITX Desktop Cases (10 samples)
 {
   id: 'case-41',
@@ -998,9 +998,9 @@ export const caseData = [
     "Weight": "12.8 lbs"
   },
   has3D: true,
-  store: "Newegg",
-  stock: "In stock"
-},
+  stockCount: 10
+
+  },
 {
   id: 'case-42',
   name: 'Cooler Master MasterBox NR200 Mini ITX Desktop',
@@ -1022,9 +1022,9 @@ export const caseData = [
     "Weight": "12.8 lbs"
   },
   has3D: true,
-  store: "Amazon",
-  stock: "In stock"
-},
+  stockCount: 10
+
+  },
 {
   id: 'case-43',
   name: 'Cooler Master MasterBox NR200P V2 Mini ITX Desktop',
@@ -1046,9 +1046,9 @@ export const caseData = [
     "Weight": "13.2 lbs"
   },
   has3D: true,
-  store: "Best Buy",
-  stock: "In stock"
-},
+  stockCount: 10
+
+  },
 {
   id: 'case-44',
   name: 'Deepcool CH160 Mini ITX Desktop',
@@ -1070,9 +1070,9 @@ export const caseData = [
     "Weight": "10.5 lbs"
   },
   has3D: false,
-  store: "Newegg",
-  stock: "In stock"
-},
+  stockCount: 10
+
+  },
 {
   id: 'case-45',
   name: 'Fractal Design Terra Mini ITX Desktop White',
@@ -1094,9 +1094,9 @@ export const caseData = [
     "Weight": "14.2 lbs"
   },
   has3D: true,
-  store: "Amazon",
-  stock: "In stock"
-},
+  stockCount: 0
+
+  },
 {
   id: 'case-46',
   name: 'Fractal Design Terra Mini ITX Desktop',
@@ -1118,9 +1118,9 @@ export const caseData = [
     "Weight": "14.2 lbs"
   },
   has3D: true,
-  store: "Best Buy",
-  stock: "In stock"
-},
+  stockCount: 10
+
+  },
 {
   id: 'case-47',
   name: 'Lian Li A4-H20 A4 Mini ITX Desktop',
@@ -1142,9 +1142,9 @@ export const caseData = [
     "Weight": "8.8 lbs"
   },
   has3D: true,
-  store: "Newegg",
-  stock: "In stock"
-},
+  stockCount: 10
+
+  },
 {
   id: 'case-48',
   name: 'Lian Li A4-H20 X4 Mini ITX Desktop',
@@ -1166,9 +1166,9 @@ export const caseData = [
     "Weight": "9.2 lbs"
   },
   has3D: true,
-  store: "Amazon",
-  stock: "In stock"
-},
+  stockCount: 10
+
+  },
 {
   id: 'case-49',
   name: 'PC Cooler I100 PRO MESH Mini ITX Desktop',
@@ -1190,9 +1190,9 @@ export const caseData = [
     "Weight": "11.3 lbs"
   },
   has3D: false,
-  store: "Best Buy",
-  stock: "In stock"
-},
+  stockCount: 10
+
+  },
 {
   id: 'case-50',
   name: 'Thermaltake Core V1 Mini ITX Desktop',
@@ -1214,9 +1214,9 @@ export const caseData = [
     "Weight": "10.1 lbs"
   },
   has3D: false,
-  store: "Newegg",
-  stock: "In stock"
-},
+  stockCount: 10
+
+  },
 
 // Mini ITX Tower Cases (10 samples)
 {
@@ -1240,9 +1240,9 @@ export const caseData = [
     "Weight": "15.8 lbs"
   },
   has3D: true,
-  store: "Amazon",
-  stock: "In stock"
-},
+  stockCount: 10
+
+  },
 {
   id: 'case-52',
   name: 'Fractal Design Era 2 Mini ITX Tower',
@@ -1264,9 +1264,9 @@ export const caseData = [
     "Weight": "13.5 lbs"
   },
   has3D: true,
-  store: "Best Buy",
-  stock: "In stock"
-},
+  stockCount: 10
+
+  },
 {
   id: 'case-53',
   name: 'Fractal Design Mood Mini ITX Tower',
@@ -1288,9 +1288,9 @@ export const caseData = [
     "Weight": "14.2 lbs"
   },
   has3D: true,
-  store: "Newegg",
-  stock: "In stock"
-},
+  stockCount: 10
+
+  },
 {
   id: 'case-54',
   name: 'Fractal Design Node 304 Mini ITX Tower',
@@ -1312,9 +1312,9 @@ export const caseData = [
     "Weight": "16.8 lbs"
   },
   has3D: false,
-  store: "Amazon",
-  stock: "In stock"
-},
+  stockCount: 0
+
+  },
 {
   id: 'case-55',
   name: 'Fractal Design Ridge PCIe 4.0 Mini ITX Tower White',
@@ -1336,9 +1336,9 @@ export const caseData = [
     "Weight": "11.9 lbs"
   },
   has3D: true,
-  store: "Best Buy",
-  stock: "In stock"
-},
+  stockCount: 10
+
+  },
 {
   id: 'case-56',
   name: 'Fractal Design Ridge PCIe 4.0 Mini ITX Tower',
@@ -1360,9 +1360,9 @@ export const caseData = [
     "Weight": "11.9 lbs"
   },
   has3D: true,
-  store: "Newegg",
-  stock: "In stock"
-},
+  stockCount: 10
+
+  },
 {
   id: 'case-57',
   name: 'HYTE REVOLT 3 Mini ITX Tower',
@@ -1384,9 +1384,9 @@ export const caseData = [
     "Weight": "14.6 lbs"
   },
   has3D: true,
-  store: "Amazon",
-  stock: "In stock"
-},
+  stockCount: 10
+
+  },
 {
   id: 'case-58',
   name: 'Jonsbo N10 Mini ITX Tower',
@@ -1408,9 +1408,9 @@ export const caseData = [
     "Weight": "12.4 lbs"
   },
   has3D: false,
-  store: "Best Buy",
-  stock: "In stock"
-},
+  stockCount: 10
+
+  },
 {
   id: 'case-59',
   name: 'NCASE M1 Mini ITX Tower',
@@ -1432,9 +1432,9 @@ export const caseData = [
     "Weight": "9.8 lbs"
   },
   has3D: true,
-  store: "Newegg",
-  stock: "In stock"
-},
+  stockCount: 10
+
+  },
 {
   id: 'case-60',
   name: 'ZZEW A1 Plus Mini ITX Tower',
@@ -1456,7 +1456,7 @@ export const caseData = [
     "Weight": "13.7 lbs"
   },
   has3D: false,
-  store: "Amazon",
-  stock: "In stock"
-}
+  stockCount: 10
+
+  }
 ];

@@ -23,9 +23,8 @@ export const cpuCoolerData = [
       "Warranty": "6 years"
     },
     has3D: true,
-    store: "Newegg",
-    stock: "In stock"
-  },
+    stockCount: 10
+    },
   {
     id: 'cooler-2',
     name: 'Noctua NH-D15 Chromax Black Dual-Tower Cooler',
@@ -49,9 +48,8 @@ export const cpuCoolerData = [
       "Warranty": "6 years"
     },
     has3D: true,
-    store: "Amazon",
-    stock: "In stock"
-  },
+    stockCount: 10
+    },
   {
     id: 'cooler-3',
     name: 'Corsair iCUE H150i ELITE CAPELLIX XT 360mm',
@@ -75,9 +73,8 @@ export const cpuCoolerData = [
       "Warranty": "5 years"
     },
     has3D: true,
-    store: "Best Buy",
-    stock: "In stock"
-  },
+    stockCount: 10
+    },
   {
     id: 'cooler-4',
     name: 'be quiet! Dark Rock Pro 4 Air Cooler',
@@ -101,9 +98,8 @@ export const cpuCoolerData = [
       "Warranty": "3 years"
     },
     has3D: false,
-    store: "Newegg",
-    stock: "In stock"
-  },
+    stockCount: 10
+    },
   {
     id: 'cooler-5',
     name: 'ARCTIC Liquid Freezer II 280mm AIO',
@@ -127,9 +123,8 @@ export const cpuCoolerData = [
       "Warranty": "6 years"
     },
     has3D: false,
-    store: "Amazon",
-    stock: "In stock"
-  },
+    stockCount: 10
+    },
   {
     id: 'cooler-6',
     name: 'Cooler Master Hyper 212 RGB Black Edition',
@@ -153,9 +148,8 @@ export const cpuCoolerData = [
       "Warranty": "2 years"
     },
     has3D: false,
-    store: "Best Buy",
-    stock: "In stock"
-  },
+    stockCount: 10
+    },
   {
     id: 'cooler-7',
     name: 'Deepcool AK620 Digital Air Cooler',
@@ -179,9 +173,8 @@ export const cpuCoolerData = [
       "Warranty": "3 years"
     },
     has3D: true,
-    store: "Newegg",
-    stock: "In stock"
-  },
+    stockCount: 0
+    },
   {
     id: 'cooler-8',
     name: 'Lian Li Galahad II Trinity Performance 360mm',
@@ -205,9 +198,8 @@ export const cpuCoolerData = [
       "Warranty": "5 years"
     },
     has3D: true,
-    store: "Amazon",
-    stock: "In stock"
-  },
+    stockCount: 10
+    },
   {
     id: 'cooler-9',
     name: 'Thermalright Phantom Spirit 120 SE ARGB',
@@ -231,9 +223,8 @@ export const cpuCoolerData = [
       "Warranty": "2 years"
     },
     has3D: false,
-    store: "Best Buy",
-    stock: "In stock"
-  },
+    stockCount: 10
+    },
   {
     id: 'cooler-10',
     name: 'EK-Nucleus AIO CR360 Lux D-RGB',
@@ -257,9 +248,8 @@ export const cpuCoolerData = [
       "Warranty": "5 years"
     },
     has3D: true,
-    store: "Newegg",
-    stock: "In stock"
-  },
+    stockCount: 10
+    },
   {
     id: 'cooler-11',
     name: 'Scythe Fuma 3 Dual-Tower Air Cooler',
@@ -283,9 +273,8 @@ export const cpuCoolerData = [
       "Warranty": "2 years"
     },
     has3D: false,
-    store: "Amazon",
-    stock: "In stock"
-  },
+    stockCount: 10
+    },
   {
     id: 'cooler-12',
     name: 'Phanteks Glacier One 280mm AIO',
@@ -309,9 +298,8 @@ export const cpuCoolerData = [
       "Warranty": "5 years"
     },
     has3D: true,
-    store: "Best Buy",
-    stock: "In stock"
-  },
+    stockCount: 10
+    },
   {
     id: 'cooler-13',
     name: 'Vetroo V5 Air Cooler with RGB',
@@ -335,9 +323,8 @@ export const cpuCoolerData = [
       "Warranty": "2 years"
     },
     has3D: false,
-    store: "Newegg",
-    stock: "In stock"
-  },
+    stockCount: 10
+    },
   {
     id: 'cooler-14',
     name: 'Fractal Design Lumen S28 RGB 280mm AIO',
@@ -361,9 +348,8 @@ export const cpuCoolerData = [
       "Warranty": "5 years"
     },
     has3D: true,
-    store: "Amazon",
-    stock: "In stock"
-  },
+    stockCount: 10
+    },
   {
     id: 'cooler-15',
     name: 'ID-COOLING SE-214-XT ARGB Air Cooler',
@@ -387,9 +373,8 @@ export const cpuCoolerData = [
       "Warranty": "1 year"
     },
     has3D: false,
-    store: "Best Buy",
-    stock: "In stock"
-  },
+    stockCount: 10
+    },
   {
     id: 'cooler-16',
     name: 'MSI MAG CORELIQUID E360 AIO',
@@ -413,9 +398,8 @@ export const cpuCoolerData = [
       "Warranty": "5 years"
     },
     has3D: true,
-    store: "Newegg",
-    stock: "In stock"
-  },
+    stockCount: 0
+    },
   {
     id: 'cooler-17',
     name: 'Zalman CNPS20X Air Cooler',
@@ -439,9 +423,8 @@ export const cpuCoolerData = [
       "Warranty": "3 years"
     },
     has3D: false,
-    store: "Amazon",
-    stock: "In stock"
-  },
+    stockCount: 10
+    },
   {
     id: 'cooler-18',
     name: 'Enermax LIQMAXFLO 360mm AIO',
@@ -465,9 +448,8 @@ export const cpuCoolerData = [
       "Warranty": "5 years"
     },
     has3D: true,
-    store: "Best Buy",
-    stock: "In stock"
-  },
+    stockCount: 10
+    },
   {
     id: 'cooler-19',
     name: 'Thermaltake TH280 ARGB Sync AIO',
@@ -491,9 +473,8 @@ export const cpuCoolerData = [
       "Warranty": "5 years"
     },
     has3D: false,
-    store: "Newegg",
-    stock: "In stock"
-  },
+    stockCount: 10
+    },
   {
     id: 'cooler-20',
     name: 'NoFan CS-80 Fanless Cooler',
@@ -517,7 +498,6 @@ export const cpuCoolerData = [
       "Warranty": "3 years"
     },
     has3D: false,
-    store: "Amazon",
-    stock: "In stock"
-  }
+    stockCount: 10
+    }
 ];

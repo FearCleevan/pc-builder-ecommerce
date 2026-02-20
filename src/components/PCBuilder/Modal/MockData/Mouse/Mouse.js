@@ -25,9 +25,8 @@ export const mouseData = [
       "Software": "Logitech G Hub"
     },
     has3D: false,
-    store: "Amazon",
-    stock: "In stock"
-  },
+    stockCount: 10
+    },
   {
     id: 'mouse-2',
     name: 'Razer DeathAdder V3 Pro Wireless Gaming Mouse',
@@ -53,9 +52,8 @@ export const mouseData = [
       "Software": "Razer Synapse"
     },
     has3D: false,
-    store: "Newegg",
-    stock: "In stock"
-  },
+    stockCount: 10
+    },
   {
     id: 'mouse-3',
     name: 'SteelSeries Aerox 3 Wireless Gaming Mouse',
@@ -81,9 +79,8 @@ export const mouseData = [
       "Software": "SteelSeries GG"
     },
     has3D: false,
-    store: "Best Buy",
-    stock: "In stock"
-  },
+    stockCount: 10
+    },
   {
     id: 'mouse-4',
     name: 'Glorious Model O Wireless Gaming Mouse',
@@ -109,9 +106,8 @@ export const mouseData = [
       "Software": "Glorious Core"
     },
     has3D: false,
-    store: "Amazon",
-    stock: "In stock"
-  },
+    stockCount: 10
+    },
   {
     id: 'mouse-5',
     name: 'Corsair Sabre RGB Pro Wireless Gaming Mouse',
@@ -137,9 +133,8 @@ export const mouseData = [
       "Software": "iCUE"
     },
     has3D: false,
-    store: "Newegg",
-    stock: "In stock"
-  },
+    stockCount: 10
+    },
   {
     id: 'mouse-6',
     name: 'Razer Viper V2 Pro Wireless Gaming Mouse',
@@ -165,9 +160,8 @@ export const mouseData = [
       "Software": "Razer Synapse"
     },
     has3D: false,
-    store: "Best Buy",
-    stock: "In stock"
-  },
+    stockCount: 10
+    },
   {
     id: 'mouse-7',
     name: 'Logitech G502 X Plus Lightspeed Wireless',
@@ -193,9 +187,8 @@ export const mouseData = [
       "Software": "Logitech G Hub"
     },
     has3D: false,
-    store: "Amazon",
-    stock: "In stock"
-  },
+    stockCount: 0
+    },
   {
     id: 'mouse-8',
     name: 'Finalmouse Starlight-12 Pro Small Wireless',
@@ -221,9 +214,8 @@ export const mouseData = [
       "Software": "None"
     },
     has3D: false,
-    store: "Newegg",
-    stock: "In stock"
-  },
+    stockCount: 10
+    },
   {
     id: 'mouse-9',
     name: 'HyperX Pulsefire Haste Wireless Gaming Mouse',
@@ -249,9 +241,8 @@ export const mouseData = [
       "Software": "HyperX NGENUITY"
     },
     has3D: false,
-    store: "Best Buy",
-    stock: "In stock"
-  },
+    stockCount: 10
+    },
   {
     id: 'mouse-10',
     name: 'ASUS ROG Keris Wireless AimPoint Gaming Mouse',
@@ -277,9 +268,8 @@ export const mouseData = [
       "Software": "Armoury Crate"
     },
     has3D: false,
-    store: "Amazon",
-    stock: "In stock"
-  },
+    stockCount: 10
+    },
   {
     id: 'mouse-11',
     name: 'Zowie EC2-C Wired Gaming Mouse',
@@ -305,9 +295,8 @@ export const mouseData = [
       "Software": "None"
     },
     has3D: false,
-    store: "Newegg",
-    stock: "In stock"
-  },
+    stockCount: 10
+    },
   {
     id: 'mouse-12',
     name: 'Razer Basilisk V3 Wired Gaming Mouse',
@@ -333,9 +322,8 @@ export const mouseData = [
       "Software": "Razer Synapse"
     },
     has3D: false,
-    store: "Best Buy",
-    stock: "In stock"
-  },
+    stockCount: 10
+    },
   {
     id: 'mouse-13',
     name: 'Logitech MX Master 3S Wireless Productivity Mouse',
@@ -361,9 +349,8 @@ export const mouseData = [
       "Software": "Logi Options+"
     },
     has3D: false,
-    store: "Amazon",
-    stock: "In stock"
-  },
+    stockCount: 10
+    },
   {
     id: 'mouse-14',
     name: 'SteelSeries Rival 3 Wireless Gaming Mouse',
@@ -389,9 +376,8 @@ export const mouseData = [
       "Software": "SteelSeries GG"
     },
     has3D: false,
-    store: "Newegg",
-    stock: "In stock"
-  },
+    stockCount: 10
+    },
   {
     id: 'mouse-15',
     name: 'Glorious Model D Wireless Gaming Mouse',
@@ -417,9 +403,8 @@ export const mouseData = [
       "Software": "Glorious Core"
     },
     has3D: false,
-    store: "Best Buy",
-    stock: "In stock"
-  },
+    stockCount: 10
+    },
   {
     id: 'mouse-16',
     name: 'Corsair Katar Pro XT Wired Gaming Mouse',
@@ -445,9 +430,8 @@ export const mouseData = [
       "Software": "iCUE"
     },
     has3D: false,
-    store: "Amazon",
-    stock: "In stock"
-  },
+    stockCount: 0
+    },
   {
     id: 'mouse-17',
     name: 'Razer Naga Pro Wireless MMO Gaming Mouse',
@@ -473,9 +457,8 @@ export const mouseData = [
       "Software": "Razer Synapse"
     },
     has3D: false,
-    store: "Newegg",
-    stock: "In stock"
-  },
+    stockCount: 10
+    },
   {
     id: 'mouse-18',
     name: 'Logitech G305 Lightspeed Wireless Gaming Mouse',
@@ -501,9 +484,8 @@ export const mouseData = [
       "Software": "Logitech G Hub"
     },
     has3D: false,
-    store: "Best Buy",
-    stock: "In stock"
-  },
+    stockCount: 10
+    },
   {
     id: 'mouse-19',
     name: 'Microsoft Modern Mobile Mouse Wireless',
@@ -529,9 +511,8 @@ export const mouseData = [
       "Software": "None"
     },
     has3D: false,
-    store: "Amazon",
-    stock: "In stock"
-  },
+    stockCount: 10
+    },
   {
     id: 'mouse-20',
     name: 'Redragon M808 Storm Wired Gaming Mouse',
@@ -557,7 +538,6 @@ export const mouseData = [
       "Software": "None"
     },
     has3D: false,
-    store: "Newegg",
-    stock: "In stock"
-  }
+    stockCount: 10
+    }
 ];

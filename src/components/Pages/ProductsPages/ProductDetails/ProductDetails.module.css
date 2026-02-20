@@ -162,6 +162,11 @@
   background: #ffe8e8;
 }
 
+.qtyButton:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
 .qtyValue {
   width: 38px;
   text-align: center;
@@ -202,6 +207,14 @@
 .buyButton:hover,
 .buildButton:hover {
   filter: brightness(0.94);
+}
+
+.cartButton:disabled,
+.buyButton:disabled,
+.buildButton:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+  filter: none;
 }
 
 .status {
@@ -303,4 +316,3 @@
     grid-template-columns: 1fr;
   }
 }
-

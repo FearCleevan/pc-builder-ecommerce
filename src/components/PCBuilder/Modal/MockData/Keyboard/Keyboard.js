@@ -25,9 +25,8 @@ export const keyboardData = [
       "USB Passthrough": "Yes"
     },
     has3D: false,
-    store: "Newegg",
-    stock: "In stock"
-  },
+    stockCount: 0
+    },
   {
     id: 'keyboard-2',
     name: 'Razer BlackWidow V4 Pro Mechanical Gaming Keyboard',
@@ -53,9 +52,8 @@ export const keyboardData = [
       "USB Passthrough": "Yes"
     },
     has3D: false,
-    store: "Amazon",
-    stock: "In stock"
-  },
+    stockCount: 10
+    },
   {
     id: 'keyboard-3',
     name: 'Logitech G915 TKL Lightspeed Wireless Mechanical Keyboard',
@@ -81,9 +79,8 @@ export const keyboardData = [
       "Battery Life": "40 hours"
     },
     has3D: false,
-    store: "Best Buy",
-    stock: "In stock"
-  },
+    stockCount: 10
+    },
   {
     id: 'keyboard-4',
     name: 'Keychron K8 Pro Wireless Mechanical Keyboard',
@@ -109,9 +106,8 @@ export const keyboardData = [
       "Battery Life": "80 hours"
     },
     has3D: false,
-    store: "Newegg",
-    stock: "In stock"
-  },
+    stockCount: 10
+    },
   {
     id: 'keyboard-5',
     name: 'SteelSeries Apex Pro TKL Wireless Mechanical Keyboard',
@@ -137,9 +133,8 @@ export const keyboardData = [
       "Battery Life": "60 hours"
     },
     has3D: false,
-    store: "Amazon",
-    stock: "In stock"
-  },
+    stockCount: 10
+    },
   {
     id: 'keyboard-6',
     name: 'Ducky One 2 SF Mechanical Keyboard',
@@ -165,9 +160,8 @@ export const keyboardData = [
       "Hot-swappable": "Yes"
     },
     has3D: false,
-    store: "Best Buy",
-    stock: "In stock"
-  },
+    stockCount: 10
+    },
   {
     id: 'keyboard-7',
     name: 'HyperX Alloy Origins 65 Mechanical Gaming Keyboard',
@@ -192,9 +186,8 @@ export const keyboardData = [
       "Software": "HyperX NGENUITY"
     },
     has3D: false,
-    store: "Newegg",
-    stock: "In stock"
-  },
+    stockCount: 10
+    },
   {
     id: 'keyboard-8',
     name: 'Glorious GMMK 2 96% Mechanical Keyboard',
@@ -220,9 +213,8 @@ export const keyboardData = [
       "Hot-swappable": "Yes"
     },
     has3D: false,
-    store: "Amazon",
-    stock: "In stock"
-  },
+    stockCount: 10
+    },
   {
     id: 'keyboard-9',
     name: 'ASUS ROG Strix Scope II 96 Wireless Mechanical Keyboard',
@@ -248,9 +240,8 @@ export const keyboardData = [
       "Battery Life": "150 hours"
     },
     has3D: false,
-    store: "Best Buy",
-    stock: "In stock"
-  },
+    stockCount: 10
+    },
   {
     id: 'keyboard-10',
     name: 'NuPhy Halo75 Wireless Mechanical Keyboard',
@@ -276,9 +267,8 @@ export const keyboardData = [
       "Battery Life": "100 hours"
     },
     has3D: false,
-    store: "Newegg",
-    stock: "In stock"
-  },
+    stockCount: 0
+    },
   {
     id: 'keyboard-11',
     name: 'Royal Kludge RK84 Wireless Mechanical Keyboard',
@@ -304,9 +294,8 @@ export const keyboardData = [
       "Battery Life": "200 hours"
     },
     has3D: false,
-    store: "Amazon",
-    stock: "In stock"
-  },
+    stockCount: 10
+    },
   {
     id: 'keyboard-12',
     name: 'Leopold FC750R PD Mechanical Keyboard',
@@ -331,9 +320,8 @@ export const keyboardData = [
       "Software": "None"
     },
     has3D: false,
-    store: "Best Buy",
-    stock: "In stock"
-  },
+    stockCount: 10
+    },
   {
     id: 'keyboard-13',
     name: 'Wooting 60HE Analog Mechanical Keyboard',
@@ -358,9 +346,8 @@ export const keyboardData = [
       "Software": "Wootility"
     },
     has3D: false,
-    store: "Newegg",
-    stock: "In stock"
-  },
+    stockCount: 10
+    },
   {
     id: 'keyboard-14',
     name: 'Epomaker TH80 Pro Wireless Mechanical Keyboard',
@@ -386,9 +373,8 @@ export const keyboardData = [
       "Battery Life": "150 hours"
     },
     has3D: false,
-    store: "Amazon",
-    stock: "In stock"
-  },
+    stockCount: 10
+    },
   {
     id: 'keyboard-15',
     name: 'Cooler Master SK622 Wireless Mechanical Keyboard',
@@ -414,9 +400,8 @@ export const keyboardData = [
       "Battery Life": "45 hours"
     },
     has3D: false,
-    store: "Best Buy",
-    stock: "In stock"
-  },
+    stockCount: 10
+    },
   {
     id: 'keyboard-16',
     name: 'Drop ALT Mechanical Keyboard',
@@ -442,9 +427,8 @@ export const keyboardData = [
       "Hot-swappable": "Yes"
     },
     has3D: false,
-    store: "Newegg",
-    stock: "In stock"
-  },
+    stockCount: 10
+    },
   {
     id: 'keyboard-17',
     name: 'Microsoft Surface Ergonomic Keyboard',
@@ -470,9 +454,8 @@ export const keyboardData = [
       "Battery Life": "12 months"
     },
     has3D: false,
-    store: "Amazon",
-    stock: "In stock"
-  },
+    stockCount: 10
+    },
   {
     id: 'keyboard-18',
     name: 'Redragon K552 Kumara Mechanical Gaming Keyboard',
@@ -497,9 +480,8 @@ export const keyboardData = [
       "Software": "None"
     },
     has3D: false,
-    store: "Best Buy",
-    stock: "In stock"
-  },
+    stockCount: 10
+    },
   {
     id: 'keyboard-19',
     name: 'Varmilo VA88M Moonlight Mechanical Keyboard',
@@ -524,9 +506,8 @@ export const keyboardData = [
       "Software": "None"
     },
     has3D: false,
-    store: "Newegg",
-    stock: "In stock"
-  },
+    stockCount: 0
+    },
   {
     id: 'keyboard-20',
     name: 'Akko 3068B Plus Wireless Mechanical Keyboard',
@@ -552,7 +533,6 @@ export const keyboardData = [
       "Battery Life": "120 hours"
     },
     has3D: false,
-    store: "Amazon",
-    stock: "In stock"
-  }
+    stockCount: 10
+    }
 ];

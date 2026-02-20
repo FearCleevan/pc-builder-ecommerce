@@ -24,9 +24,8 @@ export const speakerData = [
       "Special Features": "Game-driven lighting, DTS:X Ultra surround"
     },
     has3D: false,
-    store: "Amazon",
-    stock: "In stock"
-  },
+    stockCount: 0
+    },
   {
     id: 'speaker-2',
     name: 'Audioengine A2+ Wireless Speakers',
@@ -50,9 +49,8 @@ export const speakerData = [
       "Special Features": "Built-in DAC, premium construction"
     },
     has3D: false,
-    store: "Newegg",
-    stock: "In stock"
-  },
+    stockCount: 10
+    },
   {
     id: 'speaker-3',
     name: 'Klipsch ProMedia 2.1 THX Certified Computer Speakers',
@@ -77,9 +75,8 @@ export const speakerData = [
       "Special Features": "THX certification, legendary sound quality"
     },
     has3D: false,
-    store: "Best Buy",
-    stock: "In stock"
-  },
+    stockCount: 10
+    },
   {
     id: 'speaker-4',
     name: 'Razer Nommo Pro THX 2.1 Gaming Speakers',
@@ -104,9 +101,8 @@ export const speakerData = [
       "Special Features": "THX certification, Dolby Virtual Surround"
     },
     has3D: false,
-    store: "Amazon",
-    stock: "In stock"
-  },
+    stockCount: 10
+    },
   {
     id: 'speaker-5',
     name: 'Edifier R1280T Powered Bookshelf Speakers',
@@ -130,9 +126,8 @@ export const speakerData = [
       "Special Features": "Wooden enclosure, classic design"
     },
     has3D: false,
-    store: "Newegg",
-    stock: "In stock"
-  },
+    stockCount: 10
+    },
   {
     id: 'speaker-6',
     name: 'Bose Companion 2 Series III Multimedia Speakers',
@@ -156,9 +151,8 @@ export const speakerData = [
       "Special Features": "TrueSpace stereo digital processing"
     },
     has3D: false,
-    store: "Best Buy",
-    stock: "In stock"
-  },
+    stockCount: 10
+    },
   {
     id: 'speaker-7',
     name: 'Creative Pebble Pro 2.0 USB-C Desktop Speakers',
@@ -182,9 +176,8 @@ export const speakerData = [
       "Special Features": "45° elevated drivers, Clear Dialog audio enhancement"
     },
     has3D: false,
-    store: "Amazon",
-    stock: "In stock"
-  },
+    stockCount: 10
+    },
   {
     id: 'speaker-8',
     name: 'Presonus Eris E3.5 BT Studio Monitors',
@@ -208,9 +201,8 @@ export const speakerData = [
       "Special Features": "Acoustic tuning, professional studio monitors"
     },
     has3D: false,
-    store: "Newegg",
-    stock: "In stock"
-  },
+    stockCount: 10
+    },
   {
     id: 'speaker-9',
     name: 'JBL Professional 305P MkII Studio Monitors',
@@ -234,9 +226,8 @@ export const speakerData = [
       "Special Features": "Image Control Waveguide, professional studio reference"
     },
     has3D: false,
-    store: "Best Buy",
-    stock: "In stock"
-  },
+    stockCount: 10
+    },
   {
     id: 'speaker-10',
     name: 'Corsair SP2500 2.1 High-Powered PC Speakers',
@@ -261,9 +252,8 @@ export const speakerData = [
       "Special Features": "High-power performance, dedicated control pod"
     },
     has3D: false,
-    store: "Amazon",
-    stock: "In stock"
-  },
+    stockCount: 0
+    },
   {
     id: 'speaker-11',
     name: 'Yamaha HS5 Powered Studio Monitor',
@@ -287,9 +277,8 @@ export const speakerData = [
       "Special Features": "Professional studio reference, white cone woofer"
     },
     has3D: false,
-    store: "Newegg",
-    stock: "In stock"
-  },
+    stockCount: 10
+    },
   {
     id: 'speaker-12',
     name: 'Kanto YU2 Powered Desktop Speakers',
@@ -313,9 +302,8 @@ export const speakerData = [
       "Special Features": "Multiple color options, built-in DAC"
     },
     has3D: false,
-    store: "Best Buy",
-    stock: "In stock"
-  },
+    stockCount: 10
+    },
   {
     id: 'speaker-13',
     name: 'Harman Kardon SoundSticks 4 Wireless Speaker System',
@@ -340,9 +328,8 @@ export const speakerData = [
       "Special Features": "Iconic transparent design, touch controls"
     },
     has3D: false,
-    store: "Amazon",
-    stock: "In stock"
-  },
+    stockCount: 10
+    },
   {
     id: 'speaker-14',
     name: 'Sony SRS-RA5000 Wireless Speaker',
@@ -366,9 +353,8 @@ export const speakerData = [
       "Special Features": "360 Reality Audio, immersive sound field"
     },
     has3D: false,
-    store: "Newegg",
-    stock: "In stock"
-  },
+    stockCount: 10
+    },
   {
     id: 'speaker-15',
     name: 'KRK Rokit 5 G4 Studio Monitor',
@@ -392,9 +378,8 @@ export const speakerData = [
       "Special Features": "DSP tuning, professional studio reference"
     },
     has3D: false,
-    store: "Best Buy",
-    stock: "In stock"
-  },
+    stockCount: 10
+    },
   {
     id: 'speaker-16',
     name: 'Cyber Acoustics CA-3090 2.1 Speaker System',
@@ -419,9 +404,8 @@ export const speakerData = [
       "Special Features": "Budget-friendly, easy setup"
     },
     has3D: false,
-    store: "Amazon",
-    stock: "In stock"
-  },
+    stockCount: 10
+    },
   {
     id: 'speaker-17',
     name: 'Mackie CR-X Series CR3-X 3" Creative Reference Multimedia Monitors',
@@ -445,9 +429,8 @@ export const speakerData = [
       "Special Features": "Multiple color options, front-facing volume control"
     },
     has3D: false,
-    store: "Newegg",
-    stock: "In stock"
-  },
+    stockCount: 10
+    },
   {
     id: 'speaker-18',
     name: 'Vanatoo Transparent Zero Powered Speakers',
@@ -471,9 +454,8 @@ export const speakerData = [
       "Special Features": "Built-in DAC, multiple digital inputs"
     },
     has3D: false,
-    store: "Best Buy",
-    stock: "In stock"
-  },
+    stockCount: 10
+    },
   {
     id: 'speaker-19',
     name: 'Genius SW-G2.1 1250 2.1 Gaming Speakers',
@@ -498,9 +480,8 @@ export const speakerData = [
       "Special Features": "Gaming-oriented design, affordable price"
     },
     has3D: false,
-    store: "Amazon",
-    stock: "In stock"
-  },
+    stockCount: 0
+    },
   {
     id: 'speaker-20',
     name: 'Fluance Ai41 Powered Bookshelf Speakers',
@@ -524,7 +505,6 @@ export const speakerData = [
       "Special Features": "Wooden cabinet, premium audio quality"
     },
     has3D: false,
-    store: "Newegg",
-    stock: "In stock"
-  }
+    stockCount: 10
+    }
 ];

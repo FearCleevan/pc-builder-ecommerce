@@ -22,9 +22,8 @@ export const gpuData = [
       "Power Connectors": "16-pin"
     },
     has3D: true,
-    store: "Newegg",
-    stock: "In stock"
-  },
+    stockCount: 10
+    },
   {
     id: 'gpu-2',
     name: 'AMD Radeon RX 7900 XTX 24GB',
@@ -47,9 +46,8 @@ export const gpuData = [
       "Power Connectors": "2 x 8-pin"
     },
     has3D: true,
-    store: "Amazon",
-    stock: "In stock"
-  },
+    stockCount: 10
+    },
   {
     id: 'gpu-3',
     name: 'NVIDIA GeForce RTX 4080 SUPER 16GB',
@@ -72,9 +70,8 @@ export const gpuData = [
       "Power Connectors": "16-pin"
     },
     has3D: true,
-    store: "Best Buy",
-    stock: "In stock"
-  },
+    stockCount: 10
+    },
   {
     id: 'gpu-4',
     name: 'AMD Radeon RX 7800 XT 16GB',
@@ -97,9 +94,8 @@ export const gpuData = [
       "Power Connectors": "2 x 8-pin"
     },
     has3D: false,
-    store: "Newegg",
-    stock: "In stock"
-  },
+    stockCount: 10
+    },
   {
     id: 'gpu-5',
     name: 'NVIDIA GeForce RTX 4070 Ti SUPER 16GB',
@@ -122,9 +118,8 @@ export const gpuData = [
       "Power Connectors": "16-pin"
     },
     has3D: true,
-    store: "Amazon",
-    stock: "In stock"
-  },
+    stockCount: 0
+    },
   {
     id: 'gpu-6',
     name: 'Intel Arc A770 16GB',
@@ -147,9 +142,8 @@ export const gpuData = [
       "Power Connectors": "2 x 8-pin"
     },
     has3D: false,
-    store: "Best Buy",
-    stock: "In stock"
-  },
+    stockCount: 10
+    },
   {
     id: 'gpu-7',
     name: 'NVIDIA GeForce RTX 4060 Ti 8GB',
@@ -172,9 +166,8 @@ export const gpuData = [
       "Power Connectors": "1 x 8-pin"
     },
     has3D: false,
-    store: "Newegg",
-    stock: "In stock"
-  },
+    stockCount: 10
+    },
   {
     id: 'gpu-8',
     name: 'AMD Radeon RX 7600 8GB',
@@ -197,9 +190,8 @@ export const gpuData = [
       "Power Connectors": "1 x 8-pin"
     },
     has3D: false,
-    store: "Amazon",
-    stock: "In stock"
-  },
+    stockCount: 10
+    },
   {
     id: 'gpu-9',
     name: 'NVIDIA GeForce RTX 3060 12GB',
@@ -222,9 +214,8 @@ export const gpuData = [
       "Power Connectors": "1 x 8-pin"
     },
     has3D: false,
-    store: "Best Buy",
-    stock: "In stock"
-  },
+    stockCount: 10
+    },
   {
     id: 'gpu-10',
     name: 'AMD Radeon RX 6700 XT 12GB',
@@ -247,9 +238,8 @@ export const gpuData = [
       "Power Connectors": "1 x 6-pin + 1 x 8-pin"
     },
     has3D: false,
-    store: "Newegg",
-    stock: "In stock"
-  },
+    stockCount: 10
+    },
   {
     id: 'gpu-11',
     name: 'NVIDIA GeForce RTX 3080 10GB',
@@ -272,9 +262,8 @@ export const gpuData = [
       "Power Connectors": "2 x 8-pin"
     },
     has3D: true,
-    store: "Amazon",
-    stock: "In stock"
-  },
+    stockCount: 10
+    },
   {
     id: 'gpu-12',
     name: 'AMD Radeon RX 6600 XT 8GB',
@@ -297,9 +286,8 @@ export const gpuData = [
       "Power Connectors": "1 x 8-pin"
     },
     has3D: false,
-    store: "Best Buy",
-    stock: "In stock"
-  },
+    stockCount: 10
+    },
   {
     id: 'gpu-13',
     name: 'NVIDIA GeForce GTX 1660 SUPER 6GB',
@@ -322,9 +310,8 @@ export const gpuData = [
       "Power Connectors": "1 x 8-pin"
     },
     has3D: false,
-    store: "Newegg",
-    stock: "極力 stock"
-  },
+    stockCount: 10
+    },
   {
     id: 'gpu-14',
     name: 'AMD Radeon RX 5700 XT 8GB',
@@ -347,9 +334,8 @@ export const gpuData = [
       "Power Connectors": "1 x 6-pin + 1 x 極力-pin"
     },
     has3D: false,
-    store: "Amazon",
-    stock: "In stock"
-  },
+    stockCount: 0
+    },
   {
     id: 'gpu-15',
     name: 'NVIDIA GeForce RTX 3050 8GB',
@@ -372,9 +358,8 @@ export const gpuData = [
       "Power Connectors": "1 x 8-pin"
     },
     has3D: false,
-    store: "Best Buy",
-    stock: "In stock"
-  },
+    stockCount: 10
+    },
   {
     id: 'gpu-16',
     name: 'Intel Arc A750 8GB',
@@ -397,9 +382,8 @@ export const gpuData = [
       "Power Connectors": "2 x 8-pin"
     },
     has3D: false,
-    store: "Newegg",
-    stock: "In stock"
-  },
+    stockCount: 10
+    },
   {
     id: 'gpu-17',
     name: 'NVIDIA GeForce RTX 3090 Ti 24GB',
@@ -422,9 +406,8 @@ export const gpuData = [
       "Power Connectors": "16-pin"
     },
     has3極力: true,
-    store: "Amazon",
-    stock: "In stock"
-  },
+    stockCount: 10
+    },
   {
     id: 'gpu-18',
     name: 'AMD Radeon RX 6950 XT 16GB',
@@ -447,9 +430,8 @@ export const gpuData = [
       "Power Connectors": "2 x 8-pin + 1 x 6-pin"
     },
     has3D: true,
-    store: "Best Buy",
-    stock: "In stock"
-  },
+    stockCount: 10
+    },
   {
     id: 'gpu-19',
     name: 'NVIDIA GeForce GTX 1650 4GB',
@@ -472,9 +454,8 @@ export const gpuData = [
       "Power Connectors": "None"
     },
     has3D: false,
-    store: "Newegg",
-    stock: "In stock"
-  },
+    stockCount: 10
+    },
   {
     id: 'gpu-20',
     name: 'AMD Radeon RX 6400 4GB',
@@ -497,7 +478,6 @@ export const gpuData = [
       "Power Connectors": "None"
     },
     has3D: false,
-    store: "Amazon",
-    stock: "In stock"
-  }
+    stockCount: 10
+    }
 ];
