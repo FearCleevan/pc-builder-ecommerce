@@ -7,6 +7,7 @@ import MainPage from '../MainPage/MainPage';
 import styles from './DashboardPanel.module.css';
 import UserManagement from '../../UserManagement/UserManagement';
 import ProductListing from '../Products/ProductListing/MainPage';
+import AddProductMainPage from '../Products/AddProducts/MainPage';
 
 // Create MUI theme to match your design
 const theme = createTheme({
@@ -108,6 +109,8 @@ const DashboardPanel = () => {
     // Handle navigation based on menu selection
     if (menuName === 'PRODUCTS - All Products') {
       setCurrentPage('product-listing');
+    } else if (menuName === 'PRODUCTS - Add Product') {
+      setCurrentPage('product-add');
     } else if (menuName === 'ADMINISTRATION - User Management') {
       setCurrentPage('user-management');
     } else if (menuName === 'DASHBOARD') {
@@ -132,6 +135,8 @@ const DashboardPanel = () => {
     switch (currentPage) {
       case 'product-listing':
         return <ProductListing />;
+      case 'product-add':
+        return <AddProductMainPage />;
       case 'user-management':
         return <UserManagement onBackToDashboard={handleBackToDashboard} />;
       case 'dashboard':

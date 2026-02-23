@@ -90,7 +90,7 @@
 }
 
 .productsTable tbody tr.selectedRow {
-  background: #e8f4fc;
+  background: #fff0f0;
 }
 
 .productsTable td {
@@ -176,9 +176,9 @@
 }
 
 .productBrand {
-  color: #3498db;
+  color: #ff2c2c;
   font-weight: 600;
-  background: #e8f4fc;
+  background: #fff0f0;
   padding: 2px 8px;
   border-radius: 12px;
 }
@@ -433,9 +433,9 @@
 }
 
 .actionButton.viewButton:hover {
-  background: #3498db;
+  background: #ff2c2c;
   color: white;
-  border-color: #3498db;
+  border-color: #ff2c2c;
 }
 
 .actionButton.deleteButton:hover {
@@ -493,12 +493,12 @@
 .productCard:hover {
   transform: translateY(-4px);
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-  border-color: #3498db;
+  border-color: #ff2c2c;
 }
 
 .productCard.selectedCard {
-  border-color: #3498db;
-  box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2);
+  border-color: #ff2c2c;
+  box-shadow: 0 0 0 2px rgba(255, 44, 44, 0.2);
 }
 
 .cardHeader {
@@ -528,7 +528,7 @@
 .categoryIcon {
   display: flex;
   align-items: center;
-  color: #3498db;
+  color: #ff2c2c;
 }
 
 .cardImage {
@@ -597,9 +597,9 @@
 
 .brandName {
   font-size: 13px;
-  color: #3498db;
+  color: #ff2c2c;
   font-weight: 600;
-  background: #e8f4fc;
+  background: #fff0f0;
   padding: 2px 8px;
   border-radius: 12px;
 }
@@ -757,7 +757,7 @@
 
 .moreTags {
   font-size: 11px;
-  color: #3498db;
+  color: #ff2c2c;
   font-weight: 600;
 }
 
@@ -786,7 +786,7 @@
 
 .cardActionButton:hover {
   background: #f8f9fa;
-  color: #3498db;
+  color: #ff2c2c;
 }
 
 .cardActionButton.deleteAction:hover {

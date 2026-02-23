@@ -251,8 +251,8 @@ const ProductGridTableView = ({
   // Helper function to get first image
   const getFirstImage = (product) => {
     return product.images && product.images.length > 0 
-      ? product.images[0] 
-      : null;
+      ? product.images[0]
+      : product.image || product.img || null;
   };
 
   // Helper function to format dimensions

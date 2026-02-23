@@ -21,7 +21,7 @@ const LeftSideBar = ({ isCollapsed, onMenuClick, isMobile, currentPage }) => {
   useEffect(() => {
     if (currentPage === 'user-management') {
       setActiveDropdown('ADMINISTRATION');
-    } else if (currentPage === 'product-listing') {
+    } else if (currentPage === 'product-listing' || currentPage === 'product-add') {
       setActiveDropdown('PRODUCTS');
     }
   }, [currentPage]);
@@ -74,7 +74,8 @@ const LeftSideBar = ({ isCollapsed, onMenuClick, isMobile, currentPage }) => {
             <button
               className={`${styles.menuButton} ${
                 (currentPage === 'user-management' && item.name === 'ADMINISTRATION') ||
-                (currentPage === 'product-listing' && item.name === 'PRODUCTS') 
+                ((currentPage === 'product-listing' || currentPage === 'product-add') &&
+                  item.name === 'PRODUCTS')
                   ? styles.activeMenu : ''
               }`}
               onClick={() => handleMenuItemClick(item)}
@@ -100,7 +101,8 @@ const LeftSideBar = ({ isCollapsed, onMenuClick, isMobile, currentPage }) => {
                     key={subItem}
                     className={`${styles.subMenuItem} ${
                       (currentPage === 'user-management' && subItem === 'User Management') ||
-                      (currentPage === 'product-listing' && subItem === 'All Products')
+                      (currentPage === 'product-listing' && subItem === 'All Products') ||
+                      (currentPage === 'product-add' && subItem === 'Add Product')
                         ? styles.activeSubMenu : ''
                     }`}
                     onClick={() => handleMenuItemClick(item, subItem)}

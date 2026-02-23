@@ -30,7 +30,7 @@ const SearchFilterSystem = ({ filters, onFilterChange, categories }) => {
     onFilterChange({
       search: '',
       category: '',
-      priceRange: { min: 0, max: 100000 },
+      priceRange: { min: 0, max: 150000 },
       stockStatus: '',
       sortBy: 'name',
       sortOrder: 'asc'

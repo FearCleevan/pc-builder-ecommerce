@@ -1,5 +1,5 @@
 import React from 'react';
-import { FiGrid, FiList, FiPackage, FiDownload, FiUpload } from 'react-icons/fi';
+import { FiGrid, FiList, FiPackage, FiDownload, FiPlus } from 'react-icons/fi';
 import styles from './Header.module.css';
 
 const Header = ({
@@ -8,7 +8,8 @@ const Header = ({
   viewMode,
   onViewModeChange,
   selectedCount,
-  onBulkOperationsClick
+  onBulkOperationsClick,
+  onAddProductClick,
 }) => {
   return (
     <div className={styles.header}>
@@ -42,13 +43,13 @@ const Header = ({
         </div>
 
         <div className={styles.actionButtons}>
+          <button className={styles.addProductButton} onClick={onAddProductClick}>
+            <FiPlus size={16} />
+            <span>Add Product</span>
+          </button>
           <button className={styles.exportButton}>
             <FiDownload size={16} />
             <span>Export</span>
-          </button>
-          <button className={styles.importButton}>
-            <FiUpload size={16} />
-            <span>Import</span>
           </button>
           
           {selectedCount > 0 && (

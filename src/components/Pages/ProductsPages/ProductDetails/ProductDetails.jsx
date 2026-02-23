@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { FaArrowLeft, FaMinus, FaPlus, FaShoppingCart } from "react-icons/fa";
 import Header from "../../../Header/Header";
@@ -13,6 +13,7 @@ const ProductDetails = () => {
   const navigate = useNavigate();
   const [quantity, setQuantity] = useState(1);
   const [statusMessage, setStatusMessage] = useState("");
+  const [selectedImageIndex, setSelectedImageIndex] = useState(0);
 
   const product = useMemo(() => getProductById(id), [id]);
   const stockCount =
@@ -61,6 +62,22 @@ const ProductDetails = () => {
     if (!product?.specs) return [];
     return Object.entries(product.specs);
   }, [product]);
+
+  const productImages = useMemo(() => {
+    if (!product) return [];
+
+    if (Array.isArray(product.images) && product.images.length > 0) {
+      return product.images.slice(0, 5);
+    }
+
+    return product.img ? [product.img] : [];
+  }, [product]);
+
+  const activeImage = productImages[selectedImageIndex] || productImages[0] || product?.img;
+
+  useEffect(() => {
+    setSelectedImageIndex(0);
+  }, [id]);
 
   const updateCart = (selectedProduct, selectedQuantity) => {
     const existing = JSON.parse(localStorage.getItem("tb_cart") || "[]");
@@ -155,7 +172,27 @@ const ProductDetails = () => {
 
         <section className={styles.hero}>
           <div className={styles.imageCard}>
-            <img src={product.img} alt={product.name} className={styles.productImage} />
+            <img src={activeImage} alt={product.name} className={styles.productImage} />
+
+            <div className={styles.thumbnailRow}>
+              {productImages.map((image, index) => (
+                <button
+                  key={`${product.id}-image-${index}`}
+                  type="button"
+                  className={`${styles.thumbnailButton} ${
+                    selectedImageIndex === index ? styles.thumbnailActive : ""
+                  }`}
+                  onClick={() => setSelectedImageIndex(index)}
+                  aria-label={`View product image ${index + 1}`}
+                >
+                  <img
+                    src={image}
+                    alt={`${product.name} view ${index + 1}`}
+                    className={styles.thumbnailImage}
+                  />
+                </button>
+              ))}
+            </div>
           </div>
 
           <div className={styles.detailsCard}>

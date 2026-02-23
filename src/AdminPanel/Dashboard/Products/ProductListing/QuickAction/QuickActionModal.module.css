@@ -114,11 +114,11 @@
 }
 
 .tab:hover {
-  color: #3498db;
+  color: #ff2c2c;
 }
 
 .activeTab {
-  color: #3498db;
+  color: #ff2c2c;
 }
 
 .activeTab::after {
@@ -128,7 +128,7 @@
   left: 0;
   right: 0;
   height: 2px;
-  background: #3498db;
+  background: #ff2c2c;
 }
 
 .tabContent {
@@ -173,7 +173,7 @@
 
 .input:focus, .select:focus, .textarea:focus {
   outline: none;
-  border-color: #3498db;
+  border-color: #ff2c2c;
   box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
 }
 
@@ -191,8 +191,8 @@
 
 .tagPreview {
   padding: 4px 10px;
-  background: #e8f4fc;
-  color: #3498db;
+  background: #fff0f0;
+  color: #ff2c2c;
   border-radius: 12px;
   font-size: 12px;
   font-weight: 600;
@@ -329,7 +329,7 @@
 }
 
 .thumbnail:hover {
-  border-color: #3498db;
+  border-color: #ff2c2c;
 }
 
 .thumbnail img {
@@ -563,8 +563,8 @@
 
 .tag {
   padding: 6px 12px;
-  background: #e8f4fc;
-  color: #3498db;
+  background: #fff0f0;
+  color: #ff2c2c;
   border-radius: 16px;
   font-size: 12px;
   font-weight: 600;
@@ -630,7 +630,7 @@
 }
 
 .toggleButton {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #ff2c2c 0%, #ff5b2c 100%);
   color: white;
 }
 
@@ -650,7 +650,7 @@
 }
 
 .duplicateButton {
-  background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+  background: linear-gradient(135deg, #ff8a2c 0%, #ff2c2c 100%);
   color: white;
 }
 
@@ -660,7 +660,7 @@
 }
 
 .saveButton {
-  background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+  background: linear-gradient(135deg, #ff2c2c 0%, #ff6f2c 100%);
   color: white;
   display: flex;
   align-items: center;
@@ -673,12 +673,12 @@
 }
 
 .closeViewButton {
-  background: #3498db;
+  background: #ff2c2c;
   color: white;
 }
 
 .closeViewButton:hover {
-  background: #2980b9;
+  background: #d82424;
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(52, 152, 219, 0.3);
 }

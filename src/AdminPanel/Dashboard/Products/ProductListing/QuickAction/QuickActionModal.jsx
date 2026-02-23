@@ -66,6 +66,8 @@ const QuickActionModal = ({ product, action, onClose, onConfirm, categories = []
     stockStatus: 'in_stock',
     description: '',
     short_description: '',
+    image: '',
+    imagesText: '',
     sku: '',
     upc: '',
     weight_kg: '',
@@ -91,6 +93,8 @@ const QuickActionModal = ({ product, action, onClose, onConfirm, categories = []
         stockStatus: product.stockStatus || 'in_stock',
         description: product.description || '',
         short_description: product.short_description || '',
+        image: product.image || product.images?.[0] || '',
+        imagesText: (product.images || []).join(', '),
         sku: product.sku || '',
         upc: product.upc || '',
         weight_kg: product.weight_kg || '',
@@ -138,7 +142,23 @@ const QuickActionModal = ({ product, action, onClose, onConfirm, categories = []
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    onConfirm(product.id, action, { updates: formData });
+    const imageArray = (formData.imagesText || '')
+      .split(',')
+      .map((item) => item.trim())
+      .filter(Boolean);
+
+    const normalizedImages = imageArray.length > 0 ? imageArray : formData.image ? [formData.image] : [];
+    const mainImage = formData.image || normalizedImages[0] || product.image || '';
+
+    const updates = {
+      ...formData,
+      image: mainImage,
+      images: normalizedImages.length > 0 ? normalizedImages : product.images || [],
+    };
+
+    delete updates.imagesText;
+
+    onConfirm(product.id, action, { updates });
   };
 
   // Helper function to render rating stars
@@ -350,6 +370,30 @@ const QuickActionModal = ({ product, action, onClose, onConfirm, categories = []
                 value={formData.upc}
                 onChange={handleChange}
                 className={styles.input}
+              />
+            </div>
+
+            <div className={styles.formGroup}>
+              <label className={styles.label}>Main Image URL</label>
+              <input
+                type="text"
+                name="image"
+                value={formData.image}
+                onChange={handleChange}
+                className={styles.input}
+                placeholder="https://..."
+              />
+            </div>
+
+            <div className={styles.formGroup}>
+              <label className={styles.label}>Image URLs (comma separated)</label>
+              <textarea
+                name="imagesText"
+                value={formData.imagesText}
+                onChange={handleChange}
+                className={styles.textarea}
+                rows="3"
+                placeholder="https://img1.jpg, https://img2.jpg"
               />
             </div>
 

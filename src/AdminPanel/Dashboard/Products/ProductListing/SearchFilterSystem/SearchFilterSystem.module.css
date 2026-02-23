@@ -1,5 +1,6 @@
 .searchFilterContainer {
   background: white;
+  border: 1px solid #ffe2e2;
   border-radius: 12px;
   padding: 20px;
   margin-bottom: 20px;
@@ -38,9 +39,9 @@
 
 .searchInput:focus {
   outline: none;
-  border-color: #3498db;
+  border-color: #ff2c2c;
   background: white;
-  box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+  box-shadow: 0 0 0 3px rgba(255, 44, 44, 0.12);
 }
 
 .clearSearchButton {
@@ -76,8 +77,8 @@
 }
 
 .filterToggleButton.active {
-  background: #3498db;
-  border-color: #3498db;
+  background: #ff2c2c;
+  border-color: #ff2c2c;
   color: white;
 }
 
@@ -139,8 +140,8 @@
 
 .filterSelect:focus {
   outline: none;
-  border-color: #3498db;
-  box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+  border-color: #ff2c2c;
+  box-shadow: 0 0 0 3px rgba(255, 44, 44, 0.12);
 }
 
 .priceRangeInputs {
@@ -160,7 +161,7 @@
 
 .priceInput:focus {
   outline: none;
-  border-color: #3498db;
+  border-color: #ff2c2c;
 }
 
 .priceSeparator {
