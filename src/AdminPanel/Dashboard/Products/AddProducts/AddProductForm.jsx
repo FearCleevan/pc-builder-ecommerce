@@ -8,7 +8,7 @@ import {
 import styles from "./AddProductForm.module.css";
 
 const MAX_IMAGES = 6;
-const IMAGE_FALLBACK = "/src/assets/Laptop1.png";
+const IMAGE_FALLBACK = "";
 
 const slugify = (value = "") =>
   value
@@ -71,7 +71,7 @@ const buildProductPayload = ({ item, componentKey }) => {
     id,
     name: String(item.name || "").trim() || "Untitled Product",
     image,
-    images: images.length ? images : [image],
+    images: images.length ? images : image ? [image] : [],
     price: Number(item.price || 0),
     specs,
     stockCount,
@@ -249,6 +249,7 @@ const AddProductForm = ({ onSuccess, onCancel }) => {
         ? `Product added. ${uploadWarning}`
         : "Product added successfully."
     );
+    return { uploadWarning };
   };
 
   const submitBulkProducts = async () => {
@@ -279,12 +280,17 @@ const AddProductForm = ({ onSuccess, onCancel }) => {
     setSubmitting(true);
 
     try {
+      let result;
       if (mode === "bulk") {
         await submitBulkProducts();
       } else {
-        await submitSingleProduct();
+        result = await submitSingleProduct();
       }
-      if (onSuccess) onSuccess();
+      const shouldCloseModal =
+        mode === "bulk" || !(result && result.uploadWarning);
+      if (onSuccess && shouldCloseModal) {
+        onSuccess();
+      }
     } catch (submitError) {
       setError(submitError.message || "Failed to add product.");
     } finally {

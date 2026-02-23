@@ -331,7 +331,22 @@ const ProductGridTableView = ({
                     <div className={styles.productInfo}>
                       <div className={styles.productImage}>
                         {getFirstImage(product) ? (
-                          <img src={getFirstImage(product)} alt={product.name} />
+                          <>
+                            <img
+                              src={getFirstImage(product)}
+                              alt={product.name}
+                              onError={(event) => {
+                                event.currentTarget.style.display = "none";
+                                const placeholder = event.currentTarget.nextElementSibling;
+                                if (placeholder) {
+                                  placeholder.style.display = "flex";
+                                }
+                              }}
+                            />
+                            <div className={styles.imagePlaceholder} style={{ display: "none" }}>
+                              {getCategoryIcon(product.category)}
+                            </div>
+                          </>
                         ) : (
                           <div className={styles.imagePlaceholder}>
                             {getCategoryIcon(product.category)}
@@ -508,7 +523,23 @@ const ProductGridTableView = ({
                 
                 <div className={styles.cardImage}>
                   {getFirstImage(product) ? (
-                    <img src={getFirstImage(product)} alt={product.name} />
+                    <>
+                      <img
+                        src={getFirstImage(product)}
+                        alt={product.name}
+                        onError={(event) => {
+                          event.currentTarget.style.display = "none";
+                          const placeholder = event.currentTarget.nextElementSibling;
+                          if (placeholder) {
+                            placeholder.style.display = "flex";
+                          }
+                        }}
+                      />
+                      <div className={styles.cardImagePlaceholder} style={{ display: "none" }}>
+                        {getCategoryIcon(product.category)}
+                        <span>{product.category}</span>
+                      </div>
+                    </>
                   ) : (
                     <div className={styles.cardImagePlaceholder}>
                       {getCategoryIcon(product.category)}
