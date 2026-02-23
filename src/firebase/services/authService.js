@@ -132,7 +132,7 @@ export const deleteUser = async (userId) => {
     await deleteDoc(doc(db, 'users', userId));
     
     return { success: true };
-  } catch (error) {
+  } catch {
     throw new Error('Failed to delete user');
   }
 };
@@ -146,7 +146,7 @@ export const updateUserRole = async (userId, newRole) => {
       updatedBy: auth.currentUser?.uid
     });
     return { success: true };
-  } catch (error) {
+  } catch {
     throw new Error('Failed to update user role');
   }
 };
@@ -191,11 +191,11 @@ export const loginUser = async (email, password) => {
         isActive: userData.isActive
       }
     };
-  } catch (error) {
-    if (error.message.includes('network') || error.message.includes('timeout')) {
+  } catch (err) {
+    if (err.message.includes('network') || err.message.includes('timeout')) {
       throw new Error('Network error. Please check your connection and try again.');
     }
-    throw new Error(getAuthErrorMessage(error.code));
+    throw new Error(getAuthErrorMessage(err.code));
   }
 };
 
@@ -205,7 +205,7 @@ export const logoutUser = async () => {
     await signOut(auth);
     sessionStorage.removeItem('currentUser');
     return { success: true };
-  } catch (error) {
+  } catch {
     throw new Error('Logout failed');
   }
 };
@@ -269,7 +269,7 @@ export const getAllUsers = async () => {
     });
     
     return users;
-  } catch (error) {
+  } catch {
     throw new Error('Failed to fetch users');
   }
 };
@@ -411,7 +411,7 @@ export const getUsersByRole = async (role) => {
     });
     
     return users;
-  } catch (error) {
+  } catch {
     throw new Error('Failed to fetch users by role');
   }
 };
@@ -425,7 +425,7 @@ export const updateUserProfile = async (userId, profileData) => {
       updatedBy: auth.currentUser?.uid
     });
     return { success: true };
-  } catch (error) {
+  } catch {
     throw new Error('Failed to update user profile');
   }
 };
@@ -439,7 +439,7 @@ export const deactivateUser = async (userId) => {
       deactivatedBy: auth.currentUser?.uid
     });
     return { success: true };
-  } catch (error) {
+  } catch {
     throw new Error('Failed to deactivate user');
   }
 };
@@ -453,7 +453,7 @@ export const reactivateUser = async (userId) => {
       reactivatedBy: auth.currentUser?.uid
     });
     return { success: true };
-  } catch (error) {
+  } catch {
     throw new Error('Failed to reactivate user');
   }
 };
