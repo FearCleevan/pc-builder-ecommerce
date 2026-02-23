@@ -1,20 +1,10 @@
 //src/components/PCBuilder/Modal/MockData/Motherboard/Motherboard.js
-import CloudinaryService from "../../../../../firebase/services/cloudinaryService";
-
-// Helper function to generate Cloudinary image URLs
-const generateImageUrl = (productName) => {
-  return CloudinaryService.getProcessorImage(productName, {
-    width: 400,
-    height: 400,
-  });
-};
-
 export const motherboardData = [
   {
     id: "mb-1",
     name: "ASRock B450 Pro4 R2.0 ATX AM4",
     type: "motherboard",
-    image: generateImageUrl("ASRock B450 Pro4 R2.0 ATX AM4"),
+    image: "/src/assets/Laptop1.png",
     price: 5700.0,
     specs: {
       Socket: "AM4",
@@ -45,7 +35,7 @@ export const motherboardData = [
     id: "mb-2",
     name: "ASRock B550 Phantom Gaming 4 ac ATX AM4",
     type: "motherboard",
-    image: generateImageUrl("ASRock B550 Phantom Gaming 4 ac ATX AM4"),
+    image: "/src/assets/Laptop1.png",
     price: 7400.0,
     specs: {
       Socket: "AM4",
@@ -76,7 +66,7 @@ export const motherboardData = [
     id: "mb-3",
     name: "Asus PRIME B550-PLUS AC-HES ATX AM4",
     type: "motherboard",
-    image: generateImageUrl("Asus PRIME B550-PLUS AC-HES ATX AM4"),
+    image: "/src/assets/Laptop1.png",
     price: 8500.0,
     specs: {
       Socket: "AM4",
@@ -107,7 +97,7 @@ export const motherboardData = [
     id: "mb-4",
     name: "Asus ROG STRIX B450-F GAMING ATX AM4",
     type: "motherboard",
-    image: generateImageUrl("Asus ROG STRIX B450-F GAMING ATX AM4"),
+    image: "/src/assets/Laptop1.png",
     price: 6800.0,
     specs: {
       Socket: "AM4",
@@ -138,7 +128,7 @@ export const motherboardData = [
     id: "mb-5",
     name: "Asus ROG STRIX B550-A GAMING ATX AM4",
     type: "motherboard",
-    image: generateImageUrl("Asus ROG STRIX B550-A GAMING ATX AM4"),
+    image: "/src/assets/Laptop1.png",
     price: 10200.0,
     specs: {
       Socket: "AM4",
@@ -169,7 +159,7 @@ export const motherboardData = [
     id: "mb-6",
     name: "Asus ROG STRIX B550-F GAMING ATX AM4",
     type: "motherboard",
-    image: generateImageUrl("Asus ROG STRIX B550-F GAMING ATX AM4"),
+    image: "/src/assets/Laptop1.png",
     price: 10800.0,
     specs: {
       Socket: "AM4",
@@ -200,7 +190,7 @@ export const motherboardData = [
     id: "mb-7",
     name: "Asus TUF GAMING B550-PLUS WIFI II ATX AM4",
     type: "motherboard",
-    image: generateImageUrl("Asus TUF GAMING B550-PLUS WIFI II ATX AM4"),
+    image: "/src/assets/Laptop1.png",
     price: 9500.0,
     specs: {
       Socket: "AM4",
@@ -231,7 +221,7 @@ export const motherboardData = [
     id: "mb-8",
     name: "Gigabyte B550 AORUS ELITE AX V2 ATX AM4",
     type: "motherboard",
-    image: generateImageUrl("Gigabyte B550 AORUS ELITE AX V2 ATX AM4"),
+    image: "/src/assets/Laptop1.png",
     price: 8900.0,
     specs: {
       Socket: "AM4",
@@ -262,7 +252,7 @@ export const motherboardData = [
     id: "mb-9",
     name: "MSI B450 TOMAHAWK MAX ATX AM4",
     type: "motherboard",
-    image: generateImageUrl("MSI B450 TOMAHAWK MAX ATX AM4"),
+    image: "/src/assets/Laptop1.png",
     price: 6500.0,
     specs: {
       Socket: "AM4",
@@ -293,7 +283,7 @@ export const motherboardData = [
     id: "mb-10",
     name: "MSI B550-A PRO ATX AM4",
     type: "motherboard",
-    image: generateImageUrl("MSI B550-A PRO ATX AM4"),
+    image: "/src/assets/Laptop1.png",
     price: 7800.0,
     specs: {
       Socket: "AM4",
@@ -324,7 +314,7 @@ export const motherboardData = [
     id: "mb-11",
     name: "ASRock A520M-HDV Micro ATX AM4",
     type: "motherboard",
-    image: generateImageUrl("ASRock A520M-HDV Micro ATX AM4"),
+    image: "/src/assets/Laptop1.png",
     price: 3800.0,
     specs: {
       Socket: "AM4",
@@ -355,7 +345,7 @@ export const motherboardData = [
     id: "mb-12",
     name: "ASRock B550M Pro4 Micro ATX AM4",
     type: "motherboard",
-    image: generateImageUrl("ASRock B550M Pro4 Micro ATX AM4"),
+    image: "/src/assets/Laptop1.png",
     price: 6200.0,
     specs: {
       Socket: "AM4",
@@ -386,7 +376,7 @@ export const motherboardData = [
     id: "mb-13",
     name: "Asus PRIME B550M-A WIFI II Micro ATX AM4",
     type: "motherboard",
-    image: generateImageUrl("Asus PRIME B550M-A WIFI II Micro ATX AM4"),
+    image: "/src/assets/Laptop1.png",
     price: 7200.0,
     specs: {
       Socket: "AM4",
@@ -417,7 +407,7 @@ export const motherboardData = [
     id: "mb-14",
     name: "Gigabyte B550M AORUS ELITE AX Micro ATX AM4",
     type: "motherboard",
-    image: generateImageUrl("Gigabyte B550M AORUS ELITE AX Micro ATX AM4"),
+    image: "/src/assets/Laptop1.png",
     price: 8200.0,
     specs: {
       Socket: "AM4",
@@ -448,7 +438,7 @@ export const motherboardData = [
     id: "mb-15",
     name: "MSI B550M PRO-VDH WIFI Micro ATX AM4",
     type: "motherboard",
-    image: generateImageUrl("MSI B550M PRO-VDH WIFI Micro ATX AM4"),
+    image: "/src/assets/Laptop1.png",
     price: 6800.0,
     specs: {
       Socket: "AM4",
@@ -479,7 +469,7 @@ export const motherboardData = [
     id: "mb-16",
     name: "ASRock B550 Phantom Gaming-ITX ax Mini ITX AM4",
     type: "motherboard",
-    image: generateImageUrl("ASRock B550 Phantom Gaming-ITX ax Mini ITX AM4"),
+    image: "/src/assets/Laptop1.png",
     price: 11500.0,
     specs: {
       Socket: "AM4",
@@ -510,7 +500,7 @@ export const motherboardData = [
     id: "mb-17",
     name: "Asus ROG STRIX B550-I GAMING Mini ITX AM4",
     type: "motherboard",
-    image: generateImageUrl("Asus ROG STRIX B550-I GAMING Mini ITX AM4"),
+    image: "/src/assets/Laptop1.png",
     price: 12500.0,
     specs: {
       Socket: "AM4",
@@ -541,7 +531,7 @@ export const motherboardData = [
     id: "mb-18",
     name: "Gigabyte X570SI AORUS PRO AX Mini ITX AM4",
     type: "motherboard",
-    image: generateImageUrl("Gigabyte X570SI AORUS PRO AX Mini ITX AM4"),
+    image: "/src/assets/Laptop1.png",
     price: 11800.0,
     specs: {
       Socket: "AM4",
@@ -572,7 +562,7 @@ export const motherboardData = [
     id: "mb-19",
     name: "MSI MPG B550I GAMING EDGE WIFI Mini ITX AM4",
     type: "motherboard",
-    image: generateImageUrl("MSI MPG B550I GAMING EDGE WIFI Mini ITX AM4"),
+    image: "/src/assets/Laptop1.png",
     price: 11200.0,
     specs: {
       Socket: "AM4",
@@ -603,7 +593,7 @@ export const motherboardData = [
     id: "mb-20",
     name: "ASRock X570 Phantom Gaming-ITX TB3 Mini ITX AM4",
     type: "motherboard",
-    image: generateImageUrl("ASRock X570 Phantom Gaming-ITX TB3 Mini ITX AM4"),
+    image: "/src/assets/Laptop1.png",
     price: 14500.0,
     specs: {
       Socket: "AM4",
@@ -635,7 +625,7 @@ export const motherboardData = [
     id: "mb-21",
     name: "Asus ROG STRIX B850-F GAMING WIFI ATX AM5",
     type: "motherboard",
-    image: generateImageUrl("Asus ROG STRIX B850-F GAMING WIFI ATX AM5"),
+    image: "/src/assets/Laptop1.png",
     price: 14500.0,
     specs: {
       Socket: "AM5",
@@ -665,7 +655,7 @@ export const motherboardData = [
     id: "mb-22",
     name: "Asus PRIME B650-PLUS WIFI ATX AM5",
     type: "motherboard",
-    image: generateImageUrl("Asus PRIME B650-PLUS WIFI ATX AM5"),
+    image: "/src/assets/Laptop1.png",
     price: 11200.0,
     specs: {
       Socket: "AM5",
@@ -695,7 +685,7 @@ export const motherboardData = [
     id: "mb-23",
     name: "Gigabyte B650 EAGLE AX ATX AM5",
     type: "motherboard",
-    image: generateImageUrl("Gigabyte B650 EAGLE AX ATX AM5"),
+    image: "/src/assets/Laptop1.png",
     price: 9800.0,
     specs: {
       Socket: "AM5",
@@ -725,7 +715,7 @@ export const motherboardData = [
     id: "mb-24",
     name: "MSI PRO B650-S WIFI ATX AM5",
     type: "motherboard",
-    image: generateImageUrl("MSI PRO B650-S WIFI ATX AM5"),
+    image: "/src/assets/Laptop1.png",
     price: 10500.0,
     specs: {
       Socket: "AM5",
@@ -755,7 +745,7 @@ export const motherboardData = [
     id: "mb-25",
     name: "Asus TUF GAMING B650-E WIFI ATX AM5",
     type: "motherboard",
-    image: generateImageUrl("Asus TUF GAMING B650-E WIFI ATX AM5"),
+    image: "/src/assets/Laptop1.png",
     price: 13200.0,
     specs: {
       Socket: "AM5",
@@ -787,7 +777,7 @@ export const motherboardData = [
     id: "mb-26",
     name: "Asus PRIME Z270-A ATX LGA1151",
     type: "motherboard",
-    image: generateImageUrl("Asus PRIME Z270-A ATX LGA1151"),
+    image: "/src/assets/Laptop1.png",
     price: 6800.0,
     specs: {
       Socket: "LGA1151",
@@ -817,7 +807,7 @@ export const motherboardData = [
     id: "mb-27",
     name: "Gigabyte Z290 AORUS PRO WIFI ATX LGA1151",
     type: "motherboard",
-    image: generateImageUrl("Gigabyte Z290 AORUS PRO WIFI ATX LGA1151"),
+    image: "/src/assets/Laptop1.png",
     price: 8900.0,
     specs: {
       Socket: "LGA1151",
@@ -847,7 +837,7 @@ export const motherboardData = [
     id: "mb-28",
     name: "MSI Z270-A PRO ATX LGA1151",
     type: "motherboard",
-    image: generateImageUrl("MSI Z270-A PRO ATX LGA1151"),
+    image: "/src/assets/Laptop1.png",
     price: 6200.0,
     specs: {
       Socket: "LGA1151",
@@ -877,7 +867,7 @@ export const motherboardData = [
     id: "mb-29",
     name: "Asus PRIME Z290-P ATX LGA1151",
     type: "motherboard",
-    image: generateImageUrl("Asus PRIME Z290-P ATX LGA1151"),
+    image: "/src/assets/Laptop1.png",
     price: 7500.0,
     specs: {
       Socket: "LGA1151",
@@ -907,7 +897,7 @@ export const motherboardData = [
     id: "mb-30",
     name: "Gigabyte Z290 UD ATX LGA1151",
     type: "motherboard",
-    image: generateImageUrl("Gigabyte Z290 UD ATX LGA1151"),
+    image: "/src/assets/Laptop1.png",
     price: 7100.0,
     specs: {
       Socket: "LGA1151",
@@ -939,7 +929,7 @@ export const motherboardData = [
     id: "mb-31",
     name: "Asus PRIME B560-PLUS ATX LGA1200",
     type: "motherboard",
-    image: generateImageUrl("Asus PRIME B560-PLUS ATX LGA1200"),
+    image: "/src/assets/Laptop1.png",
     price: 8200.0,
     specs: {
       Socket: "LGA1200",
@@ -969,7 +959,7 @@ export const motherboardData = [
     id: "mb-32",
     name: "Asus ROG STRIX Z690-E GAMING WIFI ATX LGA1200",
     type: "motherboard",
-    image: generateImageUrl("Asus ROG STRIX Z690-E GAMING WIFI ATX LGA1200"),
+    image: "/src/assets/Laptop1.png",
     price: 15800.0,
     specs: {
       Socket: "LGA1200",
@@ -999,7 +989,7 @@ export const motherboardData = [
     id: "mb-33",
     name: "MSI Z490-A PRO ATX LGA1200",
     type: "motherboard",
-    image: generateImageUrl("MSI Z490-A PRO ATX LGA1200"),
+    image: "/src/assets/Laptop1.png",
     price: 7800.0,
     specs: {
       Socket: "LGA1200",
@@ -1029,7 +1019,7 @@ export const motherboardData = [
     id: "mb-34",
     name: "Asus TUF Gaming Z590-PLUS WIFI ATX LGA1200",
     type: "motherboard",
-    image: generateImageUrl("Asus TUF Gaming Z590-PLUS WIFI ATX LGA1200"),
+    image: "/src/assets/Laptop1.png",
     price: 11200.0,
     specs: {
       Socket: "LGA1200",
@@ -1059,7 +1049,7 @@ export const motherboardData = [
     id: "mb-35",
     name: "Asus PRIME Z590-P ATX LGA1200",
     type: "motherboard",
-    image: generateImageUrl("Asus PRIME Z590-P ATX LGA1200"),
+    image: "/src/assets/Laptop1.png",
     price: 8500.0,
     specs: {
       Socket: "LGA1200",
@@ -1091,7 +1081,7 @@ export const motherboardData = [
     id: "mb-36",
     name: "Asus PRIME B660-PLUS D4 ATX LGA1700",
     type: "motherboard",
-    image: generateImageUrl("Asus PRIME B660-PLUS D4 ATX LGA1700"),
+    image: "/src/assets/Laptop1.png",
     price: 9200.0,
     specs: {
       Socket: "LGA1700",
@@ -1121,7 +1111,7 @@ export const motherboardData = [
     id: "mb-37",
     name: "Gigabyte B760 GAMING X DDR4 ATX LGA1700",
     type: "motherboard",
-    image: generateImageUrl("Gigabyte B760 GAMING X DDR4 ATX LGA1700"),
+    image: "/src/assets/Laptop1.png",
     price: 10500.0,
     specs: {
       Socket: "LGA1700",
@@ -1151,7 +1141,7 @@ export const motherboardData = [
     id: "mb-38",
     name: "MSI B760 GAMING PLUS WIFI DDR4 ATX LGA1700",
     type: "motherboard",
-    image: generateImageUrl("MSI B760 GAMING PLUS WIFI DDR4 ATX LGA1700"),
+    image: "/src/assets/Laptop1.png",
     price: 11800.0,
     specs: {
       Socket: "LGA1700",
@@ -1181,7 +1171,7 @@ export const motherboardData = [
     id: "mb-39",
     name: "Asus TUF GAMING Z690-PLUS WIFI D4 ATX LGA1700",
     type: "motherboard",
-    image: generateImageUrl("Asus TUF GAMING Z690-PLUS WIFI D4 ATX LGA1700"),
+    image: "/src/assets/Laptop1.png",
     price: 14200.0,
     specs: {
       Socket: "LGA1700",
@@ -1211,7 +1201,7 @@ export const motherboardData = [
     id: "mb-40",
     name: "MSI PRO B760-P WIFI DDR4 ATX LGA1700",
     type: "motherboard",
-    image: generateImageUrl("MSI PRO B760-P WIFI DDR4 ATX LGA1700"),
+    image: "/src/assets/Laptop1.png",
     price: 9800.0,
     specs: {
       Socket: "LGA1700",
@@ -1242,7 +1232,7 @@ export const motherboardData = [
     id: "mb-41",
     name: "ASRock B650M Pro RS Micro ATX AM5",
     type: "motherboard",
-    image: generateImageUrl("ASRock B650M Pro RS Micro ATX AM5"),
+    image: "/src/assets/Laptop1.png",
     price: 9800.0,
     specs: {
       Socket: "AM5",
@@ -1272,7 +1262,7 @@ export const motherboardData = [
     id: "mb-42",
     name: "ASRock B650M Pro RS WiFi Micro ATX AM5",
     type: "motherboard",
-    image: generateImageUrl("ASRock B650M Pro RS WiFi Micro ATX AM5"),
+    image: "/src/assets/Laptop1.png",
     price: 10500.0,
     specs: {
       Socket: "AM5",
@@ -1302,7 +1292,7 @@ export const motherboardData = [
     id: "mb-43",
     name: "Gigabyte B650M GAMING PLUS WiFi Micro ATX AM5",
     type: "motherboard",
-    image: generateImageUrl("Gigabyte B650M GAMING PLUS WiFi Micro ATX AM5"),
+    image: "/src/assets/Laptop1.png",
     price: 11200.0,
     specs: {
       Socket: "AM5",
@@ -1332,7 +1322,7 @@ export const motherboardData = [
     id: "mb-44",
     name: "MSI PRO B650M-A WiFi Micro ATX AM5",
     type: "motherboard",
-    image: generateImageUrl("MSI PRO B650M-A WiFi Micro ATX AM5"),
+    image: "/src/assets/Laptop1.png",
     price: 10800.0,
     specs: {
       Socket: "AM5",
@@ -1362,7 +1352,7 @@ export const motherboardData = [
     id: "mb-45",
     name: "Asus TUF GAMING B850M-PLUS WiFi Micro ATX AM5",
     type: "motherboard",
-    image: generateImageUrl("Asus TUF GAMING B850M-PLUS WiFi Micro ATX AM5"),
+    image: "/src/assets/Laptop1.png",
     price: 12500.0,
     specs: {
       Socket: "AM5",
@@ -1394,7 +1384,7 @@ export const motherboardData = [
     id: "mb-46",
     name: "ASRock B250M-HDV Micro ATX LGA1151",
     type: "motherboard",
-    image: generateImageUrl("ASRock B250M-HDV Micro ATX LGA1151"),
+    image: "/src/assets/Laptop1.png",
     price: 4500.0,
     specs: {
       Socket: "LGA1151",
@@ -1424,7 +1414,7 @@ export const motherboardData = [
     id: "mb-47",
     name: "Asus PRIME B360M-A Micro ATX LGA1151",
     type: "motherboard",
-    image: generateImageUrl("Asus PRIME B360M-A Micro ATX LGA1151"),
+    image: "/src/assets/Laptop1.png",
     price: 5200.0,
     specs: {
       Socket: "LGA1151",
@@ -1454,7 +1444,7 @@ export const motherboardData = [
     id: "mb-48",
     name: "Gigabyte B365M DS3H Micro ATX LGA1151",
     type: "motherboard",
-    image: generateImageUrl("Gigabyte B365M DS3H Micro ATX LGA1151"),
+    image: "/src/assets/Laptop1.png",
     price: 4800.0,
     specs: {
       Socket: "LGA1151",
@@ -1484,7 +1474,7 @@ export const motherboardData = [
     id: "mb-49",
     name: "ASRock B365M Pro4 Micro ATX LGA1151",
     type: "motherboard",
-    image: generateImageUrl("ASRock B365M Pro4 Micro ATX LGA1151"),
+    image: "/src/assets/Laptop1.png",
     price: 5500.0,
     specs: {
       Socket: "LGA1151",
@@ -1514,7 +1504,7 @@ export const motherboardData = [
     id: "mb-50",
     name: "Asus H110M-K Micro ATX LGA1151",
     type: "motherboard",
-    image: generateImageUrl("Asus H110M-K Micro ATX LGA1151"),
+    image: "/src/assets/Laptop1.png",
     price: 3800.0,
     specs: {
       Socket: "LGA1151",
@@ -1546,7 +1536,7 @@ export const motherboardData = [
     id: "mb-51",
     name: "Asus PRIME B560M-A Micro ATX LGA1200",
     type: "motherboard",
-    image: generateImageUrl("Asus PRIME B560M-A Micro ATX LGA1200"),
+    image: "/src/assets/Laptop1.png",
     price: 6800.0,
     specs: {
       Socket: "LGA1200",
@@ -1576,9 +1566,7 @@ export const motherboardData = [
     id: "mb-52",
     name: "Asus TUF GAMING B560M-PLUS WiFi Micro ATX LGA1200",
     type: "motherboard",
-    image: generateImageUrl(
-      "Asus TUF GAMING B560M-PLUS WiFi Micro ATX LGA1200"
-    ),
+    image: "/src/assets/Laptop1.png",
     price: 8500.0,
     specs: {
       Socket: "LGA1200",
@@ -1608,7 +1596,7 @@ export const motherboardData = [
     id: "mb-53",
     name: "MSI B460M PRO-VDH WiFi Micro ATX LGA1200",
     type: "motherboard",
-    image: generateImageUrl("MSI B460M PRO-VDH WiFi Micro ATX LGA1200"),
+    image: "/src/assets/Laptop1.png",
     price: 6200.0,
     specs: {
       Socket: "LGA1200",
@@ -1638,7 +1626,7 @@ export const motherboardData = [
     id: "mb-54",
     name: "Gigabyte B560M D53H AC Micro ATX LGA1200",
     type: "motherboard",
-    image: generateImageUrl("Gigabyte B560M D53H AC Micro ATX LGA1200"),
+    image: "/src/assets/Laptop1.png",
     price: 5900.0,
     specs: {
       Socket: "LGA1200",
@@ -1668,7 +1656,7 @@ export const motherboardData = [
     id: "mb-55",
     name: "Asus PRIME H510M-A Micro ATX LGA1200",
     type: "motherboard",
-    image: generateImageUrl("Asus PRIME H510M-A Micro ATX LGA1200"),
+    image: "/src/assets/Laptop1.png",
     price: 5200.0,
     specs: {
       Socket: "LGA1200",
@@ -1700,7 +1688,7 @@ export const motherboardData = [
     id: "mb-56",
     name: "ASRock B660M Pro RS Micro ATX LGA1700",
     type: "motherboard",
-    image: generateImageUrl("ASRock B660M Pro RS Micro ATX LGA1700"),
+    image: "/src/assets/Laptop1.png",
     price: 7800.0,
     specs: {
       Socket: "LGA1700",
@@ -1730,7 +1718,7 @@ export const motherboardData = [
     id: "mb-57",
     name: "Asus PRIME B760M-A AC Micro ATX LGA1700",
     type: "motherboard",
-    image: generateImageUrl("Asus PRIME B760M-A AC Micro ATX LGA1700"),
+    image: "/src/assets/Laptop1.png",
     price: 9200.0,
     specs: {
       Socket: "LGA1700",
@@ -1760,9 +1748,7 @@ export const motherboardData = [
     id: "mb-58",
     name: "Gigabyte B760M GAMING PLUS WiFi DDR4 Micro ATX LGA1700",
     type: "motherboard",
-    image: generateImageUrl(
-      "Gigabyte B760M GAMING PLUS WiFi DDR4 Micro ATX LGA1700"
-    ),
+    image: "/src/assets/Laptop1.png",
     price: 10500.0,
     specs: {
       Socket: "LGA1700",
@@ -1792,7 +1778,7 @@ export const motherboardData = [
     id: "mb-59",
     name: "MSI B760M GAMING PLUS WiFi Micro ATX LGA1700",
     type: "motherboard",
-    image: generateImageUrl("MSI B760M GAMING PLUS WiFi Micro ATX LGA1700"),
+    image: "/src/assets/Laptop1.png",
     price: 9800.0,
     specs: {
       Socket: "LGA1700",
@@ -1822,9 +1808,7 @@ export const motherboardData = [
     id: "mb-60",
     name: "Asus TUF GAMING B760M-PLUS WiFi II Micro ATX LGA1700",
     type: "motherboard",
-    image: generateImageUrl(
-      "Asus TUF GAMING B760M-PLUS WiFi II Micro ATX LGA1700"
-    ),
+    image: "/src/assets/Laptop1.png",
     price: 11500.0,
     specs: {
       Socket: "LGA1700",
@@ -1851,3 +1835,4 @@ export const motherboardData = [
     stockCount: 10
   },
 ];
+

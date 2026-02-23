@@ -1,0 +1,59 @@
+[
+  {
+    "id": "cpu-1001",
+    "name": "AMD Ryzen 7 7800X3D",
+    "price": 24990,
+    "stockCount": 15,
+    "specs": {
+      "Socket": "AM5",
+      "Microarchitecture": "Zen 4",
+      "Integrated Graphics": "AMD Radeon Graphics",
+      "TDP": "120 W",
+      "Core Count": "8",
+      "Thread Count": "16",
+      "Base Clock": "4.2 GHz",
+      "Max Boost Clock": "5.0 GHz",
+      "L2 Cache": "8 MB",
+      "L3 Cache": "96 MB",
+      "Manufacturer": "AMD"
+    }
+  },
+  {
+    "id": "cpu-1002",
+    "name": "Intel Core i7-14700K",
+    "price": 27450,
+    "stockCount": 8,
+    "specs": {
+      "Socket": "LGA1700",
+      "Microarchitecture": "Raptor Lake Refresh",
+      "Integrated Graphics": "Intel UHD Graphics 770",
+      "TDP": "125 W",
+      "Core Count": "20",
+      "Thread Count": "28",
+      "Base Clock": "3.4 GHz",
+      "Max Boost Clock": "5.6 GHz",
+      "L2 Cache": "28 MB",
+      "L3 Cache": "33 MB",
+      "Manufacturer": "Intel"
+    }
+  },
+  {
+    "id": "cpu-1003",
+    "name": "AMD Ryzen 5 7600",
+    "price": 13490,
+    "stockCount": 20,
+    "specs": {
+      "Socket": "AM5",
+      "Microarchitecture": "Zen 4",
+      "Integrated Graphics": "AMD Radeon Graphics",
+      "TDP": "65 W",
+      "Core Count": "6",
+      "Thread Count": "12",
+      "Base Clock": "3.8 GHz",
+      "Max Boost Clock": "5.1 GHz",
+      "L2 Cache": "6 MB",
+      "L3 Cache": "32 MB",
+      "Manufacturer": "AMD"
+    }
+  }
+]

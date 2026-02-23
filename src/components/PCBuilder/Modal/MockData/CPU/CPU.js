@@ -1,19 +1,9 @@
 //src/components/PCBuilder/Modal/MockData/CPU/CPU.js
-import CloudinaryService from "../../../../../firebase/services/cloudinaryService";
-
-// Helper function to generate Cloudinary image URLs
-const generateImageUrl = (productName) => {
-  return CloudinaryService.getProcessorImage(productName, {
-    width: 400,
-    height: 400
-  });
-};
-
 export const cpuData = [
   {
     id: 'cpu-1',
     name: 'AMD Ryzen 9 7950X',
-    image: generateImageUrl('AMD Ryzen 9 7950X'),
+    image: "/src/assets/Laptop1.png",
     price: 34200.00,
     specs: {
       "Socket": "AM5",
@@ -33,7 +23,7 @@ export const cpuData = [
   {
     id: 'cpu-2',
     name: 'Intel Core i9-13900K',
-    image: generateImageUrl('Intel Core i9-13900K'),
+    image: "/src/assets/Laptop1.png",
     price: 33630.00,
     specs: {
       "Socket": "LGA1700",
@@ -53,7 +43,7 @@ export const cpuData = [
   {
     id: 'cpu-3',
     name: 'AMD Ryzen 7 7800X3D',
-    image: generateImageUrl('AMD Ryzen 7 7800X3D'),
+    image: "/src/assets/Laptop1.png",
     price: 25650.00,
     specs: {
       "Socket": "AM5",
@@ -73,7 +63,7 @@ export const cpuData = [
   {
     id: 'cpu-4',
     name: 'Intel Core i7-13700K',
-    image: generateImageUrl('Intel Core i7-13700K'),
+    image: "/src/assets/Laptop1.png",
     price: 23940.00,
     specs: {
       "Socket": "LGA1700",
@@ -93,7 +83,7 @@ export const cpuData = [
   {
     id: 'cpu-5',
     name: 'AMD Ryzen 5 7600X',
-    image: generateImageUrl('AMD Ryzen 5 7600X'),
+    image: "/src/assets/Laptop1.png",
     price: 17100.00,
     specs: {
       "Socket": "AM5",
@@ -113,7 +103,7 @@ export const cpuData = [
   {
     id: 'cpu-6',
     name: 'Intel Core i5-13600K',
-    image: generateImageUrl('Intel Core i5-13600K'),
+    image: "/src/assets/Laptop1.png",
     price: 18240.00,
     specs: {
       "Socket": "LGA1700",
@@ -133,7 +123,7 @@ export const cpuData = [
   {
     id: 'cpu-7',
     name: 'AMD Ryzen 9 5950X',
-    image: generateImageUrl('AMD Ryzen 9 5950X'),
+    image: "/src/assets/Laptop1.png",
     price: 28500.00,
     specs: {
       "Socket": "AM4",
@@ -153,7 +143,7 @@ export const cpuData = [
   {
     id: 'cpu-8',
     name: 'Intel Core i9-12900K',
-    image: generateImageUrl('Intel Core i9-12900K'),
+    image: "/src/assets/Laptop1.png",
     price: 25650.00,
     specs: {
       "Socket": "LGA1700",
@@ -173,7 +163,7 @@ export const cpuData = [
   {
     id: 'cpu-9',
     name: 'AMD Ryzen 7 5800X3D',
-    image: generateImageUrl('AMD Ryzen 7 5800X3D'),
+    image: "/src/assets/Laptop1.png",
     price: 19950.00,
     specs: {
       "Socket": "AM4",
@@ -193,7 +183,7 @@ export const cpuData = [
   {
     id: 'cpu-10',
     name: 'Intel Core i7-12700K',
-    image: generateImageUrl('Intel Core i7-12700K'),
+    image: "/src/assets/Laptop1.png",
     price: 21660.00,
     specs: {
       "Socket": "LGA1700",
@@ -213,7 +203,7 @@ export const cpuData = [
   {
     id: 'cpu-11',
     name: 'AMD Ryzen 5 5600X',
-    image: generateImageUrl('AMD Ryzen 5 5600X'),
+    image: "/src/assets/Laptop1.png",
     price: 11400.00,
     specs: {
       "Socket": "AM4",
@@ -233,7 +223,7 @@ export const cpuData = [
   {
     id: 'cpu-12',
     name: 'Intel Core i5-12600K',
-    image: generateImageUrl('Intel Core i5-12600K'),
+    image: "/src/assets/Laptop1.png",
     price: 14250.00,
     specs: {
       "Socket": "LGA1700",
@@ -253,7 +243,7 @@ export const cpuData = [
   {
     id: 'cpu-13',
     name: 'AMD Ryzen 9 7900X',
-    image: generateImageUrl('AMD Ryzen 9 7900X'),
+    image: "/src/assets/Laptop1.png",
     price: 28500.00,
     specs: {
       "Socket": "AM5",
@@ -273,7 +263,7 @@ export const cpuData = [
   {
     id: 'cpu-14',
     name: 'Intel Core i3-13100',
-    image: generateImageUrl('Intel Core i3-13100'),
+    image: "/src/assets/Laptop1.png",
     price: 8550.00,
     specs: {
       "Socket": "LGA1700",
@@ -293,7 +283,7 @@ export const cpuData = [
   {
     id: 'cpu-15',
     name: 'AMD Ryzen 3 4100',
-    image: generateImageUrl('AMD Ryzen 3 4100'),
+    image: "/src/assets/Laptop1.png",
     price: 5700.00,
     specs: {
       "Socket": "AM4",
@@ -313,7 +303,7 @@ export const cpuData = [
   {
     id: 'cpu-16',
     name: 'Intel Pentium Gold G7400',
-    image: generateImageUrl('Intel Pentium Gold G7400'),
+    image: "/src/assets/Laptop1.png",
     price: 4560.00,
     specs: {
       "Socket": "LGA1700",
@@ -333,7 +323,7 @@ export const cpuData = [
   {
     id: 'cpu-17',
     name: 'AMD Ryzen Threadripper 3970X',
-    image: generateImageUrl('AMD Ryzen Threadripper 3970X'),
+    image: "/src/assets/Laptop1.png",
     price: 114000.00,
     specs: {
       "Socket": "sTRX4",
@@ -353,7 +343,7 @@ export const cpuData = [
   {
     id: 'cpu-18',
     name: 'Intel Xeon W-3375',
-    image: generateImageUrl('Intel Xeon W-3375'),
+    image: "/src/assets/Laptop1.png",
     price: 199500.00,
     specs: {
       "Socket": "LGA4189",
@@ -373,7 +363,7 @@ export const cpuData = [
   {
     id: 'cpu-19',
     name: 'AMD Ryzen 7 5700G',
-    image: generateImageUrl('AMD Ryzen 7 5700G'),
+    image: "/src/assets/Laptop1.png",
     price: 14250.00,
     specs: {
       "Socket": "AM4",
@@ -393,7 +383,7 @@ export const cpuData = [
   {
     id: 'cpu-20',
     name: 'Intel Core i9-11900K',
-    image: generateImageUrl('Intel Core i9-11900K'),
+    image: "/src/assets/Laptop1.png",
     price: 22800.00,
     specs: {
       "Socket": "LGA1200",
@@ -414,7 +404,7 @@ export const cpuData = [
   {
     id: 'cpu-21',
     name: 'AMD Ryzen 5 3600',
-    image: generateImageUrl('AMD Ryzen 5 3600'),
+    image: "/src/assets/Laptop1.png",
     price: 7980.00,
     specs: {
       "Socket": "AM4",
@@ -434,7 +424,7 @@ export const cpuData = [
   {
     id: 'cpu-22',
     name: 'AMD Ryzen 5 4500',
-    image: generateImageUrl('AMD Ryzen 5 4500'),
+    image: "/src/assets/Laptop1.png",
     price: 6840.00,
     specs: {
       "Socket": "AM4",
@@ -454,7 +444,7 @@ export const cpuData = [
   {
     id: 'cpu-23',
     name: 'AMD Ryzen 5 5500',
-    image: generateImageUrl('AMD Ryzen 5 5500'),
+    image: "/src/assets/Laptop1.png",
     price: 9120.00,
     specs: {
       "Socket": "AM4",
@@ -474,7 +464,7 @@ export const cpuData = [
   {
     id: 'cpu-24',
     name: 'AMD Ryzen 5 5500GT',
-    image: generateImageUrl('AMD Ryzen 5 5500GT'),
+    image: "/src/assets/Laptop1.png",
     price: 10260.00,
     specs: {
       "Socket": "AM4",
@@ -494,7 +484,7 @@ export const cpuData = [
   {
     id: 'cpu-25',
     name: 'AMD Ryzen 5 5600',
-    image: generateImageUrl('AMD Ryzen 5 5600'),
+    image: "/src/assets/Laptop1.png",
     price: 10260.00,
     specs: {
       "Socket": "AM4",
@@ -514,7 +504,7 @@ export const cpuData = [
   {
     id: 'cpu-26',
     name: 'AMD Ryzen 5 5600G',
-    image: generateImageUrl('AMD Ryzen 5 5600G'),
+    image: "/src/assets/Laptop1.png",
     price: 11400.00,
     specs: {
       "Socket": "AM4",
@@ -534,7 +524,7 @@ export const cpuData = [
   {
     id: 'cpu-27',
     name: 'AMD Ryzen 5 5600XT',
-    image: generateImageUrl('AMD Ryzen 5 5600XT'),
+    image: "/src/assets/Laptop1.png",
     price: 12540.00,
     specs: {
       "Socket": "AM4",
@@ -554,7 +544,7 @@ export const cpuData = [
   {
     id: 'cpu-28',
     name: 'Intel Core i3-10100',
-    image: generateImageUrl('Intel Core i3-10100'),
+    image: "/src/assets/Laptop1.png",
     price: 5700.00,
     specs: {
       "Socket": "LGA1200",
@@ -574,7 +564,7 @@ export const cpuData = [
   {
     id: 'cpu-29',
     name: 'Intel Core i3-12100',
-    image: generateImageUrl('Intel Core i3-12100'),
+    image: "/src/assets/Laptop1.png",
     price: 6840.00,
     specs: {
       "Socket": "LGA1700",
@@ -594,7 +584,7 @@ export const cpuData = [
   {
     id: 'cpu-30',
     name: 'Intel Core i5-14600K',
-    image: generateImageUrl('Intel Core i5-14600K'),
+    image: "/src/assets/Laptop1.png",
     price: 20520.00,
     specs: {
       "Socket": "LGA1700",

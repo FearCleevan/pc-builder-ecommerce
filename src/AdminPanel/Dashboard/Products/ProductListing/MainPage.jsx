@@ -154,7 +154,7 @@ const ProductListing = () => {
 
   const persistFirestorePatch = async (item, updates) => {
     if (item.source !== "firestore" || !item.documentId) return;
-    await updateAdminProduct(item.documentId, updates);
+    await updateAdminProduct(item.documentId, updates, item.collectionName);
   };
 
   const handleBulkOperation = async (operation, data) => {
@@ -165,7 +165,11 @@ const ProductListing = () => {
       const selectedFirestore = updated.filter(
         (item) => selectedSet.has(item.id) && item.source === "firestore"
       );
-      await Promise.all(selectedFirestore.map((item) => deleteAdminProduct(item.documentId)));
+      await Promise.all(
+        selectedFirestore.map((item) =>
+          deleteAdminProduct(item.documentId, item.collectionName)
+        )
+      );
       updated = updated.filter((item) => !selectedSet.has(item.id));
     } else {
       updated = updated.map((item) => {
@@ -225,7 +229,7 @@ const ProductListing = () => {
 
     if (action === "delete") {
       if (target.source === "firestore" && target.documentId) {
-        await deleteAdminProduct(target.documentId);
+        await deleteAdminProduct(target.documentId, target.collectionName);
       }
       updated = updated.filter((item) => item.id !== productId);
     }
