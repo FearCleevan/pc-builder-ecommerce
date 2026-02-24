@@ -76,7 +76,12 @@ const useNavigation = () => {
     navigate('/pc-builder');
   }, [navigate]);
 
-  return { handleNavigation, navigateToPCBuilder };
+  const navigateToAccount = useCallback((e) => {
+    if (e) e.preventDefault();
+    navigate('/account');
+  }, [navigate]);
+
+  return { handleNavigation, navigateToPCBuilder, navigateToAccount };
 };
 
 const Header = () => {
@@ -115,7 +120,7 @@ const Header = () => {
   ];
 
   const debouncedWindowSize = useDebounce(windowSize, 250);
-  const { handleNavigation, navigateToPCBuilder } = useNavigation();
+  const { handleNavigation, navigateToPCBuilder, navigateToAccount } = useNavigation();
 
   // ✅ Fixed screen size check
   const checkScreenSize = useCallback(() => {
@@ -642,7 +647,10 @@ const Header = () => {
                 <button
                   className={styles.operationButton}
                   aria-label="User account"
-                  onClick={closeAllMenus}
+                  onClick={(e) => {
+                    closeAllMenus();
+                    navigateToAccount(e);
+                  }}
                 >
                   <FaUser size={20} />
                 </button>

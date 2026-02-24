@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-d
 import Main from './components/Main/Main';
 import ProductsPages from './components/Pages/ProductsPages/ProductsPages';
 import ProductDetails from './components/Pages/ProductsPages/ProductDetails/ProductDetails';
+import AccountPage from './components/Pages/AccountPage/AccountPage';
 import PCBuilder from './components/PCBuilder/PCBuilder';
 import LaptopsPages from './components/Pages/LaptopsPages/LaptopsPages';
 import DesktopsPages from './components/Pages/DesktopsPages/DesktopsPages';
@@ -76,6 +77,7 @@ function App() {
           <Route path="/" element={<Main />} />
           <Route path="/products" element={<ProductsPages />} />
           <Route path="/products/:id" element={<ProductDetails />} />
+          <Route path="/account" element={<AccountPage />} />
           <Route path="/laptops" element={<LaptopsPages />} />
           <Route path="/desktops" element={<DesktopsPages />} />
           <Route path="/pc-builder" element={<PCBuilder />} />
