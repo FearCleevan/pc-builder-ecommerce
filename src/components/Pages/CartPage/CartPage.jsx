@@ -1,10 +1,11 @@
-import React, { useMemo, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import Header from "../../Header/Header";
 import Footer from "../../Footer/Footer";
 import {
   getCartItems,
   removeCartItem,
   updateCartItemQuantity,
+  addBuildToCart,
 } from "../../../utils/cartStorage";
 import styles from "./CartPage.module.css";
 
@@ -33,6 +34,49 @@ const initialCheckout = {
   cvv: "",
   accountName: "",
   accountReference: "",
+};
+
+const sampleBuildPayload = {
+  buildName: "TechnoBuild Phantom X",
+  totalPrice: 128750,
+  components: {
+    cpu: {
+      name: "AMD Ryzen 7 7800X3D",
+      price: 23950,
+      img: "/Logo.png",
+      specs: { cores: "8 Cores", socket: "AM5" },
+    },
+    motherboard: {
+      name: "MSI B650 Gaming Plus WiFi",
+      price: 12990,
+      img: "/Logo.png",
+      specs: { chipset: "B650", memory: "DDR5" },
+    },
+    gpu: {
+      name: "RTX 4070 Super 12GB",
+      price: 42990,
+      img: "/Logo.png",
+      specs: { vram: "12GB", boost: "2.48 GHz" },
+    },
+    ram: {
+      name: "32GB DDR5 6000MHz",
+      price: 8990,
+      img: "/Logo.png",
+      specs: { capacity: "32GB", speed: "6000MHz" },
+    },
+    storage: {
+      name: "1TB NVMe Gen4 SSD",
+      price: 4990,
+      img: "/Logo.png",
+      specs: { interface: "PCIe 4.0", formFactor: "M.2" },
+    },
+    powerSupply: {
+      name: "750W 80+ Gold PSU",
+      price: 6890,
+      img: "/Logo.png",
+      specs: { wattage: "750W", rating: "80+ Gold" },
+    },
+  },
 };
 
 const formatPrice = (value) =>
@@ -68,6 +112,13 @@ const CartPage = () => {
     updateCartItemQuantity(itemId, nextQty);
     refreshCart();
   };
+
+  useEffect(() => {
+    if (!cartItems.some((item) => item.type === "build")) {
+      addBuildToCart(sampleBuildPayload);
+      refreshCart();
+    }
+  }, [cartItems]);
 
   const validateCheckout = () => {
     const nextErrors = {};
@@ -182,6 +233,13 @@ const CartPage = () => {
                 {cartItems.map((item) =>
                   item.type === "build" ? (
                     <article key={item.id} className={styles.buildItem}>
+                      <div className={styles.imageWrap}>
+                        <img
+                          src={item.image || item.components?.[0]?.image || "/Logo.png"}
+                          alt={item.name}
+                          className={styles.itemImage}
+                        />
+                      </div>
                       <div className={styles.itemHeader}>
                         <h3>{item.name}</h3>
                         <span className={styles.typeTag}>Complete Build</span>
@@ -192,6 +250,11 @@ const CartPage = () => {
                           const specEntries = Object.entries(component.specs || {}).slice(0, 2);
                           return (
                             <div key={`${item.id}-${component.category}`} className={styles.specCard}>
+                              <img
+                                src={component.image || "/Logo.png"}
+                                alt={component.name}
+                                className={styles.componentImage}
+                              />
                               <h4>{component.category}</h4>
                               <p>{component.name}</p>
                               {specEntries.length > 0 && (
@@ -213,6 +276,13 @@ const CartPage = () => {
                     </article>
                   ) : (
                     <article key={item.id} className={styles.productItem}>
+                      <div className={styles.imageWrap}>
+                        <img
+                          src={item.image || "/Logo.png"}
+                          alt={item.name}
+                          className={styles.itemImage}
+                        />
+                      </div>
                       <div className={styles.itemHeader}>
                         <h3>{item.name}</h3>
                         <span className={styles.typeTagProduct}>Product</span>

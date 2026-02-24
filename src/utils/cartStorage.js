@@ -55,6 +55,7 @@ export const addProductToCart = (product, quantity = 1) => {
 export const addBuildToCart = ({ buildName, components, totalPrice }) => {
   const componentEntries = Object.entries(components || {}).filter(([, component]) => component);
   if (componentEntries.length === 0) return;
+  const firstComponent = componentEntries[0]?.[1];
 
   const buildId = `build-${Date.now()}`;
   const items = getCartItems();
@@ -66,11 +67,13 @@ export const addBuildToCart = ({ buildName, components, totalPrice }) => {
     name: buildName || "Custom Build",
     quantity: 1,
     price: Number(totalPrice || 0),
+    image: firstComponent?.img || "",
     createdAt: new Date().toISOString(),
     components: componentEntries.map(([category, component]) => ({
       category,
       name: component.name || category,
       price: Number(component.price || 0),
+      image: component.img || "",
       specs: component.specs || {},
     })),
   });
