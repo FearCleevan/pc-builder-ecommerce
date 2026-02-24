@@ -136,15 +136,42 @@ const AccountPage = () => {
       <Header />
       <main className={styles.main}>
         <section className={styles.hero}>
-          <p className={styles.kicker}>Account Center</p>
-          <h1>{activeTitle}</h1>
+          <h1>Welcome to TechnoBuild Account Center</h1>
           <p>
-            Manage purchases, saved builds, warranties, and support requests in one place.
+            Access your saved builds, track orders, and manage your membership details.
           </p>
         </section>
 
         <section className={styles.cardWrap}>
+          <aside className={styles.infoCard}>
+            <h2>New to TechnoBuild?</h2>
+            <p className={styles.infoLead}>
+              Create an account to unlock faster checkout, build syncing, and priority updates.
+            </p>
+            <button type="button" onClick={() => setActiveView("register")}>
+              Create an account
+            </button>
+
+            <div className={styles.infoSection}>
+              <h3>Member Benefits</h3>
+              <ul>
+                <li>Save and compare multiple custom PC builds.</li>
+                <li>Track purchases, support tickets, and warranty records.</li>
+                <li>Receive curated launch alerts and hardware updates.</li>
+                <li>Access account history from any device.</li>
+              </ul>
+            </div>
+
+            <div className={styles.infoSection}>
+              <h3>Rewards & Perks</h3>
+              <p>
+                Opt in to rewards for member-only drops, campaign bonuses, and early access notices.
+              </p>
+            </div>
+          </aside>
+
           <div className={styles.authCard}>
+            <h2>{activeTitle}</h2>
             <div className={styles.switch}>
               <button
                 type="button"
@@ -403,19 +430,6 @@ const AccountPage = () => {
 
             {feedback && <p className={styles.feedback}>{feedback}</p>}
           </div>
-
-          <aside className={styles.infoCard}>
-            <h2>Why create a TechnoBuild account?</h2>
-            <ul>
-              <li>Save multiple custom PC builds and revisit them anytime.</li>
-              <li>Track orders and support requests in one dashboard.</li>
-              <li>Get member-only launch alerts, promos, and hardware updates.</li>
-              <li>Sync wishlists across desktop and mobile sessions.</li>
-            </ul>
-            <button type="button" onClick={() => setActiveView("register")}>
-              I Need an Account
-            </button>
-          </aside>
         </section>
       </main>
       <Footer />
