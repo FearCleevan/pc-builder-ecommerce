@@ -1,8 +1,11 @@
 // client/src/components/PCBuilder/PCBuildHeader/BuildCostModal/BuildCostModal.jsx
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
+import { addBuildToCart } from '../../../../utils/cartStorage';
 import styles from './BuildCostModal.module.css';
 
-const BuildCostModal = ({ isOpen, onClose, selectedComponents, totalPrice }) => {
+const BuildCostModal = ({ isOpen, onClose, selectedComponents, totalPrice, buildName }) => {
+  const navigate = useNavigate();
   if (!isOpen) return null;
 
   const formatPrice = (price) => {
@@ -20,9 +23,13 @@ const BuildCostModal = ({ isOpen, onClose, selectedComponents, totalPrice }) => 
   };
 
   const handleAddToCart = () => {
-    // Implement add to cart functionality
-    console.log('Add to cart:', selectedComponents);
-    // You can integrate with your cart system here
+    addBuildToCart({
+      buildName,
+      components: selectedComponents,
+      totalPrice,
+    });
+    onClose();
+    navigate('/cart');
   };
 
   // Filter out null components and only show selected ones

@@ -338,6 +338,7 @@ const PCBuildHeader = ({ selectedComponents = {}, onClearAll, hasSelectedCompone
         onClose={handleCostModalClose}
         selectedComponents={selectedComponents}
         totalPrice={totalPrice}
+        buildName={buildName}
       />
 
       {/* Clear All Confirmation Modal */}

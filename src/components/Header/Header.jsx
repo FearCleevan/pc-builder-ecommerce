@@ -16,6 +16,7 @@ import DesktopNavbar from "./DesktopNavbar/DesktopNavbar";
 import LaptopNavbar from "./LaptopNavbar/LaptopNavbar";
 import Logo from "../../assets/Logo.png";
 import { useNavigate } from "react-router-dom";
+import { getCartCount, getCartEventName } from "../../utils/cartStorage";
 
 // Import AI Assistant
 import AIAssistant from "../AIAssistant/AIAssistant";
@@ -76,12 +77,17 @@ const useNavigation = () => {
     navigate('/pc-builder');
   }, [navigate]);
 
+  const navigateToCart = useCallback((e) => {
+    if (e) e.preventDefault();
+    navigate('/cart');
+  }, [navigate]);
+
   const navigateToAccount = useCallback((e) => {
     if (e) e.preventDefault();
     navigate('/account');
   }, [navigate]);
 
-  return { handleNavigation, navigateToPCBuilder, navigateToAccount };
+  return { handleNavigation, navigateToPCBuilder, navigateToAccount, navigateToCart };
 };
 
 const Header = () => {
@@ -90,6 +96,7 @@ const Header = () => {
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [showScrollTop, setShowScrollTop] = useState(false);
+  const [cartCount, setCartCount] = useState(0);
   const [mobileView, setMobileView] = useState("main");
   const [activeCategory, setActiveCategory] = useState("Components");
   const [isProduct, setIsProduct] = useState(true);
@@ -120,7 +127,7 @@ const Header = () => {
   ];
 
   const debouncedWindowSize = useDebounce(windowSize, 250);
-  const { handleNavigation, navigateToPCBuilder, navigateToAccount } = useNavigation();
+  const { handleNavigation, navigateToPCBuilder, navigateToAccount, navigateToCart } = useNavigation();
 
   // ✅ Fixed screen size check
   const checkScreenSize = useCallback(() => {
@@ -206,6 +213,20 @@ const Header = () => {
   useEffect(() => {
     checkScreenSize();
   }, [debouncedWindowSize, checkScreenSize]);
+
+  useEffect(() => {
+    const syncCartCount = () => setCartCount(getCartCount());
+    const cartEventName = getCartEventName();
+
+    syncCartCount();
+    window.addEventListener("storage", syncCartCount);
+    window.addEventListener(cartEventName, syncCartCount);
+
+    return () => {
+      window.removeEventListener("storage", syncCartCount);
+      window.removeEventListener(cartEventName, syncCartCount);
+    };
+  }, []);
 
   const handleMenuClick = (itemId) => {
     if (isSearchOpen) setIsSearchOpen(false);
@@ -657,15 +678,19 @@ const Header = () => {
               </div>
 
               <div className={styles.operationItem}>
-                <a
-                  href="https://ph.msi.com/service/wheretobuy#46,3"
-                  className={styles.operationLink}
-                  aria-label="Where to buy"
-                  onClick={closeAllMenus}
+                <button
+                  className={styles.operationButton}
+                  aria-label="Cart"
+                  onClick={(e) => {
+                    closeAllMenus();
+                    navigateToCart(e);
+                  }}
                 >
                   <FaShoppingCart size={20} />
-                  <span className={styles.notificationBadge}>3</span>
-                </a>
+                  {cartCount > 0 && (
+                    <span className={styles.notificationBadge}>{cartCount}</span>
+                  )}
+                </button>
               </div>
 
               <div className={styles.operationItem}>

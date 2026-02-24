@@ -6,6 +6,7 @@ import Footer from "../../../Footer/Footer";
 import ProductCard from "../ProductCard/ProductCard";
 import { formatPrice } from "../../../MockData/formatPrice";
 import { getProductById, productsCatalog } from "../../../MockData/productsCatalog";
+import { addProductToCart } from "../../../../utils/cartStorage";
 import styles from "./ProductDetails.module.css";
 
 const ProductDetails = () => {
@@ -79,42 +80,20 @@ const ProductDetails = () => {
     setSelectedImageIndex(0);
   }, [id]);
 
-  const updateCart = (selectedProduct, selectedQuantity) => {
-    const existing = JSON.parse(localStorage.getItem("tb_cart") || "[]");
-    const existingIndex = existing.findIndex(
-      (item) => String(item.productId) === String(selectedProduct.id)
-    );
-
-    if (existingIndex >= 0) {
-      existing[existingIndex].quantity += selectedQuantity;
-    } else {
-      existing.push({
-        productId: selectedProduct.id,
-        name: selectedProduct.name,
-        price: selectedProduct.price,
-        quantity: selectedQuantity,
-        category: selectedProduct.category,
-        subcategory: selectedProduct.subcategory,
-      });
-    }
-
-    localStorage.setItem("tb_cart", JSON.stringify(existing));
-  };
-
   const handleQuantityChange = (delta) => {
     setQuantity((prev) => Math.max(1, prev + delta));
   };
 
   const handleAddToCart = () => {
     if (!product || isOutOfStock) return;
-    updateCart(product, quantity);
+    addProductToCart(product, quantity);
     setStatusMessage(`${quantity} item(s) added to cart.`);
   };
 
   const handleBuyNow = () => {
     if (!product || isOutOfStock) return;
-    updateCart(product, quantity);
-    setStatusMessage("Added to cart. Checkout flow can be connected next.");
+    addProductToCart(product, quantity);
+    navigate("/cart");
   };
 
   const handleAddToBuild = () => {
