@@ -7,6 +7,10 @@ import {
   updateCartItemQuantity,
   addBuildToCart,
 } from "../../../utils/cartStorage";
+import DesktopSample from "../../../assets/Desktop1.jpg";
+import LaptopSample from "../../../assets/Laptop1.png";
+import ProductSampleOne from "../../../assets/Products1.png";
+import ProductSampleTwo from "../../../assets/Products2.png";
 import styles from "./CartPage.module.css";
 
 const paymentOptions = [
@@ -43,37 +47,37 @@ const sampleBuildPayload = {
     cpu: {
       name: "AMD Ryzen 7 7800X3D",
       price: 23950,
-      img: "/Logo.png",
+      img: ProductSampleOne,
       specs: { cores: "8 Cores", socket: "AM5" },
     },
     motherboard: {
       name: "MSI B650 Gaming Plus WiFi",
       price: 12990,
-      img: "/Logo.png",
+      img: ProductSampleTwo,
       specs: { chipset: "B650", memory: "DDR5" },
     },
     gpu: {
       name: "RTX 4070 Super 12GB",
       price: 42990,
-      img: "/Logo.png",
+      img: DesktopSample,
       specs: { vram: "12GB", boost: "2.48 GHz" },
     },
     ram: {
       name: "32GB DDR5 6000MHz",
       price: 8990,
-      img: "/Logo.png",
+      img: LaptopSample,
       specs: { capacity: "32GB", speed: "6000MHz" },
     },
     storage: {
       name: "1TB NVMe Gen4 SSD",
       price: 4990,
-      img: "/Logo.png",
+      img: ProductSampleOne,
       specs: { interface: "PCIe 4.0", formFactor: "M.2" },
     },
     powerSupply: {
       name: "750W 80+ Gold PSU",
       price: 6890,
-      img: "/Logo.png",
+      img: ProductSampleTwo,
       specs: { wattage: "750W", rating: "80+ Gold" },
     },
   },
@@ -235,7 +239,7 @@ const CartPage = () => {
                     <article key={item.id} className={styles.buildItem}>
                       <div className={styles.imageWrap}>
                         <img
-                          src={item.image || item.components?.[0]?.image || "/Logo.png"}
+                          src={item.image || item.components?.[0]?.image || DesktopSample}
                           alt={item.name}
                           className={styles.itemImage}
                         />
@@ -251,7 +255,7 @@ const CartPage = () => {
                           return (
                             <div key={`${item.id}-${component.category}`} className={styles.specCard}>
                               <img
-                                src={component.image || "/Logo.png"}
+                                src={component.image || ProductSampleOne}
                                 alt={component.name}
                                 className={styles.componentImage}
                               />
@@ -278,7 +282,7 @@ const CartPage = () => {
                     <article key={item.id} className={styles.productItem}>
                       <div className={styles.imageWrap}>
                         <img
-                          src={item.image || "/Logo.png"}
+                          src={item.image || LaptopSample}
                           alt={item.name}
                           className={styles.itemImage}
                         />
