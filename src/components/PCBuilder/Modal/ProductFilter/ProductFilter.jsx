@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import { Slider, Box } from '@mui/material';
 import styles from "./ProductFilter.module.css";
 
@@ -19,6 +19,40 @@ import { microphoneFilter } from "../MockData/Microphone/MicrophoneFilter";
 import { webcamFilter } from "../MockData/Webcam/WebcamFilter";
 import { powerSupplyFilter } from "../MockData/Power Suppy/PowerSupplyFilter";
 import { KeyboardFilter } from "../MockData/Keyboard/KeyboardFilter";
+
+const DEFAULT_FILTER_SECTIONS = [
+  {
+    title: "Price",
+    type: "range",
+    min: 38.99,
+    max: 1399.99,
+    unit: "$",
+  },
+  {
+    title: "Category",
+    type: "checkbox",
+    options: ["Option 1", "Option 2", "Option 3"],
+  },
+];
+
+const FILTER_MAP = {
+  case: caseFilter,
+  cpu: cpuFilter,
+  motherboard: motherboardFilter,
+  gpu: gpuFilter,
+  ram: ramFilter,
+  cpuCooler: cpuCoolerFilter,
+  storage: storageFilter,
+  powerSupply: powerSupplyFilter,
+  caseFan: caseFanFilter,
+  monitor: monitorFilter,
+  mouse: mouseFilter,
+  keyboard: KeyboardFilter,
+  speaker: speakerFilter,
+  headphones: headphonesFilter,
+  microphone: microphoneFilter,
+  webcam: webcamFilter,
+};
 
 // Material-UI Range Slider component
 const RangeSlider = ({ min, max, unit, value, onChange }) => {
@@ -82,50 +116,15 @@ const RangeSlider = ({ min, max, unit, value, onChange }) => {
 const ProductFilter = ({ componentType, onFilterChange }) => {
   const [expandedSection, setExpandedSection] = useState(null);
   const [filterValues, setFilterValues] = useState({});
+  const componentTypeId = componentType?.id || "";
 
-  // Default filter if no type
-  const defaultFilterSections = [
-    {
-      title: "Price",
-      type: "range",
-      min: 38.99,
-      max: 1399.99,
-      unit: "$",
-    },
-    {
-      title: "Category",
-      type: "checkbox",
-      options: ["Option 1", "Option 2", "Option 3"],
-    },
-  ];
-
-  // Map component types to filters
-  const filterMap = {
-    case: caseFilter,
-    cpu: cpuFilter,
-    motherboard: motherboardFilter,
-    gpu: gpuFilter,
-    ram: ramFilter,
-    cpuCooler: cpuCoolerFilter,
-    storage: storageFilter,
-    powerSupply: powerSupplyFilter,
-    caseFan: caseFanFilter,
-    monitor: monitorFilter,
-    mouse: mouseFilter,
-    keyboard: KeyboardFilter,
-    speaker: speakerFilter,
-    headphones: headphonesFilter,
-    microphone: microphoneFilter,
-    webcam: webcamFilter,
-  };
-
-  const filterSections =
-    componentType && filterMap[componentType.id]
-      ? filterMap[componentType.id]
-      : defaultFilterSections;
+  const filterSections = useMemo(
+    () => FILTER_MAP[componentTypeId] || DEFAULT_FILTER_SECTIONS,
+    [componentTypeId]
+  );
 
   // Initialize filter values
-  React.useEffect(() => {
+  useEffect(() => {
     const initialValues = {};
     filterSections.forEach(section => {
       if (section.type === "range") {

@@ -211,6 +211,7 @@ export const getWattageReport = (selectedComponents = {}) => {
 
     if (category === "cpu") watts = directTdp || 95;
     else if (category === "gpu") watts = directTdp || 180;
+    else if (category === "powerSupply") watts = 0;
     else if (category === "ram") watts = getRamWattage(component);
     else if (category === "storage") watts = getStorageWattage(component);
     else if (category === "cpuCooler") watts = getCpuCoolerWattage(component);
@@ -298,7 +299,11 @@ export const isComponentCompatibleWithBuild = (selectedComponents, category, can
   }
 
   if (category === "powerSupply") {
-    const proposedWattageReport = getWattageReport(proposed);
+    const proposedWithoutPsu = {
+      ...proposed,
+      powerSupply: null,
+    };
+    const proposedWattageReport = getWattageReport(proposedWithoutPsu);
     const psuWattage = parseNumericValue(getComponentSpec(candidateComponent, "Wattage"));
     if (psuWattage > 0 && psuWattage < proposedWattageReport.recommendedPsuWattage) return false;
   }
