@@ -17,6 +17,7 @@ import LaptopNavbar from "./LaptopNavbar/LaptopNavbar";
 import Logo from "../../assets/Logo.png";
 import { useNavigate, useLocation } from "react-router-dom";
 import { getCartCount, getCartEventName } from "../../utils/cartStorage";
+import { productsCatalog } from "../MockData/productsCatalog";
 
 // Import AI Assistant
 import AIAssistant from "../AIAssistant/AIAssistant";
@@ -96,10 +97,12 @@ const useNavigation = () => {
 };
 
 const Header = () => {
+  const navigate = useNavigate();
   const location = useLocation();
   const [activeNav, setActiveNav] = useState(null);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
+  const [searchQuery, setSearchQuery] = useState("");
   const [isScrolled, setIsScrolled] = useState(false);
   const [showScrollTop, setShowScrollTop] = useState(false);
   const [cartCount, setCartCount] = useState(0);
@@ -115,6 +118,7 @@ const Header = () => {
   });
 
   const menuRef = useRef(null);
+  const searchRef = useRef(null);
   const productNavRef = useRef(null);
   const desktopNavRef = useRef(null);
   const laptopNavRef = useRef(null);
@@ -133,6 +137,7 @@ const Header = () => {
   ];
 
   const debouncedWindowSize = useDebounce(windowSize, 250);
+  const debouncedSearchQuery = useDebounce(searchQuery, 200);
   const { handleNavigation, navigateToPCBuilder, navigateToAccount, navigateToCart } = useNavigation();
 
   const mobileSectionConfig = {
@@ -165,7 +170,7 @@ const Header = () => {
     },
   };
 
-  // ✅ Fixed screen size check
+  // Fixed screen size check
   const checkScreenSize = useCallback(() => {
     const width = window.innerWidth;
 
@@ -191,6 +196,14 @@ const Header = () => {
   // Close menu when clicking outside or scrolling
   useEffect(() => {
     const handleClickOutside = (event) => {
+      if (
+        isSearchOpen &&
+        searchRef.current &&
+        !searchRef.current.contains(event.target)
+      ) {
+        setIsSearchOpen(false);
+      }
+
       if (menuRef.current && !menuRef.current.contains(event.target)) {
         if (
           (productNavRef.current &&
@@ -232,7 +245,7 @@ const Header = () => {
       window.removeEventListener("scroll", handleScroll);
       window.removeEventListener("resize", checkScreenSize);
     };
-  }, [activeNav, checkScreenSize]);
+  }, [activeNav, checkScreenSize, isSearchOpen]);
 
   // Handle resize with debounce
   useEffect(() => {
@@ -310,6 +323,19 @@ const Header = () => {
     setIsSearchOpen(!isSearchOpen);
   };
 
+  const handleSearchProductClick = (productId) => {
+    navigate(`/products/${productId}`);
+    setIsSearchOpen(false);
+    setSearchQuery("");
+  };
+
+  const handleSearchCategoryClick = (category) => {
+    const params = new URLSearchParams({ category });
+    navigate(`/products?${params.toString()}`);
+    setIsSearchOpen(false);
+    setSearchQuery("");
+  };
+
   const closeAllMenus = () => {
     setActiveNav(null);
     setIsMobileMenuOpen(false);
@@ -335,6 +361,40 @@ const Header = () => {
   const getExploreItems = () => currentSection?.getExploreItems(activeCategory) || [];
   const getSubCategories = () => currentSection?.getSubCategories(activeCategory) || [];
   const getFeatures = () => currentSection?.getFeatures(activeCategory) || [];
+
+  const normalizedSearch = debouncedSearchQuery.trim().toLowerCase();
+  const searchResults = normalizedSearch
+    ? productsCatalog
+      .filter((product) => {
+        const searchBlob = [
+          product.name,
+          product.brand,
+          product.category,
+          product.subcategory,
+          product.series,
+          product.description,
+          ...Object.values(product.specs || {}),
+        ]
+          .join(" ")
+          .toLowerCase();
+
+        return searchBlob.includes(normalizedSearch);
+      })
+      .slice(0, 8)
+    : [];
+
+  const matchedCategories = normalizedSearch
+    ? productCategories.filter((category) =>
+      category.toLowerCase().includes(normalizedSearch)
+    )
+    : [];
+
+  const formatSearchPrice = (value) =>
+    new Intl.NumberFormat("en-PH", {
+      style: "currency",
+      currency: "PHP",
+      maximumFractionDigits: 0,
+    }).format(Number(value || 0));
 
   const isNavRouteActive = (itemId) => {
     const pathname = location.pathname.toLowerCase();
@@ -390,7 +450,7 @@ const Header = () => {
               )}
 
               <div className={styles.menuActions}>
-                {/* ✅ Fixed condition */}
+                {/* Fixed condition */}
                 {(mobileView === "main" || isProduct || isDesktop || isLaptop) &&
                   navItems.map((item) => (
                     <div key={item.id} className={styles.menuItem}>
@@ -455,7 +515,7 @@ const Header = () => {
                               >
                                 {category}
                                 {activeCategory === category && (
-                                  <span className={styles.arrow}>▼</span>
+                                  <span className={styles.arrow}>v</span>
                                 )}
                               </li>
                             ))}
@@ -537,7 +597,7 @@ const Header = () => {
                               >
                                 {category}
                                 {activeCategory === category && (
-                                  <span className={styles.arrow}>▼</span>
+                                  <span className={styles.arrow}>v</span>
                                 )}
                               </li>
                             ))}
@@ -555,7 +615,7 @@ const Header = () => {
                                     href={item.path}
                                     onClick={(e) => handleMobileNavigation(e, { category: activeCategory, subcategory: item.id })}
                                   >
-                                    ✓ {item.name}
+                                    - {item.name}
                                   </a>
                                 </li>
                               ))}
@@ -619,7 +679,7 @@ const Header = () => {
                               >
                                 {category}
                                 {activeCategory === category && (
-                                  <span className={styles.arrow}>▼</span>
+                                  <span className={styles.arrow}>v</span>
                                 )}
                               </li>
                             ))}
@@ -637,7 +697,7 @@ const Header = () => {
                                     href={item.path}
                                     onClick={(e) => handleMobileNavigation(e, { category: activeCategory, subcategory: item.id })}
                                   >
-                                    ✓ {item.name}
+                                    - {item.name}
                                   </a>
                                 </li>
                               ))}
@@ -774,6 +834,7 @@ const Header = () => {
       {/* Search Popup */}
       <div
         className={`${styles.searchPopup} ${isSearchOpen ? styles.open : ""}`}
+        ref={searchRef}
       >
         <div className={styles.searchBox}>
           <div className={styles.searchInputContainer}>
@@ -782,14 +843,87 @@ const Header = () => {
               type="text"
               placeholder="Search products, categories..."
               className={styles.searchInput}
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              autoFocus={isSearchOpen}
             />
           </div>
           <button className={styles.closeBtn} onClick={toggleSearch}>
-            ✖
+            x
           </button>
         </div>
-      </div>
 
+        {normalizedSearch && (
+          <div className={styles.searchResultsPanel}>
+            <div className={styles.searchHeader}>
+              Search for "<span>{debouncedSearchQuery.trim()}</span>"
+            </div>
+
+            {matchedCategories.length > 0 && (
+              <div className={styles.searchCategoryBlock}>
+                <h4 className={styles.searchSectionTitle}>Categories</h4>
+                <div className={styles.searchCategoryList}>
+                  {matchedCategories.map((category) => (
+                    <button
+                      key={category}
+                      className={styles.searchCategoryChip}
+                      onClick={() => handleSearchCategoryClick(category)}
+                    >
+                      {category}
+                    </button>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            <div className={styles.searchProductsBlock}>
+              <h4 className={styles.searchSectionTitle}>Products</h4>
+              {searchResults.length > 0 ? (
+                <div className={styles.searchResultsList}>
+                  {searchResults.map((product) => (
+                    <button
+                      key={product.id}
+                      className={styles.searchResultItem}
+                      onClick={() => handleSearchProductClick(product.id)}
+                    >
+                      <img
+                        src={product.img}
+                        alt={product.name}
+                        className={styles.searchResultImage}
+                      />
+                      <div className={styles.searchResultMeta}>
+                        <p className={styles.searchResultName}>{product.name}</p>
+                        <p className={styles.searchResultSub}>
+                          {product.brand} • {product.category}
+                        </p>
+                        <p className={styles.searchResultPrice}>
+                          {formatSearchPrice(product.price)}
+                        </p>
+                      </div>
+                    </button>
+                  ))}
+                </div>
+              ) : (
+                <p className={styles.searchEmpty}>No matching products found.</p>
+              )}
+            </div>
+
+            <div className={styles.searchFooter}>
+              <button
+                className={styles.searchMoreButton}
+                onClick={() => {
+                  const params = new URLSearchParams({ q: debouncedSearchQuery.trim() });
+                  navigate(`/products?${params.toString()}`);
+                  setIsSearchOpen(false);
+                  setSearchQuery("");
+                }}
+              >
+                More Results
+              </button>
+            </div>
+          </div>
+        )}
+      </div>
       {/* Mobile overlay */}
       {isMobileMenuOpen && (
         <div className={styles.overlay} onClick={closeAllMenus}></div>

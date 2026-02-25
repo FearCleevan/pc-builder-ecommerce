@@ -319,6 +319,143 @@
   color: #00000081;
 }
 
+.searchResultsPanel {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 20px 20px;
+}
+
+.searchHeader {
+  font-size: 16px;
+  color: #222;
+  margin-bottom: 12px;
+}
+
+.searchHeader span {
+  font-weight: 700;
+  color: #ff2c2c;
+}
+
+.searchSectionTitle {
+  font-size: 14px;
+  color: #444;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+  margin: 0 0 8px;
+}
+
+.searchCategoryBlock {
+  margin-bottom: 14px;
+}
+
+.searchCategoryList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.searchCategoryChip {
+  border: 1px solid #ddd;
+  background: #fff;
+  color: #333;
+  border-radius: 999px;
+  padding: 6px 12px;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.searchCategoryChip:hover {
+  border-color: #ff2c2c;
+  color: #ff2c2c;
+}
+
+.searchProductsBlock {
+  margin-bottom: 10px;
+}
+
+.searchResultsList {
+  display: grid;
+  gap: 10px;
+  max-height: 360px;
+  overflow-y: auto;
+  padding-right: 4px;
+}
+
+.searchResultItem {
+  display: grid;
+  grid-template-columns: 62px 1fr;
+  gap: 10px;
+  width: 100%;
+  text-align: left;
+  border: 1px solid #eee;
+  background: #fff;
+  border-radius: 8px;
+  padding: 8px;
+  cursor: pointer;
+}
+
+.searchResultItem:hover {
+  border-color: #ff2c2c;
+  background: #fff8f8;
+}
+
+.searchResultImage {
+  width: 62px;
+  height: 62px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+.searchResultMeta {
+  min-width: 0;
+}
+
+.searchResultName {
+  margin: 0 0 4px;
+  color: #1f1f1f;
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.35;
+}
+
+.searchResultSub {
+  margin: 0 0 4px;
+  color: #666;
+  font-size: 12px;
+}
+
+.searchResultPrice {
+  margin: 0;
+  color: #ff2c2c;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.searchEmpty {
+  margin: 0;
+  color: #666;
+  font-size: 13px;
+}
+
+.searchFooter {
+  margin-top: 10px;
+}
+
+.searchMoreButton {
+  border: none;
+  background: #ff2c2c;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 600;
+  border-radius: 6px;
+  padding: 8px 12px;
+  cursor: pointer;
+}
+
+.searchMoreButton:hover {
+  background: #e32020;
+}
+
 /* Mobile Breadcrumb */
 .mobileBreadcrumb {
   display: none;

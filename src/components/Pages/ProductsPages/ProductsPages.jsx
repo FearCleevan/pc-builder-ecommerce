@@ -21,7 +21,8 @@ const ProductsPages = () => {
     seriesFacet: [],
     availability: [],
     minPrice: 0,
-    maxPrice: 0
+    maxPrice: 0,
+    searchKeyword: ''
   });
   const [isMobileFilterOpen, setIsMobileFilterOpen] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
@@ -57,6 +58,7 @@ const ProductsPages = () => {
   // Parse URL parameters on component mount and when they change
   useEffect(() => {
     const category = searchParams.get('category') || '';
+    const searchKeyword = searchParams.get('q') || '';
     const series = searchParams.get('series') ? [searchParams.get('series')] : [];
     const subcategory = searchParams.get('subcategory') ? [searchParams.get('subcategory')] : [];
     const seriesFacet = searchParams.get('seriesFacet')
@@ -80,7 +82,8 @@ const ProductsPages = () => {
       seriesFacet,
       availability,
       minPrice,
-      maxPrice
+      maxPrice,
+      searchKeyword
     });
     
     setCurrentPage(page);
@@ -94,7 +97,8 @@ const ProductsPages = () => {
         seriesFacet,
         availability,
         minPrice,
-        maxPrice
+        maxPrice,
+        searchKeyword
       },
       { resetPage: false }
     );
@@ -174,6 +178,25 @@ const ProductsPages = () => {
       const price = Number(product.price || 0);
       return price >= Number(filters.minPrice) && price <= Number(filters.maxPrice);
     });
+
+    if (filters.searchKeyword) {
+      const normalizedKeyword = filters.searchKeyword.toLowerCase();
+      filtered = filtered.filter((product) => {
+        const searchBlob = [
+          product.name,
+          product.brand,
+          product.category,
+          product.subcategory,
+          product.series,
+          product.description,
+          ...Object.values(product.specs || {})
+        ]
+          .join(' ')
+          .toLowerCase();
+
+        return searchBlob.includes(normalizedKeyword);
+      });
+    }
     
     setFilteredProducts(filtered);
     if (options.resetPage) {
@@ -182,20 +205,26 @@ const ProductsPages = () => {
   };
 
   const handleFilterChange = (newFilters) => {
-    setActiveFilters(newFilters);
-    applyFilters(newFilters);
+    const mergedFilters = {
+      ...newFilters,
+      searchKeyword: activeFilters.searchKeyword || ''
+    };
+
+    setActiveFilters(mergedFilters);
+    applyFilters(mergedFilters);
     
     // Update URL with new filters using React Router
     const params = new URLSearchParams();
-    if (newFilters.category) params.set('category', newFilters.category);
-    if (newFilters.series.length > 0) params.set('series', newFilters.series[0]);
-    if (newFilters.subcategory.length > 0) params.set('subcategory', newFilters.subcategory[0]);
-    if (newFilters.series.length > 0 && newFilters.seriesFacet.length > 0) {
-      params.set('seriesFacet', newFilters.seriesFacet.join(','));
+    if (mergedFilters.searchKeyword) params.set('q', mergedFilters.searchKeyword);
+    if (mergedFilters.category) params.set('category', mergedFilters.category);
+    if (mergedFilters.series.length > 0) params.set('series', mergedFilters.series[0]);
+    if (mergedFilters.subcategory.length > 0) params.set('subcategory', mergedFilters.subcategory[0]);
+    if (mergedFilters.series.length > 0 && mergedFilters.seriesFacet.length > 0) {
+      params.set('seriesFacet', mergedFilters.seriesFacet.join(','));
     }
-    if (newFilters.availability.length > 0) params.set('availability', newFilters.availability.join(','));
-    if (Number(newFilters.minPrice) > priceBounds.min) params.set('minPrice', String(newFilters.minPrice));
-    if (Number(newFilters.maxPrice) < priceBounds.max) params.set('maxPrice', String(newFilters.maxPrice));
+    if (mergedFilters.availability.length > 0) params.set('availability', mergedFilters.availability.join(','));
+    if (Number(mergedFilters.minPrice) > priceBounds.min) params.set('minPrice', String(mergedFilters.minPrice));
+    if (Number(mergedFilters.maxPrice) < priceBounds.max) params.set('maxPrice', String(mergedFilters.maxPrice));
     params.set('page', '1'); // Reset to page 1 when filters change
     
     setSearchParams(params);
