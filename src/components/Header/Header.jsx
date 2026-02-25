@@ -15,7 +15,7 @@ import ProductNavbar from "./ProductNavbar/ProductNavbar";
 import DesktopNavbar from "./DesktopNavbar/DesktopNavbar";
 import LaptopNavbar from "./LaptopNavbar/LaptopNavbar";
 import Logo from "../../assets/Logo.png";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import { getCartCount, getCartEventName } from "../../utils/cartStorage";
 
 // Import AI Assistant
@@ -96,6 +96,7 @@ const useNavigation = () => {
 };
 
 const Header = () => {
+  const location = useLocation();
   const [activeNav, setActiveNav] = useState(null);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
@@ -335,6 +336,14 @@ const Header = () => {
   const getSubCategories = () => currentSection?.getSubCategories(activeCategory) || [];
   const getFeatures = () => currentSection?.getFeatures(activeCategory) || [];
 
+  const isNavRouteActive = (itemId) => {
+    const pathname = location.pathname.toLowerCase();
+    if (itemId === "products") return pathname.startsWith("/products");
+    if (itemId === "desktop") return pathname.startsWith("/desktops");
+    if (itemId === "laptop") return pathname.startsWith("/laptops");
+    return false;
+  };
+
   return (
     <>
       <nav className={`${styles.nav} ${isScrolled ? styles.navScrolled : ""}`} ref={menuRef}>
@@ -388,7 +397,7 @@ const Header = () => {
                       {item.hasDropdown ? (
                         <button
                           className={`${styles.navButton} ${item.highlight ? styles.highlight : ""
-                            } ${activeNav === item.id ? styles.active : ""}`}
+                            } ${(activeNav === item.id || isNavRouteActive(item.id)) ? styles.active : ""}`}
                           onClick={() => handleMenuClick(item.id)}
                           aria-expanded={activeNav === item.id}
                         >

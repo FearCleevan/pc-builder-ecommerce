@@ -141,6 +141,8 @@
   width: 80%;
 }
 
+.active {}
+
 .dropdownArrow {
   display: flex;
   align-items: center;
