@@ -2,30 +2,25 @@ import React, { useState, useEffect } from 'react';
 import styles from './ProductsFilter.module.css';
 import { 
     categories, 
-    getSeriesItems, 
-    getSubCategories,
-    gpuOptions,
-    processorOptions,
-    panelSizeOptions
+    productFilterConfig,
+    getSeriesDrilldownSections
 } from '../../../MockData/ProductMockData';
 
 const FILTER_DEFAULTS = {
-    subcategory: 5,
-    series: 5,
-    gpu: 5,
-    processor: 6,
-    panelSize: 5
+    subcategory: 6,
+    series: 6
 };
 
-const ProductsFilter = ({ activeFilters, onFilterChange, isMobile }) => {
+const ProductsFilter = ({ activeFilters, onFilterChange, isMobile, products = [], priceBounds = { min: 0, max: 0 } }) => {
     const [expandedSections, setExpandedSections] = useState({});
     const [selectedFilters, setSelectedFilters] = useState({
         category: activeFilters.category || '',
         series: activeFilters.series || [],
         subcategory: activeFilters.subcategory || [],
-        gpu: [],
-        processor: [],
-        panelSize: []
+        seriesFacet: activeFilters.seriesFacet || [],
+        availability: activeFilters.availability || [],
+        minPrice: Number(activeFilters.minPrice ?? priceBounds.min),
+        maxPrice: Number(activeFilters.maxPrice ?? priceBounds.max)
     });
 
     useEffect(() => {
@@ -33,9 +28,13 @@ const ProductsFilter = ({ activeFilters, onFilterChange, isMobile }) => {
             ...prev,
             category: activeFilters.category || '',
             series: activeFilters.series || [],
-            subcategory: activeFilters.subcategory || []
+            subcategory: activeFilters.subcategory || [],
+            seriesFacet: activeFilters.seriesFacet || [],
+            availability: activeFilters.availability || [],
+            minPrice: Number(activeFilters.minPrice ?? priceBounds.min),
+            maxPrice: Number(activeFilters.maxPrice ?? priceBounds.max)
         }));
-    }, [activeFilters]);
+    }, [activeFilters, priceBounds.min, priceBounds.max]);
 
     const handleShowAllToggle = (section) => {
         setExpandedSections(prev => ({
@@ -51,12 +50,32 @@ const ProductsFilter = ({ activeFilters, onFilterChange, isMobile }) => {
             newFilters[filterType] = newFilters[filterType] === value ? '' : value;
             newFilters.series = [];
             newFilters.subcategory = [];
+            newFilters.seriesFacet = [];
         } else {
             if (newFilters[filterType].includes(value)) {
                 newFilters[filterType] = newFilters[filterType].filter(item => item !== value);
             } else {
                 newFilters[filterType] = [...newFilters[filterType], value];
             }
+
+            if (filterType === 'series') {
+                newFilters.seriesFacet = [];
+            }
+        }
+
+        setSelectedFilters(newFilters);
+        onFilterChange(newFilters);
+    };
+
+    const handlePriceChange = (type, value) => {
+        const parsedValue = Number(value) || 0;
+        const clampedValue = Math.min(Math.max(parsedValue, priceBounds.min), priceBounds.max);
+        const newFilters = { ...selectedFilters };
+
+        if (type === 'minPrice') {
+            newFilters.minPrice = Math.min(clampedValue, newFilters.maxPrice);
+        } else {
+            newFilters.maxPrice = Math.max(clampedValue, newFilters.minPrice);
         }
 
         setSelectedFilters(newFilters);
@@ -68,17 +87,25 @@ const ProductsFilter = ({ activeFilters, onFilterChange, isMobile }) => {
             category: selectedFilters.category,
             series: [],
             subcategory: [],
-            gpu: [],
-            processor: [],
-            panelSize: []
+            seriesFacet: [],
+            availability: [],
+            minPrice: priceBounds.min,
+            maxPrice: priceBounds.max
         };
 
         setSelectedFilters(newFilters);
         onFilterChange(newFilters);
     };
 
-    const seriesItems = getSeriesItems(selectedFilters.category);
-    const subCategories = getSubCategories(selectedFilters.category);
+    const dynamicSections = productFilterConfig.getFilterSections(selectedFilters.category);
+    const seriesDrilldownSections = getSeriesDrilldownSections(
+        selectedFilters.category,
+        selectedFilters.series,
+        products
+    );
+    const totalRange = Math.max(1, priceBounds.max - priceBounds.min);
+    const rangeFrom = ((selectedFilters.minPrice - priceBounds.min) / totalRange) * 100;
+    const rangeTo = ((selectedFilters.maxPrice - priceBounds.min) / totalRange) * 100;
 
     // Helper to render filter sections with show all/less
     const renderFilterSection = ({section, options, selected, filterType, defaultCount, label}) => {
@@ -149,55 +176,107 @@ const ProductsFilter = ({ activeFilters, onFilterChange, isMobile }) => {
                 </ul>
             </fieldset>
 
-            {/* Subcategory */}
-            {selectedFilters.category && renderFilterSection({
-                section: 'subcategory',
-                options: subCategories,
-                selected: selectedFilters.subcategory,
-                filterType: 'subcategory',
-                defaultCount: FILTER_DEFAULTS.subcategory,
-                label: 'Subcategories',
-            })}
+            {/* Dynamic Category-Specific Filters */}
+            {selectedFilters.category && dynamicSections.map((section) => (
+                <React.Fragment key={section.id}>
+                    {renderFilterSection({
+                        section: section.id,
+                        options: section.options,
+                        selected: selectedFilters[section.filterType] || [],
+                        filterType: section.filterType,
+                        defaultCount: section.defaultCount || FILTER_DEFAULTS[section.id] || 6,
+                        label: section.label,
+                    })}
+                </React.Fragment>
+            ))}
 
-            {/* Series */}
-            {selectedFilters.category && renderFilterSection({
-                section: 'series',
-                options: seriesItems,
-                selected: selectedFilters.series,
-                filterType: 'series',
-                defaultCount: FILTER_DEFAULTS.series,
-                label: 'Series',
-            })}
+            {/* Series Drilldown Filters */}
+            {selectedFilters.category && selectedFilters.series.length > 0 && seriesDrilldownSections.map((section) => (
+                <React.Fragment key={section.id}>
+                    {renderFilterSection({
+                        section: section.id,
+                        options: section.options,
+                        selected: selectedFilters[section.filterType] || [],
+                        filterType: section.filterType,
+                        defaultCount: section.defaultCount || 6,
+                        label: section.label,
+                    })}
+                </React.Fragment>
+            ))}
 
-            {/* GPU */}
+            {/* Availability */}
             {renderFilterSection({
-                section: 'gpu',
-                options: gpuOptions,
-                selected: selectedFilters.gpu,
-                filterType: 'gpu',
-                defaultCount: FILTER_DEFAULTS.gpu,
-                label: 'GPU SKU',
+                section: 'availability',
+                options: [
+                    { id: 'in-stock', label: 'In stock' },
+                    { id: 'out-of-stock', label: 'Out of stock' }
+                ],
+                selected: selectedFilters.availability,
+                filterType: 'availability',
+                defaultCount: 2,
+                label: 'Availability',
             })}
 
-            {/* Processor */}
-            {renderFilterSection({
-                section: 'processor',
-                options: processorOptions,
-                selected: selectedFilters.processor,
-                filterType: 'processor',
-                defaultCount: FILTER_DEFAULTS.processor,
-                label: 'Processors',
-            })}
+            {/* Price */}
+            <fieldset className={styles.filterFieldset}>
+                <legend className={styles.filterLegend}>
+                    <div className={styles.filterTitle}>
+                        <span>Price</span>
+                    </div>
+                </legend>
 
-            {/* Panel Size */}
-            {renderFilterSection({
-                section: 'panelSize',
-                options: panelSizeOptions,
-                selected: selectedFilters.panelSize,
-                filterType: 'panelSize',
-                defaultCount: FILTER_DEFAULTS.panelSize,
-                label: 'Panel Size',
-            })}
+                <div className={styles.priceInputs}>
+                    <input
+                        type="number"
+                        className={styles.priceInput}
+                        value={selectedFilters.minPrice}
+                        min={priceBounds.min}
+                        max={selectedFilters.maxPrice}
+                        onChange={(e) => handlePriceChange('minPrice', e.target.value)}
+                    />
+                    <span className={styles.priceSeparator}>-</span>
+                    <input
+                        type="number"
+                        className={styles.priceInput}
+                        value={selectedFilters.maxPrice}
+                        min={selectedFilters.minPrice}
+                        max={priceBounds.max}
+                        onChange={(e) => handlePriceChange('maxPrice', e.target.value)}
+                    />
+                </div>
+
+                <div
+                    className={styles.priceRange}
+                    style={{
+                        '--range-from': `${rangeFrom}%`,
+                        '--range-to': `${rangeTo}%`
+                    }}
+                >
+                    <input
+                        type="range"
+                        min={priceBounds.min}
+                        max={priceBounds.max}
+                        value={selectedFilters.minPrice}
+                        className={`${styles.rangeSlider} ${styles.rangeSliderMin}`}
+                        onChange={(e) => handlePriceChange('minPrice', e.target.value)}
+                    />
+                    <input
+                        type="range"
+                        min={priceBounds.min}
+                        max={priceBounds.max}
+                        value={selectedFilters.maxPrice}
+                        className={`${styles.rangeSlider} ${styles.rangeSliderMax}`}
+                        onChange={(e) => handlePriceChange('maxPrice', e.target.value)}
+                    />
+                </div>
+
+                <div className={styles.priceLabel}>
+                    <span>Price:</span>
+                    <span>
+                        ₱{Number(selectedFilters.minPrice).toLocaleString()} - ₱{Number(selectedFilters.maxPrice).toLocaleString()}
+                    </span>
+                </div>
+            </fieldset>
 
             <button type="reset" className={styles.filterReset} onClick={resetFilters}>
                 <span className={styles.resetIcon}></span>

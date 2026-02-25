@@ -6,6 +6,7 @@ import ProductsGrid from './ProductsGrid/ProductsGrid';
 import ProductsBreadcrumb from './ProductsBreadcrumb/ProductsBreadcrumb';
 import Pagination from './Pagination/Pagination';
 import { productsCatalog } from '../../MockData/productsCatalog';
+import { matchesSeriesFacet } from '../../MockData/ProductMockData';
 import styles from './ProductsPages.module.css';
 import Header from '../../Header/Header';
 import Footer from '../../Footer/Footer';
@@ -16,7 +17,11 @@ const ProductsPages = () => {
   const [activeFilters, setActiveFilters] = useState({
     category: '',
     series: [],
-    subcategory: []
+    subcategory: [],
+    seriesFacet: [],
+    availability: [],
+    minPrice: 0,
+    maxPrice: 0
   });
   const [isMobileFilterOpen, setIsMobileFilterOpen] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
@@ -27,6 +32,13 @@ const ProductsPages = () => {
   // Check if mobile view
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 992);
   const [isTablet, setIsTablet] = useState(window.innerWidth <= 1024 && window.innerWidth > 640);
+
+  const priceBounds = useMemo(() => {
+    const prices = allProducts.map((product) => Number(product.price || 0));
+    const min = prices.length ? Math.floor(Math.min(...prices)) : 0;
+    const max = prices.length ? Math.ceil(Math.max(...prices)) : 0;
+    return { min, max };
+  }, [allProducts]);
 
   useEffect(() => {
     const handleResize = () => {
@@ -47,19 +59,46 @@ const ProductsPages = () => {
     const category = searchParams.get('category') || '';
     const series = searchParams.get('series') ? [searchParams.get('series')] : [];
     const subcategory = searchParams.get('subcategory') ? [searchParams.get('subcategory')] : [];
+    const seriesFacet = searchParams.get('seriesFacet')
+      ? searchParams.get('seriesFacet').split(',').filter(Boolean)
+      : [];
+    const availability = searchParams.get('availability')
+      ? searchParams.get('availability').split(',').filter(Boolean)
+      : [];
+    const rawMinPrice = searchParams.get('minPrice');
+    const rawMaxPrice = searchParams.get('maxPrice');
+    const parsedMinPrice = rawMinPrice ? Number(rawMinPrice) : priceBounds.min;
+    const parsedMaxPrice = rawMaxPrice ? Number(rawMaxPrice) : priceBounds.max;
+    const minPrice = Number.isFinite(parsedMinPrice) ? Math.max(parsedMinPrice, priceBounds.min) : priceBounds.min;
+    const maxPrice = Number.isFinite(parsedMaxPrice) ? Math.min(parsedMaxPrice, priceBounds.max) : priceBounds.max;
     const page = parseInt(searchParams.get('page')) || 1;
     
     setActiveFilters({
       category,
       series,
-      subcategory
+      subcategory,
+      seriesFacet,
+      availability,
+      minPrice,
+      maxPrice
     });
     
     setCurrentPage(page);
     
     // Apply initial filters
-    applyFilters(category, series, subcategory);
-  }, [searchParams]);
+    applyFilters(
+      {
+        category,
+        series,
+        subcategory,
+        seriesFacet,
+        availability,
+        minPrice,
+        maxPrice
+      },
+      { resetPage: false }
+    );
+  }, [searchParams, priceBounds.min, priceBounds.max]);
 
   // Calculate items per page based on screen size
   const itemsPerPage = useMemo(() => {
@@ -86,41 +125,77 @@ const ProductsPages = () => {
     };
   }, [filteredProducts, currentPage, itemsPerPage]);
 
-  const applyFilters = (category, series, subcategory) => {
+  const applyFilters = (filters, options = { resetPage: true }) => {
     let filtered = allProducts;
-    
-    if (category) {
+
+    if (filters.category) {
       filtered = filtered.filter(product => 
-        product.category === category
+        product.category === filters.category
       );
     }
     
-    if (series.length > 0) {
+    if (filters.series.length > 0) {
       filtered = filtered.filter(product =>
-        series.includes(product.series)
+        filters.series.includes(product.series)
       );
     }
     
-    if (subcategory.length > 0) {
+    if (filters.subcategory.length > 0) {
       filtered = filtered.filter(product =>
-        subcategory.includes(product.subcategory)
+        filters.subcategory.includes(product.subcategory)
       );
     }
+
+    if (filters.series.length > 0 && filters.seriesFacet.length > 0) {
+      const facetGroups = filters.seriesFacet.reduce((groups, facetId) => {
+        const groupKey = facetId.split('-')[0];
+        if (!groups[groupKey]) groups[groupKey] = [];
+        groups[groupKey].push(facetId);
+        return groups;
+      }, {});
+
+      filtered = filtered.filter((product) =>
+        Object.values(facetGroups).every((groupFacetIds) =>
+          groupFacetIds.some((facetId) => matchesSeriesFacet(product, facetId))
+        )
+      );
+    }
+
+    if (filters.availability.length === 1) {
+      const stockFilter = filters.availability[0];
+      filtered = filtered.filter((product) =>
+        stockFilter === 'in-stock'
+          ? Number(product.stockCount || 0) > 0
+          : Number(product.stockCount || 0) <= 0
+      );
+    }
+
+    filtered = filtered.filter((product) => {
+      const price = Number(product.price || 0);
+      return price >= Number(filters.minPrice) && price <= Number(filters.maxPrice);
+    });
     
     setFilteredProducts(filtered);
-    // Reset to first page when filters change
-    setCurrentPage(1);
+    if (options.resetPage) {
+      setCurrentPage(1);
+    }
   };
 
   const handleFilterChange = (newFilters) => {
     setActiveFilters(newFilters);
-    applyFilters(newFilters.category, newFilters.series, newFilters.subcategory);
+    applyFilters(newFilters);
     
     // Update URL with new filters using React Router
     const params = new URLSearchParams();
     if (newFilters.category) params.set('category', newFilters.category);
     if (newFilters.series.length > 0) params.set('series', newFilters.series[0]);
     if (newFilters.subcategory.length > 0) params.set('subcategory', newFilters.subcategory[0]);
+    if (newFilters.series.length > 0 && newFilters.seriesFacet.length > 0) {
+      params.set('seriesFacet', newFilters.seriesFacet.join(','));
+    }
+    if (newFilters.availability.length > 0) params.set('availability', newFilters.availability.join(','));
+    if (Number(newFilters.minPrice) > priceBounds.min) params.set('minPrice', String(newFilters.minPrice));
+    if (Number(newFilters.maxPrice) < priceBounds.max) params.set('maxPrice', String(newFilters.maxPrice));
     params.set('page', '1'); // Reset to page 1 when filters change
     
     setSearchParams(params);
@@ -161,6 +236,8 @@ const ProductsPages = () => {
                 activeFilters={activeFilters}
                 onFilterChange={handleFilterChange}
                 isMobile={false}
+                products={allProducts}
+                priceBounds={priceBounds}
               />
             </aside>
           )}
@@ -197,6 +274,8 @@ const ProductsPages = () => {
                       activeFilters={activeFilters}
                       onFilterChange={handleFilterChange}
                       isMobile={true}
+                      products={allProducts}
+                      priceBounds={priceBounds}
                     />
                   </div>
                 )}

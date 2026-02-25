@@ -35,6 +35,208 @@ export const panelSizeOptions = [
   { id: 'miniled', label: 'MiniLED' }
 ];
 
+const CATEGORY_FILTER_LABELS = {
+  Components: {
+    subcategory: "Component Types",
+    series: "Component Series",
+  },
+  Peripherals: {
+    subcategory: "Peripheral Types",
+    series: "Peripheral Series",
+  },
+  Accessories: {
+    subcategory: "Accessory Types",
+    series: "Accessory Series",
+  },
+  "OS & Softwares": {
+    subcategory: "Software Types",
+    series: "Software Suites",
+  },
+};
+
+export const getProductFilterSections = (category) => {
+  if (!category) return [];
+
+  const labels = CATEGORY_FILTER_LABELS[category] || {
+    subcategory: "Subcategories",
+    series: "Series",
+  };
+
+  return [
+    {
+      id: "subcategory",
+      label: labels.subcategory,
+      filterType: "subcategory",
+      options: getSubCategories(category),
+      defaultCount: 6,
+    },
+    {
+      id: "series",
+      label: labels.series,
+      filterType: "series",
+      options: getSeriesItems(category),
+      defaultCount: 6,
+    },
+  ];
+};
+
+const SERIES_DRILLDOWN_CONFIG = {
+  "graphics-series": {
+    sectionId: "gpu-generation",
+    label: "GPU Generation",
+    options: [
+      { id: "gpu-rtx-50", label: "NVIDIA RTX 50 Series", pattern: /\brtx\s*50/i },
+      { id: "gpu-rtx-40", label: "NVIDIA RTX 40 Series", pattern: /\brtx\s*40/i },
+      { id: "gpu-rtx-30", label: "NVIDIA RTX 30 Series", pattern: /\brtx\s*30/i },
+      { id: "gpu-rtx-20", label: "NVIDIA RTX 20 Series", pattern: /\brtx\s*20/i },
+      { id: "gpu-amd-7000", label: "AMD RX 7000 Series", pattern: /\brx\s*7\d{3}/i },
+      { id: "gpu-amd-6000", label: "AMD RX 6000 Series", pattern: /\brx\s*6\d{3}/i },
+      { id: "gpu-amd-5000", label: "AMD RX 5000 Series", pattern: /\brx\s*5\d{3}/i },
+      { id: "gpu-intel-arc", label: "Intel Arc Series", pattern: /\barc\s*a\d{3}/i },
+    ],
+  },
+  "intel-processors-series": {
+    sectionId: "intel-generation",
+    label: "Intel Processor Family",
+    options: [
+      { id: "intel-14th-gen", label: "Intel 14th Gen", pattern: /\b14\d{3}[a-z]?/i },
+      { id: "intel-13th-gen", label: "Intel 13th Gen", pattern: /\b13\d{3}[a-z]?/i },
+      { id: "intel-12th-gen", label: "Intel 12th Gen", pattern: /\b12\d{3}[a-z]?/i },
+      { id: "intel-11th-gen", label: "Intel 11th Gen", pattern: /\b11\d{3}[a-z]?/i },
+      { id: "intel-10th-gen", label: "Intel 10th Gen", pattern: /\b10\d{3}[a-z]?/i },
+      { id: "intel-xeon", label: "Intel Xeon", pattern: /\bxeon\b/i },
+    ],
+  },
+  "amd-processors-series": {
+    sectionId: "amd-generation",
+    label: "AMD Processor Family",
+    options: [
+      { id: "amd-9000", label: "Ryzen 9000 Series", pattern: /\b9\d{3,4}[xgkt]*\b/i },
+      { id: "amd-7000", label: "Ryzen 7000 Series", pattern: /\b7\d{3,4}[xgkt]*\b/i },
+      { id: "amd-5000", label: "Ryzen 5000 Series", pattern: /\b5\d{3,4}[xgkt]*\b/i },
+      { id: "amd-4000", label: "Ryzen 4000 Series", pattern: /\b4\d{3,4}[xgkt]*\b/i },
+      { id: "amd-3000", label: "Ryzen 3000 Series", pattern: /\b3\d{3,4}[xgkt]*\b/i },
+      { id: "amd-threadripper", label: "Threadripper", pattern: /\bthreadripper\b/i },
+    ],
+  },
+  "motherboards-series": {
+    sectionId: "motherboard-platform",
+    label: "Motherboard Platform",
+    options: [
+      { id: "mb-am5", label: "AMD AM5", pattern: /\bam5\b/i },
+      { id: "mb-am4", label: "AMD AM4", pattern: /\bam4\b/i },
+      { id: "mb-lga1700", label: "Intel LGA1700", pattern: /\blga1700\b/i },
+      { id: "mb-lga1200", label: "Intel LGA1200", pattern: /\blga1200\b/i },
+      { id: "mb-ddr5", label: "DDR5 Boards", pattern: /\bddr5\b/i },
+      { id: "mb-ddr4", label: "DDR4 Boards", pattern: /\bddr4\b/i },
+    ],
+  },
+  "memory-series": {
+    sectionId: "memory-type",
+    label: "Memory Type",
+    options: [
+      { id: "ram-ddr5", label: "DDR5", pattern: /\bddr5\b/i },
+      { id: "ram-ddr4", label: "DDR4", pattern: /\bddr4\b/i },
+      { id: "ram-ddr3", label: "DDR3", pattern: /\bddr3\b/i },
+      { id: "ram-16gb-up", label: "16GB and Up", pattern: /\b(16|32|64|128)\s*gb\b/i },
+    ],
+  },
+};
+
+const getPriceTierOptions = () => [
+  { id: "tier-budget", label: "Budget (<= ₱15,000)" },
+  { id: "tier-mid", label: "Mid Range (₱15,001 - ₱40,000)" },
+  { id: "tier-premium", label: "Premium (>= ₱40,001)" },
+];
+
+export const getSeriesDrilldownSections = (category, selectedSeries = [], products = []) => {
+  if (!category || selectedSeries.length === 0) return [];
+
+  const sectionMap = new Map();
+
+  selectedSeries.forEach((seriesId) => {
+    const seriesConfig = SERIES_DRILLDOWN_CONFIG[seriesId];
+    if (seriesConfig) {
+      sectionMap.set(seriesConfig.sectionId, {
+        id: seriesConfig.sectionId,
+        label: seriesConfig.label,
+        filterType: "seriesFacet",
+        options: seriesConfig.options,
+        defaultCount: 6,
+      });
+    }
+  });
+
+  const matchingProducts = products.filter(
+    (product) => product.category === category && selectedSeries.includes(product.series)
+  );
+
+  const brands = Array.from(
+    new Set(
+      matchingProducts
+        .map((product) => product.brand || product.specs?.Manufacturer)
+        .filter(Boolean)
+    )
+  ).sort((a, b) => a.localeCompare(b));
+
+  if (brands.length > 0) {
+    sectionMap.set("series-brand", {
+      id: "series-brand",
+      label: "Brand",
+      filterType: "seriesFacet",
+      options: brands.map((brand) => ({
+        id: `brand-${String(brand).toLowerCase().replace(/[^a-z0-9]+/g, "-")}`,
+        label: brand,
+      })),
+      defaultCount: 8,
+    });
+  }
+
+  sectionMap.set("series-price-tier", {
+    id: "series-price-tier",
+    label: "Price Tier",
+    filterType: "seriesFacet",
+    options: getPriceTierOptions(),
+    defaultCount: 3,
+  });
+
+  return Array.from(sectionMap.values());
+};
+
+const getProductSearchBlob = (product) => {
+  const specValues = Object.values(product.specs || {}).join(" ");
+  return `${product.name || ""} ${specValues}`.toLowerCase();
+};
+
+const inPriceTier = (product, tierId) => {
+  const price = Number(product.price || 0);
+  if (tierId === "tier-budget") return price <= 15000;
+  if (tierId === "tier-mid") return price > 15000 && price <= 40000;
+  if (tierId === "tier-premium") return price > 40000;
+  return false;
+};
+
+export const matchesSeriesFacet = (product, facetId) => {
+  if (!facetId) return true;
+  if (facetId.startsWith("brand-")) {
+    const brand = String(product.brand || product.specs?.Manufacturer || "")
+      .toLowerCase()
+      .replace(/[^a-z0-9]+/g, "-");
+    return `brand-${brand}` === facetId;
+  }
+
+  if (facetId.startsWith("tier-")) {
+    return inPriceTier(product, facetId);
+  }
+
+  const blob = getProductSearchBlob(product);
+  const allConfigs = Object.values(SERIES_DRILLDOWN_CONFIG).flatMap((section) => section.options);
+  const matchOption = allConfigs.find((option) => option.id === facetId);
+
+  if (!matchOption) return true;
+  return matchOption.pattern.test(blob);
+};
+
 // Dedicated filter schema for product pages/navigation
 export const productFilterConfig = {
   route: "/products",
@@ -42,12 +244,13 @@ export const productFilterConfig = {
     category: "category",
     series: "series",
     subcategory: "subcategory",
+    seriesFacet: "seriesFacet",
+    availability: "availability",
+    minPrice: "minPrice",
+    maxPrice: "maxPrice",
   },
-  facets: {
-    gpu: gpuOptions,
-    processor: processorOptions,
-    panelSize: panelSizeOptions,
-  },
+  getFilterSections: getProductFilterSections,
+  getSeriesDrilldownSections,
 };
 
 // Enhanced data structure with IDs and additional metadata
