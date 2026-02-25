@@ -13,7 +13,7 @@ import {
 } from "../../MockData/LaptopMockData";
 
 const LaptopNavbar = forwardRef(({ isOpen, onClose}, ref) => {
-  const [activeCategory, setActiveCategory] = useState("Gaming Laptops");
+  const [activeCategory, setActiveCategory] = useState(categories[0] || "");
   const [isLaptop, setIsLaptop] = useState(true);
   const navigate = useNavigate();
 
@@ -26,6 +26,12 @@ const LaptopNavbar = forwardRef(({ isOpen, onClose}, ref) => {
     window.addEventListener('resize', checkScreenSize);
     return () => window.removeEventListener('resize', checkScreenSize);
   }, []);
+
+  useEffect(() => {
+    if (isOpen) {
+      setActiveCategory(categories[0] || "");
+    }
+  }, [isOpen]);
 
   // Handle navigation to laptops page
   const handleNavigation = (path, e, category, series, feature) => {

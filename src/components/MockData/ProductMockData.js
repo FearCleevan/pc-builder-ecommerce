@@ -35,6 +35,21 @@ export const panelSizeOptions = [
   { id: 'miniled', label: 'MiniLED' }
 ];
 
+// Dedicated filter schema for product pages/navigation
+export const productFilterConfig = {
+  route: "/products",
+  params: {
+    category: "category",
+    series: "series",
+    subcategory: "subcategory",
+  },
+  facets: {
+    gpu: gpuOptions,
+    processor: processorOptions,
+    panelSize: panelSizeOptions,
+  },
+};
+
 // Enhanced data structure with IDs and additional metadata
 export const getSeriesItems = (category) => {
   switch (category) {

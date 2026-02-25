@@ -60,6 +60,11 @@ const useNavigation = () => {
   const handleNavigation = useCallback((path, e, category, series, subcategory) => {
     if (e) e.preventDefault();
 
+    if (path && !category && !series && !subcategory) {
+      navigate(path);
+      return;
+    }
+
     // Build query parameters based on what was clicked
     const searchParams = new URLSearchParams();
 
@@ -67,8 +72,8 @@ const useNavigation = () => {
     if (series) searchParams.set('series', series);
     if (subcategory) searchParams.set('subcategory', subcategory);
 
-    // Navigate to the products page with filters using React Router
-    navigate(`/products?${searchParams.toString()}`);
+    const basePath = path ? path.split("?")[0] : "/products";
+    navigate(`${basePath}?${searchParams.toString()}`);
   }, [navigate]);
 
   // NEW: Function to navigate to PC Builder
@@ -128,6 +133,36 @@ const Header = () => {
 
   const debouncedWindowSize = useDebounce(windowSize, 250);
   const { handleNavigation, navigateToPCBuilder, navigateToAccount, navigateToCart } = useNavigation();
+
+  const mobileSectionConfig = {
+    products: {
+      defaultCategory: "Components",
+      basePath: "/products",
+      categories: productCategories,
+      getSeriesItems: getProductSeriesItems,
+      getExploreItems: getProductExploreItems,
+      getSubCategories: getProductSubCategories,
+      getFeatures: () => [],
+    },
+    desktop: {
+      defaultCategory: "Gaming Desktops",
+      basePath: "/desktops",
+      categories: desktopCategories,
+      getSeriesItems: getDesktopSeriesItems,
+      getExploreItems: getDesktopExploreItems,
+      getSubCategories: () => [],
+      getFeatures: getDesktopFeatures,
+    },
+    laptop: {
+      defaultCategory: "Gaming Laptops",
+      basePath: "/laptops",
+      categories: laptopCategories,
+      getSeriesItems: getLaptopSeriesItems,
+      getExploreItems: getLaptopExploreItems,
+      getSubCategories: () => [],
+      getFeatures: getLaptopFeatures,
+    },
+  };
 
   // ✅ Fixed screen size check
   const checkScreenSize = useCallback(() => {
@@ -234,21 +269,21 @@ const Header = () => {
     if (!isProduct && itemId === "products") {
       setMobileView("products");
       setActiveNav("products");
-      setActiveCategory("Components");
+      setActiveCategory(mobileSectionConfig.products.defaultCategory);
       return;
     }
 
     if (!isDesktop && itemId === "desktop") {
       setMobileView("desktop");
       setActiveNav("desktop");
-      setActiveCategory("Gaming Desktops");
+      setActiveCategory(mobileSectionConfig.desktop.defaultCategory);
       return;
     }
 
     if (!isLaptop && itemId === "laptop") {
       setMobileView("laptop");
       setActiveNav("laptop");
-      setActiveCategory("Gaming Laptops");
+      setActiveCategory(mobileSectionConfig.laptop.defaultCategory);
       return;
     }
 
@@ -283,40 +318,22 @@ const Header = () => {
   const handleBackToMainMenu = () => setMobileView("main");
   const scrollToTop = () => window.scrollTo({ top: 0, behavior: "smooth" });
 
+  const handleMobileNavigation = (e, { category, series, subcategory } = {}) => {
+    if (e) e.preventDefault();
+
+    const section = mobileSectionConfig[mobileView];
+    if (!section) return;
+    handleNavigation(section.basePath, null, category, series, subcategory);
+    closeAllMenus();
+  };
+
   // Helper function to get the correct data based on active section
-  const getCategories = () => {
-    if (mobileView === "products") return productCategories;
-    if (mobileView === "desktop") return desktopCategories;
-    if (mobileView === "laptop") return laptopCategories;
-    return [];
-  };
-
-  const getSeriesItems = () => {
-    if (mobileView === "products") return getProductSeriesItems(activeCategory);
-    if (mobileView === "desktop") return getDesktopSeriesItems(activeCategory);
-    if (mobileView === "laptop") return getLaptopSeriesItems(activeCategory);
-    return [];
-  };
-
-  const getExploreItems = () => {
-    if (mobileView === "products") return getProductExploreItems(activeCategory);
-    if (mobileView === "desktop") return getDesktopExploreItems(activeCategory);
-    if (mobileView === "laptop") return getLaptopExploreItems(activeCategory);
-    return [];
-  };
-
-  const getSubCategories = () => {
-    if (mobileView === "products") return getProductSubCategories(activeCategory);
-    if (mobileView === "desktop") return []; // Desktop doesn't have subcategories in the same way
-    if (mobileView === "laptop") return []; // Laptop doesn't have subcategories in the same way
-    return [];
-  };
-
-  const getFeatures = () => {
-    if (mobileView === "desktop") return getDesktopFeatures(activeCategory);
-    if (mobileView === "laptop") return getLaptopFeatures(activeCategory);
-    return [];
-  };
+  const currentSection = mobileSectionConfig[mobileView];
+  const getCategories = () => currentSection?.categories || [];
+  const getSeriesItems = () => currentSection?.getSeriesItems(activeCategory) || [];
+  const getExploreItems = () => currentSection?.getExploreItems(activeCategory) || [];
+  const getSubCategories = () => currentSection?.getSubCategories(activeCategory) || [];
+  const getFeatures = () => currentSection?.getFeatures(activeCategory) || [];
 
   return (
     <>
@@ -445,7 +462,7 @@ const Header = () => {
                                 <li key={item.name}>
                                   <a
                                     href={item.path}
-                                    onClick={(e) => handleNavigation(item.path, e, activeCategory, null, item.id)}
+                                    onClick={(e) => handleMobileNavigation(e, { category: activeCategory, subcategory: item.id })}
                                   >
                                     {item.name}
                                   </a>
@@ -463,7 +480,7 @@ const Header = () => {
                               <li key={item.name}>
                                 <a
                                   href={item.path}
-                                  onClick={(e) => handleNavigation(item.path, e, activeCategory, item.id, null)}
+                                  onClick={(e) => handleMobileNavigation(e, { category: activeCategory, series: item.id })}
                                 >
                                   {item.name}
                                 </a>
@@ -480,7 +497,7 @@ const Header = () => {
                               <li key={item.name}>
                                 <a
                                   href={item.path}
-                                  onClick={(e) => handleNavigation(item.path, e, activeCategory, null, null)}
+                                  onClick={(e) => handleMobileNavigation(e, { category: activeCategory })}
                                 >
                                   {item.name}
                                 </a>
@@ -527,7 +544,7 @@ const Header = () => {
                                 <li key={item.name}>
                                   <a
                                     href={item.path}
-                                    onClick={(e) => handleNavigation(item.path, e)}
+                                    onClick={(e) => handleMobileNavigation(e, { category: activeCategory, subcategory: item.id })}
                                   >
                                     ✓ {item.name}
                                   </a>
@@ -545,7 +562,7 @@ const Header = () => {
                               <li key={item.name}>
                                 <a
                                   href={item.path}
-                                  onClick={(e) => handleNavigation(item.path, e)}
+                                  onClick={(e) => handleMobileNavigation(e, { category: activeCategory, series: item.id })}
                                 >
                                   {item.name}
                                 </a>
@@ -562,7 +579,7 @@ const Header = () => {
                               <li key={item.name}>
                                 <a
                                   href={item.path}
-                                  onClick={(e) => handleNavigation(item.path, e)}
+                                  onClick={(e) => handleMobileNavigation(e, { category: activeCategory })}
                                 >
                                   {item.name}
                                 </a>
@@ -609,7 +626,7 @@ const Header = () => {
                                 <li key={item.name}>
                                   <a
                                     href={item.path}
-                                    onClick={(e) => handleNavigation(item.path, e)}
+                                    onClick={(e) => handleMobileNavigation(e, { category: activeCategory, subcategory: item.id })}
                                   >
                                     ✓ {item.name}
                                   </a>
@@ -627,7 +644,7 @@ const Header = () => {
                               <li key={item.name}>
                                 <a
                                   href={item.path}
-                                  onClick={(e) => handleNavigation(item.path, e)}
+                                  onClick={(e) => handleMobileNavigation(e, { category: activeCategory, series: item.id })}
                                 >
                                   {item.name}
                                 </a>
@@ -645,7 +662,7 @@ const Header = () => {
                               <li key={item.name}>
                                 <a
                                   href={item.path}
-                                  onClick={(e) => handleNavigation(item.path, e)}
+                                  onClick={(e) => handleMobileNavigation(e, { category: activeCategory })}
                                 >
                                   {item.name}
                                 </a>

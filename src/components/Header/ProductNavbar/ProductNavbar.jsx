@@ -13,7 +13,7 @@ import {
 } from "../../MockData/ProductMockData";
 
 const ProductNavbar = forwardRef(({ isOpen, onClose}, ref) => {
-  const [activeCategory, setActiveCategory] = useState("Components");
+  const [activeCategory, setActiveCategory] = useState(categories[0] || "");
   const [isDesktop, setIsDesktop] = useState(true);
   const navigate = useNavigate();
 
@@ -27,6 +27,12 @@ const ProductNavbar = forwardRef(({ isOpen, onClose}, ref) => {
     window.addEventListener('resize', checkScreenSize);
     return () => window.removeEventListener('resize', checkScreenSize);
   }, []);
+
+  useEffect(() => {
+    if (isOpen) {
+      setActiveCategory(categories[0] || "");
+    }
+  }, [isOpen]);
 
   // Handle navigation to products page
   const handleNavigation = (path, e, category, series, subcategory) => {

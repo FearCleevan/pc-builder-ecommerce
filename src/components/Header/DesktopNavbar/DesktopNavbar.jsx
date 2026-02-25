@@ -13,7 +13,7 @@ import {
 } from "../../MockData/DesktopMockData";
 
 const DesktopNavbar = forwardRef(({ isOpen, onClose}, ref) => {
-  const [activeCategory, setActiveCategory] = useState("Gaming Desktops");
+  const [activeCategory, setActiveCategory] = useState(categories[0] || "");
   const [isLaptop, setIsLaptop] = useState(true);
   const navigate = useNavigate();
 
@@ -26,6 +26,12 @@ const DesktopNavbar = forwardRef(({ isOpen, onClose}, ref) => {
     window.addEventListener('resize', checkScreenSize);
     return () => window.removeEventListener('resize', checkScreenSize);
   }, []);
+
+  useEffect(() => {
+    if (isOpen) {
+      setActiveCategory(categories[0] || "");
+    }
+  }, [isOpen]);
 
   // Handle navigation to desktops page
   const handleNavigation = (path, e, category, series, feature) => {

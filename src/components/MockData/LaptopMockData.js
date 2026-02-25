@@ -105,6 +105,23 @@ export const storageOptions = [
   { id: '4tb', label: '4TB SSD' }
 ];
 
+// Dedicated filter schema for laptop pages/navigation
+export const laptopFilterConfig = {
+  route: "/laptops",
+  params: {
+    category: "category",
+    series: "series",
+    subcategory: "subcategory",
+  },
+  facets: {
+    gpu: gpuOptions,
+    processor: processorOptions,
+    screenSize: screenSizeOptions,
+    ram: ramOptions,
+    storage: storageOptions,
+  },
+};
+
 // Enhanced data structure with IDs and additional metadata
 export const getSeriesItems = (category) => {
   switch (category) {
