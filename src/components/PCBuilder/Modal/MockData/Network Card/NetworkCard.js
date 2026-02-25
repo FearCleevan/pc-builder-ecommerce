@@ -1,0 +1,47 @@
+export const networkCardData = [
+  {
+    id: "net-1",
+    name: "TP-Link Archer TX3000E Wi-Fi 6 + Bluetooth",
+    type: "wireless-networking",
+    image: "/src/assets/Laptop1.png",
+    price: 2890,
+    specs: {
+      Manufacturer: "TP-Link",
+      Interface: "PCIe x1",
+      Standard: "Wi-Fi 6",
+      Speed: "2402 Mbps",
+      TDP: "8 W",
+    },
+    stockCount: 10,
+  },
+  {
+    id: "net-2",
+    name: "ASUS XG-C100C 10Gb Ethernet Adapter",
+    type: "wired-networking",
+    image: "/src/assets/Laptop1.png",
+    price: 5790,
+    specs: {
+      Manufacturer: "ASUS",
+      Interface: "PCIe x4",
+      Standard: "10GbE",
+      Speed: "10 Gbps",
+      TDP: "9 W",
+    },
+    stockCount: 10,
+  },
+  {
+    id: "net-3",
+    name: "Intel AX210 Wi-Fi 6E PCIe Adapter",
+    type: "wireless-networking",
+    image: "/src/assets/Laptop1.png",
+    price: 3490,
+    specs: {
+      Manufacturer: "Intel",
+      Interface: "PCIe x1",
+      Standard: "Wi-Fi 6E",
+      Speed: "2402 Mbps",
+      TDP: "7 W",
+    },
+    stockCount: 10,
+  },
+];

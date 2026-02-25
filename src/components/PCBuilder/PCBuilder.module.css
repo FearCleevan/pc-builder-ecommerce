@@ -16,3 +16,81 @@
   margin-top: 20px;
   margin-bottom: 20px;
 }
+
+.builderActions {
+  display: flex;
+  justify-content: flex-end;
+  margin: 0.5rem 0;
+}
+
+.addToCartButton {
+  border: 1px solid #2563eb;
+  background: #2563eb;
+  color: white;
+  border-radius: 6px;
+  padding: 0.5rem 0.9rem;
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+
+.addToCartButton:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.modalOverlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 10001;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.modalContent {
+  background: white;
+  border-radius: 10px;
+  width: min(460px, 100%);
+  padding: 1rem;
+  border: 1px solid #e5e7eb;
+}
+
+.modalTitle {
+  margin: 0 0 0.5rem;
+  font-size: 1rem;
+  color: #111827;
+}
+
+.modalText {
+  margin: 0.35rem 0;
+  color: #374151;
+  font-size: 0.9rem;
+}
+
+.modalActions {
+  margin-top: 0.9rem;
+  display: flex;
+  gap: 0.5rem;
+  justify-content: flex-end;
+}
+
+.continueButton,
+.confirmButton {
+  border: none;
+  border-radius: 6px;
+  padding: 0.5rem 0.85rem;
+  font-size: 0.82rem;
+  cursor: pointer;
+}
+
+.continueButton {
+  background: #e5e7eb;
+  color: #1f2937;
+}
+
+.confirmButton {
+  background: #2563eb;
+  color: white;
+}

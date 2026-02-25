@@ -1,0 +1,121 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(17, 24, 39, 0.55);
+  z-index: 10001;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.modal {
+  width: min(760px, 100%);
+  max-height: 90vh;
+  overflow: auto;
+  background: #f8f9fa;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 1rem;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.title {
+  margin: 0;
+  font-size: 1.2rem;
+  color: #111827;
+}
+
+.closeButton {
+  border: none;
+  background: transparent;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #6b7280;
+}
+
+.summary {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 0.75rem;
+  margin-top: 0.75rem;
+}
+
+.summaryCard {
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 0.75rem;
+}
+
+.summaryLabel {
+  margin: 0;
+  font-size: 0.78rem;
+  color: #6b7280;
+}
+
+.summaryValue {
+  margin: 0.2rem 0 0;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #1d4ed8;
+}
+
+.section {
+  margin-top: 1rem;
+}
+
+.sectionTitle {
+  margin: 0 0 0.5rem;
+  color: #1f2937;
+  font-size: 0.9rem;
+}
+
+.breakdownList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.breakdownItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 0.55rem 0.7rem;
+}
+
+.componentCategory {
+  margin: 0;
+  font-size: 0.75rem;
+  color: #6b7280;
+}
+
+.componentName {
+  margin: 0.1rem 0 0;
+  font-size: 0.8rem;
+  color: #111827;
+}
+
+.componentWatts {
+  margin: 0;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #b45309;
+}
+
+.emptyText {
+  margin: 0;
+  font-size: 0.85rem;
+  color: #6b7280;
+}

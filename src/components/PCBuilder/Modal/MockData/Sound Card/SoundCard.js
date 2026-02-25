@@ -1,0 +1,47 @@
+export const soundCardData = [
+  {
+    id: "sound-1",
+    name: "Creative Sound Blaster Audigy FX",
+    type: "sound-card",
+    image: "/src/assets/Laptop1.png",
+    price: 2390,
+    specs: {
+      Manufacturer: "Creative",
+      Interface: "PCIe x1",
+      Channels: "5.1",
+      SNR: "106 dB",
+      TDP: "12 W",
+    },
+    stockCount: 10,
+  },
+  {
+    id: "sound-2",
+    name: "ASUS Xonar SE 5.1 PCIe",
+    type: "sound-card",
+    image: "/src/assets/Laptop1.png",
+    price: 1990,
+    specs: {
+      Manufacturer: "ASUS",
+      Interface: "PCIe x1",
+      Channels: "5.1",
+      SNR: "116 dB",
+      TDP: "10 W",
+    },
+    stockCount: 10,
+  },
+  {
+    id: "sound-3",
+    name: "Creative Sound Blaster AE-5 Plus",
+    type: "sound-card",
+    image: "/src/assets/Laptop1.png",
+    price: 8690,
+    specs: {
+      Manufacturer: "Creative",
+      Interface: "PCIe x1",
+      Channels: "5.1",
+      SNR: "122 dB",
+      TDP: "15 W",
+    },
+    stockCount: 10,
+  },
+];

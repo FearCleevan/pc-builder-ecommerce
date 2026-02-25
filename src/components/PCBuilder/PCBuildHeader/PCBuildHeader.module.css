@@ -302,6 +302,8 @@
 
 .actionButtons {
   display: flex;
+  align-items: center;
+  flex-wrap: wrap;
   gap: 0.5rem;
   width: 100%;
   justify-content: flex-end;
@@ -348,6 +350,40 @@
 
 .actionButton:hover .buttonIcon {
   color: #1f2937;
+}
+
+.buildModeSection {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  margin-right: 0.5rem;
+}
+
+.buildModeLabel {
+  font-size: 0.75rem;
+  color: #4b5563;
+  white-space: nowrap;
+}
+
+.buildModeButtons {
+  display: inline-flex;
+  border: 1px solid #d1d5db;
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.buildModeButton {
+  border: none;
+  background: white;
+  color: #6b7280;
+  padding: 0.3rem 0.7rem;
+  font-size: 0.72rem;
+  cursor: pointer;
+}
+
+.buildModeButtonActive {
+  background: #2563eb;
+  color: white;
 }
 
 .tabletText {

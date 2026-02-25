@@ -52,7 +52,16 @@ export const addProductToCart = (product, quantity = 1) => {
   saveCartItems(items);
 };
 
-export const addBuildToCart = ({ buildName, components, totalPrice }) => {
+export const addBuildToCart = ({
+  buildName,
+  components,
+  totalPrice,
+  buildAssemblyOption = "store-build",
+  compatibility = null,
+  estimatedWattage = 0,
+  recommendedPsuWattage = 0,
+  missingRequired = [],
+}) => {
   const componentEntries = Object.entries(components || {}).filter(([, component]) => component);
   if (componentEntries.length === 0) return;
   const firstComponent = componentEntries[0]?.[1];
@@ -76,6 +85,11 @@ export const addBuildToCart = ({ buildName, components, totalPrice }) => {
       image: component.img || "",
       specs: component.specs || {},
     })),
+    buildAssemblyOption,
+    compatibility,
+    estimatedWattage: Number(estimatedWattage || 0),
+    recommendedPsuWattage: Number(recommendedPsuWattage || 0),
+    missingRequired,
   });
 
   saveCartItems(items);

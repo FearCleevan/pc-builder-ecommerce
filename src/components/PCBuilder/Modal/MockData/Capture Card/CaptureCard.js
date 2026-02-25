@@ -1,0 +1,47 @@
+export const captureCardData = [
+  {
+    id: "capture-1",
+    name: "Elgato 4K60 Pro MK.2 Internal Capture Card",
+    type: "expansion",
+    image: "/src/assets/Laptop1.png",
+    price: 15990,
+    specs: {
+      Manufacturer: "Elgato",
+      Interface: "PCIe x4",
+      Input: "HDMI 2.0",
+      MaxResolution: "4K60 HDR10",
+      TDP: "15 W",
+    },
+    stockCount: 10,
+  },
+  {
+    id: "capture-2",
+    name: "AVerMedia Live Gamer HD 2 GC570",
+    type: "expansion",
+    image: "/src/assets/Laptop1.png",
+    price: 8990,
+    specs: {
+      Manufacturer: "AVerMedia",
+      Interface: "PCIe x1",
+      Input: "HDMI",
+      MaxResolution: "1080p60",
+      TDP: "10 W",
+    },
+    stockCount: 10,
+  },
+  {
+    id: "capture-3",
+    name: "EVGA XR1 Pro External Capture Card",
+    type: "accessories",
+    image: "/src/assets/Laptop1.png",
+    price: 6990,
+    specs: {
+      Manufacturer: "EVGA",
+      Interface: "USB 3.0",
+      Input: "HDMI 2.0",
+      MaxResolution: "4K30 passthrough",
+      TDP: "8 W",
+    },
+    stockCount: 10,
+  },
+];

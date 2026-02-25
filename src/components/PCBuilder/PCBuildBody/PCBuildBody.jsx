@@ -332,6 +332,7 @@ const PCBuildBody = ({
                 onClose={handleCloseModal}
                 onSelect={handleComponentSelect}
                 componentType={selectedComponentType}
+                selectedComponents={selectedComponents}
                 onCompareNavigate={onCompareNavigate}
             />
         </>

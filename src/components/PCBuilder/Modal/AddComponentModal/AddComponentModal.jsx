@@ -24,6 +24,13 @@ import { headphonesData } from '../MockData/Headphones/Headphones';
 import { microphoneData } from '../MockData/Microphone/Microphone';
 import { webcamData } from '../MockData/Webcam/Webcam';
 import { powerSupplyData } from '../MockData/Power Suppy/PowerSupply';
+import { thermalCompoundData } from '../MockData/Thermal Compound/ThermalCompound';
+import { operatingSystemData } from '../MockData/Operating System/OperatingSystem';
+import { soundCardData } from '../MockData/Sound Card/SoundCard';
+import { networkCardData } from '../MockData/Network Card/NetworkCard';
+import { captureCardData } from '../MockData/Capture Card/CaptureCard';
+import { vrHeadsetData } from '../MockData/VR Headset/VRHeadset';
+import { accessoryData } from '../MockData/Accessory/Accessory';
 import { caseFilter } from '../MockData/Case/CaseFilter';
 import { cpuFilter } from '../MockData/CPU/CPUFilter';
 import { motherboardFilter } from '../MockData/Motherboard/MotherboardFilter';
@@ -40,8 +47,16 @@ import { headphonesFilter } from '../MockData/Headphones/HeadphonesFilter';
 import { microphoneFilter } from '../MockData/Microphone/MicrophoneFilter';
 import { webcamFilter } from '../MockData/Webcam/WebcamFilter';
 import { storageFilter } from '../MockData/Storage/StorageFilter';
+import { isComponentCompatibleWithBuild } from '../../utils/buildAnalysis';
 
-const AddComponentModal = ({ isOpen, onClose, onSelect, componentType, onCompareNavigate }) => {
+const AddComponentModal = ({
+    isOpen,
+    onClose,
+    onSelect,
+    componentType,
+    onCompareNavigate,
+    selectedComponents = {}
+}) => {
     const [currentPage, setCurrentPage] = useState(1);
     const [components, setComponents] = useState([]);
     const [filteredComponents, setFilteredComponents] = useState([]);
@@ -124,7 +139,14 @@ const AddComponentModal = ({ isOpen, onClose, onSelect, componentType, onCompare
             speaker: speakerData,
             headphones: headphonesData,
             microphone: microphoneData,
-            webcam: webcamData
+            webcam: webcamData,
+            thermalCompound: thermalCompoundData,
+            operatingSystem: operatingSystemData,
+            soundCard: soundCardData,
+            networkCard: networkCardData,
+            captureCard: captureCardData,
+            vrHeadset: vrHeadsetData,
+            accessory: accessoryData
         };
 
         return componentDataMap[type.id] || [
@@ -286,11 +308,9 @@ const AddComponentModal = ({ isOpen, onClose, onSelect, componentType, onCompare
             }
 
             // Apply compatibility filter
-            if (compatibilityFilter) {
-                // This is a placeholder for actual compatibility logic
-                // You would need to implement based on your specific requirements
+            if (compatibilityFilter && componentType?.id) {
                 filtered = filtered.filter(component =>
-                    component.specs?.Compatibility !== "Incompatible"
+                    isComponentCompatibleWithBuild(selectedComponents, componentType.id, component)
                 );
             }
 
@@ -351,7 +371,7 @@ const AddComponentModal = ({ isOpen, onClose, onSelect, componentType, onCompare
         }, 300); // Small delay to show loading state
 
         return () => clearTimeout(timeoutId);
-    }, [activeFilters, searchTerm, compatibilityFilter, sortOption, components]);
+    }, [activeFilters, searchTerm, compatibilityFilter, sortOption, components, componentType, selectedComponents]);
 
     // Get filter sections for the current component type
     const filterSections = useMemo(() => {

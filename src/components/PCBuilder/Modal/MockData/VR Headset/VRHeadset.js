@@ -1,0 +1,47 @@
+export const vrHeadsetData = [
+  {
+    id: "vr-1",
+    name: "Meta Quest 3 512GB",
+    type: "accessories",
+    image: "/src/assets/Laptop1.png",
+    price: 32990,
+    specs: {
+      Manufacturer: "Meta",
+      Resolution: "2064 x 2208 per eye",
+      RefreshRate: "90/120 Hz",
+      Connection: "Standalone + PC Link",
+      TDP: "25 W",
+    },
+    stockCount: 10,
+  },
+  {
+    id: "vr-2",
+    name: "HTC Vive XR Elite",
+    type: "accessories",
+    image: "/src/assets/Laptop1.png",
+    price: 64990,
+    specs: {
+      Manufacturer: "HTC",
+      Resolution: "1920 x 1920 per eye",
+      RefreshRate: "90 Hz",
+      Connection: "USB-C / Wi-Fi",
+      TDP: "28 W",
+    },
+    stockCount: 10,
+  },
+  {
+    id: "vr-3",
+    name: "PlayStation VR2 (PC Adapter Ready)",
+    type: "accessories",
+    image: "/src/assets/Laptop1.png",
+    price: 35990,
+    specs: {
+      Manufacturer: "Sony",
+      Resolution: "2000 x 2040 per eye",
+      RefreshRate: "90/120 Hz",
+      Connection: "USB-C",
+      TDP: "24 W",
+    },
+    stockCount: 10,
+  },
+];

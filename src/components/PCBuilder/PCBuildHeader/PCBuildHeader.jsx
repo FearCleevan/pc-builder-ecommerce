@@ -1,48 +1,81 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import styles from './PCBuildHeader.module.css';
 import BuildCostModal from './BuildCostModal/BuildCostModal';
+import CompatibilityModal from './CompatibilityModal/CompatibilityModal';
+import WattageModal from './WattageModal/WattageModal';
 
-const PCBuildHeader = ({ selectedComponents = {}, onClearAll, hasSelectedComponents }) => {
+const PCBuildHeader = ({
+  selectedComponents = {},
+  onClearAll,
+  hasSelectedComponents,
+  compatibilityReport,
+  wattageReport,
+  buildAssemblyOption,
+  onBuildAssemblyOptionChange,
+  onAddToCart
+}) => {
   const [isEditing, setIsEditing] = useState(false);
   const [buildName, setBuildName] = useState('New Build');
   const [totalPrice, setTotalPrice] = useState(0);
   const [displayPrice, setDisplayPrice] = useState(0);
   const [isCostModalOpen, setIsCostModalOpen] = useState(false);
   const [isClearAllModalOpen, setIsClearAllModalOpen] = useState(false);
+  const [isCompatibilityModalOpen, setIsCompatibilityModalOpen] = useState(false);
+  const [isWattageModalOpen, setIsWattageModalOpen] = useState(false);
+  const animationFrameRef = useRef(null);
+  const displayPriceRef = useRef(0);
   
+  useEffect(() => {
+    displayPriceRef.current = displayPrice;
+  }, [displayPrice]);
+
   // Calculate total price whenever selectedComponents changes
   useEffect(() => {
     const newTotalPrice = Object.values(selectedComponents).reduce((sum, component) => {
       return sum + (component?.price || 0);
     }, 0);
-    
     setTotalPrice(newTotalPrice);
-    
-    // Smooth animation for price display
-    if (newTotalPrice !== displayPrice) {
-      const duration = 2000; // 1 second animation
-      const startTime = Date.now();
-      const startValue = displayPrice;
-      
-      const animate = () => {
-        const currentTime = Date.now();
-        const elapsed = currentTime - startTime;
-        const progress = Math.min(elapsed / duration, 1);
-        
-        // Easing function for smooth animation
-        const easeOutQuart = 1 - Math.pow(1 - progress, 4);
-        const currentValue = startValue + (newTotalPrice - startValue) * easeOutQuart;
-        
-        setDisplayPrice(Math.floor(currentValue));
-        
-        if (progress < 1) {
-          requestAnimationFrame(animate);
-        }
-      };
-      
-      requestAnimationFrame(animate);
+  }, [selectedComponents]);
+
+  // Animate displayed price only when totalPrice changes
+  useEffect(() => {
+    if (animationFrameRef.current) {
+      cancelAnimationFrame(animationFrameRef.current);
     }
-  }, [selectedComponents, displayPrice]);
+
+    const startValue = displayPriceRef.current;
+    const endValue = totalPrice;
+
+    if (startValue === endValue) {
+      setDisplayPrice(endValue);
+      return undefined;
+    }
+
+    const duration = 600;
+    const startTime = Date.now();
+
+    const animate = () => {
+      const currentTime = Date.now();
+      const elapsed = currentTime - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+      const easeOutQuart = 1 - Math.pow(1 - progress, 4);
+      const currentValue = startValue + (endValue - startValue) * easeOutQuart;
+
+      setDisplayPrice(Math.floor(currentValue));
+
+      if (progress < 1) {
+        animationFrameRef.current = requestAnimationFrame(animate);
+      }
+    };
+
+    animationFrameRef.current = requestAnimationFrame(animate);
+
+    return () => {
+      if (animationFrameRef.current) {
+        cancelAnimationFrame(animationFrameRef.current);
+      }
+    };
+  }, [totalPrice]);
 
   const handleEdit = () => {
     setIsEditing(true);
@@ -64,6 +97,22 @@ const PCBuildHeader = ({ selectedComponents = {}, onClearAll, hasSelectedCompone
 
   const handleCostModalClose = () => {
     setIsCostModalOpen(false);
+  };
+
+  const handleCompatibilityModalOpen = () => {
+    setIsCompatibilityModalOpen(true);
+  };
+
+  const handleCompatibilityModalClose = () => {
+    setIsCompatibilityModalOpen(false);
+  };
+
+  const handleWattageModalOpen = () => {
+    setIsWattageModalOpen(true);
+  };
+
+  const handleWattageModalClose = () => {
+    setIsWattageModalOpen(false);
   };
 
   const handleClearAllClick = () => {
@@ -201,10 +250,10 @@ const PCBuildHeader = ({ selectedComponents = {}, onClearAll, hasSelectedCompone
                       <path d="m9 12 2 2 4-4"></path>
                     </svg>
                   </span>
-                  <span>Compatible</span>
+                  <span>{compatibilityReport?.isCompatible ? 'Compatible' : 'Needs Attention'}</span>
                 </div>
               </div>
-              <div className={styles.statDropdown}>
+              <div className={styles.statDropdown} onClick={handleCompatibilityModalOpen}>
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={styles.dropdownIcon}>
                   <path d="m7 15 5 5 5-5"></path>
                   <path d="m7 9 5-5 5 5"></path>
@@ -220,10 +269,10 @@ const PCBuildHeader = ({ selectedComponents = {}, onClearAll, hasSelectedCompone
                       <path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z"></path>
                     </svg>
                   </span>
-                  <div className={styles.statNumber}>0W</div>
+                  <div className={styles.statNumber}>{wattageReport?.totalEstimatedWattage || 0}W</div>
                 </div>
               </div>
-              <div className={styles.statDropdown}>
+              <div className={styles.statDropdown} onClick={handleWattageModalOpen}>
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={styles.dropdownIcon}>
                   <path d="m7 15 5 5 5-5"></path>
                   <path d="m7 9 5-5 5 5"></path>
@@ -288,6 +337,26 @@ const PCBuildHeader = ({ selectedComponents = {}, onClearAll, hasSelectedCompone
           </div>
 
           <div className={styles.actionButtons}>
+            <div className={styles.buildModeSection}>
+              <span className={styles.buildModeLabel}>Build Option</span>
+              <div className={styles.buildModeButtons}>
+                <button
+                  className={`${styles.buildModeButton} ${buildAssemblyOption === 'store-build' ? styles.buildModeButtonActive : ''}`}
+                  onClick={() => onBuildAssemblyOptionChange('store-build')}
+                  type="button"
+                >
+                  Build by Store
+                </button>
+                <button
+                  className={`${styles.buildModeButton} ${buildAssemblyOption === 'components-only' ? styles.buildModeButtonActive : ''}`}
+                  onClick={() => onBuildAssemblyOptionChange('components-only')}
+                  type="button"
+                >
+                  Components Only
+                </button>
+              </div>
+            </div>
+
             <div className={styles.buttonWrapper}>
             </div>
             
@@ -339,6 +408,24 @@ const PCBuildHeader = ({ selectedComponents = {}, onClearAll, hasSelectedCompone
         selectedComponents={selectedComponents}
         totalPrice={totalPrice}
         buildName={buildName}
+        compatibilityReport={compatibilityReport}
+        wattageReport={wattageReport}
+        buildAssemblyOption={buildAssemblyOption}
+        onAddToCart={onAddToCart}
+      />
+
+      <CompatibilityModal
+        isOpen={isCompatibilityModalOpen}
+        onClose={handleCompatibilityModalClose}
+        selectedComponents={selectedComponents}
+        compatibilityReport={compatibilityReport}
+        wattageReport={wattageReport}
+      />
+
+      <WattageModal
+        isOpen={isWattageModalOpen}
+        onClose={handleWattageModalClose}
+        wattageReport={wattageReport}
       />
 
       {/* Clear All Confirmation Modal */}

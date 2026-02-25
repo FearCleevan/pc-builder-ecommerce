@@ -1,11 +1,28 @@
 // client/src/components/PCBuilder/PCBuildHeader/BuildCostModal/BuildCostModal.jsx
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { addBuildToCart } from '../../../../utils/cartStorage';
 import styles from './BuildCostModal.module.css';
 
-const BuildCostModal = ({ isOpen, onClose, selectedComponents, totalPrice, buildName }) => {
+const BuildCostModal = ({
+  isOpen,
+  onClose,
+  selectedComponents,
+  totalPrice,
+  buildName,
+  compatibilityReport,
+  wattageReport,
+  buildAssemblyOption,
+  onAddToCart
+}) => {
   const navigate = useNavigate();
+  const [isConfirmOpen, setIsConfirmOpen] = React.useState(false);
+
+  React.useEffect(() => {
+    if (!isOpen) {
+      setIsConfirmOpen(false);
+    }
+  }, [isOpen]);
+
   if (!isOpen) return null;
 
   const formatPrice = (price) => {
@@ -23,18 +40,30 @@ const BuildCostModal = ({ isOpen, onClose, selectedComponents, totalPrice, build
   };
 
   const handleAddToCart = () => {
-    addBuildToCart({
-      buildName,
-      components: selectedComponents,
-      totalPrice,
-    });
+    const missingRequired = compatibilityReport?.missingRequired || [];
+    if (missingRequired.length > 0) {
+      setIsConfirmOpen(true);
+      return;
+    }
+    submitCart();
+  };
+
+  const submitCart = () => {
+    if (onAddToCart) {
+      onAddToCart({ buildName, totalPrice });
+    }
+    setIsConfirmOpen(false);
     onClose();
     navigate('/cart');
   };
 
+  const cancelIncompleteSubmit = () => {
+    setIsConfirmOpen(false);
+  };
+
   // Filter out null components and only show selected ones
   const selectedComponentsList = Object.entries(selectedComponents)
-    .filter(([category, component]) => component !== null)
+    .filter(([, component]) => component !== null)
     .map(([category, component]) => ({
       category,
       ...component
@@ -93,6 +122,12 @@ const BuildCostModal = ({ isOpen, onClose, selectedComponents, totalPrice, build
                 </button>
               </div>
             </div>
+            <p className={styles.buildOptionText}>
+              Build Option: {buildAssemblyOption === 'store-build' ? 'Build by Store' : 'Components Only (Buyer Assembles)'}
+            </p>
+            <p className={styles.wattageText}>
+              Estimated Wattage: {wattageReport?.totalEstimatedWattage || 0}W
+            </p>
           </div>
 
           <div className={styles.priceDetails}>
@@ -124,6 +159,26 @@ const BuildCostModal = ({ isOpen, onClose, selectedComponents, totalPrice, build
               </div>
             )}
           </div>
+
+          {isConfirmOpen && (
+            <div className={styles.confirmationBox}>
+              <p className={styles.confirmationTitle}>Build is not complete yet</p>
+              <p className={styles.confirmationText}>
+                Missing required components: {(compatibilityReport?.missingRequired || []).map((item) => item.label).join(', ')}.
+              </p>
+              <p className={styles.confirmationText}>
+                Do you want to continue building or add this incomplete build to cart?
+              </p>
+              <div className={styles.confirmButtons}>
+                <button className={styles.continueButton} onClick={cancelIncompleteSubmit}>
+                  Continue Building
+                </button>
+                <button className={styles.forceAddButton} onClick={submitCart}>
+                  Add to Cart
+                </button>
+              </div>
+            </div>
+          )}
         </div>
       </div>
     </div>

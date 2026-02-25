@@ -48,6 +48,12 @@
   color: #374151;
 }
 
+.productButtonSelected {
+  border-color: #16a34a;
+  color: #166534;
+  background: #f0fdf4;
+}
+
 @media (min-width: 768px) {
   .productButton {
     width: fit-content;

@@ -73,6 +73,13 @@
   margin-bottom: 1.5rem;
 }
 
+.buildOptionText,
+.wattageText {
+  margin: 0.5rem 0 0;
+  font-size: 0.8rem;
+  color: #4b5563;
+}
+
 .totalPriceSection {
   display: flex;
   align-items: center;
@@ -187,6 +194,53 @@
   text-align: center;
   padding: 2rem;
   color: #252b35;
+}
+
+.confirmationBox {
+  margin-top: 1rem;
+  padding: 0.8rem;
+  border-radius: 8px;
+  border: 1px solid #f59e0b;
+  background: #fffbeb;
+}
+
+.confirmationTitle {
+  margin: 0 0 0.35rem;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: #92400e;
+}
+
+.confirmationText {
+  margin: 0.25rem 0;
+  font-size: 0.8rem;
+  color: #78350f;
+}
+
+.confirmButtons {
+  margin-top: 0.75rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.continueButton,
+.forceAddButton {
+  border: none;
+  border-radius: 4px;
+  padding: 0.45rem 0.7rem;
+  cursor: pointer;
+  font-size: 0.78rem;
+}
+
+.continueButton {
+  background: #e5e7eb;
+  color: #1f2937;
+}
+
+.forceAddButton {
+  background: #2563eb;
+  color: white;
 }
 
 @keyframes fadeIn {
