@@ -5,7 +5,7 @@ export const caseData = [
     id: 'case-1',
     name: 'Antec C8 ATX Full Tower',
     type: "case",
-    image:"/src/assets/Laptop1.png",
+    image: "https://c1.neweggimages.com/productimage/nb640/11-129-306-06.jpg",
     price: 11413.93, // Converted from 199.99 USD to PHP
     specs: {
       "Form Factor": "ATX Full Tower",
@@ -29,7 +29,7 @@ export const caseData = [
     id: 'case-2',
     name: 'Antec FLUX PRO ATX Full',
     type: "case",
-    image: "/src/assets/Laptop1.png",
+    image: "https://c1.neweggimages.com/productimage/nb640/11-129-320-01.jpg",
     price: 11999.93, // Converted from 209.99 USD to PHP
     specs: {
       "Form Factor": "ATX Full Tower",
@@ -53,7 +53,7 @@ export const caseData = [
     id: 'case-3',
     name: 'Corsair 7000D AIRFLOW ATX Full Tower',
     type: "case",
-    image: "/src/assets/Laptop1.png",
+    image: "https://c1.neweggimages.com/productimage/nb640/11-139-169-V01.jpg",
     price: 17119.93, // Converted from 299.99 USD to PHP
     specs: {
       "Form Factor": "ATX Full Tower",
@@ -77,7 +77,7 @@ export const caseData = [
     id: 'case-4',
     name: 'Corsair 9000D RGB AIRFLOW ATX Full',
     type: "case",
-    image: "/src/assets/Laptop1.png",
+    image: "https://c1.neweggimages.com/productimage/nb640/11-139-232-04.jpg",
     price: 22827.93, // Converted from 399.99 USD to PHP
     specs: {
       "Form Factor": "ATX Full Tower",
@@ -101,7 +101,7 @@ export const caseData = [
     id: 'case-5',
     name: 'Fractal Design North XL ATX Full',
     type: "case",
-    image: "/src/assets/Laptop1.png",
+    image: "https://c1.neweggimages.com/productimage/nb640/11-352-216-21.jpg",
     price: 14279.93, // Converted from 249.99 USD to PHP
     specs: {
       "Form Factor": "ATX Full Tower",
@@ -125,7 +125,7 @@ export const caseData = [
     id: 'case-6',
     name: 'Fractal Design Pop XL Air ATX Full',
     type: "case",
-    image: "/src/assets/Laptop1.png",
+    image: "https://c1.neweggimages.com/productimage/nb640/11-352-179-02.jpg",
     price: 10258.29, // Converted from 179.97 USD to PHP
     specs: {
       "Form Factor": "ATX Full Tower",
@@ -149,7 +149,7 @@ export const caseData = [
     id: 'case-7',
     name: 'Fractal Design Pop XL Silent ATX Full',
     type: "case",
-    image: "/src/assets/Laptop1.png",
+    image: "https://c1.neweggimages.com/productimage/nb640/11-352-182-09.jpg",
     price: 10813.93, // Converted from 189.49 USD to PHP
     specs: {
       "Form Factor": "ATX Full Tower",
@@ -173,7 +173,7 @@ export const caseData = [
     id: 'case-8',
     name: 'Lian Li O11 Dynamic EVO XL ATX Full White',
     type: "case",
-    image: "/src/assets/Laptop1.png",
+    image: "https://c1.neweggimages.com/productimage/nb640/2AM-000Z-000C5-01.jpg",
     price: 17119.93, // Converted from 299.99 USD to PHP
     specs: {
       "Form Factor": "ATX Full Tower",
@@ -197,7 +197,7 @@ export const caseData = [
     id: 'case-9',
     name: 'Lian Li O11 Dynamic EVO XL ATX Full',
     type: "case",
-    image: "/src/assets/Laptop1.png",
+    image: "https://c1.neweggimages.com/productimage/nb640/2AM-000Z-000B4-05.jpg",
     price: 17119.93, // Converted from 299.99 USD to PHP
     specs: {
       "Form Factor": "ATX Full Tower",
@@ -221,7 +221,7 @@ export const caseData = [
     id: 'case-10',
     name: 'Silverstone ALTA F2 ATX Full',
     type: "case",
-    image: "/src/assets/Laptop1.png",
+    image: "https://c1.neweggimages.com/productimage/nb640/2AM-006F-001K9-01.jpg",
     price: 14279.93, // Converted from 249.99 USD to PHP
     specs: {
       "Form Factor": "ATX Full Tower",
@@ -247,7 +247,7 @@ export const caseData = [
     id: 'case-11',
     name: 'Corsair 3500X ARGB ATX Mid Tower',
     type: "case",
-    image: "/src/assets/Laptop1.png",
+    image: "https://c1.neweggimages.com/productimage/nb640/11-139-244-01.png",
     price: 7985.93, // Converted from 139.99 USD to PHP
     specs: {
       "Form Factor": "ATX Mid Tower",
@@ -271,7 +271,7 @@ export const caseData = [
     id: 'case-12',
     name: 'Corsair 4000D Airflow ATX Mid Tower',
     type: "case",
-    image: "/src/assets/Laptop1.png",
+    image: "https://c1.neweggimages.com/productimage/nb640/11-139-156-V01.jpg",
     price: 6847.93, // Converted from 119.99 USD to PHP
     specs: {
       "Form Factor": "ATX Mid Tower",
@@ -295,7 +295,7 @@ export const caseData = [
     id: 'case-13',
     name: 'Corsair FRAME 4000D RS ARGB ATX Mid Tower',
     type: "case",
-    image: "/src/assets/Laptop1.png",
+    image: "https://c1.neweggimages.com/productimage/nb640/11-139-228-02.png",
     price: 9123.93, // Converted from 159.99 USD to PHP
     specs: {
       "Form Factor": "ATX Mid Tower",
@@ -319,7 +319,7 @@ export const caseData = [
     id: 'case-14',
     name: 'Fractal Design North ATX Mid Tower',
     type: "case",
-    image: "/src/assets/Laptop1.png",
+    image: "https://c1.neweggimages.com/productimage/nb640/11-352-204-21.jpg",
     price: 10258.29, // Converted from 179.97 USD to PHP
     specs: {
       "Form Factor": "ATX Mid Tower",
@@ -343,7 +343,7 @@ export const caseData = [
     id: 'case-15',
     name: 'HYTE Y70 Touch Infinite ATX Mid Tower Black',
     type: "case",
-    image: "/src/assets/Laptop1.png",
+    image: "https://c1.neweggimages.com/productimage/nb640/A4P0D2511101DU6H7FE.jpg",
     price: 17119.93, // Converted from 299.99 USD to PHP
     specs: {
       "Form Factor": "ATX Mid Tower",
@@ -367,7 +367,7 @@ export const caseData = [
     id: 'case-16',
     name: 'HYTE Y70 Touch Infinite ATX Mid Tower',
     type: "case",
-    image: "/src/assets/Laptop1.png",
+    image: "https://c1.neweggimages.com/productimage/nb640/11-737-018-01.jpg",
     price: 17119.93, // Converted from 299.99 USD to PHP
     specs: {
       "Form Factor": "ATX Mid Tower",
@@ -391,7 +391,7 @@ export const caseData = [
     id: 'case-17',
     name: 'Lian Li Lancool 207 ATX Mid Tower',
     type: "case",
-    image: "/src/assets/Laptop1.png",
+    image: "https://c1.neweggimages.com/productimage/nb640/2AM-000Z-000D6-01.png",
     price: 7985.93, // Converted from 139.99 USD to PHP
     specs: {
       "Form Factor": "ATX Mid Tower",
@@ -415,7 +415,7 @@ export const caseData = [
     id: 'case-18',
     name: 'Lian Li LANCOOL 217 ATX Mid Tower',
     type: "case",
-    image: "/src/assets/Laptop1.png",
+    image: "https://c1.neweggimages.com/productimage/nb640/AFSTS2504240EYWQL6E.jpg",
     price: 8559.43, // Converted from 149.99 USD to PHP
     specs: {
       "Form Factor": "ATX Mid Tower",
@@ -439,7 +439,7 @@ export const caseData = [
     id: 'case-19',
     name: 'NZXT H5 Flow (2024) ATX Mid Tower White',
     type: "case",
-    image: "/src/assets/Laptop1.png",
+    image: "https://c1.neweggimages.com/productimage/nb640/11-146-366-05.png",
     price: 6847.93, // Converted from 119.99 USD to PHP
     specs: {
       "Form Factor": "ATX Mid Tower",
@@ -463,7 +463,7 @@ export const caseData = [
     id: 'case-20',
     name: 'NZXT H5 Flow (2024) ATX Mid Tower',
     type: "case",
-    image: "/src/assets/Laptop1.png",
+    image: "https://c1.neweggimages.com/productimage/nb640/11-146-365-04.png",
     price: 6847.93, // Converted from 119.99 USD to PHP
     specs: {
       "Form Factor": "ATX Mid Tower",
@@ -488,7 +488,7 @@ export const caseData = [
   id: 'case-21',
   name: 'Antec NX200M MicroATX Mid',
   type: "case",
-  image: "/src/assets/Laptop1.png",
+  image: "https://dfestore.com/wp-content/uploads/2025/12/Untitled-1-24.jpg",
   price: 3993.93, // Converted from 69.99 USD to PHP
   specs: {
     "Form Factor": "Micro ATX Mid Tower",
@@ -512,7 +512,7 @@ export const caseData = [
   id: 'case-22',
   name: 'Cooler Master Elite 301 MicroATX Mid',
   type: "case",
-  image: "/src/assets/Laptop1.png",
+  image: "https://dfestore.com/wp-content/uploads/2025/12/Untitled-1-24.jpg",
   price: 3423.93, // Converted from 59.99 USD to PHP
   specs: {
     "Form Factor": "Micro ATX Mid Tower",
@@ -536,7 +536,7 @@ export const caseData = [
   id: 'case-23',
   name: 'Fractal Design Pop Mini Air MicroATX Mid Tower',
   type: "case",
-  image: "/src/assets/Laptop1.png",
+  image: "https://dfestore.com/wp-content/uploads/2025/12/Untitled-1-24.jpg",
   price: 5705.93, // Converted from 99.99 USD to PHP
   specs: {
     "Form Factor": "Micro ATX Mid Tower",
@@ -560,7 +560,7 @@ export const caseData = [
   id: 'case-24',
   name: 'Montech AIR 100 ARGB MicroATX Mid Tower White',
   type: "case",
-  image: "/src/assets/Laptop1.png",
+  image: "https://c1.neweggimages.com/productimage/nb640/AK91S210615ayfky.jpg",
   price: 4563.93, // Converted from 79.99 USD to PHP
   specs: {
     "Form Factor": "Micro ATX Mid Tower",
@@ -584,7 +584,7 @@ export const caseData = [
   id: 'case-25',
   name: 'Montech AIR 100 ARGB MicroATX Mid Tower',
   type: "case",
-  image: "/src/assets/Laptop1.png",
+  image: "https://c1.neweggimages.com/productimage/nb640/AK91S210615WnRJm.jpg",
   price: 4563.93, // Converted from 79.99 USD to PHP
   specs: {
     "Form Factor": "Micro ATX Mid Tower",
@@ -608,7 +608,7 @@ export const caseData = [
   id: 'case-26',
   name: 'NZXT H3 Flow MicroATX Mid Tower White',
   type: "case",
-  image: "/src/assets/Laptop1.png",
+  image: "https://dfestore.com/wp-content/uploads/2025/12/Untitled-1-24.jpg",
   price: 6847.93, // Converted from 119.99 USD to PHP
   specs: {
     "Form Factor": "Micro ATX Mid Tower",
@@ -632,7 +632,7 @@ export const caseData = [
   id: 'case-27',
   name: 'NZXT H3 Flow MicroATX Mid Tower',
   type: "case",
-  image: "/src/assets/Laptop1.png",
+  image: "https://dfestore.com/wp-content/uploads/2025/12/Untitled-1-24.jpg",
   price: 6847.93, // Converted from 119.99 USD to PHP
   specs: {
     "Form Factor": "Micro ATX Mid Tower",
@@ -656,7 +656,7 @@ export const caseData = [
   id: 'case-28',
   name: 'Phanteks XT M3 MicroATX Mid Tower White',
   type: "case",
-  image: "/src/assets/Laptop1.png",
+  image: "https://dfestore.com/wp-content/uploads/2025/12/Untitled-1-24.jpg",
   price: 5135.93, // Converted from 89.99 USD to PHP
   specs: {
     "Form Factor": "Micro ATX Mid Tower",
@@ -680,7 +680,7 @@ export const caseData = [
   id: 'case-29',
   name: 'Phanteks XT M3 MicroATX Mid Tower',
   type: "case",
-  image: "/src/assets/Laptop1.png",
+  image: "https://dfestore.com/wp-content/uploads/2025/12/Untitled-1-24.jpg",
   price: 5135.93, // Converted from 89.99 USD to PHP
   specs: {
     "Form Factor": "Micro ATX Mid Tower",
@@ -704,7 +704,7 @@ export const caseData = [
   id: 'case-30',
   name: 'Zalman T3 PLUS MicroATX Mid Tower',
   type: "case",
-  image: "/src/assets/Laptop1.png",
+  image: "https://dfestore.com/wp-content/uploads/2025/12/Untitled-1-24.jpg",
   price: 2851.43, // Converted from 49.99 USD to PHP
   specs: {
     "Form Factor": "Micro ATX Mid Tower",
@@ -730,7 +730,7 @@ export const caseData = [
   id: 'case-31',
   name: 'Asus Prime AP201 MicroATX Mini Tower',
   type: "case",
-  image: "/src/assets/Laptop1.png",
+  image: "https://c1.neweggimages.com/productimage/nb640/11-173-054-09.png",
   price: 5705.93, // Converted from 99.99 USD to PHP
   specs: {
     "Form Factor": "Micro ATX Mini Tower",
@@ -754,7 +754,7 @@ export const caseData = [
   id: 'case-32',
   name: 'Cooler Master Elite 302 MicroATX Mini Tower',
   type: "case",
-  image: "/src/assets/Laptop1.png",
+  image: "https://dfestore.com/wp-content/uploads/2025/12/Untitled-1-24.jpg",
   price: 3423.93, // Converted from 59.99 USD to PHP
   specs: {
     "Form Factor": "Micro ATX Mini Tower",
@@ -778,7 +778,7 @@ export const caseData = [
   id: 'case-33',
   name: 'Cooler Master MasterBox Q300L MicroATX Mini Tower',
   type: "case",
-  image: "/src/assets/Laptop1.png",
+  image: "https://dfestore.com/wp-content/uploads/2025/12/Untitled-1-24.jpg",
   price: 3993.93, // Converted from 69.99 USD to PHP
   specs: {
     "Form Factor": "Micro ATX Mini Tower",
@@ -802,7 +802,7 @@ export const caseData = [
   id: 'case-34',
   name: 'Cooler Master Q300L V2 MicroATX Mini Tower',
   type: "case",
-  image: "/src/assets/Laptop1.png",
+  image: "https://dfestore.com/wp-content/uploads/2025/12/Untitled-1-24.jpg",
   price: 4563.93, // Converted from 79.99 USD to PHP
   specs: {
     "Form Factor": "Micro ATX Mini Tower",
@@ -826,7 +826,7 @@ export const caseData = [
   id: 'case-35',
   name: 'Corsair 2500X MicroATX Mini Tower White',
   type: "case",
-  image: "/src/assets/Laptop1.png",
+  image: "https://dfestore.com/wp-content/uploads/2025/12/Untitled-1-24.jpg",
   price: 7985.93, // Converted from 139.99 USD to PHP
   specs: {
     "Form Factor": "Micro ATX Mini Tower",
@@ -850,7 +850,7 @@ export const caseData = [
   id: 'case-36',
   name: 'Corsair 2500X MicroATX Mini Tower',
   type: "case",
-  image: "/src/assets/Laptop1.png",
+  image: "https://dfestore.com/wp-content/uploads/2025/12/Untitled-1-24.jpg",
   price: 7985.93, // Converted from 139.99 USD to PHP
   specs: {
     "Form Factor": "Micro ATX Mini Tower",
@@ -874,7 +874,7 @@ export const caseData = [
   id: 'case-37',
   name: 'Lian Li A3-mATX MicroATX Mini Tower White',
   type: "case",
-  image: "/src/assets/Laptop1.png",
+  image: "https://dfestore.com/wp-content/uploads/2025/12/Untitled-1-24.jpg",
   price: 6847.93, // Converted from 119.99 USD to PHP
   specs: {
     "Form Factor": "Micro ATX Mini Tower",
@@ -898,7 +898,7 @@ export const caseData = [
   id: 'case-38',
   name: 'Lian Li A3-mATX MicroATX Mini Tower',
   type: "case",
-  image: "/src/assets/Laptop1.png",
+  image: "https://dfestore.com/wp-content/uploads/2025/12/Untitled-1-24.jpg",
   price: 6847.93, // Converted from 119.99 USD to PHP
   specs: {
     "Form Factor": "Micro ATX Mini Tower",
@@ -922,7 +922,7 @@ export const caseData = [
   id: 'case-39',
   name: 'Montech XSM MicroATX Mini Tower',
   type: "case",
-  image: "/src/assets/Laptop1.png",
+  image: "https://dfestore.com/wp-content/uploads/2025/12/Untitled-1-24.jpg",
   price: 4563.93, // Converted from 79.99 USD to PHP
   specs: {
     "Form Factor": "Micro ATX Mini Tower",
@@ -946,7 +946,7 @@ export const caseData = [
   id: 'case-40',
   name: 'Thermaltake Versa H18 MicroATX Mini Tower',
   type: "case",
-  image: "/src/assets/Laptop1.png",
+  image: "https://dfestore.com/wp-content/uploads/2025/12/Untitled-1-24.jpg",
   price: 3993.93, // Converted from 69.99 USD to PHP
   specs: {
     "Form Factor": "Micro ATX Mini Tower",
@@ -971,7 +971,7 @@ export const caseData = [
   id: 'case-41',
   name: 'Cooler Master MasterBox NR200 Mini ITX Desktop White',
   type: "case",
-  image: "/src/assets/Laptop1.png",
+  image: "https://dfestore.com/wp-content/uploads/2025/12/Untitled-1-24.jpg",
   price: 6847.93, // Converted from 119.99 USD to PHP
   specs: {
     "Form Factor": "Mini ITX Desktop",
@@ -995,7 +995,7 @@ export const caseData = [
   id: 'case-42',
   name: 'Cooler Master MasterBox NR200 Mini ITX Desktop',
   type: "case",
-  image: "/src/assets/Laptop1.png",
+  image: "https://dfestore.com/wp-content/uploads/2025/12/Untitled-1-24.jpg",
   price: 6847.93, // Converted from 119.99 USD to PHP
   specs: {
     "Form Factor": "Mini ITX Desktop",
@@ -1019,7 +1019,7 @@ export const caseData = [
   id: 'case-43',
   name: 'Cooler Master MasterBox NR200P V2 Mini ITX Desktop',
   type: "case",
-  image: "/src/assets/Laptop1.png",
+  image: "https://dfestore.com/wp-content/uploads/2025/12/Untitled-1-24.jpg",
   price: 7985.93, // Converted from 139.99 USD to PHP
   specs: {
     "Form Factor": "Mini ITX Desktop",
@@ -1043,7 +1043,7 @@ export const caseData = [
   id: 'case-44',
   name: 'Deepcool CH160 Mini ITX Desktop',
   type: "case",
-  image: "/src/assets/Laptop1.png",
+  image: "https://dfestore.com/wp-content/uploads/2025/12/Untitled-1-24.jpg",
   price: 5135.93, // Converted from 89.99 USD to PHP
   specs: {
     "Form Factor": "Mini ITX Desktop",
@@ -1067,7 +1067,7 @@ export const caseData = [
   id: 'case-45',
   name: 'Fractal Design Terra Mini ITX Desktop White',
   type: "case",
-  image: "/src/assets/Laptop1.png",
+  image: "https://dfestore.com/wp-content/uploads/2025/12/Untitled-1-24.jpg",
   price: 10258.29, // Converted from 179.97 USD to PHP
   specs: {
     "Form Factor": "Mini ITX Desktop",
@@ -1091,7 +1091,7 @@ export const caseData = [
   id: 'case-46',
   name: 'Fractal Design Terra Mini ITX Desktop',
   type: "case",
-  image: "/src/assets/Laptop1.png",
+  image: "https://dfestore.com/wp-content/uploads/2025/12/Untitled-1-24.jpg",
   price: 10258.29, // Converted from 179.97 USD to PHP
   specs: {
     "Form Factor": "Mini ITX Desktop",
@@ -1115,7 +1115,7 @@ export const caseData = [
   id: 'case-47',
   name: 'Lian Li A4-H20 A4 Mini ITX Desktop',
   type: "case",
-  image: "/src/assets/Laptop1.png",
+  image: "https://dfestore.com/wp-content/uploads/2025/12/Untitled-1-24.jpg",
   price: 9123.93, // Converted from 159.99 USD to PHP
   specs: {
     "Form Factor": "Mini ITX Desktop",
@@ -1139,7 +1139,7 @@ export const caseData = [
   id: 'case-48',
   name: 'Lian Li A4-H20 X4 Mini ITX Desktop',
   type: "case",
-  image: "/src/assets/Laptop1.png",
+  image: "https://dfestore.com/wp-content/uploads/2025/12/Untitled-1-24.jpg",
   price: 10258.29, // Converted from 179.97 USD to PHP
   specs: {
     "Form Factor": "Mini ITX Desktop",
@@ -1163,7 +1163,7 @@ export const caseData = [
   id: 'case-49',
   name: 'PC Cooler I100 PRO MESH Mini ITX Desktop',
   type: "case",
-  image: "/src/assets/Laptop1.png",
+  image: "https://dfestore.com/wp-content/uploads/2025/12/Untitled-1-24.jpg",
   price: 4563.93, // Converted from 79.99 USD to PHP
   specs: {
     "Form Factor": "Mini ITX Desktop",
@@ -1187,7 +1187,7 @@ export const caseData = [
   id: 'case-50',
   name: 'Thermaltake Core V1 Mini ITX Desktop',
   type: "case",
-  image: "/src/assets/Laptop1.png",
+  image: "https://dfestore.com/wp-content/uploads/2025/12/Untitled-1-24.jpg",
   price: 5705.93, // Converted from 99.99 USD to PHP
   specs: {
     "Form Factor": "Mini ITX Desktop",
@@ -1213,7 +1213,7 @@ export const caseData = [
   id: 'case-51',
   name: 'Corsair 2000D AIRFLOW Mini ITX Tower',
   type: "case",
-  image: "/src/assets/Laptop1.png",
+  image: "https://dfestore.com/wp-content/uploads/2025/12/Untitled-1-24.jpg",
   price: 8559.43, // Converted from 149.99 USD to PHP
   specs: {
     "Form Factor": "Mini ITX Tower",
@@ -1237,7 +1237,7 @@ export const caseData = [
   id: 'case-52',
   name: 'Fractal Design Era 2 Mini ITX Tower',
   type: "case",
-  image: "/src/assets/Laptop1.png",
+  image: "https://dfestore.com/wp-content/uploads/2025/12/Untitled-1-24.jpg",
   price: 9123.93, // Converted from 159.99 USD to PHP
   specs: {
     "Form Factor": "Mini ITX Tower",
@@ -1261,7 +1261,7 @@ export const caseData = [
   id: 'case-53',
   name: 'Fractal Design Mood Mini ITX Tower',
   type: "case",
-  image: "/src/assets/Laptop1.png",
+  image: "https://dfestore.com/wp-content/uploads/2025/12/Untitled-1-24.jpg",
   price: 7985.93, // Converted from 139.99 USD to PHP
   specs: {
     "Form Factor": "Mini ITX Tower",
@@ -1285,7 +1285,7 @@ export const caseData = [
   id: 'case-54',
   name: 'Fractal Design Node 304 Mini ITX Tower',
   type: "case",
-  image: "/src/assets/Laptop1.png",
+  image: "https://dfestore.com/wp-content/uploads/2025/12/Untitled-1-24.jpg",
   price: 6847.93, // Converted from 119.99 USD to PHP
   specs: {
     "Form Factor": "Mini ITX Tower",
@@ -1309,7 +1309,7 @@ export const caseData = [
   id: 'case-55',
   name: 'Fractal Design Ridge PCIe 4.0 Mini ITX Tower White',
   type: "case",
-  image: "/src/assets/Laptop1.png",
+  image: "https://dfestore.com/wp-content/uploads/2025/12/Untitled-1-24.jpg",
   price: 10258.29, // Converted from 179.97 USD to PHP
   specs: {
     "Form Factor": "Mini ITX Tower",
@@ -1333,7 +1333,7 @@ export const caseData = [
   id: 'case-56',
   name: 'Fractal Design Ridge PCIe 4.0 Mini ITX Tower',
   type: "case",
-  image: "/src/assets/Laptop1.png",
+  image: "https://dfestore.com/wp-content/uploads/2025/12/Untitled-1-24.jpg",
   price: 10258.29, // Converted from 179.97 USD to PHP
   specs: {
     "Form Factor": "Mini ITX Tower",
@@ -1357,7 +1357,7 @@ export const caseData = [
   id: 'case-57',
   name: 'HYTE REVOLT 3 Mini ITX Tower',
   type: "case",
-  image: "/src/assets/Laptop1.png",
+  image: "https://dfestore.com/wp-content/uploads/2025/12/Untitled-1-24.jpg",
   price: 8559.43, // Converted from 149.99 USD to PHP
   specs: {
     "Form Factor": "Mini ITX Tower",
@@ -1381,7 +1381,7 @@ export const caseData = [
   id: 'case-58',
   name: 'Jonsbo N10 Mini ITX Tower',
   type: "case",
-  image: "/src/assets/Laptop1.png",
+  image: "https://dfestore.com/wp-content/uploads/2025/12/Untitled-1-24.jpg",
   price: 6275.93, // Converted from 109.99 USD to PHP
   specs: {
     "Form Factor": "Mini ITX Tower",
@@ -1405,7 +1405,7 @@ export const caseData = [
   id: 'case-59',
   name: 'NCASE M1 Mini ITX Tower',
   type: "case",
-  image: "/src/assets/Laptop1.png",
+  image: "https://dfestore.com/wp-content/uploads/2025/12/Untitled-1-24.jpg",
   price: 17119.93, // Converted from 299.99 USD to PHP
   specs: {
     "Form Factor": "Mini ITX Tower",
@@ -1429,7 +1429,7 @@ export const caseData = [
   id: 'case-60',
   name: 'ZZEW A1 Plus Mini ITX Tower',
   type: "case",
-  image: "/src/assets/Laptop1.png",
+  image: "https://dfestore.com/wp-content/uploads/2025/12/Untitled-1-24.jpg",
   price: 5705.93, // Converted from 99.99 USD to PHP
   specs: {
     "Form Factor": "Mini ITX Tower",

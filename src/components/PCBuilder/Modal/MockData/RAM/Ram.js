@@ -3,7 +3,7 @@ export const ramData = [
   {
     id: 'ram-1',
     name: 'Corsair Vengeance RGB 32GB DDR5 6000MHz',
-    image: "/src/assets/Laptop1.png",
+    image: "https://dfestore.com/wp-content/uploads/2025/12/Untitled-1-24.jpg",
     price: 7410.00, // Converted from 129.99 USD to PHP
     specs: {
       "RAM Type": "DDR5",
@@ -29,7 +29,7 @@ export const ramData = [
   {
     id: 'ram-2',
     name: 'G.Skill Trident Z5 RGB 64GB DDR5 6400MHz',
-    image: "/src/assets/Laptop1.png",
+    image: "https://dfestore.com/wp-content/uploads/2025/12/Untitled-1-24.jpg",
     price: 14250.00, // Converted from 249.99 USD to PHP
     specs: {
       "RAM Type": "DDR5",
@@ -55,7 +55,7 @@ export const ramData = [
   {
     id: 'ram-3',
     name: 'Kingston FURY Beast 16GB DDR5 5200MHz',
-    image: "/src/assets/Laptop1.png",
+    image: "https://dfestore.com/wp-content/uploads/2025/12/Untitled-1-24.jpg",
     price: 4560.00, // Converted from 79.99 USD to PHP
     specs: {
       "RAM Type": "DDR5",
@@ -81,7 +81,7 @@ export const ramData = [
   {
     id: 'ram-4',
     name: 'Crucial Pro 32GB DDR4 3200MHz',
-    image: "/src/assets/Laptop1.png",
+    image: "https://dfestore.com/wp-content/uploads/2025/12/Untitled-1-24.jpg",
     price: 3990.00, // Converted from 69.99 USD to PHP
     specs: {
       "RAM Type": "DDR4",
@@ -107,7 +107,7 @@ export const ramData = [
   {
     id: 'ram-5',
     name: 'Corsair Vengeance LPX 64GB DDR4 3600MHz',
-    image: "/src/assets/Laptop1.png",
+    image: "https://dfestore.com/wp-content/uploads/2025/12/Untitled-1-24.jpg",
     price: 8550.00, // Converted from 149.99 USD to PHP
     specs: {
       "RAM Type": "DDR4",
@@ -133,7 +133,7 @@ export const ramData = [
   {
     id: 'ram-6',
     name: 'G.Skill Ripjaws V 16GB DDR4 4000MHz',
-    image: "/src/assets/Laptop1.png",
+    image: "https://dfestore.com/wp-content/uploads/2025/12/Untitled-1-24.jpg",
     price: 5130.00, // Converted from 89.99 USD to PHP
     specs: {
       "RAM Type": "DDR4",
@@ -159,7 +159,7 @@ export const ramData = [
   {
     id: 'ram-7',
     name: 'Teamgroup T-Force Delta RGB 32GB DDR4 3600MHz',
-    image: "/src/assets/Laptop1.png",
+    image: "https://dfestore.com/wp-content/uploads/2025/12/Untitled-1-24.jpg",
     price: 4560.00, // Converted from 79.99 USD to PHP
     specs: {
       "RAM Type": "DDR4",
@@ -185,7 +185,7 @@ export const ramData = [
   {
     id: 'ram-8',
     name: 'Samsung 32GB DDR5 4800MHz ECC Registered',
-    image: "/src/assets/Laptop1.png",
+    image: "https://dfestore.com/wp-content/uploads/2025/12/Untitled-1-24.jpg",
     price: 11400.00, // Converted from 199.99 USD to PHP
     specs: {
       "RAM Type": "DDR5",
@@ -211,7 +211,7 @@ export const ramData = [
   {
     id: 'ram-9',
     name: 'HyperX Fury 8GB DDR3 1866MHz',
-    image: "/src/assets/Laptop1.png",
+    image: "https://dfestore.com/wp-content/uploads/2025/12/Untitled-1-24.jpg",
     price: 2280.00, // Converted from 39.99 USD to PHP
     specs: {
       "RAM Type": "DDR3",
@@ -237,7 +237,7 @@ export const ramData = [
   {
     id: 'ram-10',
     name: 'Patriot Viper Steel 128GB DDR4 3600MHz',
-    image: "/src/assets/Laptop1.png",
+    image: "https://dfestore.com/wp-content/uploads/2025/12/Untitled-1-24.jpg",
     price: 17100.00, // Converted from 299.99 USD to PHP
     specs: {
       "RAM Type": "DDR4",
@@ -263,7 +263,7 @@ export const ramData = [
   {
     id: 'ram-11',
     name: 'OLOy Blade RGB 16GB DDR5 7200MHz',
-    image: "/src/assets/Laptop1.png",
+    image: "https://dfestore.com/wp-content/uploads/2025/12/Untitled-1-24.jpg",
     price: 6840.00, // Converted from 119.99 USD to PHP
     specs: {
       "RAM Type": "DDR5",
@@ -289,7 +289,7 @@ export const ramData = [
   {
     id: 'ram-12',
     name: 'Silicon Power Zenith 64GB DDR5 6000MHz',
-    image: "/src/assets/Laptop1.png",
+    image: "https://dfestore.com/wp-content/uploads/2025/12/Untitled-1-24.jpg",
     price: 11400.00, // Converted from 199.99 USD to PHP
     specs: {
       "RAM Type": "DDR5",
@@ -315,7 +315,7 @@ export const ramData = [
   {
     id: 'ram-13',
     name: 'ADATA XPG Lancer 32GB DDR5 8000MHz',
-    image: "/src/assets/Laptop1.png",
+    image: "https://dfestore.com/wp-content/uploads/2025/12/Untitled-1-24.jpg",
     price: 10260.00, // Converted from 179.99 USD to PHP
     specs: {
       "RAM Type": "DDR5",
@@ -341,7 +341,7 @@ export const ramData = [
   {
     id: 'ram-14',
     name: 'Micron 16GB DDR4 2666MHz SODIMM',
-    image: "/src/assets/Laptop1.png",
+    image: "https://dfestore.com/wp-content/uploads/2025/12/Untitled-1-24.jpg",
     price: 2850.00, // Converted from 49.99 USD to PHP
     specs: {
       "RAM Type": "DDR4",
@@ -367,7 +367,7 @@ export const ramData = [
   {
     id: 'ram-15',
     name: 'G.Skill Trident Z Neo 32GB DDR4 3800MHz',
-    image: "/src/assets/Laptop1.png",
+    image: "https://dfestore.com/wp-content/uploads/2025/12/Untitled-1-24.jpg",
     price: 7410.00, // Converted from 129.99 USD to PHP
     specs: {
       "RAM Type": "DDR4",
@@ -393,7 +393,7 @@ export const ramData = [
   {
     id: 'ram-16',
     name: 'Kingston ValueRAM 8GB DDR3 1600MHz',
-    image: "/src/assets/Laptop1.png",
+    image: "https://dfestore.com/wp-content/uploads/2025/12/Untitled-1-24.jpg",
     price: 1710.00, // Converted from 29.99 USD to PHP
     specs: {
       "RAM Type": "DDR3",
@@ -419,7 +419,7 @@ export const ramData = [
   {
     id: 'ram-17',
     name: 'Corsair Dominator Platinum 64GB DDR5 6600MHz',
-    image: "/src/assets/Laptop1.png",
+    image: "https://dfestore.com/wp-content/uploads/2025/12/Untitled-1-24.jpg",
     price: 19950.00, // Converted from 349.99 USD to PHP
     specs: {
       "RAM Type": "DDR5",
@@ -445,7 +445,7 @@ export const ramData = [
   {
     id: 'ram-18',
     name: 'Teamgroup Vulcan Z 16GB DDR4 3200MHz',
-    image: "/src/assets/Laptop1.png",
+    image: "https://dfestore.com/wp-content/uploads/2025/12/Untitled-1-24.jpg",
     price: 3500.99,
     specs: {
       "RAM Type": "DDR4",
@@ -471,7 +471,7 @@ export const ramData = [
   {
     id: 'ram-19',
     name: 'Samsung 128GB DDR4 3200MHz ECC Registered',
-    image: "/src/assets/Laptop1.png",
+    image: "https://dfestore.com/wp-content/uploads/2025/12/Untitled-1-24.jpg",
     price: 36999.99,
     specs: {
       "RAM Type": "DDR4",
@@ -497,7 +497,7 @@ export const ramData = [
   {
     id: 'ram-20',
     name: 'GeIL Orion RGB 32GB DDR5 5600MHz',
-    image: "/src/assets/Laptop1.png",
+    image: "https://dfestore.com/wp-content/uploads/2025/12/Untitled-1-24.jpg",
     price: 5999.99,
     specs: {
       "RAM Type": "DDR5",

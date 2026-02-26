@@ -3,7 +3,7 @@ export const webcamData = [
   {
     id: 'webcam-1',
     name: 'Logitech Brio 4K Ultra HD Webcam',
-    image: "/src/assets/Laptop1.png",
+    image: "https://dfestore.com/wp-content/uploads/2025/12/Untitled-1-24.jpg",
     price: 11433.43,
     specs: {
       "Brand": "Logitech",
@@ -28,7 +28,7 @@ export const webcamData = [
   {
     id: 'webcam-2',
     name: 'Razer Kiyo Pro Ultra 4K Webcam',
-    image: "/src/assets/Laptop1.png",
+    image: "https://dfestore.com/wp-content/uploads/2025/12/Untitled-1-24.jpg",
     price: 17152.13,
     specs: {
       "Brand": "Razer",
@@ -53,7 +53,7 @@ export const webcamData = [
   {
     id: 'webcam-3',
     name: 'Logitech C920x HD Pro Webcam',
-    image: "/src/assets/Laptop1.png",
+    image: "https://dfestore.com/wp-content/uploads/2025/12/Untitled-1-24.jpg",
     price: 5717.17,
     specs: {
       "Brand": "Logitech",
@@ -78,7 +78,7 @@ export const webcamData = [
   {
     id: 'webcam-4',
     name: 'Elgato Facecam Professional 1080p Webcam',
-    image: "/src/assets/Laptop1.png",
+    image: "https://dfestore.com/wp-content/uploads/2025/12/Untitled-1-24.jpg",
     price: 10287.03,
     specs: {
       "Brand": "Elgato",
@@ -103,7 +103,7 @@ export const webcamData = [
   {
     id: 'webcam-5',
     name: 'Microsoft LifeCam Studio 1080p HD Webcam',
-    image: "/src/assets/Laptop1.png",
+    image: "https://dfestore.com/wp-content/uploads/2025/12/Untitled-1-24.jpg",
     price: 5141.47,
     specs: {
       "Brand": "Microsoft",
@@ -128,7 +128,7 @@ export const webcamData = [
   {
     id: 'webcam-6',
     name: 'Anker PowerConf C200 2K Webcam',
-    image: "/src/assets/Laptop1.png",
+    image: "https://dfestore.com/wp-content/uploads/2025/12/Untitled-1-24.jpg",
     price: 4573.43,
     specs: {
       "Brand": "Anker",
@@ -153,7 +153,7 @@ export const webcamData = [
   {
     id: 'webcam-7',
     name: 'NexiGo N60 1080p Webcam with Ring Light',
-    image: "/src/assets/Laptop1.png",
+    image: "https://dfestore.com/wp-content/uploads/2025/12/Untitled-1-24.jpg",
     price: 2859.73,
     specs: {
       "Brand": "NexiGo",
@@ -178,7 +178,7 @@ export const webcamData = [
   {
     id: 'webcam-8',
     name: 'Creative Live! Cam Sync 1080p V2 Webcam',
-    image: "/src/assets/Laptop1.png",
+    image: "https://dfestore.com/wp-content/uploads/2025/12/Untitled-1-24.jpg",
     price: 2284.03,
     specs: {
       "Brand": "Creative",
@@ -203,7 +203,7 @@ export const webcamData = [
   {
     id: 'webcam-9',
     name: 'ASUS Webcam C3 1080p HD Webcam',
-    image: "/src/assets/Laptop1.png",
+    image: "https://dfestore.com/wp-content/uploads/2025/12/Untitled-1-24.jpg",
     price: 3994.63,
     specs: {
       "Brand": "ASUS",
@@ -228,7 +228,7 @@ export const webcamData = [
   {
     id: 'webcam-10',
     name: 'OBSBOT Tiny 2 4K AI Webcam',
-    image: "/src/assets/Laptop1.png",
+    image: "https://dfestore.com/wp-content/uploads/2025/12/Untitled-1-24.jpg",
     price: 17152.13,
     specs: {
       "Brand": "OBSBOT",
@@ -253,7 +253,7 @@ export const webcamData = [
   {
     id: 'webcam-11',
     name: 'Logitech StreamCam Premium 1080p Webcam',
-    image: "/src/assets/Laptop1.png",
+    image: "https://dfestore.com/wp-content/uploads/2025/12/Untitled-1-24.jpg",
     price: 9712.87,
     specs: {
       "Brand": "Logitech",
@@ -278,7 +278,7 @@ export const webcamData = [
   {
     id: 'webcam-12',
     name: 'Razer Kiyo X 1080p Webcam',
-    image: "/src/assets/Laptop1.png",
+    image: "https://dfestore.com/wp-content/uploads/2025/12/Untitled-1-24.jpg",
     price: 3430.13,
     specs: {
       "Brand": "Razer",
@@ -303,7 +303,7 @@ export const webcamData = [
   {
     id: 'webcam-13',
     name: 'AUKEY PC-LM1 1080p Webcam',
-    image: "/src/assets/Laptop1.png",
+    image: "https://dfestore.com/wp-content/uploads/2025/12/Untitled-1-24.jpg",
     price: 1998.77,
     specs: {
       "Brand": "AUKEY",
@@ -328,7 +328,7 @@ export const webcamData = [
   {
     id: 'webcam-14',
     name: 'Insta360 Link AI-Powered 4K Webcam',
-    image: "/src/assets/Laptop1.png",
+    image: "https://dfestore.com/wp-content/uploads/2025/12/Untitled-1-24.jpg",
     price: 17152.13,
     specs: {
       "Brand": "Insta360",
@@ -353,7 +353,7 @@ export const webcamData = [
   {
     id: 'webcam-15',
     name: 'Wansview 1080p Webcam with Microphone',
-    image: "/src/assets/Laptop1.png",
+    image: "https://dfestore.com/wp-content/uploads/2025/12/Untitled-1-24.jpg",
     price: 1714.97,
     specs: {
       "Brand": "Wansview",
@@ -378,7 +378,7 @@ export const webcamData = [
   {
     id: 'webcam-16',
     name: 'Logitech for Creators Mevo Start Wireless Webcam',
-    image: "/src/assets/Laptop1.png",
+    image: "https://dfestore.com/wp-content/uploads/2025/12/Untitled-1-24.jpg",
     price: 11433.43,
     specs: {
       "Brand": "Logitech for Creators",
@@ -403,7 +403,7 @@ export const webcamData = [
   {
     id: 'webcam-17',
     name: 'AVerMedia PW513 1080p Webcam',
-    image: "/src/assets/Laptop1.png",
+    image: "https://dfestore.com/wp-content/uploads/2025/12/Untitled-1-24.jpg",
     price: 5141.47,
     specs: {
       "Brand": "AVerMedia",
@@ -428,7 +428,7 @@ export const webcamData = [
   {
     id: 'webcam-18',
     name: 'Green Extreme 4K Webcam with Ring Light',
-    image: "/src/assets/Laptop1.png",
+    image: "https://dfestore.com/wp-content/uploads/2025/12/Untitled-1-24.jpg",
     price: 7420.93,
     specs: {
       "Brand": "Green Extreme",
@@ -453,7 +453,7 @@ export const webcamData = [
   {
     id: 'webcam-19',
     name: 'Adesso Cybertrack H4 1080p Webcam',
-    image: "/src/assets/Laptop1.png",
+    image: "https://dfestore.com/wp-content/uploads/2025/12/Untitled-1-24.jpg",
     price: 2859.73,
     specs: {
       "Brand": "Adesso",
@@ -478,7 +478,7 @@ export const webcamData = [
   {
     id: 'webcam-20',
     name: 'VDO360 4K Conference Webcam',
-    image: "/src/assets/Laptop1.png",
+    image: "https://dfestore.com/wp-content/uploads/2025/12/Untitled-1-24.jpg",
     price: 14291.33,
     specs: {
       "Brand": "VDO360",

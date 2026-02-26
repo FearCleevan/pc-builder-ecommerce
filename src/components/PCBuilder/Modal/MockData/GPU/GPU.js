@@ -3,7 +3,7 @@ export const gpuData = [
   {
     id: 'gpu-1',
     name: 'NVIDIA GeForce RTX 4090 24GB',
-    image: "/src/assets/Laptop1.png",
+    image: "https://dfestore.com/wp-content/uploads/2025/12/Untitled-1-24.jpg",
     price: 91200.00, // Converted from 1599.99 USD to PHP
     specs: {
       "Chipset": "GeForce RTX 4090",
@@ -27,7 +27,7 @@ export const gpuData = [
   {
     id: 'gpu-2',
     name: 'AMD Radeon RX 7900 XTX 24GB',
-    image: "/src/assets/Laptop1.png",
+    image: "https://dfestore.com/wp-content/uploads/2025/12/Untitled-1-24.jpg",
     price: 57000.00, // Converted from 999.99 USD to PHP
     specs: {
       "Chipset": "Radeon RX 7900 XTX",
@@ -51,7 +51,7 @@ export const gpuData = [
   {
     id: 'gpu-3',
     name: 'NVIDIA GeForce RTX 4080 SUPER 16GB',
-    image: "/src/assets/Laptop1.png",
+    image: "https://dfestore.com/wp-content/uploads/2025/12/Untitled-1-24.jpg",
     price: 68400.00, // Converted from 1199.99 USD to PHP
     specs: {
       "Chipset": "GeForce RTX 4080 SUPER",
@@ -75,7 +75,7 @@ export const gpuData = [
   {
     id: 'gpu-4',
     name: 'AMD Radeon RX 7800 XT 16GB',
-    image: "/src/assets/Laptop1.png",
+    image: "https://dfestore.com/wp-content/uploads/2025/12/Untitled-1-24.jpg",
     price: 28500.00, // Converted from 499.99 USD to PHP
     specs: {
       "Chipset": "Radeon RX 7800 XT",
@@ -99,7 +99,7 @@ export const gpuData = [
   {
     id: 'gpu-5',
     name: 'NVIDIA GeForce RTX 4070 Ti SUPER 16GB',
-    image: "/src/assets/Laptop1.png",
+    image: "https://dfestore.com/wp-content/uploads/2025/12/Untitled-1-24.jpg",
     price: 45600.00, // Converted from 799.99 USD to PHP
     specs: {
       "Chipset": "GeForce RTX 4070 Ti SUPER",
@@ -123,7 +123,7 @@ export const gpuData = [
   {
     id: 'gpu-6',
     name: 'Intel Arc A770 16GB',
-    image: "/src/assets/Laptop1.png",
+    image: "https://dfestore.com/wp-content/uploads/2025/12/Untitled-1-24.jpg",
     price: 18810.00, // Converted from 329.99 USD to PHP
     specs: {
       "Chipset": "Arc A770",
@@ -147,7 +147,7 @@ export const gpuData = [
   {
     id: 'gpu-7',
     name: 'NVIDIA GeForce RTX 4060 Ti 8GB',
-    image: "/src/assets/Laptop1.png",
+    image: "https://dfestore.com/wp-content/uploads/2025/12/Untitled-1-24.jpg",
     price: 22800.00, // Converted from 399.99 USD to PHP
     specs: {
       "Chipset": "GeForce RTX 4060 Ti",
@@ -171,7 +171,7 @@ export const gpuData = [
   {
     id: 'gpu-8',
     name: 'AMD Radeon RX 7600 8GB',
-    image: "/src/assets/Laptop1.png",
+    image: "https://dfestore.com/wp-content/uploads/2025/12/Untitled-1-24.jpg",
     price: 15390.00, // Converted from 269.99 USD to PHP
     specs: {
       "Chipset": "Radeon RX 7600",
@@ -195,7 +195,7 @@ export const gpuData = [
   {
     id: 'gpu-9',
     name: 'NVIDIA GeForce RTX 3060 12GB',
-    image: "/src/assets/Laptop1.png",
+    image: "https://dfestore.com/wp-content/uploads/2025/12/Untitled-1-24.jpg",
     price: 17100.00, // Converted from 299.99 USD to PHP
     specs: {
       "Chipset": "GeForce RTX 3060",
@@ -219,7 +219,7 @@ export const gpuData = [
   {
     id: 'gpu-10',
     name: 'AMD Radeon RX 6700 XT 12GB',
-    image: "/src/assets/Laptop1.png",
+    image: "https://dfestore.com/wp-content/uploads/2025/12/Untitled-1-24.jpg",
     price: 19950.00, // Converted from 349.99 USD to PHP
     specs: {
       "Chipset": "Radeon RX 6700 XT",
@@ -243,7 +243,7 @@ export const gpuData = [
   {
     id: 'gpu-11',
     name: 'NVIDIA GeForce RTX 3080 10GB',
-    image: "/src/assets/Laptop1.png",
+    image: "https://dfestore.com/wp-content/uploads/2025/12/Untitled-1-24.jpg",
     price: 39900.00, // Converted from 699.99 USD to PHP
     specs: {
       "Chipset": "GeForce RTX 3080",
@@ -267,7 +267,7 @@ export const gpuData = [
   {
     id: 'gpu-12',
     name: 'AMD Radeon RX 6600 XT 8GB',
-    image: "/src/assets/Laptop1.png",
+    image: "https://dfestore.com/wp-content/uploads/2025/12/Untitled-1-24.jpg",
     price: 14250.00, // Converted from 249.99 USD to PHP
     specs: {
       "Chipset": "Radeon RX 6600 XT",
@@ -291,7 +291,7 @@ export const gpuData = [
   {
     id: 'gpu-13',
     name: 'NVIDIA GeForce GTX 1660 SUPER 6GB',
-    image: "/src/assets/Laptop1.png",
+    image: "https://dfestore.com/wp-content/uploads/2025/12/Untitled-1-24.jpg",
     price: 11400.00, // Converted from 199.99 USD to PHP
     specs: {
       "Chipset": "GeForce GTX 1660 SUPER",
@@ -315,7 +315,7 @@ export const gpuData = [
   {
     id: 'gpu-14',
     name: 'AMD Radeon RX 5700 XT 8GB',
-    image: "/src/assets/Laptop1.png",
+    image: "https://dfestore.com/wp-content/uploads/2025/12/Untitled-1-24.jpg",
     price: 15960.00, // Converted from 279.99 USD to PHP
     specs: {
       "Chipset": "Radeon RX 5700 XT",
@@ -339,7 +339,7 @@ export const gpuData = [
   {
     id: 'gpu-15',
     name: 'NVIDIA GeForce RTX 3050 8GB',
-    image: "/src/assets/Laptop1.png",
+    image: "https://dfestore.com/wp-content/uploads/2025/12/Untitled-1-24.jpg",
     price: 14250.00, // Converted from 249.99 USD to PHP
     specs: {
       "Chipset": "GeForce RT極力 3050",
@@ -363,7 +363,7 @@ export const gpuData = [
   {
     id: 'gpu-16',
     name: 'Intel Arc A750 8GB',
-    image: "/src/assets/Laptop1.png",
+    image: "https://dfestore.com/wp-content/uploads/2025/12/Untitled-1-24.jpg",
     price: 13110.00, // Converted from 229.99 USD to PHP
     specs: {
       "Chipset": "Arc A750",
@@ -387,7 +387,7 @@ export const gpuData = [
   {
     id: 'gpu-17',
     name: 'NVIDIA GeForce RTX 3090 Ti 24GB',
-    image: "/src/assets/Laptop1.png",
+    image: "https://dfestore.com/wp-content/uploads/2025/12/Untitled-1-24.jpg",
     price: 74100.00, // Converted from 1299.99 USD to PHP
     specs: {
       "Chipset": "GeForce RTX 3090 Ti",
@@ -411,7 +411,7 @@ export const gpuData = [
   {
     id: 'gpu-18',
     name: 'AMD Radeon RX 6950 XT 16GB',
-    image: "/src/assets/Laptop1.png",
+    image: "https://dfestore.com/wp-content/uploads/2025/12/Untitled-1-24.jpg",
     price: 37050.00, // Converted from 649.99 USD to PHP
     specs: {
       "Chipset": "Radeon RX 6950 XT",
@@ -435,7 +435,7 @@ export const gpuData = [
   {
     id: 'gpu-19',
     name: 'NVIDIA GeForce GTX 1650 4GB',
-    image: "/src/assets/Laptop1.png",
+    image: "https://dfestore.com/wp-content/uploads/2025/12/Untitled-1-24.jpg",
     price: 8550.00, // Converted from 149.99 USD to PHP
     specs: {
       "Chipset": "GeForce GTX 1650",
@@ -459,7 +459,7 @@ export const gpuData = [
   {
     id: 'gpu-20',
     name: 'AMD Radeon RX 6400 4GB',
-    image: "/src/assets/Laptop1.png",
+    image: "https://dfestore.com/wp-content/uploads/2025/12/Untitled-1-24.jpg",
     price: 7410.00, // Converted from 129.99 USD to PHP
     specs: {
       "Chipset": "Radeon RX 6400",

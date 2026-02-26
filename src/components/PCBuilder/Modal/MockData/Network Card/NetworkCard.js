@@ -3,7 +3,7 @@ export const networkCardData = [
     id: "net-1",
     name: "TP-Link Archer TX3000E Wi-Fi 6 + Bluetooth",
     type: "wireless-networking",
-    image: "/src/assets/Laptop1.png",
+    image: "https://dfestore.com/wp-content/uploads/2025/12/Untitled-1-24.jpg",
     price: 2890,
     specs: {
       Manufacturer: "TP-Link",
@@ -18,7 +18,7 @@ export const networkCardData = [
     id: "net-2",
     name: "ASUS XG-C100C 10Gb Ethernet Adapter",
     type: "wired-networking",
-    image: "/src/assets/Laptop1.png",
+    image: "https://dfestore.com/wp-content/uploads/2025/12/Untitled-1-24.jpg",
     price: 5790,
     specs: {
       Manufacturer: "ASUS",
@@ -33,7 +33,7 @@ export const networkCardData = [
     id: "net-3",
     name: "Intel AX210 Wi-Fi 6E PCIe Adapter",
     type: "wireless-networking",
-    image: "/src/assets/Laptop1.png",
+    image: "https://dfestore.com/wp-content/uploads/2025/12/Untitled-1-24.jpg",
     price: 3490,
     specs: {
       Manufacturer: "Intel",

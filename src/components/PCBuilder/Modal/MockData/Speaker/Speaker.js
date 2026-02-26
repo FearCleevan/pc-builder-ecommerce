@@ -3,7 +3,7 @@ export const speakerData = [
   {
     id: 'speaker-1',
     name: 'Logitech G560 LIGHTSYNC PC Gaming Speakers',
-    image: "/src/assets/Laptop1.png",
+    image: "https://dfestore.com/wp-content/uploads/2025/12/Untitled-1-24.jpg",
     price: 11499.95, // 199.99 USD * 57.5 PHP
     specs: {
       "Brand": "Logitech",
@@ -29,7 +29,7 @@ export const speakerData = [
   {
     id: 'speaker-2',
     name: 'Audioengine A2+ Wireless Speakers',
-    image: "/src/assets/Laptop1.png",
+    image: "https://dfestore.com/wp-content/uploads/2025/12/Untitled-1-24.jpg",
     price: 15467.50, // 269.00 USD * 57.5 PHP
     specs: {
       "Brand": "Audioengine",
@@ -54,7 +54,7 @@ export const speakerData = [
   {
     id: 'speaker-3',
     name: 'Klipsch ProMedia 2.1 THX Certified Computer Speakers',
-    image: "/src/assets/Laptop1.png",
+    image: "https://dfestore.com/wp-content/uploads/2025/12/Untitled-1-24.jpg",
     price: 8624.93, // 149.99 USD * 57.5 PHP
     specs: {
       "Brand": "Klipsch",
@@ -80,7 +80,7 @@ export const speakerData = [
   {
     id: 'speaker-4',
     name: 'Razer Nommo Pro THX 2.1 Gaming Speakers',
-    image: "/src/assets/Laptop1.png",
+    image: "https://dfestore.com/wp-content/uploads/2025/12/Untitled-1-24.jpg",
     price: 28749.43, // 499.99 USD * 57.5 PHP
     specs: {
       "Brand": "Razer",
@@ -106,7 +106,7 @@ export const speakerData = [
   {
     id: 'speaker-5',
     name: 'Edifier R1280T Powered Bookshelf Speakers',
-    image: "/src/assets/Laptop1.png",
+    image: "https://dfestore.com/wp-content/uploads/2025/12/Untitled-1-24.jpg",
     price: 5749.43, // 99.99 USD * 57.5 PHP
     specs: {
       "Brand": "Edifier",
@@ -131,7 +131,7 @@ export const speakerData = [
   {
     id: 'speaker-6',
     name: 'Bose Companion 2 Series III Multimedia Speakers',
-    image: "/src/assets/Laptop1.png",
+    image: "https://dfestore.com/wp-content/uploads/2025/12/Untitled-1-24.jpg",
     price: 5692.50, // 99.00 USD * 57.5 PHP
     specs: {
       "Brand": "Bose",
@@ -156,7 +156,7 @@ export const speakerData = [
   {
     id: 'speaker-7',
     name: 'Creative Pebble Pro 2.0 USB-C Desktop Speakers',
-    image: "/src/assets/Laptop1.png",
+    image: "https://dfestore.com/wp-content/uploads/2025/12/Untitled-1-24.jpg",
     price: 2874.43, // 49.99 USD * 57.5 PHP
     specs: {
       "Brand": "Creative",
@@ -181,7 +181,7 @@ export const speakerData = [
   {
     id: 'speaker-8',
     name: 'Presonus Eris E3.5 BT Studio Monitors',
-    image: "/src/assets/Laptop1.png",
+    image: "https://dfestore.com/wp-content/uploads/2025/12/Untitled-1-24.jpg",
     price: 8624.43, // 149.99 USD * 57.5 PHP
     specs: {
       "Brand": "Presonus",
@@ -206,7 +206,7 @@ export const speakerData = [
   {
     id: 'speaker-9',
     name: 'JBL Professional 305P MkII Studio Monitors',
-    image: "/src/assets/Laptop1.png",
+    image: "https://dfestore.com/wp-content/uploads/2025/12/Untitled-1-24.jpg",
     price: 17249.43, // 299.99 USD * 57.5 PHP
     specs: {
       "Brand": "JBL",
@@ -231,7 +231,7 @@ export const speakerData = [
   {
     id: 'speaker-10',
     name: 'Corsair SP2500 2.1 High-Powered PC Speakers',
-    image: "/src/assets/Laptop1.png",
+    image: "https://dfestore.com/wp-content/uploads/2025/12/Untitled-1-24.jpg",
     price: 14374.43, // 249.99 USD * 57.5 PHP
     specs: {
       "Brand": "Corsair",
@@ -257,7 +257,7 @@ export const speakerData = [
   {
     id: 'speaker-11',
     name: 'Yamaha HS5 Powered Studio Monitor',
-    image: "/src/assets/Laptop1.png",
+    image: "https://dfestore.com/wp-content/uploads/2025/12/Untitled-1-24.jpg",
     price: 11499.43, // 199.99 USD * 57.5 PHP
     specs: {
       "Brand": "Yamaha",
@@ -282,7 +282,7 @@ export const speakerData = [
   {
     id: 'speaker-12',
     name: 'Kanto YU2 Powered Desktop Speakers',
-    image: "/src/assets/Laptop1.png",
+    image: "https://dfestore.com/wp-content/uploads/2025/12/Untitled-1-24.jpg",
     price: 10349.43, // 179.99 USD * 57.5 PHP
     specs: {
       "Brand": "Kanto",
@@ -307,7 +307,7 @@ export const speakerData = [
   {
     id: 'speaker-13',
     name: 'Harman Kardon SoundSticks 4 Wireless Speaker System',
-    image: "/src/assets/Laptop1.png",
+    image: "https://dfestore.com/wp-content/uploads/2025/12/Untitled-1-24.jpg",
     price: 11497.13, // 199.95 USD * 57.5 PHP
     specs: {
       "Brand": "Harman Kardon",
@@ -333,7 +333,7 @@ export const speakerData = [
   {
     id: 'speaker-14',
     name: 'Sony SRS-RA5000 Wireless Speaker',
-    image: "/src/assets/Laptop1.png",
+    image: "https://dfestore.com/wp-content/uploads/2025/12/Untitled-1-24.jpg",
     price: 40249.43, // 699.99 USD * 57.5 PHP
     specs: {
       "Brand": "Sony",
@@ -358,7 +358,7 @@ export const speakerData = [
   {
     id: 'speaker-15',
     name: 'KRK Rokit 5 G4 Studio Monitor',
-    image: "/src/assets/Laptop1.png",
+    image: "https://dfestore.com/wp-content/uploads/2025/12/Untitled-1-24.jpg",
     price: 10349.43, // 179.99 USD * 57.5 PHP
     specs: {
       "Brand": "KRK",
@@ -383,7 +383,7 @@ export const speakerData = [
   {
     id: 'speaker-16',
     name: 'Cyber Acoustics CA-3090 2.1 Speaker System',
-    image: "/src/assets/Laptop1.png",
+    image: "https://dfestore.com/wp-content/uploads/2025/12/Untitled-1-24.jpg",
     price: 1724.43, // 29.99 USD * 57.5 PHP
     specs: {
       "Brand": "Cyber Acoustics",
@@ -409,7 +409,7 @@ export const speakerData = [
   {
     id: 'speaker-17',
     name: 'Mackie CR-X Series CR3-X 3" Creative Reference Multimedia Monitors',
-    image: "/src/assets/Laptop1.png",
+    image: "https://dfestore.com/wp-content/uploads/2025/12/Untitled-1-24.jpg",
     price: 5749.43, // 99.99 USD * 57.5 PHP
     specs: {
       "Brand": "Mackie",
@@ -434,7 +434,7 @@ export const speakerData = [
   {
     id: 'speaker-18',
     name: 'Vanatoo Transparent Zero Powered Speakers',
-    image: "/src/assets/Laptop1.png",
+    image: "https://dfestore.com/wp-content/uploads/2025/12/Untitled-1-24.jpg",
     price: 20642.50, // 359.00 USD * 57.5 PHP
     specs: {
       "Brand": "Vanatoo",
@@ -459,7 +459,7 @@ export const speakerData = [
   {
     id: 'speaker-19',
     name: 'Genius SW-G2.1 1250 2.1 Gaming Speakers',
-    image: "/src/assets/Laptop1.png",
+    image: "https://dfestore.com/wp-content/uploads/2025/12/Untitled-1-24.jpg",
     price: 2299.43, // 39.99 USD * 57.5 PHP
     specs: {
       "Brand": "Genius",
@@ -485,7 +485,7 @@ export const speakerData = [
   {
     id: 'speaker-20',
     name: 'Fluance Ai41 Powered Bookshelf Speakers',
-    image: "/src/assets/Laptop1.png",
+    image: "https://dfestore.com/wp-content/uploads/2025/12/Untitled-1-24.jpg",
     price: 14374.43, // 249.99 USD * 57.5 PHP
     specs: {
       "Brand": "Fluance",

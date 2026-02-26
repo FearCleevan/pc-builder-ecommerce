@@ -3,7 +3,7 @@ export const cpuData = [
   {
     id: 'cpu-1',
     name: 'AMD Ryzen 9 7950X',
-    image: "/src/assets/Laptop1.png",
+    image: "https://c1.neweggimages.com/productimage/nb640/19-113-771-09.jpg",
     price: 34200.00,
     specs: {
       "Socket": "AM5",
@@ -23,7 +23,7 @@ export const cpuData = [
   {
     id: 'cpu-2',
     name: 'Intel Core i9-13900K',
-    image: "/src/assets/Laptop1.png",
+    image: "https://c1.neweggimages.com/productimage/nb640/19-118-412-V01.jpg",
     price: 33630.00,
     specs: {
       "Socket": "LGA1700",
@@ -43,7 +43,7 @@ export const cpuData = [
   {
     id: 'cpu-3',
     name: 'AMD Ryzen 7 7800X3D',
-    image: "/src/assets/Laptop1.png",
+    image: "https://c1.neweggimages.com/productimage/nb640/19-113-793-03.png",
     price: 25650.00,
     specs: {
       "Socket": "AM5",
@@ -63,7 +63,7 @@ export const cpuData = [
   {
     id: 'cpu-4',
     name: 'Intel Core i7-13700K',
-    image: "/src/assets/Laptop1.png",
+    image: "https://c1.neweggimages.com/productimage/nb640/19-118-414-V01.jpg",
     price: 23940.00,
     specs: {
       "Socket": "LGA1700",
@@ -83,7 +83,7 @@ export const cpuData = [
   {
     id: 'cpu-5',
     name: 'AMD Ryzen 5 7600X',
-    image: "/src/assets/Laptop1.png",
+    image: "https://c1.neweggimages.com/productimage/nb640/19-113-770-02.jpg",
     price: 17100.00,
     specs: {
       "Socket": "AM5",
@@ -103,7 +103,7 @@ export const cpuData = [
   {
     id: 'cpu-6',
     name: 'Intel Core i5-13600K',
-    image: "/src/assets/Laptop1.png",
+    image: "https://c1.neweggimages.com/productimage/nb640/19-118-413-V01.jpg",
     price: 18240.00,
     specs: {
       "Socket": "LGA1700",
@@ -123,7 +123,7 @@ export const cpuData = [
   {
     id: 'cpu-7',
     name: 'AMD Ryzen 9 5950X',
-    image: "/src/assets/Laptop1.png",
+    image: "https://c1.neweggimages.com/productimage/nb640/19-113-808-11.jpg",
     price: 28500.00,
     specs: {
       "Socket": "AM4",
@@ -143,7 +143,7 @@ export const cpuData = [
   {
     id: 'cpu-8',
     name: 'Intel Core i9-12900K',
-    image: "/src/assets/Laptop1.png",
+    image: "https://c1.neweggimages.com/productimage/nb640/19-118-344-V01.jpg",
     price: 25650.00,
     specs: {
       "Socket": "LGA1700",
@@ -163,7 +163,7 @@ export const cpuData = [
   {
     id: 'cpu-9',
     name: 'AMD Ryzen 7 5800X3D',
-    image: "/src/assets/Laptop1.png",
+    image: "https://c1.neweggimages.com/productimage/nb640/19-113-689-V01.jpg",
     price: 19950.00,
     specs: {
       "Socket": "AM4",
@@ -183,7 +183,7 @@ export const cpuData = [
   {
     id: 'cpu-10',
     name: 'Intel Core i7-12700K',
-    image: "/src/assets/Laptop1.png",
+    image: "https://c1.neweggimages.com/productimage/nb640/19-118-343-05.jpg",
     price: 21660.00,
     specs: {
       "Socket": "LGA1700",
@@ -203,7 +203,7 @@ export const cpuData = [
   {
     id: 'cpu-11',
     name: 'AMD Ryzen 5 5600X',
-    image: "/src/assets/Laptop1.png",
+    image: "https://c1.neweggimages.com/productimage/nb640/19-113-666-02.jpg",
     price: 11400.00,
     specs: {
       "Socket": "AM4",
@@ -223,7 +223,7 @@ export const cpuData = [
   {
     id: 'cpu-12',
     name: 'Intel Core i5-12600K',
-    image: "/src/assets/Laptop1.png",
+    image: "https://c1.neweggimages.com/productimage/nb640/19-118-347-V02.jpg",
     price: 14250.00,
     specs: {
       "Socket": "LGA1700",
@@ -243,7 +243,7 @@ export const cpuData = [
   {
     id: 'cpu-13',
     name: 'AMD Ryzen 9 7900X',
-    image: "/src/assets/Laptop1.png",
+    image: "https://c1.neweggimages.com/productimage/nb640/19-113-769-06.jpg",
     price: 28500.00,
     specs: {
       "Socket": "AM5",
@@ -263,7 +263,7 @@ export const cpuData = [
   {
     id: 'cpu-14',
     name: 'Intel Core i3-13100',
-    image: "/src/assets/Laptop1.png",
+    image: "https://c1.neweggimages.com/productimage/nb640/19-118-432-04.jpg",
     price: 8550.00,
     specs: {
       "Socket": "LGA1700",
@@ -283,7 +283,7 @@ export const cpuData = [
   {
     id: 'cpu-15',
     name: 'AMD Ryzen 3 4100',
-    image: "/src/assets/Laptop1.png",
+    image: "https://c1.neweggimages.com/productimage/nb640/APRGS220504H6qmG.jpg",
     price: 5700.00,
     specs: {
       "Socket": "AM4",
@@ -303,7 +303,7 @@ export const cpuData = [
   {
     id: 'cpu-16',
     name: 'Intel Pentium Gold G7400',
-    image: "/src/assets/Laptop1.png",
+    image: "https://c1.neweggimages.com/productimage/nb640/A24GD2202150ESBUV6B.jpg",
     price: 4560.00,
     specs: {
       "Socket": "LGA1700",
@@ -323,7 +323,7 @@ export const cpuData = [
   {
     id: 'cpu-17',
     name: 'AMD Ryzen Threadripper 3970X',
-    image: "/src/assets/Laptop1.png",
+    image: "https://c1.neweggimages.com/productimage/nb640/19-113-618-V05.jpg",
     price: 114000.00,
     specs: {
       "Socket": "sTRX4",
@@ -343,7 +343,7 @@ export const cpuData = [
   {
     id: 'cpu-18',
     name: 'Intel Xeon W-3375',
-    image: "/src/assets/Laptop1.png",
+    image: "https://c1.neweggimages.com/productimage/nb640/A1K6S23052800DLJV4D.jpg",
     price: 199500.00,
     specs: {
       "Socket": "LGA4189",
@@ -363,7 +363,7 @@ export const cpuData = [
   {
     id: 'cpu-19',
     name: 'AMD Ryzen 7 5700G',
-    image: "/src/assets/Laptop1.png",
+    image: "https://c1.neweggimages.com/productimage/nb640/19-113-682-V01.jpg",
     price: 14250.00,
     specs: {
       "Socket": "AM4",
@@ -383,7 +383,7 @@ export const cpuData = [
   {
     id: 'cpu-20',
     name: 'Intel Core i9-11900K',
-    image: "/src/assets/Laptop1.png",
+    image: "https://c1.neweggimages.com/productimage/nb640/19-118-356-S01.jpg",
     price: 22800.00,
     specs: {
       "Socket": "LGA1200",
@@ -404,7 +404,7 @@ export const cpuData = [
   {
     id: 'cpu-21',
     name: 'AMD Ryzen 5 3600',
-    image: "/src/assets/Laptop1.png",
+    image: "https://c1.neweggimages.com/productimage/nb640/19-113-569-V01.jpg",
     price: 7980.00,
     specs: {
       "Socket": "AM4",
@@ -424,7 +424,7 @@ export const cpuData = [
   {
     id: 'cpu-22',
     name: 'AMD Ryzen 5 4500',
-    image: "/src/assets/Laptop1.png",
+    image: "https://c1.neweggimages.com/productimage/nb640/ARUXS2204210J7PZ0CA.jpg",
     price: 6840.00,
     specs: {
       "Socket": "AM4",
@@ -444,7 +444,7 @@ export const cpuData = [
   {
     id: 'cpu-23',
     name: 'AMD Ryzen 5 5500',
-    image: "/src/assets/Laptop1.png",
+    image: "https://c1.neweggimages.com/productimage/nb640/19-113-737-V03.jpg",
     price: 9120.00,
     specs: {
       "Socket": "AM4",
@@ -464,7 +464,7 @@ export const cpuData = [
   {
     id: 'cpu-24',
     name: 'AMD Ryzen 5 5500GT',
-    image: "/src/assets/Laptop1.png",
+    image: "https://c1.neweggimages.com/productimage/nb640/19-113-817-01.jpg",
     price: 10260.00,
     specs: {
       "Socket": "AM4",
@@ -484,7 +484,7 @@ export const cpuData = [
   {
     id: 'cpu-25',
     name: 'AMD Ryzen 5 5600',
-    image: "/src/assets/Laptop1.png",
+    image: "https://c1.neweggimages.com/productimage/nb640/19-113-736-V03.jpg",
     price: 10260.00,
     specs: {
       "Socket": "AM4",
@@ -504,7 +504,7 @@ export const cpuData = [
   {
     id: 'cpu-26',
     name: 'AMD Ryzen 5 5600G',
-    image: "/src/assets/Laptop1.png",
+    image: "https://c1.neweggimages.com/productimage/nb640/19-113-683-V01.jpg",
     price: 11400.00,
     specs: {
       "Socket": "AM4",
@@ -524,7 +524,7 @@ export const cpuData = [
   {
     id: 'cpu-27',
     name: 'AMD Ryzen 5 5600XT',
-    image: "/src/assets/Laptop1.png",
+    image: "https://c1.neweggimages.com/productimage/nb640/19-113-666-02.jpg",
     price: 12540.00,
     specs: {
       "Socket": "AM4",
@@ -544,7 +544,7 @@ export const cpuData = [
   {
     id: 'cpu-28',
     name: 'Intel Core i3-10100',
-    image: "/src/assets/Laptop1.png",
+    image: "https://c1.neweggimages.com/productimage/nb640/19-118-138-V11.jpg",
     price: 5700.00,
     specs: {
       "Socket": "LGA1200",
@@ -564,7 +564,7 @@ export const cpuData = [
   {
     id: 'cpu-29',
     name: 'Intel Core i3-12100',
-    image: "/src/assets/Laptop1.png",
+    image: "https://c1.neweggimages.com/productimage/nb640/A24GD2203220DB6YE7D.jpg",
     price: 6840.00,
     specs: {
       "Socket": "LGA1700",
@@ -584,7 +584,7 @@ export const cpuData = [
   {
     id: 'cpu-30',
     name: 'Intel Core i5-14600K',
-    image: "/src/assets/Laptop1.png",
+    image: "https://c1.neweggimages.com/productimage/nb640/19-118-470-07.jpg",
     price: 20520.00,
     specs: {
       "Socket": "LGA1700",

@@ -3,7 +3,7 @@ export const keyboardData = [
   {
     id: 'keyboard-1',
     name: 'Corsair K100 RGB Mechanical Gaming Keyboard',
-    image: "/src/assets/Laptop1.png",
+    image: "https://dfestore.com/wp-content/uploads/2025/12/Untitled-1-24.jpg",
     price: 11400.00, // Converted from 199.99 USD to PHP
     specs: {
       "Keyboard Brand": "Corsair",
@@ -30,7 +30,7 @@ export const keyboardData = [
   {
     id: 'keyboard-2',
     name: 'Razer BlackWidow V4 Pro Mechanical Gaming Keyboard',
-    image: "/src/assets/Laptop1.png",
+    image: "https://dfestore.com/wp-content/uploads/2025/12/Untitled-1-24.jpg",
     price: 13110.00, // Converted from 229.99 USD to PHP
     specs: {
       "Keyboard Brand": "Razer",
@@ -57,7 +57,7 @@ export const keyboardData = [
   {
     id: 'keyboard-3',
     name: 'Logitech G915 TKL Lightspeed Wireless Mechanical Keyboard',
-    image: "/src/assets/Laptop1.png",
+    image: "https://dfestore.com/wp-content/uploads/2025/12/Untitled-1-24.jpg",
     price: 13110.00, // Converted from 229.99 USD to PHP
     specs: {
       "Keyboard Brand": "Logitech",
@@ -84,7 +84,7 @@ export const keyboardData = [
   {
     id: 'keyboard-4',
     name: 'Keychron K8 Pro Wireless Mechanical Keyboard',
-    image: "/src/assets/Laptop1.png",
+    image: "https://dfestore.com/wp-content/uploads/2025/12/Untitled-1-24.jpg",
     price: 5130.00, // Converted from 89.99 USD to PHP
     specs: {
       "Keyboard Brand": "Keychron",
@@ -111,7 +111,7 @@ export const keyboardData = [
   {
     id: 'keyboard-5',
     name: 'SteelSeries Apex Pro TKL Wireless Mechanical Keyboard',
-    image: "/src/assets/Laptop1.png",
+    image: "https://dfestore.com/wp-content/uploads/2025/12/Untitled-1-24.jpg",
     price: 11400.00, // Converted from 199.99 USD to PHP
     specs: {
       "Keyboard Brand": "SteelSeries",
@@ -138,7 +138,7 @@ export const keyboardData = [
   {
     id: 'keyboard-6',
     name: 'Ducky One 2 SF Mechanical Keyboard',
-    image: "/src/assets/Laptop1.png",
+    image: "https://dfestore.com/wp-content/uploads/2025/12/Untitled-1-24.jpg",
     price: 7410.00, // Converted from 129.99 USD to PHP
     specs: {
       "Keyboard Brand": "Ducky",
@@ -165,7 +165,7 @@ export const keyboardData = [
   {
     id: 'keyboard-7',
     name: 'HyperX Alloy Origins 65 Mechanical Gaming Keyboard',
-    image: "/src/assets/Laptop1.png",
+    image: "https://dfestore.com/wp-content/uploads/2025/12/Untitled-1-24.jpg",
     price: 5700.00, // Converted from 99.99 USD to PHP
     specs: {
       "Keyboard Brand": "HyperX",
@@ -191,7 +191,7 @@ export const keyboardData = [
   {
     id: 'keyboard-8',
     name: 'Glorious GMMK 2 96% Mechanical Keyboard',
-    image: "/src/assets/Laptop1.png",
+    image: "https://dfestore.com/wp-content/uploads/2025/12/Untitled-1-24.jpg",
     price: 7980.00, // Converted from 139.99 USD to PHP
     specs: {
       "Keyboard Brand": "Glorious",
@@ -218,7 +218,7 @@ export const keyboardData = [
   {
     id: 'keyboard-9',
     name: 'ASUS ROG Strix Scope II 96 Wireless Mechanical Keyboard',
-    image: "/src/assets/Laptop1.png",
+    image: "https://dfestore.com/wp-content/uploads/2025/12/Untitled-1-24.jpg",
     price: 10260.00, // Converted from 179.99 USD to PHP
     specs: {
       "Keyboard Brand": "ASUS",
@@ -245,7 +245,7 @@ export const keyboardData = [
   {
     id: 'keyboard-10',
     name: 'NuPhy Halo75 Wireless Mechanical Keyboard',
-    image: "/src/assets/Laptop1.png",
+    image: "https://dfestore.com/wp-content/uploads/2025/12/Untitled-1-24.jpg",
     price: 6840.00, // Converted from 119.99 USD to PHP
     specs: {
       "Keyboard Brand": "NuPhy",
@@ -272,7 +272,7 @@ export const keyboardData = [
   {
     id: 'keyboard-11',
     name: 'Royal Kludge RK84 Wireless Mechanical Keyboard',
-    image: "/src/assets/Laptop1.png",
+    image: "https://dfestore.com/wp-content/uploads/2025/12/Untitled-1-24.jpg",
     price: 3990.00, // Converted from 69.99 USD to PHP
     specs: {
       "Keyboard Brand": "Royal Kludge",
@@ -299,7 +299,7 @@ export const keyboardData = [
   {
     id: 'keyboard-12',
     name: 'Leopold FC750R PD Mechanical Keyboard',
-    image: "/src/assets/Laptop1.png",
+    image: "https://dfestore.com/wp-content/uploads/2025/12/Untitled-1-24.jpg",
     price: 8550.00, // Converted from 149.99 USD to PHP
     specs: {
       "Keyboard Brand": "Leopold",
@@ -325,7 +325,7 @@ export const keyboardData = [
   {
     id: 'keyboard-13',
     name: 'Wooting 60HE Analog Mechanical Keyboard',
-    image: "/src/assets/Laptop1.png",
+    image: "https://dfestore.com/wp-content/uploads/2025/12/Untitled-1-24.jpg",
     price: 9975.00, // Converted from 174.99 USD to PHP
     specs: {
       "Keyboard Brand": "Wooting",
@@ -351,7 +351,7 @@ export const keyboardData = [
   {
     id: 'keyboard-14',
     name: 'Epomaker TH80 Pro Wireless Mechanical Keyboard',
-    image: "/src/assets/Laptop1.png",
+    image: "https://dfestore.com/wp-content/uploads/2025/12/Untitled-1-24.jpg",
     price: 5130.00, // Converted from 89.99 USD to PHP
     specs: {
       "Keyboard Brand": "Epomaker",
@@ -378,7 +378,7 @@ export const keyboardData = [
   {
     id: 'keyboard-15',
     name: 'Cooler Master SK622 Wireless Mechanical Keyboard',
-    image: "/src/assets/Laptop1.png",
+    image: "https://dfestore.com/wp-content/uploads/2025/12/Untitled-1-24.jpg",
     price: 5700.00, // Converted from 99.99 USD PHP
     specs: {
       "Keyboard Brand": "Cooler Master",
@@ -405,7 +405,7 @@ export const keyboardData = [
   {
     id: 'keyboard-16',
     name: 'Drop ALT Mechanical Keyboard',
-    image: "/src/assets/Laptop1.png",
+    image: "https://dfestore.com/wp-content/uploads/2025/12/Untitled-1-24.jpg",
     price: 11400.00, // Converted from 199.99 USD to PHP
     specs: {
       "Keyboard Brand": "Drop",
@@ -432,7 +432,7 @@ export const keyboardData = [
   {
     id: 'keyboard-17',
     name: 'Microsoft Surface Ergonomic Keyboard',
-    image: "/src/assets/Laptop1.png",
+    image: "https://dfestore.com/wp-content/uploads/2025/12/Untitled-1-24.jpg",
     price: 7410.00, // Converted from 129.99 USD to PHP
     specs: {
       "Keyboard Brand": "Microsoft",
@@ -459,7 +459,7 @@ export const keyboardData = [
   {
     id: 'keyboard-18',
     name: 'Redragon K552 Kumara Mechanical Gaming Keyboard',
-    image: "/src/assets/Laptop1.png",
+    image: "https://dfestore.com/wp-content/uploads/2025/12/Untitled-1-24.jpg",
     price: 2280.00, // Converted from 39.99 USD to PHP
     specs: {
       "Keyboard Brand": "Redragon",
@@ -485,7 +485,7 @@ export const keyboardData = [
   {
     id: 'keyboard-19',
     name: 'Varmilo VA88M Moonlight Mechanical Keyboard',
-    image: "/src/assets/Laptop1.png",
+    image: "https://dfestore.com/wp-content/uploads/2025/12/Untitled-1-24.jpg",
     price: 9690.00, // Converted from 169.99 USD to PHP
     specs: {
       "Keyboard Brand": "Varmilo",
@@ -511,7 +511,7 @@ export const keyboardData = [
   {
     id: 'keyboard-20',
     name: 'Akko 3068B Plus Wireless Mechanical Keyboard',
-    image: "/src/assets/Laptop1.png",
+    image: "https://dfestore.com/wp-content/uploads/2025/12/Untitled-1-24.jpg",
     price: 4560.00, // Converted from 79.99 USD to PHP
     specs: {
       "Keyboard Brand": "Akko",

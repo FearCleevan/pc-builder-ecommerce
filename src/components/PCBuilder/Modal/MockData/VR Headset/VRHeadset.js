@@ -3,7 +3,7 @@ export const vrHeadsetData = [
     id: "vr-1",
     name: "Meta Quest 3 512GB",
     type: "accessories",
-    image: "/src/assets/Laptop1.png",
+    image: "https://dfestore.com/wp-content/uploads/2025/12/Untitled-1-24.jpg",
     price: 32990,
     specs: {
       Manufacturer: "Meta",
@@ -18,7 +18,7 @@ export const vrHeadsetData = [
     id: "vr-2",
     name: "HTC Vive XR Elite",
     type: "accessories",
-    image: "/src/assets/Laptop1.png",
+    image: "https://dfestore.com/wp-content/uploads/2025/12/Untitled-1-24.jpg",
     price: 64990,
     specs: {
       Manufacturer: "HTC",
@@ -33,7 +33,7 @@ export const vrHeadsetData = [
     id: "vr-3",
     name: "PlayStation VR2 (PC Adapter Ready)",
     type: "accessories",
-    image: "/src/assets/Laptop1.png",
+    image: "https://dfestore.com/wp-content/uploads/2025/12/Untitled-1-24.jpg",
     price: 35990,
     specs: {
       Manufacturer: "Sony",

@@ -3,7 +3,7 @@ export const storageData = [
   {
     id: 'storage-1',
     name: 'Samsung 980 Pro 2TB PCIe 4.0 NVMe SSD',
-    image: "/src/assets/Laptop1.png",
+    image: "https://dfestore.com/wp-content/uploads/2025/12/Untitled-1-24.jpg",
     price: 9143.43,
     specs: {
       "Type": "SSD",
@@ -26,7 +26,7 @@ export const storageData = [
   {
     id: 'storage-2',
     name: 'Western Digital WD Blue 4TB 3.5" HDD',
-    image: "/src/assets/Laptop1.png",
+    image: "https://dfestore.com/wp-content/uploads/2025/12/Untitled-1-24.jpg",
     price: 4573.43,
     specs: {
       "Type": "HDD",
@@ -48,7 +48,7 @@ export const storageData = [
   {
     id: 'storage-3',
     name: 'Crucial P5 Plus 1TB PCIe 4.0 NVMe SSD',
-    image: "/src/assets/Laptop1.png",
+    image: "https://dfestore.com/wp-content/uploads/2025/12/Untitled-1-24.jpg",
     price: 5141.47,
     specs: {
       "Type": "SSD",
@@ -71,7 +71,7 @@ export const storageData = [
   {
     id: 'storage-4',
     name: 'Seagate IronWolf Pro 12TB 3.5" NAS HDD',
-    image: "/src/assets/Laptop1.png",
+    image: "https://dfestore.com/wp-content/uploads/2025/12/Untitled-1-24.jpg",
     price: 17152.13,
     specs: {
       "Type": "HDD",
@@ -94,7 +94,7 @@ export const storageData = [
   {
     id: 'storage-5',
     name: 'SK Hynix Platinum P41 2TB PCIe 4.0 NVMe SSD',
-    image: "/src/assets/Laptop1.png",
+    image: "https://dfestore.com/wp-content/uploads/2025/12/Untitled-1-24.jpg",
     price: 9712.87,
     specs: {
       "Type": "SSD",
@@ -117,7 +117,7 @@ export const storageData = [
   {
     id: 'storage-6',
     name: 'Samsung 870 EVO 1TB 2.5" SATA SSD',
-    image: "/src/assets/Laptop1.png",
+    image: "https://dfestore.com/wp-content/uploads/2025/12/Untitled-1-24.jpg",
     price: 5717.17,
     specs: {
       "Type": "SSD",
@@ -140,7 +140,7 @@ export const storageData = [
   {
     id: 'storage-7',
     name: 'Sabrent Rocket 4 Plus 4TB PCIe 4.0 NVMe SSD',
-    image: "/src/assets/Laptop1.png",
+    image: "https://dfestore.com/wp-content/uploads/2025/12/Untitled-1-24.jpg",
     price: 19998.77,
     specs: {
       "Type": "SSD",
@@ -163,7 +163,7 @@ export const storageData = [
   {
     id: 'storage-8',
     name: 'Toshiba X300 8TB 3.5" Performance HDD',
-    image: "/src/assets/Laptop1.png",
+    image: "https://dfestore.com/wp-content/uploads/2025/12/Untitled-1-24.jpg",
     price: 10287.03,
     specs: {
       "Type": "HDD",
@@ -185,7 +185,7 @@ export const storageData = [
   {
     id: 'storage-9',
     name: 'WD Black SN850X 1TB PCIe 4.0 NVMe SSD',
-    image: "/src/assets/Laptop1.png",
+    image: "https://dfestore.com/wp-content/uploads/2025/12/Untitled-1-24.jpg",
     price: 6285.20,
     specs: {
       "Type": "SSD",
@@ -208,7 +208,7 @@ export const storageData = [
   {
     id: 'storage-10',
     name: 'Kingston NV2 2TB PCIe 4.0 NVMe SSD',
-    image: "/src/assets/Laptop1.png",
+    image: "https://dfestore.com/wp-content/uploads/2025/12/Untitled-1-24.jpg",
     price: 6853.23,
     specs: {
       "Type": "SSD",
@@ -231,7 +231,7 @@ export const storageData = [
   {
     id: 'storage-11',
     name: 'Seagate FireCuda 530 2TB PCIe 4.0 NVMe SSD',
-    image: "/src/assets/Laptop1.png",
+    image: "https://dfestore.com/wp-content/uploads/2025/12/Untitled-1-24.jpg",
     price: 10855.43,
     specs: {
       "Type": "SSD",
@@ -254,7 +254,7 @@ export const storageData = [
   {
     id: 'storage-12',
     name: 'Crucial MX500 2TB 2.5" SATA SSD',
-    image: "/src/assets/Laptop1.png",
+    image: "https://dfestore.com/wp-content/uploads/2025/12/Untitled-1-24.jpg",
     price: 7432.97,
     specs: {
       "Type": "SSD",
@@ -277,7 +277,7 @@ export const storageData = [
   {
     id: 'storage-13',
     name: 'Western Digital Red Pro 10TB 3.5" NAS HDD',
-    image: "/src/assets/Laptop1.png",
+    image: "https://dfestore.com/wp-content/uploads/2025/12/Untitled-1-24.jpg",
     price: 14292.97,
     specs: {
       "Type": "HDD",
@@ -300,7 +300,7 @@ export const storageData = [
   {
     id: 'storage-14',
     name: 'G.Skill Trident Z44Q 4TB PCIe 4.0 NVMe SSD',
-    image: "/src/assets/Laptop1.png",
+    image: "https://dfestore.com/wp-content/uploads/2025/12/Untitled-1-24.jpg",
     price: 18864.97,
     specs: {
       "Type": "SSD",
@@ -323,7 +323,7 @@ export const storageData = [
   {
     id: 'storage-15',
     name: 'Seagate BarraCuda 2TB 3.5" HDD',
-    image: "/src/assets/Laptop1.png",
+    image: "https://dfestore.com/wp-content/uploads/2025/12/Untitled-1-24.jpg",
     price: 3429.97,
     specs: {
       "Type": "HDD",
@@ -345,7 +345,7 @@ export const storageData = [
   {
     id: 'storage-16',
     name: 'ADATA XPG GAMMIX S70 Blade 2TB PCIe 4.0 NVMe SSD',
-    image: "/src/assets/Laptop1.png",
+    image: "https://dfestore.com/wp-content/uploads/2025/12/Untitled-1-24.jpg",
     price: 7993.97,
     specs: {
       "Type": "SSD",
@@ -368,7 +368,7 @@ export const storageData = [
   {
     id: 'storage-17',
     name: 'Intel 670p 2TB PCIe 3.0 NVMe SSD',
-    image: "/src/assets/Laptop1.png",
+    image: "https://dfestore.com/wp-content/uploads/2025/12/Untitled-1-24.jpg",
     price: 5717.17,
     specs: {
       "Type": "SSD",
@@ -391,7 +391,7 @@ export const storageData = [
   {
     id: 'storage-18',
     name: 'SanDisk Extreme Pro 1TB Portable SSD',
-    image: "/src/assets/Laptop1.png",
+    image: "https://dfestore.com/wp-content/uploads/2025/12/Untitled-1-24.jpg",
     price: 7432.97,
     specs: {
       "Type": "SSD",
@@ -412,7 +412,7 @@ export const storageData = [
   {
     id: 'storage-19',
     name: 'Samsung 990 Pro 4TB PCIe 4.0 NVMe SSD',
-    image: "/src/assets/Laptop1.png",
+    image: "https://dfestore.com/wp-content/uploads/2025/12/Untitled-1-24.jpg",
     price: 19999.97,
     specs: {
       "Type": "SSD",
@@ -435,7 +435,7 @@ export const storageData = [
   {
     id: 'storage-20',
     name: 'Seagate Exos X20 20TB 3.5" Enterprise HDD',
-    image: "/src/assets/Laptop1.png",
+    image: "https://dfestore.com/wp-content/uploads/2025/12/Untitled-1-24.jpg",
     price: 22868.97,
     specs: {
       "Type": "HDD",

@@ -3,7 +3,7 @@ export const operatingSystemData = [
     id: "os-1",
     name: "Windows 11 Home 64-bit OEM",
     type: "operating-system",
-    image: "/src/assets/Laptop1.png",
+    image: "https://dfestore.com/wp-content/uploads/2025/12/Untitled-1-24.jpg",
     price: 7995,
     specs: {
       Manufacturer: "Microsoft",
@@ -17,7 +17,7 @@ export const operatingSystemData = [
     id: "os-2",
     name: "Windows 11 Pro 64-bit OEM",
     type: "operating-system",
-    image: "/src/assets/Laptop1.png",
+    image: "https://dfestore.com/wp-content/uploads/2025/12/Untitled-1-24.jpg",
     price: 11995,
     specs: {
       Manufacturer: "Microsoft",
@@ -31,7 +31,7 @@ export const operatingSystemData = [
     id: "os-3",
     name: "Ubuntu 24.04 LTS USB Installer",
     type: "operating-system",
-    image: "/src/assets/Laptop1.png",
+    image: "https://dfestore.com/wp-content/uploads/2025/12/Untitled-1-24.jpg",
     price: 850,
     specs: {
       Manufacturer: "Canonical",

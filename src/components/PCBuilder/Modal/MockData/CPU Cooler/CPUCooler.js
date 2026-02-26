@@ -3,7 +3,7 @@ export const cpuCoolerData = [
   {
     id: 'cooler-1',
     name: 'NZXT Kraken X73 RGB 360mm AIO Liquid Cooler',
-    image: "/src/assets/Laptop1.png",
+    image: "https://dfestore.com/wp-content/uploads/2025/12/Untitled-1-24.jpg",
     price: 10260.00, // Converted from 179.99 USD to PHP
     specs: {
       "Manufacturer": "NZXT",
@@ -28,7 +28,7 @@ export const cpuCoolerData = [
   {
     id: 'cooler-2',
     name: 'Noctua NH-D15 Chromax Black Dual-Tower Cooler',
-    image: "/src/assets/Laptop1.png",
+    image: "https://dfestore.com/wp-content/uploads/2025/12/Untitled-1-24.jpg",
     price: 6267.15, // Converted from 109.95 USD to PHP
     specs: {
       "Manufacturer": "Noctua",
@@ -53,7 +53,7 @@ export const cpuCoolerData = [
   {
     id: 'cooler-3',
     name: 'Corsair iCUE H150i ELITE CAPELLIX XT 360mm',
-    image: "/src/assets/Laptop1.png",
+    image: "https://dfestore.com/wp-content/uploads/2025/12/Untitled-1-24.jpg",
     price: 11400.00, // Converted from 199.99 USD to PHP
     specs: {
       "Manufacturer": "Corsair",
@@ -78,7 +78,7 @@ export const cpuCoolerData = [
   {
     id: 'cooler-4',
     name: 'be quiet! Dark Rock Pro 4 Air Cooler',
-    image: "/src/assets/Laptop1.png",
+    image: "https://dfestore.com/wp-content/uploads/2025/12/Untitled-1-24.jpg",
     price: 5124.30, // Converted from 89.90 USD to PHP
     specs: {
       "Manufacturer": "be quiet!",
@@ -103,7 +103,7 @@ export const cpuCoolerData = [
   {
     id: 'cooler-5',
     name: 'ARCTIC Liquid Freezer II 280mm AIO',
-    image: "/src/assets/Laptop1.png",
+    image: "https://dfestore.com/wp-content/uploads/2025/12/Untitled-1-24.jpg",
     price: 6269.43, // Converted from 109.99 USD to PHP
     specs: {
       "Manufacturer": "ARCTIC",
@@ -128,7 +128,7 @@ export const cpuCoolerData = [
   {
     id: 'cooler-6',
     name: 'Cooler Master Hyper 212 RGB Black Edition',
-    image: "/src/assets/Laptop1.png",
+    image: "https://dfestore.com/wp-content/uploads/2025/12/Untitled-1-24.jpg",
     price: 2564.43, // Converted from 44.99 USD to PHP
     specs: {
       "Manufacturer": "Cooler Master",
@@ -153,7 +153,7 @@ export const cpuCoolerData = [
   {
     id: 'cooler-7',
     name: 'Deepcool AK620 Digital Air Cooler',
-    image: "/src/assets/Laptop1.png",
+    image: "https://dfestore.com/wp-content/uploads/2025/12/Untitled-1-24.jpg",
     price: 4559.43, // Converted from 79.99 USD to PHP
     specs: {
       "Manufacturer": "Deepcool",
@@ -178,7 +178,7 @@ export const cpuCoolerData = [
   {
     id: 'cooler-8',
     name: 'Lian Li Galahad II Trinity Performance 360mm',
-    image: "/src/assets/Laptop1.png",
+    image: "https://dfestore.com/wp-content/uploads/2025/12/Untitled-1-24.jpg",
     price: 10829.43, // Converted from 189.99 USD to PHP
     specs: {
       "Manufacturer": "Lian Li",
@@ -203,7 +203,7 @@ export const cpuCoolerData = [
   {
     id: 'cooler-9',
     name: 'Thermalright Phantom Spirit 120 SE ARGB',
-    image: "/src/assets/Laptop1.png",
+    image: "https://dfestore.com/wp-content/uploads/2025/12/Untitled-1-24.jpg",
     price: 2217.30, // Converted from 38.90 USD to PHP
     specs: {
       "Manufacturer": "Thermalright",
@@ -228,7 +228,7 @@ export const cpuCoolerData = [
   {
     id: 'cooler-10',
     name: 'EK-Nucleus AIO CR360 Lux D-RGB',
-    image: "/src/assets/Laptop1.png",
+    image: "https://dfestore.com/wp-content/uploads/2025/12/Untitled-1-24.jpg",
     price: 9689.43, // Converted from 169.99 USD to PHP
     specs: {
       "Manufacturer": "EK",
@@ -253,7 +253,7 @@ export const cpuCoolerData = [
   {
     id: 'cooler-11',
     name: 'Scythe Fuma 3 Dual-Tower Air Cooler',
-    image: "/src/assets/Laptop1.png",
+    image: "https://dfestore.com/wp-content/uploads/2025/12/Untitled-1-24.jpg",
     price: 2849.43, // Converted from 49.99 USD to PHP
     specs: {
       "Manufacturer": "Scythe",
@@ -278,7 +278,7 @@ export const cpuCoolerData = [
   {
     id: 'cooler-12',
     name: 'Phanteks Glacier One 280mm AIO',
-    image: "/src/assets/Laptop1.png",
+    image: "https://dfestore.com/wp-content/uploads/2025/12/Untitled-1-24.jpg",
     price: 7979.43, // Converted from 139.99 USD to PHP
     specs: {
       "Manufacturer": "Phanteks",
@@ -303,7 +303,7 @@ export const cpuCoolerData = [
   {
     id: 'cooler-13',
     name: 'Vetroo V5 Air Cooler with RGB',
-    image: "/src/assets/Laptop1.png",
+    image: "https://dfestore.com/wp-content/uploads/2025/12/Untitled-1-24.jpg",
     price: 1994.43, // Converted from 34.99 USD to PHP
     specs: {
       "Manufacturer": "Vetroo",
@@ -328,7 +328,7 @@ export const cpuCoolerData = [
   {
     id: 'cooler-14',
     name: 'Fractal Design Lumen S28 RGB 280mm AIO',
-    image: "/src/assets/Laptop1.png",
+    image: "https://dfestore.com/wp-content/uploads/2025/12/Untitled-1-24.jpg",
     price: 8549.43, // Converted from 149.99 USD to PHP
     specs: {
       "Manufacturer": "Fractal Design",
@@ -353,7 +353,7 @@ export const cpuCoolerData = [
   {
     id: 'cooler-15',
     name: 'ID-COOLING SE-214-XT ARGB Air Cooler',
-    image: "/src/assets/Laptop1.png",
+    image: "https://dfestore.com/wp-content/uploads/2025/12/Untitled-1-24.jpg",
     price: 1139.43, // Converted from 19.99 USD to PHP
     specs: {
       "Manufacturer": "ID-COOLING",
@@ -378,7 +378,7 @@ export const cpuCoolerData = [
   {
     id: 'cooler-16',
     name: 'MSI MAG CORELIQUID E360 AIO',
-    image: "/src/assets/Laptop1.png",
+    image: "https://dfestore.com/wp-content/uploads/2025/12/Untitled-1-24.jpg",
     price: 9689.43, // Converted from 169.99 USD to PHP
     specs: {
       "Manufacturer": "MSI",
@@ -403,7 +403,7 @@ export const cpuCoolerData = [
   {
     id: 'cooler-17',
     name: 'Zalman CNPS20X Air Cooler',
-    image: "/src/assets/Laptop1.png",
+    image: "https://dfestore.com/wp-content/uploads/2025/12/Untitled-1-24.jpg",
     price: 3419.43, // Converted from 59.99 USD to PHP
     specs: {
       "Manufacturer": "Zalman",
@@ -428,7 +428,7 @@ export const cpuCoolerData = [
   {
     id: 'cooler-18',
     name: 'Enermax LIQMAXFLO 360mm AIO',
-    image: "/src/assets/Laptop1.png",
+    image: "https://dfestore.com/wp-content/uploads/2025/12/Untitled-1-24.jpg",
     price: 7409.43, // Converted from 129.99 USD to PHP
     specs: {
       "Manufacturer": "Enermax",
@@ -453,7 +453,7 @@ export const cpuCoolerData = [
   {
     id: 'cooler-19',
     name: 'Thermaltake TH280 ARGB Sync AIO',
-    image: "/src/assets/Laptop1.png",
+    image: "https://dfestore.com/wp-content/uploads/2025/12/Untitled-1-24.jpg",
     price: 6839.43, // Converted from 119.99 USD to PHP
     specs: {
       "Manufacturer": "Thermaltake",
@@ -478,7 +478,7 @@ export const cpuCoolerData = [
   {
     id: 'cooler-20',
     name: 'NoFan CS-80 Fanless Cooler',
-    image: "/src/assets/Laptop1.png",
+    image: "https://dfestore.com/wp-content/uploads/2025/12/Untitled-1-24.jpg",
     price: 8549.43, // Converted from 149.99 USD to PHP
     specs: {
       "Manufacturer": "NoFan",

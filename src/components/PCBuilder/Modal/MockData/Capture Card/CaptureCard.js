@@ -3,7 +3,7 @@ export const captureCardData = [
     id: "capture-1",
     name: "Elgato 4K60 Pro MK.2 Internal Capture Card",
     type: "expansion",
-    image: "/src/assets/Laptop1.png",
+    image: "https://dfestore.com/wp-content/uploads/2025/12/Untitled-1-24.jpg",
     price: 15990,
     specs: {
       Manufacturer: "Elgato",
@@ -18,7 +18,7 @@ export const captureCardData = [
     id: "capture-2",
     name: "AVerMedia Live Gamer HD 2 GC570",
     type: "expansion",
-    image: "/src/assets/Laptop1.png",
+    image: "https://dfestore.com/wp-content/uploads/2025/12/Untitled-1-24.jpg",
     price: 8990,
     specs: {
       Manufacturer: "AVerMedia",
@@ -33,7 +33,7 @@ export const captureCardData = [
     id: "capture-3",
     name: "EVGA XR1 Pro External Capture Card",
     type: "accessories",
-    image: "/src/assets/Laptop1.png",
+    image: "https://dfestore.com/wp-content/uploads/2025/12/Untitled-1-24.jpg",
     price: 6990,
     specs: {
       Manufacturer: "EVGA",

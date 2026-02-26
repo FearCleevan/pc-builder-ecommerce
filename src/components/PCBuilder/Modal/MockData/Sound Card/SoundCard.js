@@ -3,7 +3,7 @@ export const soundCardData = [
     id: "sound-1",
     name: "Creative Sound Blaster Audigy FX",
     type: "sound-card",
-    image: "/src/assets/Laptop1.png",
+    image: "https://dfestore.com/wp-content/uploads/2025/12/Untitled-1-24.jpg",
     price: 2390,
     specs: {
       Manufacturer: "Creative",
@@ -18,7 +18,7 @@ export const soundCardData = [
     id: "sound-2",
     name: "ASUS Xonar SE 5.1 PCIe",
     type: "sound-card",
-    image: "/src/assets/Laptop1.png",
+    image: "https://dfestore.com/wp-content/uploads/2025/12/Untitled-1-24.jpg",
     price: 1990,
     specs: {
       Manufacturer: "ASUS",
@@ -33,7 +33,7 @@ export const soundCardData = [
     id: "sound-3",
     name: "Creative Sound Blaster AE-5 Plus",
     type: "sound-card",
-    image: "/src/assets/Laptop1.png",
+    image: "https://dfestore.com/wp-content/uploads/2025/12/Untitled-1-24.jpg",
     price: 8690,
     specs: {
       Manufacturer: "Creative",

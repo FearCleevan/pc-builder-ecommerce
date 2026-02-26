@@ -3,7 +3,7 @@ export const microphoneData = [
   {
     id: 'microphone-1',
     name: 'Blue Yeti USB Microphone',
-    image: "/src/assets/Laptop1.png",
+    image: "https://dfestore.com/wp-content/uploads/2025/12/Untitled-1-24.jpg",
     price: 7410.00, // Converted from 129.99 USD to PHP
     specs: {
       "Brand": "Logitech for Creators",
@@ -29,7 +29,7 @@ export const microphoneData = [
   {
     id: 'microphone-2',
     name: 'Audio-Technica AT2020USB+ Cardioid Condenser USB Microphone',
-    image: "/src/assets/Laptop1.png",
+    image: "https://dfestore.com/wp-content/uploads/2025/12/Untitled-1-24.jpg",
     price: 8493.00, // Converted from 149.00 USD to PHP
     specs: {
       "Brand": "Audio-Technica",
@@ -55,7 +55,7 @@ export const microphoneData = [
   {
     id: 'microphone-3',
     name: 'Razer Seiren V2 Pro USB Streaming Microphone',
-    image: "/src/assets/Laptop1.png",
+    image: "https://dfestore.com/wp-content/uploads/2025/12/Untitled-1-24.jpg",
     price: 9120.00, // Converted from 159.99 USD to PHP
     specs: {
       "Brand": "Razer",
@@ -81,7 +81,7 @@ export const microphoneData = [
   {
     id: 'microphone-4',
     name: 'HyperX QuadCast S USB Condenser Microphone',
-    image: "/src/assets/Laptop1.png",
+    image: "https://dfestore.com/wp-content/uploads/2025/12/Untitled-1-24.jpg",
     price: 9120.00, // Converted from 159.99 USD to PHP
     specs: {
       "Brand": "HyperX",
@@ -108,7 +108,7 @@ export const microphoneData = [
   {
     id: 'microphone-5',
     name: 'RØDE NT-USB+ Studio Condenser USB Microphone',
-    image: "/src/assets/Laptop1.png",
+    image: "https://dfestore.com/wp-content/uploads/2025/12/Untitled-1-24.jpg",
     price: 11343.00, // Converted from 199.00 USD to PHP
     specs: {
       "Brand": "RØDE",
@@ -134,7 +134,7 @@ export const microphoneData = [
   {
     id: 'microphone-6',
     name: 'Elgato Wave:3 USB Condenser Microphone',
-    image: "/src/assets/Laptop1.png",
+    image: "https://dfestore.com/wp-content/uploads/2025/12/Untitled-1-24.jpg",
     price: 9120.00, // Converted from 159.99 USD to PHP
     specs: {
       "Brand": "Elgato",
@@ -161,7 +161,7 @@ export const microphoneData = [
   {
     id: 'microphone-7',
     name: 'Amazon Basics Desktop Mini Condenser Microphone',
-    image: "/src/assets/Laptop1.png",
+    image: "https://dfestore.com/wp-content/uploads/2025/12/Untitled-1-24.jpg",
     price: 1710.00, // Converted from 29.99 USD to PHP
     specs: {
       "Brand": "Amazon Basics",
@@ -187,7 +187,7 @@ export const microphoneData = [
   {
     id: 'microphone-8',
     name: 'Blue Yeti Nano USB Microphone',
-    image: "/src/assets/Laptop1.png",
+    image: "https://dfestore.com/wp-content/uploads/2025/12/Untitled-1-24.jpg",
     price: 5700.00, // Converted from 99.99 USD to PHP
     specs: {
       "Brand": "Logitech for Creators",
@@ -213,7 +213,7 @@ export const microphoneData = [
   {
     id: 'microphone-9',
     name: 'Audio-Technica AT2005USB Dynamic Microphone',
-    image: "/src/assets/Laptop1.png",
+    image: "https://dfestore.com/wp-content/uploads/2025/12/Untitled-1-24.jpg",
     price: 4503.00, // Converted from 79.00 USD to PHP
     specs: {
       "Brand": "Audio-Technica",
@@ -239,7 +239,7 @@ export const microphoneData = [
   {
     id: 'microphone-10',
     name: 'RØDE VideoMic NTG Shotgun USB Microphone',
-    image: "/src/assets/Laptop1.png",
+    image: "https://dfestore.com/wp-content/uploads/2025/12/Untitled-1-24.jpg",
     price: 14193.00, // Converted from 249.00 USD to PHP
     specs: {
       "Brand": "RØDE",
@@ -265,7 +265,7 @@ export const microphoneData = [
   {
     id: 'microphone-11',
     name: 'HyperX SoloCast USB Condenser Microphone',
-    image: "/src/assets/Laptop1.png",
+    image: "https://dfestore.com/wp-content/uploads/2025/12/Untitled-1-24.jpg",
     price: 3420.00, // Converted from 59.99 USD to PHP
     specs: {
       "Brand": "HyperX",
@@ -291,7 +291,7 @@ export const microphoneData = [
   {
     id: 'microphone-12',
     name: 'Elgato Wave DX Dynamic XLR Microphone',
-    image: "/src/assets/Laptop1.png",
+    image: "https://dfestore.com/wp-content/uploads/2025/12/Untitled-1-24.jpg",
     price: 7410.00, // Converted from 129.99 USD to PHP
     specs: {
       "Brand": "Elgato",
@@ -317,7 +317,7 @@ export const microphoneData = [
   {
     id: 'microphone-13',
     name: 'Razer Seiren Emote USB Streaming Microphone',
-    image: "/src/assets/Laptop1.png",
+    image: "https://dfestore.com/wp-content/uploads/2025/12/Untitled-1-24.jpg",
     price: 11400.00, // Converted from 199.99 USD to PHP
     specs: {
       "Brand": "Razer",
@@ -344,7 +344,7 @@ export const microphoneData = [
   {
     id: 'microphone-14',
     name: 'Audio-Technica AT2040 Hypercardioid Dynamic Microphone',
-    image: "/src/assets/Laptop1.png",
+    image: "https://dfestore.com/wp-content/uploads/2025/12/Untitled-1-24.jpg",
     price: 11343.00, // Converted from 199.00 USD to PHP
     specs: {
       "Brand": "Audio-Technica",
@@ -370,7 +370,7 @@ export const microphoneData = [
   {
     id: 'microphone-15',
     name: 'RØDE PodMic Dynamic Broadcast Microphone',
-    image: "/src/assets/Laptop1.png",
+    image: "https://dfestore.com/wp-content/uploads/2025/12/Untitled-1-24.jpg",
     price: 5643.00, // Converted from 99.00 USD to PHP
     specs: {
       "Brand": "RØDE",
@@ -396,7 +396,7 @@ export const microphoneData = [
   {
     id: 'microphone-16',
     name: 'Blue Snowball Ice USB Microphone',
-    image: "/src/assets/Laptop1.png",
+    image: "https://dfestore.com/wp-content/uploads/2025/12/Untitled-1-24.jpg",
     price: 2850.00, // Converted from 49.99 USD to PHP
     specs: {
       "Brand": "Logitech for Creators",
@@ -422,7 +422,7 @@ export const microphoneData = [
   {
     id: 'microphone-17',
     name: 'HyperX DuoCast USB Condenser Microphone',
-    image: "/src/assets/Laptop1.png",
+    image: "https://dfestore.com/wp-content/uploads/2025/12/Untitled-1-24.jpg",
     price: 7410.00, // Converted from 129.99 USD to PHP
     specs: {
       "Brand": "HyperX",
@@ -448,7 +448,7 @@ export const microphoneData = [
   {
     id: 'microphone-18',
     name: 'Elgato Wave:1 USB Condenser Microphone',
-    image: "/src/assets/Laptop1.png",
+    image: "https://dfestore.com/wp-content/uploads/2025/12/Untitled-1-24.jpg",
     price: 7410.00, // Converted from 129.99 USD to PHP
     specs: {
       "Brand": "Elgato",
@@ -474,7 +474,7 @@ export const microphoneData = [
   {
     id: 'microphone-19',
     name: 'Razer Seiren Mini USB Condenser Microphone',
-    image: "/src/assets/Laptop1.png",
+    image: "https://dfestore.com/wp-content/uploads/2025/12/Untitled-1-24.jpg",
     price: 2850.00, // Converted from 49.99 USD to PHP
     specs: {
       "Brand": "Razer",
@@ -500,7 +500,7 @@ export const microphoneData = [
   {
     id: 'microphone-20',
     name: 'Audio-Technica AT2020USB-XP USB Microphone',
-    image: "/src/assets/Laptop1.png",
+    image: "https://dfestore.com/wp-content/uploads/2025/12/Untitled-1-24.jpg",
     price: 10203.00, // Converted from 179.00 USD to PHP
     specs: {
       "Brand": "Audio-Technica",

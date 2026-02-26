@@ -3,7 +3,7 @@ export const powerSupplyData = [
   {
     id: 'psu-1',
     name: 'Corsair RM1000x 1000W 80+ Gold Modular',
-    image: "/src/assets/Laptop1.png",
+    image: "https://dfestore.com/wp-content/uploads/2025/12/Untitled-1-24.jpg",
     price: 10830.00, // Converted from 189.99 USD to PHP
     specs: {
       "Form Factor": "ATX",
@@ -30,7 +30,7 @@ export const powerSupplyData = [
   {
     id: 'psu-2',
     name: 'Seasonic FOCUS GX-850 850W 80+ Gold',
-    image: "/src/assets/Laptop1.png",
+    image: "https://dfestore.com/wp-content/uploads/2025/12/Untitled-1-24.jpg",
     price: 8550.00, // Converted from 149.99 USD to PHP
     specs: {
       "Form Factor": "ATX",
@@ -57,7 +57,7 @@ export const powerSupplyData = [
   {
     id: 'psu-3',
     name: 'EVGA SuperNOVA 1600 T2 1600W 80+ Titanium',
-    image: "/src/assets/Laptop1.png",
+    image: "https://dfestore.com/wp-content/uploads/2025/12/Untitled-1-24.jpg",
     price: 28500.00, // Converted from 499.99 USD to PHP
     specs: {
       "Form Factor": "ATX",
@@ -84,7 +84,7 @@ export const powerSupplyData = [
   {
     id: 'psu-4',
     name: 'Corsair SF750 750W 80+ Platinum SFX',
-    image: "/src/assets/Laptop1.png",
+    image: "https://dfestore.com/wp-content/uploads/2025/12/Untitled-1-24.jpg",
     price: 10260.00, // Converted from 179.99 USD to PHP
     specs: {
       "Form Factor": "SFX",
@@ -111,7 +111,7 @@ export const powerSupplyData = [
   {
     id: 'psu-5',
     name: 'be quiet! Straight Power 11 650W 80+ Platinum',
-    image: "/src/assets/Laptop1.png",
+    image: "https://dfestore.com/wp-content/uploads/2025/12/Untitled-1-24.jpg",
     price: 7410.00, // Converted from 129.99 USD to PHP
     specs: {
       "Form Factor": "ATX",
@@ -138,7 +138,7 @@ export const powerSupplyData = [
   {
     id: 'psu-6',
     name: 'Thermaltake Toughpower GF3 1350W 80+ Gold',
-    image: "/src/assets/Laptop1.png",
+    image: "https://dfestore.com/wp-content/uploads/2025/12/Untitled-1-24.jpg",
     price: 13110.00, // Converted from 229.99 USD to PHP
     specs: {
       "Form Factor": "ATX",
@@ -165,7 +165,7 @@ export const powerSupplyData = [
   {
     id: 'psu-7',
     name: 'Cooler Master V850 Gold V2 850W 80+ Gold',
-    image: "/src/assets/Laptop1.png",
+    image: "https://dfestore.com/wp-content/uploads/2025/12/Untitled-1-24.jpg",
     price: 7980.00, // Converted from 139.99 USD to PHP
     specs: {
       "Form Factor": "ATX",
@@ -192,7 +192,7 @@ export const powerSupplyData = [
   {
     id: 'psu-8',
     name: 'ASUS ROG Thor 1200P2 1200W 80+ Platinum',
-    image: "/src/assets/Laptop1.png",
+    image: "https://dfestore.com/wp-content/uploads/2025/12/Untitled-1-24.jpg",
     price: 19950.00, // Converted from 349.99 USD to PHP
     specs: {
       "Form Factor": "ATX",
@@ -219,7 +219,7 @@ export const powerSupplyData = [
   {
     id: 'psu-9',
     name: 'SeaSonic PRIME TX-1000 1000W 80+ Titanium',
-    image: "/src/assets/Laptop1.png",
+    image: "https://dfestore.com/wp-content/uploads/2025/12/Untitled-1-24.jpg",
     price: 17100.00, // Converted from 299.99 USD to PHP
     specs: {
       "Form Factor": "ATX",
@@ -246,7 +246,7 @@ export const powerSupplyData = [
   {
     id: 'psu-10',
     name: 'EVGA 600 BR 600W 80+ Bronze',
-    image: "/src/assets/Laptop1.png",
+    image: "https://dfestore.com/wp-content/uploads/2025/12/Untitled-1-24.jpg",
     price: 3420.00, // Converted from 59.99 USD PHP
     specs: {
       "Form Factor": "ATX",
@@ -273,7 +273,7 @@ export const powerSupplyData = [
   {
     id: 'psu-11',
     name: 'FSP Group Dagger Pro 850W 80+ Gold SFX',
-    image: "/src/assets/Laptop1.png",
+    image: "https://dfestore.com/wp-content/uploads/2025/12/Untitled-1-24.jpg",
     price: 9120.00, // Converted from 159.99 USD to PHP
     specs: {
       "Form Factor": "SFX",
@@ -300,7 +300,7 @@ export const powerSupplyData = [
   {
     id: 'psu-12',
     name: 'NZXT C1200 1200W 80+ Gold',
-    image: "/src/assets/Laptop1.png",
+    image: "https://dfestore.com/wp-content/uploads/2025/12/Untitled-1-24.jpg",
     price: 14250.00, // Converted from 249.99 USD to PHP
     specs: {
       "Form Factor": "ATX",
@@ -327,7 +327,7 @@ export const powerSupplyData = [
   {
     id: 'psu-13',
     name: 'Super Flower Leadex III Gold 850W 80+ Gold',
-    image: "/src/assets/Laptop1.png",
+    image: "https://dfestore.com/wp-content/uploads/2025/12/Untitled-1-24.jpg",
     price: 7410.00, // Converted from 129.99 USD to PHP
     specs: {
       "Form Factor": "ATX",
@@ -354,7 +354,7 @@ export const powerSupplyData = [
   {
     id: 'psu-14',
     name: 'Phanteks AMP 1000W 80+ Gold',
-    image: "/src/assets/Laptop1.png",
+    image: "https://dfestore.com/wp-content/uploads/2025/12/Untitled-1-24.jpg",
     price: 9690.00, // Converted from 169.99 USD to PHP
     specs: {
       "Form Factor": "ATX",
@@ -381,7 +381,7 @@ export const powerSupplyData = [
   {
     id: 'psu-15',
     name: 'be quiet! Dark Power 13 850W 80+ Titanium',
-    image: "/src/assets/Laptop1.png",
+    image: "https://dfestore.com/wp-content/uploads/2025/12/Untitled-1-24.jpg",
     price: 14250.00, // Converted from 249.99 USD to PHP
     specs: {
       "Form Factor": "ATX",
@@ -408,7 +408,7 @@ export const powerSupplyData = [
   {
     id: 'psu-16',
     name: 'SilverStone Extreme 850R Platinum 850W 80+ Platinum',
-    image: "/src/assets/Laptop1.png",
+    image: "https://dfestore.com/wp-content/uploads/2025/12/Untitled-1-24.jpg",
     price: 10260.00, // Converted from 179.99 USD to PHP
     specs: {
       "Form Factor": "ATX",
@@ -435,7 +435,7 @@ export const powerSupplyData = [
   {
     id: 'psu-17',
     name: 'Gigabyte UD850GM 850W 80+ Gold',
-    image: "/src/assets/Laptop1.png",
+    image: "https://dfestore.com/wp-content/uploads/2025/12/Untitled-1-24.jpg",
     price: 6840.00, // Converted from 119.99 USD to PHP
     specs: {
       "Form Factor": "ATX",
@@ -462,7 +462,7 @@ export const powerSupplyData = [
   {
     id: 'psu-18',
     name: 'Cooler Master V550 Gold V2 550W 80+ Gold',
-    image: "/src/assets/Laptop1.png",
+    image: "https://dfestore.com/wp-content/uploads/2025/12/Untitled-1-24.jpg",
     price: 5130.00, // Converted from 89.99 USD to PHP
     specs: {
       "Form Factor": "ATX",
@@ -489,7 +489,7 @@ export const powerSupplyData = [
   {
     id: 'psu-19',
     name: 'Seasonic FOCUS SPX-750 750W 80+ Platinum SFX-L',
-    image: "/src/assets/Laptop1.png",
+    image: "https://dfestore.com/wp-content/uploads/2025/12/Untitled-1-24.jpg",
     price: 10830.00, // Converted from 189.99 USD to PHP
     specs: {
       "Form Factor": "SFX-L",
@@ -516,7 +516,7 @@ export const powerSupplyData = [
   {
     id: 'psu-20',
     name: 'EVGA SuperNOVA 550 G3 550W 80+ Gold',
-    image: "/src/assets/Laptop1.png",
+    image: "https://dfestore.com/wp-content/uploads/2025/12/Untitled-1-24.jpg",
     price: 5700.00, // Converted from 99.99 USD to PHP
     specs: {
       "Form Factor": "ATX",

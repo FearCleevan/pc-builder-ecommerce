@@ -3,7 +3,7 @@ export const mouseData = [
   {
     id: 'mouse-1',
     name: 'Logitech G Pro X Superlight Wireless Gaming Mouse',
-    image: "/src/assets/Laptop1.png",
+    image: "https://dfestore.com/wp-content/uploads/2025/12/Untitled-1-24.jpg",
     price: 8550.00, // Converted from 149.99 USD to PHP
     specs: {
       "Mouse Brand": "Logitech",
@@ -30,7 +30,7 @@ export const mouseData = [
   {
     id: 'mouse-2',
     name: 'Razer DeathAdder V3 Pro Wireless Gaming Mouse',
-    image: "/src/assets/Laptop1.png",
+    image: "https://dfestore.com/wp-content/uploads/2025/12/Untitled-1-24.jpg",
     price: 9120.00, // Converted from 159.99 USD to PHP
     specs: {
       "Mouse Brand": "Razer",
@@ -57,7 +57,7 @@ export const mouseData = [
   {
     id: 'mouse-3',
     name: 'SteelSeries Aerox 3 Wireless Gaming Mouse',
-    image: "/src/assets/Laptop1.png",
+    image: "https://dfestore.com/wp-content/uploads/2025/12/Untitled-1-24.jpg",
     price: 5700.00, // Converted from 99.99 USD to PHP
     specs: {
       "Mouse Brand": "SteelSeries",
@@ -84,7 +84,7 @@ export const mouseData = [
   {
     id: 'mouse-4',
     name: 'Glorious Model O Wireless Gaming Mouse',
-    image: "/src/assets/Laptop1.png",
+    image: "https://dfestore.com/wp-content/uploads/2025/12/Untitled-1-24.jpg",
     price: 4560.00, // Converted from 79.99 USD to PHP
     specs: {
       "Mouse Brand": "Glorious",
@@ -111,7 +111,7 @@ export const mouseData = [
   {
     id: 'mouse-5',
     name: 'Corsair Sabre RGB Pro Wireless Gaming Mouse',
-    image: "/src/assets/Laptop1.png",
+    image: "https://dfestore.com/wp-content/uploads/2025/12/Untitled-1-24.jpg",
     price: 5130.00, // Converted from 89.99 USD to PHP
     specs: {
       "Mouse Brand": "Corsair",
@@ -138,7 +138,7 @@ export const mouseData = [
   {
     id: 'mouse-6',
     name: 'Razer Viper V2 Pro Wireless Gaming Mouse',
-    image: "/src/assets/Laptop1.png",
+    image: "https://dfestore.com/wp-content/uploads/2025/12/Untitled-1-24.jpg",
     price: 8550.00, // Converted from 149.99 USD to PHP
     specs: {
       "Mouse Brand": "Razer",
@@ -165,7 +165,7 @@ export const mouseData = [
   {
     id: 'mouse-7',
     name: 'Logitech G502 X Plus Lightspeed Wireless',
-    image: "/src/assets/Laptop1.png",
+    image: "https://dfestore.com/wp-content/uploads/2025/12/Untitled-1-24.jpg",
     price: 9120.00, // Converted from 159.99 USD to PHP
     specs: {
       "Mouse Brand": "Logitech",
@@ -192,7 +192,7 @@ export const mouseData = [
   {
     id: 'mouse-8',
     name: 'Finalmouse Starlight-12 Pro Small Wireless',
-    image: "/src/assets/Laptop1.png",
+    image: "https://dfestore.com/wp-content/uploads/2025/12/Untitled-1-24.jpg",
     price: 10830.00, // Converted from 189.99 USD to PHP
     specs: {
       "Mouse Brand": "Finalmouse",
@@ -219,7 +219,7 @@ export const mouseData = [
   {
     id: 'mouse-9',
     name: 'HyperX Pulsefire Haste Wireless Gaming Mouse',
-    image: "/src/assets/Laptop1.png",
+    image: "https://dfestore.com/wp-content/uploads/2025/12/Untitled-1-24.jpg",
     price: 3990.00, // Converted from 69.99 USD to PHP
     specs: {
       "Mouse Brand": "HyperX",
@@ -246,7 +246,7 @@ export const mouseData = [
   {
     id: 'mouse-10',
     name: 'ASUS ROG Keris Wireless AimPoint Gaming Mouse',
-    image: "/src/assets/Laptop1.png",
+    image: "https://dfestore.com/wp-content/uploads/2025/12/Untitled-1-24.jpg",
     price: 6840.00, // Converted from 119.99 USD to PHP
     specs: {
       "Mouse Brand": "ASUS",
@@ -273,7 +273,7 @@ export const mouseData = [
   {
     id: 'mouse-11',
     name: 'Zowie EC2-C Wired Gaming Mouse',
-    image: "/src/assets/Laptop1.png",
+    image: "https://dfestore.com/wp-content/uploads/2025/12/Untitled-1-24.jpg",
     price: 3990.00, // Converted from 69.99 USD to PHP
     specs: {
       "Mouse Brand": "Zowie",
@@ -300,7 +300,7 @@ export const mouseData = [
   {
     id: 'mouse-12',
     name: 'Razer Basilisk V3 Wired Gaming Mouse',
-    image: "/src/assets/Laptop1.png",
+    image: "https://dfestore.com/wp-content/uploads/2025/12/Untitled-1-24.jpg",
     price: 3990.00, // Converted from 69.99 USD to PHP
     specs: {
       "Mouse Brand": "Razer",
@@ -327,7 +327,7 @@ export const mouseData = [
   {
     id: 'mouse-13',
     name: 'Logitech MX Master 3S Wireless Productivity Mouse',
-    image: "/src/assets/Laptop1.png",
+    image: "https://dfestore.com/wp-content/uploads/2025/12/Untitled-1-24.jpg",
     price: 5700.00, // Converted from 99.99 USD to PHP
     specs: {
       "Mouse Brand": "Logitech",
@@ -354,7 +354,7 @@ export const mouseData = [
   {
     id: 'mouse-14',
     name: 'SteelSeries Rival 3 Wireless Gaming Mouse',
-    image: "/src/assets/Laptop1.png",
+    image: "https://dfestore.com/wp-content/uploads/2025/12/Untitled-1-24.jpg",
     price: 2850.00, // Converted from 49.99 USD to PHP
     specs: {
       "Mouse Brand": "SteelSeries",
@@ -381,7 +381,7 @@ export const mouseData = [
   {
     id: 'mouse-15',
     name: 'Glorious Model D Wireless Gaming Mouse',
-    image: "/src/assets/Laptop1.png",
+    image: "https://dfestore.com/wp-content/uploads/2025/12/Untitled-1-24.jpg",
     price: 4560.00, // Converted from 79.99 USD to PHP
     specs: {
       "Mouse Brand": "Glorious",
@@ -408,7 +408,7 @@ export const mouseData = [
   {
     id: 'mouse-16',
     name: 'Corsair Katar Pro XT Wired Gaming Mouse',
-    image: "/src/assets/Laptop1.png",
+    image: "https://dfestore.com/wp-content/uploads/2025/12/Untitled-1-24.jpg",
     price: 2280.00, // Converted from 39.99 USD to PHP
     specs: {
       "Mouse Brand": "Corsair",
@@ -435,7 +435,7 @@ export const mouseData = [
   {
     id: 'mouse-17',
     name: 'Razer Naga Pro Wireless MMO Gaming Mouse',
-    image: "/src/assets/Laptop1.png",
+    image: "https://dfestore.com/wp-content/uploads/2025/12/Untitled-1-24.jpg",
     price: 10260.00, // Converted from 179.99 USD to PHP
     specs: {
       "Mouse Brand": "Razer",
@@ -462,7 +462,7 @@ export const mouseData = [
   {
     id: 'mouse-18',
     name: 'Logitech G305 Lightspeed Wireless Gaming Mouse',
-    image: "/src/assets/Laptop1.png",
+    image: "https://dfestore.com/wp-content/uploads/2025/12/Untitled-1-24.jpg",
     price: 2850.00, // Converted from 49.99 USD to PHP
     specs: {
       "Mouse Brand": "Logitech",
@@ -489,7 +489,7 @@ export const mouseData = [
   {
     id: 'mouse-19',
     name: 'Microsoft Modern Mobile Mouse Wireless',
-    image: "/src/assets/Laptop1.png",
+    image: "https://dfestore.com/wp-content/uploads/2025/12/Untitled-1-24.jpg",
     price: 1995.00, // Converted from 34.99 USD to PHP
     specs: {
       "Mouse Brand": "Microsoft",
@@ -516,7 +516,7 @@ export const mouseData = [
   {
     id: 'mouse-20',
     name: 'Redragon M808 Storm Wired Gaming Mouse',
-    image: "/src/assets/Laptop1.png",
+    image: "https://dfestore.com/wp-content/uploads/2025/12/Untitled-1-24.jpg",
     price: 1425.00, // Converted from 24.99 USD to PHP
     specs: {
       "Mouse Brand": "Redragon",
