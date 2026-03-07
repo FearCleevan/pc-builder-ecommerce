@@ -8,12 +8,15 @@ import {
 } from 'react-icons/fi';
 import styles from './StatisticsOverview.module.css';
 
-const StatisticsOverview = ({ statistics }) => {
+const StatisticsOverview = ({ statistics, activeCategory = "", onCategoryFilter }) => {
+  const totalProducts = statistics.totalProducts || 0;
+  const categories = statistics.categories || {};
+
   const statsCards = [
     {
       id: 'total',
       title: 'Total Products',
-      value: statistics.totalProducts,
+      value: totalProducts,
       icon: <FiPackage size={24} />,
       color: '#3498db',
       bgColor: '#e8f4fc',
@@ -83,31 +86,36 @@ const StatisticsOverview = ({ statistics }) => {
       </div>
 
       {/* Category Distribution */}
-      {Object.keys(statistics.categories).length > 0 && (
+      {Object.keys(categories).length > 0 && (
         <div className={styles.categoryDistribution}>
           <h4 className={styles.distributionTitle}>Category Distribution</h4>
           <div className={styles.categoriesList}>
-            {Object.entries(statistics.categories).map(([category, count]) => {
-              const percentage = (count / statistics.totalProducts) * 100;
+            {Object.entries(categories).map(([category, count]) => {
+              const percentage = totalProducts > 0 ? (count / totalProducts) * 100 : 0;
+              const chipColor = getCategoryColor(category);
               return (
-                <div key={category} className={styles.categoryItem}>
+                <button
+                  key={category}
+                  type="button"
+                  className={`${styles.categoryItem} ${
+                    activeCategory === category ? styles.categoryItemActive : ""
+                  }`}
+                  onClick={() => onCategoryFilter?.(category)}
+                  aria-pressed={activeCategory === category}
+                  title={`Filter table by ${category}`}
+                >
                   <div className={styles.categoryInfo}>
+                    <span
+                      className={styles.categoryDot}
+                      style={{ backgroundColor: chipColor }}
+                    />
                     <span className={styles.categoryName}>{category}</span>
                     <span className={styles.categoryCount}>{count} products</span>
-                  </div>
-                  <div className={styles.categoryBar}>
-                    <div 
-                      className={styles.categoryBarFill}
-                      style={{ 
-                        width: `${percentage}%`,
-                        backgroundColor: getCategoryColor(category)
-                      }}
-                    />
                   </div>
                   <span className={styles.categoryPercentage}>
                     {percentage.toFixed(1)}%
                   </span>
-                </div>
+                </button>
               );
             })}
           </div>

@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useMemo, useState } from "react";
+import React, { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import styles from "./MainPage.module.css";
 import Header from "./Header/Header";
 import SearchFilterSystem from "./SearchFilterSystem/SearchFilterSystem";
@@ -31,6 +31,7 @@ const ProductListing = () => {
   const [showAddModal, setShowAddModal] = useState(false);
   const [selectedProductForAction, setSelectedProductForAction] = useState(null);
   const [viewMode, setViewMode] = useState("table");
+  const [isTableLoading, setIsTableLoading] = useState(false);
   const [statistics, setStatistics] = useState({
     totalProducts: 0,
     inStock: 0,
@@ -40,6 +41,7 @@ const ProductListing = () => {
   });
 
   const mockProducts = useMemo(() => getAllMockListingProducts(), []);
+  const filterLoadingTimeoutRef = useRef(null);
 
   const loadProducts = useCallback(async () => {
     try {
@@ -58,6 +60,14 @@ const ProductListing = () => {
   useEffect(() => {
     loadProducts();
   }, [loadProducts]);
+
+  useEffect(() => {
+    return () => {
+      if (filterLoadingTimeoutRef.current) {
+        clearTimeout(filterLoadingTimeoutRef.current);
+      }
+    };
+  }, []);
 
   const calculateStatistics = (productsList) => {
     const stats = {
@@ -132,9 +142,27 @@ const ProductListing = () => {
   };
 
   const handleFilterChange = (newFilters) => {
-    const nextFilters = { ...filters, ...newFilters };
-    setFilters(nextFilters);
-    applyFilters(nextFilters);
+    setFilters((prevFilters) => {
+      const nextFilters = { ...prevFilters, ...newFilters };
+
+      if (filterLoadingTimeoutRef.current) {
+        clearTimeout(filterLoadingTimeoutRef.current);
+      }
+
+      setIsTableLoading(true);
+      filterLoadingTimeoutRef.current = setTimeout(() => {
+        applyFilters(nextFilters);
+        setIsTableLoading(false);
+      }, 220);
+
+      return nextFilters;
+    });
+  };
+
+  const handleCategoryChipFilter = (category) => {
+    handleFilterChange({
+      category: filters.category === category ? "" : category,
+    });
   };
 
   const handleProductSelect = (productId, isSelected) => {
@@ -299,7 +327,11 @@ const ProductListing = () => {
         onAddProductClick={() => setShowAddModal(true)}
       />
 
-      <StatisticsOverview statistics={statistics} />
+      <StatisticsOverview
+        statistics={statistics}
+        activeCategory={filters.category}
+        onCategoryFilter={handleCategoryChipFilter}
+      />
 
       <SearchFilterSystem
         filters={filters}
@@ -312,6 +344,7 @@ const ProductListing = () => {
       <ProductGridTableView
         products={filteredProducts}
         viewMode={viewMode}
+        isLoading={isTableLoading}
         selectedProducts={selectedProducts}
         onProductSelect={handleProductSelect}
         onBulkSelect={handleBulkSelect}

@@ -235,6 +235,7 @@ const renderRating = (rating) => {
 const ProductGridTableView = ({
   products,
   viewMode,
+  isLoading = false,
   selectedProducts,
   onProductSelect,
   onBulkSelect,
@@ -666,7 +667,15 @@ const ProductGridTableView = ({
 
   return (
     <div className={styles.container}>
-      {viewMode === 'table' ? renderTableView() : renderGridView()}
+      {isLoading && (
+        <div className={styles.loadingOverlay}>
+          <div className={styles.loadingSpinner} />
+          <p className={styles.loadingText}>Loading products...</p>
+        </div>
+      )}
+      <div className={isLoading ? styles.loadingContent : ''}>
+        {viewMode === 'table' ? renderTableView() : renderGridView()}
+      </div>
     </div>
   );
 };
