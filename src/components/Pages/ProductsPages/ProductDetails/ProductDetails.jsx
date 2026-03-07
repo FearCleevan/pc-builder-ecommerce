@@ -5,7 +5,8 @@ import Header from "../../../Header/Header";
 import Footer from "../../../Footer/Footer";
 import ProductCard from "../ProductCard/ProductCard";
 import { formatPrice } from "../../../MockData/formatPrice";
-import { getProductById, productsCatalog } from "../../../MockData/productsCatalog";
+import { productsCatalog } from "../../../MockData/productsCatalog";
+import { getUnifiedProductsCatalog } from "../../../MockData/catalogDataService";
 import { addProductToCart } from "../../../../utils/cartStorage";
 import styles from "./ProductDetails.module.css";
 
@@ -15,8 +16,28 @@ const ProductDetails = () => {
   const [quantity, setQuantity] = useState(1);
   const [statusMessage, setStatusMessage] = useState("");
   const [selectedImageIndex, setSelectedImageIndex] = useState(0);
+  const [catalogProducts, setCatalogProducts] = useState(productsCatalog);
 
-  const product = useMemo(() => getProductById(id), [id]);
+  useEffect(() => {
+    let isMounted = true;
+
+    const loadCatalog = async () => {
+      const unifiedCatalog = await getUnifiedProductsCatalog();
+      if (!isMounted) return;
+      setCatalogProducts(unifiedCatalog);
+    };
+
+    loadCatalog();
+
+    return () => {
+      isMounted = false;
+    };
+  }, []);
+
+  const product = useMemo(
+    () => catalogProducts.find((item) => String(item.id) === String(id)),
+    [catalogProducts, id]
+  );
   const stockCount =
     typeof product?.stockCount === "number" ? product.stockCount : 10;
   const stockLabel = stockCount <= 0 ? "Out of stock" : "In stock";
@@ -25,7 +46,7 @@ const ProductDetails = () => {
   const relatedProducts = useMemo(() => {
     if (!product) return [];
 
-    return productsCatalog
+    return catalogProducts
       .filter(
         (item) =>
           item.id !== product.id &&
@@ -34,7 +55,7 @@ const ProductDetails = () => {
             item.series === product.series)
       )
       .slice(0, 4);
-  }, [product]);
+  }, [catalogProducts, product]);
 
   const pricingPlans = useMemo(() => {
     if (!product) return [];

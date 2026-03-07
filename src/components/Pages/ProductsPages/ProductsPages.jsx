@@ -6,13 +6,14 @@ import ProductsGrid from './ProductsGrid/ProductsGrid';
 import ProductsBreadcrumb from './ProductsBreadcrumb/ProductsBreadcrumb';
 import Pagination from './Pagination/Pagination';
 import { productsCatalog } from '../../MockData/productsCatalog';
+import { getUnifiedProductsCatalog } from '../../MockData/catalogDataService';
 import { matchesSeriesFacet } from '../../MockData/ProductMockData';
 import styles from './ProductsPages.module.css';
 import Header from '../../Header/Header';
 import Footer from '../../Footer/Footer';
 
 const ProductsPages = () => {
-  const [allProducts] = useState(productsCatalog);
+  const [allProducts, setAllProducts] = useState(productsCatalog);
   const [filteredProducts, setFilteredProducts] = useState(allProducts);
   const [activeFilters, setActiveFilters] = useState({
     category: '',
@@ -33,6 +34,23 @@ const ProductsPages = () => {
   // Check if mobile view
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 992);
   const [isTablet, setIsTablet] = useState(window.innerWidth <= 1024 && window.innerWidth > 640);
+
+  useEffect(() => {
+    let isMounted = true;
+
+    const loadCatalog = async () => {
+      const unifiedCatalog = await getUnifiedProductsCatalog();
+      if (!isMounted) return;
+      setAllProducts(unifiedCatalog);
+      setFilteredProducts(unifiedCatalog);
+    };
+
+    loadCatalog();
+
+    return () => {
+      isMounted = false;
+    };
+  }, []);
 
   const priceBounds = useMemo(() => {
     const prices = allProducts.map((product) => Number(product.price || 0));

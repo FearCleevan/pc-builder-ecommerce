@@ -8,6 +8,11 @@ const ProductCard = ({ product }) => {
     const [isInView, setIsInView] = useState(false);
     const imageRef = useRef(null);
     const cardRef = useRef(null);
+    const imageSource =
+        product.img ||
+        product.image ||
+        (Array.isArray(product.images) && product.images.length > 0 ? product.images[0] : '') ||
+        '/placeholder-image.jpg';
 
     // Intersection Observer for lazy loading
     useEffect(() => {
@@ -40,11 +45,11 @@ const ProductCard = ({ product }) => {
     useEffect(() => {
         if (isInView && imageRef.current) {
             const img = new Image();
-            img.src = product.img;
+            img.src = imageSource;
             img.onload = () => {
                 setIsImageLoaded(true);
                 if (imageRef.current) {
-                    imageRef.current.src = product.img;
+                    imageRef.current.src = imageSource;
                 }
             };
             img.onerror = () => {
@@ -55,7 +60,7 @@ const ProductCard = ({ product }) => {
                 }
             };
         }
-    }, [isInView, product.img]);
+    }, [isInView, imageSource]);
 
     const handleAddToCart = (e) => {
         e.preventDefault();
@@ -95,7 +100,7 @@ const ProductCard = ({ product }) => {
                 {/* Lazy loaded image with placeholder */}
                 <img
                     ref={imageRef}
-                    src={isImageLoaded ? product.img : '/placeholder-image.jpg'}
+                    src={isImageLoaded ? imageSource : '/placeholder-image.jpg'}
                     alt={product.name}
                     className={`${isImageLoaded ? styles.imageLoaded : styles.imageLoading}`}
                     loading="lazy" // Native lazy loading as fallback
