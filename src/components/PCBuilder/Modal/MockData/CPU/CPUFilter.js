@@ -32,7 +32,7 @@ export const cpuFilter = [
     title: "Integrated Graphics",
     type: "checkbox",
     options: [
-      "AMD Radeon", "AMD Radeon 740M", "AMD Radeon 760M", "AMD Radeon 780M",
+      "AMD Radeon", "AMD Radeon Graphics", "AMD Radeon 740M", "AMD Radeon 760M", "AMD Radeon 780M",
       "AMD Radeon HD 8000 Series", "AMD Radeon HD 8370D", "AMD Radeon HD 8470D",
       "AMD Radeon HD 8670D", "AMD Radeon R5 (on-die)", "AMD Radeon R7 (on-die)",
       "AMD Radeon Vega 11", "AMD Radeon Vega 3", "AMD Radeon Vega 7",

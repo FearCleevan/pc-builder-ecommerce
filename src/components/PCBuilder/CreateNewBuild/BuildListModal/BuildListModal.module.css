@@ -251,6 +251,31 @@
   white-space: nowrap;
 }
 
+.buildHeaderRight {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.deleteBuildButton {
+  background: transparent;
+  border: 1px solid #ef4444;
+  border-radius: 4px;
+  color: #ef4444;
+  cursor: pointer;
+  padding: 2px 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.7;
+  transition: opacity 0.15s;
+}
+
+.deleteBuildButton:hover {
+  opacity: 1;
+  background: rgba(239, 68, 68, 0.1);
+}
+
 .componentsList {
   display: flex;
   flex-direction: column;

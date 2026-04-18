@@ -66,3 +66,38 @@
 .productText {
   font-size: 0.75rem;
 }
+
+.productItem {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .productItem {
+    width: fit-content;
+  }
+}
+
+.removeButton {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  border-radius: 9999px;
+  border: 1px solid #dc2626;
+  background: transparent;
+  color: #dc2626;
+  cursor: pointer;
+  padding: 0;
+  opacity: 0.75;
+  transition: opacity 0.15s, background 0.15s;
+}
+
+.removeButton:hover {
+  opacity: 1;
+  background: rgba(220, 38, 38, 0.1);
+}

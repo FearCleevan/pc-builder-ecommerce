@@ -132,6 +132,16 @@ export const getCompatibilityReport = (selectedComponents = {}) => {
         message: `RAM type (${getComponentSpec(ram, "RAM Type")}) is not supported by motherboard (${getComponentSpec(motherboard, "RAM Type")}).`,
       });
     }
+
+    const memorySlots = parseNumericValue(getComponentSpec(motherboard, "Memory Slots"));
+    const numberOfModules = parseNumericValue(getComponentSpec(ram, "Number of Modules"));
+    if (memorySlots > 0 && numberOfModules > 0 && numberOfModules > memorySlots) {
+      issues.push({
+        id: "ram-slots",
+        level: "warning",
+        message: `RAM kit has ${numberOfModules} modules but the motherboard only has ${memorySlots} memory slot${memorySlots === 1 ? "" : "s"}.`,
+      });
+    }
   }
 
   if (pcCase && motherboard) {
@@ -171,14 +181,14 @@ export const getCompatibilityReport = (selectedComponents = {}) => {
         });
       }
     }
+  }
 
-    if (!isCpuCoolerSocketCompatible(cpuCooler, cpu)) {
-      issues.push({
-        id: "cooler-cpu-socket",
-        level: "error",
-        message: "CPU cooler socket support does not include the selected CPU socket.",
-      });
-    }
+  if (cpu && cpuCooler && !isCpuCoolerSocketCompatible(cpuCooler, cpu)) {
+    issues.push({
+      id: "cooler-cpu-socket",
+      level: "error",
+      message: "CPU cooler socket support does not include the selected CPU socket.",
+    });
   }
 
   const wattageReport = getWattageReport(selectedComponents);
@@ -267,7 +277,13 @@ export const isComponentCompatibleWithBuild = (selectedComponents, category, can
   }
 
   if (category === "ram" && motherboard) {
-    return toLower(getComponentSpec(candidateComponent, "RAM Type")) === toLower(getComponentSpec(motherboard, "RAM Type"));
+    if (toLower(getComponentSpec(candidateComponent, "RAM Type")) !== toLower(getComponentSpec(motherboard, "RAM Type"))) {
+      return false;
+    }
+    const memorySlots = parseNumericValue(getComponentSpec(motherboard, "Memory Slots"));
+    const numberOfModules = parseNumericValue(getComponentSpec(candidateComponent, "Number of Modules"));
+    if (memorySlots > 0 && numberOfModules > memorySlots) return false;
+    return true;
   }
 
   if (category === "case") {

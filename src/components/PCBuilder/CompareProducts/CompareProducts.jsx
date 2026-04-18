@@ -23,13 +23,14 @@ import { microphoneData } from '../Modal/MockData/Microphone/Microphone';
 import { webcamData } from '../Modal/MockData/Webcam/Webcam';
 import { powerSupplyData } from '../Modal/MockData/Power Suppy/PowerSupply';
 
-const CompareProducts = ({ products, componentType, onExit }) => {
+const CompareProducts = ({ products, componentType, onExit, onAddToBuild }) => {
     const [comparisonProducts, setComparisonProducts] = useState([]);
     const [currentComponentType, setCurrentComponentType] = useState(componentType);
     const [searchTerm, setSearchTerm] = useState('');
     const [searchResults, setSearchResults] = useState([]);
     const [showSearchResults, setShowSearchResults] = useState(false);
     const [allProducts, setAllProducts] = useState([]);
+    const [detailProduct, setDetailProduct] = useState(null);
     const searchContainerRef = useRef(null);
 
     // Component data mapping
@@ -168,24 +169,29 @@ const CompareProducts = ({ products, componentType, onExit }) => {
     };
 
     const handleViewDetails = (product) => {
-        // Implement view details functionality
-        console.log('View details:', product);
+        setDetailProduct(product);
+    };
+
+    const handleCloseDetails = () => {
+        setDetailProduct(null);
     };
 
     const handleAddToBuild = (product) => {
-        // Implement add to build functionality
-        console.log('Add to build:', product);
+        if (onAddToBuild && currentComponentType) {
+            onAddToBuild(product, currentComponentType);
+        }
     };
 
+    const [maxReachedNotice, setMaxReachedNotice] = useState(false);
+
     const handleAddToComparison = (product) => {
-        // Add product to comparison (max 4 products)
         if (comparisonProducts.length < 4) {
-            const updatedProducts = [...comparisonProducts, product];
-            setComparisonProducts(updatedProducts);
+            setComparisonProducts(prev => [...prev, product]);
             setShowSearchResults(false);
             setSearchTerm('');
         } else {
-            alert('Maximum of 4 products can be compared at once');
+            setMaxReachedNotice(true);
+            setTimeout(() => setMaxReachedNotice(false), 2500);
         }
     };
 
@@ -243,6 +249,52 @@ const CompareProducts = ({ products, componentType, onExit }) => {
             {showSearchResults && searchResults.length === 0 && searchTerm && (
                 <div className={styles.noResults}>
                     <p>No products found for "{searchTerm}"</p>
+                </div>
+            )}
+
+            {maxReachedNotice && (
+                <div className={styles.maxNotice}>
+                    Maximum of 4 products can be compared at once.
+                </div>
+            )}
+
+            {detailProduct && (
+                <div className={styles.detailOverlay} onClick={handleCloseDetails}>
+                    <div className={styles.detailModal} onClick={e => e.stopPropagation()}>
+                        <div className={styles.detailHeader}>
+                            <h3 className={styles.detailTitle}>{detailProduct.name}</h3>
+                            <button className={styles.detailCloseButton} onClick={handleCloseDetails}>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                    <path d="M18 6 6 18"></path>
+                                    <path d="m6 6 12 12"></path>
+                                </svg>
+                            </button>
+                        </div>
+                        <div className={styles.detailBody}>
+                            {detailProduct.image && (
+                                <img src={detailProduct.image} alt={detailProduct.name} className={styles.detailImage} />
+                            )}
+                            <p className={styles.detailPrice}>
+                                ₱{new Intl.NumberFormat('en-PH').format(detailProduct.price)}
+                            </p>
+                            <div className={styles.detailSpecs}>
+                                {detailProduct.specs && Object.entries(detailProduct.specs).map(([key, val]) => (
+                                    <div key={key} className={styles.detailSpecRow}>
+                                        <span className={styles.detailSpecKey}>{key}</span>
+                                        <span className={styles.detailSpecVal}>{val}</span>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+                        <div className={styles.detailFooter}>
+                            <button
+                                className={styles.detailAddButton}
+                                onClick={() => { handleAddToBuild(detailProduct); handleCloseDetails(); }}
+                            >
+                                Add to Build
+                            </button>
+                        </div>
+                    </div>
                 </div>
             )}
         </div>

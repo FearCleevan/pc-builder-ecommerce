@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import styles from './BuildListModal.module.css';
 
-const BuildListModal = ({ isOpen, onClose, onSelectBuild, onCreateNewBuild }) => {
+const BuildListModal = ({ isOpen, onClose, onSelectBuild, onCreateNewBuild, onDeleteBuild }) => {
   const [savedBuilds, setSavedBuilds] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
@@ -40,6 +40,12 @@ const BuildListModal = ({ isOpen, onClose, onSelectBuild, onCreateNewBuild }) =>
   const handleBuildSelect = (build) => {
     onSelectBuild(build);
     onClose();
+  };
+
+  const handleBuildDelete = (e, buildId) => {
+    e.stopPropagation();
+    if (onDeleteBuild) onDeleteBuild(buildId);
+    setSavedBuilds(prev => prev.filter(b => b.id !== buildId));
   };
 
   const handleCreateNewBuild = () => {
@@ -195,7 +201,20 @@ const BuildListModal = ({ isOpen, onClose, onSelectBuild, onCreateNewBuild }) =>
                   <div className={styles.buildInfo}>
                     <div className={styles.buildHeader}>
                       <p className={styles.buildName}>{build.name}</p>
-                      <p className={styles.buildPrice}>{formatPrice(calculateTotalPrice(build.components))}</p>
+                      <div className={styles.buildHeaderRight}>
+                        <p className={styles.buildPrice}>{formatPrice(calculateTotalPrice(build.components))}</p>
+                        <button
+                          className={styles.deleteBuildButton}
+                          onClick={(e) => handleBuildDelete(e, build.id)}
+                          title="Delete build"
+                        >
+                          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                            <path d="M3 6h18"></path>
+                            <path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6"></path>
+                            <path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2"></path>
+                          </svg>
+                        </button>
+                      </div>
                     </div>
                     
                     <div className={styles.componentsList}>

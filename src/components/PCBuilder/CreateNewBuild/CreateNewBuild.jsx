@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import BuildListModal from './BuildListModal/BuildListModal';
 import styles from './CreateNewBuild.module.css';
 
-const CreateNewBuild = () => {
+const CreateNewBuild = ({ onCreateNewBuild, onSelectBuild, onDeleteBuild }) => {
   const [isBuildListModalOpen, setIsBuildListModalOpen] = useState(false);
 
   const handleBuildsListClick = () => {
@@ -15,14 +15,13 @@ const CreateNewBuild = () => {
   };
 
   const handleSelectBuild = (build) => {
-    // Load the selected build into the current builder
-    console.log('Selected build:', build);
-    // You'll need to implement this function to load the build data
+    onSelectBuild(build);
+    setIsBuildListModalOpen(false);
   };
 
   const handleCreateNewBuild = () => {
-    // Reset to a new empty build
-    console.log('Create new build');
+    onCreateNewBuild();
+    setIsBuildListModalOpen(false);
   };
 
   return (
@@ -74,7 +73,7 @@ const CreateNewBuild = () => {
                   </div>
                   <span className="sr-only">Loading</span>
                 </div>
-                <button className={styles.createButton}>
+                <button className={styles.createButton} onClick={handleCreateNewBuild}>
                   <span className={styles.buttonIcon}>
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                       <path d="M5 12h14"></path>
@@ -95,6 +94,7 @@ const CreateNewBuild = () => {
         onClose={handleCloseBuildListModal}
         onSelectBuild={handleSelectBuild}
         onCreateNewBuild={handleCreateNewBuild}
+        onDeleteBuild={onDeleteBuild}
       />
     </>
   );

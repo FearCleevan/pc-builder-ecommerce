@@ -1,4 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { onAuthStateChanged } from 'firebase/auth';
+import { auth } from '../../../firebase/config';
 import styles from './PCBuildHeader.module.css';
 import BuildCostModal from './BuildCostModal/BuildCostModal';
 import CompatibilityModal from './CompatibilityModal/CompatibilityModal';
@@ -12,10 +14,21 @@ const PCBuildHeader = ({
   wattageReport,
   buildAssemblyOption,
   onBuildAssemblyOptionChange,
-  onAddToCart
+  onAddToCart,
+  buildName,
+  onBuildNameChange,
+  onSaveBuild,
+  onCloneBuild,
 }) => {
   const [isEditing, setIsEditing] = useState(false);
-  const [buildName, setBuildName] = useState('New Build');
+  const [displayName, setDisplayName] = useState('Anonymous');
+
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
+      setDisplayName(user?.displayName || user?.email?.split('@')[0] || 'Anonymous');
+    });
+    return () => unsubscribe();
+  }, []);
   const [totalPrice, setTotalPrice] = useState(0);
   const [displayPrice, setDisplayPrice] = useState(0);
   const [isCostModalOpen, setIsCostModalOpen] = useState(false);
@@ -82,11 +95,13 @@ const PCBuildHeader = ({
   };
   
   const handleNameChange = (e) => {
-    if (e.key === 'Enter') {
-      setIsEditing(false);
-    }
+    onBuildNameChange(e.target.value);
   };
-  
+
+  const handleNameKeyDown = (e) => {
+    if (e.key === 'Enter') setIsEditing(false);
+  };
+
   const handleBlur = () => {
     setIsEditing(false);
   };
@@ -145,8 +160,8 @@ const PCBuildHeader = ({
               <input
                 type="text"
                 value={buildName}
-                onChange={(e) => setBuildName(e.target.value)}
-                onKeyDown={handleNameChange}
+                onChange={handleNameChange}
+                onKeyDown={handleNameKeyDown}
                 onBlur={handleBlur}
                 autoFocus
                 className={styles.editInput}
@@ -190,7 +205,7 @@ const PCBuildHeader = ({
                     </span>
                   </span>
                 </div>
-                <p className={styles.metaText}>Anonymous</p>
+                <p className={styles.metaText}>{displayName}</p>
               </div>
             </div>
           </div>
@@ -250,7 +265,13 @@ const PCBuildHeader = ({
                       <path d="m9 12 2 2 4-4"></path>
                     </svg>
                   </span>
-                  <span>{compatibilityReport?.isCompatible ? 'Compatible' : 'Needs Attention'}</span>
+                  <span>
+                    {!hasSelectedComponents
+                      ? 'Ready to Build'
+                      : compatibilityReport?.isCompatible
+                        ? 'Compatible'
+                        : 'Needs Attention'}
+                  </span>
                 </div>
               </div>
               <div className={styles.statDropdown} onClick={handleCompatibilityModalOpen}>
@@ -357,21 +378,36 @@ const PCBuildHeader = ({
               </div>
             </div>
 
-            <div className={styles.buttonWrapper}>
-            </div>
-            
-            <div className={styles.buttonWrapper}>
-              <button className={styles.actionButton}>
-                <span className={styles.buttonIcon}>
-                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <rect width="14" height="14" x="8" y="8" rx="2" ry="2"></rect>
-                    <path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path>
-                  </svg>
-                </span>
-                <span className={styles.tabletText}>Clone Build</span>
-                <span className={styles.mobileText}>Clone</span>
-              </button>
-            </div>
+            {hasSelectedComponents && (
+              <div className={styles.buttonWrapper}>
+                <button className={styles.actionButton} onClick={onSaveBuild} title="Save current build to your builds list">
+                  <span className={styles.buttonIcon}>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M15.2 3a2 2 0 0 1 1.4.6l3.8 3.8a2 2 0 0 1 .6 1.4V19a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2z"></path>
+                      <path d="M17 21v-7a1 1 0 0 0-1-1H8a1 1 0 0 0-1 1v7"></path>
+                      <path d="M7 3v4a1 1 0 0 0 1 1h7"></path>
+                    </svg>
+                  </span>
+                  <span className={styles.tabletText}>Save Build</span>
+                  <span className={styles.mobileText}>Save</span>
+                </button>
+              </div>
+            )}
+
+            {hasSelectedComponents && (
+              <div className={styles.buttonWrapper}>
+                <button className={styles.actionButton} onClick={onCloneBuild} title="Save a copy of this build with a new name">
+                  <span className={styles.buttonIcon}>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <rect width="14" height="14" x="8" y="8" rx="2" ry="2"></rect>
+                      <path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path>
+                    </svg>
+                  </span>
+                  <span className={styles.tabletText}>Clone Build</span>
+                  <span className={styles.mobileText}>Clone</span>
+                </button>
+              </div>
+            )}
             
             <div className={styles.buttonWrapper}>
               <button className={styles.actionButton}>

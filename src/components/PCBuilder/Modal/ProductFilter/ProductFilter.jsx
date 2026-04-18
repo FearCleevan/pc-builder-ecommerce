@@ -113,6 +113,19 @@ const RangeSlider = ({ min, max, unit, value, onChange }) => {
   );
 };
 
+const buildDefaultValues = (sections) => {
+  const values = {};
+  sections.forEach(section => {
+    if (section.type === 'range') {
+      values[section.title] = [section.min, section.max];
+    } else if (section.type === 'checkbox') {
+      values[section.title] = {};
+      section.options.forEach(opt => { values[section.title][opt] = false; });
+    }
+  });
+  return values;
+};
+
 const ProductFilter = ({ componentType, onFilterChange }) => {
   const [expandedSection, setExpandedSection] = useState(null);
   const [filterValues, setFilterValues] = useState({});
@@ -123,21 +136,23 @@ const ProductFilter = ({ componentType, onFilterChange }) => {
     [componentTypeId]
   );
 
-  // Initialize filter values
   useEffect(() => {
-    const initialValues = {};
-    filterSections.forEach(section => {
-      if (section.type === "range") {
-        initialValues[section.title] = [section.min, section.max];
-      } else if (section.type === "checkbox") {
-        initialValues[section.title] = {};
-        section.options.forEach(option => {
-          initialValues[section.title][option] = false;
-        });
-      }
-    });
-    setFilterValues(initialValues);
+    setFilterValues(buildDefaultValues(filterSections));
   }, [filterSections]);
+
+  const hasActiveFilters = Object.entries(filterValues).some(([title, val]) => {
+    const section = filterSections.find(s => s.title === title);
+    if (!section) return false;
+    if (section.type === 'range') return val[0] !== section.min || val[1] !== section.max;
+    if (section.type === 'checkbox') return Object.values(val).some(Boolean);
+    return false;
+  });
+
+  const handleClearFilters = () => {
+    const reset = buildDefaultValues(filterSections);
+    setFilterValues(reset);
+    onFilterChange(reset);
+  };
 
   const handleRangeChange = (sectionTitle, newValue) => {
     const updatedValues = {
@@ -162,6 +177,14 @@ const ProductFilter = ({ componentType, onFilterChange }) => {
 
   return (
     <div className={styles.filterContainer}>
+      <div className={styles.filterHeader}>
+        <span className={styles.filterTitle}>Filters</span>
+        {hasActiveFilters && (
+          <button className={styles.clearFiltersBtn} onClick={handleClearFilters}>
+            Clear
+          </button>
+        )}
+      </div>
       <div className={styles.filterContent}>
         {filterSections.map((section, index) => (
           <div key={index} className={styles.filterSection}>

@@ -84,7 +84,7 @@ const AddComponentModal = ({
 
     const loadComparisonProducts = (componentTypeId) => {
         try {
-            const savedData = localStorage.getItem(`compare_${componentTypeId}`);
+            const savedData = localStorage.getItem(`compare_${componentTypeId}_products`);
             if (savedData) {
                 return JSON.parse(savedData);
             }
@@ -96,7 +96,7 @@ const AddComponentModal = ({
 
     const saveComparisonProducts = (componentTypeId, products) => {
         try {
-            localStorage.setItem(`compare_${componentTypeId}`, JSON.stringify(products));
+            localStorage.setItem(`compare_${componentTypeId}_products`, JSON.stringify(products));
         } catch (error) {
             console.error('Error saving comparison products to localStorage:', error);
         }
@@ -107,8 +107,6 @@ const AddComponentModal = ({
             document.body.style.overflow = 'hidden';
             const mockComponents = generateMockComponents(componentType);
             setComponents(mockComponents);
-            setFilteredComponents(mockComponents);
-            setIsLoading(false);
         } else {
             document.body.style.overflow = 'unset';
             setSearchTerm('');
@@ -366,6 +364,7 @@ const AddComponentModal = ({
                     break;
             }
 
+            setCurrentPage(1);
             setFilteredComponents(filtered);
             setIsLoading(false);
         }, 300); // Small delay to show loading state
@@ -518,7 +517,7 @@ const AddComponentModal = ({
                         <div className={styles.searchAndSortSection}>
                             <div className={styles.resultsInfo}>
                                 <span className={styles.resultsCount}>
-                                    {filteredComponents.length} Compatible Products
+                                    {filteredComponents.length} {compatibilityFilter ? 'Compatible ' : ''}Products
                                 </span>
                             </div>
 
@@ -579,7 +578,24 @@ const AddComponentModal = ({
                                         <line x1="12" y1="16" x2="12.01" y2="16"></line>
                                     </svg>
                                     <h3>No products found</h3>
-                                    <p>Try adjusting your filters or search terms</p>
+                                    {compatibilityFilter && components.length > 0 ? (
+                                        <>
+                                            <p>No <strong>{componentType?.name}</strong> options are compatible with your current build.</p>
+                                            {componentType?.id === 'ram' && selectedComponents?.motherboard && (
+                                                <p className={styles.noResultsHint}>
+                                                    Your motherboard supports <strong>{selectedComponents.motherboard.specs?.['RAM Type'] || 'a specific RAM type'}</strong>. Make sure your RAM matches.
+                                                </p>
+                                            )}
+                                            <button
+                                                className={styles.noResultsAction}
+                                                onClick={toggleCompatibilityFilter}
+                                            >
+                                                Show all products (disable compatibility filter)
+                                            </button>
+                                        </>
+                                    ) : (
+                                        <p>Try adjusting your filters or search terms</p>
+                                    )}
                                 </div>
                             ) : (
                                 // Show actual components

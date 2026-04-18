@@ -39,7 +39,10 @@ const MainFifthContainer = ({ isMobile }) => {
   return (
     <section className={styles.newArrivals}>
       <div className={styles.sectionHeader}>
-        <h2>New Arrivals - Products</h2>
+        <div>
+          <span className={styles.sectionEyebrow}>Featured</span>
+          <h2>All Products</h2>
+        </div>
         <a href="#" className={styles.viewAll}>View All</a>
       </div>
       <div className={styles.carouselWrapper}>

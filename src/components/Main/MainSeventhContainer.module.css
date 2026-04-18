@@ -1,290 +1,290 @@
 /* client/src/components/Main/MainSeventhContainer.module.css */
-.builderCta {
-  display: flex;
-  align-items: center;
-  padding: 100px 5%;
-  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
-  color: white;
+.cta {
   position: relative;
   overflow: hidden;
+  background: #0a0a0a;
+  border-top: 1px solid #1a1a1a;
+  padding: clamp(64px, 8vw, 110px) 5%;
 }
 
-.builderCta::before {
-  content: '';
+.bg {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="circuit" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="10" cy="10" r="1" fill="rgba(255,255,255,0.1)" /></pattern></defs><rect x="0" y="0" width="100" height="100" fill="url(%23circuit)" /></svg>');
-  opacity: 0.3;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 80% 60% at 60% 50%, rgba(255, 44, 44, 0.08) 0%, transparent 70%),
+    radial-gradient(ellipse 50% 50% at 10% 80%, rgba(255, 44, 44, 0.04) 0%, transparent 60%);
+  pointer-events: none;
 }
 
-.builderContent {
-  flex: 1;
-  padding-right: 40px;
-  position: relative;
-  z-index: 2;
-}
-
-.builderHeader {
+.inner {
+  max-width: 1200px;
+  margin: 0 auto;
   display: flex;
   align-items: center;
-  gap: 15px;
-  margin-bottom: 20px;
+  gap: 80px;
+  position: relative;
+  z-index: 1;
 }
 
-.builderIcon {
-  font-size: 2.5rem;
-  color: #4ecca3;
+/* ── Content ── */
+.content {
+  flex: 1;
+  min-width: 0;
 }
 
-.builderContent h2 {
-  font-size: 2.5rem;
-  margin: 0;
-  background: linear-gradient(135deg, #4ecca3 0%, #6fffe9 100%);
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #ff6b6b;
+  background: rgba(255, 44, 44, 0.1);
+  border: 1px solid rgba(255, 44, 44, 0.3);
+  padding: 5px 14px;
+  border-radius: 20px;
+  margin-bottom: 22px;
+}
+
+.heading {
+  font-size: clamp(2rem, 4.5vw, 3.2rem);
+  font-weight: 800;
+  color: #f5f5f5;
+  margin: 0 0 20px;
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+}
+
+.accent {
+  background: linear-gradient(90deg, #ff2c2c, #ff8c00);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
-.builderContent p {
-  font-size: 1.2rem;
-  margin-bottom: 30px;
-  opacity: 0.9;
-  line-height: 1.6;
+.desc {
+  font-size: clamp(0.95rem, 1.8vw, 1.1rem);
+  color: rgba(255, 255, 255, 0.55);
+  line-height: 1.75;
+  margin: 0 0 32px;
+  max-width: 520px;
 }
 
-.builderFeatures {
-  margin-bottom: 40px;
+.featureList {
+  list-style: none;
   padding: 0;
+  margin: 0 0 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
 }
 
-.builderFeatures li {
+.featureItem {
   display: flex;
   align-items: center;
-  gap: 15px;
-  margin-bottom: 15px;
-  font-size: 1.1rem;
-  list-style: none;
+  gap: 12px;
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.75);
+  font-weight: 500;
 }
 
 .featureIcon {
-  color: #4ecca3;
-  font-size: 1.2rem;
-}
-
-.ctaButton {
+  color: #ff2c2c;
   display: flex;
   align-items: center;
-  gap: 10px;
-  padding: 15px 30px;
-  background: linear-gradient(135deg, #4ecca3 0%, #6fffe9 100%);
-  color: #1a1a2e;
+  flex-shrink: 0;
+}
+
+.actions {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.primaryBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  padding: 14px 32px;
+  background: #ff2c2c;
+  color: #fff;
   border: none;
-  border-radius: 30px;
-  font-weight: 600;
-  font-size: 1.1rem;
+  border-radius: 6px;
+  font-size: 0.97rem;
+  font-weight: 700;
   cursor: pointer;
-  transition: all 0.3s ease;
-  box-shadow: 0 5px 15px rgba(78, 204, 163, 0.3);
+  letter-spacing: 0.03em;
+  transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
 }
 
-.ctaButton:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 25px rgba(78, 204, 163, 0.4);
+.primaryBtn:hover {
+  background: #e61f1f;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 28px rgba(255, 44, 44, 0.4);
 }
 
-.builderVisual {
-  flex: 1;
-  position: relative;
-  z-index: 2;
+.ghostBtn {
+  padding: 14px 32px;
+  background: transparent;
+  color: rgba(255, 255, 255, 0.7);
+  border: 1.5px solid rgba(255, 255, 255, 0.2);
+  border-radius: 6px;
+  font-size: 0.97rem;
+  font-weight: 600;
+  cursor: pointer;
+  letter-spacing: 0.03em;
+  transition: border-color 0.2s, color 0.2s, transform 0.2s;
 }
 
-.builderAnimation {
-  position: relative;
+.ghostBtn:hover {
+  border-color: rgba(255, 255, 255, 0.5);
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+/* ── Visual ── */
+.visual {
+  flex-shrink: 0;
+  width: 300px;
   height: 300px;
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.cpuChip, .gpuCard, .ramStick {
-  position: absolute;
-  background: rgba(255, 255, 255, 0.1);
-  border: 2px solid rgba(78, 204, 163, 0.5);
-  border-radius: 8px;
+.orb {
+  width: 140px;
+  height: 140px;
+  background: radial-gradient(circle at 40% 35%, #ff5252 0%, #cc0000 70%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  filter: drop-shadow(0 0 30px rgba(255, 44, 44, 0.4));
+  position: relative;
+  will-change: filter;
+  animation: orbPulse 4s ease-in-out infinite;
 }
 
-.cpuChip {
-  width: 60px;
-  height: 60px;
-  top: 20px;
-  left: 50px;
+.orbRing {
+  position: absolute;
+  inset: -16px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 44, 44, 0.25);
+  will-change: transform, opacity;
+  animation: ringExpand 3s ease-out infinite;
+}
+
+.orbRing2 {
+  position: absolute;
+  inset: -36px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 44, 44, 0.1);
+  will-change: transform, opacity;
+  animation: ringExpand 3s ease-out infinite 1s;
+}
+
+.orbIcon {
+  color: rgba(255, 255, 255, 0.95);
+  position: relative;
+  z-index: 1;
+}
+
+.floatChip {
+  position: absolute;
+  width: 52px;
+  height: 52px;
+  top: 30px;
+  left: 24px;
+  background: #161616;
+  border: 1.5px solid rgba(255, 44, 44, 0.35);
+  border-radius: 10px;
+  will-change: transform;
   animation: float 6s ease-in-out infinite;
 }
 
-.gpuCard {
-  width: 80px;
-  height: 100px;
-  bottom: 30px;
-  right: 60px;
-  animation: float 7s ease-in-out infinite 1s;
-}
-
-.ramStick {
-  width: 40px;
-  height: 120px;
-  top: 50px;
-  right: 40px;
-  animation: float 5s ease-in-out infinite 0.5s;
-}
-
-.aiOrb {
+.floatChip::after {
+  content: '';
   position: absolute;
-  width: 100px;
-  height: 100px;
-  background: linear-gradient(135deg, #4ecca3 0%, #6fffe9 100%);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 0 50px rgba(78, 204, 163, 0.5);
-  animation: pulse 3s ease-in-out infinite;
+  inset: 8px;
+  background: rgba(255, 44, 44, 0.12);
+  border-radius: 4px;
+  border: 1px solid rgba(255, 44, 44, 0.2);
 }
 
-.pulse {
+.floatBar {
   position: absolute;
-  width: 120px;
-  height: 120px;
-  background: inherit;
-  border-radius: 50%;
-  opacity: 0;
-  animation: pulse-ring 3s ease-in-out infinite;
+  width: 36px;
+  height: 100px;
+  bottom: 24px;
+  right: 30px;
+  background: #161616;
+  border: 1.5px solid rgba(255, 140, 0, 0.3);
+  border-radius: 8px;
+  will-change: transform;
+  animation: float 7s ease-in-out infinite 0.7s;
 }
 
-.aiIcon {
-  font-size: 2.5rem;
-  color: #1a1a2e;
-  z-index: 2;
+.floatBar2 {
+  position: absolute;
+  width: 28px;
+  height: 70px;
+  bottom: 40px;
+  right: 78px;
+  background: #161616;
+  border: 1.5px solid rgba(255, 140, 0, 0.2);
+  border-radius: 8px;
+  will-change: transform;
+  animation: float 5.5s ease-in-out infinite 1.4s;
+}
+
+@keyframes orbPulse {
+  0%, 100% { filter: drop-shadow(0 0 30px rgba(255, 44, 44, 0.4)); }
+  50% { filter: drop-shadow(0 0 50px rgba(255, 44, 44, 0.65)); }
+}
+
+@keyframes ringExpand {
+  0% { transform: scale(1); opacity: 0.6; }
+  100% { transform: scale(1.4); opacity: 0; }
 }
 
 @keyframes float {
   0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-20px); }
+  50% { transform: translateY(-14px); }
 }
 
-@keyframes pulse {
-  0%, 100% { transform: scale(1); }
-  50% { transform: scale(1.05); }
-}
-
-@keyframes pulse-ring {
-  0% { transform: scale(0.8); opacity: 1; }
-  100% { transform: scale(1.5); opacity: 0; }
-}
-
-/* Responsive Design */
+/* ── Responsive ── */
 @media (max-width: 1199px) {
-  .builderCta {
-    padding: 80px 5%;
-  }
-  
-  .builderContent h2 {
-    font-size: 2.2rem;
-  }
+  .inner { gap: 50px; }
+  .visual { width: 240px; height: 240px; }
+  .orb { width: 110px; height: 110px; }
+  .orbIcon { font-size: 38px !important; }
 }
 
 @media (max-width: 991px) {
-  .builderCta {
+  .inner {
     flex-direction: column;
     text-align: center;
-    gap: 50px;
+    gap: 48px;
   }
-  
-  .builderContent {
-    padding-right: 0;
-  }
-  
-  .builderHeader {
-    justify-content: center;
-  }
-  
-  .builderFeatures li {
-    justify-content: center;
-  }
-  
-  .cpuChip, .gpuCard, .ramStick {
-    display: none;
-  }
-  
-  .aiOrb {
-    position: relative;
-    margin: 0 auto;
-  }
+
+  .desc { margin-left: auto; margin-right: auto; }
+
+  .featureItem { justify-content: center; }
+
+  .actions { justify-content: center; }
 }
 
-@media (max-width: 768px) {
-  .builderContent h2 {
-    font-size: 2rem;
-  }
-  
-  .builderContent p {
-    font-size: 1.1rem;
-  }
-  
-  .builderFeatures li {
-    font-size: 1rem;
-    justify-content: flex-start;
-  }
-  
-  .ctaButton {
-    padding: 12px 25px;
-    font-size: 1rem;
-  }
-  
-  .builderAnimation {
-    height: 200px;
-  }
-  
-  .aiOrb {
-    width: 80px;
-    height: 80px;
-  }
-  
-  .aiIcon {
-    font-size: 2rem;
-  }
+@media (max-width: 767px) {
+  .visual { width: 200px; height: 200px; }
+  .orb { width: 90px; height: 90px; }
+  .floatChip, .floatBar, .floatBar2 { display: none; }
 }
 
 @media (max-width: 480px) {
-  .builderCta {
-    padding: 60px 5%;
-  }
-  
-  .builderContent h2 {
-    font-size: 1.8rem;
-  }
-  
-  .builderIcon {
-    font-size: 2rem;
-  }
-  
-  .builderAnimation {
-    height: 150px;
-  }
-  
-  .aiOrb {
-    width: 60px;
-    height: 60px;
-  }
-  
-  .aiIcon {
-    font-size: 1.5rem;
-  }
-  
-  .ctaButton {
-    padding: 10px 20px;
-    font-size: 0.9rem;
-  }
+  .cta { padding: 48px 5%; }
+  .actions { flex-direction: column; }
+  .primaryBtn, .ghostBtn { width: 100%; justify-content: center; }
 }

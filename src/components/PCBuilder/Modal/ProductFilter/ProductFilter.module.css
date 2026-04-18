@@ -6,6 +6,36 @@
     padding: 0 1rem 0 1rem;
 }
 
+.filterHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.75rem 0 0.25rem;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.filterTitle {
+    font-size: 0.8125rem;
+    font-weight: 600;
+    color: #374151;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.clearFiltersBtn {
+    font-size: 0.75rem;
+    color: #2563eb;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    font-weight: 500;
+}
+
+.clearFiltersBtn:hover {
+    text-decoration: underline;
+}
+
 .filterContent {
     display: flex;
     flex-direction: column;

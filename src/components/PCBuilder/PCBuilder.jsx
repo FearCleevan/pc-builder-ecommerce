@@ -39,6 +39,21 @@ const initialComponentsState = {
   accessory: null
 };
 
+const SAVED_BUILDS_KEY = 'pcBuilder_savedBuilds';
+
+const loadSavedBuilds = () => {
+  try {
+    const raw = localStorage.getItem(SAVED_BUILDS_KEY);
+    return raw ? JSON.parse(raw) : [];
+  } catch {
+    return [];
+  }
+};
+
+const writeSavedBuilds = (builds) => {
+  localStorage.setItem(SAVED_BUILDS_KEY, JSON.stringify(builds));
+};
+
 const PCBuilder = () => {
   const navigate = useNavigate();
   const [isComparing, setIsComparing] = useState(false);
@@ -46,6 +61,7 @@ const PCBuilder = () => {
   const [selectedComponents, setSelectedComponents] = useState(initialComponentsState);
   const [buildAssemblyOption, setBuildAssemblyOption] = useState('store-build');
   const [isAddToCartConfirmOpen, setIsAddToCartConfirmOpen] = useState(false);
+  const [buildName, setBuildName] = useState('New Build');
 
   // Load saved components from localStorage on component mount
   useEffect(() => {
@@ -98,10 +114,56 @@ const PCBuilder = () => {
     }));
   };
 
-  // Remove the window.confirm from here - just clear directly
   const handleClearAllComponents = () => {
     setSelectedComponents(initialComponentsState);
     localStorage.removeItem('pcBuildSelectedComponents');
+  };
+
+  const handleSaveBuild = () => {
+    const hasComponents = Object.values(selectedComponents).some(c => c !== null);
+    if (!hasComponents) return;
+    const builds = loadSavedBuilds();
+    builds.push({
+      id: `build-${Date.now()}`,
+      name: buildName,
+      components: selectedComponents,
+      createdAt: new Date().toISOString(),
+      lastModified: new Date().toISOString(),
+    });
+    writeSavedBuilds(builds);
+  };
+
+  const handleLoadBuild = (build) => {
+    setBuildName(build.name || 'New Build');
+    setSelectedComponents({ ...initialComponentsState, ...build.components });
+  };
+
+  const handleDeleteBuild = (buildId) => {
+    const builds = loadSavedBuilds().filter(b => b.id !== buildId);
+    writeSavedBuilds(builds);
+  };
+
+  const handleCreateNewBuild = () => {
+    const hasComponents = Object.values(selectedComponents).some(c => c !== null);
+    if (hasComponents) handleSaveBuild();
+    setBuildName('New Build');
+    handleClearAllComponents();
+  };
+
+  const handleCloneBuild = () => {
+    const hasComponents = Object.values(selectedComponents).some(c => c !== null);
+    if (!hasComponents) return;
+    const cloneName = `${buildName} (Copy)`;
+    const builds = loadSavedBuilds();
+    builds.push({
+      id: `build-${Date.now()}`,
+      name: cloneName,
+      components: selectedComponents,
+      createdAt: new Date().toISOString(),
+      lastModified: new Date().toISOString(),
+    });
+    writeSavedBuilds(builds);
+    setBuildName(cloneName);
   };
 
   // Check if any components are selected
@@ -143,10 +205,7 @@ const PCBuilder = () => {
   };
 
   const handleDirectSubmitToCart = () => {
-    handleAddBuildToCart({
-      buildName: 'Custom Build',
-      totalPrice
-    });
+    handleAddBuildToCart({ buildName, totalPrice });
     setIsAddToCartConfirmOpen(false);
     navigate('/cart');
   };
@@ -156,16 +215,24 @@ const PCBuilder = () => {
       <Header />
       <div className={styles.container}>
         {isComparing ? (
-          <CompareProducts 
-            products={compareData.products} 
+          <CompareProducts
+            products={compareData.products}
             componentType={compareData.componentType}
             onExit={handleExitCompare}
+            onAddToBuild={(product, componentType) => {
+              handleComponentSelect(product, componentType.id);
+              handleExitCompare();
+            }}
           />
         ) : (
           <>
-            <CreateNewBuild />
-            <PCBuildHeader 
-              selectedComponents={selectedComponents} 
+            <CreateNewBuild
+              onCreateNewBuild={handleCreateNewBuild}
+              onSelectBuild={handleLoadBuild}
+              onDeleteBuild={handleDeleteBuild}
+            />
+            <PCBuildHeader
+              selectedComponents={selectedComponents}
               onClearAll={handleClearAllComponents}
               hasSelectedComponents={hasSelectedComponents}
               compatibilityReport={compatibilityReport}
@@ -173,6 +240,10 @@ const PCBuilder = () => {
               buildAssemblyOption={buildAssemblyOption}
               onBuildAssemblyOptionChange={setBuildAssemblyOption}
               onAddToCart={handleAddBuildToCart}
+              buildName={buildName}
+              onBuildNameChange={setBuildName}
+              onSaveBuild={handleSaveBuild}
+              onCloneBuild={handleCloneBuild}
             />
             <div className={styles.builderActions}>
               <button
@@ -193,6 +264,7 @@ const PCBuilder = () => {
             <PCBuildFooter
               selectedComponents={selectedComponents}
               onComponentSelect={handleComponentSelect}
+              onComponentRemove={handleComponentRemove}
               onCompareNavigate={handleCompareNavigate}
             />
           </>
@@ -205,7 +277,8 @@ const PCBuilder = () => {
             {missingRequired.length > 0 ? (
               <>
                 <p className={styles.modalText}>
-                  {missingRequired[0].label} is still not selected.
+                  The following required components are missing:{' '}
+                  <strong>{missingRequired.map(c => c.label).join(', ')}</strong>.
                 </p>
                 <p className={styles.modalText}>
                   Do you wish to continue to add to cart or continue building?

@@ -1,7 +1,9 @@
 import React, { useState, useMemo } from 'react';
+import { useNavigate } from 'react-router-dom';
 import AddComponentModal from '../Modal/AddComponentModal/AddComponentModal';
 import styles from './PCBuildBody.module.css';
 import CloudinaryImage from '../../AIAssistant/components/common/CloudinaryImage/CloudinaryImage';
+import { addProductToCart } from '../../../utils/cartStorage';
 
 const PCBuildBody = ({
     selectedComponents,
@@ -9,6 +11,7 @@ const PCBuildBody = ({
     onComponentRemove,
     onCompareNavigate
 }) => {
+    const navigate = useNavigate();
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [selectedComponentType, setSelectedComponentType] = useState(null);
 
@@ -257,11 +260,17 @@ const PCBuildBody = ({
                                         </td>
                                         <td className={styles.priceCell}>
                                             <div className={styles.priceWrapper}>
-                                                <p className={styles.price}>₱{selectedData.price}</p>
+                                                <p className={styles.price}>₱{new Intl.NumberFormat('en-PH').format(selectedData.price)}</p>
                                             </div>
                                         </td>
                                         <td className={styles.buyCell}>
-                                            <button className={styles.buyButton}>
+                                            <button
+                                                className={styles.buyButton}
+                                                onClick={() => {
+                                                    addProductToCart(selectedData);
+                                                    navigate('/cart');
+                                                }}
+                                            >
                                                 Buy
                                             </button>
                                         </td>

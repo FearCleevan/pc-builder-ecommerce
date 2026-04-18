@@ -69,7 +69,7 @@ const DisplayProductCompare = ({ products, onRemove, onViewDetails, onAddToBuild
             
             <div className={styles.specSection}>
               <div className={styles.specLabel}>Price</div>
-              <div className={styles.priceValue}>₱{product.price}</div>
+              <div className={styles.priceValue}>₱{new Intl.NumberFormat('en-PH').format(product.price)}</div>
               <button 
                 className={styles.addToBuildButton}
                 onClick={() => onAddToBuild(product)}
